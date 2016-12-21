@@ -1,0 +1,10 @@
+# account
+agree-tos = {{ pillar.letsencrypt.agree_tos | default(False) }}
+email = {{ pillar.letsencrypt.email }}
+
+# certificates
+rsa-key-size = {{ pillar.letsencrypt.key_size | default(2048) }}
+
+# webroot challenge
+authenticator = webroot
+webroot-path = {{ pillar.letsencrypt.webroot_path }}

@@ -1,0 +1,8 @@
+[Unit]
+Description=Renews letsencrypt certificates through certbot
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew
+

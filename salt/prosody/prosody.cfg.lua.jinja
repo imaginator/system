@@ -1,0 +1,90 @@
+{% set pgpassword = 'postgres:users:' + salt['pillar.get']('imaginator:lookup:env') + '_prosody:password' %}
+modules_enabled = {
+    "saslauth";             -- Authentication for clients and servers. Recommended if you want to log in.
+    "tls";                  -- Add support for secure TLS on c2s/s2s connections
+    "dialback";             -- s2s dialback support
+    "disco";                -- Service discovery
+    "posix";                -- POSIX functionality, sends server to background, enables syslog, etc.
+    "ping";                 -- Replies to XMPP pings with pongs
+    "register";             -- Allow users to register on this server using a client and change passwords
+    "admin_adhoc";          -- Allows administration via an XMPP client that supports ad-hoc commands
+    "watchregistrations";   -- Alert admins of registrations
+    "roster";               -- Stalk your friends' online state
+    "admin_telnet";         -- telnet to port 5582 (control, stats-monitoring)
+}
+
+modules_disabled = {
+    "time";                 -- Let others know the time here on this server
+    "uptime";               -- Report how long server has been running
+    "version";              -- Replies to server version requests
+}
+
+c2s_require_encryption = false
+{% if salt['pillar.get']('imaginator:lookup:use_tls', False) -%}s2s_require_encryption = true{% endif -%};
+s2s_secure_auth        = false
+admins                 = { "you@{{ salt['pillar.get']('imaginator:lookup:domain') }}", "pusher.{{ salt['pillar.get']('imaginator:lookup:domain') }}" }
+daemonize              = true
+use_libevent           = false
+pidfile                = "/var/run/prosody/prosody.pid"
+allow_registration     = false
+storage                = "sql2"
+
+sql = {
+        driver   = "PostgreSQL"; 
+        host     = "{{ salt['pillar.get']('imaginator:lookup:database-server') }}";
+        database = "{{ salt['pillar.get']('imaginator:lookup:env') }}_prosody"; 
+        username = "{{ salt['pillar.get']('imaginator:lookup:env') }}_prosody";
+        password = "{{ salt['pillar.get'](pgpassword) }}";
+    }
+
+log = {
+        -- { levels = { min = "debug" }, to = "file", filename = "/var/log/imaginator/prosody.debug.log" };
+        { levels = { min = "error" }, to = "file", filename = "/var/log/imaginator/prosody.error.log" };
+        { levels = { min = "info"  }, to = "file", filename = "/var/log/imaginator/prosody.info.log"  };
+    }
+
+{% if salt['pillar.get']('imaginator:lookup:use_tls', False) -%}
+ssl = {         
+     key         = "/etc/certificates/{{ salt['pillar.get']('imaginator:lookup:domain') }}.complete.pem";
+     certificate = "/etc/certificates/{{ salt['pillar.get']('imaginator:lookup:domain') }}.complete.pem";
+     options     = {"no_sslv2",
+                    "no_sslv3", 
+                    "no_tlsv1", 
+                    "no_compression", 
+                    "cipher_server_preference", 
+                    "single_dh_use", 
+                    "single_ecdh_use", 
+                    "no_ticket"};
+    }
+{% endif -%}
+
+VirtualHost "{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  authentication               = "internal_hashed" 
+  allow_unencrypted_plain_auth = true
+  allow_registration           = true
+  anonymous                    = false
+
+VirtualHost "anon.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  authentication               = "anonymous"
+  anonymous                    = true
+
+Component "channels.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "topics.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "media.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "search.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "directory.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "pusher.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"
+
+Component "friend-finder.{{ salt['pillar.get']('imaginator:lookup:domain') }}"
+  component_secret = "{{ salt['pillar.get']('imaginator:lookup:xmpp-component-secret') }}"

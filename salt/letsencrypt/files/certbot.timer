@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly timer to renew letsencrypt certificates
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+Unit=certbot.service
+
+[Install]
+WantedBy=basic.target
+
