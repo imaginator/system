@@ -31,3 +31,7 @@ prometheus-server:
     - source: salt://prometheus-server/prometheus.yml
     - require:
       - pkg: prometheus-server
+
+prometheus-no-copy-on-write:
+  cmd.run:
+    - name: chattr +C /var/lib/prometheus

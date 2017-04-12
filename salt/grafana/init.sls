@@ -24,9 +24,8 @@ grafana-pkg:
       - pkg: grafana-pkg
 
 grafana-server:
-  service:
-    - running
-    - enable: true
+  service.running:
+    - enable: True
     - require:
       - pkg: grafana-pkg
     - watch:

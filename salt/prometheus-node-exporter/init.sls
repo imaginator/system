@@ -24,5 +24,5 @@ firewall-prometheus-node-exporter:
     - proto: tcp
     - save: True
     - match: comment
-    - comment: firewall-prometheus-node-exporter
+    - comment: prometheus-node-exporter
     - save: true

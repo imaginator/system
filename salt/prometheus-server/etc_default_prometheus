@@ -1,3 +1,5 @@
+# Managed by Saltstack
+
 # Set the command-line arguments to pass to the server.
 # ARGS="-web.external-url=http://bunker.imaginator.com/prometheus"
 ARGS="-storage.local.retention 8760h -storage.local.series-file-shrink-ratio 0.3"

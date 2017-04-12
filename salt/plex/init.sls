@@ -4,6 +4,8 @@ plex-server:
   pkg.installed:
     - sources:
       - plexmediaserver: {{ plex.url }}
+    - cache_valid_time: 30000
+
   service.running:
     - name: plexmediaserver
     - enable: True
@@ -62,3 +64,24 @@ plex_iptables-bonjour:
     - match: comment 
     - comment: plex-web-udp
     - save: true
+
+/srv/video/TV/Plex Versions:
+  file.directory:
+    - user: plex
+    - group: root
+    - mode: 755
+    - makedirs: True
+
+/srv/video/Film/Plex Versions:
+  file.directory:
+    - user: plex
+    - group: root
+    - mode: 755
+    - makedirs: True
+
+/srv/video/Clips/Plex Versions:
+  file.directory:
+    - user: plex
+    - group: root
+    - mode: 755
+    - makedirs: True
