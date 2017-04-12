@@ -1,0 +1,7 @@
+// Managed by Saltstack
+
+String PlexTVStatus            "Status [%s]"    <video>        {plex="PlayerID#state"}
+String PlexTVType       "Type [%s]"     <video>     {plex="PlayerID#type"}
+
+
+// vim: syntax=Xtend

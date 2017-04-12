@@ -47,6 +47,7 @@ openhab:
       - file: /etc/openhab2/items/*
       - file: /etc/openhab2/persistence/*
       - file: /etc/openhab2/services/*
+      - file: /etc/openhab2/rules/*
       - file: /etc/openhab2/things/*
 
 /etc/openhab2/services/jdbc.cfg:
@@ -60,6 +61,20 @@ openhab:
 /etc/openhab2/persistence/postgresql.persist:
   file.managed:
     - source: salt://openhab/postgresql.persist
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/rules/imagihouse.rules:
+  file.managed:
+    - source: salt://openhab/imagihouse.rules
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/runtime.cfg:
+  file.managed:
+    - source: salt://openhab/runtime.cfg
     - user: openhab
     - group: openhab
     - mode: 0644

@@ -1,0 +1,8 @@
+// Managed by Saltstack
+
+network:device:simon-phone  [ hostname="simon-nexus5x.imagilan", port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]
+yahooweather:weather:berlin [ location=638242 ]
+astro:sun:home              [ geolocation="52.5200066,13.4049540", interval=60 ]
+astro:moon:home             [ geolocation="52.5200066,13.4049540", interval=60 ]
+
+// vim: syntax=Xtend
