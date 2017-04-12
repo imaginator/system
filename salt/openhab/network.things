@@ -1,2 +1,0 @@
-# managed by saltstack
-network:device:devicename [ hostname="simon-nexus5x.imagilan", port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]

@@ -22,4 +22,4 @@ Items {
 
     // additionally, persist all temperature and weather values every hour
        gTemperatur* : strategy = every5Minutes, restoreOnStartup
-
+}

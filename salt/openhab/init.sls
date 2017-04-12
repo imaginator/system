@@ -1,7 +1,8 @@
 openhab-repo:
   pkgrepo.managed:
-    - name: deb http://dl.bintray.com/openhab/apt-repo2 testing main
-    - humanname: Openhab2-repo
+    - name: deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main
+    - file: /etc/apt/sources.list.d/openhab.list
+    - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 
 openhab-dependencies:
@@ -43,9 +44,10 @@ openhab:
     - require:
       - pkg: openhab-dependencies
     - watch:
+      - file: /etc/openhab2/items/*
+      - file: /etc/openhab2/persistence/*
       - file: /etc/openhab2/services/*
       - file: /etc/openhab2/things/*
-      - file: /etc/openhab2/persistence/*
 
 /etc/openhab2/services/jdbc.cfg:
   file.managed:
@@ -70,9 +72,16 @@ openhab:
     - mode: 0644
     - template: jinja
 
-/etc/openhab2/things/network.things:
+/etc/openhab2/items/imagihouse.items:
   file.managed:
-    - source: salt://openhab/network.things
+    - source: salt://openhab/imagihouse.items
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/things/imagihouse.things:
+  file.managed:
+    - source: salt://openhab/imagihouse.things
     - user: openhab
     - group: openhab
     - mode: 0644
