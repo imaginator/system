@@ -50,6 +50,13 @@ openhab:
       - file: /etc/openhab2/rules/*
       - file: /etc/openhab2/things/*
 
+/etc/openhab2/services/addons.cfg:
+  file.managed:
+    - source: salt://openhab/addons.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
 /etc/openhab2/services/jdbc.cfg:
   file.managed:
     - source: salt://openhab/jdbc.cfg.jinja
