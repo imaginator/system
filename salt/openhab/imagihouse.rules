@@ -50,36 +50,6 @@ then
     }
 end
 
-/**
- * The following rules help initializing the demo items with some helpful states.
- */
-rule "Initialize light states"
-	when
-		System started
-	then
-		Lights?.members.forEach(light|
-			postUpdate(light, if(Math::random > 0.7) ON else OFF)
-		)
-end
-
-rule "Initialize heating states"
-	when
-		System started
-	then
-		Heating?.members.forEach(heating|
-			postUpdate(heating, if(Math::random > 0.8) ON else OFF)
-		)
-		postUpdate(Temperature_Setpoint, 22)
-end
-
-rule "Initialize contact states"
-	when
-		System started
-	then
-		Windows?.members.forEach(window|
-			postUpdate(window, if(Math::random > 0.5) OPEN else CLOSED)
-		)
-end
 
 rule "Initialize Location"
 	when
@@ -88,15 +58,6 @@ rule "Initialize Location"
 		DemoLocation.postUpdate(new PointType("52.5200066,13.4049540"))
 end
 
-rule "Set random room temperatures"
-	when
-		System started or
-		Time cron "0 0/5 * * * ?"
-	then
-		Temperature?.members.forEach(temperature|
-			postUpdate(temperature, 20.0 + (25.0 - (Math::random * 50.0).intValue) / 10.0)
-		)
-end
 
 rule "Set daily max and min temperature"
 when
@@ -118,24 +79,6 @@ when
   Item Weather_Temperature received update
 then
   postUpdate(Weather_LastUpdate, new DateTimeType())
-end
-
-rule "Set random wifi variations"
-    when
-        System started or
-        Time cron "/20 * * * * ?"
-    then
-        postUpdate(Wifi_Level, (Math::random * 4.0).intValue)
-end
-
-rule "Set random image URLs"
-    when
-        Time cron "/10 * * * * ?"
-    then
-        val url = urlList.get(random.nextInt(urlList.length))
-        val res = resList.get(random.nextInt(resList.length))
-
-        postUpdate(ImageURL, url + "/" + res)
 end
 
 rule "Volume"
