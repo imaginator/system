@@ -1,109 +1,33 @@
-import java.util.Random
+// Managed by SaltStack
 
-var Timer timer = null
-val resList = newArrayList("640/480", "320/240", "480/360")
-val urlList = newArrayList("http://www.fillmurray.com", "http://www.fillmurray.com/g",
-                 "http://www.placecage.com", "http://www.placecage.com/c", "http://www.placecage.com/g")
-val Random random = new Random()
-
-/**
- * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands
- * and posting an updated state on the bus
- */
-rule "Dimmed Light"
-	when
-		Item DimmedLight received command
-	then
-        if ((receivedCommand==INCREASE) || (receivedCommand==DECREASE)) {
-    		var Number percent = 0
-    		if(DimmedLight.state instanceof DecimalType) percent = DimmedLight.state as DecimalType
-    			
-    		if(receivedCommand==INCREASE) percent = percent + 5
-    		if(receivedCommand==DECREASE) percent = percent - 5
-    
-    		if(percent<0)   percent = 0
-    		if(percent>100) percent = 100
-    		postUpdate(DimmedLight, percent);
-    	}
+rule "System started"
+when
+    System started
+then
+    Present.sendCommand(OFF) // assume no one is home on startup
 end
 
-rule "Timer Demo"
+rule "gPresent updated, at least one sensor changed state"
 when
-    Item Light_GF_Corridor_Ceiling received command
+    Item gPresent received update
 then
-    if(receivedCommand==ON) {
-        if(timer==null) {
-            // first ON command, so create a timer to turn the light off again
-            timer = createTimer(now.plusSeconds(10)) [|
-                sendCommand(Light_GF_Corridor_Ceiling, OFF)
-            ]
-        } else {
-            // subsequent ON command, so reschedule the existing timer
-            timer.reschedule(now.plusSeconds(10))
-        }
-    } else if(receivedCommand==OFF) {
-        // remove any previously scheduled timer
-        if(timer!=null) {
-            timer.cancel
-            timer = null
-        }
+    // someone came home
+    if(gPresent.state == ON && Present.state != ON) {
+        Present_Timer.postUpdate(OFF) // cancel the timer if necessary
+        Present.sendCommand(ON)
+    }
+
+    // no one is home
+    else if(gPresent.state == OFF and Present.state != OFF){
+        Present_Timer.sendCommand(ON) // start the timer
     }
 end
 
-
-rule "Initialize Location"
-	when
-		System started
-	then
-		DemoLocation.postUpdate(new PointType("52.5200066,13.4049540"))
-end
-
-
-rule "Set daily max and min temperature"
+rule "Present_Timer expired"
 when
-	Item Weather_Temperature changed or
-	Time cron "0 0 0 * * ?" or
-	System started
+    Item Present_Timer received command OFF
 then
-	val max = Weather_Temperature.maximumSince(now.withTimeAtStartOfDay)
-	val min = Weather_Temperature.minimumSince(now.withTimeAtStartOfDay)
-	if( max != null && min != null) {
-		postUpdate(Weather_Temp_Max, max.state)
-		postUpdate(Weather_Temp_Min, min.state)
-	}
-end
-
-// Creates an item that stores the last update time of this item
-rule "Records last weather update time"
-when
-  Item Weather_Temperature received update
-then
-  postUpdate(Weather_LastUpdate, new DateTimeType())
-end
-
-rule "Volume"
-	when
-		Item Volume received command
-	then
-		if(receivedCommand instanceof PercentType) {
-			setMasterVolume(receivedCommand)
-		} else {
-			if(receivedCommand==INCREASE) increaseMasterVolume(20)
-			if(receivedCommand==DECREASE) decreaseMasterVolume(20)	
-		}
-end
-
-rule "Select Radio Station"
-	when
-		Item Radio_Station received command
-	then
-		switch(receivedCommand) {
-			case 0 : playStream(null)
-			case 1 : playStream("http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u")
-			case 2 : playStream("http://mp3-live.swr3.de/swr3_m.m3u")
-			case 3 : playStream("http://edge.live.mp3.mdn.newmedia.nacamar.net/radioffh/livestream.mp3.m3u")
-			case 4 : playStream("http://stream.laut.fm/club93")
-		}
+    Present.sendCommand(OFF)
 end
 
 // vim: syntax=Xtend

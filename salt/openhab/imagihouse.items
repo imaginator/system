@@ -1,7 +1,63 @@
 // Managed by Saltstack
 
-String PlexTVStatus            "Status [%s]"    <video>        {plex="PlayerID#state"}
-String PlexTVType       "Type [%s]"     <video>     {plex="PlayerID#type"}
+String PlexTVStatus     "Status [%s]"   <video>   {plex="PlayerID#state"}
+String PlexTVType       "Type [%s]"     <video>   {plex="PlayerID#type"}
+
+Dimmer Volume { channel="chromecast:audio:cc-bedroom:volume" }
+Player Music  { channel="chromecast:audio:cc-bedroom:control" }
+
+Dimmer Volume { channel="chromecast:audio:cc-lounge:volume" }
+Player Music  { channel="chromecast:audio:cc-lounge:control" }
+
+DateTime Sunrise_Time       "Sunrise [%1$tH:%1$tM]"  { channel="astro:sun:berlin:rise#start" }
+DateTime Sunset_Time        "Sunset [%1$tH:%1$tM]"   { channel="astro:sun:berlin:set#start" }
+
+Switch SimonPhone_Online     { channel="network:device:simon-phone:online" }
+Number SimonPhone_OnlineTime { channel="network:device:simon-phone:time" }
+
+// overhead bulb
+Switch    Light1_Toggle       { channel="hue:0210:1:bulb1:color" }
+Dimmer    Light1_Dimmer       { channel="hue:0210:1:bulb1:color" }
+Color     Light1_Color        { channel="hue:0210:1:bulb1:color" }
+Dimmer    Light1_ColorTemp    { channel="hue:0210:1:bulb1:color_temperature" }
+
+// plug switch
+Switch    Light2_Toggle       { channel="hue:0010:1:bulb1:color" }
+
+// Air Quality
+Group AirQuality <flow>
+Number   Aqi_Level           "Air Quality Index" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiLevel" }
+String   Aqi_Description     "AQI Level [MAP(airquality.map):%s]" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiDescription" }
+Number   Aqi_Pm25            "PM\u2082\u2085 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:pm25" }
+Number   Aqi_Pm10            "PM\u2081\u2080 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:pm10" }
+Number   Aqi_O3              "O\u2083 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:o3" }
+Number   Aqi_No2             "NO\u2082 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:no2" }
+Number   Aqi_Co              "CO Level" <line> (AirQuality) { channel="airquality:aqi:berlin:co" }
+String   Aqi_LocationName    "Measuring Location" <settings> (AirQuality) { channel="airquality:aqi:berlin:locationName" }
+Location Aqi_StationGeo      "Station Location" <office> (AirQuality) { channel="airquality:aqi:berlin:stationLocation" }
+Number   Aqi_StationId       "Station ID" <pie> (AirQuality) { channel="airquality:aqi:berlin:stationId" }
+DateTime Aqi_ObservationTime "Time of observation [%1$tH:%1$tM]" <clock> (AirQuality) { channel="airquality:aqi:berlin:observationTime" }
+Number   Aqi_Temperature     "Temperature" <temperature> (AirQuality) { channel="airquality:aqi:berlin:temperature" }
+Number   Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:berlin:pressure" }
+Number   Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:berlin:humidity" }
 
 
+
+
+
+
+
+
+AirQuality_PM10 (Type=NumberItem, State=NULL, Label=PM10, Category=PM10)
+AirQuality_AirQualityIndex (Type=NumberItem, State=NULL, Label=Air Quality Index, Category=Air Quality Index)
+AirQuality_PM25 (Type=NumberItem, State=NULL, Label=PM2.5, Category=PM2.5)
+AirQuality_O3 (Type=NumberItem, State=NULL, Label=O3, Category=O3)
+AirQuality_NO2 (Type=NumberItem, State=NULL, Label=NO2, Category=NO2)
+AirQuality_CO (Type=NumberItem, State=NULL, Label=CO, Category=CO)
+AirQuality_AQIDescription (Type=StringItem, State=NULL, Label=AQI Description, Category=AQI Description)
+
+
+
+
+ 
 // vim: syntax=Xtend

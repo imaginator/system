@@ -34,6 +34,21 @@ postgres-db-openhab:
     - require:
         - postgres_user: openhab
 
+openhab-remove-cruft:
+  service.dead:
+    - name: openhab2
+  file.absent:
+    - names: 
+      - /var/lib/openhab2/cache
+      - /var/lib/openhab2/config
+      - /var/lib/openhab2/jasondb
+      - /var/lib/openhab2/kar
+      - /var/lib/openhab2/log
+      - /var/lib/openhab2/persistence
+      - /var/lib/openhab2/uuid
+      - /var/lib/openhab2/voicerss
+      - /var/lib/openhab2/.karaf
+
 openhab:
   pkg.installed:
     - name: openhab2
@@ -49,6 +64,7 @@ openhab:
       - file: /etc/openhab2/services/*
       - file: /etc/openhab2/rules/*
       - file: /etc/openhab2/things/*
+      - file: /var/lib/openhab2/etc/org.eclipse.smarthome.basicui.cfg
 
 /etc/openhab2/services/addons.cfg:
   file.managed:
@@ -79,9 +95,23 @@ openhab:
     - group: openhab
     - mode: 0644
 
+/etc/openhab2/sitemaps/imagihouse.sitemap:
+  file.managed:
+    - source: salt://openhab/imagihouse.sitemap
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
 /etc/openhab2/services/runtime.cfg:
   file.managed:
     - source: salt://openhab/runtime.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/services.cfg:
+  file.managed:
+    - source: salt://openhab/services.cfg
     - user: openhab
     - group: openhab
     - mode: 0644
@@ -107,6 +137,14 @@ openhab:
     - user: openhab
     - group: openhab
     - mode: 0644
+
+imagihouse-sitemap:
+  file.replace:
+   - name: /var/lib/openhab2/etc/org.eclipse.smarthome.basicui.cfg
+   - pattern: "defaultSitemap.*"
+   - repl: "defaultSitemap = imagihouse"
+   - append_if_not_found: true
+   - show_changes: true
 
 /etc/nginx/conf.d/nginx-openhab.conf:
   file:
