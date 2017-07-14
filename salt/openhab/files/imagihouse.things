@@ -1,5 +1,14 @@
 // Managed by Saltstack
 
+// Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
+// eg: Thing network:device:webcam "Webcam" @ "Living Room" [ hostname="192.168.0.2", timeout="5000", ... ]
+// the binding ID is “network” (using the Network Binding)
+// the type ID is “device”, indicating the Thing is a device
+// the Thing ID is “webcam”, which is an ID to uniquely identify the Thing
+// the label is “Webcam”, this is how the Thing will be named in the various user interfaces
+// the physical location of the Thing is “Living Room”
+// the values inside the [] brackets are the Thing’s configuration parameters, these are partly mandatory and optional
+
 network:device:simon-phone  "Simon Presence"   [ hostname="simon-nexus5x.imagilan", port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]
 network:device:simon-tablet "testing Presence" [ hostname="simon-nexus7.imagilan",  port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]
 

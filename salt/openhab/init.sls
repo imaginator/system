@@ -59,6 +59,7 @@ openhab:
     - require:
       - pkg: openhab-dependencies
     - watch:
+      - file: weather-icons
       - file: /etc/openhab2/items/*
       - file: /etc/openhab2/persistence/*
       - file: /etc/openhab2/services/*
@@ -68,14 +69,21 @@ openhab:
 
 /etc/openhab2/services/addons.cfg:
   file.managed:
-    - source: salt://openhab/addons.cfg
+    - source: salt://openhab/files/addons.cfg
     - user: openhab
     - group: openhab
     - mode: 0644
 
+weather-icons:
+  file.managed:
+    - name: /usr/share/openhab2/addons/org.openhab.ui.iconset.climacons.jar
+    - source: https://github.com/ghys/org.openhab.ui.iconset.climacons/releases/download/2.2.0.201707061209/org.openhab.ui.iconset.climacons-2.2.0-SNAPSHOT.jar
+    - source_hash: sha256=81c8ef48c7cbfb37a9b1409314720490385b94fc360971dbd25d2097877e530f
+
+
 /etc/openhab2/services/jdbc.cfg:
   file.managed:
-    - source: salt://openhab/jdbc.cfg.jinja
+    - source: salt://openhab/files/jdbc.cfg.jinja
     - user: openhab
     - group: openhab
     - mode: 0644
@@ -83,42 +91,35 @@ openhab:
 
 /etc/openhab2/persistence/postgresql.persist:
   file.managed:
-    - source: salt://openhab/postgresql.persist
+    - source: salt://openhab/files/postgresql.persist
     - user: openhab
     - group: openhab
     - mode: 0644
 
 /etc/openhab2/rules/imagihouse.rules:
   file.managed:
-    - source: salt://openhab/imagihouse.rules
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/sitemaps/imagihouse.sitemap:
-  file.managed:
-    - source: salt://openhab/imagihouse.sitemap
+    - source: salt://openhab/files/imagihouse.rules
     - user: openhab
     - group: openhab
     - mode: 0644
 
 /etc/openhab2/services/runtime.cfg:
   file.managed:
-    - source: salt://openhab/runtime.cfg
+    - source: salt://openhab/files/runtime.cfg
     - user: openhab
     - group: openhab
     - mode: 0644
 
 /etc/openhab2/services/services.cfg:
   file.managed:
-    - source: salt://openhab/services.cfg
+    - source: salt://openhab/files/services.cfg
     - user: openhab
     - group: openhab
     - mode: 0644
 
 /etc/openhab2/services/plex.cfg:
   file.managed:
-    - source: salt://openhab/plex.cfg.jinja
+    - source: salt://openhab/files/plex.cfg.jinja
     - user: openhab
     - group: openhab
     - mode: 0644
@@ -126,14 +127,14 @@ openhab:
 
 /etc/openhab2/items/imagihouse.items:
   file.managed:
-    - source: salt://openhab/imagihouse.items
+    - source: salt://openhab/files/imagihouse.items
     - user: openhab
     - group: openhab
     - mode: 0644
 
 /etc/openhab2/things/imagihouse.things:
   file.managed:
-    - source: salt://openhab/imagihouse.things
+    - source: salt://openhab/files/imagihouse.things
     - user: openhab
     - group: openhab
     - mode: 0644
@@ -152,7 +153,7 @@ imagihouse-sitemap:
     - makedirs: true
     - user: root
     - group: root
-    - source: salt://openhab/nginx-openhab.conf
+    - source: salt://openhab/files/nginx-openhab.conf
 
 openhab-webaccess:
   webutil.user_exists:
