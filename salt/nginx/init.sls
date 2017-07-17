@@ -6,11 +6,10 @@ nginx:
     - watch:
       - pkg: nginx-full
       - file: /etc/nginx/nginx.conf
-      - file: /etc/nginx/conf.d/*
+      - file: /etc/nginx/sites-enabled/*
 
 /etc/nginx/nginx.conf:
-  file:
-    - managed
+  file.managed:
     - source: salt://nginx/nginx.conf
     - user: root
     - group: root
@@ -23,17 +22,34 @@ nginx:
     - name: openssl dhparam -out /etc/nginx/dhparam.pem 2048
     - unless: test -f /etc/nginx/dhparam.pem
 
-/etc/nginx/sites-enabled/bunker.imaginator.com.conf:
-  file:
-    - managed
-    - source: salt://nginx/bunker.imaginator.com.conf
+/etc/nginx/snippets/ssl.conf:
+  file.managed:
+    - source: salt://nginx/ssl.conf
     - user: root
     - group: root
     - mode: 644
 
+/etc/nginx/snippets/letsencrypt.conf:
+  file.managed:
+    - source: salt://nginx/letsencrypt.conf
+    - user: root
+    - group: root
+    - mode: 644
+
+/var/www/letsencrypt/.well-known/acme-challenge:
+  file.directory:
+    - mode: 755
+    - makedirs: True
+
 /etc/nginx/sites-enabled/default:
-  file:
-    - absent
+  file.absent
+
+/etc/nginx/sites-enabled/bunker.imaginator.com.conf:
+  file.managed:
+    - source: salt://nginx/bunker.imaginator.com.conf
+    - user: root
+    - group: root
+    - mode: 644
 
 nginx_iptables_ipv4:
   iptables.append:
