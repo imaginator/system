@@ -15,26 +15,21 @@ rule_files:
   # - "first.rules"
   # - "second.rules"
 
-# A scrape configuration containing exactly one endpoint to scrape: 
-# Here it's Prometheus itself.
 scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'prometheus'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 30s
     scrape_timeout: 9s
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
     target_groups:
-      - targets: ['localhost:9090']
+      - targets: ['bunker.imagilan:9090']
 
   - job_name: node
+    scrape_interval: 30s
+    scrape_timeout: 9s
     target_groups:
       - targets: ['imagiswitch.imagilan:9100']
-      - targets: ['bunker.imagilan:9100']
       - targets: ['repeater01.imagilan:9100']
       - targets: ['repeater04.imagilan:9100']
       - targets: ['repeater05.imagilan:9100']
+      - targets: ['bunker.imagilan:9100']
+      - targets: ['pi01.imagilan:9100']
+      - targets: ['pi02.imagilan:9100']
