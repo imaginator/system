@@ -1,35 +1,23 @@
-# Sample config for Prometheus.
+# managed by saltstack
 
 global:
   scrape_interval:     15s # By default, scrape targets every 15 seconds.
   evaluation_interval: 15s # By default, scrape targets every 15 seconds.
-  # scrape_timeout is set to the global default (10s).
-
-  # Attach these labels to any time series or alerts when communicating with
-  # external systems (federation, remote storage, Alertmanager).
-  external_labels:
-      monitor: 'example'
-
-# Load and evaluate rules in this file every 'evaluation_interval' seconds.
-rule_files:
-  # - "first.rules"
-  # - "second.rules"
+  scrape_timeout:      9s
 
 scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 30s
-    scrape_timeout: 9s
     target_groups:
       - targets: ['bunker.imagilan:9090']
 
   - job_name: node
     scrape_interval: 30s
-    scrape_timeout: 9s
     target_groups:
       - targets: ['imagiswitch.imagilan:9100']
       - targets: ['repeater01.imagilan:9100']
       - targets: ['repeater04.imagilan:9100']
       - targets: ['repeater05.imagilan:9100']
+      - targets: ['repeater06.imagilan:9100']
       - targets: ['bunker.imagilan:9100']
-      - targets: ['pi01.imagilan:9100']
       - targets: ['pi02.imagilan:9100']
