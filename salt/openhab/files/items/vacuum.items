@@ -1,0 +1,47 @@
+
+
+Group  gVac     "Xiaomi Robot Vacuum"      <fan>
+Group  gVacStat "Status Details"           <status> (gVac)
+Group  gVacCons "Consumables Usage"        <line-increase> (gVac)
+Group  gVacDND  "Do Not Disturb Settings"  <moon> (gVac)
+Group  gVacHist "Cleaning History"         <calendar> (gVac)
+Group  gVacNetwork "Network Details"       <network> (gVac)
+
+String actionControl  "Vacuum Control"     (gVac)     {channel="miio:generic:imagisuck:actions#control" }
+Number actionFan      "Vacuum Fan"         (gVac)   {channel="miio:generic:imagisuck:actions#fan" }
+String actionCommand  "Vacuum Command"          {channel="miio:generic:imagisuck:actions#commands" }
+
+Number statusBat    "Battery Level [%1.0f%%]" <battery>   (gVac,gVacStat) {channel="miio:generic:imagisuck:status#battery" }
+Number statusArea    "Cleaned Area [%1.0fm²]" <zoom>   (gVac,gVacStat) {channel="miio:generic:imagisuck:status#clean_area" }
+Number statusTime    "Cleaning Time [%1.0f']" <clock>   (gVac,gVacStat) {channel="miio:generic:imagisuck:status#clean_time" }
+String  statusError    "Error [%s]"  <error>  (gVac,gVacStat) {channel="miio:generic:imagisuck:status#error_code" }
+Number statusFanPow    "Fan Power [%1.0f %%]"  <signal>   (gVacStat) {channel="miio:generic:imagisuck:status#fan_power" } 
+Number statusClean    "In Cleaning Status [%1.0f]"   <switch>  (gVacStat) {channel="miio:generic:imagisuck:status#in_cleaning" }
+Switch statusDND    "DND Activated"    (gVacStat) {channel="miio:generic:imagisuck:status#dnd_enabled" }
+String statusStatus    "Status [%s]"  <status>  (gVacStat) {channel="miio:generic:imagisuck:status#state"} 
+
+Number consumableMainT    "Main Brush [%1.0f]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#main_brush_time"}
+Number consumableMainP    "Main Brush [%1.0f%%]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#main_brush_percent"}
+Number consumableSideT    "Side Brush [%1.0f]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#side_brush_time"}
+Number consumableSideP    "Side Brush [%1.0f%%]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#side_brush_percent"}
+Number consumableFilterT    "Filter Time[%1.0f]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#filter_time" }
+Number consumableFilterP    "Filter Time[%1.0f%%]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#filter_percent" }
+Number consumableSensorT    "Sensor [%1.0f]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#sensor_dirt_time"}
+Number consumableSensorP    "Sensor [%1.0f%%]"    (gVacCons) {channel="miio:generic:imagisuck:consumables#sensor_dirt_percent"}
+
+
+Switch dndFunction   "DND Function" <moon>   (gVacDND) {channel="miio:generic:imagisuck:dnd#dnd_function"}
+String dndStart   "DND Start Time [%s]" <clock>   (gVacDND) {channel="miio:generic:imagisuck:dnd#dnd_start"}
+String dndEnd   "DND End Time [%s]"   <clock-on>  (gVacDND) {channel="miio:generic:imagisuck:dnd#dnd_end"}
+
+Number historyArea    "Total Cleaned Area [%1.0fm²]" <zoom>    (gVacHist) {channel="miio:generic:imagisuck:history#total_clean_area"}
+Number historyTime    "Total Clean Time [%1.0f']"   <clock>     (gVacHist) {channel="miio:generic:imagisuck:history#total_clean_time"}
+Number historyCount    "Total # Cleanings [%1.0f]"  <office>  (gVacHist) {channel="miio:generic:imagisuck:history#total_clean_count"}
+
+String  miNetSSID    "Network SSID [%s]"  <network>  (gVac,gVacNetwork) {channel="miio:generic:imagisuck:network#ssid" }
+String  miNetBSSID    "Network BSSID [%s]"  <network>  (gVac,gVacNetwork) {channel="miio:generic:imagisuck:network#bssid" }
+Number  miNetRSSI    "Network RSSI [%1.0f]"  <network>  (gVac,gVacNetwork) {channel="miio:generic:imagisuck:network#rssi" }
+Number  miNetLife    "Uptime [%1.0f]"  <clock>  (gVac,gVacNetwork) {channel="miio:generic:imagisuck:network#life" }
+
+
+

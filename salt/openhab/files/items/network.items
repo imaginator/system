@@ -1,0 +1,6 @@
+// Managed by Saltstack
+
+Switch SimonPhone             { channel="network:pingdevice:devicename:online" }
+Number SimonPhoneLastSeen     { channel="network:pingdevice:devicename:lastseen" }
+
+// vim: syntax=Xtend

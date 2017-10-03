@@ -18,7 +18,7 @@ then
     }
 
     // no one is home
-    else if(gPresent.state == OFF and Present.state != OFF){
+    else if(gPresent.state == OFF && Present.state != OFF) {
         Present_Timer.sendCommand(ON) // start the timer
     }
 end

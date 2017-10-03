@@ -9,19 +9,6 @@
 // the physical location of the Thing is “Living Room”
 // the values inside the [] brackets are the Thing’s configuration parameters, these are partly mandatory and optional
 
-network:device:simon-phone  "Simon Presence"   [ hostname="simon-nexus5x.imagilan", port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]
-network:device:simon-tablet "testing Presence" [ hostname="simon-nexus7.imagilan",  port=0, retry=1, timeout=5000, refresh_interval=60000, use_system_ping="false", dhcplisten="false" ]
-
-yahooweather:weather:berlin "Weather in Berlin" [ location=638242 ]
-
-airquality:aqi:7c085e71 "AirQuality in Berlin" [ apikey="b2a3fc9c4c83818c2df4e31546f0d1e024a7a0d4", location="52.5200066,13.4049540", refresh=120 ]
-
-astro:sun:berlin "Sunrise/set times in Berlin" [ geolocation="52.5200066,13.4049540", interval=60 ]
-
-chromecast:audio:81bca8807369fadbaf98421ad80074ff  "Chromecast in Bedroom" [ ipAddress="cc-bedroom.imagilan"                  ]
-chromecast:audio:d1cdc9be03ede275a5564903bae9bc2f  "Chromecast in Lounge"  [ ipAddress="cc-lounge.imagilan"                   ]
-chromecast:audiogroup:c25f1e9c-65fa-4db6-b12e-b5a262ccefe9 "Audiogroup all"   []    
-
 Bridge hue:bridge:001788238a64 "Hue Bridge"  [ ipAddress="philips-hue.imagilan", userName="8Z6qoCIUBSyq8flFxOuMFaITO-NTR4M3Avths1xB" ]  {
     0210 1 [ lightId="Coloured Light" ]
     0010 2 [ lightId="Osram Switch" ]

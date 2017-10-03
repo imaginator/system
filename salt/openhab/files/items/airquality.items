@@ -15,33 +15,6 @@
 // bound to the openHAB binding knx with write group address 1/0/15 and listening group address 0/0/15
 
 
-
-String PlexTVStatus     "Status [%s]"   <video>   {plex="PlayerID#state"}
-String PlexTVType       "Type [%s]"     <video>   {plex="PlayerID#type"}
-
-//bedroom
-Dimmer Volume { channel="chromecast:audio:81bca8807369fadbaf98421ad80074ff:volume" }
-Player Music  { channel="chromecast:audio:81bca8807369fadbaf98421ad80074ff:control" }
-
-//lounge
-Dimmer Volume { channel="chromecast:audio:d1cdc9be03ede275a5564903bae9bc2f:volume" }
-Player Music  { channel="chromecast:audio:d1cdc9be03ede275a5564903bae9bc2f:control" }
-
-DateTime Sunrise_Time       "Sunrise [%1$tH:%1$tM]"  { channel="astro:sun:berlin:rise#start" }
-DateTime Sunset_Time        "Sunset [%1$tH:%1$tM]"   { channel="astro:sun:berlin:set#start" }
-
-Switch SimonPhone_Online     { channel="network:device:simon-phone:online" }
-Number SimonPhone_OnlineTime { channel="network:device:simon-phone:time" }
-
-// overhead bulb
-Switch    Light1_Toggle       { channel="hue:0210:1:bulb1:color" }
-Dimmer    Light1_Dimmer       { channel="hue:0210:1:bulb1:color" }
-Color     Light1_Color        { channel="hue:0210:1:bulb1:color" }
-Dimmer    Light1_ColorTemp    { channel="hue:0210:1:bulb1:color_temperature" }
-
-// plug switch
-Switch    Light2_Toggle       { channel="hue:0010:1:bulb1:color" }
-
 // Air Quality
 Group AirQuality <flow>
 Number   Aqi_Level           "Air Quality Index" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiLevel" }
@@ -58,24 +31,5 @@ DateTime Aqi_ObservationTime "Time of observation [%1$tH:%1$tM]" <clock> (AirQua
 Number   Aqi_Temperature     "Temperature" <temperature> (AirQuality) { channel="airquality:aqi:berlin:temperature" }
 Number   Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:berlin:pressure" }
 Number   Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:berlin:humidity" }
-
-
-
-
-
-
-
-
-AirQuality_PM10 (Type=NumberItem, State=NULL, Label=PM10, Category=PM10)
-AirQuality_AirQualityIndex (Type=NumberItem, State=NULL, Label=Air Quality Index, Category=Air Quality Index)
-AirQuality_PM25 (Type=NumberItem, State=NULL, Label=PM2.5, Category=PM2.5)
-AirQuality_O3 (Type=NumberItem, State=NULL, Label=O3, Category=O3)
-AirQuality_NO2 (Type=NumberItem, State=NULL, Label=NO2, Category=NO2)
-AirQuality_CO (Type=NumberItem, State=NULL, Label=CO, Category=CO)
-AirQuality_AQIDescription (Type=StringItem, State=NULL, Label=AQI Description, Category=AQI Description)
-
-
-
-
  
 // vim: syntax=Xtend

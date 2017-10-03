@@ -8,7 +8,6 @@ openhab-repo:
 openhab-dependencies:
   pkg.installed:
     - pkgs:
-      - openhab2-addons
       - openjdk-8-jre-headless
       - postgresql
       - apache2-utils
@@ -41,9 +40,8 @@ openhab-remove-cruft:
     - names: 
       - /var/lib/openhab2/cache
       - /var/lib/openhab2/config
-      - /var/lib/openhab2/jasondb
+      - /var/lib/openhab2/jsondb
       - /var/lib/openhab2/kar
-      - /var/lib/openhab2/log
       - /var/lib/openhab2/persistence
       - /var/lib/openhab2/uuid
       - /var/lib/openhab2/voicerss
@@ -60,19 +58,12 @@ openhab:
       - pkg: openhab-dependencies
     - watch:
       - file: weather-icons
-      - file: /etc/openhab2/items/*
-      - file: /etc/openhab2/persistence/*
-      - file: /etc/openhab2/services/*
-      - file: /etc/openhab2/rules/*
-      - file: /etc/openhab2/things/*
-      - file: /var/lib/openhab2/etc/org.eclipse.smarthome.basicui.cfg
-
-/etc/openhab2/services/addons.cfg:
-  file.managed:
-    - source: salt://openhab/files/addons.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
+      - file: mii-binding
+      - file: openhab-services
+      - file: openhab-things
+      - file: openhab-items
+      - file: openhab-rules
+      - file: /etc/openhab2/*
 
 weather-icons:
   file.managed:
@@ -80,72 +71,19 @@ weather-icons:
     - source: https://github.com/ghys/org.openhab.ui.iconset.climacons/releases/download/2.2.0.201707061209/org.openhab.ui.iconset.climacons-2.2.0-SNAPSHOT.jar
     - source_hash: sha256=81c8ef48c7cbfb37a9b1409314720490385b94fc360971dbd25d2097877e530f
 
+mii-binding:
+  file.managed:
+    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar
+    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar
+    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar.sha1"
 
 /etc/openhab2/services/jdbc.cfg:
   file.managed:
-    - source: salt://openhab/files/jdbc.cfg.jinja
+    - source: salt://openhab/files/other-configs/jdbc.cfg.jinja
     - user: openhab
     - group: openhab
     - mode: 0644
     - template: jinja
-
-/etc/openhab2/persistence/postgresql.persist:
-  file.managed:
-    - source: salt://openhab/files/postgresql.persist
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/rules/imagihouse.rules:
-  file.managed:
-    - source: salt://openhab/files/imagihouse.rules
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/runtime.cfg:
-  file.managed:
-    - source: salt://openhab/files/runtime.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/services.cfg:
-  file.managed:
-    - source: salt://openhab/files/services.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/plex.cfg:
-  file.managed:
-    - source: salt://openhab/files/plex.cfg.jinja
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-    - template: jinja
-
-/etc/openhab2/items/imagihouse.items:
-  file.managed:
-    - source: salt://openhab/files/imagihouse.items
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/things/imagihouse.things:
-  file.managed:
-    - source: salt://openhab/files/imagihouse.things
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-imagihouse-sitemap:
-  file.replace:
-   - name: /var/lib/openhab2/etc/org.eclipse.smarthome.basicui.cfg
-   - pattern: "defaultSitemap.*"
-   - repl: "defaultSitemap = imagihouse"
-   - append_if_not_found: true
-   - show_changes: true
 
 /etc/nginx/conf.d/nginx-openhab.conf:
   file:
@@ -153,7 +91,7 @@ imagihouse-sitemap:
     - makedirs: true
     - user: root
     - group: root
-    - source: salt://openhab/files/nginx-openhab.conf
+    - source: salt://openhab/files/other-configs/nginx-openhab.conf
 
 openhab-webaccess:
   webutil.user_exists:
@@ -163,47 +101,83 @@ openhab-webaccess:
     - options: d
     - force: true
 
-openhab_iptables-tcp:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - match: state
-    - connstate: NEW
-    - proto: tcp
-    - jump: accept-log
-    - dports: 32400
-    - family: ipv4
-    - match: comment 
-    - comment: openhab-web-tcp
-    - save: true
+openhab-services:
+  file.recurse:
+    - name: /etc/openhab2/services
+    - source: salt://openhab/files/services
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
 
-openhab_iptables-udp:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - match: state
-    - connstate: NEW
-    - proto: udp
-    - jump: accept-log
-    - dports: 32400
-    - family: ipv4
-    - match: comment 
-    - comment: openhab-udp
-    - save: true
+openhab-items:
+  file.recurse:
+    - name: /etc/openhab2/items
+    - source: salt://openhab/files/items
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
 
-openhab_iptables-bonjour:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - match: state
-    - connstate: NEW
-    - proto: udp
-    - jump: accept-log
-    - dports: 5353
-    - family: ipv4
-    - match: comment 
-    - comment: openhab-web-udp
-    - save: true
+openhab-things:
+  file.recurse:
+    - name: /etc/openhab2/things
+    - source: salt://openhab/files/things
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+
+openhab-rules:
+  file.recurse:
+    - name: /etc/openhab2/rules
+    - source: salt://openhab/files/rules
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+
+openhab-persistence:
+  file.recurse:
+    - name: /etc/openhab2/persistence
+    - source: salt://openhab/files/persistence
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+
+plex-username:
+  file.replace:
+   - name: /etc/openhab2/services/plex.cfg
+   - pattern: "^username=.*"
+   - repl: "username={{ salt['pillar.get']('openhab:plex_username') }}"
+   - append_if_not_found: true
+   - show_changes: true
+
+plex-token:
+  file.replace:
+   - name: /etc/openhab2/services/plex.cfg
+   - pattern: "^token=.*"
+   - repl: "token={{ salt['pillar.get']('openhab:plex_token') }}"
+   - append_if_not_found: true
+   - show_changes: true
+
+persistience-logging:
+  file.append:
+   - name: /var/lib/openhab2/etc/org.ops4j.pax.logging.cfg
+   - text: | 
+       # added by Saltstack
+       log4j2.logger.org_openhab_persistence_jdbc.level = trace
+       log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
+
+# Network presence
+iputils-arping:
+  pkg.installed
+
+/usr/sbin/arping:
+  file.managed:
+    - mode: 4755
+    - replace: False
 
 openhab2-firewall-ipv4:
   iptables.append:
@@ -213,9 +187,11 @@ openhab2-firewall-ipv4:
     - match: 
       - state
       - comment
-    - comment: "OpenHAB"
+    - comment: "OpenHAB web"
     - connstate: NEW
     - dport: 8080
     - source: '0.0.0.0/0'
     - proto: tcp
     - save: true
+
+
