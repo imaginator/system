@@ -4,10 +4,17 @@ no-ntp:
 
 chrony:
   pkg.installed:
-    - name: chrony  
+    - names: 
+      - chrony
+      - ntpdate  
   service.running:
     - enable: True
     - name: chrony
     - require:
       - pkg: chrony
+
+timezone_setting:
+  timezone.system:
+    - name: Etc/UTC
+    - utc: True
 
