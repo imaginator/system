@@ -1,6 +1,8 @@
 prometheus-node-exporter:
   pkg.installed:
-    - name: prometheus-node-exporter
+    - names:
+      - prometheus-node-exporter
+      - lm-sensors
   service.running:
     - name: prometheus-node-exporter
     - watch:
@@ -17,12 +19,13 @@ firewall-prometheus-node-exporter:
   iptables.append:
     - table: filter
     - chain: INPUT
-    - jump: accept-log
-    - match: state
+    - jump: ACCEPT
+    - match:
+        - state
+        - comment
+    - comment: "prometheus-node-exporter"
     - connstate: NEW
     - dport: 9100
     - proto: tcp
     - save: True
-    - match: comment
-    - comment: prometheus-node-exporter
-    - save: true
+
