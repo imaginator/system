@@ -1,0 +1,14 @@
+# managed by saltstack
+[Unit]
+Description=AM2302 Sensor Daemon  
+After=network.target
+
+[Service]
+ExecStart=/home/openhab-sensors/am2302.py  
+#StandardOutput=null
+#StandardError=null
+Restart=always  
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target  

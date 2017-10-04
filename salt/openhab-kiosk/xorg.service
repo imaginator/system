@@ -1,0 +1,11 @@
+[Unit]
+Description=Launch Xorg server
+After=network.target sound.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/X :0 vt1 -nocursor -s 0 -dpms
+ 
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+xset dpms 0 0 0    # Becase the DPMS commands don't seem to work reliably
+xset -dpms         # This *should* turn off the dpms power management stuff
+xset s off         # This turns off the screen saver
+
+# devices run utc, this should display local time
+export TZ='Europe/Berlin'
+
+# start 'er up
+/usr/bin/chromium-browser \
+    --kiosk \
+    --incognito \
+    --disable-java \
+    --disable-restore-session-state \
+    --disable-sync \
+    --dns-prefetch-disable \
+    --disable-bundled-ppapi-flash \
+    --disable-sync-preferences \
+    --disable-infobars \
+    --disable-translate \
+    --noerrdialogs \
+    --start-fullscreen \
+    "https://bunker.imaginator.com/grafana/dashboard-solo/db/wifi?refresh=30s&orgId=2&panelId=3&from=now-9h&to=now"
+    # "http://10.7.11.1:8080/habpanel/index.html#/view/lights"

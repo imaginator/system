@@ -1,0 +1,17 @@
+[Unit]
+Description=Openhab Kiosk
+Wants=network-online.target
+After = systemd-user-sessions.service network.target sound.target network-online.target
+Requires=xorg.service network-online.target
+
+[Service]
+User=openhab-kiosk
+Group=openhab-kiosk
+Type=simple
+Environment="DISPLAY=:0"
+ExecStart=/home/openhab-kiosk/startup
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

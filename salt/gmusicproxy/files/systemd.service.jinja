@@ -1,0 +1,14 @@
+# Managed by saltstack
+
+[Install]
+WantedBy=default.target
+
+[Unit]
+Description=Google Music proxy/frontend for streaming
+After=network.target
+
+[Service]
+Type=simple
+User={{ pillar.gmusicproxy.user }}
+ExecStart={{ pillar.gmusicproxy.virtualenv_dir }}/bin/GMusicProxy --daemon --extended-m3u --config {{ pillar.gmusicproxy.virtualenv_dir }}/gmusicproxy.config --debug --log /var/log/gmusicproxy.log
+KillMode=process

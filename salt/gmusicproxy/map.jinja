@@ -1,0 +1,22 @@
+{% set pillar_get = salt['pillar.get'] %}
+{% set user = pillar_get('gmusicproxy:user') %}
+{% set gmusicproxy = {
+    'user': user,
+    'group': pillar_get('gmusicproxy:group', user),
+    'user_config_dir': salt['grains.filter_by']({
+        'MacOS': '/Users/{0}/Library/Application Support'.format(user),
+        'default': '/home/{0}/.config'.format(user),
+    }),
+    'frontend_enabled': pillar_get('gmusicproxy:frontend:enabled'),
+    'use_service': pillar_get('gmusicproxy:service:enabled'),
+    'use_systemd': pillar_get('gmusicproxy:service:use_systemd'),
+    'use_sysvinit': pillar_get('gmusicproxy:service:use_sysvinit'),
+    'log_file': pillar_get('gmusicproxy:service:log_file'),
+    'pid_file': pillar_get('gmusicproxy:service:pid_file'),
+    'service_config_dir': pillar_get('gmusicproxy:service:config_dir'),
+    'service_host': pillar_get('gmusicproxy:service:host'),
+    'service_port': pillar_get('gmusicproxy:service:port'),
+    'install_dir': pillar_get('gmusicproxy:install_dir'),
+    'use_wheels': pillar_get('gmusicproxy:use_wheels'),
+    'virtualenv_dir': pillar_get('gmusicproxy:virtualenv_dir'),
+} %}
