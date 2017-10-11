@@ -7,6 +7,7 @@ openhab-repo:
 
 openhab-dependencies:
   pkg.installed:
+    - cache_valid_time: 30000
     - pkgs:
       - openjdk-8-jre-headless
       - postgresql
@@ -49,8 +50,10 @@ openhab-remove-cruft:
 
 openhab:
   pkg.installed:
-    - name: openhab2
-    - name: openhab2-addons
+    - cache_valid_time: 30000
+    - pkgs: 
+      - openhab2
+      - openhab2-addons
   service.running:
     - name: openhab2
     - enable: True
@@ -178,6 +181,8 @@ iputils-arping:
   file.managed:
     - mode: 4755
     - replace: False
+    - depends:
+      - pkg: iputils-arping
 
 openhab2-firewall-ipv4:
   iptables.append:
