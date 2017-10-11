@@ -1,8 +1,9 @@
 [Unit]
-Description=Openhab Kiosk
+Description=Openhab Kiosk (starts chomeless Chrome)
 Wants=network-online.target
-After = systemd-user-sessions.service network.target sound.target network-online.target
-Requires=xorg.service network-online.target
+After=network-online.target
+After=sound.target
+Requires=xorg.service
 
 [Service]
 User=openhab-kiosk
