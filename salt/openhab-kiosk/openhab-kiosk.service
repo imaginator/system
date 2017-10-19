@@ -3,6 +3,7 @@ Description=Openhab Kiosk (starts chomeless Chrome)
 Wants=network-online.target
 After=network-online.target
 After=sound.target
+After=dhcpcd.service
 Requires=xorg.service
 
 [Service]
