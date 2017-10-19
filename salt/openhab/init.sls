@@ -91,7 +91,6 @@ mii-binding:
 /etc/nginx/conf.d/nginx-openhab.conf:
   file:
     - managed
-    - makedirs: true
     - user: root
     - group: root
     - source: salt://openhab/files/other-configs/nginx-openhab.conf
@@ -184,19 +183,4 @@ iputils-arping:
     - depends:
       - pkg: iputils-arping
 
-openhab2-firewall-ipv4:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - jump: accept-log
-    - match: 
-      - state
-      - comment
-    - comment: "OpenHAB web"
-    - connstate: NEW
-    - dport: 8080
-    - source: '0.0.0.0/0'
-    - proto: tcp
-    - save: true
-
-
+# no firewall since we reverse proxy
