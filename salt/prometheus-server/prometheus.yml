@@ -28,20 +28,15 @@ scrape_configs:
     scrape_interval: 10s
     static_configs:
     - targets:
-      - switch01.imagilan
+      - 10.7.11.2
     metrics_path: /snmp
     params:
       module: [edgeswitch]
     relabel_configs:
       - source_labels: [__address__]
-        regex: (.*?)(:80)?
         target_label: __param_target
-        replacement: ${1}
-      - source_labels: [__param_address]
-        regex: (.*)
+      - source_labels: [__param_target]
         target_label: instance
-        replacement: ${1}
-      - source_labels: []
-        regex: .*
-        target_label: __address__
-        replacement: 127.0.0.1:9116  # SNMP exporter.
+      - target_label: __address__
+        replacement: 127.0.0.1:9116 
+
