@@ -34,21 +34,29 @@ postgres-db-openhab:
     - require:
         - postgres_user: openhab
 
+openhab-remove-cache-tmp:
+  service.dead:
+    - name: openhab2
+  file.directory:
+    - names: 
+      - /var/lib/openhab2/tmp/
+      - /var/lib/openhab2/cache/
+      - /var/lib/openhab2/config/
+      - /var/lib/openhab2/jsondb/
+      - /var/lib/openhab2/kar/
+      - /var/lib/openhab2/persistence/
+      - /var/lib/openhab2/voicerss/
+    - clean: True
+
 openhab-remove-cruft:
   service.dead:
     - name: openhab2
   file.absent:
     - names: 
-      - /var/lib/openhab2/cache
-      - /var/lib/openhab2/config
-      - /var/lib/openhab2/jsondb
-      - /var/lib/openhab2/kar
-      - /var/lib/openhab2/persistence
       - /var/lib/openhab2/uuid
-      - /var/lib/openhab2/voicerss
       - /var/lib/openhab2/.karaf
 
-openhab:
+install-openhab:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs: 
@@ -60,19 +68,12 @@ openhab:
     - require:
       - pkg: openhab-dependencies
     - watch:
-      - file: weather-icons
       - file: mii-binding
       - file: openhab-services
       - file: openhab-things
       - file: openhab-items
       - file: openhab-rules
       - file: /etc/openhab2/*
-
-weather-icons:
-  file.managed:
-    - name: /usr/share/openhab2/addons/org.openhab.ui.iconset.climacons.jar
-    - source: https://github.com/ghys/org.openhab.ui.iconset.climacons/releases/download/2.2.0.201707061209/org.openhab.ui.iconset.climacons-2.2.0-SNAPSHOT.jar
-    - source_hash: sha256=81c8ef48c7cbfb37a9b1409314720490385b94fc360971dbd25d2097877e530f
 
 mii-binding:
   file.managed:
@@ -169,7 +170,7 @@ persistience-logging:
    - name: /var/lib/openhab2/etc/org.ops4j.pax.logging.cfg
    - text: | 
        # added by Saltstack
-       log4j2.logger.org_openhab_persistence_jdbc.level = trace
+       log4j2.logger.org_openhab_persistence_jdbc.level = info
        log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
 
 # Network presence

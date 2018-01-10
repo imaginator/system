@@ -22,4 +22,5 @@ export TZ='Europe/Berlin'
     --noerrdialogs \
     --start-fullscreen \
     "https://bunker.imaginator.com/grafana/dashboard-solo/db/wifi?refresh=30s&orgId=2&panelId=3&from=now-9h&to=now"
+    #"https://bunker.imaginator.com/habpanel/index.html#/"
     # "http://10.7.11.1:8080/habpanel/index.html#/view/lights"
