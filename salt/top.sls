@@ -2,6 +2,7 @@ base:
   '*':
     - base-utils
     - time
+    - cron
     - groups
     - users
     - prometheus-node-exporter
@@ -15,6 +16,7 @@ base:
     - gmusicproxy
     - mosquitto
     - openhab
+    - saltstack-server
   pi02:
     - openhab-kiosk
     - openhab-sensors
