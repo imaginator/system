@@ -1,12 +1,16 @@
 nginx:
-  pkg.installed:
-    - name: nginx-full
   service:
     - running
     - watch:
-      - pkg: nginx-full
       - file: /etc/nginx/nginx.conf
       - file: /etc/nginx/sites-enabled/*
+    - require:
+      - pkg: nginx_pkgs
+
+nginx_pkgs:
+  pkg.installed:
+    - pkgs:
+      - nginx-full
 
 /etc/nginx/nginx.conf:
   file.managed:
