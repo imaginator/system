@@ -20,7 +20,6 @@ plex-server:
     - group: root
     - source: salt://plex/nginx-plex.conf
     - require:
-      - pkg: nginx-full
       - pkg: plex-server
 
 plex_iptables-tcp:
