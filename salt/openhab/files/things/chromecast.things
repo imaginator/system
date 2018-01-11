@@ -13,6 +13,6 @@
 chromecast:audio:bedroom      "Chromecast in Bedroom"                              [ ipAddress="cc-bedroom.imagilan"                  ]
 chromecast:audio:lounge       "Chromecast in Lounge"                               [ ipAddress="cc-lounge.imagilan"                   ]
 chromecast:audio:imagilisten  "ImagiListen"                                        [ ipAddress="imagilisten.imagilan"                 ]
-chromecast:audiogroup:c25f1e9c-65fa-4db6-b12e-b5a262ccefe9 "Audiogroup all"        [     ]    
+chromecast:audiogroup:All     "Audiogroup All"                                     [ ipAddress="imagilisten.imagilan", port=42576     ]  
 
 // vim: syntax=Xtend
