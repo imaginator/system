@@ -25,7 +25,7 @@ postgres-user-openhab:
 postgres-db-openhab:
   postgres_database.present:
     - name: openhab
-    - user: openhab
+    - user: postgres
     - encoding: UTF8
     - lc_ctype: en_US.UTF8
     - lc_collate: en_US.UTF8
@@ -34,46 +34,35 @@ postgres-db-openhab:
     - require:
         - postgres_user: openhab
 
-openhab-remove-cache-tmp:
-  service.dead:
-    - name: openhab2
-  file.directory:
-    - names: 
-      - /var/lib/openhab2/tmp/
-      - /var/lib/openhab2/cache/
-      - /var/lib/openhab2/config/
-      - /var/lib/openhab2/jsondb/
-      - /var/lib/openhab2/kar/
-      - /var/lib/openhab2/persistence/
-      - /var/lib/openhab2/voicerss/
-    - clean: True
-
-openhab-remove-cruft:
-  service.dead:
-    - name: openhab2
-  file.absent:
-    - names: 
-      - /var/lib/openhab2/uuid
-      - /var/lib/openhab2/.karaf
-
 install-openhab:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs: 
       - openhab2
       - openhab2-addons
-  service.running:
-    - name: openhab2
-    - enable: True
-    - require:
-      - pkg: openhab-dependencies
-    - watch:
-      - file: mii-binding
-      - file: openhab-services
-      - file: openhab-things
-      - file: openhab-items
-      - file: openhab-rules
-      - file: /etc/openhab2/*
+
+#openhab-remove-cache-tmp:
+#  service.dead:
+#    - name: openhab2
+#  file.directory:
+#    - names: 
+#      - /var/lib/openhab2/cache/
+#      - /var/lib/openhab2/config/
+#      - /var/lib/openhab2/jsondb/
+#      - /var/lib/openhab2/kar/
+#      - /var/lib/openhab2/persistence/
+#      - /var/lib/openhab2/voicerss/
+#    - clean: True
+#    - require:
+#      - pkg: install-openhab
+
+#openhab-remove-cruft:
+#  service.dead:
+#    - name: openhab2
+#  file.absent:
+#    - names: 
+#      - /var/lib/openhab2/uuid
+#      - /var/lib/openhab2/.karaf
 
 mii-binding:
   file.managed:
@@ -81,15 +70,7 @@ mii-binding:
     - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar
     - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar.sha1"
 
-/etc/openhab2/services/jdbc.cfg:
-  file.managed:
-    - source: salt://openhab/files/other-configs/jdbc.cfg.jinja
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-    - template: jinja
-
-/etc/nginx/conf.d/nginx-openhab.conf:
+/etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
     - managed
     - user: root
@@ -101,31 +82,20 @@ openhab-webaccess:
     - name: simon
     - password: {{ salt['pillar.get']('openhab:htaccess_password') }}
     - htpasswd_file: /etc/nginx/htpasswd
-    - options: d
-    - force: true
+    - options: s
 
-openhab-services:
-  file.recurse:
-    - name: /etc/openhab2/services
-    - source: salt://openhab/files/services
-    - include_empty: True
+/etc/openhab2/things/all.things:
+  file.managed:
+    - source: salt://openhab/files/things/all.things
     - user: openhab
     - group: openhab
-    - file_mode: 0644
+    - mode: 0644
+    - template: jinja
 
 openhab-items:
   file.recurse:
     - name: /etc/openhab2/items
     - source: salt://openhab/files/items
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-
-openhab-things:
-  file.recurse:
-    - name: /etc/openhab2/things
-    - source: salt://openhab/files/things
     - include_empty: True
     - user: openhab
     - group: openhab
@@ -149,21 +119,56 @@ openhab-persistence:
     - group: openhab
     - file_mode: 0644
 
-plex-username:
-  file.replace:
-   - name: /etc/openhab2/services/plex.cfg
-   - pattern: "^username=.*"
-   - repl: "username={{ salt['pillar.get']('openhab:plex_username') }}"
-   - append_if_not_found: true
-   - show_changes: true
+/etc/openhab2/services/addons.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/addons.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
 
-plex-token:
-  file.replace:
-   - name: /etc/openhab2/services/plex.cfg
-   - pattern: "^token=.*"
-   - repl: "token={{ salt['pillar.get']('openhab:plex_token') }}"
-   - append_if_not_found: true
-   - show_changes: true
+/etc/openhab2/services/habpanel.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/habpanel.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/network.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/network.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/runtime.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/runtime.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/chromecast.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/chromecast.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+
+/etc/openhab2/services/plex.cfg:
+  file.managed:
+    - source: salt://openhab/files/services/plex.cfg
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+    - template: jinja
+
+/etc/openhab2/services/jdbc.cfg:
+  file.managed:
+    - source: salt://openhab/files/other-configs/jdbc.cfg.jinja
+    - user: openhab
+    - group: openhab
+    - mode: 0644
+    - template: jinja
 
 persistience-logging:
   file.append:
@@ -184,4 +189,17 @@ iputils-arping:
     - depends:
       - pkg: iputils-arping
 
-# no firewall since we reverse proxy
+openhab2:
+  service.running:
+    - enable: True
+    - require:
+      - pkg: openhab-dependencies
+    - watch:
+      - file: mii-binding
+      - file: /etc/openhab2/things/all.things
+      - file: openhab-items
+      - file: openhab-rules
+      - file: /etc/openhab2/*
+
+
+# vim:ft=yaml:

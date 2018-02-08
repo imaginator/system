@@ -1,26 +1,67 @@
 // Managed by Saltstack
 
-// Example:
+// https://docs.google.com/spreadsheets/d/13jQ03HSxtMSAnBGXQqs0U5oDECxabIUBo1ip-00OWYw/edit#gid=0
 
-// Number LivingRoom_Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+String chromecast_bedroom_albumArtist { channel='chromecast:audio:cc-bedroom:albumArtist' }
+String chromecast_lounge_albumArtist { channel='chromecast:audio:cc-lounge:albumArtist' }
+String chromecast_bedroom_albumName { channel='chromecast:audio:cc-bedroom:albumName' }
+String chromecast_lounge_albumName { channel='chromecast:audio:cc-lounge:albumName' }
+String chromecast_bedroom_appId { channel='chromecast:audio:cc-bedroom:appId' }
+String chromecast_lounge_appId { channel='chromecast:audio:cc-lounge:appId' }
+String chromecast_bedroom_appName { channel='chromecast:audio:cc-bedroom:appName' }
+String chromecast_lounge_appName { channel='chromecast:audio:cc-lounge:appName' }
+String chromecast_bedroom_artist { channel='chromecast:audio:cc-bedroom:artist' }
+String chromecast_lounge_artist { channel='chromecast:audio:cc-lounge:artist' }
+DateTime chromecast_bedroom_broadcastDate { channel='chromecast:audio:cc-bedroom:broadcastDate' }
+DateTime chromecast_lounge_broadcastDate { channel='chromecast:audio:cc-lounge:broadcastDate' }
+String chromecast_bedroom_composer { channel='chromecast:audio:cc-bedroom:composer' }
+String chromecast_lounge_composer { channel='chromecast:audio:cc-lounge:composer' }
+Player chromecast_bedroom_control { channel='chromecast:audio:cc-bedroom:control' }
+Player chromecast_lounge_control { channel='chromecast:audio:cc-lounge:control' }
+DateTime chromecast_bedroom_creationDate { channel='chromecast:audio:cc-bedroom:creationDate' }
+DateTime chromecast_lounge_creationDate { channel='chromecast:audio:cc-lounge:creationDate' }
+Number chromecast_bedroom_currentTime { channel='chromecast:audio:cc-bedroom:currentTime' }
+Number chromecast_lounge_currentTime { channel='chromecast:audio:cc-lounge:currentTime' }
+Number chromecast_bedroom_discNumber { channel='chromecast:audio:cc-bedroom:discNumber' }
+Number chromecast_lounge_discNumber { channel='chromecast:audio:cc-lounge:discNumber' }
+Number chromecast_bedroom_duration { channel='chromecast:audio:cc-bedroom:duration' }
+Number chromecast_lounge_duration { channel='chromecast:audio:cc-lounge:duration' }
+Number chromecast_bedroom_episodeNumber { channel='chromecast:audio:cc-bedroom:episodeNumber' }
+Number chromecast_lounge_episodeNumber { channel='chromecast:audio:cc-lounge:episodeNumber' }
+Switch chromecast_bedroom_idling { channel='chromecast:audio:cc-bedroom:idling' }
+Switch chromecast_lounge_idling { channel='chromecast:audio:cc-lounge:idling' }
+Image chromecast_bedroom_image { channel='chromecast:audio:cc-bedroom:image' }
+Image chromecast_lounge_image { channel='chromecast:audio:cc-lounge:image' }
+String chromecast_bedroom_imageSrc { channel='chromecast:audio:cc-bedroom:imageSrc' }
+String chromecast_lounge_imageSrc { channel='chromecast:audio:cc-lounge:imageSrc' }
+Point chromecast_bedroom_location { channel='chromecast:audio:cc-bedroom:location' }
+Point chromecast_lounge_location { channel='chromecast:audio:cc-lounge:location' }
+String chromecast_bedroom_locationName { channel='chromecast:audio:cc-bedroom:locationName' }
+String chromecast_lounge_locationName { channel='chromecast:audio:cc-lounge:locationName' }
+String chromecast_bedroom_metadataType { channel='chromecast:audio:cc-bedroom:metadataType' }
+String chromecast_lounge_metadataType { channel='chromecast:audio:cc-lounge:metadataType' }
+Switch chromecast_bedroom_mute { channel='chromecast:audio:cc-bedroom:mute' }
+Switch chromecast_lounge_mute { channel='chromecast:audio:cc-lounge:mute' }
+String chromecast_bedroom_playuri { channel='chromecast:audio:cc-bedroom:playuri' }
+String chromecast_lounge_playuri { channel='chromecast:audio:cc-lounge:playuri' }
+DateTime chromecast_bedroom_releaseDate { channel='chromecast:audio:cc-bedroom:releaseDate' }
+DateTime chromecast_lounge_releaseDate { channel='chromecast:audio:cc-lounge:releaseDate' }
+Number chromecast_bedroom_seasonNumber { channel='chromecast:audio:cc-bedroom:seasonNumber' }
+Number chromecast_lounge_seasonNumber { channel='chromecast:audio:cc-lounge:seasonNumber' }
+String chromecast_bedroom_seriesTitle { channel='chromecast:audio:cc-bedroom:seriesTitle' }
+String chromecast_lounge_seriesTitle { channel='chromecast:audio:cc-lounge:seriesTitle' }
+String chromecast_bedroom_statustext { channel='chromecast:audio:cc-bedroom:statustext' }
+String chromecast_lounge_statustext { channel='chromecast:audio:cc-lounge:statustext' }
+String chromecast_bedroom_studio { channel='chromecast:audio:cc-bedroom:studio' }
+String chromecast_lounge_studio { channel='chromecast:audio:cc-lounge:studio' }
+String chromecast_bedroom_subtitle { channel='chromecast:audio:cc-bedroom:subtitle' }
+String chromecast_lounge_subtitle { channel='chromecast:audio:cc-lounge:subtitle' }
+String chromecast_bedroom_title { channel='chromecast:audio:cc-bedroom:title' }
+String chromecast_lounge_title { channel='chromecast:audio:cc-lounge:title' }
+Number chromecast_bedroom_trackNumber { channel='chromecast:audio:cc-bedroom:trackNumber' }
+Number chromecast_lounge_trackNumber { channel='chromecast:audio:cc-lounge:trackNumber' }
+Dimmer chromecast_bedroom_volume { channel='chromecast:audio:cc-bedroom:volume' }
+Dimmer chromecast_lounge_volume { channel='chromecast:audio:cc-lounge:volume' }
 
-// The example above defines an item:
-// 
-// of type Number
-// with name LivingRoom_Temperature
-// formatting its output in format %.1f °C (See Formatting section for syntax explanation)
-// displaying icon temperature
-// belonging to groups gTemperature and gLivingRoom
-// tagged as a thermostat (“TargetTemperature”) for usage with I/O addons like Hue Emulation
-// bound to the openHAB binding knx with write group address 1/0/15 and listening group address 0/0/15
-
-
-//bedroom
-Dimmer Volume { channel="chromecast:audio:bedroom:volume" }
-Player Music  { channel="chromecast:audio:bedroom:control" }
-
-//lounge
-Dimmer Volume { channel="chromecast:audio:lounge:volume" }
-Player Music  { channel="chromecast:audio:lounge:control" }
 
 // vim: syntax=Xtend
