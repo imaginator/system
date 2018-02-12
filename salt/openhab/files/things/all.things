@@ -1,0 +1,24 @@
+// Managed by Saltstack
+
+airquality:aqi:berlin     "AirQuality in Berlin" @ "Outside"       [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
+
+astro:sun:berlin          "Sunrise/set times in Berlin" @ "Outside" [ geolocation="52.5200066,13.4049540", interval=60 ]
+
+chromecast:audio:cc-lounge          @ "Lounge"          [ ipAddress="10.7.11.19", label="Lounge"               ]
+chromecast:audio:cc-bedroom          @ "Bedroom"        [ ipAddress="10.7.11.34", label="Bedroom"            ]
+chromecast:audiogroup:all            @ "Home"           [ ipAddress="10.7.11.19", port="42576", label="House"   ]  
+
+Bridge homematic:bridge:ccu                             [ gatewayAddress="10.7.11.24"]
+
+Bridge hue:bridge:main-bridge                           [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
+    0210 Lounge  [ lightId="Coloured Light" ]
+    0010 Bedroom [ lightId="Osram Switch"   ]
+}
+
+network:pingdevice:simon-phone                          [ hostname="simon-nexus5x.imagilan", timeout=5000, refreshInterval=60000 ]
+
+miio:vacuum:imagisuck "imagisuck" @ "Home"              [ host="10.7.11.33", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
+
+// yahooweather:weather:berlin "Weather in Berlin" @ "Outside"         [ location="638242" ]
+
+// vim: syntax=Xtend
