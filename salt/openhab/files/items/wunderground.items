@@ -1,0 +1,46 @@
+// Managed by Saltstack
+
+String Conditions "Conditions [%s]" {channel="weatherunderground:weather:TXL:current#conditions"}
+Image Icon "Icon" {channel="weatherunderground:weather:TXL:current#icon"}
+DateTime ObservationTime "Observation time [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:TXL:current#observationTime"}
+String ObservationLocation "Location [%s]" {channel="weatherunderground:weather:TXL:current#location"}
+String Station "Station [%s]" {channel="weatherunderground:weather:TXL:current#stationId"}
+
+Number Temperature "Current temperature [%.1f °C]" <temperature> {channel="weatherunderground:weather:TXL:current#temperature"}
+Number FeelTemp "Feeling temperature [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#feelingTemperature"}
+
+Number Humidity "Humidity [%d %%]" <humidity> {channel="weatherunderground:weather:TXL:current#relativeHumidity"}
+Number Pressure "Pressure [%.0f hPa]" {channel="weatherunderground:weather:TXL:current#pressure"}
+
+Number RainD "Rain [%.1f mm]" <rain> {channel="weatherunderground:weather:TXL:current#precipitationDay"}
+Number RainH "Rain [%.1f mm/h]" <rain> {channel="weatherunderground:weather:TXL:current#precipitationHour"}
+
+String WindDirection "Wind direction [%s]" <wind> {channel="weatherunderground:weather:TXL:current#windDirection"}
+Number WindDirection2 "Wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:current#windDirectionDegrees"}
+Number WindSpeed "Wind speed [%.1f km/h]" <wind> {channel="weatherunderground:weather:TXL:current#windSpeed"}
+Number WindGust "Wind gust [%.1f km/h]" <wind> {channel="weatherunderground:weather:TXL:current#windGust"}
+
+Number DewPoint "Dew Point [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#dewPoint"}
+Number HeatIndex "Heat Index [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#heatIndex"}
+Number WindChill "Wind Chill [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#windChill"}
+Number Visibility "Visibility [%.1f km]" {channel="weatherunderground:weather:TXL:current#visibility"}
+Number SolarRadiation "Solar Radiation [%.2f] W/m2"  {channel="weatherunderground:weather:TXL:current#solarRadiation"}
+Number UV "UV Index [%.1f]" {channel="weatherunderground:weather:TXL:current#UVIndex"}
+
+DateTime ForecastTime "Forecast time [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:TXL:forecastToday#forecastTime"}
+String ForecastCondition "Forecast conditions [%s]"  {channel="weatherunderground:weather:TXL:forecastToday#conditions"}
+Image ForecastIcon "Forecast icon"  {channel="weatherunderground:weather:TXL:forecastToday#icon"}
+Number ForecastTempMin "Forecast min temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:forecastToday#minTemperature"}
+Number ForecastTempMax "Forecast max temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:forecastToday#maxTemperature"}
+Number ForecastHumidity "Forecast Humidity [%d %%]" <humidity>  {channel="weatherunderground:weather:TXL:forecastToday#relativeHumidity"}
+Number ForecastProbaPrecip "Proba precip [%d %%]" <rain>  {channel="weatherunderground:weather:TXL:forecastToday#probaPrecipitation"}
+Number ForecastRain "Rain [%.1f mm]" <rain> {channel="weatherunderground:weather:TXL:forecastToday#precipitationDay"}
+Number ForecastSnow "Snow [%.2f cm]" <rain> {channel="weatherunderground:weather:TXL:forecastToday#snow"}
+String ForecastMaxWindDirection "Max wind direction [%s]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindDirection"}
+Number ForecastMaxWindDirection2 "Max wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindDirectionDegrees"}
+Number ForecastMaxWindSpeed "Max wind speed [%.1f km/h]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindSpeed"}
+String ForecastAvgWindDirection "Avg wind direction [%s]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindDirection"}
+Number ForecastAvgWindDirection2 "Avg wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindDirectionDegrees"}
+Number ForecastAvgWindSpeed "Avg wind speed [%.1f km/h]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindSpeed"}
+
+// vim: syntax=Xtend
