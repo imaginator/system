@@ -14,13 +14,29 @@
 // tagged as a thermostat (“TargetTemperature”) for usage with I/O addons like Hue Emulation
 // bound to the openHAB binding knx with write group address 1/0/15 and listening group address 0/0/15
 
-// overhead bulb
-Switch    Light1_Toggle       { channel="hue:0210:1:bulb1:color" }
-Dimmer    Light1_Dimmer       { channel="hue:0210:1:bulb1:color" }
-Color     Light1_Color        { channel="hue:0210:1:bulb1:color" }
-Dimmer    Light1_ColorTemp    { channel="hue:0210:1:bulb1:color_temperature" }
 
-// plug switch
-Switch    Light2_Toggle       { channel="hue:0010:1:bulb1:color" }
+// lounge_overhead 
+Switch    lounge_overhead_Toggle                    { channel="hue:0210:huebridge:lounge_overhead:color" }
+Dimmer    lounge_overhead_Dimmer                    { channel="hue:0210:huebridge:lounge_overhead:color" }
+Color     lounge_overhead_Color                     { channel="hue:0210:huebridge:lounge_overhead:color" }
+Dimmer    lounge_overhead_ColorTemp                 { channel="hue:0210:huebridge:lounge_overhead:color_temperature" }
+String    lounge_overhead_Alert                     { channel="hue:0210:huebridge:lounge_overhead:color" }
+Switch    lounge_overhead_Effect                    { channel="hue:0210:huebridge:lounge_overhead:color" }
+Number    lounge_overhead_Brightness
+Dimmer    lounge_overhead_OnOff       "[%d %%]"     { channel="hue:0210:huebridge:lounge_overhead:color" }
+
+// bedroom_overhead
+Switch    bedroom_overhead_Toggle                    { channel="hue:0210:huebridge:bedroom_overhead:color" }
+Dimmer    bedroom_overhead_Dimmer                    { channel="hue:0210:huebridge:bedroom_overhead:color" }
+Color     bedroom_overhead_Color                     { channel="hue:0210:huebridge:bedroom_overhead:color" }
+Dimmer    bedroom_overhead_ColorTemp                 { channel="hue:0210:huebridge:bedroom_overhead:color_temperature" }
+String    bedroom_overhead_Alert                     { channel="hue:0210:huebridge:bedroom_overhead:color" }
+Switch    bedroom_overhead_Effect                    { channel="hue:0210:huebridge:bedroom_overhead:color" }
+Number    bedroom_overhead_Brightness
+Dimmer    bedroom_overhead_OnOff       "[%d %%]"     { channel="hue:0210:huebridge:bedroom_overhead:color" }
+
+// bedroom_plug
+Switch    bedroom_plug_Toggle                        { channel="hue:0010:huebridge:bedroom_plug:switch" }
+
 
 // vim: syntax=Xtend

@@ -1,24 +1,45 @@
 // Managed by Saltstack
 
-airquality:aqi:berlin     "AirQuality in Berlin" @ "Outside"       [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
+airquality:aqi:berlin           @ "Outside" [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:sun:berlin          "Sunrise/set times in Berlin" @ "Outside" [ geolocation="52.5200066,13.4049540", interval=60 ]
+astro:sun:berlin                @ "Outside" [ geolocation="52.5200066,13.4049540", interval=60 ]
 
-chromecast:audio:cc-lounge          @ "Lounge"          [ ipAddress="10.7.11.19", label="Lounge"               ]
-chromecast:audio:cc-bedroom          @ "Bedroom"        [ ipAddress="10.7.11.34", label="Bedroom"            ]
-chromecast:audiogroup:all            @ "Home"           [ ipAddress="10.7.11.19", port="42576", label="House"   ]  
+chromecast:audio:cc-lounge      @ "Lounge"  [ ipAddress="10.7.11.19", label="Lounge"               ]
+chromecast:audio:cc-bedroom     @ "Bedroom" [ ipAddress="10.7.11.34", label="Bedroom"              ]
+chromecast:audiogroup:all       @ "Home"    [ ipAddress="10.7.11.19", label="House", port="42576"  ]  
 
-Bridge homematic:bridge:ccu                             [ gatewayAddress="10.7.11.24"]
+Bridge homematic:bridge:ccu                 [ gatewayAddress="10.7.11.24"]
 
-Bridge hue:bridge:main-bridge                           [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
-    0210 Lounge  [ lightId="Coloured Light" ]
-    0010 Bedroom [ lightId="Osram Switch"   ]
+Bridge hue:bridge:huebridge                 [ ipAddress="10.7.11.23", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
+    0210 lounge_overhead  [ lightId="1" ]
+    0010 bedroom_plug     [ lightId="2" ]
+    0210 bedroom_overhead [ lightId="3" ]
 }
 
-network:pingdevice:simon-phone                          [ hostname="simon-nexus5x.imagilan", timeout=5000, refreshInterval=60000 ]
+network:pingdevice:simon-phone  @ "Home"     [ hostname="simon-nexus5x.imagilan", timeout=5000, refreshInterval=60000 ]
 
-miio:vacuum:imagisuck "imagisuck" @ "Home"              [ host="10.7.11.33", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
+miio:vacuum:03DA214A            @ "Home"     [ host="10.7.11.33", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-// yahooweather:weather:berlin "Weather in Berlin" @ "Outside"         [ location="638242" ]
+weatherunderground:weather:TXL @ "Berlin" [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
+    Channels:
+        Type temperature : current#temperature [ SourceUnit="C" ]
+        Type windSpeed : current#windSpeed [ SourceUnit="kmh" ]
+        Type windGust : current#windGust [ SourceUnit="kmh" ]
+        Type pressure : current#pressure [ SourceUnit="hPa" ]
+        Type dewPoint : current#dewPoint [ SourceUnit="C" ]
+        Type heatIndex : current#heatIndex [ SourceUnit="C" ]
+        Type windChill : current#windChill [ SourceUnit="C" ]
+        Type feelingTemperature : current#feelingTemperature [ SourceUnit="C" ]
+        Type visibility : current#visibility [ SourceUnit="km" ]
+        Type rainDay : current#precipitationDay [ SourceUnit="mm" ]
+        Type rainHour : current#precipitationHour [ SourceUnit="mm" ]
+        Type minTemperature : forecastToday#minTemperature [ SourceUnit="C" ]
+        Type maxTemperature : forecastToday#maxTemperature [ SourceUnit="C" ]
+        Type rainDay : forecastToday#precipitationDay [ SourceUnit="mm" ]
+        Type snow : forecastToday#snow [ SourceUnit="cm" ]
+        Type maxWindSpeed : forecastToday#maxWindSpeed [ SourceUnit="kmh" ]
+        Type averageWindSpeed : forecastToday#averageWindSpeed [ SourceUnit="kmh" ]
+}
+
 
 // vim: syntax=Xtend
