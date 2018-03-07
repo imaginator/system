@@ -64,6 +64,20 @@ plex_iptables-bonjour:
     - comment: plex-web-udp
     - save: true
 
+{% for mediadir in ['/srv/video','/srv/music','/srv/audiobooks', '/srv/photos'] %}
+{{ mediadir }}-permissions:
+  file.directory:
+    - name: {{mediadir}}
+    - user: simon
+    - group: users
+    - dir_mode: 755
+    - file_mode: 644
+    - recurse:
+      - user
+      - group
+      - mode
+{% endfor %}
+
 /srv/video/TV/Plex Versions:
   file.directory:
     - user: plex
