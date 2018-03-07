@@ -201,5 +201,4 @@ openhab2:
       - file: openhab-rules
       - file: /etc/openhab2/*
 
-
 # vim:ft=yaml:

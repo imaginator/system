@@ -1,12 +1,12 @@
 // Managed by Saltstack
 
-airquality:aqi:berlin           @ "Outside" [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
+airquality:aqi:berlin            @ "Outside" [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:sun:berlin                @ "Outside" [ geolocation="52.5200066,13.4049540", interval=60 ]
+astro:sun:berlin                 @ "Outside" [ geolocation="52.5200066,13.4049540", interval="60" ]
 
-chromecast:audio:cc-lounge      @ "Lounge"  [ ipAddress="10.7.11.19", label="Lounge"               ]
-chromecast:audio:cc-bedroom     @ "Bedroom" [ ipAddress="10.7.11.34", label="Bedroom"              ]
-chromecast:audiogroup:all       @ "Home"    [ ipAddress="10.7.11.19", label="House", port="42576"  ]  
+chromecast:audio:cc-lounge       @ "Lounge"  [ ipAddress="10.7.11.19", label="Lounge"               ]
+chromecast:chromecast:cc-bedroom @ "Bedroom" [ ipAddress="10.7.11.34", label="Bedroom"              ]
+chromecast:audiogroup:all        @ "Home"    [ ipAddress="10.7.11.19", label="House", port="42576"  ]  
 
 Bridge homematic:bridge:ccu                 [ gatewayAddress="10.7.11.24"]
 
@@ -40,6 +40,5 @@ weatherunderground:weather:TXL @ "Berlin" [ apikey="{{ salt['pillar.get']('openh
         Type maxWindSpeed : forecastToday#maxWindSpeed [ SourceUnit="kmh" ]
         Type averageWindSpeed : forecastToday#averageWindSpeed [ SourceUnit="kmh" ]
 }
-
 
 // vim: syntax=Xtend
