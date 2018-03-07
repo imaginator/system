@@ -1,0 +1,12 @@
+[Unit]
+Description=PulseAudio Daemon
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+ 
+[Service]
+Restart=always
+RestartSec=30
+Type=simple
+ExecStart=/usr/bin/pulseaudio -vvvv --log-level=debug --no-cpu-limit --daemonize=no --disallow-exit --realtime --log-target=journal

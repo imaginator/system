@@ -1,0 +1,21 @@
+#!/usr/bin/pulseaudio -nF
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;10.7.11.0/24 auth-anonymous=1
+load-module module-native-protocol-unix socket=/tmp/pulseserver auth-anonymous=1
+load-module module-dbus-protocol
+load-module module-tunnel-source-new server=127.0.0.1 source_name=loopback
+load-module module-null-sink sink_name="bedroomchromecast_chromecast" sink_properties="device.description='bedroom chromecast (Chromecast)'"
+
+# Automatically move streams to the default sink if the sink they are
+# connected to dies, similar for sources
+load-module module-rescue-streams
+
+# Make sure we always have a sink around, even if it is a null sink.
+load-module module-always-sink
+
+set-default-sink bedroomchromecast_chromecast
+
+
+
+
+
+

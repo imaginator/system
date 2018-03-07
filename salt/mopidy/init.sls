@@ -26,6 +26,11 @@ install-mopidy:
       - mopidy
       - mopidy-local-sqlite
 
+pulse-access:
+  group.present:
+    - addusers:
+      - mopidy
+
 /etc/nginx/sites-enabled/music.imaginator.com.conf:
   file:
     - managed

@@ -1,0 +1,15 @@
+[Unit]
+Description=PulseAudio-DLNA Service
+Requires=sound.target dbus.service network.target  pulseaudio.service
+After=sound.target dbus.service network.target pulseaudio.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=pulse
+Type=simple
+PrivateTmp=true
+ExecStart=/usr/bin/pulseaudio-dlna --host 10.7.11.1 --port 7979 --disable-device-stop --disable-ssdp-listener
+
+

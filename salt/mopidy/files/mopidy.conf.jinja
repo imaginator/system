@@ -29,7 +29,7 @@ playlists_dir = /var/lib/mopidy/playlists
 [gmusic]
 username = {{ pillar.gmusicproxy.username }}
 password = {{ pillar.gmusicproxy.password }}
-deviceid = 3d2a64db7e0be958
+deviceid = {{ pillar.gmusicproxy.deviceid }}
 all_access = true
 bitrate = 320
 # Show radio stations in content browser
@@ -46,5 +46,6 @@ country=DE
 locale=en_GB
 
 [audio]
-mixer = software
-output = lamemp3enc ! shout2send mount=mopidy.mp3 ip=10.7.11.1 port=6681 password=hackme
+mixer = none
+output = pulsesink
+#output = lamemp3enc ! shout2send mount=mopidy ip=127.0.0.1 port=8000 password=hackme

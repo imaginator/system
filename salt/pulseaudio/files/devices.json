@@ -1,0 +1,107 @@
+{
+    "uuid:e2cb0050179507b24babcee510d13aed": {
+        "rules": [], 
+        "flavour": "Chromecast", 
+        "name": "bedroom chromecast", 
+        "codecs": [
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "mp3", 
+                "mime_type": "audio/mp3"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "flac", 
+                "mime_type": "audio/flac"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "wav", 
+                "mime_type": "audio/wav"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "ogg", 
+                "mime_type": "audio/ogg"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "aac", 
+                "mime_type": "audio/aac"
+            }
+        ]
+    }, 
+    "uuid:d1cdc9be03ede275a5564903bae9bc2f": {
+        "rules": [], 
+        "flavour": "Chromecast", 
+        "name": "lounge chromecast", 
+        "codecs": [
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "mp3", 
+                "mime_type": "audio/mp3"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "flac", 
+                "mime_type": "audio/flac"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "wav", 
+                "mime_type": "audio/wav"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "ogg", 
+                "mime_type": "audio/ogg"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "aac", 
+                "mime_type": "audio/aac"
+            }
+        ]
+    }, 
+    "uuid:c25f1e9c-65fa-4db6-b12e-b5a262ccefe9": {
+        "rules": [], 
+        "flavour": "Chromecast", 
+        "name": "All", 
+        "codecs": [
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "mp3", 
+                "mime_type": "audio/mp3"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "flac", 
+                "mime_type": "audio/flac"
+            }, 
+            {
+                "rules": [], 
+                "identifier": "wav", 
+                "mime_type": "audio/wav"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "ogg", 
+                "mime_type": "audio/ogg"
+            }, 
+            {
+                "rules": [], 
+                "bit_rate": null, 
+                "identifier": "aac", 
+                "mime_type": "audio/aac"
+            }
+        ]
+    }
+}
