@@ -17,6 +17,7 @@ base:
     - mosquitto
     - openhab
     - saltstack-server
+    - pulseaudio
   pi02:
     - openhab-kiosk
     - openhab-sensors
