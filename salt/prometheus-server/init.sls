@@ -16,7 +16,7 @@ prometheus-server:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 0755
+    - mode: 0644
     - source: salt://prometheus-server/etc_default_prometheus
     - require:
       - pkg: prometheus-server
@@ -39,7 +39,7 @@ extract_snmp_exporter:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 0755
+    - mode: 0644
     - source: salt://prometheus-server/prometheus_snmp_exporter.service
     - require:
       - pkg: prometheus-server
@@ -59,7 +59,7 @@ prometheus_snmp_exporter:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 0755
+    - mode: 0644
     - source: salt://prometheus-server/prometheus.yml
     - require:
       - pkg: prometheus-server
@@ -70,7 +70,7 @@ prometheus_snmp_exporter:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 0755
+    - mode: 0644
     - source: salt://prometheus-server/snmp.yml
     - require:
       - archive: extract_snmp_exporter
