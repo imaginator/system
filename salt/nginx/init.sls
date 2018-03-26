@@ -48,6 +48,13 @@ nginx_pkgs:
 /etc/nginx/sites-enabled/default:
   file.absent
 
+/etc/nginx/sites-enabled/_.conf:
+  file.managed:
+    - source: salt://nginx/_.conf
+    - user: root
+    - group: root
+    - mode: 644
+
 /etc/nginx/sites-enabled/bunker.imaginator.com.conf:
   file.managed:
     - source: salt://nginx/bunker.imaginator.com.conf
