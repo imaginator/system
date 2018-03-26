@@ -1,5 +1,18 @@
 # Set the command-line arguments to pass to the server.
-ARGS='-collectors.enabled=diskstats,filesystem,interrupts,loadavg,meminfo,netstat,stat,tcpstat -log.level=info'
+ARGS='--collector.bcache \ 
+      --collector.conntrack \
+      --collector.cpu \
+      --collector.diskstats \
+      --collector.filesystem \
+      --collector.hwmon  \
+      --collector.interrupts \
+      --collector.loadavg  \
+      --collector.meminfo \
+      --collector.mdadm  \
+      --collector.netstat  \
+      --collector.stat  \
+      --collector.tcpstat \
+      --log.level=info' 
 
 
 # Prometheus-node-exporter supports the following options:
