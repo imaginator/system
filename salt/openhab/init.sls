@@ -15,6 +15,8 @@ openhab-dependencies:
       - mosquitto
       - mosquitto-clients
       - nginx-full
+      - libpulse-jni
+      - libpulse-java
 
 postgres-user-openhab:
   postgres_user.present:
