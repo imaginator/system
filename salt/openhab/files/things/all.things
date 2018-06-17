@@ -4,9 +4,12 @@ airquality:aqi:berlin            @ "Outside" [ apikey="{{ salt['pillar.get']('op
 
 astro:sun:berlin                 @ "Outside" [ geolocation="52.5200066,13.4049540", interval="60" ]
 
-chromecast:audio:cc-lounge       @ "Lounge"  [ ipAddress="10.7.11.19", label="Lounge"               ]
-chromecast:chromecast:cc-bedroom @ "Bedroom" [ ipAddress="10.7.11.34", label="Bedroom"              ]
-chromecast:audiogroup:all        @ "Home"    [ ipAddress="10.7.11.19", label="House", port="42576"  ]  
+chromecast:audio:home-mini-bedroom                          @ "bedroom"  [ ipAddress="home-mini-bedroom.imagilan",       label="bedroom" ]
+chromecast:audio:home-mini-bathroom                         @ "bathroom" [ ipAddress="home-mini-bathroom.imagilan",      label="bathroom" ]
+chromecast:audio:home-mini-kitchen                          @ "kitchen"  [ ipAddress="home-mini-kitchen.imagilan",       label="bedroom" ]
+chromecast:audio:home-mini-lounge                           @ "Lounge"   [ ipAddress="home-mini-lounge.imagilan",        label="lounge" ]
+chromecast:audio:chromecast-audio-lounge                    @ "lounge"   [ ipAddress="chromecast-audio-lounge.imagilan", label="Lounge" ]
+chromecast:audiogroup:c25f1e9c-65fa-4db6-b12e-b5a262ccefe9  @ "All"      [ ipAddress="chromecast-audio-lounge.imagilan", label="House",  port="42576"]  
 
 Bridge homematic:bridge:ccu                 [ gatewayAddress="10.7.11.24"]
 

@@ -9,7 +9,7 @@ openhab-dependencies:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
-      - openjdk-8-jre-headless
+      - default-jre
       - postgresql
       - apache2-utils
       - mosquitto
@@ -68,9 +68,9 @@ install-openhab:
 
 mii-binding:
   file.managed:
-    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar
-    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar
-    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.2.0-SNAPSHOT/org.openhab.binding.miio-2.2.0-SNAPSHOT.jar.sha1"
+    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
+    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
+    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar.sha1"
 
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
