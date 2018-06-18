@@ -1,4 +1,4 @@
-/usr/bin/salt "*" state.highstate -l quiet:
+/usr/bin/salt "*" state.highstate --state-output=mixed:
   cron.present:
     - identifier: salt-nightly-run
     - user: root

@@ -21,12 +21,13 @@ ssh_key_{{name}}:
   {% endif %}
 {% endfor %}
 
-/etc/sudoers.d/simon:
+simon.sudo:
   file.managed:
     - user: root
     - group: root
     - mode: 0440
-    - source: salt://users/simon.sudoers
+    - source: salt://users/files/simon.sudoers
+    - name: /etc/sudoers.d/simon
     - check_cmd: /usr/sbin/visudo -c -f
 
 remove-default-user-accounts: 

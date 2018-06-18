@@ -4,5 +4,6 @@ base:
     - letsencrypt
     - users
     - openhab
+    - smartmontools
     - gmusicproxy
 

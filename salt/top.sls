@@ -8,16 +8,16 @@ base:
     - prometheus-node-exporter
   bunker:
     - network
-    - letsencrypt
     - prometheus-server
     - plex
     - nginx
     - grafana
-    - gmusicproxy
     - mosquitto
     - openhab
     - saltstack-server
     - pulseaudio
-  pi02:
-    - openhab-kiosk
-    - openhab-sensors
+#    - gmusicproxy
+#    - mopidy
+#  pi02:
+#    - openhab-kiosk
+#    - openhab-sensors

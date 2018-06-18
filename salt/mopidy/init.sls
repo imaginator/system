@@ -26,10 +26,16 @@ install-mopidy:
       - mopidy
       - mopidy-local-sqlite
 
-pulse-access:
+mopidy-pulse-access:
   group.present:
     - addusers:
       - mopidy
+
+music.imaginator.com:
+  acme.cert:
+     - email: simon@imaginator.com
+     - webroot: /var/www/letsencrypt
+     - renew: 14
 
 /etc/nginx/sites-enabled/music.imaginator.com.conf:
   file:
