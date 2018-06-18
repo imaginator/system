@@ -1,0 +1,25 @@
+{%- from "smartmontools/map.jinja" import smartmontools with context -%}
+# Defaults for smartmontools initscript (/etc/init.d/smartmontools)
+# This is a POSIX shell fragment
+
+# List of devices you want to explicitly enable S.M.A.R.T. for
+# Not needed (and not recommended) if the device is monitored by smartd
+{%- if smartmontools.default.enable_smart is defined %}
+enable_smart="{{ smartmontools.default.enable_smart }}"
+{%- else %}
+#enable_smart="/dev/hda /dev/hdb"
+{%- endif %}
+
+# uncomment to start smartd on system startup
+{%- if smartmontools.default.start_smartd is defined %}
+start_smartd={{ smartmontools.default.start_smartd }}
+{%- else %}
+#start_smartd=yes
+{%- endif %}
+
+# uncomment to pass additional options to smartd on startup
+{%- if smartmontools.default.smartd_opts is defined %}
+smartd_opts="{{ smartmontools.default.smartd_opts }}"
+{%- else %}
+#smartd_opts="--interval=1800"
+{%- endif %}

@@ -1,0 +1,43 @@
+# managed by saltstack
+
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  scrape_timeout:      9s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+        - bunker.imagilan:9090
+
+  - job_name: 'node'
+    scrape_interval: 30s
+    static_configs:
+    - targets:
+      - imagiswitch.imagilan:9100
+      - repeater01.imagilan:9100
+      - repeater04.imagilan:9100
+      - repeater05.imagilan:9100
+      - repeater06.imagilan:9100
+      - repeater07.imagilan:9100
+      - bunker.imagilan:9100
+      - pi02.imagilan:9100
+
+  - job_name: 'snmp'
+    scrape_interval: 10s
+    static_configs:
+    - targets:
+      - 10.7.11.2
+    metrics_path: /snmp
+    params:
+      module: [edgeswitch]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9116 
+

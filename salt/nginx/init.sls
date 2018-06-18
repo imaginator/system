@@ -9,8 +9,21 @@ nginx:
 
 nginx_pkgs:
   pkg.installed:
+    - cache_valid_time: 30000
     - pkgs:
       - nginx-full
+      - certbot
+
+bunker.imaginator.com:
+  acme.cert:
+    - renew: 14
+    - test_cert: True
+    - owner: root
+    - group: certificates
+    - watch_in:
+      - service: nginx
+    - require_in:
+      - service: nginx
 
 /etc/nginx/nginx.conf:
   file.managed:

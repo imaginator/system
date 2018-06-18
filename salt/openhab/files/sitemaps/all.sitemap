@@ -1,0 +1,14 @@
+sitemap demo label="My home automation" {
+    Frame label="Date" {
+        Text item=Date
+    }
+    Frame label="Demo" {
+        Switch item=Lights icon="light"
+        Text item=LR_Temperature label="Livingroom [%.1f °C]"
+        Group item=Heating
+        Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+            Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
+            Slider item=LR_TV_Volume
+        }
+    }
+}

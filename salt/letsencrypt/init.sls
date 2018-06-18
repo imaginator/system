@@ -1,11 +1,6 @@
-#install certbot
-certbot:
-  pkg.latest:
-{% if grains['osfinger'] == "Debian-8" %}
-    - fromrepo: jessie-backports
-{% endif %}
-    - pkgs:
-      - certbot
+certbot_packages:
+  pkg.installed:
+    - name: certbot
 
 # install cli configuration
 /etc/letsencrypt/cli.ini:
@@ -50,7 +45,6 @@ certbot.timer:
     - require:
       - file: /etc/systemd/system/certbot.service
       - file: /etc/letsencrypt/cli.ini
-
 
 # helper script taken from https://github.com/saltstack-formulas/letsencrypt-formula/blob/master/letsencrypt/domains.sls
 /usr/local/bin/check_letsencrypt_cert.sh:
