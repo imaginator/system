@@ -19,7 +19,7 @@ Bridge hue:bridge:huebridge                 [ ipAddress="10.7.11.23", userName="
     0210 bedroom_overhead [ lightId="3" ]
 }
 
-network:pingdevice:simon-phone  @ "Home"     [ hostname="simon-nexus5x.imagilan", timeout=5000, refreshInterval=60000 ]
+network:pingdevice:simon-phone  @ "Home"     [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
 
 miio:vacuum:03DA214A            @ "Home"     [ host="10.7.11.33", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
