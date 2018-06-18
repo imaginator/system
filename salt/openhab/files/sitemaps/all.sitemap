@@ -1,14 +1,25 @@
-sitemap demo label="My home automation" {
-    Frame label="Date" {
-        Text item=Date
+sitemap our_home label="Our Home" {
+    Frame {
+        Group item=Bedroom1
+        Group item=Bedroom2
+        Group item=Bedroom3
+        Group item=Workroom
+        Group item=Lounge
+        Group item=Dining
+        Group item=Kitchen
+        Group item=Terrace
+        Group item=MainPassage
+        Group item=GuestBathroom
+        Group item=SmallPassage
+        Group item=Passage
+        Group item=MainBathroom
+        Group item=LaundryRoom
+        Group item=FrontDoor
     }
-    Frame label="Demo" {
-        Switch item=Lights icon="light"
-        Text item=LR_Temperature label="Livingroom [%.1f °C]"
-        Group item=Heating
-        Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
-            Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
-            Slider item=LR_TV_Volume
+
+    Frame {
+        Text label="Light" icon="light" {
+            Default item=Bedroom_Light label="Bedroom"
         }
     }
 }

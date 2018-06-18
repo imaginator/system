@@ -17,6 +17,15 @@ openhab-dependencies:
       - nginx-full
       - libpulse-jni
       - libpulse-java
+      - iputils-arping
+
+#special permissions for watching the network
+/usr/sbin/arping:
+  file.managed:
+    - mode: 4755
+    - replace: False
+    - depends:
+      - pkg: iputils-arping
 
 postgres-user-openhab:
   postgres_user.present:
@@ -43,6 +52,34 @@ install-openhab:
       - openhab2
       - openhab2-addons
 
+miio-binding:
+  file.managed:
+    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
+    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
+    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar.sha1"
+
+{% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things'] %}
+openhab-{{directory}}:
+  file.recurse:
+    - name: /etc/openhab2/{{directory}}
+    - source: salt://openhab/files/{{directory}}
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+    - template: jinja
+    - watch_in:
+      - service: openhab2
+{% endfor %}
+
+persistience-logging:
+  file.append:
+   - name: /var/lib/openhab2/etc/org.ops4j.pax.logging.cfg
+   - text: | 
+       # added by Saltstack
+       log4j2.logger.org_openhab_persistence_jdbc.level = info
+       log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
+
 #openhab-remove-cache-tmp:
 #  service.dead:
 #    - name: openhab2
@@ -58,20 +95,6 @@ install-openhab:
 #    - require:
 #      - pkg: install-openhab
 
-#openhab-remove-cruft:
-#  service.dead:
-#    - name: openhab2
-#  file.absent:
-#    - names: 
-#      - /var/lib/openhab2/uuid
-#      - /var/lib/openhab2/.karaf
-
-mii-binding:
-  file.managed:
-    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
-    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
-    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar.sha1"
-
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
     - managed
@@ -86,121 +109,10 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-/etc/openhab2/things/all.things:
-  file.managed:
-    - source: salt://openhab/files/things/all.things
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-    - template: jinja
-
-openhab-items:
-  file.recurse:
-    - name: /etc/openhab2/items
-    - source: salt://openhab/files/items
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-
-openhab-rules:
-  file.recurse:
-    - name: /etc/openhab2/rules
-    - source: salt://openhab/files/rules
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-
-openhab-persistence:
-  file.recurse:
-    - name: /etc/openhab2/persistence
-    - source: salt://openhab/files/persistence
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-
-/etc/openhab2/services/addons.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/addons.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/habpanel.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/habpanel.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/network.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/network.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/runtime.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/runtime.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/chromecast.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/chromecast.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-
-/etc/openhab2/services/plex.cfg:
-  file.managed:
-    - source: salt://openhab/files/services/plex.cfg
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-    - template: jinja
-
-/etc/openhab2/services/jdbc.cfg:
-  file.managed:
-    - source: salt://openhab/files/other-configs/jdbc.cfg.jinja
-    - user: openhab
-    - group: openhab
-    - mode: 0644
-    - template: jinja
-
-persistience-logging:
-  file.append:
-   - name: /var/lib/openhab2/etc/org.ops4j.pax.logging.cfg
-   - text: | 
-       # added by Saltstack
-       log4j2.logger.org_openhab_persistence_jdbc.level = info
-       log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
-
-# Network presence
-iputils-arping:
-  pkg.installed
-
-/usr/sbin/arping:
-  file.managed:
-    - mode: 4755
-    - replace: False
-    - depends:
-      - pkg: iputils-arping
-
 openhab2:
   service.running:
     - enable: True
     - require:
       - pkg: openhab-dependencies
     - watch:
-      - file: mii-binding
-      - file: /etc/openhab2/things/all.things
-      - file: openhab-items
-      - file: openhab-rules
-      - file: /etc/openhab2/*
-
-# vim:ft=yaml:
+      - file: miio-binding
