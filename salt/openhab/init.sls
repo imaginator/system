@@ -51,6 +51,10 @@ install-openhab:
     - pkgs: 
       - openhab2
       - openhab2-addons
+   - depends:
+    - pkg: iputils-arping
+    - pkg: openhab-dependencies
+    - pkgrepo: openhab-repo
 
 miio-binding:
   file.managed:
