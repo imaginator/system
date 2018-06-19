@@ -24,8 +24,8 @@ openhab-dependencies:
   file.managed:
     - mode: 4755
     - replace: False
-    - depends:
-      - pkg: iputils-arping
+    - require:
+      - pkg: openhab-dependencies
 
 postgres-user-openhab:
   postgres_user.present:
@@ -51,10 +51,9 @@ install-openhab:
     - pkgs: 
       - openhab2
       - openhab2-addons
-   - depends:
-    - pkg: iputils-arping
-    - pkg: openhab-dependencies
-    - pkgrepo: openhab-repo
+    - require:
+      - pkg: openhab-dependencies
+      - pkgrepo: openhab-repo
 
 miio-binding:
   file.managed:
