@@ -1,0 +1,11 @@
+openhab:
+  db_password: 'x'
+  htaccess_password: 'x'
+  plex_username: 'x'
+  plex_token: 'x'
+  vacuum_token: 'x'
+  hue_username: 'x'
+  airquality_key: 'x'
+  wunderground_apikey: 'x'
+  nokiahealth_token: 'x'
+  nokiahealth_secret: 'x'
