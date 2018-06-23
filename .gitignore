@@ -9,6 +9,3 @@ pillar/*/init.sls
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-pillar/openhab/init.sls
-pillar/openhab/init.sls

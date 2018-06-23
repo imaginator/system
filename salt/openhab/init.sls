@@ -83,6 +83,36 @@ persistience-logging:
        log4j2.logger.org_openhab_persistence_jdbc.level = info
        log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
 
+#karaf-key-config:
+#  file.managed:
+#    - name: /var/lib/openhab2/etc/keys.properties
+#    - source: salt://openhab/files/other-configs/keys.properties
+#    - user: openhab
+#    - group: openhab
+
+/etc/nginx/sites-enabled/openhab.imaginator.com.conf:
+  file:
+    - managed
+    - user: root
+    - group: root
+    - source: salt://openhab/files/other-configs/nginx-openhab.conf
+
+openhab-cert:
+  acme.cert:
+    - name: openhab.imaginator.com
+    - email: simon@imaginator.com
+    - webroot: /var/www/letsencrypt
+    - renew: 14
+    - owner: root
+    - group: certificates
+
+openhab-webaccess:
+  webutil.user_exists:
+    - name: simon
+    - password: {{ salt['pillar.get']('openhab:htaccess_password') }}
+    - htpasswd_file: /etc/nginx/htpasswd
+    - options: s
+
 #openhab-remove-cache-tmp:
 #  service.dead:
 #    - name: openhab2
@@ -98,19 +128,9 @@ persistience-logging:
 #    - require:
 #      - pkg: install-openhab
 
-/etc/nginx/sites-enabled/openhab.imaginator.com.conf:
-  file:
-    - managed
-    - user: root
-    - group: root
-    - source: salt://openhab/files/other-configs/nginx-openhab.conf
-
-openhab-webaccess:
-  webutil.user_exists:
-    - name: simon
-    - password: {{ salt['pillar.get']('openhab:htaccess_password') }}
-    - htpasswd_file: /etc/nginx/htpasswd
-    - options: s
+initial-settings:
+  cmd.run:
+    - name: /srv/salt_local/salt/openhab/files/other-configs/console-commands.sh
 
 openhab2:
   service.running:
@@ -119,3 +139,4 @@ openhab2:
       - pkg: openhab-dependencies
     - watch:
       - file: miio-binding
+

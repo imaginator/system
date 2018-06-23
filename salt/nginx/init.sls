@@ -14,15 +14,19 @@ nginx_pkgs:
       - nginx-full
       - certbot
 
-bunker.imaginator.com:
+bunker-cert:
   acme.cert:
+    - name: bunker.imaginator.com
+    - email: simon@imaginator.com
     - renew: 14
-    - test_cert: True
+    - webroot: /var/www/letsencrypt
     - owner: root
     - group: certificates
     - watch_in:
       - service: nginx
     - require_in:
+      - service: nginx
+    - onchanges_in:
       - service: nginx
 
 /etc/nginx/nginx.conf:

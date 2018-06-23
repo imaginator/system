@@ -12,5 +12,4 @@ virt-install \
   --disk path=/tmp/win7.qcow2,bus=virtio,size=100,format=qcow2 \
   --os-type=windows \
   --os-variant=win7 \
-  --boot cdrom,hd 
-    
+  --boot cdrom,hd

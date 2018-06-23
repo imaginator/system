@@ -5,4 +5,3 @@ sudo-bunker.imaginator.com:
 ssh-bunker.imaginator.com:
   group.present:
     - system: True
-

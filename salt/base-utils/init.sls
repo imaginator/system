@@ -11,6 +11,3 @@ install-base-utils:
       - htop
       - vim
       - tcpdump
-
-  
-

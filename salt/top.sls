@@ -7,15 +7,14 @@ base:
     - users
     - prometheus-node-exporter
   bunker:
-    - network
-    - prometheus-server
-    - plex
-    - nginx
     - grafana
     - mosquitto
     - openhab
-    - saltstack-server
+    - network
+    - plex
+    - prometheus-server
     - pulseaudio
+    - saltstack-server
 #    - gmusicproxy
 #    - mopidy
 #  pi02:

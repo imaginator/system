@@ -6,3 +6,4 @@ base:
     - openhab
     - smartmontools
     - gmusicproxy
+    
