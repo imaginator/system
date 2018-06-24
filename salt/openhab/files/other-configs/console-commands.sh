@@ -2,6 +2,7 @@
 set -x
 cat << _EOF_
 log:set DEBUG
+smarthome:inbox clear
 smarthome:links clear
 smarthome:items clear
 smarthome:things clear

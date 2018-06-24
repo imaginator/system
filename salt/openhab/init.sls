@@ -18,6 +18,7 @@ openhab-dependencies:
       - libpulse-jni
       - libpulse-java
       - iputils-arping
+      - adb
 
 #special permissions for watching the network
 /usr/sbin/arping:
@@ -83,13 +84,6 @@ persistience-logging:
        log4j2.logger.org_openhab_persistence_jdbc.level = info
        log4j2.logger.org_openhab_persistence_jdbc.name = org.openhab.persistence.jdbc
 
-#karaf-key-config:
-#  file.managed:
-#    - name: /var/lib/openhab2/etc/keys.properties
-#    - source: salt://openhab/files/other-configs/keys.properties
-#    - user: openhab
-#    - group: openhab
-
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
     - managed
@@ -113,25 +107,6 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-#openhab-remove-cache-tmp:
-#  service.dead:
-#    - name: openhab2
-#  file.directory:
-#    - names: 
-#      - /var/lib/openhab2/cache/
-#      - /var/lib/openhab2/config/
-#      - /var/lib/openhab2/jsondb/
-#      - /var/lib/openhab2/kar/
-#      - /var/lib/openhab2/persistence/
-#      - /var/lib/openhab2/voicerss/
-#    - clean: True
-#    - require:
-#      - pkg: install-openhab
-
-initial-settings:
-  cmd.run:
-    - name: /srv/salt_local/salt/openhab/files/other-configs/console-commands.sh
-
 openhab2:
   service.running:
     - enable: True
@@ -140,3 +115,8 @@ openhab2:
     - watch:
       - file: miio-binding
 
+initial-settings:
+  service.running:
+    - name: openhab2
+  cmd.script:
+    - source: salt://openhab/files/other-configs/console-commands.sh
