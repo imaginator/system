@@ -18,8 +18,10 @@ sitemap our_home label="Our Home" {
     }
 
     Frame {
-        Text label="Light" icon="light" {
+        Text label="" icon="light" {
             Default item=Bedroom_Light label="Bedroom"
+            Default item=Music
+            Slider item=Volume icon=soundvolume
         }
     }
 }

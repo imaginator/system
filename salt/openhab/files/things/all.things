@@ -1,21 +1,20 @@
 // Managed by Saltstack
 
-airquality:aqi:berlin                                       @ "all"          [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
+airquality:aqi:berlin                                       @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:sun:berlin                                            @ "all"          [ geolocation="52.5200066,13.4049540", interval="60" ]
+astro:sun:berlin                                            @ "all"           [ geolocation="52.5200066,13.4049540", interval="60" ]
 
-chromecast:audio:home-mini-bedroom                          @ "bedroom1"     [ ipAddress="home-mini-bedroom.imagilan",       label="bedroom1" ]
-chromecast:audio:home-mini-bathroom                         @ "mainbathroom" [ ipAddress="home-mini-bathroom.imagilan",      label="mainbathroom" ]
-chromecast:audio:home-mini-kitchen                          @ "kitchen"      [ ipAddress="home-mini-kitchen.imagilan",       label="bedroom" ]
-chromecast:audio:home-mini-lounge                           @ "lounge"       [ ipAddress="home-mini-lounge.imagilan",        label="lounge" ]
-chromecast:audio:chromecast-audio-lounge                    @ "lounge"       [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
-chromecast:audiogroup:b543d75c-df2c-4390-8759-c252d8dde96d  @ "all"          [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
+chromecast:audio:home-mini-bathroom                         @ "main bathroom" [ ipAddress="home-mini-bathroom.imagilan",      label="main bathroom" ]
+chromecast:audio:home-mini-kitchen                          @ "kitchen"       [ ipAddress="home-mini-kitchen.imagilan",       label="bedroom" ]
+chromecast:audio:home-mini-lounge                           @ "lounge"        [ ipAddress="home-mini-lounge.imagilan",        label="lounge" ]
+chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
+chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
 
-network:pingdevice:simon-phone                              @ "all"          [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
+network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
 
-miio:vacuum:03DA214A                                        @ "all"          [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
+miio:vacuum:03DA214A                                        @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-weatherunderground:weather:TXL                              @ "all"          [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
+weatherunderground:weather:TXL                              @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
     Channels:
         Type temperature : current#temperature [ SourceUnit="C" ]
         Type windSpeed : current#windSpeed [ SourceUnit="kmh" ]
@@ -38,9 +37,9 @@ weatherunderground:weather:TXL                              @ "all"          [ a
 
 // Bridges
 
-Bridge homematic:bridge:ccu                                                  [ gatewayAddress="homematic.imagilan"]
+Bridge homematic:bridge:ccu                                                   [ gatewayAddress="homematic.imagilan"]
 
-Bridge hue:bridge:huebridge                                                  [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
+Bridge hue:bridge:huebridge                                                   [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
     0210 lounge_overhead  [ lightId="1" ]
     0010 bedroom_plug     [ lightId="2" ]
     0210 bedroom_overhead [ lightId="3" ]
