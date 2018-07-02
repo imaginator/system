@@ -1,0 +1,17 @@
+// managed by Saltstack
+
+//itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
+
+Switch tplinksmarthome_hs110_cattoilet_switch  "Switch"                    {channel="tplinksmarthome:hs110:powermeter-cattoilet:switch"}
+Number tplinksmarthome_hs110_cattoilet_power                               {channel="tplinksmarthome:hs110:powermeter-cattoilet:power"}
+Number tplinksmarthome_hs110_cattoilet_energyUsage                         {channel="tplinksmarthome:hs110:powermeter-cattoilet:energyUsage"}
+Number tplinksmarthome_hs110_cattoilet_current                             {channel="tplinksmarthome:hs110:powermeter-cattoilet:current"}
+Number tplinksmarthome_hs110_cattoilet_voltage                             {channel="tplinksmarthome:hs110:powermeter-cattoilet:voltage"}
+Number tplinksmarthome_hs110_cattoilet_rssi "Signal [%d] dB"    <signal>   {channel="tplinksmarthome:hs110:powermeter-cattoilet:rssi"}
+
+Switch tplinksmarthome_hs110_fridge_switch  "Switch"                       {channel="tplinksmarthome:hs110:powermeter-fridge:switch"}
+Number tplinksmarthome_hs110_fridge_power                                  {channel="tplinksmarthome:hs110:powermeter-fridge:power"}
+Number tplinksmarthome_hs110_fridge_energyUsage                            {channel="tplinksmarthome:hs110:powermeter-fridge:energyUsage"}
+Number tplinksmarthome_hs110_fridge_current                                {channel="tplinksmarthome:hs110:powermeter-fridge:current"}
+Number tplinksmarthome_hs110_fridge_voltage                                {channel="tplinksmarthome:hs110:powermeter-fridge:voltage"}
+Number tplinksmarthome_hs110_fridge_rssi "Signal [%d] dB"    <signal>      {channel="tplinksmarthome:hs110:powermeter-fridge:rssi"}

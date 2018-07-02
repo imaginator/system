@@ -10,11 +10,14 @@ chromecast:audio:home-mini-lounge                           @ "lounge"        [ 
 chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
 chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
 
-network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
-
 miio:vacuum:03DA214A                                        @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-weatherunderground:weather:TXL                              @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
+network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
+
+tplinksmarthome:hs110:fridge                                @ "kitchen"       [ ipAdd"powermeter-fridge.imagilan", refresh=30 ]
+tplinksmarthome:hs110:cattoilet                             @ "main bathroom" [ ipAdd"powermeter-cattoilet.imagilan", refresh=30 ]
+
+weatherunderground:weather:local                            @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
     Channels:
         Type temperature : current#temperature [ SourceUnit="C" ]
         Type windSpeed : current#windSpeed [ SourceUnit="kmh" ]
