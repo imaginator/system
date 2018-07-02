@@ -1,46 +1,33 @@
-// Managed by Saltstack
+// Weather Underground binding
+Number		Weather_Temperature			"Temperature [%.2f °C]"			{channel="weatherunderground:weather:local:current#temperature"}
+Number		Weather_Humidity			"Humidity [%d %%]"				{channel="weatherunderground:weather:local:current#relativeHumidity"}
+Number		Weather_Wind_Speed			"Windspeed [%.2f km/h]"			{channel="weatherunderground:weather:local:current#windSpeed"}
+String		Weather_Station_Name		"Station Name [%s]"				{channel="weatherunderground:weather:local:current#stationId"}
+Number		Weather_Temperature_Feel	"Temperature feel [%.2f °C]"	{channel="weatherunderground:weather:local:current#feelingTemperature"}
+DateTime	Weather_ObservationTime		"Observation time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		{channel="weatherunderground:weather:local:current#observationTime"}
+String		Weather_Condition			"Condition [%s]"				{channel="weatherunderground:weather:local:current#conditions"}
+String		Weather_ConditionId			"ConditionId [%s]"				{channel="weatherunderground:weather:local:current#iconKey"}
 
-String Conditions "Conditions [%s]" {channel="weatherunderground:weather:TXL:current#conditions"}
-Image Icon "Icon" {channel="weatherunderground:weather:TXL:current#icon"}
-DateTime ObservationTime "Observation time [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:TXL:current#observationTime"}
-String ObservationLocation "Location [%s]" {channel="weatherunderground:weather:TXL:current#location"}
-String Station "Station [%s]" {channel="weatherunderground:weather:TXL:current#stationId"}
+Number		Weather_Temp_Min0		"Temperature min [%.2f °C]"		{channel="weatherunderground:weather:local:forecastToday#minTemperature"}
+Number		Weather_Temp_Max0		"Temperature max [%.2f °C]"		{channel="weatherunderground:weather:local:forecastToday#maxTemperature"}
+Number		Weather_Temp_Min1		"Temperature min [%.2f °C]"		{channel="weatherunderground:weather:local:forecastTomorrow#minTemperature"}
+Number		Weather_Temp_Max1		"Temperature max [%.2f °C]"		{channel="weatherunderground:weather:local:forecastTomorrow#maxTemperature"}
+Number		Weather_Temp_Min2		"Temperature min [%.2f °C]"		{channel="weatherunderground:weather:local:forecastDay2#minTemperature"}
+Number		Weather_Temp_Max2		"Temperature max [%.2f °C]"		{channel="weatherunderground:weather:local:forecastDay2#maxTemperature"}
+Number		Weather_Temp_Min3		"Temperature min [%.2f °C]"		{channel="weatherunderground:weather:local:forecastDay3#minTemperature"}
+Number		Weather_Temp_Max3		"Temperature max [%.2f °C]"		{channel="weatherunderground:weather:local:forecastDay3#maxTemperature"}
 
-Number Temperature "Current temperature [%.1f °C]" <temperature> {channel="weatherunderground:weather:TXL:current#temperature"}
-Number FeelTemp "Feeling temperature [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#feelingTemperature"}
+DateTime	Weather_Forecast_Time0		"Forecast time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		{channel="weatherunderground:weather:local:forecastToday#forecastTime"}
+DateTime	Weather_Forecast_Time1		"Forecast time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		{channel="weatherunderground:weather:local:forecastTomorrow#forecastTime"}
+DateTime	Weather_Forecast_Time2		"Forecast time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		{channel="weatherunderground:weather:local:forecastDay2#forecastTime"}
+DateTime	Weather_Forecast_Time3		"Forecast time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"		{channel="weatherunderground:weather:local:forecastDay3#forecastTime"}
 
-Number Humidity "Humidity [%d %%]" <humidity> {channel="weatherunderground:weather:TXL:current#relativeHumidity"}
-Number Pressure "Pressure [%.0f hPa]" {channel="weatherunderground:weather:TXL:current#pressure"}
+String		Weather_Condition0		"Condition [%s]"		{channel="weatherunderground:weather:local:forecastToday#conditions"}
+String		Weather_Condition1		"Condition [%s]"		{channel="weatherunderground:weather:local:forecastTomorrow#conditions"}
+String		Weather_Condition2		"Condition [%s]"		{channel="weatherunderground:weather:local:forecastDay2#conditions"}
+String		Weather_Condition3		"Condition [%s]"		{channel="weatherunderground:weather:local:forecastDay3#conditions"}
 
-Number RainD "Rain [%.1f mm]" <rain> {channel="weatherunderground:weather:TXL:current#precipitationDay"}
-Number RainH "Rain [%.1f mm/h]" <rain> {channel="weatherunderground:weather:TXL:current#precipitationHour"}
-
-String WindDirection "Wind direction [%s]" <wind> {channel="weatherunderground:weather:TXL:current#windDirection"}
-Number WindDirection2 "Wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:current#windDirectionDegrees"}
-Number WindSpeed "Wind speed [%.1f km/h]" <wind> {channel="weatherunderground:weather:TXL:current#windSpeed"}
-Number WindGust "Wind gust [%.1f km/h]" <wind> {channel="weatherunderground:weather:TXL:current#windGust"}
-
-Number DewPoint "Dew Point [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#dewPoint"}
-Number HeatIndex "Heat Index [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#heatIndex"}
-Number WindChill "Wind Chill [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:current#windChill"}
-Number Visibility "Visibility [%.1f km]" {channel="weatherunderground:weather:TXL:current#visibility"}
-Number SolarRadiation "Solar Radiation [%.2f] W/m2"  {channel="weatherunderground:weather:TXL:current#solarRadiation"}
-Number UV "UV Index [%.1f]" {channel="weatherunderground:weather:TXL:current#UVIndex"}
-
-DateTime ForecastTime "Forecast time [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:TXL:forecastToday#forecastTime"}
-String ForecastCondition "Forecast conditions [%s]"  {channel="weatherunderground:weather:TXL:forecastToday#conditions"}
-Image ForecastIcon "Forecast icon"  {channel="weatherunderground:weather:TXL:forecastToday#icon"}
-Number ForecastTempMin "Forecast min temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:forecastToday#minTemperature"}
-Number ForecastTempMax "Forecast max temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:TXL:forecastToday#maxTemperature"}
-Number ForecastHumidity "Forecast Humidity [%d %%]" <humidity>  {channel="weatherunderground:weather:TXL:forecastToday#relativeHumidity"}
-Number ForecastProbaPrecip "Proba precip [%d %%]" <rain>  {channel="weatherunderground:weather:TXL:forecastToday#probaPrecipitation"}
-Number ForecastRain "Rain [%.1f mm]" <rain> {channel="weatherunderground:weather:TXL:forecastToday#precipitationDay"}
-Number ForecastSnow "Snow [%.2f cm]" <rain> {channel="weatherunderground:weather:TXL:forecastToday#snow"}
-String ForecastMaxWindDirection "Max wind direction [%s]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindDirection"}
-Number ForecastMaxWindDirection2 "Max wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindDirectionDegrees"}
-Number ForecastMaxWindSpeed "Max wind speed [%.1f km/h]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#maxWindSpeed"}
-String ForecastAvgWindDirection "Avg wind direction [%s]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindDirection"}
-Number ForecastAvgWindDirection2 "Avg wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindDirectionDegrees"}
-Number ForecastAvgWindSpeed "Avg wind speed [%.1f km/h]" <wind>  {channel="weatherunderground:weather:TXL:forecastToday#averageWindSpeed"}
-
-// vim: syntax=Xtend
+String		Weather_ConditionId0		"ConditionId [%s]"		{channel="weatherunderground:weather:local:forecastToday#iconKey"}
+String		Weather_ConditionId1		"ConditionId [%s]"		{channel="weatherunderground:weather:local:forecastTomorrow#iconKey"}
+String		Weather_ConditionId2		"ConditionId [%s]"		{channel="weatherunderground:weather:local:forecastDay2#iconKey"}
+String		Weather_ConditionId3		"ConditionId [%s]"		{channel="weatherunderground:weather:local:forecastDay3#iconKey"}

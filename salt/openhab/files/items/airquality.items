@@ -1,4 +1,5 @@
 // Managed by Saltstack
+
 // Air Quality
 Group    AirQuality <flow>
 Number   Aqi_Level           "Air Quality Index" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiLevel" }
@@ -15,5 +16,3 @@ DateTime Aqi_ObservationTime "Time of observation [%1$tH:%1$tM]" <clock> (AirQua
 Number   Aqi_Temperature     "Temperature" <temperature> (AirQuality) { channel="airquality:aqi:berlin:temperature" }
 Number   Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:berlin:pressure" }
 Number   Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:berlin:humidity" }
- 
-// vim: syntax=Xtend
