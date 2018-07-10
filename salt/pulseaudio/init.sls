@@ -1,8 +1,3 @@
-pulseaudio-dlna-repo:        
-  pkgrepo.managed:        
-    - human_name: Pulseaudio-DLNA PPA
-    - ppa: qos/pulseaudio-dlna
-
 pulseaudio-dlna-dependencies:
   pkg.installed:
     - cache_valid_time: 30000
@@ -19,7 +14,6 @@ install-pulseaudio-dlna:
     - name: pulseaudio-dlna
     - cache_valid_time: 30000
     - require:        
-      - pkgrepo: pulseaudio-dlna-repo
       - pkg: pulseaudio-dlna-dependencies
 
 /etc/pulse/system.pa:
@@ -97,5 +91,3 @@ pulseaudio-dlna:
       - file: /etc/pulseaudio-dlna/devices.json
       - file: /etc/systemd/system/pulseaudio.service
       - file: /etc/systemd/system/pulseaudio-dlna.service
-
-# vim:ft=yaml:

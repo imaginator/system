@@ -1,5 +1,10 @@
 {% from "plex/map.jinja" import plex with context %}
 
+# btrfs database
+plex-no-copy-on-write:
+  cmd.run:
+    - name: chattr +C "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server"
+
 plex-server:
   pkg.installed:
     - sources:

@@ -1,28 +1,22 @@
 kvm-packages:
   pkg.installed:
+    - cache_valid_time: 30000
     - pkgs:
       - bridge-utils
       - libvirt-bin
+      - libguestfs-tools
       - virt-goodies
       - virt-manager
       - virt-top
       - virtinst
       - virt-viewer
       - vlan
-      - guestmount
       - lvm2
       - qemu-kvm
       - python-libvirt
 
-test
-  CPU: 2
-  Memory: 524288
-  State: running
-  Graphics: vnc - hyper6:5900
-  Disk - vda:
-    Size: 2.0G
-    File: test.qcow2
-    File Format: qcow2
-  Nic - ac:de:48:98:08:77:
-    Source: trusted
-    Type: bridge
+libvirt-copy-on-write:
+  file.directory:
+    - name: /tmp/test2
+    - makedirs: True
+    - attrs: +C
