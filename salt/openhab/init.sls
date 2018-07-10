@@ -18,7 +18,8 @@ openhab-dependencies:
       - libpulse-jni
       - libpulse-java
       - iputils-arping
-      - adb
+      - android-tools-adb # tablet control
+      - jq
 
 #special permissions for watching the network
 /usr/sbin/arping:
@@ -107,16 +108,36 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
+add-habpanel-config:
+  file.managed:
+    - name: /etc/openhab2/other-configs/habpanel-config.json
+    - source: salt://openhab/files/other-configs/habpanel-config.json
+    - makedirs: True
+    - user: root
+    - group: root
+
+install-habpanel-config:
+  service.running:
+    - name: openhab2
+  cmd.run:
+    - onchanges:
+      - file: /etc/openhab2/other-configs/habpanel-config.json
+    - names:
+      - echo "config:property-set -p org.openhab.habpanel panelsRegistry '$(cat /etc/openhab2/other-configs/habpanel-config.json | jq -ca . )' " | openhab-cli console -b -u openhab -p habopen
+      - echo "config:property-set -p org.openhab.habpanel initialPanelConfig F17" | openhab-cli console -b -u openhab -p habopen
+
 openhab2:
   service.running:
     - enable: True
+    - restart: True
     - require:
       - pkg: openhab-dependencies
-    - watch:
+    - onchanges:
       - file: miio-binding
-
-initial-settings:
-  service.running:
-    - name: openhab2
-  cmd.script:
-    - source: salt://openhab/files/other-configs/console-commands.sh
+      - file: openhab-items
+      - file: openhab-persistence
+      - file: openhab-rules
+      - file: openhab-services
+      - file: openhab-sitemaps
+      - file: openhab-things
+      

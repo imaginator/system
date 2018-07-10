@@ -29,5 +29,3 @@ when
 then
     Present.sendCommand(OFF)
 end
-
-// vim: syntax=Xtend

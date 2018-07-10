@@ -10,9 +10,10 @@ chromecast:audio:home-mini-lounge                           @ "lounge"        [ 
 chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
 chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
 
-miio:vacuum:03DA214A                                        @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
+miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan", timeout=5000, refreshInterval=60000 ]
+network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=600 ]
+network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=600 ]
 
 tplinksmarthome:hs110:fridge                                @ "kitchen"       [ ipAdd"powermeter-fridge.imagilan", refresh=30 ]
 tplinksmarthome:hs110:cattoilet                             @ "main bathroom" [ ipAdd"powermeter-cattoilet.imagilan", refresh=30 ]

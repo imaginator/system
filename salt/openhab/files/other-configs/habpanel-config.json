@@ -3,7 +3,7 @@
         {
             "id": "Light",
             "name": "Lounge",
-            "row": 0,
+            "row": 2,
             "col": 0,
             "tile": {
                 "icon_size": 32,
@@ -19,7 +19,8 @@
                     "row": 3,
                     "col": 0,
                     "style": "aCKolor",
-                    "blur_background": true
+                    "blur_background": true,
+                    "$$hashKey": "object:90560"
                 },
                 {
                     "name": "Lounge Lamp",
@@ -33,7 +34,8 @@
                     "hideonoff": true,
                     "iconset": "smarthome-set",
                     "icon": "bulb",
-                    "icon_size": "64"
+                    "icon_size": "64",
+                    "$$hashKey": "object:90561"
                 },
                 {
                     "name": "Lounge",
@@ -49,7 +51,8 @@
                     "row": 0,
                     "col": 7,
                     "startAngle": -110,
-                    "endAngle": 110
+                    "endAngle": 110,
+                    "$$hashKey": "object:90562"
                 },
                 {
                     "name": "New Widget",
@@ -63,7 +66,8 @@
                     "intervaltype": "seconds",
                     "background": "transparent",
                     "url": "",
-                    "refresh": 10
+                    "refresh": 10,
+                    "$$hashKey": "object:90563"
                 },
                 {
                     "name": "Song",
@@ -73,7 +77,8 @@
                     "type": "dummy",
                     "row": 5,
                     "col": 3,
-                    "nolinebreak": true
+                    "nolinebreak": true,
+                    "$$hashKey": "object:90564"
                 },
                 {
                     "name": "Artist",
@@ -83,7 +88,8 @@
                     "type": "dummy",
                     "nolinebreak": true,
                     "row": 4,
-                    "col": 3
+                    "col": 3,
+                    "$$hashKey": "object:90565"
                 },
                 {
                     "name": "New Widget",
@@ -97,92 +103,23 @@
                     "backdrop_iconset": "eclipse-smarthome-classic",
                     "iconset": "smarthome-set",
                     "show_item_value": true,
-                    "value_nolinebreak": true
+                    "value_nolinebreak": true,
+                    "$$hashKey": "object:90566"
                 }
             ],
             "sizeY": 1,
             "drawer": {},
             "header": {},
-            "$$hashKey": "object:22"
+            "$$hashKey": "object:43783"
         },
         {
             "id": "Music",
-            "name": "Music",
+            "name": "Volumes",
             "widgets": [
-                {
-                    "name": "Bathroom",
-                    "sizeX": 4,
-                    "sizeY": 4,
-                    "item": "chromecast_bathroom_volume",
-                    "type": "knob",
-                    "floor": 0,
-                    "ceil": 100,
-                    "step": 1,
-                    "subTextEnabled": true,
-                    "ranges": [],
-                    "row": 0,
-                    "col": 4
-                },
-                {
-                    "name": "Kitchen",
-                    "sizeX": 4,
-                    "sizeY": 4,
-                    "item": "chromecast_kitchen_volume",
-                    "type": "knob",
-                    "floor": 0,
-                    "ceil": 100,
-                    "step": 1,
-                    "subTextEnabled": true,
-                    "ranges": [
-                        {
-                            "min": 0,
-                            "max": 40,
-                            "barColor": "#0066FF"
-                        },
-                        {
-                            "min": 40,
-                            "max": 100,
-                            "barColor": "#FF0066"
-                        }
-                    ],
-                    "scaleEnabled": true,
-                    "scaleColor": "transparent",
-                    "rangesEnabled": true,
-                    "row": 0,
-                    "col": 8
-                },
-                {
-                    "name": "Lounge - HiFi",
-                    "sizeX": 4,
-                    "sizeY": 4,
-                    "item": "chromecast_chromecastlounge_volume",
-                    "type": "knob",
-                    "floor": 0,
-                    "ceil": 100,
-                    "step": 1,
-                    "subTextEnabled": true,
-                    "ranges": [],
-                    "row": 4,
-                    "col": 4
-                },
-                {
-                    "name": "Lounge",
-                    "sizeX": 4,
-                    "sizeY": 4,
-                    "item": "chromecast_lounge_volume",
-                    "type": "knob",
-                    "floor": 0,
-                    "ceil": 100,
-                    "step": 1,
-                    "subTextEnabled": true,
-                    "ranges": [],
-                    "row": 4,
-                    "col": 0
-                },
                 {
                     "name": "Bedroom",
                     "sizeX": 4,
-                    "sizeY": 4,
+                    "sizeY": 3,
                     "item": "chromecast_bedroom_volume",
                     "type": "knob",
                     "floor": 0,
@@ -192,33 +129,284 @@
                     "ranges": [
                         {
                             "min": 0,
-                            "max": 10,
-                            "barColor": "#3366FF"
+                            "max": 20,
+                            "barColor": "#CCCCCC",
+                            "$$hashKey": "object:45296"
                         },
                         {
-                            "min": 10,
+                            "min": 20,
                             "max": 35,
-                            "barColor": "#99CCFF"
+                            "barColor": "#0db9f0",
+                            "$$hashKey": "object:45297"
                         },
                         {
                             "min": 35,
-                            "max": 50,
-                            "barColor": "#FF99FF"
+                            "max": 70,
+                            "barColor": "#FF9966",
+                            "$$hashKey": "object:45298"
                         },
                         {
-                            "min": 50,
-                            "max": 100,
-                            "barColor": "#CC3300"
+                            "min": 70,
+                            "max": 101,
+                            "barColor": "#CC3300",
+                            "$$hashKey": "object:45299"
                         }
                     ],
                     "row": 0,
                     "col": 0,
-                    "rangesEnabled": true
+                    "rangesEnabled": true,
+                    "unit": "",
+                    "startAngle": -110,
+                    "endAngle": 110,
+                    "useserverformat": true,
+                    "scaleEnabled": false,
+                    "skinType": "simple",
+                    "skinWidth": null,
+                    "skinColor": "transparent",
+                    "rangesTextColorMatching": false,
+                    "$$hashKey": "object:43813",
+                    "bgColor": "transparent"
+                },
+                {
+                    "name": "Volumes over time",
+                    "sizeX": 12,
+                    "sizeY": 4,
+                    "item": null,
+                    "type": "timeline",
+                    "row": 6,
+                    "col": 0, 
+                    "period": "W",
+                    "colorMaps": [
+                        {
+                            "state": "0-20",
+                            "color": "#CCCCCC",
+                            "$$hashKey": "object:92647"
+                        },
+                        {
+                            "state": "20-35",
+                            "color": "#0db9f0",
+                            "$$hashKey": "object:122223"
+                        },
+                        {
+                            "state": "35-70",
+                            "color": "#FF9966",
+                            "$$hashKey": "object:114854"
+                        },
+                        {
+                            "state": "70-101",
+                            "color": "#CC3300",
+                            "$$hashKey": "object:102098"
+                        }
+                    ],
+                    "$$hashKey": "object:43814"
+                },
+                {
+                    "name": "Bathroom",
+                    "sizeX": 4,
+                    "sizeY": 3,
+                    "item": "chromecast_bathroom_volume",
+                    "type": "knob",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "subTextEnabled": true,
+                    "ranges": [
+                        {
+                            "min": 0,
+                            "max": 20,
+                            "barColor": "#CCCCCC",
+                            "$$hashKey": "object:48350"
+                        },
+                        {
+                            "min": 20,
+                            "max": 35,
+                            "barColor": "#0db9f0",
+                            "$$hashKey": "object:48351"
+                        },
+                        {
+                            "min": 35,
+                            "max": 70,
+                            "barColor": "#FF9966",
+                            "$$hashKey": "object:48352"
+                        },
+                        {
+                            "min": 70,
+                            "max": 101,
+                            "barColor": "#CC3300",
+                            "$$hashKey": "object:48353"
+                        }
+                    ],
+                    "rangesEnabled": true,
+                    "unit": "",
+                    "startAngle": -110,
+                    "endAngle": 110,
+                    "useserverformat": true,
+                    "scaleEnabled": false,
+                    "skinType": "simple",
+                    "skinWidth": null,
+                    "skinColor": "transparent",
+                    "rangesTextColorMatching": false,
+                    "$$hashKey": "object:46993",
+                    "row": 0,
+                    "col": 4
+                },
+                {
+                    "name": "Lounge",
+                    "sizeX": 4,
+                    "sizeY": 3,
+                    "item": "chromecast_chromecastlounge_volume",
+                    "type": "knob",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "subTextEnabled": true,
+                    "ranges": [
+                        {
+                            "min": 0,
+                            "max": 20,
+                            "barColor": "#CCCCCC",
+                            "$$hashKey": "object:58685"
+                        },
+                        {
+                            "min": 20,
+                            "max": 35,
+                            "barColor": "#0db9f0",
+                            "$$hashKey": "object:58686"
+                        },
+                        {
+                            "min": 35,
+                            "max": 70,
+                            "barColor": "#FF9966",
+                            "$$hashKey": "object:58687"
+                        },
+                        {
+                            "min": 70,
+                            "max": 101,
+                            "barColor": "#CC3300",
+                            "$$hashKey": "object:58688"
+                        }
+                    ],
+                    "rangesEnabled": true,
+                    "unit": "",
+                    "startAngle": -110,
+                    "endAngle": 110,
+                    "useserverformat": true,
+                    "scaleEnabled": false,
+                    "skinType": "simple",
+                    "skinWidth": null,
+                    "skinColor": "transparent",
+                    "rangesTextColorMatching": false,
+                    "$$hashKey": "object:57332",
+                    "row": 0,
+                    "col": 8
+                },
+                {
+                    "name": "Kitchen",
+                    "sizeX": 4,
+                    "sizeY": 3,
+                    "item": "chromecast_kitchen_volume",
+                    "type": "knob",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "subTextEnabled": true,
+                    "ranges": [
+                        {
+                            "min": 0,
+                            "max": 20,
+                            "barColor": "#CCCCCC",
+                            "$$hashKey": "object:65657"
+                        },
+                        {
+                            "min": 20,
+                            "max": 35,
+                            "barColor": "#0db9f0",
+                            "$$hashKey": "object:65658"
+                        },
+                        {
+                            "min": 35,
+                            "max": 70,
+                            "barColor": "#FF9966",
+                            "$$hashKey": "object:65659"
+                        },
+                        {
+                            "min": 70,
+                            "max": 101,
+                            "barColor": "#CC3300",
+                            "$$hashKey": "object:65660"
+                        }
+                    ],
+                    "rangesEnabled": true,
+                    "unit": "",
+                    "startAngle": -110,
+                    "endAngle": 110,
+                    "useserverformat": true,
+                    "scaleEnabled": false,
+                    "skinType": "simple",
+                    "skinWidth": null,
+                    "skinColor": "transparent",
+                    "rangesTextColorMatching": false,
+                    "bgColor": "transparent",
+                    "$$hashKey": "object:64305",
+                    "row": 3,
+                    "col": 0
+                },
+                {
+                    "name": "all",
+                    "sizeX": 4,
+                    "sizeY": 3,
+                    "item": "chromecast_audio_d1cdc9be03ede275a5564903bae9bc2f_volume",
+                    "type": "knob",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "subTextEnabled": true,
+                    "ranges": [
+                        {
+                            "min": 0,
+                            "max": 20,
+                            "barColor": "#CCCCCC",
+                            "$$hashKey": "object:69756"
+                        },
+                        {
+                            "min": 20,
+                            "max": 35,
+                            "barColor": "#0db9f0",
+                            "$$hashKey": "object:69757"
+                        },
+                        {
+                            "min": 35,
+                            "max": 70,
+                            "barColor": "#FF9966",
+                            "$$hashKey": "object:69758"
+                        },
+                        {
+                            "min": 70,
+                            "max": 101,
+                            "barColor": "#CC3300",
+                            "$$hashKey": "object:69759"
+                        }
+                    ],
+                    "rangesEnabled": true,
+                    "unit": "",
+                    "startAngle": -110,
+                    "endAngle": 110,
+                    "useserverformat": true,
+                    "scaleEnabled": false,
+                    "skinType": "simple",
+                    "skinWidth": null,
+                    "skinColor": "transparent",
+                    "rangesTextColorMatching": false,
+                    "bgColor": "transparent",
+                    "$$hashKey": "object:68403",
+                    "row": 3,
+                    "col": 4
                 }
             ],
-            "row": 3,
+            "row": 0,
             "col": 0,
-            "$$hashKey": "object:26"
+            "$$hashKey": "object:43787",
+            "tile": {}
         },
         {
             "id": "Weather",
@@ -226,78 +414,83 @@
             "widgets": [
                 {
                     "name": "Air Quality",
-                    "sizeX": 3,
+                    "sizeX": 6,
                     "sizeY": 1,
                     "item": "Aqi_Description",
                     "type": "dummy",
+                    "row": 2,
+                    "col": 0,
+                    "nolinebreak": true,
+                    "$$hashKey": "object:76843"
+                },
+                {
+                    "name": "Temp outside",
+                    "sizeX": 3,
+                    "sizeY": 1,
+                    "item": "Weather_Temperature",
+                    "type": "dummy",
                     "row": 0,
                     "col": 0,
-                    "nolinebreak": true
+                    "$$hashKey": "object:76844",
+                    "useserverformat": true
                 },
                 {
-                    "name": "Temperature",
+                    "name": "outside humidity",
                     "sizeX": 3,
                     "sizeY": 1,
-                    "item": "Temperature",
+                    "item": "Weather_Humidity",
                     "type": "dummy",
-                    "row": 4,
-                    "col": 6
-                },
-                {
-                    "name": "Humidity",
-                    "sizeX": 3,
-                    "sizeY": 1,
-                    "item": "Humidity",
-                    "type": "dummy",
-                    "row": 4,
-                    "col": 9
+                    "row": 0,
+                    "col": 3,
+                    "$$hashKey": "object:76845",
+                    "useserverformat": true
                 },
                 {
                     "name": "Air Quality Index",
-                    "sizeX": 3,
+                    "sizeX": 6,
                     "sizeY": 1,
                     "item": "Aqi_Level",
                     "type": "dummy",
                     "nolinebreak": true,
                     "unit": "%",
-                    "row": 0,
-                    "col": 3
+                    "row": 2,
+                    "col": 6,
+                    "$$hashKey": "object:76846"
                 },
                 {
                     "name": "Air Quality Index",
                     "sizeX": 12,
-                    "sizeY": 3,
+                    "sizeY": 2,
                     "item": "Aqi_Level",
                     "type": "chart",
-                    "row": 1,
+                    "row": 3,
                     "col": 0,
-                    "charttype": "interactive",
+                    "charttype": "default",
                     "service": "postgresql",
-                    "period": "4h",
+                    "period": "W",
                     "liveUpdates": {},
                     "isgroup": false,
-                    "axis": {
-                        "y": {}
-                    },
-                    "series": []
+                    "$$hashKey": "object:76847",
+                    "showlegend": "auto"
                 },
                 {
                     "name": "sunrise",
-                    "sizeX": 3,
+                    "sizeX": 2,
                     "sizeY": 1,
                     "item": "Sunrise_Time",
                     "type": "dummy",
                     "nolinebreak": true,
-                    "row": 4,
-                    "col": 0,
+                    "row": 0,
+                    "col": 8,
                     "format": "H:mm",
                     "useserverformat": false,
                     "backdrop_iconset": "smarthome-set",
-                    "backdrop_icon": "sun"
+                    "backdrop_icon": "sun",
+                    "$$hashKey": "object:76848"
                 },
                 {
                     "name": "Sunset",
-                    "sizeX": 3,
+                    "sizeX": 2,
                     "sizeY": 1,
                     "item": "Sunset_Time",
                     "type": "dummy",
@@ -306,13 +499,14 @@
                     "useserverformat": false,
                     "backdrop_iconset": "smarthome-set",
                     "backdrop_icon": "sun",
-                    "row": 4,
-                    "col": 3
+                    "row": 0,
+                    "col": 10,
+                    "$$hashKey": "object:76849"
                 }
             ],
-            "row": 2,
-            "col": 0,
-            "$$hashKey": "object:25"
+            "row": 0,
+            "col": 1,
+            "$$hashKey": "object:43786"
         },
         {
             "id": "Air",
@@ -321,7 +515,7 @@
                 {
                     "name": "Wireless",
                     "sizeX": 12,
-                    "sizeY": 5,
+                    "sizeY": 4,
                     "type": "frame",
                     "row": 0,
                     "col": 0,
@@ -331,7 +525,7 @@
                     "refresh": 6000,
                     "frameless": true,
                     "hidelabel": true,
-                    "$$hashKey": "object:79"
+                    "$$hashKey": "object:90891"
                 },
                 {
                     "name": "Simon Home",
@@ -339,10 +533,10 @@
                     "sizeY": 1,
                     "item": "SimonPhone",
                     "type": "dummy",
-                    "row": 5,
+                    "row": 4,
                     "col": 0,
                     "nolinebreak": true,
-                    "$$hashKey": "object:80"
+                    "$$hashKey": "object:90892"
                 },
                 {
                     "name": "Last seen",
@@ -350,11 +544,11 @@
                     "sizeY": 1,
                     "item": "SimonPhoneLastSeen",
                     "type": "dummy",
-                    "row": 5,
+                    "row": 4,
                     "col": 4,
                     "nolinebreak": true,
                     "useserverformat": false,
-                    "$$hashKey": "object:81"
+                    "$$hashKey": "object:90893"
                 },
                 {
                     "name": "Who's Home?",
@@ -362,7 +556,7 @@
                     "sizeY": 3,
                     "item": null,
                     "type": "timeline",
-                    "row": 6,
+                    "row": 5,
                     "col": 0,
                     "period": "D",
                     "colorMaps": [
@@ -425,13 +619,13 @@
                             "name": "Susanne"
                         }
                     ],
-                    "$$hashKey": "object:82"
+                    "$$hashKey": "object:90894"
                 }
             ],
             "row": 4,
             "col": 0,
             "tile": {},
-            "$$hashKey": "object:27"
+            "$$hashKey": "object:43788"
         },
         {
             "id": "Bedroom",
@@ -449,7 +643,8 @@
                     "hideonoff": true,
                     "iconset": "smarthome-set",
                     "icon": "bulb",
-                    "icon_size": "64"
+                    "icon_size": "64",
+                    "$$hashKey": "object:90648"
                 },
                 {
                     "name": "Colour",
@@ -460,7 +655,8 @@
                     "style": "aCKolor",
                     "blur_background": true,
                     "row": 6,
-                    "col": 0
+                    "col": 0,
+                    "$$hashKey": "object:90649"
                 },
                 {
                     "name": "Lamp",
@@ -474,7 +670,8 @@
                     "icon": "socket-f",
                     "icon_size": "64",
                     "row": 0,
-                    "col": 0
+                    "col": 0,
+                    "$$hashKey": "object:90650"
                 },
                 {
                     "name": "Bedroom Volume",
@@ -490,7 +687,8 @@
                     "startAngle": -110,
                     "endAngle": 110,
                     "row": 0,
-                    "col": 7
+                    "col": 7,
+                    "$$hashKey": "object:90651"
                 },
                 {
                     "name": "New Widget",
@@ -504,7 +702,8 @@
                     "row": 0,
                     "col": 3,
                     "refresh": 60,
-                    "nosuffix": false
+                    "nosuffix": false,
+                    "$$hashKey": "object:90652"
                 },
                 {
                     "name": "",
@@ -513,26 +712,27 @@
                     "item": "chromecast_bedroom_title",
                     "type": "dummy",
                     "row": 4,
-                    "col": 3
+                    "col": 3,
+                    "$$hashKey": "object:90653"
                 }
             ],
-            "row": 1,
+            "row": 3,
             "col": 0,
             "tile": {},
             "drawer": {},
             "header": {},
-            "$$hashKey": "object:24"
+            "$$hashKey": "object:43785"
         },
         {
             "id": "Lounge Audio",
             "name": "Lounge Audio",
             "widgets": [],
-            "row": 0,
-            "col": 1,
+            "row": 1,
+            "col": 0,
             "tile": {},
             "drawer": {},
             "header": {},
-            "$$hashKey": "object:23"
+            "$$hashKey": "object:43784"
         }
     ],
     "menucolumns": 2,
@@ -550,6 +750,6 @@
         "speech_synthesis_item": "chromecast_bathroom_subtitle",
         "dashboard_control_item": null,
         "hide_refresh_button": true
-    },
+    }, 
     "customwidgets": {}
 }
