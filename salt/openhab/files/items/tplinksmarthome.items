@@ -1,17 +1,17 @@
 // managed by Saltstack
 
-//itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
+Switch   HS110_Switch_industrial_light        "Switch"         {channel="tplinksmarthome:hs110:industrial-light:switch"}
+Switch   HS110_Led_industrial_light           "Switch Led"     {channel="tplinksmarthome:hs110:industrial-light:led"}
+Number   HS110_Rssi_industrial_light          "Signal"         {channel="tplinksmarthome:hs110:industrial-light:rssi"}
+Number   HS110_Power_industrial_light         "Power"          {channel="tplinksmarthome:hs110:industrial-light:power"}
+Number   HS110_EnergyUsage_industrial_light   "Energy Usage"   {channel="tplinksmarthome:hs110:industrial-light:energyUsage"}
+Number   HS110_Current_industrial_light       "Current"        {channel="tplinksmarthome:hs110:industrial-light:current"}
+Number   HS110_Voltage_industrial_light       "Voltage"        {channel="tplinksmarthome:hs110:industrial-light:voltage"}
 
-Switch tplinksmarthome_hs110_cattoilet_switch  "Switch"                    {channel="tplinksmarthome:hs110:powermeter-cattoilet:switch"}
-Number tplinksmarthome_hs110_cattoilet_power                               {channel="tplinksmarthome:hs110:powermeter-cattoilet:power"}
-Number tplinksmarthome_hs110_cattoilet_energyUsage                         {channel="tplinksmarthome:hs110:powermeter-cattoilet:energyUsage"}
-Number tplinksmarthome_hs110_cattoilet_current                             {channel="tplinksmarthome:hs110:powermeter-cattoilet:current"}
-Number tplinksmarthome_hs110_cattoilet_voltage                             {channel="tplinksmarthome:hs110:powermeter-cattoilet:voltage"}
-Number tplinksmarthome_hs110_cattoilet_rssi "Signal [%d] dB"    <signal>   {channel="tplinksmarthome:hs110:powermeter-cattoilet:rssi"}
-
-Switch tplinksmarthome_hs110_fridge_switch  "Switch"                       {channel="tplinksmarthome:hs110:powermeter-fridge:switch"}
-Number tplinksmarthome_hs110_fridge_power                                  {channel="tplinksmarthome:hs110:powermeter-fridge:power"}
-Number tplinksmarthome_hs110_fridge_energyUsage                            {channel="tplinksmarthome:hs110:powermeter-fridge:energyUsage"}
-Number tplinksmarthome_hs110_fridge_current                                {channel="tplinksmarthome:hs110:powermeter-fridge:current"}
-Number tplinksmarthome_hs110_fridge_voltage                                {channel="tplinksmarthome:hs110:powermeter-fridge:voltage"}
-Number tplinksmarthome_hs110_fridge_rssi "Signal [%d] dB"    <signal>      {channel="tplinksmarthome:hs110:powermeter-fridge:rssi"}
+Switch   HS110_Switch_cat_toilet              "Switch"         {channel="tplinksmarthome:hs110:cat-toilet:switch"}
+Switch   HS110_Led_cat_toilet                 "Switch Led"     {channel="tplinksmarthome:hs110:cat-toilet:led"}
+Number   HS110_Rssi_cat_toilet                "Signal"         {channel="tplinksmarthome:hs110:cat-toilet:rssi"}
+Number   HS110_Power_cat_toilet               "Power"          {channel="tplinksmarthome:hs110:cat-toilet:power"}
+Number   HS110_EnergyUsage_cat_toilet         "Energy Usage"   {channel="tplinksmarthome:hs110:cat-toilet:energyUsage"}
+Number   HS110_Current_cat_toilet             "Current"        {channel="tplinksmarthome:hs110:cat-toilet:current"}
+Number   HS110_Voltage_cat_toilet             "Voltage"        {channel="tplinksmarthome:hs110:cat-toilet:voltage"}

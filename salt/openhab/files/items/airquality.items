@@ -1,18 +1,17 @@
 // Managed by Saltstack
 
-// Air Quality
-Group    AirQuality <flow>
-Number   Aqi_Level           "Air Quality Index" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiLevel" }
-String   Aqi_Description     "AQI Level [MAP(airquality.map):%s]" <flow> (AirQuality) { channel="airquality:aqi:berlin:aqiDescription" }
-Number   Aqi_Pm25            "PM\u2082\u2085 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:pm25" }
-Number   Aqi_Pm10            "PM\u2081\u2080 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:pm10" }
-Number   Aqi_O3              "O\u2083 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:o3" }
-Number   Aqi_No2             "NO\u2082 Level" <line> (AirQuality) { channel="airquality:aqi:berlin:no2" }
-Number   Aqi_Co              "CO Level" <line> (AirQuality) { channel="airquality:aqi:berlin:co" }
-String   Aqi_LocationName    "Measuring Location" <settings> (AirQuality) { channel="airquality:aqi:berlin:locationName" }
-Location Aqi_StationGeo      "Station Location" <office> (AirQuality) { channel="airquality:aqi:berlin:stationLocation" }
-Number   Aqi_StationId       "Station ID" <pie> (AirQuality) { channel="airquality:aqi:berlin:stationId" }
-DateTime Aqi_ObservationTime "Time of observation [%1$tH:%1$tM]" <clock> (AirQuality) { channel="airquality:aqi:berlin:observationTime" }
-Number   Aqi_Temperature     "Temperature" <temperature> (AirQuality) { channel="airquality:aqi:berlin:temperature" }
-Number   Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:berlin:pressure" }
-Number   Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:berlin:humidity" }
+Number                 AirQuality_AqiLevel          "Air Quality Index"   {channel="airquality:aqi:local:aqiLevel"}
+String                 AirQuality_AqiDescription    "AQI Description"     {channel="airquality:aqi:local:aqiDescription"}
+Number                 AirQuality_Pm25              "PM2.5"               {channel="airquality:aqi:local:pm25"}
+Number                 AirQuality_Pm10              "PM10"                {channel="airquality:aqi:local:pm10"}
+Number                 AirQuality_O3                "O3"                  {channel="airquality:aqi:local:o3"}
+Number                 AirQuality_No2               "NO2"                 {channel="airquality:aqi:local:no2"}
+Number                 AirQuality_Co                "CO"                  {channel="airquality:aqi:local:co"}
+String                 AirQuality_LocationName      "Location"            {channel="airquality:aqi:local:locationName"}
+Location               AirQuality_StationLocation   "Station Location"    {channel="airquality:aqi:local:stationLocation"}
+Number                 AirQuality_StationId         "Station ID"          {channel="airquality:aqi:local:stationId"}
+DateTime               AirQuality_ObservationTime   "Observation time"    {channel="airquality:aqi:local:observationTime"}
+Number:Temperature     AirQuality_Temperature       "Temperature"         {channel="airquality:aqi:local:temperature"}
+Number:Pressure        AirQuality_Pressure          "Pressure"            {channel="airquality:aqi:local:pressure"}
+Number:Dimensionless   AirQuality_Humidity          "Humidity"            {channel="airquality:aqi:local:humidity"}
+String                 AirQuality_Dominentpol       "Dominent Polutor"    {channel="airquality:aqi:local:dominentpol"}

@@ -108,7 +108,7 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-add-habpanel-config:
+add-habpanel-config: 
   file.managed:
     - name: /etc/openhab2/other-configs/habpanel-config.json
     - source: salt://openhab/files/other-configs/habpanel-config.json
@@ -125,6 +125,21 @@ install-habpanel-config:
     - names:
       - echo "config:property-set -p org.openhab.habpanel panelsRegistry '$(cat /etc/openhab2/other-configs/habpanel-config.json | jq -ca . )' " | openhab-cli console -b -u openhab -p habopen
       - echo "config:property-set -p org.openhab.habpanel initialPanelConfig F17" | openhab-cli console -b -u openhab -p habopen
+
+reset-openhab-db:
+  cmd.run:
+    - names:
+      - echo "smarthome:inbox clear"  | openhab-cli console -b -u openhab -p habopen
+      - echo "smarthome:things clear" | openhab-cli console -b -u openhab -p habopen
+      - echo "smarthome:items clear"  | openhab-cli console -b -u openhab -p habopen
+    - onchanges:
+      - file: miio-binding
+      - file: openhab-items
+      - file: openhab-persistence
+      - file: openhab-rules
+      - file: openhab-services
+      - file: openhab-sitemaps
+      - file: openhab-things
 
 openhab2:
   service.running:

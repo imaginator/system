@@ -1,20 +1,88 @@
 // Managed by Saltstack
 
-// Example:
+// Sun
+DateTime   LocalSun_RiseStart              "Start time"              {channel="astro:sun:local:rise#start"}
+DateTime   LocalSun_RiseEnd                "End time"                {channel="astro:sun:local:rise#end"}
+Number     LocalSun_RiseDuration           "Duration"                {channel="astro:sun:local:rise#duration"}
+DateTime   LocalSun_SetStart               "Start time"              {channel="astro:sun:local:set#start"}
+DateTime   LocalSun_SetEnd                 "End time"                {channel="astro:sun:local:set#end"}
+Number     LocalSun_SetDuration            "Duration"                {channel="astro:sun:local:set#duration"}
+DateTime   LocalSun_NoonStart              "Start time"              {channel="astro:sun:local:noon#start"}
+DateTime   LocalSun_NoonEnd                "End time"                {channel="astro:sun:local:noon#end"}
+Number     LocalSun_NoonDuration           "Duration"                {channel="astro:sun:local:noon#duration"}
+DateTime   LocalSun_NightStart             "Start time"              {channel="astro:sun:local:night#start"}
+DateTime   LocalSun_NightEnd               "End time"                {channel="astro:sun:local:night#end"}
+Number     LocalSun_NightDuration          "Duration"                {channel="astro:sun:local:night#duration"}
+DateTime   LocalSun_MorningNightStart      "Start time"              {channel="astro:sun:local:morningNight#start"}
+DateTime   LocalSun_MorningNightEnd        "End time"                {channel="astro:sun:local:morningNight#end"}
+Number     LocalSun_MorningNightDuration   "Duration"                {channel="astro:sun:local:morningNight#duration"}
+DateTime   LocalSun_AstroDawnStart         "Start time"              {channel="astro:sun:local:astroDawn#start"}
+DateTime   LocalSun_AstroDawnEnd           "End time"                {channel="astro:sun:local:astroDawn#end"}
+Number     LocalSun_AstroDawnDuration      "Duration"                {channel="astro:sun:local:astroDawn#duration"}
+DateTime   LocalSun_NauticDawnStart        "Start time"              {channel="astro:sun:local:nauticDawn#start"}
+DateTime   LocalSun_NauticDawnEnd          "End time"                {channel="astro:sun:local:nauticDawn#end"}
+Number     LocalSun_NauticDawnDuration     "Duration"                {channel="astro:sun:local:nauticDawn#duration"}
+DateTime   LocalSun_CivilDawnStart         "Start time"              {channel="astro:sun:local:civilDawn#start"}
+DateTime   LocalSun_CivilDawnEnd           "End time"                {channel="astro:sun:local:civilDawn#end"}
+Number     LocalSun_CivilDawnDuration      "Duration"                {channel="astro:sun:local:civilDawn#duration"}
+DateTime   LocalSun_AstroDuskStart         "Start time"              {channel="astro:sun:local:astroDusk#start"}
+DateTime   LocalSun_AstroDuskEnd           "End time"                {channel="astro:sun:local:astroDusk#end"}
+Number     LocalSun_AstroDuskDuration      "Duration"                {channel="astro:sun:local:astroDusk#duration"}
+DateTime   LocalSun_NauticDuskStart        "Start time"              {channel="astro:sun:local:nauticDusk#start"}
+DateTime   LocalSun_NauticDuskEnd          "End time"                {channel="astro:sun:local:nauticDusk#end"}
+Number     LocalSun_NauticDuskDuration     "Duration"                {channel="astro:sun:local:nauticDusk#duration"}
+DateTime   LocalSun_CivilDuskStart         "Start time"              {channel="astro:sun:local:civilDusk#start"}
+DateTime   LocalSun_CivilDuskEnd           "End time"                {channel="astro:sun:local:civilDusk#end"}
+Number     LocalSun_CivilDuskDuration      "Duration"                {channel="astro:sun:local:civilDusk#duration"}
+DateTime   LocalSun_EveningNightStart      "Start time"              {channel="astro:sun:local:eveningNight#start"}
+DateTime   LocalSun_EveningNightEnd        "End time"                {channel="astro:sun:local:eveningNight#end"}
+Number     LocalSun_EveningNightDuration   "Duration"                {channel="astro:sun:local:eveningNight#duration"}
+DateTime   LocalSun_DaylightStart          "Start time"              {channel="astro:sun:local:daylight#start"}
+DateTime   LocalSun_DaylightEnd            "End time"                {channel="astro:sun:local:daylight#end"}
+Number     LocalSun_DaylightDuration       "Duration"                {channel="astro:sun:local:daylight#duration"}
+Number     LocalSun_PositionAzimuth        "Azimuth"                 {channel="astro:sun:local:position#azimuth"}
+Number     LocalSun_PositionElevation      "Elevation"               {channel="astro:sun:local:position#elevation"}
+Number     LocalSun_RadiationDirect        "Direct Radiation"        {channel="astro:sun:local:radiation#direct"}
+Number     LocalSun_RadiationDiffuse       "Diffuse Radiation"       {channel="astro:sun:local:radiation#diffuse"}
+Number     LocalSun_RadiationTotal         "Total Radiation"         {channel="astro:sun:local:radiation#total"}
+DateTime   LocalSun_ZodiacStart            "Start time"              {channel="astro:sun:local:zodiac#start"}
+DateTime   LocalSun_ZodiacEnd              "End time"                {channel="astro:sun:local:zodiac#end"}
+String     LocalSun_ZodiacSign             "Sign"                    {channel="astro:sun:local:zodiac#sign"}
+String     LocalSun_SeasonName             "Season name"             {channel="astro:sun:local:season#name"}
+DateTime   LocalSun_SeasonSpring           "Spring"                  {channel="astro:sun:local:season#spring"}
+DateTime   LocalSun_SeasonSummer           "Summer"                  {channel="astro:sun:local:season#summer"}
+DateTime   LocalSun_SeasonAutumn           "Autumn"                  {channel="astro:sun:local:season#autumn"}
+DateTime   LocalSun_SeasonWinter           "Winter"                  {channel="astro:sun:local:season#winter"}
+DateTime   LocalSun_EclipseTotal           "Total eclipse"           {channel="astro:sun:local:eclipse#total"}
+DateTime   LocalSun_EclipsePartial         "Partial eclipse"         {channel="astro:sun:local:eclipse#partial"}
+DateTime   LocalSun_EclipseRing            "Ring eclipse"            {channel="astro:sun:local:eclipse#ring"}
+String     LocalSun_PhaseName              "The current sun phase"   {channel="astro:sun:local:phase#name"}
 
-// Number LivingRoom_Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
-
-// The example above defines an item:
-// 
-// of type Number
-// with name LivingRoom_Temperature
-// formatting its output in format %.1f °C (See Formatting section for syntax explanation)
-// displaying icon temperature
-// belonging to groups gTemperature and gLivingRoom
-// tagged as a thermostat (“TargetTemperature”) for usage with I/O addons like Hue Emulation
-// bound to the openHAB binding knx with write group address 1/0/15 and listening group address 0/0/15
-
-DateTime Sunrise_Time       "Sunrise [%1$tH:%1$tM]"  { channel="astro:sun:berlin:rise#start" }
-DateTime Sunset_Time        "Sunset [%1$tH:%1$tM]"   { channel="astro:sun:berlin:set#start" }
-
-// vim: syntax=Xtend
+// Moon
+DateTime   LocalMoon_RiseStart           "Start time"          {channel="astro:moon:local:rise#start"}
+DateTime   LocalMoon_RiseEnd             "End time"            {channel="astro:moon:local:rise#end"}
+DateTime   LocalMoon_SetStart            "Start time"          {channel="astro:moon:local:set#start"}
+DateTime   LocalMoon_SetEnd              "End time"            {channel="astro:moon:local:set#end"}
+DateTime   LocalMoon_PhaseFirstQuarter   "First quarter"       {channel="astro:moon:local:phase#firstQuarter"}
+DateTime   LocalMoon_PhaseThirdQuarter   "Third quarter"       {channel="astro:moon:local:phase#thirdQuarter"}
+DateTime   LocalMoon_PhaseFull           "Full moon"           {channel="astro:moon:local:phase#full"}
+DateTime   LocalMoon_PhaseNew            "New moon"            {channel="astro:moon:local:phase#new"}
+Number     LocalMoon_PhaseAge            "Moon age"            {channel="astro:moon:local:phase#age"}
+Number     LocalMoon_PhaseAgeDegree      "Moon age"            {channel="astro:moon:local:phase#ageDegree"}
+Number     LocalMoon_PhaseAgePercent     "Moon age"            {channel="astro:moon:local:phase#agePercent"}
+Number     LocalMoon_PhaseIllumination   "Moon illumination"   {channel="astro:moon:local:phase#illumination"}
+String     LocalMoon_PhaseName           "Moonphase name"      {channel="astro:moon:local:phase#name"}
+DateTime   LocalMoon_EclipseTotal        "Total eclipse"       {channel="astro:moon:local:eclipse#total"}
+DateTime   LocalMoon_EclipsePartial      "Partial eclipse"     {channel="astro:moon:local:eclipse#partial"}
+DateTime   LocalMoon_DistanceDate        "Date"                {channel="astro:moon:local:distance#date"}
+Number     LocalMoon_DistanceMiles       "Miles"               {channel="astro:moon:local:distance#miles"}
+Number     LocalMoon_DistanceKilometer   "Kilometer"           {channel="astro:moon:local:distance#kilometer"}
+DateTime   LocalMoon_PerigeeDate         "Date"                {channel="astro:moon:local:perigee#date"}
+Number     LocalMoon_PerigeeMiles        "Miles"               {channel="astro:moon:local:perigee#miles"}
+Number     LocalMoon_PerigeeKilometer    "Kilometer"           {channel="astro:moon:local:perigee#kilometer"}
+DateTime   LocalMoon_ApogeeDate          "Date"                {channel="astro:moon:local:apogee#date"}
+Number     LocalMoon_ApogeeMiles         "Miles"               {channel="astro:moon:local:apogee#miles"}
+Number     LocalMoon_ApogeeKilometer     "Kilometer"           {channel="astro:moon:local:apogee#kilometer"}
+Number     LocalMoon_PositionAzimuth     "Azimuth"             {channel="astro:moon:local:position#azimuth"}
+Number     LocalMoon_PositionElevation   "Elevation"           {channel="astro:moon:local:position#elevation"}
+String     LocalMoon_ZodiacSign          "Sign"                {channel="astro:moon:local:zodiac#sign"}

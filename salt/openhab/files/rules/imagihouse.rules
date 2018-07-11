@@ -4,7 +4,7 @@ rule "System started"
 when
     System started
 then
-    Present.sendCommand(OFF) // assume no one is home on startup
+    say("Openhab is running", "marytts:cmuslthsmm", "chromecast:audio:home-mini-bedroom")
 end
 
 rule "gPresent updated, at least one sensor changed state"
@@ -28,4 +28,13 @@ when
     Item Present_Timer received command OFF
 then
     Present.sendCommand(OFF)
+end
+
+
+
+rule "React on SimonPhone change/update"
+when
+    Item SimonPhone changed from OFF
+then
+    say("Simon is Home")    
 end
