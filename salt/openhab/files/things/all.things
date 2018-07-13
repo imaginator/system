@@ -2,8 +2,8 @@
 
 airquality:aqi:local                                        @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:moon:local                                            @ "all"           [ geolocation="52.5200066,13.4049540", interval="60" ]
-astro:sun:local                                             @ "all"           [ geolocation="52.5200066,13.4049540", interval="60" ]
+astro:moon:local                                            @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
+astro:sun:local                                             @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
 
 chromecast:audio:home-mini-bathroom                         @ "main bathroom" [ ipAddress="home-mini-bathroom.imagilan",      label="main bathroom" ]
 chromecast:audio:home-mini-bedroom                          @ "bedroom"       [ ipAddress="home-mini-bedroom.imagilan",       label="bedroom" ]
@@ -14,16 +14,16 @@ chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ 
 
 miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=600 ]
-network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=600 ]
+network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
+network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
-tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=30 ]
-tplinksmarthome:hs110:industrial-light                      @ "lounge"        [ ipAddress="plugswitch02.imagilan", refresh=30 ]
-tplinksmarthome:hs110:blah1                                 @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=30 ]
-tplinksmarthome:hs110:blah2                                 @ "lounge"        [ ipAddress="plugswitch04.imagilan", refresh=30 ]
-tplinksmarthome:hs110:blah3                                 @ "lounge"        [ ipAddress="plugswitch05.imagilan", refresh=30 ]
-tplinksmarthome:hs110:blah4                                 @ "lounge"        [ ipAddress="plugswitch06.imagilan", refresh=30 ]
-tplinksmarthome:hs110:blah5                                 @ "lounge"        [ ipAddress="plugswitch07.imagilan", refresh=30 ]
+tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=300 ]
+tplinksmarthome:hs110:industrial-light                      @ "lounge"        [ ipAddress="plugswitch02.imagilan", refresh=300 ]
+tplinksmarthome:hs110:blah1                                 @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=300 ]
+tplinksmarthome:hs110:blah2                                 @ "lounge"        [ ipAddress="plugswitch04.imagilan", refresh=300 ]
+tplinksmarthome:hs110:blah3                                 @ "lounge"        [ ipAddress="plugswitch05.imagilan", refresh=300 ]
+tplinksmarthome:hs110:blah4                                 @ "lounge"        [ ipAddress="plugswitch06.imagilan", refresh=300 ]
+tplinksmarthome:hs110:blah5                                 @ "lounge"        [ ipAddress="plugswitch07.imagilan", refresh=300 ]
 
 weatherunderground:weather:local                            @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
     Channels:
@@ -54,4 +54,24 @@ Bridge hue:bridge:huebridge                                                   [ 
     0210 lounge_overhead  [ lightId="1" ]
     0010 bedroom_plug     [ lightId="2" ]
     0210 bedroom_overhead [ lightId="3" ]
+}
+
+Bridge knx:ip:bridge [ 
+    ipAddress="knx-gw.imagilan", 
+    type="TUNNEL"
+] {
+    Thing device generic [
+        address="1.2.3",
+        fetch=true,
+        pingInterval=300,
+        readInterval=3600
+    ] {
+        Type switch        : demoSwitch        "Light"       [ ga="3/0/4+<3/0/5" ]
+        Type rollershutter : demoRollershutter "Shade"       [ upDown="4/3/50+4/3/51", stopMove="4/3/52+4/3/53", position="4/3/54+<4/3/55" ]
+        Type contact       : demoContact       "Door"        [ ga="1.019:<5/1/2" ]
+        Type number        : demoTemperature   "Temperature" [ ga="9.001:<5/0/0" ]
+        Type dimmer        : demoDimmer        "Dimmer"      [ switch="5/0/0+<5/0/1", position="5/0/2+<5/0/3", increaseDecrease="5/0/4" ]
+        Type string        : demoString        "Message"     [ ga="5/3/1" ]
+        Type datetime      : demoDatetime      "Alarm"       [ ga="5/5/42" ]
+    }
 }

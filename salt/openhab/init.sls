@@ -123,7 +123,7 @@ install-habpanel-config:
     - onchanges:
       - file: /etc/openhab2/other-configs/habpanel-config.json
     - names:
-      - echo "config:property-set -p org.openhab.habpanel panelsRegistry '$(cat /etc/openhab2/other-configs/habpanel-config.json | jq -ca . )' " | openhab-cli console -b -u openhab -p habopen
+      - echo "config:property-set -p org.openhab.habpanel panelsRegistry '$(cat /etc/openhab2/other-configs/habpanel-config.json | jq -ca . )' " | openhab-cli console -u openhab -p habopen
       - echo "config:property-set -p org.openhab.habpanel initialPanelConfig F17" | openhab-cli console -b -u openhab -p habopen
 
 reset-openhab-db:
