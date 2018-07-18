@@ -3,7 +3,7 @@
 # btrfs database
 plex-no-copy-on-write:
   cmd.run:
-    - name: chattr +C "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server"
+    - name: chattr +C "/var/lib/plexmediaserver"
 
 plex-server:
   pkg.installed:

@@ -18,12 +18,12 @@ network:pingdevice:simon-phone                              @ "all"           [ 
 network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
 tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=300 ]
-tplinksmarthome:hs110:industrial-light                      @ "lounge"        [ ipAddress="plugswitch02.imagilan", refresh=300 ]
-tplinksmarthome:hs110:blah1                                 @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=300 ]
-tplinksmarthome:hs110:blah2                                 @ "lounge"        [ ipAddress="plugswitch04.imagilan", refresh=300 ]
-tplinksmarthome:hs110:blah3                                 @ "lounge"        [ ipAddress="plugswitch05.imagilan", refresh=300 ]
-tplinksmarthome:hs110:blah4                                 @ "lounge"        [ ipAddress="plugswitch06.imagilan", refresh=300 ]
-tplinksmarthome:hs110:blah5                                 @ "lounge"        [ ipAddress="plugswitch07.imagilan", refresh=300 ]
+tplinksmarthome:hs110:washing-machine                       @ "lounge"        [ ipAddress="plugswitch02.imagilan", refresh=300 ]
+tplinksmarthome:hs100:blah1                                 @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=300 ]
+tplinksmarthome:hs100:blah2                                 @ "lounge"        [ ipAddress="plugswitch04.imagilan", refresh=300 ]
+tplinksmarthome:hs100:blah3                                 @ "lounge"        [ ipAddress="plugswitch05.imagilan", refresh=300 ]
+tplinksmarthome:hs100:blah4                                 @ "lounge"        [ ipAddress="plugswitch06.imagilan", refresh=300 ]
+tplinksmarthome:hs100:blah5                                 @ "lounge"        [ ipAddress="plugswitch07.imagilan", refresh=300 ]
 
 weatherunderground:weather:local                            @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
     Channels:
@@ -58,10 +58,15 @@ Bridge hue:bridge:huebridge                                                   [ 
 
 Bridge knx:ip:bridge [ 
     ipAddress="knx-gw.imagilan", 
-    type="TUNNEL"
-] {
+    type="TUNNEL",
+    localSourceAddr="1.1.1",
+    autoReconnectPeriod=60,
+    readingPause=50, 
+    responseTimeout=10, 
+    readRetriesLimit=3
+] { 
     Thing device generic [
-        address="1.2.3",
+        address="1.1.3",
         fetch=true,
         pingInterval=300,
         readInterval=3600

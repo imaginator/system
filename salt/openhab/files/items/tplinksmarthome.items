@@ -1,12 +1,12 @@
 // managed by Saltstack
 
-Switch   HS110_Switch_industrial_light        "Switch"         {channel="tplinksmarthome:hs110:industrial-light:switch"}
-Switch   HS110_Led_industrial_light           "Switch Led"     {channel="tplinksmarthome:hs110:industrial-light:led"}
-Number   HS110_Rssi_industrial_light          "Signal"         {channel="tplinksmarthome:hs110:industrial-light:rssi"}
-Number   HS110_Power_industrial_light         "Power"          {channel="tplinksmarthome:hs110:industrial-light:power"}
-Number   HS110_EnergyUsage_industrial_light   "Energy Usage"   {channel="tplinksmarthome:hs110:industrial-light:energyUsage"}
-Number   HS110_Current_industrial_light       "Current"        {channel="tplinksmarthome:hs110:industrial-light:current"}
-Number   HS110_Voltage_industrial_light       "Voltage"        {channel="tplinksmarthome:hs110:industrial-light:voltage"}
+Switch   HS110_Switch_washing_machine        "Switch"         {channel="tplinksmarthome:hs110:washing-machine:switch"}
+Switch   HS110_Led_washing_machine           "Switch Led"     {channel="tplinksmarthome:hs110:washing-machine:led"}
+Number   HS110_Rssi_washing_machine          "Signal"         {channel="tplinksmarthome:hs110:washing-machine:rssi"}
+Number   HS110_Power_washing_machine         "Power"          {channel="tplinksmarthome:hs110:washing-machine:power"}
+Number   HS110_EnergyUsage_washing_machine   "Energy Usage"   {channel="tplinksmarthome:hs110:washing-machine:energyUsage"}
+Number   HS110_Current_washing_machine       "Current"        {channel="tplinksmarthome:hs110:washing-machine:current"}
+Number   HS110_Voltage_washing_machine       "Voltage"        {channel="tplinksmarthome:hs110:washing-machine:voltage"}
 
 Switch   HS110_Switch_cat_toilet              "Switch"         {channel="tplinksmarthome:hs110:cat-toilet:switch"}
 Switch   HS110_Led_cat_toilet                 "Switch Led"     {channel="tplinksmarthome:hs110:cat-toilet:led"}

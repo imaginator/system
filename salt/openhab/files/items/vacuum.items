@@ -38,4 +38,4 @@ String     Imagisuck_NetworkSsid                    "SSID"                      
 String     Imagisuck_NetworkBssid                   "BSSID"                               {channel="miio:vacuum:imagisuck:network#bssid"}
 Number     Imagisuck_NetworkRssi                    "RSSI"                                {channel="miio:vacuum:imagisuck:network#rssi"}
 Number     Imagisuck_NetworkLife                    "Life"                                {channel="miio:vacuum:imagisuck:network#life"}
-# Boolean    Imagisuck_CleaningLastCleanFinish        "Cleaning Finished"                   {channel="miio:vacuum:imagisuck:cleaning#last_clean_finish"}
+// Boolean    Imagisuck_CleaningLastCleanFinish        "Cleaning Finished"                   {channel="miio:vacuum:imagisuck:cleaning#last_clean_finish"}

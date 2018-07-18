@@ -1,4 +1,5 @@
-// Weather Underground binding
+// Managed by Saltstack
+// Weather Underground binding 
 
 String                 LocalWeather_CurrentLocation                               "Observation Location"             {channel="weatherunderground:weather:local:current#location"}
 String                 LocalWeather_CurrentStationId                              "Station Id"                       {channel="weatherunderground:weather:local:current#stationId"}
