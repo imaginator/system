@@ -14,9 +14,14 @@ kvm-packages:
       - lvm2
       - qemu-kvm
       - python-libvirt
+      - smbclient
 
 libvirt-copy-on-write:
   file.directory:
-    - name: /tmp/test2
+    - name: /var/lib/libvirt/images
     - makedirs: True
     - attrs: +C
+
+ /srv/isos:
+  file.directory:
+    - makedirs: True

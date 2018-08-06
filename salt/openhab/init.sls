@@ -1,6 +1,6 @@
 openhab-repo:
   pkgrepo.managed:
-    - name: deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main
+    - name: deb https://dl.bintray.com/openhab/apt-repo2 testing main
     - file: /etc/apt/sources.list.d/openhab.list
     - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
@@ -63,6 +63,13 @@ miio-binding:
     - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
     - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar.sha1"
 
+ipcamera-binding:
+  archive.extracted:
+    - name: /usr/share/openhab2/addons/
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-26-07-2018.zip
+    - source_hash: sha1=85f6a23284560255ef74bf5a0007ea55937553dd
+    - enforce_toplevel: False
+
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things'] %}
 openhab-{{directory}}:
   file.recurse:
@@ -100,7 +107,7 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-add-habpanel-config:
+habpanel-config:
   file.managed:
     - name: /etc/openhab2/other-configs/habpanel-config.json
     - source: salt://openhab/files/other-configs/habpanel-config.json
@@ -116,11 +123,8 @@ openhab2:
       - pkg: openhab-dependencies
     - onchanges:
       - file: miio-binding
-      - file: openhab-items
+      - archive: ipcamera-binding
       - file: openhab-persistence
-      - file: openhab-rules
-      - file: openhab-services
-      - file: openhab-sitemaps
       - file: openhab-things
 
 openhab-console-commands:
@@ -128,3 +132,7 @@ openhab-console-commands:
     - name: openhab2
   cmd.script:
     - source: salt://openhab/files/other-configs/console-setup.sh
+    - onchanges:
+      - file: habpanel-config
+
+

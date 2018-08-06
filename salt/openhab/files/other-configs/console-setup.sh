@@ -1,15 +1,17 @@
 #!/bin/bash
-panelsRegistry=$(jq  --compact-output . /etc/openhab2/other-configs/habpanel-config.json)
+# u0027 is a: " ' " character
+# u0024 is a: " $ " character
 
-cat << _EOF_ | openhab-cli console -b -u openhab -p habopen
+panelsRegistry=$(jq --compact-output . /etc/openhab2/other-configs/habpanel-config.json | sed "s/'/\\\\u0027/g" )
+# panelsRegistry=$(jq --compact-output . /etc/openhab2/other-configs/habpanel-config.json | sed "s/'/\\\\u0027/g" | sed "s/\\$/\\\\u0024/g"  )
+# cat << _EOF_ >/tmp/out.json
+
+openhab-cli console -b -u openhab -p habopen << _EOF_
+config:property-set -p org.openhab.habpanel lockEditing false
 config:property-set -p org.openhab.habpanel initialPanelConfig F17
-#config:property-set -p org.openhab.habpanel panelsRegistry ${panelsRegistry}
+config:property-set -p org.openhab.habpanel panelsRegistry '${panelsRegistry}'
+log:set ERROR
 log:set TRACE org.openhab.binding.knx
 log:set TRACE calimero
+log:set DEBUG org.openhab.binding.ipcamera
 _EOF_
-
-
-#echo -e $panelsRegistry
-#printf -v quotedpanelsRegistry '%q\n' $panelsRegistry
-#echo $quotedpanelsRegistry
-#config:property-set -p org.openhab.habpanel panelsRegistry $"(echo -e $panelsRegistry)"
