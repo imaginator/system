@@ -12,13 +12,7 @@ chromecast:audio:home-mini-lounge                           @ "lounge"        [ 
 chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
 chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
 
-ipcamera:ONVIF:camera01 [ 
-    ipAddress="camera01.imagilan", 
-    username="{{ salt['pillar.get']('openhab:onvif_username') }}", 
-    password="{{ salt['pillar.get']('openhab:onvif_password') }}", 
-    onvif_port=80, 
-    port=80
-    ]
+ipcamera:HIKVISION:camera01 [ipAddress="camera01.imagilan", username="{{ salt['pillar.get']('openhab:camera_operator_username') }}", password="{{ salt['pillar.get']('openhab:camera_operator_password') }}", onvif_port=80, port=80]
 
 miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
@@ -58,4 +52,3 @@ Bridge hue:bridge:huebridge                                                   [ 
     0010 bedroom_plug     [ lightId="2" ]
     0210 bedroom_overhead [ lightId="3" ]
 }
-

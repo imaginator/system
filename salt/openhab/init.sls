@@ -125,14 +125,28 @@ openhab2:
       - file: miio-binding
       - archive: ipcamera-binding
       - file: openhab-persistence
+      - file: openhab-services
       - file: openhab-things
+  cmd.run:
+    - name: until nc -z localhost 8101; do sleep 1; done
+    - timeout: 15
 
 openhab-console-commands:
-  service.running:
-    - name: openhab2
   cmd.script:
     - source: salt://openhab/files/other-configs/console-setup.sh
     - onchanges:
+      - service: openhab2
+    - require:
+      - cmd: openhab2
+
+habpanel-configure-commands:
+  service.running:
+    - name: openhab2
+  cmd.script:
+    - source: salt://openhab/files/other-configs/habpanel-setup.sh
+    - onchanges:
       - file: habpanel-config
+    - require:
+      - cmd: openhab2
 
 
