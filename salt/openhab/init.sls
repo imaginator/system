@@ -126,7 +126,6 @@ openhab2:
       - archive: ipcamera-binding
       - file: openhab-persistence
       - file: openhab-services
-      - file: openhab-things
   cmd.run:
     - name: until nc -z localhost 8101; do sleep 1; done
     - timeout: 15
@@ -149,4 +148,17 @@ habpanel-configure-commands:
     - require:
       - cmd: openhab2
 
-
+openhab-iptables-dhcp-accept-ipv4:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: udp
+    - jump: accept-log
+    - source: 0.0.0.0
+    - dport: 6767
+    - family: ipv4
+    - match: comment 
+    - comment: "DHCP accept"
+    - save: true
