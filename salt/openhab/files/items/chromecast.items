@@ -191,3 +191,36 @@ String     ChromecastAudioGroup_all_Studio          "Studio"           {channel=
 String     ChromecastAudioGroup_all_Subtitle        "Subtitle"         {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:subtitle"}
 String     ChromecastAudioGroup_all_Title           "Title"            {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:title"}
 Number     ChromecastAudioGroup_all_TrackNumber     "Track Number"     {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:trackNumber"}
+
+// Chromecast Ultra lounge
+
+Player     Chromecast_Control         "Control"          {channel="chromecast:chromecast:chromecast-ultra-lounge:control"}
+Dimmer     Chromecast_Volume          "Volume"           {channel="chromecast:chromecast:chromecast-ultra-lounge:volume"}
+Switch     Chromecast_Mute            "Mute"             {channel="chromecast:chromecast:chromecast-ultra-lounge:mute"}
+String     Chromecast_Playuri         "Play URI"         {channel="chromecast:chromecast:chromecast-ultra-lounge:playuri"}
+String     Chromecast_AppName         "App"              {channel="chromecast:chromecast:chromecast-ultra-lounge:appName"}
+String     Chromecast_AppId           "App Id"           {channel="chromecast:chromecast:chromecast-ultra-lounge:appId"}
+Switch     Chromecast_Idling          "Idling"           {channel="chromecast:chromecast:chromecast-ultra-lounge:idling"}
+String     Chromecast_Statustext      "App Status"       {channel="chromecast:chromecast:chromecast-ultra-lounge:statustext"}
+Number     Chromecast_CurrentTime     "Current Time"     {channel="chromecast:chromecast:chromecast-ultra-lounge:currentTime"}
+Number     Chromecast_Duration        "Duration"         {channel="chromecast:chromecast:chromecast-ultra-lounge:duration"}
+String     Chromecast_MetadataType    "Media Type"       {channel="chromecast:chromecast:chromecast-ultra-lounge:metadataType"}
+String     Chromecast_AlbumArtist     "Album Artist"     {channel="chromecast:chromecast:chromecast-ultra-lounge:albumArtist"}
+String     Chromecast_AlbumName       "Album Name"       {channel="chromecast:chromecast:chromecast-ultra-lounge:albumName"}
+String     Chromecast_Artist          "Artist"           {channel="chromecast:chromecast:chromecast-ultra-lounge:artist"}
+DateTime   Chromecast_BroadcastDate   "Broadcast Date"   {channel="chromecast:chromecast:chromecast-ultra-lounge:broadcastDate"}
+String     Chromecast_Composer        "Composer"         {channel="chromecast:chromecast:chromecast-ultra-lounge:composer"}
+DateTime   Chromecast_CreationDate    "Creation Date"    {channel="chromecast:chromecast:chromecast-ultra-lounge:creationDate"}
+Number     Chromecast_DiscNumber      "Disc Number"      {channel="chromecast:chromecast:chromecast-ultra-lounge:discNumber"}
+Number     Chromecast_EpisodeNumber   "Episode Number"   {channel="chromecast:chromecast:chromecast-ultra-lounge:episodeNumber"}
+Image      Chromecast_Image           "Image"            {channel="chromecast:chromecast:chromecast-ultra-lounge:image"}
+String     Chromecast_ImageSrc        "Image URL"        {channel="chromecast:chromecast:chromecast-ultra-lounge:imageSrc"}
+String     Chromecast_LocationName    "Location Name"    {channel="chromecast:chromecast:chromecast-ultra-lounge:locationName"}
+Location   Chromecast_Location        "Location"         {channel="chromecast:chromecast:chromecast-ultra-lounge:location"}
+DateTime   Chromecast_ReleaseDate     "Release Date"     {channel="chromecast:chromecast:chromecast-ultra-lounge:releaseDate"}
+Number     Chromecast_SeasonNumber    "Season Number"    {channel="chromecast:chromecast:chromecast-ultra-lounge:seasonNumber"}
+String     Chromecast_SeriesTitle     "Series Title"     {channel="chromecast:chromecast:chromecast-ultra-lounge:seriesTitle"}
+String     Chromecast_Studio          "Studio"           {channel="chromecast:chromecast:chromecast-ultra-lounge:studio"}
+String     Chromecast_Subtitle        "Subtitle"         {channel="chromecast:chromecast:chromecast-ultra-lounge:subtitle"}
+String     Chromecast_Title           "Title"            {channel="chromecast:chromecast:chromecast-ultra-lounge:title"}
+Number     Chromecast_TrackNumber     "Track Number"     {channel="chromecast:chromecast:chromecast-ultra-lounge:trackNumber"}

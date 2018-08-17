@@ -107,6 +107,14 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
+habpanel-console-config:
+  file.managed:
+    - name: /etc/openhab2/other-configs/console-setup.sh
+    - source: salt://openhab/files/other-configs/console-setup.sh
+    - makedirs: True
+    - user: root
+    - group: root
+
 habpanel-config:
   file.managed:
     - name: /etc/openhab2/other-configs/habpanel-config.json
@@ -134,7 +142,7 @@ openhab-console-commands:
   cmd.script:
     - source: salt://openhab/files/other-configs/console-setup.sh
     - onchanges:
-      - service: openhab2
+      - file: habpanel-console-config
     - require:
       - cmd: openhab2
 

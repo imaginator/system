@@ -10,9 +10,10 @@ chromecast:audio:home-mini-bedroom                          @ "bedroom"       [ 
 chromecast:audio:home-mini-kitchen                          @ "kitchen"       [ ipAddress="home-mini-kitchen.imagilan",       label="bedroom" ]
 chromecast:audio:home-mini-lounge                           @ "lounge"        [ ipAddress="home-mini-lounge.imagilan",        label="lounge" ]
 chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", label="lounge" ]
+chromecast:chromecast:chromecast-ultra-lounge               @ "lounge"        [ ipAddress="chromecast-ultra-lounge.imagilan", label="lounge" ]
 chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", label="all",  port="42576"]  
 
-ipcamera:HIKVISION:camera01                                 @ "lounge"        [ IPADDRESS="camera01.imagilan", USERNAME="{{ salt['pillar.get']('openhab:camera_operator_username') }}", PASSWORD="{{ salt['pillar.get']('openhab:camera_operator_password') }}", ONVIF_PORT=80, PORT=80]
+ipcamera:HIKVISION:camera01                                 @ "lounge"        [ IPADDRESS="camera01.imagilan", USERNAME="{{ salt['pillar.get']('openhab:camera_operator_username') }}", PASSWORD="{{ salt['pillar.get']('openhab:camera_operator_password') }}", PORT=80, ONVIF_PORT=80, ONVIF_MEDIA_PROFILE=0, POLL_CAMERA_MS=30000]
 
 miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
