@@ -69,7 +69,7 @@ plex_iptables-bonjour:
     - comment: plex-web-udp
     - save: true
 
-{% for mediadir in ['/srv/video','/srv/music','/srv/audiobooks', '/srv/photos'] %}
+{% for mediadir in ['/srv/video/Clips','/srv/video/Film','/srv/video/TV','/srv/music','/srv/audiobooks','/srv/photos'] %}
 {{ mediadir }}-permissions:
   file.directory:
     - name: {{mediadir}}

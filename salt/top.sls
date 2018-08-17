@@ -15,6 +15,7 @@ base:
     - prometheus-server
     - pulseaudio
     - saltstack-server
+    - motion
 #    - gmusicproxy
 #    - mopidy
 #  pi02:
