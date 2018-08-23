@@ -1,0 +1,14 @@
+[Unit]
+Description=ffserver to restream webcam
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/ffserver -d -f /etc/ffserver.conf
+Restart=always
+RestartSec=5
+User=motion
+Group=motion
+
+[Install]
+WantedBy=multi-user.target
