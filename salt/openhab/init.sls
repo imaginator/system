@@ -20,6 +20,7 @@ openhab-dependencies:
       - iputils-arping
       - android-tools-adb # tablet control
       - jq
+      - npm               # weatherunderground icons
 
 #special permissions for watching the network
 /usr/sbin/arping:
@@ -170,3 +171,15 @@ openhab-iptables-dhcp-accept-ipv4:
     - match: comment 
     - comment: "DHCP accept"
     - save: true
+
+weather-underground-icons:
+  archive.extracted:
+    - name: /etc/openhab2/html/weather-underground-icons
+    - source: https://github.com/manifestinteractive/weather-underground-icons/archive/v1.0.1.tar.gz
+    - user: openhab
+    - group: openhab
+    - if_missing: /etc/openhab2/html/weather-underground-icons
+    - skip_verify: True 
+    - options: "--strip=1"
+    - enforce_toplevel: False
+   

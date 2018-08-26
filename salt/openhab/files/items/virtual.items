@@ -1,0 +1,2 @@
+// The daylight ct dimmer is a color temperature reference value
+Dimmer DaylightCT "daylight emulation"

@@ -21,7 +21,7 @@ network:pingdevice:simon-phone                              @ "all"           [ 
 network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
 tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=300 ]
-tplinksmarthome:hs110:washing-machine                       @ "lounge"        [ ipAddress="plugswitch02.imagilan", refresh=300 ]
+tplinksmarthome:hs110:washing-machine                       @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=300 ]
 
 weatherunderground:weather:local                            @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
     Channels:

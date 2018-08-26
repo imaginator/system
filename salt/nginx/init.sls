@@ -1,11 +1,15 @@
 nginx:
-  service:
-    - running
+  service.running: 
+    - enable: True
+    - reload: True
     - watch:
       - file: /etc/nginx/nginx.conf
       - file: /etc/nginx/sites-enabled/*
     - require:
       - pkg: nginx_pkgs
+      - file: /etc/nginx/nginx.conf
+      - acme: bunker-cert
+      - cmd: /etc/nginx/dhparam.pem
 
 nginx_pkgs:
   pkg.installed:
@@ -13,10 +17,26 @@ nginx_pkgs:
     - pkgs:
       - nginx-full
       - certbot
+      - libnginx-mod-rtmp
 
 bunker-cert:
   acme.cert:
     - name: bunker.imaginator.com
+    - email: simon@imaginator.com
+    - renew: 14
+    - webroot: /var/www/letsencrypt
+    - owner: root
+    - group: certificates
+    - watch_in:
+      - service: nginx
+    - require_in:
+      - service: nginx
+    - onchanges_in:
+      - service: nginx
+      
+eyeinthesky-cert:
+  acme.cert:
+    - name: eyeinthesky.imaginator.com
     - email: simon@imaginator.com
     - renew: 14
     - webroot: /var/www/letsencrypt

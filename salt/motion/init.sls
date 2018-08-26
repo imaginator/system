@@ -1,7 +1,7 @@
 motion:
-  service.running:
-    - enable: False
-    - reload: False
+  service.dead:
+    - enable: True
+    - reload: True
     - watch:
       - file: /etc/motion/motion.conf
       - file: /etc/motion/timelapse.conf
@@ -10,14 +10,12 @@ motion:
       - group: motion-in-plex
       - file: /srv/video/netcams
 
-ffserver:
+reload-nginx-if-config-changes:
   service.running:
-    - enable: False
-    - restart: False
-    - force: False
+    - name: nginx
+    - reload: True
     - watch:
-      - file: /etc/systemd/system/ffserver.service
-      - file: /etc/ffserver.conf
+      - file: /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf
 
 motion_pkgs:
   pkg.installed:
@@ -67,23 +65,17 @@ motion-in-plex:
     - require:
       - pkg: motion_pkgs
 
-/etc/ffserver.conf:
-  file.managed:
-    - makedirs: true
-    - user: motion
-    - group: motion
-    - source: salt://motion/files/ffserver.conf
-    - template: jinja
-    - require:
-      - pkg: motion_pkgs
-
 /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf:
   file.managed:
     - source: salt://motion/files/nginx-vhost-eyeinthesky.conf
 
-/etc/systemd/system/ffserver.service:
-  file.managed:
-    - source: salt://motion/files/ffserver.service
+/var/web/eyeinthesky.imaginator.com:
+  file.recurse:
+    - makedirs: true
+    - user: www-data
+    - group: www-data
+    - source: salt://motion/files/html
+    - template: jinja
 
 ffserver_iptables_ipv4:
   iptables.append:
@@ -93,9 +85,8 @@ ffserver_iptables_ipv4:
     - connstate: NEW
     - proto: tcp
     - jump: accept-log
-    - dports: 9999
+    - dports: 1935
     - family: ipv4
     - match: comment 
-    - comment: ffserver-streaming
+    - comment: rtmp-streaming
     - save: true
-
