@@ -5,8 +5,8 @@ when
     // recompute every 60 seconds
     Time cron "42 * * ? * MON-FRI *"
 then
-   var sunrise = new DateTime(Sunrise_Time.state.toString)
-   var sunset = new DateTime(Sunset_Time.state.toString)
+   var sunrise = new DateTime(LocalSun_RiseStart.state.toString)
+   var sunset = new DateTime(LocalSun_SetEnd.state.toString)
    // things should be cold around wakeup, neutral during the day, and warm during the night
    var preSunrise = sunrise.minusHours(1)
    var postSunrise = sunrise.plusHours(2)
