@@ -16,6 +16,7 @@ reload-nginx-if-config-changes:
     - reload: True
     - watch:
       - file: /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf
+      - file: /etc/nginx/rtmp.conf
 
 motion_pkgs:
   pkg.installed:
@@ -64,6 +65,10 @@ motion-in-plex:
     - template: jinja
     - require:
       - pkg: motion_pkgs
+
+/etc/nginx/rtmp.conf:
+  file.managed:
+    - source: salt://motion/files/rtmp.conf
 
 /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf:
   file.managed:
