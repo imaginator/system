@@ -1,18 +1,18 @@
 // Managed by Saltstack
 
-Color    ExtendedColorLight_Color_bedroom              "Color"               {channel="hue:0210:huebridge:bedroom_overhead:color"}
-Dimmer   ExtendedColorLight_ColorTemperature_bedroom   "Color Temperature"   {channel="hue:0210:huebridge:bedroom_overhead:color_temperature"}
-String   ExtendedColorLight_Alert_bedroom              "Alert"               {channel="hue:0210:huebridge:bedroom_overhead:alert"}
-Switch   ExtendedColorLight_Effect_bedroom             "Color Loop"          {channel="hue:0210:huebridge:bedroom_overhead:effect"}
+Color    BedroomOverhead_Colour                      "Color"               {channel="hue:0210:huebridge:bedroom_overhead:color"}
+Dimmer   BedroomOverhead_ColorTemperature            "Color Temperature"   {channel="hue:0210:huebridge:bedroom_overhead:color_temperature"}
+String   BedroomOverhead_Alert                       "Alert"               {channel="hue:0210:huebridge:bedroom_overhead:alert"}
+Switch   BedroomOverhead_Effect                      "Color Loop"          {channel="hue:0210:huebridge:bedroom_overhead:effect"}
 
-Color    ExtendedColorLight_Color_lounge              "Color"               {channel="hue:0210:huebridge:lounge_overhead:color"}
-Dimmer   ExtendedColorLight_ColorTemperature_lounge   "Color Temperature"   {channel="hue:0210:huebridge:lounge_overhead:color_temperature"}
-String   ExtendedColorLight_Alert_lounge              "Alert"               {channel="hue:0210:huebridge:lounge_overhead:alert"}
-Switch   ExtendedColorLight_Effect_lounge             "Color Loop"          {channel="hue:0210:huebridge:lounge_overhead:effect"}
+Color    LoungeOverhead_Color                        "Color"               {channel="hue:0210:huebridge:lounge_overhead:color"}
+Dimmer   LoungeOverhead_ColorTemperature             "Color Temperature"   {channel="hue:0210:huebridge:lounge_overhead:color_temperature"}
+String   LoungeOverhead_Alert                        "Alert"               {channel="hue:0210:huebridge:lounge_overhead:alert"}
+Switch   LoungeOverhead_Effect                       "Color Loop"          {channel="hue:0210:huebridge:lounge_overhead:effect"}
 
-Color    ExtendedColorLight_Color                     "Color"               {channel="hue:0210:huebridge:kitchen_overhead:color"}
-Dimmer   ExtendedColorLight_ColorTemperature          "Color Temperature"   {channel="hue:0210:huebridge:kitchen_overhead:color_temperature"}
-String   ExtendedColorLight_Alert                     "Alert"               {channel="hue:0210:huebridge:kitchen_overhead:alert"}
-Switch   ExtendedColorLight_Effect                    "Color Loop"          {channel="hue:0210:huebridge:kitchen_overhead:effect"}
+Color    KitchenOverhead_Color                       "Color"               {channel="hue:0210:huebridge:kitchen_overhead:color"}
+Dimmer   KitchenOverhead_ColorTemperature            "Color Temperature"   {channel="hue:0210:huebridge:kitchen_overhead:color_temperature"}
+String   KitchenOverhead_Alert_kichen                "Alert"               {channel="hue:0210:huebridge:kitchen_overhead:alert"}
+Switch   KitchenOverhead_Effect                      "Color Loop"          {channel="hue:0210:huebridge:kitchen_overhead:effect"}
 
-Switch   OnOffPlugInUnit_Switch_bedroom               "Switch"              {channel="hue:0010:huebridge:bedroom_plug:switch"}
+Switch   BedroomBedside_switch                       "Switch"              {channel="hue:0010:huebridge:bedroom_plug:switch"}

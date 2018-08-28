@@ -166,11 +166,24 @@ openhab-iptables-dhcp-accept-ipv4:
     - proto: udp
     - jump: accept-log
     - source: 0.0.0.0
-    - dport: 6767
+    - dport: 67
     - family: ipv4
     - match: comment 
-    - comment: "DHCP accept"
+    - comment: "DHCP accept for openhab"
     - save: true
+
+openhab-iptables-dhcp-redirect-ipv4:
+  iptables.append:
+    - chain: PREROUTING
+    - table: nat
+    - in-interface: trusted
+    - proto: udp
+    - dport: 67
+    - jump: REDIRECT
+    - to-port: 6767
+    - destination: 127.0.0.1
+    - comment: "DHCP redirect for openhab"
+    - save: True
 
 weather-underground-icons:
   archive.extracted:

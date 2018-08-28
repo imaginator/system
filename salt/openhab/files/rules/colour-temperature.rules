@@ -1,0 +1,48 @@
+// Lichtspiele Schlafzimmer....
+
+val String filename = "colour-temperature.rules"
+
+rule "daylight_colour_temp_schlafzimmer"
+when
+    // recompute every 60 seconds
+    Time cron "45 * * ? * * *"
+then
+  if ((BedroomOverhead_Colour.state as PercentType).intValue <= 0) {
+    return
+  }
+  val current = (BedroomOverhead_ColorTemperature.state as PercentType).intValue
+  val desired = (DaylightCT.state as PercentType).intValue
+  if (Math.abs(current - desired) >= 1) {
+    BedroomOverhead_ColorTemperature.sendCommand(Math.round(0.9*current + 0.1*desired + Math.signum(desired - current)))
+  }
+end
+
+rule "daylight_colour_temp_lounge"
+when
+    // recompute every 60 seconds
+    Time cron "45 * * ? * * *"
+then
+  if ((LoungeOverhead_Color.state as PercentType).intValue <= 0) {
+    return
+  }
+  val current = (LoungeOverhead_ColorTemperature.state as PercentType).intValue
+  val desired = (DaylightCT.state as PercentType).intValue
+  if (Math.abs(current - desired) >= 1) {
+    LoungeOverhead_ColorTemperature.sendCommand(Math.round(0.9*current + 0.1*desired + Math.signum(desired - current)))
+  }
+end
+
+rule "daylight_colour_temp_kitchen"
+when
+    // recompute every 60 seconds
+    Time cron "45 * * ? * * *"
+then
+  if ((KitchenOverhead_Color.state as PercentType).intValue <= 0) {
+    return
+  }
+  val current = (KitchenOverhead_ColorTemperature.state as PercentType).intValue
+  val desired = (DaylightCT.state as PercentType).intValue
+  if (Math.abs(current - desired) >= 1) {
+    KitchenOverhead_ColorTemperature.sendCommand(Math.round(0.9*current + 0.1*desired + Math.signum(desired - current)))
+  }
+end
