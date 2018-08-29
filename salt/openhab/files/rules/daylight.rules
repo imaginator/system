@@ -99,4 +99,4 @@ then
    if (DaylightCT.state == NULL || (DaylightCT.state as PercentType).intValue != Math.round(w * 100)) {
      DaylightCT.sendCommand(w * 100)
    }
-end
+end 
