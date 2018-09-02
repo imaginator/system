@@ -1,10 +1,9 @@
 motion:
-  service.dead:
+  service.running:
     - enable: True
     - reload: True
     - watch:
-      - file: /etc/motion/motion.conf
-      - file: /etc/motion/timelapse.conf
+      - file: /etc/motion
     - require:
       - pkg: motion_pkgs
       - group: motion-in-plex
@@ -46,26 +45,6 @@ motion-in-plex:
     - require: 
       - group: motion-in-plex
 
-/etc/motion/motion.conf:
-  file.managed:
-    - makedirs: true
-    - user: motion
-    - group: motion
-    - source: salt://motion/files/motion.conf
-    - template: jinja
-    - require:
-      - pkg: motion_pkgs
-
-/etc/motion/timelapse.conf:
-  file.managed:
-    - makedirs: true
-    - user: motion
-    - group: motion
-    - source: salt://motion/files/timelapse.conf
-    - template: jinja
-    - require:
-      - pkg: motion_pkgs
-
 /etc/nginx/rtmp.conf:
   file.managed:
     - source: salt://motion/files/rtmp.conf
@@ -81,6 +60,16 @@ motion-in-plex:
     - group: www-data
     - source: salt://motion/files/html
     - template: jinja
+
+/etc/motion:
+  file.recurse:
+    - makedirs: true
+    - user: motion
+    - group: motion
+    - source: salt://motion/files/motion-configs
+    - template: jinja
+    - require:
+      - pkg: motion_pkgs
 
 ffserver_iptables_ipv4:
   iptables.append:
