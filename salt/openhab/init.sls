@@ -58,12 +58,6 @@ install-openhab:
       - pkg: openhab-dependencies
       - pkgrepo: openhab-repo
 
-miio-binding:
-  file.managed:
-    - name: /usr/share/openhab2/addons/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
-    - source: https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar
-    - source_hash: "https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/binding/org.openhab.binding.miio/2.4.0-SNAPSHOT/org.openhab.binding.miio-2.4.0-SNAPSHOT.jar.sha1"
-
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
@@ -131,7 +125,6 @@ openhab2:
     - require:
       - pkg: openhab-dependencies
     - onchanges:
-      - file: miio-binding
       - archive: ipcamera-binding
       - file: openhab-persistence
       - file: openhab-services

@@ -13,11 +13,8 @@ base:
     - network
     - plex
     - prometheus-server
+    - prometheus-snmp-exporter
     - pulseaudio
     - saltstack-server
     - motion
-#    - gmusicproxy
-#    - mopidy
-#  pi02:
-#    - openhab-kiosk
-#    - openhab-sensors
+    

@@ -19,7 +19,7 @@ extract_snmp_exporter:
     - user: root
     - group: root
     - mode: 0644
-    - source: salt://prometheus-snmp-exporter/files/snmp.yml
+    - source: salt://prometheus-server/snmp.yml
     - require:
       - archive: extract_snmp_exporter
 
@@ -30,9 +30,9 @@ extract_snmp_exporter:
     - user: root
     - group: root
     - mode: 0644
-    - source: salt://prometheus-snmp-exporter/files/prometheus_snmp_exporter.service
+    - source: salt://prometheus-server/prometheus_snmp_exporter.service
     - require:
-      - file: /etc/prometheus/snmp.yml
+      - pkg: prometheus-server
 
 prometheus_snmp_exporter:
   service.running:

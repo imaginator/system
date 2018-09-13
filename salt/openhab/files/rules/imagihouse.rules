@@ -4,7 +4,7 @@ rule "System started"
 when
     System started
 then
-    say("Openhab is running", "marytts:cmuslthsmm", "chromecast:audio:home-mini-bedroom")
+   // say("Openhab is restarted", "marytts:cmuslthsmm", "chromecast:audio:home-mini-lounge")
 end
 
 rule "gPresent updated, at least one sensor changed state"

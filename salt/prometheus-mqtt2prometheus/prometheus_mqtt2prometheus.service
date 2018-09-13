@@ -1,0 +1,13 @@
+[Unit]
+Description=prometheus MQTT exporter
+After=network.target
+ 
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/prometheus_mqtt2prometheus
+ExecStart=/opt/prometheus_mqtt2prometheus/snmp_exporter --config.file="/opt/prometheus_mqtt2prometheus/prometheus_mqtt2prometheus.yaml" --log.level="info"
+
+[Install]
+WantedBy=multi-user.target
