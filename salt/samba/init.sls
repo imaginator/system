@@ -7,18 +7,15 @@ samba-packages:
 
 samba-config:
     file.managed:
-        - name: /etc/samba/smbd.conf
-        - source: salt://samba/files/smbd.conf
-        - template: Jinja
+      - name: /etc/samba/smb.conf
+      - source: salt://samba/files/smb.conf
 
 samba-service:
   service.running:
-    - name: samba
+    - name: smbd
     - enable: True
+    - reload: True
     - require:
       - pkg: samba-packages
     - watch:
       - file: samba-config
-
-
-
