@@ -21,6 +21,7 @@ scrape_configs:
       - repeater04.imagilan:9100
       - repeater05.imagilan:9100
       - repeater06.imagilan:9100
+      - f17gw.imagilan:9100
       - bunker.imagilan:9100
       - pi02.imagilan:9100
 
