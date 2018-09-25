@@ -61,8 +61,8 @@ install-openhab:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-26-07-2018.zip
-    - source_hash: sha1=85f6a23284560255ef74bf5a0007ea55937553dd
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-15-08-2018.zip
+    - source_hash: sha1=f1e3e8ff61162b9b46400ef0374af19ce04d69e2 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things'] %}
