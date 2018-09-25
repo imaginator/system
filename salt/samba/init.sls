@@ -9,6 +9,10 @@ samba-config:
     file.managed:
       - name: /etc/samba/smb.conf
       - source: salt://samba/files/smb.conf
+      - makedirs: true
+      - user: root
+      - group: root
+      - mode: 0644
 
 samba-service:
   service.running:
