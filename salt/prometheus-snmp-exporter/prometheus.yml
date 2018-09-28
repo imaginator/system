@@ -24,6 +24,7 @@ scrape_configs:
       - repeater07.imagilan:9100
       - bunker.imagilan:9100
       - pi02.imagilan:9100
+      - furrow-vpn.imagilan:9100
 
   - job_name: 'snmp'
     scrape_interval: 10s

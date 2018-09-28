@@ -1,6 +1,6 @@
 openhab-repo:
   pkgrepo.managed:
-    - name: deb https://dl.bintray.com/openhab/apt-repo2 testing main
+    - name: deb https://dl.bintray.com/openhab/apt-repo2 unstable main
     - file: /etc/apt/sources.list.d/openhab.list
     - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
@@ -57,6 +57,15 @@ install-openhab:
     - require:
       - pkg: openhab-dependencies
       - pkgrepo: openhab-repo
+
+openhab-dialout-group:
+  group.present:
+    - name: dialout
+    - system: True
+    - addusers:
+      - openhab
+    - require:
+      - pkg: install-openhab
 
 ipcamera-binding:
   archive.extracted:

@@ -53,3 +53,7 @@ Bridge hue:bridge:huebridge                                                   [ 
     0210 bedroom_overhead [ lightId="3" ]
     0210 kitchen_overhead [ lightId="4" ]
 }
+
+Bridge zigbee:coordinator_cc2531:home                                        [ zigbee_port="/dev/ttyACM0", zigbee_panid="5E2B" ] {
+    Device 91E358729CB86041 [ zigbee_macaddress = "91E358729CB86041" ]
+}
