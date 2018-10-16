@@ -17,4 +17,6 @@ base:
     - pulseaudio
     - saltstack-server
     - motion
+  furrow:
+    - base-utils
     

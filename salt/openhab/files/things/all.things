@@ -57,3 +57,7 @@ Bridge hue:bridge:huebridge                                                   [ 
 Bridge zigbee:coordinator_cc2531:home                                        [ zigbee_port="/dev/ttyACM0", zigbee_panid="5E2B" ] {
     Device 91E358729CB86041 [ zigbee_macaddress = "91E358729CB86041" ]
 }
+
+Thing zigbee:device:home:temp-humidity "Bedroom Temperature Sensor" (zigbee:coordinator_cc2531:home) [ zigbee_macaddress="00158D00010F667B", zigbee_descriptor="lumi.sensor_ht" ]
+
+
