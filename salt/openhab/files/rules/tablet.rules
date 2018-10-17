@@ -1,0 +1,24 @@
+// Set the tablet to weather in the morning.
+
+val String filename = "tablet.rules"
+
+rule "restart the panel"
+when Time cron "44 4 * ? * * *"
+then
+ Tablet_Commands.postUpdate("RESTART")
+end
+
+rule "show the weather panel in the morning"
+when
+    Time cron "44 5 * ? * * *"
+then
+  Tablet_Habpanel_Active_Panel.postUpdate("Weather")
+end
+
+rule "show the volume panel morning"
+when
+    Time cron "44 8 * ? * * *"
+then
+  Tablet_Habpanel_Active_Panel.postUpdate("Volumes")
+end
+

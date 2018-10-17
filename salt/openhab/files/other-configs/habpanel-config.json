@@ -663,19 +663,19 @@
         "theme": "material",
         "panel_name": "F17",
         "header_clock_format": "shortTime",
-        "no_scrolling": true,
+        "no_scrolling": false,
         "hide_drawer_footer": true,
         "hide_speak_button": true,
         "hide_fullscreen_button": true,
-        "show_header_clock": true,
+        "show_header_clock": false,
         "speech_synthesis_voice": "Google UK English Male",
         "floating_speech": false,
         "speech_synthesis_item": "chromecast_bathroom_subtitle",
-        "dashboard_control_item": null,
+        "dashboard_control_item": "Tablet_Habpanel_Active_Panel",
         "hide_refresh_button": true
     },
     "F17": {
-        "updatedTime": "2018-08-19T09:56:49.396Z",
+        "updatedTime": "2018-10-17T07:30:54.097Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -1309,29 +1309,42 @@
                 "name": "Camera",
                 "widgets": [
                     {
-                        "name": "New Widget",
-                        "sizeX": 12,
-                        "sizeY": 9,
-                        "item": "HIKVISIONIPCameraWithONVIFAndAPISupport_Image",
+                        "name": "Tablet Camera View",
+                        "sizeX": 7,
+                        "sizeY": 6,
+                        "item": "Tablet_Camera",
                         "type": "image",
                         "row": 0,
                         "col": 0,
                         "image_source": "item-image",
                         "refresh": 10,
                         "intervaltype": "seconds",
+                        "background": "transparent"
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 4,
+                        "sizeY": 4,
+                        "type": "image",
+                        "row": 0,
+                        "col": 7,
+                        "image_source": "static",
+                        "url": "https://loremflickr.com/g/320/240/cats",
+                        "refresh": 30,
+                        "intervaltype": "seconds",
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
                 "row": 5,
                 "col": 0,
-                "tile": {
-                    "title_color": "#9966FF"
-                }
+                "tile": {},
+                "drawer": {},
+                "header": {}
             }
         ],
         "menucolumns": 1,
         "settings": {
-            "theme": "material",
+            "theme": "default",
             "panel_name": "F17",
             "header_clock_format": "shortTime",
             "no_scrolling": true,
@@ -1341,8 +1354,9 @@
             "show_header_clock": true,
             "speech_synthesis_voice": "Google UK English Male",
             "floating_speech": false,
-            "speech_synthesis_item": "chromecast_bathroom_subtitle",
-            "dashboard_control_item": null,
+            "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
+            "dashboard_control_item": "Tablet_Habpanel_Active_Panel",
+            "additional_stylesheet_url": "/static/habpanel.css",
             "hide_refresh_button": true
         },
         "customwidgets": {}

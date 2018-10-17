@@ -1,0 +1,7 @@
+.container {
+    left: 265px;
+    width: calc(100% - 265px);
+}
+.header a[title="Menu"] {
+    display: none;
+}

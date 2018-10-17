@@ -1,10 +1,19 @@
+String  Tablet_Commands
+
+Image   Tablet_Camera
+Number  Tablet_Connected
 Contact Tablet_Battery_Low
 Contact Tablet_Battery_Charging
-Number Tablet_Battery_Level
+Number  Tablet_Battery_Level
 Contact Tablet_Motion
 Contact Tablet_Proximity
-Number Tablet_Brightness
-Number Tablet_Pressure
-Number Tablet_Temperature
+Number  Tablet_Brightness
+Number  Tablet_Pressure
+Number  Tablet_Temperature
 Contact Tablet_Screen
 Contact Tablet_Usage
+
+// Switch dashboard with item value
+// When this item changes to a dashboard's name, switch to it:
+String  Tablet_Habpanel_Active_Panel
+String  Tablet_Habpanel_Speak_This
