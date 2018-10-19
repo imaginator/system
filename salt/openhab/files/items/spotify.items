@@ -1,0 +1,44 @@
+String   SimonSSpotify_AccessToken       "Access Token"            {channel="spotify:player:simon:accessToken"}
+String   SimonSSpotify_DeviceId          "Active Device Id"        {channel="spotify:player:simon:deviceId"}
+String   SimonSSpotify_DeviceName        "Active Device Name"      {channel="spotify:player:simon:deviceName"}
+String   SimonSSpotify_DeviceType        "Active Device Type"      {channel="spotify:player:simon:deviceType"}
+Dimmer   SimonSSpotify_DeviceVolume      "Active Device Volume"    {channel="spotify:player:simon:deviceVolume"}
+Switch   SimonSSpotify_DeviceShuffle     "Active Device Shuffle"   {channel="spotify:player:simon:deviceShuffle"}
+String   SimonSSpotify_Playlist          "Playlist"                {channel="spotify:player:simon:playlist"}
+String   SimonSSpotify_TrackPlay         "Track to Play"           {channel="spotify:player:simon:trackPlay"}
+Player   SimonSSpotify_TrackPlayer       "Player Control"          {channel="spotify:player:simon:trackPlayer"}
+String   SimonSSpotify_TrackRepeat       "Repeat Mode"             {channel="spotify:player:simon:trackRepeat"}
+String   SimonSSpotify_TrackId           "Track Id"                {channel="spotify:player:simon:trackId"}
+String   SimonSSpotify_TrackHref         "Track href"              {channel="spotify:player:simon:trackHref"}
+String   SimonSSpotify_TrackUri          "Track Uri"               {channel="spotify:player:simon:trackUri"}
+String   SimonSSpotify_TrackName         "Track Name"              {channel="spotify:player:simon:trackName"}
+String   SimonSSpotify_TrackType         "Track Type"              {channel="spotify:player:simon:trackType"}
+Number   SimonSSpotify_TrackNumber       "Track Number"            {channel="spotify:player:simon:trackNumber"}
+Number   SimonSSpotify_TrackDiscNumber   "Track Disc Number"       {channel="spotify:player:simon:trackDiscNumber"}
+Dimmer   SimonSSpotify_TrackPopularity   "Track Popularity"        {channel="spotify:player:simon:trackPopularity"}
+Number   SimonSSpotify_TrackDurationMs   "Track Duration ms"       {channel="spotify:player:simon:trackDurationMs"}
+Number   SimonSSpotify_TrackProgressMs   "Track Progress ms"       {channel="spotify:player:simon:trackProgressMs"}
+String   SimonSSpotify_TrackDuration     "Track Duration (m:ss)"   {channel="spotify:player:simon:trackDuration"}
+String   SimonSSpotify_TrackProgress     "Track Progress (m:ss)"   {channel="spotify:player:simon:trackProgress"}
+String   SimonSSpotify_AlbumId           "Album href"              {channel="spotify:player:simon:albumId"}
+String   SimonSSpotify_AlbumUri          "Album href"              {channel="spotify:player:simon:albumUri"}
+String   SimonSSpotify_AlbumHref         "Album href"              {channel="spotify:player:simon:albumHref"}
+String   SimonSSpotify_AlbumType         "Album Type"              {channel="spotify:player:simon:albumType"}
+Image    SimonSSpotify_AlbumImage        "Album Image"             {channel="spotify:player:simon:albumImage"}
+String   SimonSSpotify_AlbumName         "Album Name"              {channel="spotify:player:simon:albumName"}
+String   SimonSSpotify_ArtistId          "Artist Id"               {channel="spotify:player:simon:artistId"}
+String   SimonSSpotify_ArtistUri         "Artist Uri"              {channel="spotify:player:simon:artistUri"}
+String   SimonSSpotify_ArtistHref        "Artist href"             {channel="spotify:player:simon:artistHref"}
+String   SimonSSpotify_ArtistType        "Artist Type"             {channel="spotify:player:simon:artistType"}
+String   SimonSSpotify_ArtistName        "Artist Name"             {channel="spotify:player:simon:artistName"}
+
+// all speakers
+String   AllSpeakers_TrackPlay          "Track to Play"       {channel="spotify:device:simon:All:trackPlay"}
+String   AllSpeakers_DeviceName         "Device Name"         {channel="spotify:device:simon:All:deviceName"}
+String   AllSpeakers_DeviceType         "Device Type"         {channel="spotify:device:simon:All:deviceType"}
+Player   AllSpeakers_DevicePlayer       "Device Play"         {channel="spotify:device:simon:All:devicePlayer"}
+Dimmer   AllSpeakers_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:All:deviceVolume"}
+Switch   AllSpeakers_DeviceActive       "Device Active"       {channel="spotify:device:simon:All:deviceActive"}
+Switch   AllSpeakers_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:All:deviceRestricted"}
+Switch   AllSpeakers_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:All:deviceShuffle"}
+
