@@ -1,9 +1,11 @@
 // Managed by Saltstack
 
-Switch     PingableNetworkDevice_Online_simon       "Online"         {channel="network:pingdevice:simon-phone:online"}
+Group      AtHome
+
+Switch     PingableNetworkDevice_Online_simon       "Online"         {channel="network:pingdevice:simon-phone:online"}    (AtHome) 
 Number     PingableNetworkDevice_Latency_simon      "Latency (ms)"   {channel="network:pingdevice:simon-phone:latency"}
 DateTime   PingableNetworkDevice_Lastseen_simon     "Last seen"      {channel="network:pingdevice:simon-phone:lastseen"}
 
-Switch     PingableNetworkDevice_Online_susanne     "Online"         {channel="network:pingdevice:susanne-phone:online"}
+Switch     PingableNetworkDevice_Online_susanne     "Online"         {channel="network:pingdevice:susanne-phone:online"}  (AtHome) 
 Number     PingableNetworkDevice_Latency_susanne    "Latency (ms)"   {channel="network:pingdevice:susanne-phone:latency"}
 DateTime   PingableNetworkDevice_Lastseen_susanne   "Last seen"      {channel="network:pingdevice:susanne-phone:lastseen"}

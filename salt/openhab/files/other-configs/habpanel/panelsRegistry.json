@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2018-10-21T17:57:11.112Z",
+        "updatedTime": "2018-10-22T12:32:11.237Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -40,7 +40,7 @@
                         "command": "spotify:user:spotify:playlist:37i9dQZEVXcENLFdCnYPBN"
                     }
                 ],
-                "row": 1,
+                "row": 2,
                 "col": 0,
                 "tile": {}
             },
@@ -225,7 +225,7 @@
                         "col": 0
                     }
                 ],
-                "row": 3,
+                "row": 4,
                 "col": 0,
                 "tile": {}
             },
@@ -343,7 +343,7 @@
                         "hidepointer": true
                     }
                 ],
-                "row": 2,
+                "row": 3,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -382,7 +382,7 @@
                         "col": 0
                     }
                 ],
-                "row": 4,
+                "row": 5,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -390,28 +390,15 @@
             },
             {
                 "id": "Camera",
-                "name": "Camera",
+                "name": "Cats",
                 "widgets": [
                     {
-                        "name": "Tablet Camera View",
-                        "sizeX": 6,
+                        "name": "New Widget",
+                        "sizeX": 12,
                         "sizeY": 8,
-                        "item": "Tablet_Camera",
                         "type": "image",
                         "row": 0,
                         "col": 0,
-                        "image_source": "item-image",
-                        "refresh": 10,
-                        "intervaltype": "seconds",
-                        "background": "transparent"
-                    },
-                    {
-                        "name": "New Widget",
-                        "sizeX": 6,
-                        "sizeY": 8,
-                        "type": "image",
-                        "row": 0,
-                        "col": 6,
                         "image_source": "static",
                         "url": "https://loremflickr.com/g/640/480/cats",
                         "refresh": 30,
@@ -419,9 +406,11 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 5,
+                "row": 6,
                 "col": 0,
-                "tile": {},
+                "tile": {
+                    "title_color": "transparent"
+                },
                 "drawer": {},
                 "header": {}
             },
@@ -460,9 +449,30 @@
                         "row": 0,
                         "col": 4,
                         "hideonoff": false
+                    },
+                    {
+                        "name": "Who is Home",
+                        "sizeX": 4,
+                        "sizeY": 4,
+                        "type": "template",
+                        "customwidget": "Whos-Home",
+                        "row": 2,
+                        "col": 0,
+                        "config": {
+                            "whoshome_heading": "Who's Home",
+                            "whoshome_iconset": "eclipse-smarthome-classic",
+                            "whoshome_iconsize": null,
+                            "whoshome_height": null,
+                            "whoshome_width": null,
+                            "whoshome_font_size": null,
+                            "whoshome_show_icon": true,
+                            "whoshome_show_name": true,
+                            "whoshome_show_state": true,
+                            "whoshome_GroupItem": "AtHome"
+                        }
                     }
                 ],
-                "row": 6,
+                "row": 7,
                 "col": 0
             },
             {
@@ -746,9 +756,8 @@
                 ],
                 "row": 1,
                 "col": 0,
-                "tile": {},
-                "$$hashKey": "object:970"
-            }    
+                "tile": {}
+            }
         ],
         "menucolumns": 1,
         "settings": {
@@ -759,7 +768,7 @@
             "hide_drawer_footer": true,
             "hide_speak_button": true,
             "hide_fullscreen_button": true,
-            "show_header_clock": true,
+            "show_header_clock": false,
             "speech_synthesis_voice": "Google UK English Male",
             "floating_speech": false,
             "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
@@ -855,6 +864,89 @@
                     }
                 ],
                 "readme_url": "https://community.openhab.org/t/custom-widget-controller-for-spotify-connect-binding/54040"
+            },
+            "Whos-Home": {
+                "template": "<style>\n\n  .container_frame{\n  \twidth:100%;\n  \tborder:solid 0px green;\n  \t\n  \ttext-align:center;\n  \tdisplay:inline-block;  \n  }\n  \n  .frame_main{\n  \twidth:{{config.whoshome_width}}px;\n\t\theight:{{config.whoshome_height}}px;\n  \tmargin:5px;\n  \tfont-size:{{config.whoshome_font_size}}px;\n  \tborder:solid 1px black;\n  \tdisplay:inline-block;\n  }\n  .frame_table{\n  \twidth:100%;\n  \tborder-spacing:10px;\n  \ttext-align:center;\n  \tborder:solid 0px blue;\n  }\n  .table_person{\n  \ttext-align:center;\n  margin-top:2px;\n  }\t\n td { \n    padding: 10px;\n}\n\n</style>\n\t\t<div class=\"container_frame\">\n      <div ng-if=\"(config.whoshome_heading != '')\">\n          <div><h4>{{config.whoshome_heading}}</h4></div>\n      </div>\n      <div ng-repeat=\"item in (itemsInGroup(config.whoshome_GroupItem)) | filter:(config.whoshome_hideaway && {state:'ON'})\" class=\"frame_main\">\n        <table class=\"frame_table\">\n          <tr ng-if=\"(config.whoshome_show_name)\">\n            <th class=\"table_person\">{{item.label}}</th>\n          </tr>\n          <tr ng-if=\"(config.whoshome_show_icon && item.category != '' && config.whoshome_iconset != '')\">\n            <td class=\"table_icon\"><widget-icon iconset=\"config.whoshome_iconset\" icon=\"item.category.toLowerCase()\" size=\"config.whoshome_iconsize\" backdrop=\"false\" center=\"true\" inline=\"false\" state=\"itemState(itemname)\"></td>\n          </tr>\n          <tr ng-if=\"(config.whoshome_show_state)\">\n            <td class=\"table_state\">{{itemState(item.name)}}</td>\n          </tr>\n        </table>\n    </div>\n   </div>",
+                "name": "Who's Home",
+                "author": "Crispin",
+                "description": "Compact display showing who is home",
+                "settings": [
+                    {
+                        "type": "item",
+                        "id": "whoshome_GroupItem",
+                        "label": "People Group",
+                        "description": "Group containing switch items of people"
+                    },
+                    {
+                        "type": "string",
+                        "id": "whoshome_heading",
+                        "label": "Heading",
+                        "default": "Who's Home",
+                        "description": "Heading to display. Blank for no heading."
+                    },
+                    {
+                        "type": "string",
+                        "id": "whoshome_iconset",
+                        "label": "Icon Set",
+                        "default": "eclipse-smarthome-classic",
+                        "description": "Iconset to display"
+                    },
+                    {
+                        "type": "number",
+                        "id": "whoshome_iconsize",
+                        "label": "Icon Size",
+                        "default": "32",
+                        "description": "Icon Size in pixels"
+                    },
+                    {
+                        "type": "number",
+                        "id": "whoshome_height",
+                        "label": "Box height",
+                        "default": "120",
+                        "description": "Box height in pixels"
+                    },
+                    {
+                        "type": "number",
+                        "id": "whoshome_width",
+                        "label": "Box width",
+                        "default": "120",
+                        "description": "Box height in pixels"
+                    },
+                    {
+                        "type": "number",
+                        "id": "whoshome_font_size",
+                        "label": "Font Size",
+                        "default": "10",
+                        "description": "Font size in pixels"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "whoshome_show_icon",
+                        "label": "Show Icon",
+                        "default": true,
+                        "description": "Show Icon in widget"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "whoshome_show_name",
+                        "label": "Show Name",
+                        "default": true,
+                        "description": "Show name of person"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "whoshome_show_state",
+                        "label": "Show State",
+                        "default": true,
+                        "description": "Show State"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "whoshome_hideaway",
+                        "label": "Hide people who are away",
+                        "description": "Hide people if they are not home"
+                    }
+                ]
             }
         }
     }

@@ -88,16 +88,19 @@ openhab-{{directory}}:
       - service: openhab2
 {% endfor %}
 
-openhab-other-configs:
-  file.recurse:
-    - name: /etc/openhab2/other-configs
-    - source: salt://openhab/files/other-configs
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-    - watch_in:
-      - service: openhab2
+openhab2:
+  service.running:
+    - enable: True
+    - restart: True
+    - require:
+      - pkg: openhab-dependencies
+    - onchanges:
+      - archive: ipcamera-binding
+      - file: openhab-persistence
+      - file: openhab-services
+  cmd.run:
+    - name: until nc -z localhost 8101; do sleep 1; done
+    - timeout: 15
 
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
@@ -122,7 +125,39 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-habpanel-console-config:
+# Habpanel
+
+habpanel-config:
+  file.recurse:
+    - name: /etc/openhab2/other-configs/habpanel
+    - source: salt://openhab/files/other-configs/habpanel
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+    - watch_in:
+      - service: openhab2
+
+habpanel-css:
+  file.managed:
+    - name: /etc/openhab2/html/habpanel.css
+    - source: salt://openhab/files/other-configs/habpanel/habpanel.css
+    - makedirs: True
+    - user: root
+    - group: root
+
+habpanel-configure-commands:
+  service.running:
+    - name: openhab2
+  cmd.script:
+    - source: salt://openhab/files/other-configs/habpanel/habpanel-setup.sh
+    - onchanges:
+      - file: habpanel-config
+    - require:
+      - cmd: openhab2
+      - file: habpanel-config
+
+openhab-console-setup-script:
   file.managed:
     - name: /etc/openhab2/other-configs/console-setup.sh
     - source: salt://openhab/files/other-configs/console-setup.sh
@@ -130,46 +165,11 @@ habpanel-console-config:
     - user: root
     - group: root
 
-habpanel-css:
-  file.managed:
-    - name: /etc/openhab2/html/habpanel.css
-    - source: salt://openhab/files/other-configs/habpanel.css
-    - makedirs: True
-    - user: root
-    - group: root
-
-openhab2:
-  service.running:
-    - enable: True
-    - restart: True
-    - require:
-      - pkg: openhab-dependencies
-    - onchanges:
-      - archive: ipcamera-binding
-      - file: openhab-persistence
-      - file: openhab-services
-  cmd.run:
-    - name: until nc -z localhost 8101; do sleep 1; done
-    - timeout: 15
-
-openhab-console-commands:
+openhab-console-setup:
   cmd.script:
     - source: salt://openhab/files/other-configs/console-setup.sh
-    - onchanges:
-      - file: habpanel-console-config
     - require:
       - cmd: openhab2
-
-habpanel-configure-commands:
-  service.running:
-    - name: openhab2
-  cmd.script:
-    - source: salt://openhab/files/other-configs/habpanel-setup.sh
-    #- onchanges:
-    #  - file: habpanel-config
-    - require:
-      - cmd: openhab2
-      - file: openhab-other-configs
 
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
