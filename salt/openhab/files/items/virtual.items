@@ -1,2 +1,3 @@
 // The daylight ct dimmer is a color temperature reference value
-Dimmer DaylightCT "daylight emulation"
+Dimmer      DaylightCT "daylight emulation"
+Contact     QuietTime  "People are sleeping"

@@ -1,11 +1,8 @@
 #!/bin/bash
-# u0027 is a: " ' " character
-# u0024 is a: " $ " character
 
-panelsRegistry=$(jq --compact-output . /etc/openhab2/other-configs/habpanel-config.json | sed "s/'/\\\\u0027/g" )
+panelsRegistry=$(jq 'tostring' /etc/openhab2/other-configs/panelsRegistry.json )
+jq '.panelsRegistry += '"${panelsRegistry}"'  ' < /etc/openhab2/other-configs/org.openhab.habpanel.json | curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json"  -d @- "http://127.0.0.1:8080/rest/services/org.openhab.habpanel/config"
 
-openhab-cli console -b -u openhab -p habopen << _EOF_
-config:property-set -p org.openhab.habpanel lockEditing false
-config:property-set -p org.openhab.habpanel initialPanelConfig F17
-config:property-set -p org.openhab.habpanel panelsRegistry '${panelsRegistry}'
+openhab-cli console -b -u openhab -p habopen <<_EOF_
+smarthome:send  Tablet_Commands 'RESTART'
 _EOF_

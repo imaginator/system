@@ -3,7 +3,8 @@
 val String filename = "tablet.rules"
 
 rule "restart the panel"
-when Time cron "44 4 * ? * * *"
+when 
+    Time cron "44 4 * ? * * *"
 then
  Tablet_Commands.postUpdate("RESTART")
 end
@@ -22,3 +23,24 @@ then
   Tablet_Habpanel_Active_Panel.postUpdate("Volumes")
 end
 
+rule "brighten the tablet when motion detected"
+when 
+    Item Tablet_Motion changed OR Tablet_Brightness < 10
+then
+    if (Tablet_Motion.state == CLOSED ) {
+        Tablet_Commands.sendCommand("KEEP_SCREEN_ON")
+        Thread::sleep(1000)
+        Tablet_Commands.sendCommand("SET_BRIGHTNESS 100")
+        Thread::sleep(1000)
+        Tablet_Commands.sendCommand("DISABLE_MOTION_DETECTION")
+        Thread::sleep(1000)
+        Tablet_Commands.sendCommand("CAPTURE_CAMERA Tablet_Camera 90")  
+        Thread::sleep(1000)
+        Tablet_Commands.sendCommand("ENABLE_MOTION_DETECTION")
+    }
+    else if (Tablet_Motion.state == OPEN OR Tablet_Brightness < 10) {
+        Tablet_Commands.sendCommand("ALLOW_SCREEN_OFF")
+        Thread::sleep(1000)
+        Tablet_Commands.sendCommand("SET_BRIGHTNESS 0")
+    }
+end

@@ -88,6 +88,17 @@ openhab-{{directory}}:
       - service: openhab2
 {% endfor %}
 
+openhab-other-configs:
+  file.recurse:
+    - name: /etc/openhab2/other-configs
+    - source: salt://openhab/files/other-configs
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0644
+    - watch_in:
+      - service: openhab2
+
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
     - managed
@@ -115,14 +126,6 @@ habpanel-console-config:
   file.managed:
     - name: /etc/openhab2/other-configs/console-setup.sh
     - source: salt://openhab/files/other-configs/console-setup.sh
-    - makedirs: True
-    - user: root
-    - group: root
-
-habpanel-config:
-  file.managed:
-    - name: /etc/openhab2/other-configs/habpanel-config.json
-    - source: salt://openhab/files/other-configs/habpanel-config.json
     - makedirs: True
     - user: root
     - group: root
@@ -162,10 +165,11 @@ habpanel-configure-commands:
     - name: openhab2
   cmd.script:
     - source: salt://openhab/files/other-configs/habpanel-setup.sh
-    - onchanges:
-      - file: habpanel-config
+    #- onchanges:
+    #  - file: habpanel-config
     - require:
       - cmd: openhab2
+      - file: openhab-other-configs
 
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
@@ -195,14 +199,14 @@ openhab-iptables-dhcp-redirect-ipv4:
     - comment: "DHCP redirect for openhab"
     - save: True
 
-weather-underground-icons:
-  archive.extracted:
-    - name: /etc/openhab2/html/weather-underground-icons
-    - source: https://github.com/manifestinteractive/weather-underground-icons/archive/v1.0.1.tar.gz
-    - user: openhab
-    - group: openhab
-    - if_missing: /etc/openhab2/html/weather-underground-icons/
-    - skip_verify: True 
-    - options: "--strip=1"
-    - enforce_toplevel: False
+#weather-underground-icons:
+#  archive.extracted:
+#    - name: /etc/openhab2/html/weather-underground-icons
+#    - source: https://github.com/manifestinteractive/weather-underground-icons/archive/v1.0.1.tar.gz
+#    - user: openhab
+#    - group: openhab
+#    - if_missing: /etc/openhab2/html/weather-underground-icons/
+#    - skip_verify: True 
+#    - options: "--strip=1"
+#    - enforce_toplevel: False
    

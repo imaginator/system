@@ -1,0 +1,8 @@
+val String filename = "catgenie.rules"
+
+rule "set the quiettime"
+when 
+    (now.getHours > 21 || now.getHours <=7)
+then
+    QuietTime.postUpdate("CLOSED")
+end

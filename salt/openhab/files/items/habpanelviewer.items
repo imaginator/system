@@ -12,6 +12,7 @@ Number  Tablet_Pressure
 Number  Tablet_Temperature
 Contact Tablet_Screen
 Contact Tablet_Usage
+Contact Tablet_Volume
 
 // Switch dashboard with item value
 // When this item changes to a dashboard's name, switch to it:

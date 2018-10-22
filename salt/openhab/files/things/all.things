@@ -17,7 +17,7 @@ ipcamera:HIKVISION:camera01                                 @ "lounge"        [ 
 miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
 network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
-// network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
+network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
 tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=300 ]
 tplinksmarthome:hs110:washing-machine                       @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=300 ]

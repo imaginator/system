@@ -1,0 +1,861 @@
+{
+    "F17": {
+        "updatedTime": "2018-10-21T17:57:11.112Z",
+        "dashboards": [
+            {
+                "id": "Music",
+                "name": "Music",
+                "widgets": [
+                    {
+                        "name": "player",
+                        "sizeX": 8,
+                        "sizeY": 7,
+                        "type": "template",
+                        "customwidget": "Spotifycontol",
+                        "row": 0,
+                        "col": 0,
+                        "config": {
+                            "lengthinfoenable": true,
+                            "albumArt": "SimonSSpotify_AlbumImage",
+                            "title": "SimonSSpotify_TrackName",
+                            "artist": "SimonSSpotify_ArtistName",
+                            "control": "SimonSSpotify_TrackPlayer",
+                            "shuffle": "SimonSSpotify_DeviceShuffle",
+                            "repeat": "SimonSSpotify_TrackRepeat",
+                            "tprog": "SimonSSpotify_TrackProgress",
+                            "tdur": "SimonSSpotify_TrackDuration",
+                            "tprogSS": "PingableNetworkDevice_Online_simon",
+                            "tdurSS": "PingableNetworkDevice_Online_simon",
+                            "progressenable": false
+                        }
+                    },
+                    {
+                        "name": "Discover Weekly",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "row": 0,
+                        "col": 8,
+                        "command": "spotify:user:spotify:playlist:37i9dQZEVXcENLFdCnYPBN"
+                    }
+                ],
+                "row": 1,
+                "col": 0,
+                "tile": {}
+            },
+            {
+                "id": "Weather",
+                "name": "Weather",
+                "widgets": [
+                    {
+                        "name": "Air Quality",
+                        "sizeX": 6,
+                        "sizeY": 1,
+                        "item": "AirQuality_AqiDescription",
+                        "type": "dummy",
+                        "row": 1,
+                        "col": 0,
+                        "nolinebreak": true
+                    },
+                    {
+                        "name": "Temp outside",
+                        "sizeX": 3,
+                        "sizeY": 1,
+                        "item": "LocalWeather_CurrentTemperature",
+                        "type": "dummy",
+                        "row": 0,
+                        "col": 0,
+                        "useserverformat": false,
+                        "nolinebreak": false
+                    },
+                    {
+                        "name": "Humidity outside",
+                        "sizeX": 3,
+                        "sizeY": 1,
+                        "item": "LocalWeather_CurrentRelativeHumidity",
+                        "type": "dummy",
+                        "row": 0,
+                        "col": 3,
+                        "useserverformat": false,
+                        "nolinebreak": true
+                    },
+                    {
+                        "name": "Air Quality Index",
+                        "sizeX": 6,
+                        "sizeY": 1,
+                        "item": "AirQuality_AqiLevel",
+                        "type": "dummy",
+                        "nolinebreak": true,
+                        "unit": "%",
+                        "row": 1,
+                        "col": 6
+                    },
+                    {
+                        "name": "Air Quality Index",
+                        "sizeX": 12,
+                        "sizeY": 5,
+                        "item": "AirQuality_No2",
+                        "type": "chart",
+                        "row": 2,
+                        "col": 0,
+                        "charttype": "default",
+                        "service": "postgresql",
+                        "period": "W",
+                        "liveUpdates": {},
+                        "isgroup": false,
+                        "showlegend": "auto"
+                    },
+                    {
+                        "name": "sunrise",
+                        "sizeX": 3,
+                        "sizeY": 1,
+                        "item": "LocalSun_RiseStart",
+                        "type": "dummy",
+                        "nolinebreak": true,
+                        "row": 0,
+                        "col": 6,
+                        "format": "H:mm",
+                        "useserverformat": false,
+                        "backdrop_iconset": "smarthome-set",
+                        "backdrop_icon": "sun"
+                    },
+                    {
+                        "name": "Sunset",
+                        "sizeX": 3,
+                        "sizeY": 1,
+                        "item": "LocalSun_SetStart",
+                        "type": "dummy",
+                        "nolinebreak": true,
+                        "format": "H:mm",
+                        "useserverformat": false,
+                        "backdrop_iconset": "smarthome-set",
+                        "backdrop_icon": "sun",
+                        "row": 0,
+                        "col": 9
+                    },
+                    {
+                        "name": "Weather Forecast",
+                        "sizeX": 12,
+                        "sizeY": 4,
+                        "type": "template",
+                        "customwidget": "weather-underground",
+                        "row": 7,
+                        "col": 0,
+                        "config": {}
+                    }
+                ],
+                "row": 0,
+                "col": 0
+            },
+            {
+                "id": "Air",
+                "name": "Network",
+                "widgets": [
+                    {
+                        "name": "Wireless",
+                        "sizeX": 12,
+                        "sizeY": 4,
+                        "type": "frame",
+                        "row": 0,
+                        "col": 0,
+                        "url_source": "static",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/000000015/wifi?refresh=1m&panelId=7&orgId=2&var-instance=All&theme=light",
+                        "background": "transparent",
+                        "refresh": 600,
+                        "frameless": true,
+                        "hidelabel": true
+                    },
+                    {
+                        "name": "Simon Home",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "PingableNetworkDevice_Online_simon",
+                        "type": "dummy",
+                        "row": 4,
+                        "col": 0,
+                        "nolinebreak": true,
+                        "useserverformat": true
+                    },
+                    {
+                        "name": "Last seen",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "SimonPhoneLastSeen",
+                        "type": "dummy",
+                        "row": 4,
+                        "col": 4,
+                        "nolinebreak": true,
+                        "useserverformat": false
+                    },
+                    {
+                        "name": "Who's Home?",
+                        "sizeX": 12,
+                        "sizeY": 3,
+                        "item": null,
+                        "type": "timeline",
+                        "row": 5,
+                        "col": 0,
+                        "period": "D",
+                        "colorMaps": [
+                            {
+                                "state": "ON",
+                                "color": "#0db9f0"
+                            },
+                            {
+                                "state": "OFF",
+                                "color": "#89a"
+                            }
+                        ],
+                        "series": [
+                            {
+                                "item": "SimonPhone",
+                                "name": "Simon"
+                            }
+                        ],
+                        "service": "jdbc"
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 4,
+                        "sizeY": 4,
+                        "item": null,
+                        "type": "label",
+                        "row": 8,
+                        "col": 0
+                    }
+                ],
+                "row": 3,
+                "col": 0,
+                "tile": {}
+            },
+            {
+                "id": "Bedroom",
+                "name": "Bedroom",
+                "widgets": [
+                    {
+                        "name": "Overhead Light",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ExtendedColorLight_Effect_bedroom",
+                        "type": "switch",
+                        "row": 0,
+                        "col": 8,
+                        "hidelabel": false,
+                        "hideonoff": true,
+                        "iconset": "smarthome-set",
+                        "icon": "bulb",
+                        "icon_size": "64"
+                    },
+                    {
+                        "name": "",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "ExtendedColorLight_Color_bedroom",
+                        "type": "colorpicker",
+                        "style": "aCKolor",
+                        "blur_background": true,
+                        "row": 4,
+                        "col": 8
+                    },
+                    {
+                        "name": "Bedside Lamp",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "OnOffPlugInUnit_Switch_bedroom",
+                        "type": "switch",
+                        "hidelabel": false,
+                        "hideonoff": true,
+                        "iconset": "smarthome-set",
+                        "icon": "socket-f",
+                        "icon_size": "64",
+                        "row": 0,
+                        "col": 4
+                    },
+                    {
+                        "name": "Bedroom Volume",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_bedroom_mini_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": false,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "bgColor": "transparent",
+                        "row": 0,
+                        "col": 0
+                    },
+                    {
+                        "name": "Now Playing",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "ChromecastAudio_bathroom_mini_Statustext",
+                        "type": "dummy",
+                        "row": 3,
+                        "col": 0
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "ExtendedColorLight_ColorTemperature_bedroom",
+                        "type": "slider",
+                        "row": 3,
+                        "col": 8,
+                        "hidelabel": true,
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "hidepointer": true
+                    }
+                ],
+                "row": 2,
+                "col": 0,
+                "tile": {},
+                "drawer": {},
+                "header": {}
+            },
+            {
+                "id": "Energy",
+                "name": "Energy",
+                "widgets": [
+                    {
+                        "name": "Cat Toilet Runtimes",
+                        "sizeX": 12,
+                        "sizeY": 3,
+                        "item": "HS110_Current_cat_toilet",
+                        "type": "chart",
+                        "row": 0,
+                        "col": 0,
+                        "charttype": "default",
+                        "period": "W",
+                        "showlegend": "auto",
+                        "liveUpdates": {},
+                        "isgroup": false
+                    },
+                    {
+                        "name": "Cat Toilet Runtimes",
+                        "sizeX": 12,
+                        "sizeY": 3,
+                        "item": "HS110_Current_washing_machine",
+                        "type": "chart",
+                        "charttype": "default",
+                        "period": "W",
+                        "showlegend": "auto",
+                        "liveUpdates": {},
+                        "isgroup": false,
+                        "row": 3,
+                        "col": 0
+                    }
+                ],
+                "row": 4,
+                "col": 0,
+                "tile": {},
+                "drawer": {},
+                "header": {}
+            },
+            {
+                "id": "Camera",
+                "name": "Camera",
+                "widgets": [
+                    {
+                        "name": "Tablet Camera View",
+                        "sizeX": 6,
+                        "sizeY": 8,
+                        "item": "Tablet_Camera",
+                        "type": "image",
+                        "row": 0,
+                        "col": 0,
+                        "image_source": "item-image",
+                        "refresh": 10,
+                        "intervaltype": "seconds",
+                        "background": "transparent"
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 6,
+                        "sizeY": 8,
+                        "type": "image",
+                        "row": 0,
+                        "col": 6,
+                        "image_source": "static",
+                        "url": "https://loremflickr.com/g/640/480/cats",
+                        "refresh": 30,
+                        "intervaltype": "seconds",
+                        "background": "rgb(0, 0, 0)"
+                    }
+                ],
+                "row": 5,
+                "col": 0,
+                "tile": {},
+                "drawer": {},
+                "header": {}
+            },
+            {
+                "id": "States",
+                "name": "States",
+                "widgets": [
+                    {
+                        "name": "Simon Home",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "PingableNetworkDevice_Online_simon",
+                        "type": "dummy",
+                        "row": 0,
+                        "col": 0,
+                        "nolinebreak": true,
+                        "useserverformat": true
+                    },
+                    {
+                        "name": "Tablet Motion",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "Tablet_Motion",
+                        "type": "dummy",
+                        "nolinebreak": true,
+                        "useserverformat": true,
+                        "row": 1,
+                        "col": 0
+                    },
+                    {
+                        "name": "Quiet Time",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "PingableNetworkDevice_Online_simon",
+                        "type": "switch",
+                        "row": 0,
+                        "col": 4,
+                        "hideonoff": false
+                    }
+                ],
+                "row": 6,
+                "col": 0
+            },
+            {
+                "id": "Volumes",
+                "name": "Volumes",
+                "widgets": [
+                    {
+                        "name": "Bedroom",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_bedroom_mini_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "row": 0,
+                        "col": 0,
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "bgColor": "transparent"
+                    },
+                    {
+                        "name": "Volumes over time",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": null,
+                        "type": "timeline",
+                        "row": 3,
+                        "col": 8,
+                        "period": "4h",
+                        "colorMaps": [
+                            {
+                                "state": "0-19",
+                                "color": "#CCCCCC"
+                            },
+                            {
+                                "state": "20-34",
+                                "color": "#0099FF"
+                            },
+                            {
+                                "state": "35-69",
+                                "color": "#FF9966"
+                            },
+                            {
+                                "state": "70-100",
+                                "color": "#FF0000"
+                            }
+                        ],
+                        "series": [
+                            {
+                                "item": "ChromecastAudio_bathroom_mini_Volume",
+                                "name": "Bathroom"
+                            },
+                            {
+                                "item": "ChromecastAudio_bedroom_mini_Volume",
+                                "name": "Bedroom"
+                            },
+                            {
+                                "item": "ChromecastAudio_kitchen_mini_Volume",
+                                "name": "Kitchen"
+                            },
+                            {
+                                "item": "ChromecastAudio_lounge_audio_Volume",
+                                "name": "Lounge"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bathroom",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_bathroom_mini_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "row": 0,
+                        "col": 4
+                    },
+                    {
+                        "name": "Lounge",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_lounge_audio_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "row": 0,
+                        "col": 8
+                    },
+                    {
+                        "name": "Kitchen",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_kitchen_mini_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "bgColor": "transparent",
+                        "row": 3,
+                        "col": 0
+                    },
+                    {
+                        "name": "all",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudioGroup_all_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "bgColor": "transparent",
+                        "row": 3,
+                        "col": 4
+                    }
+                ],
+                "row": 1,
+                "col": 0,
+                "tile": {},
+                "$$hashKey": "object:970"
+            }    
+        ],
+        "menucolumns": 1,
+        "settings": {
+            "theme": "default",
+            "panel_name": "F17",
+            "header_clock_format": "shortTime",
+            "no_scrolling": true,
+            "hide_drawer_footer": true,
+            "hide_speak_button": true,
+            "hide_fullscreen_button": true,
+            "show_header_clock": true,
+            "speech_synthesis_voice": "Google UK English Male",
+            "floating_speech": false,
+            "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
+            "dashboard_control_item": "Tablet_Habpanel_Active_Panel",
+            "additional_stylesheet_url": "/static/habpanel.css",
+            "hide_refresh_button": true
+        },
+        "customwidgets": {
+            "Spotifycontol": {
+                "template": "<style>\n   .main-table {\n    width: 100%;\n  \theight: 100%;\n    padding: 0px 0px 0px 0px;\n\t\tcolor: #edeff1;\n  }\n\n  .album-table {\n    width: 100%;\n    position: relative;\n  }\n\n  .albumcover {\n    width: 100%;\n    position: relative;\n  }\n\n  .button-table {\n    width: 100%;\n    position: absolute;\n    top: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .albumbuttons-table {\n    background: rgba(44, 55, 67, 0.4);\n    width: 100%;\n    position: absolute;\n    bottom: 0%;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n  \n.songprogress {\n -webkit-appearance: progress-bar;\n\tdisplay: block;\n  background-color: #f3f3f3;\n\twidth: 100%;\n  border: 0;\n  height: 3px;\n  border-radius: 9px;\n\tcolor: orange;\n}\nprogress::-moz-progress-bar { background: orange; }\nprogress::-webkit-progress-value { background: orange; }\n\n  .title {\n    font-weight: bold;\n    font-size: 18px;\n  \tpadding-top: 10px;\n  }\n\n  .leftbox {\n    float: right;\n    text-align: center;\n  }\n\n  .centerbox {\n    width: 70%;\n    text-align: center;\n  }\n\n  .rightbox {\n    float: left;\n    text-align: center;\n  }\n.timebox{\n  height:10px;\n  }\n  .blockbutton {\n    display: block;\n    width: 100%;\n    border: none;\n    padding: 25px 10px 15px 10px;\n    cursor: pointer;\n    text-align: center;\n  }\n\n  .buttonbox {\n    width: 33%;\n    background-color: #4A5561;\n    font-size: 36px;\n  }\n\n  .buttonbox:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .buttonbox2 {\n    width: 33%;\n    background-color: #394149;\n\t\tcolor: #c8cfd5;\n    font-size: 43px;\n  }\n\n  .buttonbox2:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .blockbuttonS {\n    display: block;\n    border: none;\n    padding: 1px 10px 10px 10px;\n    font-size: 24px;\n  }\n\n  .blockbuttonS:hover {\n    color: orange;\n  }\n</style>\n\n<div class=\"main-table\">\n\n  <div class=\"album-table\">\n\t\t<img class=albumcover ng-src=\"{{itemValue(config.albumArt)}}\">\n    <p ng-if=\"itemValue(config.albumArt)=='NULL'\" class=\"rnp-image-td\"> Oops! No image here!</p>\n    \n      <table class=\"albumbuttons-table\">\n      <tr>\n        <td class=\"leftbox\">\n            <p ng-if=\"itemValue(config.tprog)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tprog)}}</p>\n            <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false\"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) =='OFF'\" ng-click=\"sendCmd(config.shuffle,'ON')\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) !='OFF'\" ng-click=\"sendCmd(config.shuffle,'OFF')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n\n          <td class=\"centerbox\">\n            <p class=\"title\" ng-if=\"itemValue(config.title)!='NULL'\" class=\"rnp-title-td\">{{itemValue(config.title)}}</p>\n            <p ng-if=\"itemValue(config.title)=='NULL'\" class=\"rnp-title-td\">-</p>\n            <p ng-if=\"itemValue(config.artist)!='NULL'\" class=\"rnp-name-artist\">{{itemValue(config.artist)}}</p>\n            <p ng-if=\"itemValue(config.artist)=='NULL'\" class=\"rnp-name-artist\">-</p>\n\n          </td>\n\n          <td class=\"rightbox\">\n            <p ng-if=\"itemValue(config.tdur)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tdur)}}</p>\n            <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false \"></p>\n            <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='off'\" ng-click=\"sendCmd(config.repeat,'track')\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n            <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='track'\" ng-click=\"sendCmd(config.repeat,'context')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n            <label class=\"blockbuttonS\" ng-If=\"itemValue(config.repeat) !='track' && itemValue(config.repeat) !='off'\" ng-click=\"sendCmd(config.repeat,'off')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-refresh\"></i></label>\n          </td>\n\n          <tr>\n            <progress ng-if=\"itemValue(config.tprogSS)!='NULL'&&config.progressenable == true \" class=\"songprogress\" value=\"{{itemValue(config.tprogSS)}}\" max=\"{{itemValue(config.tdurSS)}}\"></progress>\n          </tr>\n\n    </table>\n\n    <table class=\"button-table\">\n\n      <td class=\"buttonbox\">\n        <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'PREVIOUS')\"><i class=\"glyphicon glyphicon-step-backward\"></i></label>\n      </td>\n\n      <td class=\"buttonbox2\">\n        <label class=\"blockbutton\" ng-if=\"itemValue(config.control) !='PLAY'\" ng-click=\"sendCmd(config.control,'PLAY')\"><i class=\"glyphicon glyphicon-play rnp-glyphicon-text\"></i></label>\n        <label class=\"blockbutton\" ng-if=\"itemValue(config.control) =='PLAY'\" ng-click=\"sendCmd(config.control,'PAUSE')\"><i class=\"glyphicon glyphicon-pause rnp-glyphicon-text\"></i></label>\n      </td>\n\n      <td class=\"buttonbox\">\n        <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'NEXT')\"><i class=\"glyphicon glyphicon-step-forward\"></i></label>\n      </td>\n\n    </table>\n\n  </div>",
+                "name": "Spotify controller",
+                "author": "Linda Knudsen",
+                "description": "Controller for the spotify plugin, might work with others too",
+                "settings": [
+                    {
+                        "type": "item",
+                        "id": "albumArt",
+                        "label": "Album Art",
+                        "description": "SpotifyPlayerBridge_AlbumImage",
+                        "default": ""
+                    },
+                    {
+                        "type": "item",
+                        "id": "title",
+                        "label": "Track Title",
+                        "description": "SpotifyPlayerBridge_TrackName"
+                    },
+                    {
+                        "type": "item",
+                        "id": "artist",
+                        "label": "Artist",
+                        "description": "SpotifyPlayerBridge_ArtistName"
+                    },
+                    {
+                        "type": "item",
+                        "id": "control",
+                        "label": "Player Control",
+                        "description": "SpotifyPlayerBridge_PlayerControl"
+                    },
+                    {
+                        "type": "item",
+                        "id": "shuffle",
+                        "label": "Shuffle",
+                        "description": "SpotifyPlayerBridge_ActiveDeviceShuffle"
+                    },
+                    {
+                        "type": "item",
+                        "id": "repeat",
+                        "label": "Repeat",
+                        "description": "SpotifyPlayerBridge_RepeatMode"
+                    },
+                    {
+                        "type": "item",
+                        "label": "Track Progress",
+                        "id": "tprog",
+                        "description": "SpotifyPlayerBridge_TrackProgressMSs"
+                    },
+                    {
+                        "type": "item",
+                        "label": "Track Duration",
+                        "default": "",
+                        "description": "SpotifyPlayerBridge_TrackDurationMSs",
+                        "id": "tdur"
+                    },
+                    {
+                        "type": "checkbox",
+                        "description": "Supported by default",
+                        "id": "lengthinfoenable",
+                        "default": true,
+                        "label": "Enable progress text"
+                    },
+                    {
+                        "type": "checkbox",
+                        "description": "Not native in the binding, needs extra tags for seconds",
+                        "id": "progressenable",
+                        "default": false,
+                        "choices": "true, false",
+                        "label": "Enable progress bar"
+                    },
+                    {
+                        "type": "item",
+                        "id": "tprogSS",
+                        "label": "Track progress in seconds",
+                        "description": "For the progress bar - Not native in the binding",
+                        "default": ""
+                    },
+                    {
+                        "type": "item",
+                        "id": "tdurSS",
+                        "label": "Track length in seconds",
+                        "default": "",
+                        "description": "For the progress bar - Not native in the binding"
+                    }
+                ],
+                "readme_url": "https://community.openhab.org/t/custom-widget-controller-for-spotify-connect-binding/54040"
+            }
+        }
+    }
+}
