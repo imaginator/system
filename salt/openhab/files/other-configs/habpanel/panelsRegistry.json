@@ -1,32 +1,32 @@
 {
     "F17": {
-        "updatedTime": "2018-10-22T12:32:11.237Z",
+        "updatedTime": "2018-10-24T15:54:46.120Z",
         "dashboards": [
             {
                 "id": "Music",
                 "name": "Music",
                 "widgets": [
                     {
-                        "name": "player",
+                        "name": "SpotifyPlayerBridge",
                         "sizeX": 8,
-                        "sizeY": 7,
+                        "sizeY": 8,
                         "type": "template",
-                        "customwidget": "Spotifycontol",
+                        "customwidget": "Spotifycontrol",
                         "row": 0,
                         "col": 0,
                         "config": {
                             "lengthinfoenable": true,
-                            "albumArt": "SimonSSpotify_AlbumImage",
-                            "title": "SimonSSpotify_TrackName",
-                            "artist": "SimonSSpotify_ArtistName",
-                            "control": "SimonSSpotify_TrackPlayer",
-                            "shuffle": "SimonSSpotify_DeviceShuffle",
-                            "repeat": "SimonSSpotify_TrackRepeat",
-                            "tprog": "SimonSSpotify_TrackProgress",
-                            "tdur": "SimonSSpotify_TrackDuration",
-                            "tprogSS": "PingableNetworkDevice_Online_simon",
-                            "tdurSS": "PingableNetworkDevice_Online_simon",
-                            "progressenable": false
+                            "albumArt": "SpotifyPlayerBridge_AlbumImage",
+                            "title": "SpotifyPlayerBridge_TrackName",
+                            "artist": "SpotifyPlayerBridge_ArtistName",
+                            "control": "SpotifyPlayerBridge_TrackPlayer",
+                            "shuffle": "SpotifyPlayerBridge_DeviceShuffle",
+                            "repeat": "SpotifyPlayerBridge_TrackRepeat",
+                            "tprog": "SpotifyPlayerBridge_TrackProgress",
+                            "tdur": "SpotifyPlayerBridge_TrackDuration",
+                            "tprogSS": "SpotifyPlayerBridge_TrackProgressMs",
+                            "tdurSS": "SpotifyPlayerBridge_TrackDurationMs",
+                            "progressenable": true
                         }
                     },
                     {
@@ -38,6 +38,77 @@
                         "row": 0,
                         "col": 8,
                         "command": "spotify:user:spotify:playlist:37i9dQZEVXcENLFdCnYPBN"
+                    },                 
+                    {
+                        "name": "Sunday Concerts",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "row": 0,
+                        "col": 8,
+                        "command": "spotify:user:spotify:playlist:6nk7LtadtC31HX2qYHeheE"
+                    },
+                    {
+                        "name": "Daily Mix 1",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:4FfrekUbXVWg9FmALhXzsv",
+                        station/user/1131378623/cluster/5Ma1xhkL7wRQbmPSL2XHGY
+                        "row": 1,
+                        "col": 8
+                    },
+                    {
+                        "name": "Daily Mix 2",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:7oq6jr8AOws2odUijwLsr9",
+                        "row": 2,
+                        "col": 8
+                    },
+                    {
+                        "name": "Daily Mix 3",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:0agrQFi81583ES55FK1Qne",
+                        "row": 3,
+                        "col": 8
+                    },
+                    {
+                        "name": "Daily Mix 4",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:5Ma1xhkL7wRQbmPSL2XHGY",
+                        "row": 4,
+                        "col": 8
+                    },
+                    {
+                        "name": "Daily Mix 5",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:21VfwicZ8YMzCJngMbyTEf",
+                        "row": 5,
+                        "col": 8
+                    },
+                    {
+                        "name": "Daily Mix 6",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "AllSpeakers_TrackPlay",
+                        "type": "button",
+                        "command": "spotify:station:user:1131378623:cluster:43qAnpxhMPzSfFS4CzV187",
+                        "row": 6,
+                        "col": 8
                     }
                 ],
                 "row": 2,
@@ -461,7 +532,7 @@
                         "config": {
                             "whoshome_heading": "Who's Home",
                             "whoshome_iconset": "eclipse-smarthome-classic",
-                            "whoshome_iconsize": null,
+                            "whoshome_iconsize": 32,
                             "whoshome_height": null,
                             "whoshome_width": null,
                             "whoshome_font_size": null,
@@ -768,7 +839,7 @@
             "hide_drawer_footer": true,
             "hide_speak_button": true,
             "hide_fullscreen_button": true,
-            "show_header_clock": false,
+            "show_header_clock": true,
             "speech_synthesis_voice": "Google UK English Male",
             "floating_speech": false,
             "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
@@ -777,94 +848,6 @@
             "hide_refresh_button": true
         },
         "customwidgets": {
-            "Spotifycontol": {
-                "template": "<style>\n   .main-table {\n    width: 100%;\n  \theight: 100%;\n    padding: 0px 0px 0px 0px;\n\t\tcolor: #edeff1;\n  }\n\n  .album-table {\n    width: 100%;\n    position: relative;\n  }\n\n  .albumcover {\n    width: 100%;\n    position: relative;\n  }\n\n  .button-table {\n    width: 100%;\n    position: absolute;\n    top: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .albumbuttons-table {\n    background: rgba(44, 55, 67, 0.4);\n    width: 100%;\n    position: absolute;\n    bottom: 0%;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n  \n.songprogress {\n -webkit-appearance: progress-bar;\n\tdisplay: block;\n  background-color: #f3f3f3;\n\twidth: 100%;\n  border: 0;\n  height: 3px;\n  border-radius: 9px;\n\tcolor: orange;\n}\nprogress::-moz-progress-bar { background: orange; }\nprogress::-webkit-progress-value { background: orange; }\n\n  .title {\n    font-weight: bold;\n    font-size: 18px;\n  \tpadding-top: 10px;\n  }\n\n  .leftbox {\n    float: right;\n    text-align: center;\n  }\n\n  .centerbox {\n    width: 70%;\n    text-align: center;\n  }\n\n  .rightbox {\n    float: left;\n    text-align: center;\n  }\n.timebox{\n  height:10px;\n  }\n  .blockbutton {\n    display: block;\n    width: 100%;\n    border: none;\n    padding: 25px 10px 15px 10px;\n    cursor: pointer;\n    text-align: center;\n  }\n\n  .buttonbox {\n    width: 33%;\n    background-color: #4A5561;\n    font-size: 36px;\n  }\n\n  .buttonbox:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .buttonbox2 {\n    width: 33%;\n    background-color: #394149;\n\t\tcolor: #c8cfd5;\n    font-size: 43px;\n  }\n\n  .buttonbox2:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .blockbuttonS {\n    display: block;\n    border: none;\n    padding: 1px 10px 10px 10px;\n    font-size: 24px;\n  }\n\n  .blockbuttonS:hover {\n    color: orange;\n  }\n</style>\n\n<div class=\"main-table\">\n\n  <div class=\"album-table\">\n\t\t<img class=albumcover ng-src=\"{{itemValue(config.albumArt)}}\">\n    <p ng-if=\"itemValue(config.albumArt)=='NULL'\" class=\"rnp-image-td\"> Oops! No image here!</p>\n    \n      <table class=\"albumbuttons-table\">\n      <tr>\n        <td class=\"leftbox\">\n            <p ng-if=\"itemValue(config.tprog)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tprog)}}</p>\n            <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false\"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) =='OFF'\" ng-click=\"sendCmd(config.shuffle,'ON')\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) !='OFF'\" ng-click=\"sendCmd(config.shuffle,'OFF')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n\n          <td class=\"centerbox\">\n            <p class=\"title\" ng-if=\"itemValue(config.title)!='NULL'\" class=\"rnp-title-td\">{{itemValue(config.title)}}</p>\n            <p ng-if=\"itemValue(config.title)=='NULL'\" class=\"rnp-title-td\">-</p>\n            <p ng-if=\"itemValue(config.artist)!='NULL'\" class=\"rnp-name-artist\">{{itemValue(config.artist)}}</p>\n            <p ng-if=\"itemValue(config.artist)=='NULL'\" class=\"rnp-name-artist\">-</p>\n\n          </td>\n\n          <td class=\"rightbox\">\n            <p ng-if=\"itemValue(config.tdur)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tdur)}}</p>\n            <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false \"></p>\n            <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='off'\" ng-click=\"sendCmd(config.repeat,'track')\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n            <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='track'\" ng-click=\"sendCmd(config.repeat,'context')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n            <label class=\"blockbuttonS\" ng-If=\"itemValue(config.repeat) !='track' && itemValue(config.repeat) !='off'\" ng-click=\"sendCmd(config.repeat,'off')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-refresh\"></i></label>\n          </td>\n\n          <tr>\n            <progress ng-if=\"itemValue(config.tprogSS)!='NULL'&&config.progressenable == true \" class=\"songprogress\" value=\"{{itemValue(config.tprogSS)}}\" max=\"{{itemValue(config.tdurSS)}}\"></progress>\n          </tr>\n\n    </table>\n\n    <table class=\"button-table\">\n\n      <td class=\"buttonbox\">\n        <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'PREVIOUS')\"><i class=\"glyphicon glyphicon-step-backward\"></i></label>\n      </td>\n\n      <td class=\"buttonbox2\">\n        <label class=\"blockbutton\" ng-if=\"itemValue(config.control) !='PLAY'\" ng-click=\"sendCmd(config.control,'PLAY')\"><i class=\"glyphicon glyphicon-play rnp-glyphicon-text\"></i></label>\n        <label class=\"blockbutton\" ng-if=\"itemValue(config.control) =='PLAY'\" ng-click=\"sendCmd(config.control,'PAUSE')\"><i class=\"glyphicon glyphicon-pause rnp-glyphicon-text\"></i></label>\n      </td>\n\n      <td class=\"buttonbox\">\n        <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'NEXT')\"><i class=\"glyphicon glyphicon-step-forward\"></i></label>\n      </td>\n\n    </table>\n\n  </div>",
-                "name": "Spotify controller",
-                "author": "Linda Knudsen",
-                "description": "Controller for the spotify plugin, might work with others too",
-                "settings": [
-                    {
-                        "type": "item",
-                        "id": "albumArt",
-                        "label": "Album Art",
-                        "description": "SpotifyPlayerBridge_AlbumImage",
-                        "default": ""
-                    },
-                    {
-                        "type": "item",
-                        "id": "title",
-                        "label": "Track Title",
-                        "description": "SpotifyPlayerBridge_TrackName"
-                    },
-                    {
-                        "type": "item",
-                        "id": "artist",
-                        "label": "Artist",
-                        "description": "SpotifyPlayerBridge_ArtistName"
-                    },
-                    {
-                        "type": "item",
-                        "id": "control",
-                        "label": "Player Control",
-                        "description": "SpotifyPlayerBridge_PlayerControl"
-                    },
-                    {
-                        "type": "item",
-                        "id": "shuffle",
-                        "label": "Shuffle",
-                        "description": "SpotifyPlayerBridge_ActiveDeviceShuffle"
-                    },
-                    {
-                        "type": "item",
-                        "id": "repeat",
-                        "label": "Repeat",
-                        "description": "SpotifyPlayerBridge_RepeatMode"
-                    },
-                    {
-                        "type": "item",
-                        "label": "Track Progress",
-                        "id": "tprog",
-                        "description": "SpotifyPlayerBridge_TrackProgressMSs"
-                    },
-                    {
-                        "type": "item",
-                        "label": "Track Duration",
-                        "default": "",
-                        "description": "SpotifyPlayerBridge_TrackDurationMSs",
-                        "id": "tdur"
-                    },
-                    {
-                        "type": "checkbox",
-                        "description": "Supported by default",
-                        "id": "lengthinfoenable",
-                        "default": true,
-                        "label": "Enable progress text"
-                    },
-                    {
-                        "type": "checkbox",
-                        "description": "Not native in the binding, needs extra tags for seconds",
-                        "id": "progressenable",
-                        "default": false,
-                        "choices": "true, false",
-                        "label": "Enable progress bar"
-                    },
-                    {
-                        "type": "item",
-                        "id": "tprogSS",
-                        "label": "Track progress in seconds",
-                        "description": "For the progress bar - Not native in the binding",
-                        "default": ""
-                    },
-                    {
-                        "type": "item",
-                        "id": "tdurSS",
-                        "label": "Track length in seconds",
-                        "default": "",
-                        "description": "For the progress bar - Not native in the binding"
-                    }
-                ],
-                "readme_url": "https://community.openhab.org/t/custom-widget-controller-for-spotify-connect-binding/54040"
-            },
             "Whos-Home": {
                 "template": "<style>\n\n  .container_frame{\n  \twidth:100%;\n  \tborder:solid 0px green;\n  \t\n  \ttext-align:center;\n  \tdisplay:inline-block;  \n  }\n  \n  .frame_main{\n  \twidth:{{config.whoshome_width}}px;\n\t\theight:{{config.whoshome_height}}px;\n  \tmargin:5px;\n  \tfont-size:{{config.whoshome_font_size}}px;\n  \tborder:solid 1px black;\n  \tdisplay:inline-block;\n  }\n  .frame_table{\n  \twidth:100%;\n  \tborder-spacing:10px;\n  \ttext-align:center;\n  \tborder:solid 0px blue;\n  }\n  .table_person{\n  \ttext-align:center;\n  margin-top:2px;\n  }\t\n td { \n    padding: 10px;\n}\n\n</style>\n\t\t<div class=\"container_frame\">\n      <div ng-if=\"(config.whoshome_heading != '')\">\n          <div><h4>{{config.whoshome_heading}}</h4></div>\n      </div>\n      <div ng-repeat=\"item in (itemsInGroup(config.whoshome_GroupItem)) | filter:(config.whoshome_hideaway && {state:'ON'})\" class=\"frame_main\">\n        <table class=\"frame_table\">\n          <tr ng-if=\"(config.whoshome_show_name)\">\n            <th class=\"table_person\">{{item.label}}</th>\n          </tr>\n          <tr ng-if=\"(config.whoshome_show_icon && item.category != '' && config.whoshome_iconset != '')\">\n            <td class=\"table_icon\"><widget-icon iconset=\"config.whoshome_iconset\" icon=\"item.category.toLowerCase()\" size=\"config.whoshome_iconsize\" backdrop=\"false\" center=\"true\" inline=\"false\" state=\"itemState(itemname)\"></td>\n          </tr>\n          <tr ng-if=\"(config.whoshome_show_state)\">\n            <td class=\"table_state\">{{itemState(item.name)}}</td>\n          </tr>\n        </table>\n    </div>\n   </div>",
                 "name": "Who's Home",
@@ -947,6 +930,94 @@
                         "description": "Hide people if they are not home"
                     }
                 ]
+            },
+            "Spotifycontrol": {
+                "template": "<style>\n  .main-table {\n    width: 100%;\n    height: 100%;\n    padding: 0px 0px 0px 0px;\n    color: #edeff1;\n  }\n\n  .album-table {\n    width: 100%;\n    position: relative;\n  }\n\n  .albumcover {\n    width: 100%;\n    position: relative;\n  }\n\n  .button-table {\n    width: 100%;\n    position: absolute;\n    top: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .albumbuttons-table {\n    background: rgba(44, 55, 67, 0.4);\n    width: 100%;\n    position: absolute;\n    bottom: 0%;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .songprogress {\n    -webkit-appearance: progress-bar;\n    display: block;\n    background-color: #f3f3f3;\n    width: 100%;\n    border: 0;\n    height: 3px;\n    border-radius: 9px;\n    color: orange;\n  }\n\n  progress::-moz-progress-bar {\n    background: orange;\n  }\n\n  progress::-webkit-progress-value {\n    background: orange;\n  }\n\n  .title {\n    font-weight: bold;\n    font-size: 18px;\n    padding-top: 10px;\n  }\n\n  .leftbox {\n    float: right;\n    text-align: center;\n  }\n\n  .centerbox {\n    width: 70%;\n    text-align: center;\n  }\n\n  .rightbox {\n    float: left;\n    text-align: center;\n  }\n\n  .timebox {\n    height: 10px;\n  }\n\n  .blockbutton {\n    display: block;\n    width: 100%;\n    border: none;\n    padding: 25px 10px 15px 10px;\n    cursor: pointer;\n    text-align: center;\n  }\n\n  .buttonbox {\n    width: 33%;\n    background-color: #4A5561;\n    font-size: 36px;\n  }\n\n  .buttonbox:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .buttonbox2 {\n    width: 33%;\n    background-color: #394149;\n    color: #c8cfd5;\n    font-size: 43px;\n  }\n\n  .buttonbox2:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .blockbuttonS {\n    display: block;\n    border: none;\n    padding: 1px 10px 10px 10px;\n    font-size: 24px;\n  }\n\n  .blockbuttonS:hover {\n    color: orange;\n  }\n\n</style>\n\n\n<div class=\"main-table\">\n\n  <div class=\"album-table\">\n    <img ng-if=\"itemValue(config.albumArt)!='UNDEF'\" class=albumcover ng-src=\"{{itemValue(config.albumArt)}}\">\n    <img ng-if=\"itemValue(config.albumArt)=='UNDEF'\" class=albumcover ng-src=\"http://quashera.com/openhab/dependencies/noalbumart.jpg\">\n\n    <table class=\"albumbuttons-table\">\n      <tr>\n        <td class=\"leftbox\">\n          <p ng-if=\"itemValue(config.tprog)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tprog)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false\"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) =='OFF'\" ng-click=\"sendCmd(config.shuffle,'ON')\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) !='OFF'\" ng-click=\"sendCmd(config.shuffle,'OFF')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n        </td>\n\n        <td class=\"centerbox\">\n          <p class=\"title\" ng-if=\"itemValue(config.title)!='NULL'\">{{itemValue(config.title)}}</p>\n          <p ng-if=\"itemValue(config.title)=='NULL'\" class=\"rnp-title-td\">-</p>\n          <p ng-if=\"itemValue(config.artist)!='NULL'\" class=\"rnp-name-artist\">{{itemValue(config.artist)}}</p>\n          <p ng-if=\"itemValue(config.artist)=='NULL'\" class=\"rnp-name-artist\">-</p>\n\n        </td>\n\n        <td class=\"rightbox\">\n          <p ng-if=\"itemValue(config.tdur)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tdur)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false \"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='off'\" ng-click=\"sendCmd(config.repeat,'track')\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='track'\" ng-click=\"sendCmd(config.repeat,'context')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-If=\"itemValue(config.repeat) !='track' && itemValue(config.repeat) !='off'\" ng-click=\"sendCmd(config.repeat,'off')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-refresh\"></i></label>\n        </td>\n      </tr>\n      <tr>\n\n        <td colspan=\"3\">\n          <progress ng-if=\"itemValue(config.tprogSS)!='NULL'&&config.progressenable == true \" class=\"songprogress\" value=\"{{itemValue(config.tprogSS)}}\" max=\"{{itemValue(config.tdurSS)}}\"></progress>\n        </td>\n      </tr>\n\n    </table>\n\n    <table class=\"button-table\">\n      <tr>\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'PREVIOUS')\"><i class=\"glyphicon glyphicon-step-backward\"></i></label>\n        </td>\n\n        <td class=\"buttonbox2\">\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) !='PLAY'\" ng-click=\"sendCmd(config.control,'PLAY')\"><i class=\"glyphicon glyphicon-play rnp-glyphicon-text\"></i></label>\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) =='PLAY'\" ng-click=\"sendCmd(config.control,'PAUSE')\"><i class=\"glyphicon glyphicon-pause rnp-glyphicon-text\"></i></label>\n        </td>\n\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'NEXT')\"><i class=\"glyphicon glyphicon-step-forward\"></i></label>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n",
+                "name": "Spotify controller",
+                "author": "Linda Knudsen",
+                "description": "Controller for the spotify plugin, might work with others too",
+                "settings": [
+                    {
+                        "type": "item",
+                        "id": "albumArt",
+                        "label": "Album Art",
+                        "description": "SpotifyPlayerBridge_AlbumImage",
+                        "default": ""
+                    },
+                    {
+                        "type": "item",
+                        "id": "title",
+                        "label": "Track Title",
+                        "description": "SpotifyPlayerBridge_TrackName"
+                    },
+                    {
+                        "type": "item",
+                        "id": "artist",
+                        "label": "Artist",
+                        "description": "SpotifyPlayerBridge_ArtistName"
+                    },
+                    {
+                        "type": "item",
+                        "id": "control",
+                        "label": "Player Control",
+                        "description": "SpotifyPlayerBridge_PlayerControl"
+                    },
+                    {
+                        "type": "item",
+                        "id": "shuffle",
+                        "label": "Shuffle",
+                        "description": "SpotifyPlayerBridge_ActiveDeviceShuffle"
+                    },
+                    {
+                        "type": "item",
+                        "id": "repeat",
+                        "label": "Repeat",
+                        "description": "SpotifyPlayerBridge_RepeatMode"
+                    },
+                    {
+                        "type": "item",
+                        "label": "Track Progress",
+                        "id": "tprog",
+                        "description": "SpotifyPlayerBridge_TrackProgressMSs"
+                    },
+                    {
+                        "type": "item",
+                        "label": "Track Duration",
+                        "default": "",
+                        "description": "SpotifyPlayerBridge_TrackDurationMSs",
+                        "id": "tdur"
+                    },
+                    {
+                        "type": "checkbox",
+                        "description": "Enables the progress text",
+                        "id": "lengthinfoenable",
+                        "default": true,
+                        "label": "Progress Text"
+                    },
+                    {
+                        "type": "checkbox",
+                        "description": "Enables progress bar",
+                        "id": "progressenable",
+                        "default": false,
+                        "choices": "true, false",
+                        "label": "Progress Bar"
+                    },
+                    {
+                        "type": "item",
+                        "id": "tprogSS",
+                        "label": "Track Progress in ms",
+                        "description": "SpotifyPlayerBridge_TrackProgressMs - Found under the \"show more\" button on the player bridge",
+                        "default": ""
+                    },
+                    {
+                        "type": "item",
+                        "id": "tdurSS",
+                        "label": "Track duration in ms",
+                        "default": "",
+                        "description": "SpotifyPlayerBridge_TrackDurationMs - Found under the \"show more\" button on the player bridge"
+                    }
+                ],
+                "readme_url": "https://community.openhab.org/t/54040"
             }
         }
     }
