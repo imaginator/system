@@ -19,29 +19,8 @@ miio:vacuum:imagisuck                                       @ "all"           [ 
 network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
 network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
-tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=300 ]
-tplinksmarthome:hs110:washing-machine                       @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=300 ]
-
-weatherunderground:weather:local                            @ "all"           [ apikey="{{ salt['pillar.get']('openhab:wunderground_apikey') }}", location="TXL", language="EN", refresh=60 ] {
-    Channels:
-        Type temperature : current#temperature [ SourceUnit="C" ]
-        Type windSpeed : current#windSpeed [ SourceUnit="kmh" ]
-        Type windGust : current#windGust [ SourceUnit="kmh" ]
-        Type pressure : current#pressure [ SourceUnit="hPa" ]
-        Type dewPoint : current#dewPoint [ SourceUnit="C" ]
-        Type heatIndex : current#heatIndex [ SourceUnit="C" ]
-        Type windChill : current#windChill [ SourceUnit="C" ]
-        Type feelingTemperature : current#feelingTemperature [ SourceUnit="C" ]
-        Type visibility : current#visibility [ SourceUnit="km" ]
-        Type rainDay : current#precipitationDay [ SourceUnit="mm" ]
-        Type rainHour : current#precipitationHour [ SourceUnit="mm" ]
-        Type minTemperature : forecastToday#minTemperature [ SourceUnit="C" ]
-        Type maxTemperature : forecastToday#maxTemperature [ SourceUnit="C" ]
-        Type rainDay : forecastToday#precipitationDay [ SourceUnit="mm" ]
-        Type snow : forecastToday#snow [ SourceUnit="cm" ]
-        Type maxWindSpeed : forecastToday#maxWindSpeed [ SourceUnit="kmh" ]
-        Type averageWindSpeed : forecastToday#averageWindSpeed [ SourceUnit="kmh" ]
-}
+tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=5 ]
+tplinksmarthome:hs110:washing-machine                       @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=5 ]
 
 // Bridges
 

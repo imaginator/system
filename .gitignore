@@ -10,4 +10,4 @@ pillar/*/init.sls
 .Trashes
 ehthumbs.db
 Thumbs.db
-
+.vscode/settings.json

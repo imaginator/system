@@ -1,8 +1,27 @@
 val String filename = "catgenie.rules"
-
-rule "set the quiettime"
-when 
-    (now.getHours > 21 || now.getHours <=7)
+var Timer timer
+    
+rule "do something if item state is 0 for more than 10 seconds"
+when
+   	Item HS110_Current_cat_toilet changed
 then
-    QuietTime.postUpdate("CLOSED")
+    //check if it's night
+    if (now.getHours > 18 || now.getHours <=7)
+        logInfo("test-log-filename", "This is a log entry of type Info!")
+        // check if the machine is running
+       	if(HS110_Current_cat_toilet>0.03) {
+   		timer = createTimer(now.plusSeconds(5)) [|
+   			// turn off the cat toilet
+            HS110_Switch_cat_toilet.postupdate("off")
+   		    ]
+   	    } else {
+   		    if(timer!=null) {
+   			    timer.cancel
+   			    timer = null
+   		    }
+           }
+    else
+        HS110_Current_cat_toilet.postupdate("On")
 end
+
+logInfo("logLights","Hallway detected on with luminosity " + FF_Hallway_Lumin.state.toString)

@@ -56,7 +56,6 @@
                         "item": "AllSpeakers_TrackPlay",
                         "type": "button",
                         "command": "spotify:station:user:1131378623:cluster:4FfrekUbXVWg9FmALhXzsv",
-                        station/user/1131378623/cluster/5Ma1xhkL7wRQbmPSL2XHGY
                         "row": 1,
                         "col": 8
                     },
@@ -544,6 +543,113 @@
                     }
                 ],
                 "row": 7,
+                "col": 0
+            },
+            {
+                "id": "volumesNG",
+                "name": "volumesNG",
+                "widgets": [
+                    {
+                        "name": "Lounge",
+                        "sizeX": 4,
+                        "sizeY": 3,
+                        "item": "ChromecastAudio_lounge_audio_Volume",
+                        "type": "knob",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "subTextEnabled": true,
+                        "ranges": [
+                            {
+                                "min": 0,
+                                "max": 20,
+                                "barColor": "#CCCCCC"
+                            },
+                            {
+                                "min": 20,
+                                "max": 35,
+                                "barColor": "#0db9f0"
+                            },
+                            {
+                                "min": 35,
+                                "max": 70,
+                                "barColor": "#FF9966"
+                            },
+                            {
+                                "min": 70,
+                                "max": 101,
+                                "barColor": "#CC3300"
+                            }
+                        ],
+                        "rangesEnabled": true,
+                        "unit": "",
+                        "startAngle": -110,
+                        "endAngle": 110,
+                        "useserverformat": true,
+                        "scaleEnabled": false,
+                        "skinType": "simple",
+                        "skinWidth": null,
+                        "skinColor": "transparent",
+                        "rangesTextColorMatching": false,
+                        "bgColor": "transparent",
+                        "row": 0,
+                        "col": 7,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "",
+                        "sizeX": 2,
+                        "sizeY": 6,
+                        "item": "ChromecastAudio_lounge_audio_Volume",
+                        "type": "slider",
+                        "row": 3,
+                        "col": 0,
+                        "vertical": true,
+                        "hidelabel": true,
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "hidepointer": false,
+                        "showticks": false,
+                        "showticksvalues": false,
+                        "backdrop_iconset": "freepik-household",
+                        "backdrop_icon": "armchair-4"
+                    },
+                    {
+                        "name": "",
+                        "sizeX": 2,
+                        "sizeY": 1,
+                        "item": "ChromecastAudio_lounge_audio_Title",
+                        "type": "dummy",
+                        "row": 2,
+                        "col": 0,
+                        "font_size": "10"
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 2,
+                        "sizeY": 2,
+                        "item": "ChromecastAudio_lounge_audio_ImageSrc",
+                        "type": "image",
+                        "row": 0,
+                        "col": 0,
+                        "image_source": "item-string",
+                        "url": "src",
+                        "intervaltype": "seconds",
+                        "background": "rgb(0, 0, 0)"
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 4,
+                        "sizeY": 4,
+                        "type": "template",
+                        "customwidget": "options-switch",
+                        "row": 0,
+                        "col": 2
+                    }
+                ],
+                "row": 4,
                 "col": 0
             },
             {

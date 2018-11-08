@@ -1,0 +1,9 @@
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: 'mqtt://localhost'
+  # MQTT server authentication, uncomment if required:
+  # user: my_user
+  # password: my_password

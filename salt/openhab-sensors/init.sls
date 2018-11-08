@@ -6,7 +6,6 @@ openhab-sensors-packages:
       - build-essential
       - python-dev
       - python-pip
-      - python-virtualenv
 
 openhab-sensors-user:
   user.present:
@@ -15,36 +14,21 @@ openhab-sensors-user:
     - home: /home/openhab-sensors
     - createhome: true
 
-openhab-sensors_venv:
-  virtualenv.managed:
-    - name: /home/openhab-sensors/Adafruit_Python_DHT
-    - user: openhab-sensors
-    - require:
-      - pkg: openhab-sensors-packages
+paho-mqtt:
+  pip.installed
 
-adafruit-dht_git:
-  git.latest:
-    - name: https://github.com/adafruit/Adafruit_Python_DHT.git
-    - target: /home/openhab-sensors/adafruit
-    - user: openhab-sensors
-    - force: True
-    - require:
-      - pkg: git
-      - virtualenv: openhab-sensors_venv
+adafruit-dht:
+  pip.installed
 
-adafruit-dht_install_pkgs:
-  pip.installed:
-    - bin_env: openhab-sensors_venv
-    - requirements: /home/openhab-sensors/Adafruit_python_DHT/requirements.txt
-    - require:
-      - git: adafruit-dht_git
-      - pkg: openhab-sensors-packages
-      - virtualenv: openhab-sensors_venv
+/home/openhab-sensors/am2302.py:
+  file.managed:
+    - source: salt://openhab-sensors/files/am2302.py
+    - mode: 755
 
 openhab-sensors.service:
   file.managed:
     - name: /etc/systemd/system/openhab-sensors.service
-    - source: salt://openhab-sensors/files/openhab-sensors.service
+    - source: salt://openhab-sensors/files/am2302.service
     - user: root
     - group: root
     - mode: 644
@@ -52,8 +36,11 @@ openhab-sensors.service:
     - name: service.systemctl_reload
     - onchanges:
       - file: openhab-sensors.service
+      - file: /home/openhab-sensors/am2302.py
   service.running:
     - enable: True
+    - restart: True
     - require:
       - file: openhab-sensors.service
-
+    - watch:
+      - file: /home/openhab-sensors/am2302.py

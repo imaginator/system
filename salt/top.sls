@@ -19,4 +19,5 @@ base:
     - motion
   furrow:
     - base-utils
-    
+  pi02:
+    - openhab-sensors

@@ -199,14 +199,17 @@ openhab-iptables-dhcp-redirect-ipv4:
     - comment: "DHCP redirect for openhab"
     - save: True
 
-#weather-underground-icons:
-#  archive.extracted:
-#    - name: /etc/openhab2/html/weather-underground-icons
-#    - source: https://github.com/manifestinteractive/weather-underground-icons/archive/v1.0.1.tar.gz
-#    - user: openhab
-#    - group: openhab
-#    - if_missing: /etc/openhab2/html/weather-underground-icons/
-#    - skip_verify: True 
-#    - options: "--strip=1"
-#    - enforce_toplevel: False
-   
+mosquitto-ipv4-iptables:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: tcp
+    - jump: accept-log
+    - source: 10.7.11.0/24
+    - dport: 1883
+    - family: ipv4
+    - match: comment 
+    - comment: "mosquitto input"
+    - save: true

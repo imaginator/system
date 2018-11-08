@@ -21,18 +21,20 @@ ssh_key_{{name}}:
   {% endif %}
 {% endfor %}
 
-simon.sudo:
+/etc/sudoers.d/simon:
   file.managed:
     - user: root
     - group: root
     - mode: 0440
     - source: salt://users/files/simon.sudoers
-    - name: /etc/sudoers.d/simon
     - check_cmd: /usr/sbin/visudo -c -f
 
-remove-default-user-accounts: 
+{%- if salt['user.info']('pi') %}
+remove-pi-user:
   user.absent:
     - name: pi
+    - force: True
     - require:
       - user: simon
       - file: /etc/sudoers.d/simon
+{%- endif %}
