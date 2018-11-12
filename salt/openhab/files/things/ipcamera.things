@@ -1,0 +1,1 @@
+ipcamera:HIKVISION:camera01   @ "lounge"        [ IPADDRESS="camera01.imagilan", USERNAME="{{ salt['pillar.get']('openhab:camera_operator_username') }}", PASSWORD="{{ salt['pillar.get']('openhab:camera_operator_password') }}"]

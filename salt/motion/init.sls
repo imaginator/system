@@ -48,6 +48,8 @@ motion-in-plex:
 /etc/nginx/rtmp.conf:
   file.managed:
     - source: salt://motion/files/rtmp.conf
+    - template: jinja
+
 
 /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf:
   file.managed:

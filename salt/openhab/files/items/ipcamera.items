@@ -16,11 +16,3 @@ Dimmer   HIKVISIONIPCameraWithONVIFAndAPISupport_Tilt                      "Tilt
 Dimmer   HIKVISIONIPCameraWithONVIFAndAPISupport_Zoom                      "Zoom"                                                             {channel="ipcamera:HIKVISION:camera01:zoom"}
 String   HIKVISIONIPCameraWithONVIFAndAPISupport_Videourl                  "Video URL"                                                        {channel="ipcamera:HIKVISION:camera01:videourl"}
 String   HIKVISIONIPCameraWithONVIFAndAPISupport_Imageurl                  "Image URL"                                                        {channel="ipcamera:HIKVISION:camera01:imageurl"}
-
-Switch   ONVIFGenericIPCameraWithONVIFSupport_UpdateImageNow   "Update the Image"                                                 {channel="ipcamera:ONVIF:camera02:updateImageNow"}
-Image    ONVIFGenericIPCameraWithONVIFSupport_Image            "A JPG Image that can be made to update from your cameras feed."   {channel="ipcamera:ONVIF:camera02:image"}
-Dimmer   ONVIFGenericIPCameraWithONVIFSupport_Pan              "Pan"                                                              {channel="ipcamera:ONVIF:camera02:pan"}
-Dimmer   ONVIFGenericIPCameraWithONVIFSupport_Tilt             "Tilt"                                                             {channel="ipcamera:ONVIF:camera02:tilt"}
-Dimmer   ONVIFGenericIPCameraWithONVIFSupport_Zoom             "Zoom"                                                             {channel="ipcamera:ONVIF:camera02:zoom"}
-String   ONVIFGenericIPCameraWithONVIFSupport_Videourl         "Video URL"                                                        {channel="ipcamera:ONVIF:camera02:videourl"}
-String   ONVIFGenericIPCameraWithONVIFSupport_Imageurl         "Image URL"                                                        {channel="ipcamera:ONVIF:camera02:imageurl"}
