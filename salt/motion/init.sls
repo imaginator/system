@@ -2,8 +2,6 @@ motion:
   service.running:
     - enable: True
     - reload: True
-    - watch:
-      - file: /etc/motion
     - require:
       - pkg: motion_pkgs
       - group: motion-in-plex
@@ -21,7 +19,6 @@ motion_pkgs:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
-      - motion
       - ffmpeg
       - libnginx-mod-rtmp
 
@@ -50,7 +47,6 @@ motion-in-plex:
     - source: salt://motion/files/rtmp.conf
     - template: jinja
 
-
 /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf:
   file.managed:
     - source: salt://motion/files/nginx-vhost-eyeinthesky.conf
@@ -62,27 +58,3 @@ motion-in-plex:
     - group: www-data
     - source: salt://motion/files/html
     - template: jinja
-
-/etc/motion:
-  file.recurse:
-    - makedirs: true
-    - user: motion
-    - group: motion
-    - source: salt://motion/files/motion-configs
-    - template: jinja
-    - require:
-      - pkg: motion_pkgs
-
-ffserver_iptables_ipv4:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - match: state
-    - connstate: NEW
-    - proto: tcp
-    - jump: accept-log
-    - dports: 1935
-    - family: ipv4
-    - match: comment 
-    - comment: rtmp-streaming
-    - save: true
