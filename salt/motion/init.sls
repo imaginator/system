@@ -58,3 +58,22 @@ motion-in-plex:
     - group: www-data
     - source: salt://motion/files/html
     - template: jinja
+
+webcam-publisher.service:
+  file.managed:
+    - name: /etc/systemd/system/webcam-publisher.service
+    - source: salt://motion/files/webcam-publisher.service
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: webcam-publisher.service
+  service.running:
+    - enable: True
+    - require:
+      - file: webcam-publisher.service
+    - watch:
+      - file: webcam-publisher.service

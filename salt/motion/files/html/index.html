@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>F17 Live Streaming</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 
 <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 
 <body>
-    <video data-dashjs-player width="1280" height="720" controls muted autoplay src="https:///eyeinthesky.imaginator.com/streams/dash/index.mpd">
-        Video player not supported
-    </video>
+    <div class="fullscreen-bg">
+        <video data-dashjs-player controls muted autoplay src="https:///eyeinthesky.imaginator.com/streams/dash/index.mpd"  class="fullscreen-bg__video">
+            Video player not supported
+        </video>
+    </div>
+    <div class="content">
+            <h1>F17 Livestream</h1>
+            <p><a href="https://github.com/imaginator/system/tree/master/salt/motion">Video setup</a></p>
+            <p><a href="https://bunker.imaginator.com/grafana/d/S6DdtWKik/node-exporter-full?orgId=2&from=now-30m&to=now">Network</a></p>
+        </div>
 </body>
-
 </html>
