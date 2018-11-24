@@ -1,4 +1,4 @@
-motion:
+nginx:
   service.running:
     - enable: True
     - reload: True

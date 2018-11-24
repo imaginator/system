@@ -1,0 +1,13 @@
+[Unit]
+Description="Multicast Mux"
+After=network.target
+
+[Service]
+ExecStart=ffmpeg -hide_banner -rtsp_transport tcp -i "rtsp://media:sisisi12@camera01.imagilan:554/ISAPI/streaming/channels/103" -c copy -loglevel error -f mpegts 'udp://239.0.0.1:3003?ttl=3'
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=motion
+
+[Install]
+WantedBy=multi-user.target
