@@ -57,11 +57,28 @@ Number   Wind_Gust_Knots      "Wind gust [%.2f kn]"      {weather="locationId=ho
 Number   Wind_Gust_Mps        "Wind gust [%.2f mps]"     {weather="locationId=home, type=wind, property=gust, unit=mps"}
 Number   Wind_Gust_Mph        "Wind gust [%.2f mph]"     {weather="locationId=home, type=wind, property=gust, unit=mph"}
 Number   Wind_Chill           "Wind chill [%.2f °C]"     {weather="locationId=home, type=wind, property=chill"}
-Number   Wind_Chill_F         "Wind chill [%.2f °F]"     {weather="locationId=home, type=wind, property=chill, unit=celcius"}
 
 // forecast
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=0, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=0, type=temperature, property=max"}
+
 Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=min"}
 Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=max"}
 
 Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=2, type=temperature, property=min"}
 Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=2, type=temperature, property=max"}
+
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=3, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=3, type=temperature, property=max"}
+
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=4, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=4, type=temperature, property=max"}
+
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=5, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=5, type=temperature, property=max"}
+
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=6, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=6, type=temperature, property=max"}
+
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=7, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=7, type=temperature, property=max"}

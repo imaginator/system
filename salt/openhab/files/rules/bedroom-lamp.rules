@@ -1,0 +1,15 @@
+// Turn on the small bedroom light in the evenings
+
+rule "Sunset Rule"
+when
+    Channel 'astro:sun:local:set#event' triggered START
+then
+    BedroomBedside_switch.sendCommand(ON)
+end
+
+rule "bedroom-lamp off"
+when 
+    Time cron "00 23 * ? * * *"
+then
+    BedroomBedside_switch.sendCommand(OFF)
+end

@@ -70,11 +70,11 @@ openhab-dialout-group:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-15-08-2018.zip
-    - source_hash: sha1=f1e3e8ff61162b9b46400ef0374af19ce04d69e2 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera10-11-2018.zip
+    - source_hash: sha1=28b30e01b7a97e21e8aad5df048daf3c97f955da 
     - enforce_toplevel: False
 
-{% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things'] %}
+{% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
 openhab-{{directory}}:
   file.recurse:
     - name: /etc/openhab2/{{directory}}

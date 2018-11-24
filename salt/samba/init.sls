@@ -23,3 +23,34 @@ samba-service:
       - pkg: samba-packages
     - watch:
       - file: samba-config
+
+samba-iptables-accept-ipv4-tcp:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: tcp
+    - jump: accept-log
+    - source: 10.7.10.0/23
+    - dport: 445
+    - family: ipv4
+    - match: comment 
+    - comment: "Samba TCP"
+    - save: true
+
+samba-iptables-accept-ipv4-udp:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: udp
+    - jump: accept-log
+    - source: 10.7.10.0/23
+    - dport: 445
+    - family: ipv4
+    - match: comment 
+    - comment: "Samba UDP"
+    - save: true
+
