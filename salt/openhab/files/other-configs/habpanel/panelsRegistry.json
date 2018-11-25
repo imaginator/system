@@ -934,6 +934,28 @@
                 "row": 1,
                 "col": 0,
                 "tile": {}
+            }, 
+            {
+                "id": "Baustelle",
+                "name": "Baustelle",
+                "widgets": [
+                    {
+                        "name": "Baustelle Webcam",
+                        "sizeX": 12,
+                        "sizeY": 8,
+                        "item": "HIKVISIONIPCameraWithONVIFAndAPISupport_Image",
+                        "type": "image",
+                        "$$hashKey": "object:1304",
+                        "row": 0,
+                        "col": 0,
+                        "image_source": "item-image",
+                        "intervaltype": "seconds",
+                        "background": "rgb(0, 0, 0)"
+                    }
+                ],
+                "$$hashKey": "object:1254",
+                "row": 4,
+                "col": 1
             }
         ],
         "menucolumns": 1,
