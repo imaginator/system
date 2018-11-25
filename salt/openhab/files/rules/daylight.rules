@@ -57,8 +57,8 @@ when
 then
    // weekend formular: wakeup is later and less cold
 
-   var sunrise = new DateTime(Sunrise_Time.state.toString)
-   var sunset = new DateTime(Sunset_Time.state.toString)
+   var sunrise = new DateTime(LocalSun_RiseStart.state.toString)
+   var sunset = new DateTime(LocalSun_SetEnd.state.toString)
    var preSunrise = sunrise.minusHours(0)
    var postSunrise = sunrise.plusHours(2)
    var preSunset = sunset.minusHours(1)
