@@ -3,11 +3,22 @@ Description="webcam-publisher"
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/ffmpeg -hide_banner -rtsp_transport tcp -i "rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101" -vcodec copy -movflags +faststart -an -f flv -loglevel error rtmp://127.0.0.1:1935/camera01
+Type=simple
+Restart=always
+RestartSec=10
+User=www-data
 StandardOutput=inherit
 StandardError=inherit
-Restart=always
-User=www-data
+ExecStart=/usr/bin/ffmpeg -hide_banner \
+                          -rtsp_transport tcp \
+                          -stimeout 10000000 \
+                          -i "rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101" \
+                          -an \
+                          -vcodec copy \
+                          -movflags +faststart \
+                          -f flv \
+                          -loglevel error \
+                          rtmp://127.0.0.1:1935/camera01
 
 [Install]
 WantedBy=multi-user.target

@@ -16,12 +16,12 @@ scrape_configs:
     scrape_interval: 30s
     static_configs:
     - targets:
-      - imagiswitch.imagilan:9100
+      - w16gw.imagilan:9100
+      - f17gw.imagilan:9100
       - repeater01.imagilan:9100
       - repeater04.imagilan:9100
       - repeater05.imagilan:9100
       - repeater06.imagilan:9100
-      - f17gw.imagilan:9100
       - bunker.imagilan:9100
       - pi02.imagilan:9100
 
@@ -30,6 +30,7 @@ scrape_configs:
     static_configs:
     - targets:
       - 10.7.11.2
+      - camera01.imagilan
     metrics_path: /snmp
     params:
       module: [edgeswitch]
