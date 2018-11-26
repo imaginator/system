@@ -59,6 +59,25 @@ motion-in-plex:
     - source: salt://motion/files/html
     - template: jinja
 
+multicast-publisher.service:
+  file.managed:
+    - name: /etc/systemd/system/multicast-publisher.service
+    - source: salt://motion/files/multicast-publisher.service
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: multicast-publisher.service
+  service.running:
+    - enable: True
+    - require:
+      - file: multicast-publisher.service
+    - watch:
+      - file: multicast-publisher.service
+
 webcam-publisher.service:
   file.managed:
     - name: /etc/systemd/system/webcam-publisher.service
