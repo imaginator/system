@@ -17,8 +17,11 @@ miio:vacuum:imagisuck                                       @ "all"           [ 
 network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
 network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
-tplinksmarthome:hs110:cat-toilet                            @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=31 ]
-tplinksmarthome:hs110:washing-machine                       @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=31 ]
+tplinksmarthome:hs110:CatGenie                              @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=31 ]
+tplinksmarthome:hs110:WashingMachine                        @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=31 ]
+tplinksmarthome:hs110:IndustrialLight                       @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=31 ]
+tplinksmarthome:hs110:GlassCubeLight                        @ "bedroom"       [ ipAddress="plugswitch04.imagilan", refresh=31 ]
+tplinksmarthome:hs110:Fridge                                @ "kitchen"       [ ipAddress="plugswitch05.imagilan", refresh=31 ]
 
 // Bridges
 

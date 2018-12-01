@@ -8,10 +8,3 @@ Number   HS110_EnergyUsage_washing_machine   "Energy Usage"   {channel="tplinksm
 Number   HS110_Current_washing_machine       "Current"        {channel="tplinksmarthome:hs110:washing-machine:current"}
 Number   HS110_Voltage_washing_machine       "Voltage"        {channel="tplinksmarthome:hs110:washing-machine:voltage"}
 
-Switch   HS110_Switch_cat_toilet              "Switch"         {channel="tplinksmarthome:hs110:cat-toilet:switch"}
-Switch   HS110_Led_cat_toilet                 "Switch Led"     {channel="tplinksmarthome:hs110:cat-toilet:led"}
-Number   HS110_Rssi_cat_toilet                "Signal"         {channel="tplinksmarthome:hs110:cat-toilet:rssi"}
-Number   HS110_Power_cat_toilet               "Power"          {channel="tplinksmarthome:hs110:cat-toilet:power"}
-Number   HS110_EnergyUsage_cat_toilet         "Energy Usage"   {channel="tplinksmarthome:hs110:cat-toilet:energyUsage"}
-Number   HS110_Current_cat_toilet             "Current"        {channel="tplinksmarthome:hs110:cat-toilet:current"}
-Number   HS110_Voltage_cat_toilet             "Voltage"        {channel="tplinksmarthome:hs110:cat-toilet:voltage"}

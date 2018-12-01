@@ -58,6 +58,13 @@ install-openhab:
       - pkg: openhab-dependencies
       - pkgrepo: openhab-repo
 
+openhab-java-opts:
+  file.line:
+    - name: /etc/default/openhab2
+    - mode: ensure
+    - content: EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin"
+    - after: EXTRA_JAVA_OPTS=.*
+
 openhab-dialout-group:
   group.present:
     - name: dialout
@@ -97,6 +104,7 @@ openhab2:
     - onchanges:
       - archive: ipcamera-binding
       - file: openhab-persistence
+      - file: openhab-java-opts
       - file: openhab-services
   cmd.run:
     - name: until nc -z localhost 8101; do sleep 1; done
