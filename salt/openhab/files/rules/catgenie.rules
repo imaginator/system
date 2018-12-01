@@ -1,27 +1,32 @@
-val String filename = "catgenie.rules"
-var Timer timer
-    
-rule "do something if item state is 0 for more than 10 seconds"
+rule "TurnOffCatGeniePower"
+
 when
-   	Item HS110_Current_cat_toilet changed
+	Time cron "0 24 14 ? * *" or 
+	Item CatGenieTimer changed from ON to OFF or
+	Item CatGeniePower changed
 then
-    //check if it's night
-    if (now.getHours > 18 || now.getHours <=7)
-        logInfo("test-log-filename", "This is a log entry of type Info!")
-        // check if the machine is running
-       	if(HS110_Current_cat_toilet>0.03) {
-   		timer = createTimer(now.plusSeconds(5)) [|
-   			// turn off the cat toilet
-            HS110_Switch_cat_toilet.postupdate("off")
-   		    ]
-   	    } else {
-   		    if(timer!=null) {
-   			    timer.cancel
-   			    timer = null
-   		    }
-           }
-    else
-        HS110_Current_cat_toilet.postupdate("On")
+    var Number CatGenieWatts = CatGeniePower.state as Number
+	logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
+
+    if(CatGenieWatts > 1){                       	// adjust the power in watts as needed
+		logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
+        CatGenieTimer.sendCommand(ON)    	// turn on timer with expire binding for 20 min
+    }
+    else(CatGenieTimer.state == OFF){
+        CatGenieSwitch.sendCommand(OFF)   		// turn power off if no cleaning cycle
+    }
 end
 
-logInfo("logLights","Hallway detected on with luminosity " + FF_Hallway_Lumin.state.toString)
+rule "TurnOnCatGeniePower"
+when
+	Time cron "0 0 9 ? * *"    				// power on at 9am every day
+then
+    CatGenieSwitch.sendCommand(ON)
+end
+
+rule "DebugCatGenie"
+when 
+    Item CatGeniePower received update
+then
+    logInfo("CatgeniePower", "Power: " + CatGeniePower.state.toString)
+end
