@@ -13,7 +13,7 @@ ExecStart=/usr/bin/ffmpeg -hide_banner \
                           -rtsp_transport tcp \
                           -stimeout 10000000 \
                           -i "rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101" \
-                          -vcodec copy \
+                          -c:v copy \
                           -an \
                           -loglevel error \
                           -f mpegts  \

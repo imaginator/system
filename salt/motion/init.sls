@@ -4,7 +4,6 @@ nginx:
     - reload: True
     - require:
       - pkg: motion_pkgs
-      - group: motion-in-plex
       - file: /srv/video/netcams
 
 reload-nginx-if-config-changes:
@@ -22,25 +21,16 @@ motion_pkgs:
       - ffmpeg
       - libnginx-mod-rtmp
 
-motion-in-plex:
-  group.present:
-    - name: motion
-    - system: True
-    - addusers:
-      - plex
-
 /srv/video/netcams:
   file.directory:
-    - user: motion
-    - group: motion
+    - user: www-data
+    - group: www-data
     - dir_mode: 755
     - file_mode: 644
     - recurse:
       - user
       - group
       - mode
-    - require: 
-      - group: motion-in-plex
 
 /etc/nginx/rtmp.conf:
   file.managed:
@@ -96,3 +86,22 @@ webcam-publisher.service:
       - file: webcam-publisher.service
     - watch:
       - file: webcam-publisher.service
+
+archive-video.service:
+  file.managed:
+    - name: /etc/systemd/system/archive-video.service
+    - source: salt://motion/files/archive-video.service
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: archive-video.service
+  service.running:
+    - enable: True
+    - require:
+      - file: archive-video.service
+    - watch:
+      - file: archive-video.service
