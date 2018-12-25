@@ -11,7 +11,11 @@ ARGS='--collector.bcache \
       --collector.mdadm  \
       --collector.netstat  \
       --collector.stat  \
+      --collector.mountstats \
+      --collector.systemd \
       --collector.tcpstat \
+      --collector.textfile.directory=/var/lib/prometheus/node-exporter \
+      --collector.textfile \
       --log.level=info' 
 
 
