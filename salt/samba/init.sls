@@ -31,7 +31,7 @@ samba-iptables-accept-ipv4-tcp:
     - match: state
     - connstate: NEW
     - proto: tcp
-    - jump: accept-log
+    - jump: ACCEPT
     - source: 10.7.10.0/23
     - dport: 445
     - family: ipv4
@@ -46,7 +46,7 @@ samba-iptables-accept-ipv4-udp:
     - match: state
     - connstate: NEW
     - proto: udp
-    - jump: accept-log
+    - jump: ACCEPT
     - source: 10.7.10.0/23
     - dport: 445
     - family: ipv4

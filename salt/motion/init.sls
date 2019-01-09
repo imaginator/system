@@ -1,5 +1,6 @@
-nginx:
+nginx-server:
   service.running:
+    - name: nginx
     - enable: True
     - reload: True
     - require:

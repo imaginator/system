@@ -34,7 +34,7 @@ plex_iptables-tcp:
     - match: state
     - connstate: NEW
     - proto: tcp
-    - jump: accept-log
+    - jump: ACCEPT
     - dports: 32400
     - family: ipv4
     - match: comment 
@@ -48,7 +48,7 @@ plex_iptables-udp:
     - match: state
     - connstate: NEW
     - proto: udp
-    - jump: accept-log
+    - jump: ACCEPT
     - dports: 32400
     - family: ipv4
     - match: comment 
@@ -62,7 +62,7 @@ plex_iptables-bonjour:
     - match: state
     - connstate: NEW
     - proto: udp
-    - jump: accept-log
+    - jump: ACCEPT
     - dports: 5353
     - family: ipv4
     - match: comment 

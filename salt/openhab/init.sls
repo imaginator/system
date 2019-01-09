@@ -1,6 +1,6 @@
 openhab-repo:
   pkgrepo.managed:
-    - name: deb https://dl.bintray.com/openhab/apt-repo2 unstable main
+    - name: deb https://dl.bintray.com/openhab/apt-repo2 stable main
     - file: /etc/apt/sources.list.d/openhab.list
     - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
@@ -77,8 +77,8 @@ openhab-dialout-group:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera10-11-2018.zip
-    - source_hash: sha1=28b30e01b7a97e21e8aad5df048daf3c97f955da 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera31-12-2018.zip
+    - source_hash: sha1=8596e5700294bf6af19d6e8174e3c83f80130ff3 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
@@ -186,7 +186,7 @@ openhab-iptables-dhcp-accept-ipv4:
     - match: state
     - connstate: NEW
     - proto: udp
-    - jump: accept-log
+    - jump: ACCEPT
     - source: 0.0.0.0
     - dport: 67
     - family: ipv4
@@ -214,7 +214,7 @@ mosquitto-ipv4-iptables:
     - match: state
     - connstate: NEW
     - proto: tcp
-    - jump: accept-log
+    - jump: ACCEPT
     - source: 10.7.11.0/24
     - dport: 1883
     - family: ipv4

@@ -1,5 +1,5 @@
-// NB: bogus onvif port to avoid PTZ probe error
-ipcamera:HIKVISION:camera01 @ "lounge" [ 
+// NB: bogus onvif_port to avoid PTZ probe error
+ipcamera:HIKVISION:camera01 @ "F17" [ 
     IPADDRESS="camera01.imagilan", 
     USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
     PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 

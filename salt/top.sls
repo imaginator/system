@@ -8,15 +8,18 @@ base:
     - prometheus-node-exporter
   bunker:
     - grafana
+    - kernel
     - mosquitto
-    - openhab
+    - motion
     - network
+    - logging
+    - nginx
+    - openhab
     - plex
     - prometheus-server
     - prometheus-snmp-exporter
-    - pulseaudio
     - saltstack-server
-    - motion
+    - samba
   furrow:
     - base-utils
   pi02:

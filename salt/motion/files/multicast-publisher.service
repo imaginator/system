@@ -9,15 +9,19 @@ RestartSec=10
 User=www-data
 StandardOutput=inherit
 StandardError=inherit
+Environment="TZ=Europe/Berlin"
 ExecStart=/usr/bin/ffmpeg -hide_banner \
+                          -loglevel error \
+                          -use_wallclock_as_timestamps 1 \
+                          -copyts \
+                          -fflags +genpts \
                           -rtsp_transport tcp \
                           -stimeout 10000000 \
                           -i "rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101" \
                           -c:v copy \
                           -an \
-                          -loglevel error \
-                          -f mpegts  \
-                          'udp://239.0.0.1:1234?ttl=1'
+                          -f mpegts \
+                          "udp://239.0.0.1:1234?ttl=1"
 
 [Install]
 WantedBy=multi-user.target

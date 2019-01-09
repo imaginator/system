@@ -7,7 +7,11 @@ install-base-utils:
     - names: 
       - tmux
       - zsh
+      - curl
       - git
       - htop
       - vim
       - tcpdump
+      - iptables-persistent
+      - snapper
+      - iotop

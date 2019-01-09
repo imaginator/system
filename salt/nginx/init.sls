@@ -8,6 +8,7 @@ nginx:
     - require:
       - pkg: nginx_pkgs
       - file: /etc/nginx/nginx.conf
+      - file: /etc/letsencrypt/cli.ini
       - acme: bunker-cert
       - cmd: /etc/nginx/dhparam.pem
 
@@ -18,6 +19,7 @@ nginx_pkgs:
       - nginx-full
       - certbot
       - libnginx-mod-rtmp
+      - apache2-utils
 
 bunker-cert:
   acme.cert:
@@ -55,6 +57,10 @@ eyeinthesky-cert:
     - user: root
     - group: root
     - mode: 644
+
+/etc/letsencrypt/cli.ini:
+  file.managed:
+    - source: salt://nginx/cli.ini
 
 # Create a unique 2048 Diffie Hellman group
 # https://weakdh.org
@@ -106,7 +112,7 @@ nginx_iptables_ipv4:
     - match: state
     - connstate: NEW
     - proto: tcp
-    - jump: accept-log
+    - jump: ACCEPT
     - dports: 80,443
     - family: ipv4
     - match: comment 
@@ -120,7 +126,7 @@ nginx_iptables_ipv6:
     - match: state
     - connstate: NEW
     - proto: tcp
-    - jump: accept-log
+    - jump: ACCEPT
     - dports: 80,443
     - family: ipv6
     - match: comment 

@@ -9,14 +9,16 @@ RestartSec=10
 User=www-data
 StandardOutput=inherit
 StandardError=inherit
-ExecStart=/usr/bin/ffmpeg -hide_banner \
-                          -i "udp://239.0.0.1:1234" \
-                          -c:v copy \
-                          -an \
-                          -movflags +faststart \
-                          -f flv \
-                          -loglevel error \
-                          rtmp://127.0.0.1:1935/camera01
+ExecStart=/usr/bin/ffmpeg \
+    -hide_banner \
+    -i "udp://239.0.0.1:1234" \
+    -c:v libx264 \
+    -preset veryfast \
+    -an \
+    -movflags +faststart \
+    -f flv \
+    -loglevel error \
+    rtmp://127.0.0.1:1935/camera01
 
 [Install]
 WantedBy=multi-user.target

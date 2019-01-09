@@ -35,3 +35,18 @@ prometheus-server:
 prometheus-no-copy-on-write:
   cmd.run:
     - name: chattr +C /var/lib/prometheus
+
+firewall-prometheus-server:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - jump: ACCEPT
+    - match: 
+        - state
+        - comment
+    - comment: "prometheus-server"
+    - connstate: NEW
+    - source: 10.7.8.0/22
+    - dport: 9090
+    - proto: tcp
+    - save: True
