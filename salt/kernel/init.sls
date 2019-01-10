@@ -16,3 +16,9 @@ blacklist-acpi_power_meter:
     - user: root
     - group: root
     - mode: 644
+
+disk-scheduler-rules:
+  file.managed:
+    - name: /etc/udev/rules.d/00-ssd-scheduler.rules
+    - source: salt://kernel/files/00-ssd-scheduler.rules
+
