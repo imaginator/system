@@ -1,0 +1,6 @@
+// Saltstack'd
+tplinksmarthome:hs110:CatGenie                "Catgenie" @ "main bath"     [ ipAddress="plugswitch01.imagilan", refresh=31 ]
+tplinksmarthome:hs110:WashingMachine   "Washing Machine" @ "main bath"     [ ipAddress="plugswitch02.imagilan", refresh=31 ]
+tplinksmarthome:hs110:IndustrialLight "Industrial Light" @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=31 ]
+tplinksmarthome:hs110:GlassCubeLight  "Glass Cube Light" @ "bedroom1"      [ ipAddress="plugswitch04.imagilan", refresh=31 ]
+tplinksmarthome:hs110:Fridge                    "Fridge" @ "kitchen"       [ ipAddress="plugswitch05.imagilan", refresh=31 ]

@@ -1,40 +1,20 @@
 // Managed by Saltstack
 
-airquality:aqi:local                                        @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
+airquality:aqi:local                  "Berlin Air Quality" @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:sun:local                                             @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
+astro:sun:local                               "Berlin Sun" @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
 
-chromecast:audio:home-mini-bathroom                         @ "main bathroom" [ ipAddress="home-mini-bathroom.imagilan",      refresh=6000, label="main bathroom" ]
-chromecast:audio:home-mini-bedroom                          @ "bedroom"       [ ipAddress="home-mini-bedroom.imagilan",       refresh=6000, label="bedroom" ]
-chromecast:audio:home-mini-kitchen                          @ "kitchen"       [ ipAddress="home-mini-kitchen.imagilan",       refresh=6000, label="bedroom" ]
-chromecast:audio:home-mini-lounge                           @ "lounge"        [ ipAddress="home-mini-lounge.imagilan",        refresh=6000, label="lounge"  ]
-chromecast:audio:chromecast-audio-lounge                    @ "lounge"        [ ipAddress="chromecast-audio-lounge.imagilan", refresh=6000, label="lounge"  ]
-chromecast:chromecast:chromecast-ultra-lounge               @ "lounge"        [ ipAddress="chromecast-ultra-lounge.imagilan", refresh=6000, label="lounge"  ]
-chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  @ "all"           [ ipAddress="chromecast-audio-lounge.imagilan", refresh=6000, label="all",  port="42576"]
+miio:vacuum:imagisuck                          "imagiSuck" @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-miio:vacuum:imagisuck                                       @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
-
-network:pingdevice:simon-phone                              @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
-network:pingdevice:susanne-phone                            @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
-
-tplinksmarthome:hs110:CatGenie                              @ "main bathroom" [ ipAddress="plugswitch01.imagilan", refresh=31 ]
-tplinksmarthome:hs110:WashingMachine                        @ "main bathroom" [ ipAddress="plugswitch02.imagilan", refresh=31 ]
-tplinksmarthome:hs110:IndustrialLight                       @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=31 ]
-tplinksmarthome:hs110:GlassCubeLight                        @ "bedroom"       [ ipAddress="plugswitch04.imagilan", refresh=31 ]
-tplinksmarthome:hs110:Fridge                                @ "kitchen"       [ ipAddress="plugswitch05.imagilan", refresh=31 ]
+network:pingdevice:simon-phone               "Simon Phone" @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
+network:pingdevice:susanne-phone           "Susanne Phone" @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
 // Bridges
 
 Bridge homematic:bridge:ccu                                                   [ gatewayAddress="homematic.imagilan"]
 
-Bridge hue:bridge:huebridge                                                   [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
-    0210 lounge_overhead  [ lightId="1" ]
-    0010 bedroom_plug     [ lightId="2" ]
-    0210 bedroom_overhead [ lightId="3" ]
-    0210 kitchen_overhead [ lightId="4" ]
-}
 
-Bridge zigbee:coordinator_cc2531:home                                        [ zigbee_port="/dev/ttyACM0", zigbee_panid="5E2B" ] {
+Bridge zigbee:coordinator_cc2531:home        "zigbee2mqtt" @ "all"           [ zigbee_port="/dev/ttyACM0", zigbee_panid="5E2B" ] {
     Device 91E358729CB86041 [ zigbee_macaddress = "91E358729CB86041" ]
 }
 

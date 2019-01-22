@@ -8,3 +8,11 @@ Number   HS110_EnergyUsage_washing_machine   "Energy Usage"   {channel="tplinksm
 Number   HS110_Current_washing_machine       "Current"        {channel="tplinksmarthome:hs110:washing-machine:current"}
 Number   HS110_Voltage_washing_machine       "Voltage"        {channel="tplinksmarthome:hs110:washing-machine:voltage"}
 
+Switch   HS110_Switch        "Switch"         {channel="tplinksmarthome:hs110:IndustrialLight:switch"}
+Switch   HS110_Led           "Switch Led"     {channel="tplinksmarthome:hs110:IndustrialLight:led"}
+Number   HS110_Rssi          "Signal"         {channel="tplinksmarthome:hs110:IndustrialLight:rssi"}
+Number   HS110_Power         "Power"          {channel="tplinksmarthome:hs110:IndustrialLight:power"}
+Number   HS110_EnergyUsage   "Energy Usage"   {channel="tplinksmarthome:hs110:IndustrialLight:energyUsage"}
+Number   HS110_Current       "Current"        {channel="tplinksmarthome:hs110:IndustrialLight:current"}
+Number   HS110_Voltage       "Voltage"        {channel="tplinksmarthome:hs110:IndustrialLight:voltage"}
+

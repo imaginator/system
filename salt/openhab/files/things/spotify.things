@@ -1,4 +1,4 @@
-Bridge spotify:player:simon "SpotifyPlayerBridge" [ clientId="{{ salt['pillar.get']('openhab:spotify_clientId') }}", clientSecret="{{ salt['pillar.get']('openhab:spotify_clientSecret') }}", refreshToken="{{ salt['pillar.get']('openhab:spotify_refreshToken') }}"] {
+Bridge spotify:player:simon "SpotifyPlayerBridge" @ "all" [ clientId="{{ salt['pillar.get']('openhab:spotify_clientId') }}", clientSecret="{{ salt['pillar.get']('openhab:spotify_clientSecret') }}", refreshToken="{{ salt['pillar.get']('openhab:spotify_refreshToken') }}"] {
   Things:
    device Pixel2    "Pixel 2"       [id="8eea521ea6ebf94a3469a738916a1756c2bc0dcc"]
    device All       "All Speakers"  [id="6ffd175b8c00455b857f9f5175005e13"]

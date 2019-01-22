@@ -1,11 +1,2 @@
-ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0",  ATTR{queue/scheduler}="none"
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0",  ATTR{queue/scheduler}="deadline"
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1",  ATTR{queue/scheduler}="kyber"
-
-# they default is 2 ms for read requests ( read_lat_nsec ) and 10 ms 
-#    kqd->read_lat_nsec =   2 000 000 ULL;
-#    kqd->write_lat_nsec = 10 000 000 ULL;
-# optimise for very fast reads, and very slow write backs from bcache
-
-#ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1",  ATTR{queue/iosched/read_lat_nsec}="2000000"
-#ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/iosched/write_lat_nsec}="10000000"
-

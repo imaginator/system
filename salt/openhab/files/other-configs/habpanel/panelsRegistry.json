@@ -943,7 +943,7 @@
                         "name": "Baustelle Webcam",
                         "sizeX": 12,
                         "sizeY": 8,
-                        "item": "HIKVISIONIPCameraWithONVIFAndAPISupport_Image",
+                        "item": "EyeInTheSky_Image",
                         "type": "image",
                         "$$hashKey": "object:1304",
                         "row": 0,

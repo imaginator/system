@@ -9,7 +9,7 @@ openhab-dependencies:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
-      - default-jre
+      - openjdk-8-jre-headless # https://www.openhab.org/docs/installation/#prerequisites
       - postgresql
       - apache2-utils
       - mosquitto
@@ -77,8 +77,8 @@ openhab-dialout-group:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera31-12-2018.zip
-    - source_hash: sha1=8596e5700294bf6af19d6e8174e3c83f80130ff3 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-12-01-2019.zip
+    - source_hash: sha1=639c29f1b549a968105eb2ccb1fb22344c6df623 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}

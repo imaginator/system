@@ -15,3 +15,5 @@ install-base-utils:
       - iptables-persistent
       - snapper
       - iotop
+      - mtr
+      - nmap

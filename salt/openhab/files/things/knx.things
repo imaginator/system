@@ -1,4 +1,4 @@
-Bridge	knx:ip:knx_gw "Busch-Jaeger 6186/32 IP Interface" @ "KNX" [
+Bridge	knx:ip:knx_gw "Busch-Jaeger 6186/32 IP Interface" @ "all" [
 	type="TUNNEL",
     ipAddress="knx-gw.imagilan", 
 	portNumber=3671,
@@ -8,10 +8,10 @@ Bridge	knx:ip:knx_gw "Busch-Jaeger 6186/32 IP Interface" @ "KNX" [
 	autoReconnectPeriod=1,
 	localSourceAddr="1.1.1" ]
 	{
-		Thing device DALI_GW "MDT DaliControl Gateway, SCN-DALI32.03" @ "KNX" [ address="1.1.2", fetch=false, pingInterval=600, readInterval=300 ]
+		Thing device DALI_GW "MDT DaliControl Gateway, SCN-DALI32.03" @ "all" [ address="1.1.2", fetch=false, pingInterval=600, readInterval=300 ]
 		{
 		}
-		Thing device LIGHT_SWITCH_1 "BE-TA55P8.01 Push button 8-fold / Plus" @ "KNX" [ address="1.1.3", fetch=false, pingInterval=600, readInterval=300 ]
+		Thing device LIGHT_SWITCH_1 "BE-TA55P8.01 Push button 8-fold / Plus" @ "all" [ address="1.1.3", fetch=false, pingInterval=600, readInterval=300 ]
 		{
 			Type	dimmer	:	Ch_11		"Bedroom1 Volume"		[ ga="1/1/1+<1/1/0" ]
 		}

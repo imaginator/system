@@ -1,18 +1,28 @@
 // Managed by Saltstack
 
-Color    BedroomOverhead_Colour                      "Color"               {channel="hue:0210:huebridge:bedroom_overhead:color"}
-Dimmer   BedroomOverhead_ColorTemperature            "Color Temperature"   {channel="hue:0210:huebridge:bedroom_overhead:color_temperature"}
-String   BedroomOverhead_Alert                       "Alert"               {channel="hue:0210:huebridge:bedroom_overhead:alert"}
-Switch   BedroomOverhead_Effect                      "Color Loop"          {channel="hue:0210:huebridge:bedroom_overhead:effect"}
+Color    Bedroom1Overhead_Color              "Color"               {channel="hue:0210:huebridge:bedroomoverhead:color"}
+Dimmer   Bedroom1Overhead_ColorTemperature   "Color Temperature"   {channel="hue:0210:huebridge:bedroomoverhead:color_temperature"}
+String   Bedroom1Overhead_Alert              "Alert"               {channel="hue:0210:huebridge:bedroomoverhead:alert"}
+Switch   Bedroom1Overhead_Effect             "Color Loop"          {channel="hue:0210:huebridge:bedroomoverhead:effect"}
 
-Color    LoungeOverhead_Color                        "Color"               {channel="hue:0210:huebridge:lounge_overhead:color"}
-Dimmer   LoungeOverhead_ColorTemperature             "Color Temperature"   {channel="hue:0210:huebridge:lounge_overhead:color_temperature"}
-String   LoungeOverhead_Alert                        "Alert"               {channel="hue:0210:huebridge:lounge_overhead:alert"}
-Switch   LoungeOverhead_Effect                       "Color Loop"          {channel="hue:0210:huebridge:lounge_overhead:effect"}
+Color    LoungeOverhead_Color              "Color"               {channel="hue:0210:huebridge:loungeoverhead:color"}
+Dimmer   LoungeOverhead_ColorTemperature   "Color Temperature"   {channel="hue:0210:huebridge:loungeoverhead:color_temperature"}
+String   LoungeOverhead_Alert              "Alert"               {channel="hue:0210:huebridge:loungeoverhead:alert"}
+Switch   LoungeOverhead_Effect             "Color Loop"          {channel="hue:0210:huebridge:loungeoverhead:effect"}
 
-Color    KitchenOverhead_Color                       "Color"               {channel="hue:0210:huebridge:kitchen_overhead:color"}
-Dimmer   KitchenOverhead_ColorTemperature            "Color Temperature"   {channel="hue:0210:huebridge:kitchen_overhead:color_temperature"}
-String   KitchenOverhead_Alert_kichen                "Alert"               {channel="hue:0210:huebridge:kitchen_overhead:alert"}
-Switch   KitchenOverhead_Effect                      "Color Loop"          {channel="hue:0210:huebridge:kitchen_overhead:effect"}
+Color    KitchenOverhead_Color              "Color"               {channel="hue:0210:huebridge:kitchenoverhead:color"}
+Dimmer   KitchenOverhead_ColorTemperature   "Color Temperature"   {channel="hue:0210:huebridge:kitchenoverhead:color_temperature"}
+String   KitchenOverhead_Alert              "Alert"               {channel="hue:0210:huebridge:kitchenoverhead:alert"}
+Switch   KitchenOverhead_Effect             "Color Loop"          {channel="hue:0210:huebridge:kitchenoverhead:effect"}
 
-Switch   BedroomBedside_switch                       "Switch"              {channel="hue:0010:huebridge:bedroom_plug:switch"}
+Switch   Bedroom1Lamp_Switch   "Switch"   {channel="hue:0010:huebridge:bedroomlamp:switch"}
+
+Dimmer   Desklamp_ColorTemperature   "Color Temperature"   {channel="hue:0220:huebridge:desklamp:color_temperature"}
+Dimmer   Desklamp_Brightness         "Brightness"          {channel="hue:0220:huebridge:desklamp:brightness"}
+String   Desklamp_Alert              "Alert"               {channel="hue:0220:huebridge:desklamp:alert"}
+Switch   Desklamp_Effect             "Color Loop"          {channel="hue:0220:huebridge:desklamp:effect"}
+
+Dimmer   Dressingroom_ColorTemperature   "Color Temperature"   {channel="hue:0220:huebridge:dressingroom:color_temperature"}
+Dimmer   Dressingroom_Brightness         "Brightness"          {channel="hue:0220:huebridge:dressingroom:brightness"}
+String   Dressingroom_Alert              "Alert"               {channel="hue:0220:huebridge:dressingroom:alert"}
+Switch   Dressingroom_Effect             "Color Loop"          {channel="hue:0220:huebridge:dressingroom:effect"}
