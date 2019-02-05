@@ -7,6 +7,7 @@ base:
     - users
     - prometheus-node-exporter
   bunker:
+    - arpwatch
     - grafana
     - kernel
     - mosquitto
@@ -16,6 +17,7 @@ base:
     - nginx
     - openhab
     - plex
+    - postfix
     - prometheus-server
     - prometheus-snmp-exporter
     - saltstack-server
