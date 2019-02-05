@@ -17,8 +17,8 @@ grafana_pkgs:
 grafana-repo:
   pkgrepo:
     - managed
-    - key_url: https://packagecloud.io/gpg.key
-    - name: deb https://packagecloud.io/grafana/stable/debian/ wheezy main
+    - key_url: https://packages.grafana.com/gpg.key
+    - name: deb https://packages.grafana.com/oss/deb stable main
     - refresh_db: true
 
 /etc/grafana/grafana.ini:
