@@ -4,6 +4,5 @@ ipcamera:HIKVISION:camera01 "eye in the sky" @ "terrace" [
     USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
     PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
     SNAPSHOT_URL_OVERIDE="http://camera01.imagilan/ISAPI/Streaming/channels/101/picture",
-    POLL_CAMERA_MS=15000,
-    ONVIF_PORT=80 
+    POLL_CAMERA_MS=15000
     ]
