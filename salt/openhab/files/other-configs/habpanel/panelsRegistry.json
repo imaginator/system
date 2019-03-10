@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2018-10-24T15:54:46.120Z",
+        "updatedTime": "2019-02-24T21:56:00.038Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -35,10 +35,10 @@
                         "sizeY": 1,
                         "item": "AllSpeakers_TrackPlay",
                         "type": "button",
-                        "row": 0,
+                        "row": 7,
                         "col": 8,
                         "command": "spotify:user:spotify:playlist:37i9dQZEVXcENLFdCnYPBN"
-                    },                 
+                    },
                     {
                         "name": "Sunday Concerts",
                         "sizeX": 4,
@@ -213,6 +213,18 @@
                         "row": 7,
                         "col": 0,
                         "config": {}
+                    },
+                    {
+                        "name": "Weather",
+                        "sizeX": 8,
+                        "sizeY": 4,
+                        "type": "template",
+                        "customwidget": "Local Weather - OpenWeatherMap",
+                        "config": {
+                            "icon_size_current": "12",
+                            "icon_size_forecast": "3",
+                            "day_format": "EEEE"
+                        }
                     }
                 ],
                 "row": 0,
@@ -223,79 +235,35 @@
                 "name": "Network",
                 "widgets": [
                     {
-                        "name": "Wireless",
+                        "name": "bandwidth",
                         "sizeX": 12,
                         "sizeY": 4,
                         "type": "frame",
                         "row": 0,
                         "col": 0,
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/000000015/wifi?refresh=1m&panelId=7&orgId=2&var-instance=All&theme=light",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74\" frameborder=\"0\"",
                         "background": "transparent",
                         "refresh": 600,
                         "frameless": true,
                         "hidelabel": true
                     },
                     {
-                        "name": "Simon Home",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "PingableNetworkDevice_Online_simon",
-                        "type": "dummy",
-                        "row": 4,
-                        "col": 0,
-                        "nolinebreak": true,
-                        "useserverformat": true
-                    },
-                    {
-                        "name": "Last seen",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "SimonPhoneLastSeen",
-                        "type": "dummy",
-                        "row": 4,
-                        "col": 4,
-                        "nolinebreak": true,
-                        "useserverformat": false
-                    },
-                    {
-                        "name": "Who's Home?",
+                        "name": "Wireless",
                         "sizeX": 12,
-                        "sizeY": 3,
-                        "item": null,
-                        "type": "timeline",
-                        "row": 5,
-                        "col": 0,
-                        "period": "D",
-                        "colorMaps": [
-                            {
-                                "state": "ON",
-                                "color": "#0db9f0"
-                            },
-                            {
-                                "state": "OFF",
-                                "color": "#89a"
-                            }
-                        ],
-                        "series": [
-                            {
-                                "item": "SimonPhone",
-                                "name": "Simon"
-                            }
-                        ],
-                        "service": "jdbc"
-                    },
-                    {
-                        "name": "New Widget",
-                        "sizeX": 4,
                         "sizeY": 4,
-                        "item": null,
-                        "type": "label",
-                        "row": 8,
+                        "type": "frame",
+                        "url_source": "static",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265\" frameborder=\"0\"",
+                        "background": "transparent",
+                        "refresh": 600,
+                        "frameless": true,
+                        "hidelabel": true,
+                        "row": 4,
                         "col": 0
                     }
                 ],
-                "row": 4,
+                "row": 6,
                 "col": 0,
                 "tile": {}
             },
@@ -304,13 +272,13 @@
                 "name": "Bedroom",
                 "widgets": [
                     {
-                        "name": "Overhead Light",
-                        "sizeX": 4,
-                        "sizeY": 3,
+                        "name": "overhead",
+                        "sizeX": 2,
+                        "sizeY": 2,
                         "item": "ExtendedColorLight_Effect_bedroom",
                         "type": "switch",
                         "row": 0,
-                        "col": 8,
+                        "col": 3,
                         "hidelabel": false,
                         "hideonoff": true,
                         "iconset": "smarthome-set",
@@ -318,99 +286,130 @@
                         "icon_size": "64"
                     },
                     {
-                        "name": "",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "ExtendedColorLight_Color_bedroom",
-                        "type": "colorpicker",
-                        "style": "aCKolor",
-                        "blur_background": true,
-                        "row": 4,
-                        "col": 8
-                    },
-                    {
-                        "name": "Bedside Lamp",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "OnOffPlugInUnit_Switch_bedroom",
+                        "name": "bedside",
+                        "sizeX": 2,
+                        "sizeY": 2,
+                        "item": "Bedroom1Lamp_Switch",
                         "type": "switch",
                         "hidelabel": false,
                         "hideonoff": true,
                         "iconset": "smarthome-set",
-                        "icon": "socket-f",
+                        "icon": "bulb",
                         "icon_size": "64",
                         "row": 0,
-                        "col": 4
-                    },
-                    {
-                        "name": "Bedroom Volume",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudio_bedroom_mini_Volume",
-                        "type": "knob",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "subTextEnabled": false,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "bgColor": "transparent",
-                        "row": 0,
-                        "col": 0
+                        "col": 7
                     },
                     {
                         "name": "Now Playing",
-                        "sizeX": 4,
+                        "sizeX": 2,
                         "sizeY": 1,
-                        "item": "ChromecastAudio_bathroom_mini_Statustext",
+                        "item": "ChromecastAudio_bedroom_mini_Title",
                         "type": "dummy",
-                        "row": 3,
-                        "col": 0
+                        "row": 5,
+                        "col": 0,
+                        "font_size": "13",
+                        "useserverformat": true
                     },
                     {
-                        "name": "New Widget",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "ExtendedColorLight_ColorTemperature_bedroom",
+                        "name": "Volume",
+                        "sizeX": 2,
+                        "sizeY": 5,
+                        "item": "ChromecastAudio_bedroom_mini_Volume",
                         "type": "slider",
-                        "row": 3,
-                        "col": 8,
+                        "row": 0,
+                        "col": 0,
+                        "vertical": true,
                         "hidelabel": true,
                         "floor": 0,
                         "ceil": 100,
                         "step": 1,
                         "hidelimits": true,
-                        "hidepointer": true
+                        "bigslider": false,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "soundvolume",
+                        "backdrop_center": true
+                    },
+                    {
+                        "name": "Now Playing",
+                        "sizeX": 2,
+                        "sizeY": 1,
+                        "item": "ChromecastAudio_bedroom_mini_Artist",
+                        "type": "dummy",
+                        "font_size": "13",
+                        "useserverformat": true,
+                        "row": 6,
+                        "col": 0
+                    },
+                    {
+                        "name": "dressingroom",
+                        "sizeX": 2,
+                        "sizeY": 2,
+                        "item": "Dressingroom_Brightness",
+                        "type": "switch",
+                        "hidelabel": false,
+                        "hideonoff": true,
+                        "iconset": "smarthome-set",
+                        "icon": "bulb",
+                        "icon_size": "64",
+                        "row": 0,
+                        "col": 5
+                    },
+                    {
+                        "name": "Blinds",
+                        "sizeX": 2,
+                        "sizeY": 5,
+                        "item": null,
+                        "type": "slider",
+                        "row": 0,
+                        "col": 10,
+                        "vertical": true,
+                        "hidelabel": true,
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "inverted": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "rollershutter",
+                        "backdrop_center": true
+                    },
+                    {
+                        "name": "colour temperature",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "Bedroom1Overhead_ColorTemperature",
+                        "type": "slider",
+                        "row": 2,
+                        "col": 3,
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic"
+                    },
+                    {
+                        "name": "brightness",
+                        "sizeX": 4,
+                        "sizeY": 1,
+                        "item": "Dressingroom_Brightness",
+                        "type": "slider",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "row": 3,
+                        "col": 3
+                    },
+                    {
+                        "name": "room colour",
+                        "sizeX": 2,
+                        "sizeY": 2,
+                        "item": "Bedroom1Overhead_Color",
+                        "type": "colorpicker",
+                        "row": 2,
+                        "col": 7,
+                        "style": "aCKolor"
                     }
                 ],
                 "row": 3,
@@ -452,7 +451,7 @@
                         "col": 0
                     }
                 ],
-                "row": 5,
+                "row": 7,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -476,7 +475,7 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 6,
+                "row": 8,
                 "col": 0,
                 "tile": {
                     "title_color": "transparent"
@@ -542,7 +541,7 @@
                         }
                     }
                 ],
-                "row": 7,
+                "row": 9,
                 "col": 0
             },
             {
@@ -649,7 +648,7 @@
                         "col": 2
                     }
                 ],
-                "row": 4,
+                "row": 5,
                 "col": 0
             },
             {
@@ -934,7 +933,7 @@
                 "row": 1,
                 "col": 0,
                 "tile": {}
-            }, 
+            },
             {
                 "id": "Baustelle",
                 "name": "Baustelle",
@@ -945,7 +944,6 @@
                         "sizeY": 8,
                         "item": "EyeInTheSky_Image",
                         "type": "image",
-                        "$$hashKey": "object:1304",
                         "row": 0,
                         "col": 0,
                         "image_source": "item-image",
@@ -953,14 +951,13 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "$$hashKey": "object:1254",
                 "row": 4,
-                "col": 1
+                "col": 0
             }
         ],
         "menucolumns": 1,
         "settings": {
-            "theme": "default",
+            "theme": "material",
             "panel_name": "F17",
             "header_clock_format": "shortTime",
             "no_scrolling": true,
@@ -1059,7 +1056,7 @@
                     }
                 ]
             },
-            "Vacuum":{
+            "Vacuum": {
                 "name": "vacuum controller",
                 "template": "<div class=\"section\">\n  <div class=\"sectionIconContainer\"><div class=\"sectionIcon\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#roxy\"></use></svg></div></div>\n  \n  <div class=\"bigDash\">\n    <div class=\"description\">Aktuell</div> \n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue('statusTime') | number:0}}</div>\n\t\t\t\t<div class=\"sub\">min</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n      <div class=\"name1\">Akt. gereinigte Fläche: </div>\n\t\t\t<div class=\"value1\">{{itemValue('statusStatus')}}</div>\n\t\t\t<div class=\"name1\">Akt. gereinigte Fläche: </div>\n\t\t\t<div class=\"value1\">{{itemValue('statusArea') | number:2}} m²</div>\n      <div class=\"name1\">Akt. Fehler: </div>\n      <div class=\"value1\">{{itemValue('statusError')}}</div>\n      <div class=\"name1\">Akt. Saugleistung: </div>\n      <div class=\"value1\">{{itemValue('statusFanPow') | number:0}} %</div>\n      <div class=\"icon on\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#none\"></use></svg></div>\n      <div class=\"btn-group\" uib-dropdown dropdown-append-to-body=\"true\"\n    \t\tng-init=\"vacoptions = [\n                            {\n                              'value': 'dock',\n                              'label': 'Station',\n                            },\n                            {\n                              'value': 'spot',\n                              'label': 'Spot',\n                            },\n                                     {\n                              'value': 'pause',\n                              'label': 'Pause',\n                            },\n                                     {\n                              'value': 'vacuum',\n                              'label': 'Saugen',\n                            }\n    \t]\">\n\t\t\t<div class=\"btn-group btn-group-justified\" btn-checkbox-true >\n        <label class=\"btn btn-primary1\" ng-model=\"itemValue('actionControl')\" uib-btn-radio=\"option.value\" ng-click=\"sendCmd('actionControl', option.value)\" ng-repeat=\"option in vacoptions\">\n        <span class={{option.myicon}} aria-hidden=\"true\"></span> {{option.label}}</label>\n      </div>\n\t\t</div>\n      \n\t</div>\n</div>\n  \n  <div class=\"bigDash\">\n    <div class=\"description\">Letzte Aktion</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue('statuslastTime') | number:0}}</div>\n\t\t\t\t<div class=\"sub\">min</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n      <div class=\"name1\">Gereinigte Fläche: </div>\n\t\t\t<div class=\"value1\">{{itemValue('statuslastArea') | number:2}} m²</div>\n      <div class=\"name1\">Fehler bei Reinigung: </div>\n      <div class=\"value1\">{{itemValue('statuslastError')}}</div>\n      <div class=\"name1\">Startzeit: </div>\n      <div class=\"value1\">{{itemValue('statuslaststart') | date: 'dd-MM-yy, HH:mm'}} Uhr</div>\n      <div class=\"name1\">Endzeit: </div>\n      <div class=\"value1\">{{itemValue('statuslastend') | date: 'dd-MM-yy, HH:mm'}} Uhr</div>\n\t\t</div>\n\t</div>\n\n  <div class=\"bigDash\">\n    <div class=\"description\">Batterie</div>\n     \t<div class=\"graph\">\n\t\t\t\t<img width=\"380\" height=\"250\" src=\"http://10.168.7.3:3000/render/d-solo/kJTzF1iRk/technischedaten?panelId=10&orgId=1&from=now-30s&to=now&width=380&height=250&tz=UTC%2B02%3A00\" />\n\t\t</div>\n\t</div>  \n</div>\n\n<div class=\"section\">\n    <div class=\"widget\">\n      <div class=\"description1\">Status der Verbrauchsmaterialien</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Haupbrüste (in Stunden): </div>\n      <div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaMainT') | number:0}} Std</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#refresh\"></use></svg></div>\n\t\t\t<div class=\"name\">Hauptbürste: </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaMainP')}} %</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Seitenbürste (in Stunden):</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaSideT') | number:0}} Std</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#refresh\"></use></svg></div>\n\t\t\t<div class=\"name\">Seitenbürste:</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaSideP')}} %</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Filter (in Stunden): </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaFilterT') | number:0}} Std</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#refresh\"></use></svg></div>\n\t\t\t<div class=\"name\">Filter: </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaFilterP')}} %</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Sensoren (in Stunden)</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaSensorT') | number:0}} Std</div></div>\n     <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#refresh\"></use></svg></div>\n\t\t\t<div class=\"name\">Sensoren</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('consumaSensorP')}} %</div></div>\n\t\t</div>\n  <div class=\"widget\">\n      <div class=\"description1\">Gesamtdaten</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#flaeche\"></use></svg></div>\n\t\t\t<div class=\"name\">Gesamt gereinigte Fläche: </div>\n      <div class=\"valueGroup\"><div class=\"value\">{{itemValue('historyArea') | number:2}} m²</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Gesamtzeit: </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('historyTime')}} min</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#refresh\"></use></svg></div>\n\t\t\t<div class=\"name\">Gesamtaktionen:</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('historyCount')}}</div></div>\n    \t<div class=\"description1\">Ruhezeit</div>\n    \t<div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#on\"></use></svg></div>\n\t\t\t<div class=\"name\">Status: </div>\n      <div class=\"valueGroup\"><div class=\"value\">{{itemValue('dndFunction')}}</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Startzeit: </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('dndStart')}} Uhr</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Endzeit:</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('dndEnd')}} Uhr</div></div>\n\t\t</div>\n\t\t<div class=\"widget\">\n      <div class=\"description1\">Netzwerk</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#wlan\"></use></svg></div>\n\t\t\t<div class=\"name\">Netzwerk Wlan (SSID) </div>\n      <div class=\"valueGroup\"><div class=\"value\">{{itemValue('miroboSSID')}}</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#wlan\"></use></svg></div>\n\t\t\t<div class=\"name\">Empfang: </div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('miroboRSSI')}} %</div></div>\n      <div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#laufzeit\"></use></svg></div>\n\t\t\t<div class=\"name\">Onlinezeit:</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue('miroboonlinef')}}</div></div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 200 200\"><use xlink:href=\"/static/matrix-theme/squidink.svg#none\"></use></svg></div>\n\t\t\t\t<div class=\"btn-group\" dropdown-append-to-body=\"true\" uib-dropdown>\n  \t\t\t\t<button id=\"single-button\" type=\"button\" class=\"btn btn-primary\" uib-dropdown-toggle>Zonenreinigung - starten<span class=\"caret\"></span>\n  \t\t\t\t</button>\n  \t\t\t<ul class=\"dropdown-menu\" uib-dropdown-menu role=\"menu\" aria-labelledby=\"single-button\">\n    \t\t\t<li role=\"menuitem\"><a ng-click=\"sendCmd('', '')\">Wohnzimmer</a></li>\n\t\t\t\t\t<li role=\"menuitem\"><a ng-click=\"sendCmd('', '')\">Küche</a></li>\n          <li role=\"menuitem\"><a ng-click=\"sendCmd('', '')\">Schlafzimmer</a></li>\n    \t\t\t<li role=\"menuitem\"><a ng-click=\"sendCmd('', '')\">Flur</a></li>\n\t\t\t\t\t<li role=\"menuitem\"><a ng-click=\"sendCmd('', '')\">Bad</a></li> \n  \t\t\t</ul>\n\t\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"btn-group\" uib-dropdown dropdown-append-to-body=\"true\"\n    \tng-init=\"vacmodus = [\n                            {\n                              'value': '38',\n                              'label': 'Leise',\n                            },\n                            {\n                              'value': '60',\n                              'label': 'Normal',\n                            },\n                                     {\n                              'value': '77',\n                              'label': 'Turbo',\n                            },\n                                     {\n                              'value': '90',\n                              'label': 'Power',\n                            }\n\t\t\t]\">\n\t\t\t\t<div class=\"btn-group btn-group-justified\" btn-checkbox-true >\n        \t<label class=\"btn btn-primary1\" ng-model=\"itemValue('actionFan')\" uib-btn-radio=\"option.value\" ng-click=\"sendCmd('actionFan', option.value)\" ng-repeat=\"option in vacmodus\">\n        \t<span class={{option.myicon}} aria-hidden=\"true\"></span> {{option.label}}</label>\n      \t</div>\n\t\t</div>\n</div>"
             },
@@ -1150,6 +1147,53 @@
                     }
                 ],
                 "readme_url": "https://community.openhab.org/t/54040"
+            },
+            "Local Weather - OpenWeatherMap": {
+                "template": "<!-- For more information goto: https://github.com/BasvanH/habpanel-widget-openweathermap -->\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/openweathermap/weather-icons-master/css/weather-icons.css\">\n\n<style>\n@media (min-width: 992px) {\n    .col-md-border:not(:last-child) {\n\t\t\tborder-right: 1px solid #d7d7d7;\n    }\n    .col-md-border + .col-md-border {\n\t\t\tborder-left: 1px solid #d7d7d7;\n\t\t\tmargin-left: -1px;\n    }\n  \t.owm-to-upper:first-letter {\n    \ttext-transform: uppercase;\n\t\t}\n  \t.owm-condition {\n  \t\theight: 2em;\n \t\t}\n  \t.owm-row-current {\n  \t\tmargin: 1em 0em 2em;\n \t\t}\n   \t.owm-row-forecast {\n  \t\tmargin-bottom: 1em;\n \t\t}\n}\n</style>\n<div oc-lazy-load=\"['/static/openweathermap/owm.controller.js']\">\n\t<div ng-controller=\"ngOwmCtrl\">\n    <div class=\"row owm-row-current\">\n      <div class=\"col-xs-9\">\n        <i class=\"wi wi-owm-{{ itemValue('Weather_OWM_ConditionId') }} pull-right\" ng-style=\"{ 'color' : (config.icon_color_current == NULL ? primary-color : config.icon_color_current), 'font-size' : (config.icon_size_current == NULL ? '10em' : config.icon_size_current + 'em') }\"></i>\n        <h2 class=\"text-left owm-to-upper\">{{ itemValue('Weather_OWM_Condition') }}</h2>\n      </div>\n      <div class=\"col-xs-3 text-right\">\n        <h2>{{ '%.1f' | sprintf:itemValue('Weather_OWM_Temperature').split(' ')[0] }} {{ itemValue('Weather_OWM_Temperature').split(' ')[1] }}</h2>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/humidity.png\"/> {{itemValue('Weather_OWM_Humidity') }}</h5>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/wind.png\"/> {{ '%.1f' | sprintf:itemValue('Weather_OWM_Wind_Speed').split(' ')[0] }} {{ itemValue('Weather_OWM_Wind_Speed').split(' ')[1] }}</h5>\n        <h5>{{ itemValue('Weather_OWM_ObservationTime') | date: 'HH:mm' }}</h5>\n      </div>\n    </div>\n    <div class=\"row owm-row-forecast\">\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time0 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id0 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition0 }}</h5>\n        <h4><b>{{ temp0 == NULL ? '' : '%.1f' | sprintf:temp0.split(' ')[0]}} {{temp0.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time1 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id1 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition1 }}</h5>\n        <h4><b>{{ temp1 == NULL ? '' : '%.1f' | sprintf:temp1.split(' ')[0]}} {{temp1.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time2 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id2 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition2 }}</h5>\n        <h4><b>{{ temp2 == NULL ? '' : '%.1f' | sprintf:temp2.split(' ')[0]}} {{temp2.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time3 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id3 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition3 }}</h5>\n        <h4><b>{{ temp3 == NULL ? '' : '%.1f' | sprintf:temp3.split(' ')[0]}} {{temp3.split(' ')[1] }}</b></h4>\n      </div>\n    </div>\n  </div>\n</div>\n",
+                "name": "OpenWeatherMap",
+                "author": "Bastiaan van Haastrecht",
+                "description": "Local Weather, use with OpenWeatherMap binding - https://github.com/BasvanH/habpanel-widget-openweathermap",
+                "settings": [
+                    {
+                        "type": "choice",
+                        "id": "icon_size_current",
+                        "label": "Icon size - Current",
+                        "default": "12",
+                        "description": "Size of current condition icon",
+                        "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
+                    },
+                    {
+                        "type": "color",
+                        "id": "icon_color_current",
+                        "label": "Icon color - Current",
+                        "default": "",
+                        "description": "Color of current condition icon"
+                    },
+                    {
+                        "type": "choice",
+                        "default": "3",
+                        "description": "Size of forecast condition icons",
+                        "id": "icon_size_forecast",
+                        "label": "Icon size - Forecast",
+                        "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
+                    },
+                    {
+                        "type": "color",
+                        "id": "icon_color_forecast",
+                        "label": "Icon color - Forecast",
+                        "description": "Color of forecast condition icons",
+                        "default": ""
+                    },
+                    {
+                        "type": "string",
+                        "id": "day_format",
+                        "label": "Day format",
+                        "default": "EEEE",
+                        "description": "Modify day format of forecast, for options see: https://docs.angularjs.org/api/ng/filter/date"
+                    }
+                ],
+                "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-openweathermap/master/Local%20Weather%20-%20OpenWeatherMap.widget.json",
+                "readme_url": "https://github.com/BasvanH/habpanel-widget-openweathermap"
             }
         }
     }
