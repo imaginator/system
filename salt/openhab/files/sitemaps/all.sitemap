@@ -1,27 +1,79 @@
-sitemap our_home label="Our Home" {
+sitemap f17 label="F17" {
     Frame {
+        Group item=Mainbath
+        Group item=Guestbath
+        Group item=Kitchen
+        Group item=Terrace
+        Group item=Lounge
+        Group item=Workroom
         Group item=Bedroom1
         Group item=Bedroom2
         Group item=Bedroom3
-        Group item=Workroom
-        Group item=Lounge
-        Group item=Dining
-        Group item=Kitchen
-        Group item=Terrace
-        Group item=MainPassage
-        Group item=GuestBathroom
-        Group item=SmallPassage
-        Group item=Passage
-        Group item=MainBathroom
-        Group item=LaundryRoom
-        Group item=FrontDoor
+        Group item=Hallway
     }
 
     Frame {
-        Text label="" icon="light" {
-            Default item=Bedroom_Light label="Bedroom"
-            Default item=Music
-            Slider item=Volume icon=soundvolume
+        Text label="Window" icon="window" {
+            Default item=Mainbath_Window label="mainbath"
+            Default item=Lounge_Window label="Lounge"
+            Default item=Workroom_Window label="workroom"
+        }
+
+        Text label="Light" icon="light" {
+            Default item=Mainbath_Light label="mainbath"
+            Default item=Guestbath_Light label="guestbath"
+            Default item=Kitchen_Light label="Kitchen"
+            Default item=Terrace_Light label="Terrace"
+            Default item=Lounge_Light label="Lounge"
+        }
+
+        Text label="Motion Sensor" icon="motion" {
+            Default item=Mainbath_Motion label="mainbath"
+            Default item=Guestbath_Motion label="guestbath"
+            Default item=Kitchen_Motion label="Kitchen"
+            Default item=Terrace_Motion label="Terrace"
+            Default item=Lounge_Motion label="Lounge"
+            Default item=Workroom_Motion label="workroom"
+        }
+
+        Text label="Roller Shutter" icon="rollershutter" {
+            Default item=Mainbath_Shutter label="mainbath"
+            Default item=Workroom_Shutter label="workroom"
+        }
+
+        Text label="Temperature" icon="temperature" {
+            Default item=Mainbath_Temperature label="mainbath"
+            Default item=Guestbath_Temperature label="guestbath"
+            Default item=Kitchen_Temperature label="Kitchen"
+            Default item=Terrace_Temperature label="Terrace"
+            Default item=Lounge_Temperature label="Lounge"
+            Default item=Workroom_Temperature label="workroom"
+        }
+
+        Text label="Heating" icon="heating" {
+            Default item=Mainbath_Heating label="mainbath"
+            Default item=Guestbath_Heating label="guestbath"
+            Default item=Kitchen_Heating label="Kitchen"
+            Default item=Lounge_Heating label="Lounge"
+            Default item=Workroom_Heating label="workroom"
+        }
+
+        Text label="Humidity" icon="humidity" {
+            Default item=Mainbath_Humidity label="mainbath"
+            Default item=Guestbath_Humidity label="guestbath"
+            Default item=Kitchen_Humidity label="Kitchen"
+            Default item=Terrace_Humidity label="Terrace"
+            Default item=Lounge_Humidity label="Lounge"
+        }
+
+        Text label="Blind" icon="blinds" {
+            Default item=Kitchen_Blind label="Kitchen"
+            Default item=Lounge_Blind label="Lounge"
+            Default item=Workroom_Blind label="workroom"
+        }
+
+        Text label="Power Outlet" icon="poweroutlet" {
+            Default item=Terrace_Power label="Terrace"
         }
     }
 }

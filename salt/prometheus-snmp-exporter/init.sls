@@ -2,8 +2,8 @@ extract_snmp_exporter:
   archive.extracted:
     - name: /opt/snmp_exporter
     - if_missing: /opt/snmp_exporter/snmp_exporter
-    - source: https://github.com/prometheus/snmp_exporter/releases/download/v0.7.0/snmp_exporter-0.7.0.linux-amd64.tar.gz
-    - source_hash: sha1=248994f435e5e30081a410ebf5f79912c2926066
+    - source: https://github.com/prometheus/snmp_exporter/releases/download/v0.15.0/snmp_exporter-0.15.0.linux-amd64.tar.gz
+    - source_hash: sha1=6949ef62fa0185f903ff3aabadc245129edc1702
     - archive_format: tar
     - options: "--strip-components=1"
     - enforce_toplevel: False

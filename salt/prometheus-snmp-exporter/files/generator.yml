@@ -1,12 +1,48 @@
 modules:
+  # Default IF-MIB interfaces table with ifIndex.
+  if_mib:
+    walk: [sysUpTime, interfaces, ifXTable]
+  # Interfaces if ifAlias is unique.
+  if_mib_ifalias:
+    walk: [sysUpTime, interfaces, ifXTable]
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: ifAlias
+  # Interfaces if ifDescr is unique.
+  if_mib_ifdescr:
+    walk: [sysUpTime, interfaces, ifXTable]
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: ifDescr
+  # Interfaces if ifName is unique.
+  if_mib_ifname:
+    walk: [sysUpTime, interfaces, ifXTable]
+    lookups:
+      - source_indexes: [ifIndex]
+        # Use OID to avoid conflict with Netscaler NS-ROOT-MIB.
+        lookup: 1.3.6.1.2.1.31.1.1.1.1 # ifName
+
   edgeswitch:
     walk: 
       - sysUpTime
       - interfaces
-      - ifXTable
       - agentPethPsePortTable
       - boxServicesGroup
-      - 1.3.6.1.4.1.41112.1.6 # ubntUniFi
     lookups:
-      - old_index: ifIndex
-        new_index: ifDescr
+      - source_indexes: [ifIndex]
+        lookup: ifDescr
+
+  ubiquiti_airmax:
+    version: 1
+    walk:
+      - sysUpTime
+      - interfaces
+      - ifDescr
+      - ifHCOutOctets
+      - ifHCInOctets
+      - 1.3.6.1.2.1.31.1.1
+      - 1.3.6.1.4.1.41112.1.4 # ubntAirMAX
+      - 1.3.6.1.2.1.1.3.0
+    overrides:
+      ifType:
+        type: EnumAsInfo

@@ -3,11 +3,20 @@ rsyslog-packages:
     - cache_valid_time: 30000
     - pkgs:
       - rsyslog
+      - logrotate
 
 rsyslog-config:
     file.managed:
       - name: /etc/rsyslog.d/10-remote.conf
       - source: salt://logging/files/10-remote.conf
+      - makedirs: true
+      - user: root
+      - group: root
+      - mode: 0644
+
+/etc/logrotate.d/logrotate-remote-hosts.conf:
+    file.managed:
+      - source: salt://logging/files/logrotate-remote-hosts.conf
       - makedirs: true
       - user: root
       - group: root

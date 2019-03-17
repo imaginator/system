@@ -2,8 +2,7 @@
 {% set plex = salt['pillar.get']('plex', default=default_settings.get('plex'), merge=True) %}
 
 {% set arch = 'amd64' if salt['grains.get']('cpuarch') == 'x86_64' else 'i386' %}
-{% set url = 'https://downloads.plex.tv/plex-media-server/' + plex.version + '/plexmediaserver_' + plex.version + '_' + arch + '.deb' %}
-
+{% set url = 'https://downloads.plex.tv/plex-media-server-new/' + plex.version + '/debian/plexmediaserver_' + plex.version + '_' + arch + '.deb' %}
 
 {% do plex.update({
   'url': url

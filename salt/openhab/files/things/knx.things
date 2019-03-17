@@ -1,12 +1,12 @@
 Bridge	knx:ip:knx_gw "Busch-Jaeger 6186/32 IP Interface" @ "all" [
 	type="TUNNEL",
-    ipAddress="knx-gw.imagilan", 
+	ipAddress="knx-gw-xxxx.imagilan", 
 	portNumber=3671,
 	readingPause=50,
 	responseTimeout=10,
 	readRetriesLimit=3,
 	autoReconnectPeriod=1,
-	localSourceAddr="1.1.1" ]
+	localSourceAddr="1.1.1"]
 	{
 		Thing device DALI_GW "MDT DaliControl Gateway, SCN-DALI32.03" @ "all" [ address="1.1.2", fetch=false, pingInterval=600, readInterval=300 ]
 		{
