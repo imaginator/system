@@ -37,12 +37,8 @@ modules:
     walk:
       - sysUpTime
       - interfaces
-      - ifDescr
-      - ifHCOutOctets
-      - ifHCInOctets
-      - 1.3.6.1.2.1.31.1.1
+      - ifXTable
       - 1.3.6.1.4.1.41112.1.4 # ubntAirMAX
-      - 1.3.6.1.2.1.1.3.0
     overrides:
       ifType:
         type: EnumAsInfo

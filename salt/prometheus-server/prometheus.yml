@@ -45,8 +45,8 @@ scrape_configs:
         replacement: 127.0.0.1:9116
 
   - job_name: 'snmp-AirOS'
-    scrape_interval: 45s
-    scrape_timeout: 45s
+    scrape_interval: 90s
+    scrape_timeout: 90s
     static_configs:
     - targets:
       - emmauskirche.imagilan
