@@ -137,8 +137,8 @@ openhab-webaccess:
 
 habpanel-config:
   file.recurse:
-    - name: /etc/openhab2/other-configs/habpanel
-    - source: salt://openhab-server/files/other-configs/habpanel
+    - name: /etc/openhab2/habpanel
+    - source: salt://openhab-server/files/habpanel
     - include_empty: True
     - user: openhab
     - group: openhab
@@ -149,7 +149,7 @@ habpanel-config:
 habpanel-css:
   file.managed:
     - name: /etc/openhab2/html/habpanel.css
-    - source: salt://openhab-server/files/other-configs/habpanel/habpanel.css
+    - source: salt://openhab-server/files/habpanel/habpanel.css
     - makedirs: True
     - user: root
     - group: root
@@ -158,7 +158,7 @@ habpanel-configure-commands:
   service.running:
     - name: openhab2
   cmd.script:
-    - source: salt://openhab-server/files/other-configs/habpanel/habpanel-setup.sh
+    - source: salt://openhab-server/files/habpanel/habpanel-setup.sh
     - onchanges:
       - file: habpanel-config
     - require:
