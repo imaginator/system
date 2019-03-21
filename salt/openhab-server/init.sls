@@ -85,7 +85,7 @@ ipcamera-binding:
 openhab-{{directory}}:
   file.recurse:
     - name: /etc/openhab2/{{directory}}
-    - source: salt://openhab/files/{{directory}}
+    - source: salt://openhab-server/files/{{directory}}
     - include_empty: True
     - user: openhab
     - group: openhab
@@ -115,7 +115,7 @@ openhab2:
     - managed
     - user: root
     - group: root
-    - source: salt://openhab/files/other-configs/nginx-openhab.conf
+    - source: salt://openhab-server/files/other-configs/nginx-openhab.conf
 
 openhab-cert:
   acme.cert:
@@ -138,7 +138,7 @@ openhab-webaccess:
 habpanel-config:
   file.recurse:
     - name: /etc/openhab2/other-configs/habpanel
-    - source: salt://openhab/files/other-configs/habpanel
+    - source: salt://openhab-server/files/other-configs/habpanel
     - include_empty: True
     - user: openhab
     - group: openhab
@@ -149,7 +149,7 @@ habpanel-config:
 habpanel-css:
   file.managed:
     - name: /etc/openhab2/html/habpanel.css
-    - source: salt://openhab/files/other-configs/habpanel/habpanel.css
+    - source: salt://openhab-server/files/other-configs/habpanel/habpanel.css
     - makedirs: True
     - user: root
     - group: root
@@ -158,7 +158,7 @@ habpanel-configure-commands:
   service.running:
     - name: openhab2
   cmd.script:
-    - source: salt://openhab/files/other-configs/habpanel/habpanel-setup.sh
+    - source: salt://openhab-server/files/other-configs/habpanel/habpanel-setup.sh
     - onchanges:
       - file: habpanel-config
     - require:
@@ -168,14 +168,14 @@ habpanel-configure-commands:
 openhab-console-setup-script:
   file.managed:
     - name: /etc/openhab2/other-configs/console-setup.sh
-    - source: salt://openhab/files/other-configs/console-setup.sh
+    - source: salt://openhab-server/files/other-configs/console-setup.sh
     - makedirs: True
     - user: root
     - group: root
 
 openhab-console-setup:
   cmd.script:
-    - source: salt://openhab/files/other-configs/console-setup.sh
+    - source: salt://openhab-server/files/other-configs/console-setup.sh
     - require:
       - cmd: openhab2
 
