@@ -30,17 +30,40 @@ String   SpotifyPlayerBridge_ArtistUri         "Artist Uri"              {channe
 String   SpotifyPlayerBridge_ArtistHref        "Artist href"             {channel="spotify:player:simon:artistHref"}
 String   SpotifyPlayerBridge_ArtistType        "Artist Type"             {channel="spotify:player:simon:artistType"}
 String   SpotifyPlayerBridge_ArtistName        "Artist Name"             {channel="spotify:player:simon:artistName"}
-// causes issues so commented out
 // Dimmer   SpotifyPlayerBridge_TrackPopularity   "Track Popularity"        {channel="spotify:player:simon:trackPopularity"}
 
+String   SpotifyAllSpeakers_TrackPlay          "Track to Play"       {channel="spotify:device:simon:spotify_all:trackPlay"}
+String   SpotifyAllSpeakers_DeviceName         "Device Name"         {channel="spotify:device:simon:spotify_all:deviceName"}
+String   SpotifyAllSpeakers_DeviceType         "Device Type"         {channel="spotify:device:simon:spotify_all:deviceType"}
+Player   SpotifyAllSpeakers_DevicePlayer       "Device Play"         {channel="spotify:device:simon:spotify_all:devicePlayer"}
+Dimmer   SpotifyAllSpeakers_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:spotify_all:deviceVolume"}
+Switch   SpotifyAllSpeakers_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_all:deviceActive"}
+Switch   SpotifyAllSpeakers_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_all:deviceRestricted"}
+Switch   SpotifyAllSpeakers_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_all:deviceShuffle"}
 
-// all speakers
-String   AllSpeakers_TrackPlay          "Track to Play"       {channel="spotify:device:simon:All:trackPlay"}
-String   AllSpeakers_DeviceName         "Device Name"         {channel="spotify:device:simon:All:deviceName"}
-String   AllSpeakers_DeviceType         "Device Type"         {channel="spotify:device:simon:All:deviceType"}
-Player   AllSpeakers_DevicePlayer       "Device Play"         {channel="spotify:device:simon:All:devicePlayer"}
-Dimmer   AllSpeakers_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:All:deviceVolume"}
-Switch   AllSpeakers_DeviceActive       "Device Active"       {channel="spotify:device:simon:All:deviceActive"}
-Switch   AllSpeakers_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:All:deviceRestricted"}
-Switch   AllSpeakers_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:All:deviceShuffle"}
+String   SpotifyKitchenMini_TrackPlay          "Track to Play"       {channel="spotify:device:simon:spotify_kitchen:trackPlay"}
+String   SpotifyKitchenMini_DeviceName         "Device Name"         {channel="spotify:device:simon:spotify_kitchen:deviceName"}
+String   SpotifyKitchenMini_DeviceType         "Device Type"         {channel="spotify:device:simon:spotify_kitchen:deviceType"}
+Player   SpotifyKitchenMini_DevicePlayer       "Device Play"         {channel="spotify:device:simon:spotify_kitchen:devicePlayer"}
+Dimmer   SpotifyKitchenMini_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:spotify_kitchen:deviceVolume"}
+Switch   SpotifyKitchenMini_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_kitchen:deviceActive"}
+Switch   SpotifyKitchenMini_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_kitchen:deviceRestricted"}
+Switch   SpotifyKitchenMini_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_kitchen:deviceShuffle"}
 
+String   SpotifyLoungeHifi_TrackPlay          "Track to Play"       {channel="spotify:device:simon:spotify_loungehifi:trackPlay"}
+String   SpotifyLoungeHifi_DeviceName         "Device Name"         {channel="spotify:device:simon:spotify_loungehifi:deviceName"}
+String   SpotifyLoungeHifi_DeviceType         "Device Type"         {channel="spotify:device:simon:spotify_loungehifi:deviceType"}
+Player   SpotifyLoungeHifi_DevicePlayer       "Device Play"         {channel="spotify:device:simon:spotify_loungehifi:devicePlayer"}
+Dimmer   SpotifyLoungeHifi_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:spotify_loungehifi:deviceVolume"}
+Switch   SpotifyLoungeHifi_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_loungehifi:deviceActive"}
+Switch   SpotifyLoungeHifi_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_loungehifi:deviceRestricted"}
+Switch   SpotifyLoungeHifi_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_loungehifi:deviceShuffle"}
+
+String   SpotifyAllSpeakers_TrackPlay          "Track to Play"       {channel="spotify:device:simon:spotify_all:trackPlay"}
+String   SpotifyAllSpeakers_DeviceName         "Device Name"         {channel="spotify:device:simon:spotify_all:deviceName"}
+String   SpotifyAllSpeakers_DeviceType         "Device Type"         {channel="spotify:device:simon:spotify_all:deviceType"}
+Player   SpotifyAllSpeakers_DevicePlayer       "Device Play"         {channel="spotify:device:simon:spotify_all:devicePlayer"}
+Dimmer   SpotifyAllSpeakers_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:spotify_all:deviceVolume"}
+Switch   SpotifyAllSpeakers_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_all:deviceActive"}
+Switch   SpotifyAllSpeakers_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_all:deviceRestricted"}
+Switch   SpotifyAllSpeakers_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_all:deviceShuffle"}

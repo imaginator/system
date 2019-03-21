@@ -1,3 +1,22 @@
+openhab2:
+  service.running:
+    - enable: True
+    - restart: True
+    - require:
+      - pkg: openhab-packages
+      - file: spotify-binding
+      - archive: ipcamera-binding
+      - postgres_database: openhab-database
+      - file: openhab-java-opts
+    - onchanges:
+      - archive: ipcamera-binding
+      - file: openhab-persistence
+      - file: openhab-java-opts
+      - file: openhab-services
+  cmd.run:
+    - name: until nc -z localhost 8101; do sleep 1; done
+    - timeout: 15
+
 openhab-repo:
   pkgrepo.managed:
     - name: deb https://dl.bintray.com/openhab/apt-repo2 stable main
@@ -5,7 +24,7 @@ openhab-repo:
     - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 
-openhab-dependencies:
+openhab-packages:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
@@ -21,6 +40,10 @@ openhab-dependencies:
       - android-tools-adb # tablet control
       - jq
       - npm               # weatherunderground icons
+      - openhab2
+      - openhab2-addons
+    - require:
+      - openhab-repo
 
 #special permissions for watching the network
 /usr/sbin/arping:
@@ -28,15 +51,15 @@ openhab-dependencies:
     - mode: 4755
     - replace: False
     - require:
-      - pkg: openhab-dependencies
+      - pkg: openhab-packages
 
-postgres-user-openhab:
+openhab-database-user:
   postgres_user.present:
     - name: openhab
     - createdb: False
     - password: {{ salt['pillar.get']('openhab:db_password') }}
 
-postgres-db-openhab:
+openhab-database:
   postgres_database.present:
     - name: openhab
     - user: postgres
@@ -46,17 +69,7 @@ postgres-db-openhab:
     - template: template0
     - owner: openhab
     - require:
-        - postgres_user: openhab
-
-install-openhab:
-  pkg.installed:
-    - cache_valid_time: 30000
-    - pkgs: 
-      - openhab2
-      - openhab2-addons
-    - require:
-      - pkg: openhab-dependencies
-      - pkgrepo: openhab-repo
+        - postgres_user: openhab-database-user
 
 openhab-java-opts:
   file.line:
@@ -72,13 +85,19 @@ openhab-dialout-group:
     - addusers:
       - openhab
     - require:
-      - pkg: install-openhab
+      - pkg: openhab-packages
+
+spotify-binding:
+  file.managed:
+    - name: /usr/share/openhab2/addons/org.openhab.binding.spotify.jar
+    - source: https://github.com/Hilbrand/openhab2-addons/releases/download/spotify/org.openhab.binding.spotify-2.4.0-SNAPSHOT.jar
+    - source_hash: cd5d4c87453315d3e945ea9bfc2d4467bf543791 
 
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
     - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-12-01-2019.zip
-    - source_hash: sha1=639c29f1b549a968105eb2ccb1fb22344c6df623 
+    - source_hash: 639c29f1b549a968105eb2ccb1fb22344c6df623 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
@@ -93,22 +112,9 @@ openhab-{{directory}}:
     - template: jinja
     - watch_in:
       - service: openhab2
-{% endfor %}
-
-openhab2:
-  service.running:
-    - enable: True
-    - restart: True
     - require:
-      - pkg: openhab-dependencies
-    - onchanges:
-      - archive: ipcamera-binding
-      - file: openhab-persistence
-      - file: openhab-java-opts
-      - file: openhab-services
-  cmd.run:
-    - name: until nc -z localhost 8101; do sleep 1; done
-    - timeout: 15
+      - pkg: openhab-packages
+{% endfor %}
 
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
