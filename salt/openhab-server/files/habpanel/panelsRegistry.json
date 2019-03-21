@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-03-21T17:23:16.514Z",
+        "updatedTime": "2019-03-21T19:27:21.363Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -8,12 +8,12 @@
                 "widgets": [
                     {
                         "name": "SpotifyPlayerBridge",
-                        "sizeX": 8,
-                        "sizeY": 8,
+                        "sizeX": 7,
+                        "sizeY": 7,
                         "type": "template",
                         "customwidget": "Spotifycontrol",
                         "row": 0,
-                        "col": 0,
+                        "col": 2,
                         "config": {
                             "lengthinfoenable": true,
                             "albumArt": "SpotifyPlayerBridge_AlbumImage",
@@ -28,24 +28,13 @@
                             "tdurSS": "SpotifyPlayerBridge_TrackDurationMs",
                             "progressenable": true
                         }
-                    },
-                    {
-                        "name": "Spotify Playlister",
-                        "sizeX": 4,
-                        "sizeY": 7,
-                        "type": "template",
-                        "customwidget": "Spotify-Playlister",
-                        "row": 0,
-                        "col": 8,
-                        "config": {
-                            "devicePlayer": "SpotifyAllSpeakers_TrackPlay",
-                            "accessToken": "SpotifyPlayerBridge_AccessToken"
-                        }
                     }
                 ],
-                "row": 2,
+                "row": 0,
                 "col": 0,
-                "tile": {}
+                "tile": {},
+                "drawer": {},
+                "header": {}
             },
             {
                 "id": "Weather",
@@ -157,10 +146,12 @@
                             "icon_size_current": "12",
                             "icon_size_forecast": "3",
                             "day_format": "EEEE"
-                        }
+                        },
+                        "row": 11,
+                        "col": 0
                     }
                 ],
-                "row": 0,
+                "row": 5,
                 "col": 0
             },
             {
@@ -196,7 +187,7 @@
                         "col": 0
                     }
                 ],
-                "row": 6,
+                "row": 3,
                 "col": 0,
                 "tile": {}
             },
@@ -345,46 +336,7 @@
                         "style": "aCKolor"
                     }
                 ],
-                "row": 3,
-                "col": 0,
-                "tile": {},
-                "drawer": {},
-                "header": {}
-            },
-            {
-                "id": "Energy",
-                "name": "Energy",
-                "widgets": [
-                    {
-                        "name": "Cat Toilet Runtimes",
-                        "sizeX": 12,
-                        "sizeY": 3,
-                        "item": "HS110_Current_cat_toilet",
-                        "type": "chart",
-                        "row": 0,
-                        "col": 0,
-                        "charttype": "default",
-                        "period": "W",
-                        "showlegend": "auto",
-                        "liveUpdates": {},
-                        "isgroup": false
-                    },
-                    {
-                        "name": "Cat Toilet Runtimes",
-                        "sizeX": 12,
-                        "sizeY": 3,
-                        "item": "HS110_Current_washing_machine",
-                        "type": "chart",
-                        "charttype": "default",
-                        "period": "W",
-                        "showlegend": "auto",
-                        "liveUpdates": {},
-                        "isgroup": false,
-                        "row": 3,
-                        "col": 0
-                    }
-                ],
-                "row": 7,
+                "row": 6,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -408,181 +360,13 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 8,
+                "row": 4,
                 "col": 0,
                 "tile": {
                     "title_color": "transparent"
                 },
                 "drawer": {},
                 "header": {}
-            },
-            {
-                "id": "States",
-                "name": "States",
-                "widgets": [
-                    {
-                        "name": "Simon Home",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "PingableNetworkDevice_Online_simon",
-                        "type": "dummy",
-                        "row": 0,
-                        "col": 0,
-                        "nolinebreak": true,
-                        "useserverformat": true
-                    },
-                    {
-                        "name": "Tablet Motion",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "Tablet_Motion",
-                        "type": "dummy",
-                        "nolinebreak": true,
-                        "useserverformat": true,
-                        "row": 1,
-                        "col": 0
-                    },
-                    {
-                        "name": "Quiet Time",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "PingableNetworkDevice_Online_simon",
-                        "type": "switch",
-                        "row": 0,
-                        "col": 4,
-                        "hideonoff": false
-                    },
-                    {
-                        "name": "Who is Home",
-                        "sizeX": 4,
-                        "sizeY": 4,
-                        "type": "template",
-                        "customwidget": "Whos-Home",
-                        "row": 2,
-                        "col": 0,
-                        "config": {
-                            "whoshome_heading": "Who's Home",
-                            "whoshome_iconset": "eclipse-smarthome-classic",
-                            "whoshome_iconsize": 32,
-                            "whoshome_height": null,
-                            "whoshome_width": null,
-                            "whoshome_font_size": null,
-                            "whoshome_show_icon": true,
-                            "whoshome_show_name": true,
-                            "whoshome_show_state": true,
-                            "whoshome_GroupItem": "AtHome"
-                        }
-                    }
-                ],
-                "row": 9,
-                "col": 0
-            },
-            {
-                "id": "volumesNG",
-                "name": "volumesNG",
-                "widgets": [
-                    {
-                        "name": "Lounge",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudio_lounge_audio_Volume",
-                        "type": "knob",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "bgColor": "transparent",
-                        "row": 0,
-                        "col": 7,
-                        "readOnly": true
-                    },
-                    {
-                        "name": "",
-                        "sizeX": 2,
-                        "sizeY": 6,
-                        "item": "ChromecastAudio_lounge_audio_Volume",
-                        "type": "slider",
-                        "row": 3,
-                        "col": 0,
-                        "vertical": true,
-                        "hidelabel": true,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "hidepointer": false,
-                        "showticks": false,
-                        "showticksvalues": false,
-                        "backdrop_iconset": "freepik-household",
-                        "backdrop_icon": "armchair-4"
-                    },
-                    {
-                        "name": "",
-                        "sizeX": 2,
-                        "sizeY": 1,
-                        "item": "ChromecastAudio_lounge_audio_Title",
-                        "type": "dummy",
-                        "row": 2,
-                        "col": 0,
-                        "font_size": "10"
-                    },
-                    {
-                        "name": "New Widget",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "ChromecastAudio_lounge_audio_ImageSrc",
-                        "type": "image",
-                        "row": 0,
-                        "col": 0,
-                        "image_source": "item-string",
-                        "url": "src",
-                        "intervaltype": "seconds",
-                        "background": "rgb(0, 0, 0)"
-                    },
-                    {
-                        "name": "New Widget",
-                        "sizeX": 4,
-                        "sizeY": 4,
-                        "type": "template",
-                        "customwidget": "options-switch",
-                        "row": 0,
-                        "col": 2
-                    }
-                ],
-                "row": 5,
-                "col": 0
             },
             {
                 "id": "Volumes",
@@ -863,7 +647,7 @@
                         "col": 4
                     }
                 ],
-                "row": 1,
+                "row": 2,
                 "col": 0,
                 "tile": {}
             },
@@ -884,7 +668,28 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 4,
+                "row": 7,
+                "col": 0
+            },
+            {
+                "id": "Playlists",
+                "name": "Playlists",
+                "widgets": [
+                    {
+                        "name": "Spotify Playlister",
+                        "sizeX": 12,
+                        "sizeY": 8,
+                        "type": "template",
+                        "customwidget": "Spotify-Playlister",
+                        "config": {
+                            "accessToken": "SpotifyPlayerBridge_AccessToken",
+                            "spotifyPlayer": "SpotifyAllSpeakers_TrackPlay"
+                        },
+                        "row": 0,
+                        "col": 0
+                    }
+                ],
+                "row": 1,
                 "col": 0
             }
         ],
@@ -894,7 +699,7 @@
             "panel_name": "F17",
             "header_clock_format": "shortTime",
             "no_scrolling": true,
-            "hide_drawer_footer": true,
+            "hide_drawer_footer": false,
             "hide_speak_button": true,
             "hide_fullscreen_button": true,
             "show_header_clock": true,
