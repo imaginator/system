@@ -683,7 +683,7 @@
                         "customwidget": "Spotify-Playlister",
                         "config": {
                             "accessToken": "SpotifyPlayerBridge_AccessToken",
-                            "spotifyPlayer": "SpotifyAllSpeakers_TrackPlay"
+                            "spotifyPlayer": "SpotifyPlayerBridge_TrackPlay"
                         },
                         "row": 0,
                         "col": 0
