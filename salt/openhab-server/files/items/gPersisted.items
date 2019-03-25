@@ -1,0 +1,4 @@
+Group  gPersistedItems
+
+Switch Item1 (gPersistedItems)
+Dimmer Item2  (gPersistedItems)

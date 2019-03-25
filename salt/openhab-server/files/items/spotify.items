@@ -58,12 +58,3 @@ Dimmer   SpotifyLoungeHifi_DeviceVolume       "Device Volume"       {channel="sp
 Switch   SpotifyLoungeHifi_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_loungehifi:deviceActive"}
 Switch   SpotifyLoungeHifi_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_loungehifi:deviceRestricted"}
 Switch   SpotifyLoungeHifi_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_loungehifi:deviceShuffle"}
-
-String   SpotifyAllSpeakers_TrackPlay          "Track to Play"       {channel="spotify:device:simon:spotify_all:trackPlay"}
-String   SpotifyAllSpeakers_DeviceName         "Device Name"         {channel="spotify:device:simon:spotify_all:deviceName"}
-String   SpotifyAllSpeakers_DeviceType         "Device Type"         {channel="spotify:device:simon:spotify_all:deviceType"}
-Player   SpotifyAllSpeakers_DevicePlayer       "Device Play"         {channel="spotify:device:simon:spotify_all:devicePlayer"}
-Dimmer   SpotifyAllSpeakers_DeviceVolume       "Device Volume"       {channel="spotify:device:simon:spotify_all:deviceVolume"}
-Switch   SpotifyAllSpeakers_DeviceActive       "Device Active"       {channel="spotify:device:simon:spotify_all:deviceActive"}
-Switch   SpotifyAllSpeakers_DeviceRestricted   "Device Restricted"   {channel="spotify:device:simon:spotify_all:deviceRestricted"}
-Switch   SpotifyAllSpeakers_DeviceShuffle      "Device Shuffle"      {channel="spotify:device:simon:spotify_all:deviceShuffle"}

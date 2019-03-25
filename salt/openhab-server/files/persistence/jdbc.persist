@@ -1,9 +1,9 @@
 // Managed by Saltstack
 
 Strategies {
-  default = everyUpdate
+  default = everyChange
 }
 
 Items {
-  * : strategy = everyChange, restoreOnStartup
+  gPersistMe*         : strategy = everyChange, restoreOnStartup
 }

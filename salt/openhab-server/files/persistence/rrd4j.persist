@@ -1,0 +1,8 @@
+Strategies {
+  everyMinute : "0 * * * * ?"
+  default = everyChange
+}
+
+Items {
+  Hs110Catgenie_Power: strategy = everyUpdate, everyMinute, restoreOnStartup
+}
