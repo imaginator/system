@@ -1,0 +1,2 @@
+
+Dimmer   KNX8ButtonsBedroom1_Ch11   "KNX Volume (bedroom 1)"   {channel="knx:device:knx_gw:LIGHT_SWITCH_1:Ch_11"}

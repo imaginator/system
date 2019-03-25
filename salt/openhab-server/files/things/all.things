@@ -3,11 +3,9 @@
 airquality:aqi:local                  "Berlin Air Quality" @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
 astro:sun:local                               "Berlin Sun" @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
+astro:moon:local                             "Berlin Moon" @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
 
-miio:vacuum:imagisuck                          "imagiSuck" @ "all"           [ host="imagisuck.imagilan", token="{{ salt['pillar.get']('openhab:vacuum_token') }}" ]
 
-network:pingdevice:simon-phone               "Simon Phone" @ "all"           [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
-network:pingdevice:susanne-phone           "Susanne Phone" @ "all"           [ hostname="susanne-phone.imagilan", timeout=5000, refreshInterval=60000 ] // milliseconds
 
 // Bridges
 

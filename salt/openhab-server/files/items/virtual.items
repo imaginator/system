@@ -1,3 +1,4 @@
 // The daylight ct dimmer is a color temperature reference value
 Dimmer      DaylightCT "daylight emulation"
 Contact     QuietTime  "People are sleeping"
+Switch   IsCatGenieRunning                 "Timer to check whether the cat genie is running" { expire="5m,command=OFF" }

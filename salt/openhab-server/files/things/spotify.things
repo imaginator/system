@@ -1,6 +1,11 @@
-Bridge spotify:player:simon "SpotifyPlayerBridge" @ "all" [ clientId="{{ salt['pillar.get']('openhab:spotify_clientId') }}", clientSecret="{{ salt['pillar.get']('openhab:spotify_clientSecret') }}", refreshToken="{{ salt['pillar.get']('openhab:spotify_refreshToken') }}"] {
+Bridge spotify:player:simon "SpotifyPlayerBridge" @ "all" [ 
+  clientId="{{ salt['pillar.get']('openhab:spotify_clientId') }}", 
+  clientSecret="{{ salt['pillar.get']('openhab:spotify_clientSecret') }}", 
+  refreshToken="{{ salt['pillar.get']('openhab:spotify_refreshToken') }}"] 
+  {
   Things:
-    device spotify_kitchen   "Spotify kitchen mini"  [id="5359fc228bf246cca1e6f6033d3371ff"]
-    device spotify_all       "Spotify all speakers"  [id="6ffd175b8c00455b857f9f5175005e13"]
-    device spotify_loungehifi   "Spotify lounge hifi"  [id="6853d6631cdd4876895b276b98b6b5a6"]
+    device spotify_kitchen    "Spotify kitchen mini" [id="5359fc228bf246cca1e6f6033d3371ff"]
+    device spotify_all        "Spotify all speakers" [id="6ffd175b8c00455b857f9f5175005e13"]
+    device spotify_loungehifi "Spotify lounge hifi"  [id="6853d6631cdd4876895b276b98b6b5a6"]
+    device spotify_pixel2     "Spotify Pixel 2"      [id="8eea521ea6ebf94a3469a738916a1756c2bc0dcc"]
 }
