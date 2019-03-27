@@ -1,0 +1,2 @@
+astro:sun:local    "Astro Sun"  @ "home"  [ geolocation="52.5200066,13.4049540", interval="600" ]
+astro:moon:local   "Astro Moon" @ "home"  [ geolocation="52.5200066,13.4049540", interval="600" ]

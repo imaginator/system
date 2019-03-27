@@ -1,0 +1,6 @@
+mqtt:broker:bunker [ 
+    host="127.0.0.1", 
+    secure=false,
+    port=1883,
+    clientId=openhab
+    ]

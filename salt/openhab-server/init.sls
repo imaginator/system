@@ -4,7 +4,6 @@ openhab2:
     - restart: True
     - require:
       - pkg: openhab-packages
-      - file: spotify-binding
       - archive: ipcamera-binding
       - postgres_database: openhab-database
       - file: openhab-java-opts
@@ -87,17 +86,11 @@ openhab-dialout-group:
     - require:
       - pkg: openhab-packages
 
-spotify-binding:
-  file.managed:
-    - name: /usr/share/openhab2/addons/org.openhab.binding.spotify.jar
-    - source: https://github.com/Hilbrand/openhab2-addons/releases/download/spotify/org.openhab.binding.spotify-2.4.0-SNAPSHOT.jar
-    - source_hash: cd5d4c87453315d3e945ea9bfc2d4467bf543791 
-
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-12-01-2019.zip
-    - source_hash: 639c29f1b549a968105eb2ccb1fb22344c6df623 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera2019-03-21.zip  
+    - source_hash: a919494e6a9f021915c507e8688af44c9bcdcfab 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
@@ -110,6 +103,7 @@ openhab-{{directory}}:
     - group: openhab
     - file_mode: 0644
     - template: jinja
+    - clean: True
     - watch_in:
       - service: openhab2
     - require:

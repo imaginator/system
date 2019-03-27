@@ -1,8 +1,0 @@
-Switch   CatGenieTimer                "Switch"         {expire="20m,command=OFF"}
-Switch   CatGenieSwitch               "Switch"         {channel="tplinksmarthome:hs110:CatGenie:switch"}
-Switch   CatGenieLed                  "Switch Led"     {channel="tplinksmarthome:hs110:CatGenie:led"}
-Number   CatGenieRssi                 "Signal"         {channel="tplinksmarthome:hs110:CatGenie:rssi"}
-Number   CatGeniePower                "Power"          {channel="tplinksmarthome:hs110:CatGenie:power"}
-Number   CatGenieEnergyUsage          "Energy Usage"   {channel="tplinksmarthome:hs110:CatGenie:energyUsage"}
-Number   CatGenieCurrent              "Current"        {channel="tplinksmarthome:hs110:CatGenie:current"}
-Number   CatGenieVoltage              "Voltage"        {channel="tplinksmarthome:hs110:CatGenie:voltage"}

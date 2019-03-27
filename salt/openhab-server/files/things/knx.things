@@ -1,4 +1,4 @@
-Bridge knx:ip:knx_gw "KNX IP Gateway" @ "all" [
+Bridge knx:ip:knx_gw "KNX IP Gateway" @ "home" [
     type="TUNNEL",
     ipAddress="knx-gw.imagilan",
     localIp="10.7.11.1",
@@ -9,7 +9,7 @@ Bridge knx:ip:knx_gw "KNX IP Gateway" @ "all" [
     autoReconnectPeriod=1,
     localSourceAddr="0.0.0"]
     {
-    Thing device DALI_GW "KNX DALI Gateway" @ "all" [
+    Thing device DALI_GW "KNX DALI Gateway" @ "home" [
         address="1.1.2",
         fetch=false,
         pingInterval=600,

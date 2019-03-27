@@ -2,11 +2,6 @@
 
 airquality:aqi:local                  "Berlin Air Quality" @ "all"           [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
-astro:sun:local                               "Berlin Sun" @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
-astro:moon:local                             "Berlin Moon" @ "all"           [ geolocation="52.5200066,13.4049540", interval="600" ]
-
-
-
 // Bridges
 
 Bridge homematic:bridge:ccu                                                   [ gatewayAddress="homematic.imagilan"]
@@ -17,5 +12,3 @@ Bridge zigbee:coordinator_cc2531:home        "zigbee2mqtt" @ "all"           [ z
 }
 
 Thing zigbee:device:home:temp-humidity "Bedroom Temperature Sensor" (zigbee:coordinator_cc2531:home) [ zigbee_macaddress="00158D00010F667B", zigbee_descriptor="lumi.sensor_ht" ]
-
-

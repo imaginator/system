@@ -1,26 +1,5 @@
 rule "See if currently in an active wash cycle"
 
-# look over 5 mins
-# ever time you check and see something set a timer for 5 mins
-
-between 21:00-22:15,
-if CatGenieSwitch swith is "on" and countdown not running,
-    Check if power > a certain level 
-set a 10 minute timer 
-
-rule "if not washing, shut down"
-if time 9:15pm-10pm
-     and timeer not active, 
-CatGenieSwitch.sendCommand(OFF)
-
-
-
-
-
-
-
-
-
 when
     Time cron "0 0 21 1/1 * ? *" or 
     Item CatGenieTimer changed from ON to OFF or
@@ -29,7 +8,7 @@ then
     var Number CatGenieWatts = CatGeniePower.state as Number
 	logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
 
-    if(CatGenieWatts > 1){                      // adjust the power in watts as needed
+    if(Hs110Catgenie_Power > 10){                      // adjust the power in watts as needed
 		logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
         CatGenieTimer.sendCommand(ON)           // turn on timer with expire binding for 20 min
     }

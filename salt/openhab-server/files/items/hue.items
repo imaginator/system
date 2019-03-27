@@ -26,3 +26,4 @@ Dimmer   Dressingroom_ColorTemperature   "Color Temperature"   {channel="hue:022
 Dimmer   Dressingroom_Brightness         "Brightness"          {channel="hue:0220:huebridge:dressingroom:brightness"}
 String   Dressingroom_Alert              "Alert"               {channel="hue:0220:huebridge:dressingroom:alert"}
 Switch   Dressingroom_Effect             "Color Loop"          {channel="hue:0220:huebridge:dressingroom:effect"}
+

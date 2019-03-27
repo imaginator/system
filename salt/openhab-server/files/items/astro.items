@@ -57,3 +57,4 @@ DateTime   LocalSun_EclipseTotal           "Total eclipse"           {channel="a
 DateTime   LocalSun_EclipsePartial         "Partial eclipse"         {channel="astro:sun:local:eclipse#partial"}
 DateTime   LocalSun_EclipseRing            "Ring eclipse"            {channel="astro:sun:local:eclipse#ring"}
 String     LocalSun_PhaseName              "The current sun phase"   {channel="astro:sun:local:phase#name"}
+

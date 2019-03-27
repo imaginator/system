@@ -1,3 +1,0 @@
-String  Weather_Condition             "Pogoda [%s]"                     <fog>           (Weather) {weather="locationId=home, type=condition, property=commonId"}
-String  Weather_Formatted_Condition   "Pogoda [MAP(weather_en.map):%s]" <fog>           (Weather) {weather="locationId=home, type=condition, property=commonId"}
-Number  Weather_Temp                  "Dzisiaj [%.2f °C]"               <temperature>   (Weather) {weather="locationId=home, type=temperature, property=feel"}

@@ -1,11 +1,11 @@
 // Saltstack'd
 
 // needs lightID, uniqueId left in for reference
-Bridge hue:bridge:huebridge             "hue bridge" @ "all"      [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
-    0210  loungeoverhead       "hue overhead lounge" @ "lounge"   [ lightId="1", uniqueId="00:17:88:01:10:42:44:17-0b" ]
-    0010     bedroomlamp         "hue lamp bedroom1" @ "bedroom1" [ lightId="2", uniqueId="7c:b0:3e:aa:00:a0:4c:88-03" ]
-    0210 bedroomoverhead     "hue overhead bedroom1" @ "bedroom1" [ lightId="3", uniqueId="00:17:88:01:00:dc:c7:b7-0b" ]
-    0210 kitchenoverhead      "hue overhead kitchen" @ "kitchen"  [ lightId="4", uniqueId="00:17:88:01:00:fb:47:f2-0b" ]
-    0220        desklamp       "hue desklamp lounge" @ "lounge"   [ lightId="5", uniqueId="00:15:8d:00:03:1d:81:92-01" ]
-    0220    dressingroom "hue overhead dressingroom" @ "bedroom1" [ lightId="6", uniqueId="00:15:8d:00:03:1c:e6:6f-01" ]
+Bridge hue:bridge:huebridge             "hue bridge" @ "home"       [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
+    0210  loungeoverhead       "hue overhead lounge" @ "lounge"    [ lightId="1", uniqueId="00:17:88:01:10:42:44:17-0b" ]
+    0010     bedroomlamp        "hue lamp bedroom 1" @ "bedroom 1" [ lightId="2", uniqueId="7c:b0:3e:aa:00:a0:4c:88-03" ]
+    0210 bedroomoverhead    "hue overhead bedroom 1" @ "bedroom 1" [ lightId="3", uniqueId="00:17:88:01:00:dc:c7:b7-0b" ]
+    0210 kitchenoverhead      "hue overhead kitchen" @ "kitchen"   [ lightId="4", uniqueId="00:17:88:01:00:fb:47:f2-0b" ]
+    0220        desklamp       "hue desklamp lounge" @ "lounge"    [ lightId="5", uniqueId="00:15:8d:00:03:1d:81:92-01" ]
+    0220    dressingroom "hue overhead dressingroom" @ "bedroom 1" [ lightId="6", uniqueId="00:15:8d:00:03:1c:e6:6f-01" ]
 }

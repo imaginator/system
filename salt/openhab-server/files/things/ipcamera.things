@@ -1,5 +1,5 @@
 // NB: bogus onvif_port to avoid PTZ probe error
-ipcamera:HIKVISION:camera01 "eye in the sky" @ "terrace" [  
+ipcamera:HIKVISION:camera01 "eye in the sky" @ "home" [  
     IPADDRESS="camera01.imagilan", 
     USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
     PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
