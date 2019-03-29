@@ -69,7 +69,7 @@ plex_iptables-bonjour:
     - comment: plex-web-udp
     - save: true
 
-{% for mediadir in ['/srv/video','/srv/music','/srv/audiobooks','/srv/photos'] %}
+{% for mediadir in ['/srv/video/Tv', '/srv/video/Film', '/srv/music','/srv/audiobooks','/srv/photos'] %}
 set-{{ mediadir }}-permissions:
   file.directory:
     - name: {{mediadir}}
@@ -82,6 +82,18 @@ set-{{ mediadir }}-permissions:
       - group
       - mode
 {% endfor %}
+
+/srv/video/netcams:
+  file.directory:
+    - user: openhab
+    - group: users
+    - dir_mode: 755
+    - file_mode: 644
+    - recurse:
+      - user
+      - group
+      - mode
+    - makedirs: True
 
 /srv/video/TV/Plex Versions:
   file.directory:
