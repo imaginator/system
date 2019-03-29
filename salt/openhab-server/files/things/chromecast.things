@@ -16,4 +16,4 @@ chromecast:chromecast:ccmini-lounge       "chromecast mini lounge" @ "lounge"   
 chromecast:chromecast:ccultra-lounge     "chromecast ultra lounge" @ "lounge"         [ ipAddress="ccultra-lounge.imagilan",  refresh=6000]
 
 // ultra is ethernet connected
-chromecast:audiogroup:all              "chromecast audiogroup all" @ "all"            [ ipAddress="ccultra-lounge.imagilan", refresh=6000, port="42576"] 
+chromecast:audiogroup:all              "chromecast audiogroup all" @ "home"            [ ipAddress="ccultra-lounge.imagilan", refresh=6000, port="42576"] 

@@ -2,3 +2,4 @@
 Dimmer      DaylightCT "daylight emulation"
 Contact     QuietTime  "People are sleeping"
 Switch      CatGenieTimer { expire="10m,command=OFF" }
+Switch      Timer_EyeInTheSky_MotionAlarm 

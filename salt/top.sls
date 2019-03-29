@@ -15,7 +15,7 @@ base:
     - network
     - logging
     - nginx
-    - openhab
+    - openhab-server
     - plex
     - postfix
     - prometheus-server

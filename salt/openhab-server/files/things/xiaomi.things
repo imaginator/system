@@ -1,5 +1,4 @@
-miio:vacuum:imagisuck  "Xiaomi imagiSuck" @ "all"  
-    [ 
+miio:vacuum:imagisuck  "Xiaomi imagiSuck" @ "home" [ 
         host="imagisuck.imagilan",
         token="{{ salt['pillar.get']('openhab:vacuum_token') }}" 
     ]

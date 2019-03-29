@@ -110,6 +110,21 @@ openhab-{{directory}}:
       - pkg: openhab-packages
 {% endfor %}
 
+openhab-scripts:
+  file.recurse:
+    - name: /etc/openhab2/scripts
+    - source: salt://openhab-server/files/scripts
+    - include_empty: True
+    - user: openhab
+    - group: openhab
+    - file_mode: 0755
+    - template: jinja
+    - clean: True
+    - watch_in:
+      - service: openhab2
+    - require:
+      - pkg: openhab-packages
+
 /etc/nginx/sites-enabled/openhab.imaginator.com.conf:
   file:
     - managed
@@ -165,19 +180,24 @@ habpanel-configure-commands:
       - cmd: openhab2
       - file: habpanel-config
 
-openhab-console-setup-script:
-  file.managed:
-    - name: /etc/openhab2/other-configs/console-setup.sh
-    - source: salt://openhab-server/files/other-configs/console-setup.sh
-    - makedirs: True
-    - user: root
-    - group: root
-
 openhab-console-setup:
   cmd.script:
-    - source: salt://openhab-server/files/other-configs/console-setup.sh
+    - source: salt://openhab-server/files/scripts/console-setup.sh
     - require:
       - cmd: openhab2
+
+record-motion.service:
+  file.managed:
+    - name: /etc/systemd/system/record-motion.service
+    - source: salt://openhab-server/files/other-configs/record-motion.service
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: record-motion.service
 
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
