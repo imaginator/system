@@ -12,21 +12,21 @@ KillSignal=SIGINT
 TimeoutStopSec=10
 KillMode=process
 PrivateTmp=true
-ExecStart=/bin/bash -c ' \
-        /usr/bin/ffmpeg \
-        -hide_banner \
-        -loglevel error \
-        -fflags +genpts \
-        -rtsp_transport tcp \
+ExecStart=/bin/bash -c 'exec    \
+        /usr/bin/ffmpeg         \
+        -hide_banner            \
+        -loglevel error         \
+        -fflags +genpts         \
+        -rtsp_transport tcp     \
         -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
-        -map 0:0 \
-        -c copy \
-        -vbsf hevc_mp4toannexb \
-        -f hevc \
-        -movflags faststart \
+        -map 0:0                \
+        -c copy                 \
+        -vbsf hevc_mp4toannexb  \
+        -f hevc                 \
+        -reserve_index_space 50k \
         -metadata title="F17 EyeInTheSky" \
-        -y \
-        /srv/video/netcams/archive/motion-triggered/camera01-$$(date +%%Y%%m%%d-%%H%%M%%S).mp4 \
+        -y                      \
+        /srv/video/netcams/archive/motion-triggered/camera01-$$(date +%%Y%%m%%d-%%H%%M%%S).mkv \
         '
 
 [Install]
