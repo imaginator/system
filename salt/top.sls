@@ -6,14 +6,16 @@ base:
     - groups
     - users
     - prometheus-node-exporter
+    - frontail
   bunker:
     - arpwatch
+    - frontail
     - grafana
     - kernel
+    - logging
     - mosquitto
     - motion
     - network
-    - logging
     - nginx
     - openhab-server
     - plex
