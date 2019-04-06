@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-04-06T06:17:31.035Z",
+        "updatedTime": "2019-04-06T06:58:40.220Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -19,7 +19,7 @@
                             "albumArt": "SpotifyPlayerBridge_AlbumImage",
                             "title": "SpotifyPlayerBridge_TrackName",
                             "artist": "SpotifyPlayerBridge_ArtistName",
-                            "control": "ChromecastAudiogroupAll_Control",
+                            "control": "SpotifyPlayerBridge_TrackPlayer",
                             "shuffle": "SpotifyPlayerBridge_DeviceShuffle",
                             "repeat": "SpotifyPlayerBridge_TrackRepeat",
                             "tprog": "SpotifyPlayerBridge_TrackProgress",
@@ -699,7 +699,7 @@
                     {
                         "name": "frontail",
                         "sizeX": 12,
-                        "sizeY": 8,
+                        "sizeY": 10,
                         "type": "frame",
                         "row": 0,
                         "col": 0,
