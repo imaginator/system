@@ -6,29 +6,43 @@ frontail-dependencies:
       - npm
       - git 
 
+/opt/frontail:
+  file.directory:
+    - makedirs: True
+
 install-frontail:
   npm.installed:
-    - pkgs:
-      - frontail
-    - user: openhab
+    - name: frontail
+    - dir: /opt/frontail
     - require:
       - pkg: frontail-dependencies
+      - file: /opt/frontail
+
+/opt/frontail/preset.json:
+  file.managed:
+    - makedirs: true
+    - user: openhab
+    - group: openhab
+    - source: salt://frontail/files/preset.json
+    - require:
+      - npm: install-frontail
 
 frontail:
   file.managed:
     - name: /etc/systemd/system/frontail.service
-    - source: salt:/frontail/files/frontail.service
+    - source: salt://frontail/files/frontail.service
     - user: root
     - group: root
     - mode: 644
   module.run:
     - name: service.systemctl_reload
     - onchanges:
-      - file: /lib/systemd/system/frontail.service
+      - file: frontail
   service.running:
     - enable: True
     - require:
-      - file: /lib/systemd/system/frontail.service
+      - file: frontail
+      - file: /opt/frontail/preset.json
     - watch:
-      - file: /lib/systemd/system/frontail.service
+      - file: frontail
       - npm: install-frontail

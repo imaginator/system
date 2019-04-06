@@ -2,9 +2,19 @@
 Description=Frontail
 
 [Service]
-ExecStart=/usr/bin/frontail --ui-highlight -t dark /var/log/openhab2/openhab.log /var/log/openhab2/events.log
+ExecStart=/opt/frontail/node_modules/frontail/bin/frontail \
+    --host 127.0.0.1 \
+    --port 7001 \
+    --url-path /frontail \
+    --disable-usage-stats \
+    --ui-hide-topbar \
+    --ui-highlight \
+    --ui-highlight-preset /opt/frontail/preset.json \
+    -t light \
+    /var/log/openhab2/openhab.log \
+    /var/log/openhab2/events.log
 Restart=always
-User=openhab2
+User=openhab
 Group=openhab
 Environment=PATH=/usr/bin/
 Environment=NODE_ENV=production

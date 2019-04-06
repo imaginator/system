@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-03-21T19:27:21.363Z",
+        "updatedTime": "2019-04-06T06:17:31.035Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -691,6 +691,29 @@
                 ],
                 "row": 1,
                 "col": 0
+            },
+            {
+                "id": "logs",
+                "name": "Logs",
+                "widgets": [
+                    {
+                        "name": "frontail",
+                        "sizeX": 12,
+                        "sizeY": 8,
+                        "type": "frame",
+                        "row": 0,
+                        "col": 0,
+                        "url_source": "static",
+                        "frameUrl": "https://openhab.imaginator.com/frontail",
+                        "frameless": true,
+                        "hidelabel": true,
+                        "background": "transparent"
+                    }
+                ],
+                "row": 8,
+                "col": 0,
+                "tile": {},
+                "mobile_mode_enabled": false
             }
         ],
         "menucolumns": 1,

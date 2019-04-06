@@ -7,7 +7,7 @@ Type=simple
 User=nobody
 Group=nogroup
 WorkingDirectory=/opt/snmp_exporter
-ExecStart=/opt/snmp_exporter/snmp_exporter --config.file="/etc/prometheus/snmp.yml" --log.level="debug"
+ExecStart=/opt/snmp_exporter/snmp_exporter --config.file="/etc/prometheus/snmp.yml" --log.level="info"
 
 [Install]
 WantedBy=multi-user.target
