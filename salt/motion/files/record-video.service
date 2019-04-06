@@ -1,0 +1,67 @@
+[Unit]
+Description="Record Video"
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=www-data
+StandardOutput=inherit
+StandardError=inherit
+Environment="TZ=Europe/Berlin"
+ExecStart=/usr/bin/ffmpeg           \
+    -hide_banner                    \
+    -loglevel error                 \
+    -rtsp_transport tcp             \
+    -fflags +genpts                 \
+    -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
+    -map 0:0                        \
+    -c copy                         \
+    -vbsf hevc_mp4toannexb          \
+    -reserve_index_space 50k        \
+    -metadata title="camera01"      \
+    -f segment                      \
+        -segment_time 3600          \
+        -segment_format hevc        \
+    -strftime 1                     \
+    "/srv/video/netcams/archive/motion-triggered/camera01-%%Y%%m%%d-%%H%%M%%S.mkv"
+
+[Install]
+WantedBy=multi-user.target
+
+#[Unit]
+#Description="Archive Video (openhab triggered)"
+#After=network.target
+
+#[Service]
+#Type=simple
+#Restart=no
+#User=openhab
+#StandardOutput=inherit
+#StandardError=inherit
+# KillSignal=SIGINT
+# TimeoutStopSec=10
+# KillMode=process
+# PrivateTmp=true
+# ExecStart=/bin/bash -c 'exec    \
+#         /usr/bin/ffmpeg         \
+#         -hide_banner            \
+#         -loglevel error         \
+#         -fflags +genpts         \
+#         -rtsp_transport tcp     \
+#         -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
+#         -map 0:0                \
+#         -c copy                 \
+#         -vbsf hevc_mp4toannexb  \
+#         -f hevc                 \
+#         -reserve_index_space 50k \
+#         -metadata title="F17 EyeInTheSky" \
+#         -y                      \
+#         /srv/video/netcams/archive/motion-triggered/camera01-$$(date +%%Y%%m%%d-%%H%%M%%S).mkv \
+#         '
+
+# [Install]
+# WantedBy=multi-user.target
+
+#  -use_wallclock_as_timestamps 1 -fflags +genpts -i rtsp://media:sisisi12@camera01.imagilan:554/ISAPI/streaming/channels/101 -f segment -segment_time 3600 -segment_format mkv -reset_timestamps 1 -strftime 1 -c:v copy -an -loglevel info /srv/video/netcams/archive/recordall/camera01-%Y%m%d-%H%M%S.mkv

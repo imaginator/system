@@ -186,19 +186,6 @@ openhab-console-setup:
     - require:
       - cmd: openhab2
 
-record-motion.service:
-  file.managed:
-    - name: /etc/systemd/system/record-motion.service
-    - source: salt://openhab-server/files/other-configs/record-motion.service
-    - user: root
-    - group: root
-    - mode: 644
-    - template: jinja
-  module.run:
-    - name: service.systemctl_reload
-    - onchanges:
-      - file: record-motion.service
-
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
     - table: filter

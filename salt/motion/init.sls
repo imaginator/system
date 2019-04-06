@@ -50,25 +50,6 @@ motion_pkgs:
     - source: salt://motion/files/html
     - template: jinja
 
-multicast-publisher.service:
-  file.managed:
-    - name: /etc/systemd/system/multicast-publisher.service
-    - source: salt://motion/files/multicast-publisher.service
-    - user: root
-    - group: root
-    - mode: 644
-    - template: jinja
-  module.run:
-    - name: service.systemctl_reload
-    - onchanges:
-      - file: multicast-publisher.service
-  service.running:
-    - enable: True
-    - require:
-      - file: multicast-publisher.service
-    - watch:
-      - file: multicast-publisher.service
-
 webcam-publisher.service:
   file.managed:
     - name: /etc/systemd/system/webcam-publisher.service
@@ -88,10 +69,10 @@ webcam-publisher.service:
     - watch:
       - file: webcam-publisher.service
 
-archive-video.service:
+record-video.service:
   file.managed:
-    - name: /etc/systemd/system/archive-video.service
-    - source: salt://motion/files/archive-video.service
+    - name: /etc/systemd/system/record-video.service
+    - source: salt://motion/files/record-video.service
     - user: root
     - group: root
     - mode: 644
@@ -99,10 +80,4 @@ archive-video.service:
   module.run:
     - name: service.systemctl_reload
     - onchanges:
-      - file: archive-video.service
-  service.running:
-    - enable: True
-    - require:
-      - file: archive-video.service
-    - watch:
-      - file: archive-video.service
+      - file: record-video.service

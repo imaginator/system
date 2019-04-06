@@ -5,19 +5,22 @@ After=network.target
 [Service]
 Type=simple
 Restart=always
-RestartSec=10
+RestartSec=30
 User=www-data
 StandardOutput=inherit
 StandardError=inherit
 ExecStart=/usr/bin/ffmpeg \
     -hide_banner \
-    -i "udp://239.0.0.1:1234" \
-    -c:v libx264 \
-    -preset veryfast \
+    -loglevel error \
+    -use_wallclock_as_timestamps 1 \
+    -copyts \
+    -fflags +genpts \
+    -rtsp_transport tcp \
+    -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/102 \
+    -c:v copy \
     -an \
     -movflags +faststart \
     -f flv \
-    -loglevel error \
     rtmp://127.0.0.1:1935/camera01
 
 [Install]
