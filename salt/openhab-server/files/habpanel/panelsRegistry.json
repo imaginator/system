@@ -16,7 +16,7 @@
                         "col": 2,
                         "config": {
                             "lengthinfoenable": true,
-                            "albumArt": "ChromecastAudiogroupAll_Image",
+                            "albumArt": "SpotifyPlayerBridge_AlbumImage",
                             "title": "SpotifyPlayerBridge_TrackName",
                             "artist": "SpotifyPlayerBridge_ArtistName",
                             "control": "ChromecastAudiogroupAll_Control",
