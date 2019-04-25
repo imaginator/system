@@ -81,3 +81,9 @@ record-video.service:
     - name: service.systemctl_reload
     - onchanges:
       - file: record-video.service
+  service.running:
+    - enable: True
+    - require:
+      - file: record-video.service
+    - watch:
+      - file: record-video.service

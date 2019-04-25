@@ -1,15 +1,23 @@
 rule "See if currently in an active wash cycle"
 
+rule "MorningTurnOnCatGenie"
+when
+    Time cron "0 0 9 ? * *"     // power on at 9am every day
+then
+    logInfo("catgenie.rules", "turning on CatGenie")
+    CatGenieSwitch.sendCommand(ON)
+end
+
 when
     Time cron "0 0 21 1/1 * ? *" or 
     Item CatGenieTimer changed from ON to OFF or
     Item CatGeniePower changed
 then
     var Number CatGenieWatts = CatGeniePower.state as Number
-	logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
+    logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
 
     if(Hs110Catgenie_Power > 10){                      // adjust the power in watts as needed
-		logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
+        logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
         CatGenieTimer.sendCommand(ON)           // turn on timer with expire binding for 20 min
     }
     else(CatGenieTimer.state == OFF){

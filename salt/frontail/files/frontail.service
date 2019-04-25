@@ -10,7 +10,7 @@ ExecStart=/opt/frontail/node_modules/frontail/bin/frontail \
     --ui-hide-topbar \
     --ui-highlight \
     --ui-highlight-preset /opt/frontail/preset.json \
-    -t light \
+    -t default \
     /var/log/openhab2/openhab.log \
     /var/log/openhab2/events.log
 Restart=always

@@ -83,18 +83,6 @@ set-{{ mediadir }}-permissions:
       - mode
 {% endfor %}
 
-/srv/video/netcams:
-  file.directory:
-    - user: openhab
-    - group: users
-    - dir_mode: 755
-    - file_mode: 644
-    - recurse:
-      - user
-      - group
-      - mode
-    - makedirs: True
-
 /srv/video/TV/Plex Versions:
   file.directory:
     - user: plex
