@@ -83,7 +83,7 @@ set-{{ mediadir }}-permissions:
       - mode
 {% endfor %}
 
-/srv/video/TV/Plex Versions:
+/srv/video/Tv/Plex Versions:
   file.directory:
     - user: plex
     - group: root
