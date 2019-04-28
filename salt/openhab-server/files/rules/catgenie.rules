@@ -13,8 +13,7 @@ rule "TurnOffCatGeniePower"
 
 when
     Time cron "0 0 21 1/1 * ? *" or 
-                 Item Hs110Catgenie_Power changed from ON to OFF or 
-                 Item Hs110Catgenie_Power changed
+    Item CatGenieTimer changed from ON to OFF
 then
     logInfo("TurnOffCatGeniePower", "attempting to turn off CatGenie")
 
