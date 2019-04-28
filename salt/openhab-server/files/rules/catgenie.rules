@@ -1,33 +1,33 @@
-rule "See if currently in an active wash cycle"
+rule "TurnOnCatGeniePower"
 
-rule "MorningTurnOnCatGenie"
 when
-    Time cron "0 0 9 ? * *"     // power on at 9am every day
+    Time cron "0 0 8 ? * *"     // power on at 8am every day
 then
-    logInfo("catgenie.rules", "turning on CatGenie")
-    CatGenieSwitch.sendCommand(ON)
+    logInfo("TurnOnCatGeniePower", "turning on CatGenie")
+    Hs110Catgenie_Switch.sendCommand(ON)
 end
+
+
+
+rule "TurnOffCatGeniePower"
 
 when
     Time cron "0 0 21 1/1 * ? *" or 
-    Item CatGenieTimer changed from ON to OFF or
-    Item CatGeniePower changed
+                 Item Hs110Catgenie_Power changed from ON to OFF or 
+                 Item Hs110Catgenie_Power changed
 then
-    var Number CatGenieWatts = CatGeniePower.state as Number
+    logInfo("TurnOffCatGeniePower", "attempting to turn off CatGenie")
+
+    var Number CatGeniePower = Hs110Catgenie_Power.state as Number
     logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
 
-    if(Hs110Catgenie_Power > 10){                      // adjust the power in watts as needed
+    if(CatGeniePower > 5){                       // adjust the power in watts as needed
         logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
-        CatGenieTimer.sendCommand(ON)           // turn on timer with expire binding for 20 min
+        CatGenieTimer.sendCommand(ON)            // turn on timer with expire binding for 20 min
     }
     else(CatGenieTimer.state == OFF){
-        CatGenieSwitch.sendCommand(OFF)         // turn power off if no cleaning cycle
-    }
-end
+        Hs110Catgenie_Switch.sendCommand(OFF)    // turn power off if no cleaning cycle
+        logInfo("TurnOffCatGeniePower", "Catgenie turned off")
 
-rule "MorningTurnOnCatGenie"
-when
-    Time cron "0 0 9 ? * *"     // power on at 9am every day
-then
-    CatGenieSwitch.sendCommand(ON)
+    }
 end
