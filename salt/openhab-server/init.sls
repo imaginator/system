@@ -89,8 +89,8 @@ openhab-dialout-group:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera2019-03-21.zip  
-    - source_hash: a919494e6a9f021915c507e8688af44c9bcdcfab 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera2019-04-13.zip
+    - source_hash: 3153ac3ca8872f8140ea78055606c473ffa6c431 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
