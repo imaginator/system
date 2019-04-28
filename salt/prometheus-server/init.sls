@@ -32,10 +32,6 @@ prometheus-server:
     - require:
       - pkg: prometheus-server
 
-prometheus-no-copy-on-write:
-  cmd.run:
-    - name: chattr +C /var/lib/prometheus
-
 firewall-prometheus-server:
   iptables.append:
     - table: filter
