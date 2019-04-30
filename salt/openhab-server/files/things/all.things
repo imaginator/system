@@ -1,6 +1,5 @@
 // Managed by Saltstack
 
-airquality:aqi:local                  "Berlin Air Quality" @ "Berlin"         [ apikey="{{ salt['pillar.get']('openhab:airquality_key') }}", location="52.5200066,13.4049540", refresh=120 ]
 
 // Bridges
 

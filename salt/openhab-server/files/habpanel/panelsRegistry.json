@@ -447,7 +447,7 @@
                         ],
                         "series": [
                             {
-                                "item": "ChromecastAudio_bathroom_mini_Volume",
+                                "item": "ChromecastMiniMainbath_Volume",
                                 "name": "Bathroom"
                             },
                             {
@@ -468,7 +468,7 @@
                         "name": "Bathroom",
                         "sizeX": 4,
                         "sizeY": 3,
-                        "item": "ChromecastAudio_bathroom_mini_Volume",
+                        "item": "ChromecastMiniMainbath_Volume",
                         "type": "knob",
                         "floor": 0,
                         "ceil": 100,
