@@ -10,35 +10,34 @@ User=www-data
 StandardOutput=inherit
 StandardError=inherit
 Environment="TZ=Europe/Berlin"
-ExecStart=/bin/sh -c ' \
+ExecStart=/bin/sh -c '              \
     ffmpeg                          \
     -hide_banner                    \
-    -loglevel info                 \
+    -loglevel error                 \
     -nostdin                        \
     -nostats                        \
     -xerror                         \
-    -thread_queue_size 4096         \
+    -stimeout 5000000               \
+    -thread_queue_size 2048         \
     -rtsp_transport tcp             \
     -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
     -c:v copy -an -sn -dn           \
     -bsf:v hevc_metadata=tick_rate=1 \
-    -vsync drop                     \
     -f hevc -                       \
     |                               \
     ffmpeg                          \
     -hide_banner                    \
-    -loglevel info                 \
+    -loglevel info                  \
     -nostats                        \
+    -nostdin                        \
     -xerror                         \
-    -thread_queue_size 4096         \
     -f hevc                         \
     -i -                            \
     -c copy                         \
-    -reserve_index_space 100k       \
-    -live 1                         \
     -f segment                      \
         -segment_time 3600          \
         -segment_format matroska    \
+        -segment_format_options live=1:reserve_index_space=100k \
     -strftime 1                     \
     "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
     '
@@ -46,6 +45,7 @@ ExecStart=/bin/sh -c ' \
 [Install]
 WantedBy=multi-user.target
 
-# docs: https://ipcamtalk.com/threads/fix-non-monotonous-dts-errors-in-ffmpeg.30465/#post-286226
+# docs: 
+# https://ipcamtalk.com/threads/fix-non-monotonous-dts-errors-in-ffmpeg.30465/#post-286226
 # https://superuser.com/questions/1430756/ffmpeg-to-fix-video-playback-speed-without-re-encoding/1430914?noredirect=1#comment2159396_1430914
-# ffmpeg -f hevc -i - -c copy -reserve_index_space 100k  -y /tmp/out.mkv
+# https://superuser.com/questions/1431088/ffmpeg-to-get-an-hevc-rtsp-stream-into-an-mkv-container
