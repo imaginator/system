@@ -1,7 +1,7 @@
 rule "TurnOnCatGeniePower"
 
 when
-    Time cron "0 0 8 ? * *"     // power on at 8am every day
+    Time cron "0 0 8 1/1 * ? *"     // power on at 8am every day
 then
     logInfo("TurnOnCatGeniePower", "turning on CatGenie")
     Hs110Catgenie_Switch.sendCommand(ON)
