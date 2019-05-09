@@ -69,13 +69,13 @@ openhab-database:
     - owner: openhab
     - require:
         - postgres_user: openhab-database-user
-
+ 
 openhab-java-opts:
-  file.line:
+  file.replace:
     - name: /etc/default/openhab2
-    - mode: ensure
-    - content: EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin"
-    - after: EXTRA_JAVA_OPTS=.*
+    - pattern: ^EXTRA_JAVA_OPTS=.*
+    - repl: EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin"
+    - append_if_not_found: true
 
 openhab-dialout-group:
   group.present:
