@@ -1,7 +1,7 @@
 // Saltstack'd
 
-tplinksmarthome:hs110:CatGenie                "hs110 Catgenie" @ "main bath"     [ ipAddress="plugswitch01.imagilan", refresh=31 ]
-tplinksmarthome:hs110:WashingMachine   "hs110 Washing Machine" @ "main bath"     [ ipAddress="plugswitch02.imagilan", refresh=31 ]
-tplinksmarthome:hs110:IndustrialLight "hs110 Industrial Light" @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=31 ]
-tplinksmarthome:hs110:GlassCubeLight  "hs110 Glass Cube Light" @ "bedroom 1"     [ ipAddress="plugswitch04.imagilan", refresh=31 ]
-tplinksmarthome:hs110:Fridge                    "hs110 Fridge" @ "kitchen"       [ ipAddress="plugswitch05.imagilan", refresh=31 ]
+tplinksmarthome:hs110:CatGenie                "hs110 Catgenie" @ "main bath"     [ ipAddress="plugswitch01.imagilan", refresh=15 ]
+tplinksmarthome:hs110:WashingMachine   "hs110 Washing Machine" @ "main bath"     [ ipAddress="plugswitch02.imagilan", refresh=15 ]
+tplinksmarthome:hs110:Desk                        "hs110 Desk" @ "lounge"        [ ipAddress="plugswitch03.imagilan", refresh=15 ]
+tplinksmarthome:hs110:Dishwasher            "hs110 Dishwasher" @ "kitchen"       [ ipAddress="plugswitch04.imagilan", refresh=15 ]
+tplinksmarthome:hs110:Fridge                    "hs110 Fridge" @ "kitchen"       [ ipAddress="plugswitch05.imagilan", refresh=15 ]

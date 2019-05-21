@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-04-06T06:58:40.220Z",
+        "updatedTime": "2019-05-21T08:48:24.491Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -714,6 +714,28 @@
                 "col": 0,
                 "tile": {},
                 "mobile_mode_enabled": false
+            },
+            {
+                "id": "Power",
+                "name": "Power",
+                "widgets": [
+                    {
+                        "name": "power",
+                        "sizeX": 12,
+                        "sizeY": 8,
+                        "type": "frame",
+                        "url_source": "static",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271\" frameborder=\"0\"",
+                        "background": "transparent",
+                        "refresh": 600,
+                        "frameless": true,
+                        "hidelabel": true,
+                        "row": 0,
+                        "col": 0
+                    }
+                ],
+                "row": 9,
+                "col": 0
             }
         ],
         "menucolumns": 1,
