@@ -1,0 +1,14 @@
+// Velux Bridge channels
+
+String	V_FIRMWARE	"Firmware [%s]"			    	 	{ velux="thing=bridge;channel=firmware" }
+String	V_STATUS	"Status [%s]"				    	{ velux="thing=bridge;channel=status" }
+String	V_CHECK		"Velux Config Check [%s]"			{ velux="thing=bridge;channel=check" }
+
+// Velux IO-homecontrol devices
+
+Rollershutter V_Keuken	"Keuken [%d]"					{ velux="thing=actuator;channel=serial#00:00:00:00:00:00:00" }
+Rollershutter V_Slaapkamer "Slaapkamer [%d]"			{ velux="thing=actuator;channel=serial#53:2A:5D:5A:12:10:3A" }
+
+//
+// end-of-items/velux.items
+//
