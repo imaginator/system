@@ -1,0 +1,13 @@
+[Unit]
+Description=Deluge Torrent Server Web
+
+[Service]
+Type=simple
+UMask=002
+User=debian-deluged
+Group=media
+ExecStart=/usr/bin/deluge-web --config=/etc/deluge --interface=10.7.11.1
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
