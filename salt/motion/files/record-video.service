@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 Restart=always
-RestartSec=10
+RestartSec=60
 User=www-data
 StandardOutput=inherit
 StandardError=inherit
@@ -19,6 +19,7 @@ ExecStart=/bin/sh -c '              \
     -xerror                         \
     -stimeout 5000000               \
     -thread_queue_size 2048         \
+    -reorder_queue_size 16000        \
     -rtsp_transport tcp             \
     -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
     -c:v copy -an -sn -dn           \
