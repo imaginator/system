@@ -16,21 +16,21 @@ Number   Hs110Fridge_EnergyUsage           "Energy Usage"   (gPersistMe) {channe
 Number   Hs110Fridge_Current               "Current"        (gPersistMe) {channel="tplinksmarthome:hs110:Fridge:current"}
 Number   Hs110Fridge_Voltage               "Voltage"                     {channel="tplinksmarthome:hs110:Fridge:voltage"}
 
-Switch   Hs110GlassCubeLight_Switch        "Switch"         (gPersistMe) {channel="tplinksmarthome:hs110:GlassCubeLight:switch"}
-Switch   Hs110GlassCubeLight_Led           "Switch Led"     (gPersistMe) {channel="tplinksmarthome:hs110:GlassCubeLight:led"}
-Number   Hs110GlassCubeLight_Rssi          "Signal"                      {channel="tplinksmarthome:hs110:GlassCubeLight:rssi"}
-Number   Hs110GlassCubeLight_Power         "Power"          (gPersistMe) {channel="tplinksmarthome:hs110:GlassCubeLight:power"}
-Number   Hs110GlassCubeLight_EnergyUsage   "Energy Usage"   (gPersistMe) {channel="tplinksmarthome:hs110:GlassCubeLight:energyUsage"}
-Number   Hs110GlassCubeLight_Current       "Current"        (gPersistMe) {channel="tplinksmarthome:hs110:GlassCubeLight:current"}
-Number   Hs110GlassCubeLight_Voltage       "Voltage"                     {channel="tplinksmarthome:hs110:GlassCubeLight:voltage"}
+Switch   Hs110Dishwasher_Switch        "Switch"         (gPersistMe) {channel="tplinksmarthome:hs110:Dishwasher:switch"}
+Switch   Hs110Dishwasher_Led           "Switch Led"     (gPersistMe) {channel="tplinksmarthome:hs110:Dishwasher:led"}
+Number   Hs110Dishwasher_Rssi          "Signal"                      {channel="tplinksmarthome:hs110:Dishwasher:rssi"}
+Number   Hs110Dishwasher_Power         "Power"          (gPersistMe) {channel="tplinksmarthome:hs110:Dishwasher:power"}
+Number   Hs110Dishwasher_EnergyUsage   "Energy Usage"   (gPersistMe) {channel="tplinksmarthome:hs110:Dishwasher:energyUsage"}
+Number   Hs110Dishwasher_Current       "Current"        (gPersistMe) {channel="tplinksmarthome:hs110:Dishwasher:current"}
+Number   Hs110Dishwasher_Voltage       "Voltage"                     {channel="tplinksmarthome:hs110:Dishwasher:voltage"}
 
-Switch   Hs110IndustrialLight_Switch       "Switch"         (gPersistMe) {channel="tplinksmarthome:hs110:IndustrialLight:switch"}
-Switch   Hs110IndustrialLight_Led          "Switch Led"     (gPersistMe) {channel="tplinksmarthome:hs110:IndustrialLight:led"}
-Number   Hs110IndustrialLight_Rssi         "Signal"                      {channel="tplinksmarthome:hs110:IndustrialLight:rssi"}
-Number   Hs110IndustrialLight_Power        "Power"          (gPersistMe) {channel="tplinksmarthome:hs110:IndustrialLight:power"}
-Number   Hs110IndustrialLight_EnergyUsage  "Energy Usage"   (gPersistMe) {channel="tplinksmarthome:hs110:IndustrialLight:energyUsage"}
-Number   Hs110IndustrialLight_Current      "Current"        (gPersistMe) {channel="tplinksmarthome:hs110:IndustrialLight:current"}
-Number   Hs110IndustrialLight_Voltage      "Voltage"                     {channel="tplinksmarthome:hs110:IndustrialLight:voltage"}
+Switch   Hs110Desk_Switch       "Switch"         (gPersistMe) {channel="tplinksmarthome:hs110:Desk:switch"}
+Switch   Hs110Desk_Led          "Switch Led"     (gPersistMe) {channel="tplinksmarthome:hs110:Desk:led"}
+Number   Hs110Desk_Rssi         "Signal"                      {channel="tplinksmarthome:hs110:Desk:rssi"}
+Number   Hs110Desk_Power        "Power"          (gPersistMe) {channel="tplinksmarthome:hs110:Desk:power"}
+Number   Hs110Desk_EnergyUsage  "Energy Usage"   (gPersistMe) {channel="tplinksmarthome:hs110:Desk:energyUsage"}
+Number   Hs110Desk_Current      "Current"        (gPersistMe) {channel="tplinksmarthome:hs110:Desk:current"}
+Number   Hs110Desk_Voltage      "Voltage"                     {channel="tplinksmarthome:hs110:Desk:voltage"}
 
 Switch   Hs110WashingMachine_Switch        "Switch"         (gPersistMe) {channel="tplinksmarthome:hs110:WashingMachine:switch"}
 Switch   Hs110WashingMachine_Led           "Switch Led"     (gPersistMe) {channel="tplinksmarthome:hs110:WashingMachine:led"}

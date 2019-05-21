@@ -1,10 +1,5 @@
 {% from "plex/map.jinja" import plex with context %}
 
-# btrfs database
-plex-no-copy-on-write:
-  cmd.run:
-    - name: chattr +C "/var/lib/plexmediaserver"
-
 plex-server:
   pkg.installed:
     - sources:
@@ -26,6 +21,29 @@ plex-server:
     - source: salt://plex/nginx-plex.conf
     - require:
       - pkg: plex-server
+
+{% for mediadir in ['/srv/video/TV', '/srv/video/Film', '/srv/music','/srv/audiobooks'] %}
+
+set-{{ mediadir }}-permissions:
+  file.directory:
+    - name: {{mediadir}}
+    - user: simon
+    - group: users
+    - dir_mode: 755
+    - file_mode: 644
+    - recurse:
+      - user
+      - group
+      - mode
+
+{{ mediadir }}/Plex Versions:
+  file.directory:
+    - user: plex
+    - group: root
+    - mode: 755
+    - makedirs: True
+
+{% endfor %}
 
 plex_iptables-tcp:
   iptables.append:
@@ -68,38 +86,3 @@ plex_iptables-bonjour:
     - match: comment 
     - comment: plex-web-udp
     - save: true
-
-{% for mediadir in ['/srv/video/Tv', '/srv/video/Film', '/srv/music','/srv/audiobooks','/srv/photos'] %}
-set-{{ mediadir }}-permissions:
-  file.directory:
-    - name: {{mediadir}}
-    - user: simon
-    - group: users
-    - dir_mode: 755
-    - file_mode: 644
-    - recurse:
-      - user
-      - group
-      - mode
-{% endfor %}
-
-/srv/video/Tv/Plex Versions:
-  file.directory:
-    - user: plex
-    - group: root
-    - mode: 755
-    - makedirs: True
-
-/srv/video/Film/Plex Versions:
-  file.directory:
-    - user: plex
-    - group: root
-    - mode: 755
-    - makedirs: True
-
-/srv/video/Clips/Plex Versions:
-  file.directory:
-    - user: plex
-    - group: root
-    - mode: 755
-    - makedirs: True
