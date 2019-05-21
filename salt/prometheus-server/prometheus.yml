@@ -60,3 +60,9 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 127.0.0.1:9116
+
+  - job_name: 'openhab'
+    scrape_interval: 20s
+    static_configs:
+      - targets:
+        - bunker.imagilan:9997

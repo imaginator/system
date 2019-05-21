@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus openhab exporter
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/openhab_exporter
+ExecStart=/usr/bin/gunicorn3 -w 4 -b 0.0.0.0:9997 openhab2-exporter:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=prometheus-openhab-exporter.service
