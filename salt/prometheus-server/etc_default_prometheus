@@ -2,7 +2,7 @@
 
 # Set the command-line arguments to pass to the server.
 # ARGS="-web.external-url=http://bunker.imaginator.com/prometheus"
-ARGS="--storage.tsdb.retention=1080h"
+ARGS="--storage.tsdb.retention=21900h"
 # --storage.local.series-file-shrink-ratio=0.3"
 # Prometheus supports the following options:
 
