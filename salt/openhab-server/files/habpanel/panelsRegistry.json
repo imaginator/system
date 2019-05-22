@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-05-21T08:48:24.491Z",
+        "updatedTime": "2019-05-21T15:55:37.993Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -166,7 +166,7 @@
                         "row": 0,
                         "col": 0,
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&refresh=10s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&from=now-12h&to=now&refresh=10s\" frameborder=\"0\"",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true
@@ -177,7 +177,7 @@
                         "sizeY": 4,
                         "type": "frame",
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&refresh=10s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&from=now-12h&to=now&refresh=10s\" frameborder=\"0\"",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true,
@@ -714,16 +714,16 @@
                 "mobile_mode_enabled": false
             },
             {
-                "id": "Power",
-                "name": "Power",
+                "id": "Energy",
+                "name": "Energy",
                 "widgets": [
                     {
-                        "name": "power",
+                        "name": "energy",
                         "sizeX": 12,
                         "sizeY": 8,
                         "type": "frame",
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&refresh=10s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&from=now-24h&to=now&refresh=10s\" frameborder=\"0\"",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true,
@@ -732,7 +732,11 @@
                     }
                 ],
                 "row": 9,
-                "col": 0
+                "col": 0,
+                "tile": {
+                    "backdrop_iconset": "freepik-household"
+                },
+                "mobile_mode_enabled": false
             }
         ],
         "menucolumns": 1,
@@ -741,7 +745,7 @@
             "panel_name": "F17",
             "header_clock_format": "shortTime",
             "no_scrolling": false,
-            "hide_drawer_footer": false,
+            "hide_drawer_footer": true,
             "hide_speak_button": true,
             "hide_fullscreen_button": true,
             "show_header_clock": true,
