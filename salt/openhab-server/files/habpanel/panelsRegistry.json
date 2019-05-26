@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-05-21T15:55:37.993Z",
+        "updatedTime": "2019-05-26T06:22:10.528Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -353,7 +353,7 @@
                         "col": 0,
                         "image_source": "static",
                         "url": "https://loremflickr.com/g/640/480/cats",
-                        "refresh": 30,
+                        "refresh": 120,
                         "intervaltype": "seconds",
                         "background": "rgb(0, 0, 0)"
                     }
@@ -719,7 +719,7 @@
                 "widgets": [
                     {
                         "name": "energy",
-                        "sizeX": 12,
+                        "sizeX": 9,
                         "sizeY": 8,
                         "type": "frame",
                         "url_source": "static",
@@ -729,6 +729,19 @@
                         "hidelabel": true,
                         "row": 0,
                         "col": 0
+                    },
+                    {
+                        "name": "Cost per year",
+                        "sizeX": 3,
+                        "sizeY": 8,
+                        "type": "frame",
+                        "url_source": "static",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=275&from=now-24h&to=now&refresh=120s\" frameborder=\"0\"",
+                        "background": "transparent",
+                        "frameless": true,
+                        "hidelabel": true,
+                        "row": 0,
+                        "col": 9
                     }
                 ],
                 "row": 9,
