@@ -1,6 +1,8 @@
-mqtt:broker:bunker [ 
-    host="127.0.0.1", 
-    secure=false,
-    port=1883,
-    clientId=openhab
-    ]
+Bridge mqtt:broker:broker [ host="mqtt.imagilan", secure=false, clientid="openhab" ]
+    {
+      Thing topic miflora {
+       Channels:
+         Type number : temperature "Air Temperature" [ stateTopic="sensor/temperature_celsius"]
+         Type number : humidity    "Humidity"        [stateTopic="sensor/humidity"]
+        }
+    }

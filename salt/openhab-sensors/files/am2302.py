@@ -7,9 +7,9 @@ import time
 
 dht_pin  = 4  
 dht      = Adafruit_DHT.AM2302
-broker   = 'bunker.imagilan'
-topic    = 'lounge'
-interval = 11
+broker   = 'mqtt.imagilan'
+topic    = 'homie/pi02'
+interval = 10
 
 while True:  
     h, t = Adafruit_DHT.read_retry(dht, dht_pin)

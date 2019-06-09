@@ -21,8 +21,10 @@ base:
     - plex
     - postfix
     - prometheus-server
+    - prometheus-openhab-exporter
     - prometheus-snmp-exporter
     - saltstack-server
+    - 
     - samba
   furrow:
     - base-utils

@@ -1,0 +1,3 @@
+Number   GenericMQTTThingTemperature   "Air temperature"   {channel="mqtt:topic:broker:miflora:temperature"}
+Number   GenericMQTTThingHumidity      "Humidity"          {channel="mqtt:topic:broker:miflora:humidity"}
+
