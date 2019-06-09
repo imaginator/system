@@ -702,7 +702,7 @@
                         "row": 0,
                         "col": 0,
                         "url_source": "static",
-                        "frameUrl": "https://openhab.imaginator.com/frontail",
+                        "frameUrl": "http://openhab.imagilan/frontail/",
                         "frameless": true,
                         "hidelabel": true,
                         "background": "transparent"

@@ -1,18 +1,22 @@
 [Unit]
-Description=Frontail
+Description=Frontail openHAB instance, reachable at http://%H:9001
+Documentation=https://github.com/mthenw/frontail
+Documentation=https://github.com/openhab/openhabian/issues/28
+After=openhab2.service
 
 [Service]
+Type=simple
 ExecStart=/opt/frontail/node_modules/frontail/bin/frontail \
-    --host 127.0.0.1 \
     --port 7001 \
-    --url-path /frontail \
+    --url-path /frontail/ \
     --disable-usage-stats \
     --ui-hide-topbar \
     --ui-highlight \
     --ui-highlight-preset /opt/frontail/preset.json \
-    -t default \
-    /var/log/openhab2/openhab.log \
-    /var/log/openhab2/events.log
+    -t openhab \
+    -l 2000 \
+    -n 200 \
+    /var/log/openhab2/events.log /var/log/openhab2/openhab.log
 Restart=always
 User=openhab
 Group=openhab

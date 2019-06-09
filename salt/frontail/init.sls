@@ -4,7 +4,7 @@ frontail-dependencies:
     - pkgs:
       - nodejs
       - npm
-      - git 
+      - git
 
 /opt/frontail:
   file.directory:
