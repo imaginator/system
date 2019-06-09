@@ -2,8 +2,8 @@ extract_openhab_exporter:
   archive.extracted:
     - name: /opt/openhab_exporter
     - if_missing: /opt/openhab_exporter/openhab_exporter
-    - source: https://github.com/imaginator/openhab2-prometheus-exporter/archive/0.1.tar.gz
-    - source_hash: 995bba7b430200749df953586017729f6b859116
+    - source: https://github.com/imaginator/openhab2-prometheus-exporter/archive/0.2.tar.gz
+    - source_hash: 6327d31db8722c81772b50579bdcbb3e78d72ab8
     - archive_format: tar
     - options: "--strip-components=1"
     - enforce_toplevel: False
