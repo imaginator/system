@@ -1,1 +1,2 @@
-Group gPersistMe ["Group of items to persist"] 
+Group gPersistMe        ["Group of items to persist"]
+Group gVolumeControl    ["Group of items to have their volume reset daily"] 

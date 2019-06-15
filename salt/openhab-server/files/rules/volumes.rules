@@ -1,0 +1,10 @@
+rule "daiy volume reset"
+
+when
+    Time cron "0 0 4 * * ?"
+then
+    logInfo("reset volumes", "daily volume reset to sensible level")
+    // we don't set the group volume since it's automatically
+    // set to the average of the other rooms
+    gVolumeControl.sendCommand(35)
+end
