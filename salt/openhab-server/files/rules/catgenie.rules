@@ -1,7 +1,7 @@
 rule "TurnOnCatGeniePower"
 
 when
-    Time cron "0 0 8 1/1 * ? *"     // power on at 8am every day
+    Time cron "0 0 9 1/1 * ? *"     // power on at 9am every day
 then
     logInfo("TurnOnCatGeniePower", "turning on CatGenie")
     Hs110Catgenie_Switch.sendCommand(ON)
@@ -21,14 +21,12 @@ then
     logInfo("TurnOffCatGeniePower", "current power: " + CatGeniePower)
 
     if(CatGeniePower > 5){                       // adjust the power in watts as needed
-        logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGenieWatts.state.toString)
+        logInfo("TurnOffCatGeniePower", "Starting CatGenie Power Timer becase power consumption currently " + CatGeniePower.state.toString)
         CatGenieTimer.sendCommand(ON)            // turn on timer with expire binding for 20 min
-        logInfo("TurnOffCatGeniePower", "Catgenie is running, therefore delaying turn off.")
-
+        logInfo("TurnOffCatGeniePower", "Catgenie is running, therefore delaying turn off.")    
     }
     else(CatGenieTimer.state == OFF){
         Hs110Catgenie_Switch.sendCommand(OFF)    // turn power off if no cleaning cycle
         logInfo("TurnOffCatGeniePower", "Catgenie turned off")
-
     }
 end
