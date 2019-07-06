@@ -9,11 +9,12 @@ chromecast:audio:cca-lounge              "chromecast audio lounge" @ "lounge"   
 chromecast:audio:cca-mainbath          "chromecast audio mainbath" @ "main bath"      [ ipAddress="cca-mainbath.imagilan",    refresh=6000]
 chromecast:audio:cca-terrace            "chromecast audio terrace" @ "terrace"        [ ipAddress="cca-terrace.imagilan",     refresh=6000]
 chromecast:audio:cca-workroom          "chromecast audio workroom" @ "workroom"       [ ipAddress="cca-workroom.imagilan",    refresh=6000]
+
 chromecast:chromecast:ccmini-bathroom   "chromecast mini mainbath" @ "main bath"      [ ipAddress="ccmini-mainbath.imagilan", refresh=6000]
 chromecast:chromecast:ccmini-bedroom1  "chromecast mini bedroom 1" @ "bedroom 1"      [ ipAddress="ccmini-bedroom1.imagilan", refresh=6000]
 chromecast:chromecast:ccmini-kitchen     "chromecast mini kitchen" @ "kitchen"        [ ipAddress="ccmini-kitchen.imagilan",  refresh=6000]
 chromecast:chromecast:ccmini-lounge       "chromecast mini lounge" @ "lounge"         [ ipAddress="ccmini-lounge.imagilan",   refresh=6000]
 chromecast:chromecast:ccultra-lounge     "chromecast ultra lounge" @ "lounge"         [ ipAddress="ccultra-lounge.imagilan",  refresh=6000]
 
-// ultra is ethernet connected
-chromecast:audiogroup:all              "chromecast audiogroup all" @ "home"            [ ipAddress="ccultra-lounge.imagilan", refresh=6000, port="42576"] 
+// Audiogroups need the uuid
+chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  "chromecast audiogroup all" @ "home"           [ ipAddress="ccultra-lounge.imagilan",  refresh=6000, port="42576"] 

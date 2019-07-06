@@ -6,14 +6,14 @@ rule "restart the panel"
 when 
     Time cron "44 4 * ? * * *"
 then
- Tablet_Commands.postUpdate("RESTART")
+    Tablet_Commands.postUpdate("RESTART")
 end
 
 rule "show the weather panel in the morning"
 when
     Time cron "44 5 * ? * * *"
 then
-  Tablet_Habpanel_Active_Panel.postUpdate("Weather")
+    Tablet_Habpanel_Active_Panel.postUpdate("Weather")
 end
 
 rule "show the volume panel morning"
@@ -38,10 +38,9 @@ then
             Thread::sleep(1000)
             Tablet_Commands.sendCommand("ENABLE_MOTION_DETECTION")
         } 
-    else { if (Tablet_Motion.state == OPEN) OR (Tablet_Brightness < 10) {
+    if (Tablet_Motion.state == OPEN) OR (Tablet_Brightness < 10) {
             Tablet_Commands.sendCommand("ALLOW_SCREEN_OFF")
             Thread::sleep(1000)
             Tablet_Commands.sendCommand("SET_BRIGHTNESS 0")
-            }
         }
 end

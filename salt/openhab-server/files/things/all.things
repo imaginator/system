@@ -3,11 +3,22 @@
 
 // Bridges
 
-Bridge zigbee:coordinator_cc2531:home        "zigbee2mqtt" @ "home"           [ zigbee_port="/dev/ttyACM0", zigbee_panid="5E2B" ] {
-        Device 91E358729CB86041 [ zigbee_macaddress = "91E358729CB86041" ]
+Bridge zigbee:coordinator_cc2531:home       "zigbee2mqtt" @ "home" [ 
+    zigbee_port="/dev/ttyACM0", 
+    zigbee_panid="5E2B" 
+] { Device 91E358729CB86041 [
+        zigbee_macaddress = "91E358729CB86041" 
+        ]
     }
 
 // Thing zigbee:device:home:temp-humidity "Lounge Temperature Sensor"  @ "home"  (zigbee:coordinator_cc2531:home) [ zigbee_macaddress="00158D00010F667B", zigbee_descriptor="lumi.sensor_ht" ]
 
-Bridge velux:klf200:home "velux bridge" @ "home" [ bridgeIPAddress="veluxgw.imagilan", bridgeProtocol="slip", bridgeTCPPort=51200, bridgePassword="velux123", timeoutMsecs=15000, retries=15]
+Bridge velux:klf200:home                    "velux bridge" @ "home" [
+    bridgeIPAddress="veluxgw.imagilan", 
+    bridgeProtocol="slip", 
+    bridgeTCPPort=51200, 
+    bridgePassword="velux123", 
+    timeoutMsecs=15000,
+    retries=15
+    ]
 
