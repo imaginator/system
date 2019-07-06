@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-07-06T15:50:09.134Z",
+        "updatedTime": "2019-07-06T17:59:08.494Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -371,278 +371,64 @@
                 "name": "Volumes",
                 "widgets": [
                     {
-                        "name": "Bedroom",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudio_bedroom_mini_Volume",
-                        "type": "knob",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
+                        "name": "Average (All Speakers)",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastAudiogroupAll_Volume",
+                        "type": "slider",
                         "row": 0,
                         "col": 0,
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "bgColor": "transparent"
-                    },
-                    {
-                        "name": "Volumes over time",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": null,
-                        "type": "timeline",
-                        "row": 3,
-                        "col": 8,
-                        "period": "4h",
-                        "colorMaps": [
-                            {
-                                "state": "0-19",
-                                "color": "#CCCCCC"
-                            },
-                            {
-                                "state": "20-34",
-                                "color": "#0099FF"
-                            },
-                            {
-                                "state": "35-69",
-                                "color": "#FF9966"
-                            },
-                            {
-                                "state": "70-100",
-                                "color": "#FF0000"
-                            }
-                        ],
-                        "series": [
-                            {
-                                "item": "ChromecastMiniMainbath_Volume",
-                                "name": "Bathroom"
-                            },
-                            {
-                                "item": "ChromecastAudio_bedroom_mini_Volume",
-                                "name": "Bedroom"
-                            },
-                            {
-                                "item": "ChromecastAudio_kitchen_mini_Volume",
-                                "name": "Kitchen"
-                            },
-                            {
-                                "item": "ChromecastAudio_lounge_audio_Volume",
-                                "name": "Lounge"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Bathroom",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastMiniMainbath_Volume",
-                        "type": "knob",
                         "floor": 0,
                         "ceil": 100,
-                        "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "row": 0,
-                        "col": 4
-                    },
-                    {
-                        "name": "Lounge",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudio_lounge_audio_Volume",
-                        "type": "knob",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "row": 0,
-                        "col": 8
+                        "step": 1
                     },
                     {
                         "name": "Kitchen",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudio_kitchen_mini_Volume",
-                        "type": "knob",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastMiniKitchenVolume",
+                        "type": "slider",
                         "floor": 0,
                         "ceil": 100,
                         "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "bgColor": "transparent",
+                        "row": 4,
+                        "col": 0
+                    },
+                    {
+                        "name": "Bedroom",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastMiniBedroom1Volume",
+                        "type": "slider",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "row": 2,
+                        "col": 0
+                    },
+                    {
+                        "name": "Bathroom",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastMiniMainbath_Volume",
+                        "type": "slider",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
                         "row": 3,
                         "col": 0
                     },
                     {
-                        "name": "all",
-                        "sizeX": 4,
-                        "sizeY": 3,
-                        "item": "ChromecastAudioGroup_all_Volume",
-                        "type": "knob",
+                        "name": "Lounge",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastAudioLoungeVolume",
+                        "type": "slider",
                         "floor": 0,
                         "ceil": 100,
                         "step": 1,
-                        "subTextEnabled": true,
-                        "ranges": [
-                            {
-                                "min": 0,
-                                "max": 20,
-                                "barColor": "#CCCCCC"
-                            },
-                            {
-                                "min": 20,
-                                "max": 35,
-                                "barColor": "#0db9f0"
-                            },
-                            {
-                                "min": 35,
-                                "max": 70,
-                                "barColor": "#FF9966"
-                            },
-                            {
-                                "min": 70,
-                                "max": 101,
-                                "barColor": "#CC3300"
-                            }
-                        ],
-                        "rangesEnabled": true,
-                        "unit": "",
-                        "startAngle": -110,
-                        "endAngle": 110,
-                        "useserverformat": true,
-                        "scaleEnabled": false,
-                        "skinType": "simple",
-                        "skinWidth": null,
-                        "skinColor": "transparent",
-                        "rangesTextColorMatching": false,
-                        "bgColor": "transparent",
-                        "row": 3,
-                        "col": 4
+                        "row": 1,
+                        "col": 0
                     }
                 ],
                 "row": 2,
