@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-07-06T17:59:08.494Z",
+        "updatedTime": "2019-07-06T19:26:11.447Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -233,25 +233,6 @@
                         "useserverformat": true
                     },
                     {
-                        "name": "Volume",
-                        "sizeX": 2,
-                        "sizeY": 5,
-                        "item": "ChromecastAudio_bedroom_mini_Volume",
-                        "type": "slider",
-                        "row": 0,
-                        "col": 0,
-                        "vertical": true,
-                        "hidelabel": true,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "bigslider": false,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "soundvolume",
-                        "backdrop_center": true
-                    },
-                    {
                         "name": "Now Playing",
                         "sizeX": 2,
                         "sizeY": 1,
@@ -259,8 +240,8 @@
                         "type": "dummy",
                         "font_size": "13",
                         "useserverformat": true,
-                        "row": 6,
-                        "col": 0
+                        "row": 5,
+                        "col": 2
                     },
                     {
                         "name": "dressingroom",
@@ -279,7 +260,7 @@
                     {
                         "name": "Blinds",
                         "sizeX": 2,
-                        "sizeY": 5,
+                        "sizeY": 4,
                         "item": null,
                         "type": "slider",
                         "row": 0,
@@ -332,6 +313,20 @@
                         "row": 2,
                         "col": 7,
                         "style": "aCKolor"
+                    },
+                    {
+                        "name": "Bedroom",
+                        "sizeX": 12,
+                        "sizeY": 1,
+                        "item": "ChromecastMiniBedroom1Volume",
+                        "type": "slider",
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true,
+                        "hidepointer": true,
+                        "row": 4,
+                        "col": 0
                     }
                 ],
                 "row": 6,
@@ -371,20 +366,8 @@
                 "name": "Volumes",
                 "widgets": [
                     {
-                        "name": "Average (All Speakers)",
-                        "sizeX": 12,
-                        "sizeY": 1,
-                        "item": "ChromecastAudiogroupAll_Volume",
-                        "type": "slider",
-                        "row": 0,
-                        "col": 0,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1
-                    },
-                    {
                         "name": "Kitchen",
-                        "sizeX": 12,
+                        "sizeX": 10,
                         "sizeY": 1,
                         "item": "ChromecastMiniKitchenVolume",
                         "type": "slider",
@@ -392,35 +375,41 @@
                         "ceil": 100,
                         "step": 1,
                         "row": 4,
-                        "col": 0
+                        "col": 0,
+                        "hidelimits": true,
+                        "hidepointer": true
                     },
                     {
                         "name": "Bedroom",
-                        "sizeX": 12,
+                        "sizeX": 10,
                         "sizeY": 1,
                         "item": "ChromecastMiniBedroom1Volume",
                         "type": "slider",
                         "floor": 0,
                         "ceil": 100,
                         "step": 1,
-                        "row": 2,
-                        "col": 0
+                        "row": 3,
+                        "col": 0,
+                        "hidelimits": true,
+                        "hidepointer": true
                     },
                     {
                         "name": "Bathroom",
-                        "sizeX": 12,
+                        "sizeX": 10,
                         "sizeY": 1,
-                        "item": "ChromecastMiniMainbath_Volume",
+                        "item": "ChromecastMiniMainbathVolume",
                         "type": "slider",
                         "floor": 0,
                         "ceil": 100,
                         "step": 1,
-                        "row": 3,
-                        "col": 0
+                        "row": 2,
+                        "col": 0,
+                        "hidelimits": true,
+                        "hidepointer": true
                     },
                     {
                         "name": "Lounge",
-                        "sizeX": 12,
+                        "sizeX": 10,
                         "sizeY": 1,
                         "item": "ChromecastAudioLoungeVolume",
                         "type": "slider",
@@ -428,7 +417,45 @@
                         "ceil": 100,
                         "step": 1,
                         "row": 1,
+                        "hidelimits": true,
+                        "hidepointer": true,
                         "col": 0
+                    },
+                    {
+                        "name": "Average (All Speakers)",
+                        "sizeX": 10,
+                        "sizeY": 1,
+                        "item": "ChromecastAudiogroupAllVolume",
+                        "type": "slider",
+                        "row": 0,
+                        "col": 0,
+                        "floor": 0,
+                        "ceil": 100,
+                        "step": 1,
+                        "hidelimits": true
+                    },
+                    {
+                        "name": "",
+                        "sizeX": 2,
+                        "sizeY": 1,
+                        "item": "ChromecastAudiogroupAllTitle",
+                        "type": "dummy",
+                        "row": 0,
+                        "col": 10,
+                        "nolinebreak": false,
+                        "useserverformat": true
+                    },
+                    {
+                        "name": "New Widget",
+                        "sizeX": 2,
+                        "sizeY": 2,
+                        "item": "ChromecastAudiogroupAllImageSrc",
+                        "type": "image",
+                        "row": 1,
+                        "col": 10,
+                        "image_source": "item-string",
+                        "intervaltype": "seconds",
+                        "background": "rgb(0, 0, 0)"
                     }
                 ],
                 "row": 2,

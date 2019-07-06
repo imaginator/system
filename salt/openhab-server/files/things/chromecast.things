@@ -14,6 +14,7 @@ chromecast:chromecast:ccmini-bathroom   "chromecast mini mainbath" @ "main bath"
 chromecast:chromecast:ccmini-bedroom1  "chromecast mini bedroom 1" @ "bedroom 1"      [ ipAddress="ccmini-bedroom1.imagilan", refresh=6000]
 chromecast:chromecast:ccmini-kitchen     "chromecast mini kitchen" @ "kitchen"        [ ipAddress="ccmini-kitchen.imagilan",  refresh=6000]
 chromecast:chromecast:ccmini-lounge       "chromecast mini lounge" @ "lounge"         [ ipAddress="ccmini-lounge.imagilan",   refresh=6000]
+
 chromecast:chromecast:ccultra-lounge     "chromecast ultra lounge" @ "lounge"         [ ipAddress="ccultra-lounge.imagilan",  refresh=6000]
 
 // Audiogroups need the uuid
