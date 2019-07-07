@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-07-06T19:26:11.447Z",
+        "updatedTime": "2019-07-07T07:52:50.040Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -377,7 +377,10 @@
                         "row": 4,
                         "col": 0,
                         "hidelimits": true,
-                        "hidepointer": true
+                        "hidepointer": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "cinemascreen",
+                        "backdrop_center": true
                     },
                     {
                         "name": "Bedroom",
@@ -391,7 +394,10 @@
                         "row": 3,
                         "col": 0,
                         "hidelimits": true,
-                        "hidepointer": true
+                        "hidepointer": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "bedroom",
+                        "backdrop_center": true
                     },
                     {
                         "name": "Bathroom",
@@ -405,7 +411,10 @@
                         "row": 2,
                         "col": 0,
                         "hidelimits": true,
-                        "hidepointer": true
+                        "hidepointer": true,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "bath",
+                        "backdrop_center": true
                     },
                     {
                         "name": "Lounge",
@@ -419,7 +428,10 @@
                         "row": 1,
                         "hidelimits": true,
                         "hidepointer": true,
-                        "col": 0
+                        "col": 0,
+                        "backdrop_iconset": "eclipse-smarthome-classic",
+                        "backdrop_icon": "sofa",
+                        "backdrop_center": true
                     },
                     {
                         "name": "Average (All Speakers)",

@@ -3,7 +3,7 @@
 
 //all
 Player        ChromecastAudiogroupAllControl         "Media Control"   (gPersistMe) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:control"}
-Dimmer        ChromecastAudiogroupAllVolume          "Volume"          (gPersistMe) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:volume"}
+Dimmer        ChromecastAudiogroupAllVolume          "Volume"          (gPersistMe,gVolumeControl) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:volume"}
 Switch        ChromecastAudiogroupAllMute            "Mute"            (gPersistMe) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:mute"}
 String        ChromecastAudiogroupAllPlayuri         "Play URI"        (gPersistMe) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:playuri"}
 String        ChromecastAudiogroupAllAppName         "App"             (gPersistMe) {channel="chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6:appName"}
