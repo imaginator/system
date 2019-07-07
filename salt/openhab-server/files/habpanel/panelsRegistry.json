@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-07-07T07:52:50.040Z",
+        "updatedTime": "2019-07-07T14:57:34.400Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -30,7 +30,7 @@
                         }
                     }
                 ],
-                "row": 0,
+                "row": 1,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -151,7 +151,7 @@
                         "col": 0
                     }
                 ],
-                "row": 5,
+                "row": 2,
                 "col": 0
             },
             {
@@ -166,7 +166,7 @@
                         "row": 0,
                         "col": 0,
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&from=now-12h&to=now&refresh=10s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&from=now-12h&to=now&refresh=10s&theme=dark",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true
@@ -177,7 +177,7 @@
                         "sizeY": 4,
                         "type": "frame",
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&from=now-12h&to=now&refresh=10s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&from=now-12h&to=now&refresh=10s&theme=dark",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true,
@@ -185,8 +185,8 @@
                         "col": 0
                     }
                 ],
-                "row": 3,
-                "col": 0,
+                "row": 2,
+                "col": 1,
                 "tile": {}
             },
             {
@@ -329,7 +329,7 @@
                         "col": 0
                     }
                 ],
-                "row": 6,
+                "row": 4,
                 "col": 0,
                 "tile": {},
                 "drawer": {},
@@ -353,8 +353,8 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 4,
-                "col": 0,
+                "row": 3,
+                "col": 1,
                 "tile": {
                     "title_color": "transparent"
                 },
@@ -470,7 +470,7 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 2,
+                "row": 0,
                 "col": 0,
                 "tile": {}
             },
@@ -491,8 +491,8 @@
                         "background": "rgb(0, 0, 0)"
                     }
                 ],
-                "row": 7,
-                "col": 0
+                "row": 0,
+                "col": 1
             },
             {
                 "id": "Playlists",
@@ -513,7 +513,7 @@
                     }
                 ],
                 "row": 1,
-                "col": 0
+                "col": 1
             },
             {
                 "id": "logs",
@@ -533,7 +533,7 @@
                         "background": "transparent"
                     }
                 ],
-                "row": 8,
+                "row": 5,
                 "col": 0,
                 "tile": {},
                 "mobile_mode_enabled": false
@@ -548,7 +548,7 @@
                         "sizeY": 8,
                         "type": "frame",
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&from=now-24h&to=now&refresh=10s&theme=dark\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&from=now-24h&to=now&refresh=10s&theme=dark",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true,
@@ -561,7 +561,7 @@
                         "sizeY": 8,
                         "type": "frame",
                         "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=275&from=now-24h&to=now&refresh=120s\" frameborder=\"0\"",
+                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=275&from=now-24h&to=now&refresh=120s&theme=dark",
                         "background": "transparent",
                         "frameless": true,
                         "hidelabel": true,
@@ -569,7 +569,7 @@
                         "col": 9
                     }
                 ],
-                "row": 9,
+                "row": 3,
                 "col": 0,
                 "tile": {
                     "backdrop_iconset": "freepik-household"
@@ -706,11 +706,11 @@
                         "col": 10
                     }
                 ],
-                "row": 10,
-                "col": 0
+                "row": 4,
+                "col": 1
             }
         ],
-        "menucolumns": 1,
+        "menucolumns": 2,
         "settings": {
             "theme": "material-dark",
             "panel_name": "F17",
