@@ -1,0 +1,60 @@
+// Logging name tag
+val logName = "Vacuum"
+
+///////////////////////////////////////////////////////////////////////////////
+// Function
+///////////////////////////////////////////////////////////////////////////////
+
+val Functions$Function1<String, String> getZoneCoordinates =
+[zone |
+  var parameters = zone.split(',')
+  // Docking point start position
+  val double x = 25500.0;
+  val double y = 25500.0;
+  // Bottom (y) left (x)
+  val double b = Double::parseDouble(parameters.get(0)) * 1000.0 + x
+  val double l = Double::parseDouble(parameters.get(1)) * 1000.0 + y
+  // Top (y) right (x)
+  val double t = b + Double::parseDouble(parameters.get(2)) * 1000.0
+  val double r = l + Double::parseDouble(parameters.get(3)) * 1000.0
+  // Build zone coordinates (and number of times to scan)
+  val coordinates = String::format("[%.0f,%.0f,%.0f,%.0f,%s]", b, l, t, r, parameters.get(4));
+  coordinates
+]
+
+///////////////////////////////////////////////////////////////////////////////
+// Rule
+///////////////////////////////////////////////////////////////////////////////
+
+rule "Vacuum control"
+when
+  Item Vacuum_Control received command
+then
+  logInfo(logName, "Vacuum command: {}", receivedCommand.toString)
+  if (receivedCommand.toString == "vacuum") {
+    // The final command send to the vacuum
+    var String command = ""
+    // Get zone coordinates
+    var String zone = transform("MAP", "zones.map", Vacuum_Zone.state.toString)
+    // We still don't know if this is single or multiple zone
+    var parameters = zone.split(',')
+    try {
+      // Single zone only have numbers
+      Double::parseDouble(parameters.get(0))
+      command = getZoneCoordinates.apply(zone)
+    } catch (Throwable t) {
+      // This is multi zone
+      parameters.forEach[string z|
+        zone = transform("MAP", "zones.map", z)
+        command = command + getZoneCoordinates.apply(zone) + ","
+      ]
+      // Remove last ','
+      command = command.substring(0, command.length - 1)
+    }
+    command = String::format("[%s]", command)
+    logInfo(logName, "Clean {} zone coordinates {}", receivedCommand.toString, command)
+    Vacuum_Action_Command.sendCommand('app_zoned_clean' + command)
+  } else {
+    Vacuum_Action_Control.sendCommand(receivedCommand.toString)
+  }
+end
