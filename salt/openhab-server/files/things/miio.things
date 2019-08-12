@@ -3,3 +3,4 @@ miio:vacuum:03DA214A "Xiaomi imagiSuck" @ "home" [
     model="rockrobo.vacuum.v1",
     deviceId="{{ salt['pillar.get']('openhab:vacuum_deviceid') }}",
     token="{{ salt['pillar.get']('openhab:vacuum_token') }}"
+]
