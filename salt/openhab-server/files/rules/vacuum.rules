@@ -1,3 +1,5 @@
+// from https://community.openhab.org/t/xiaomi-roborock-zone-cleanup-rule/55138/5
+
 // Logging name tag
 val logName = "Vacuum"
 
@@ -56,5 +58,33 @@ then
     Vacuum_Action_Command.sendCommand('app_zoned_clean' + command)
   } else {
     Vacuum_Action_Control.sendCommand(receivedCommand.toString)
+  }
+end
+
+rule "Vacuum zone cleanup"
+when
+	Item Vacuum_Action_Zone received command
+then
+  if (Vacuum_StatusState.state == "Charging") {
+    // Get zone coordinates
+    val zone = transform("MAP", "zones.map", receivedCommand.toString)
+    // Make sure we have zone parameters
+    if (zone != "") {
+      // Zone parameters: bottom(y), left(x), width, height, repeats
+      var parameters = zone.split(',')
+      // Docking point start position
+      val double x = 25500.0;
+      val double y = 25500.0;
+      // Bottom (y) left (x)
+      val double b = Double::parseDouble(parameters.get(0)) * 1000.0 + x
+      val double l = Double::parseDouble(parameters.get(1)) * 1000.0 + y
+      // Top (y) right (x)
+      val double t = b + Double::parseDouble(parameters.get(2)) * 1000.0
+      val double r = l + Double::parseDouble(parameters.get(3)) * 1000.0
+      // Build zone coordinates (and number of times to scan)
+      val coordinates = String::format("[[%.0f,%.0f,%.0f,%.0f,%s]]", b, l, t, r, parameters.get(4));
+      logInfo(logName, "Clean {} zone coordinates {}", receivedCommand.toString, coordinates)
+      Vacuum_Action_Command.sendCommand('app_zoned_clean' + coordinates)
+    }
   }
 end

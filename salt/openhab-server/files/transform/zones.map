@@ -4,4 +4,5 @@ livingroom=0,0.5,4.2,5.2,1
 diningroom=-1.6,5.9,2.9,2.7,1
 sofa=1.4,4.8,3,1,1
 carpet=1.4,2.1,2,3,1
+catgenie=0.5,-0.6,4,0.5,1
 groundfloor=entrance,kitchen
