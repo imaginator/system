@@ -1,0 +1,1 @@
+sitemap default label="OpenHAB" { Group item=Root } 
