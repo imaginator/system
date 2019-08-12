@@ -17,5 +17,5 @@ chromecast:chromecast:ccmini-lounge       "chromecast mini lounge" @ "lounge"   
 
 chromecast:chromecast:ccultra-lounge     "chromecast ultra lounge" @ "lounge"         [ ipAddress="ccultra-lounge.imagilan",  refresh=6000]
 
-// Audiogroups need the uuid
-chromecast:audiogroup:f2514c9f-496c-40bb-b996-adef1f7f48c6  "chromecast audiogroup all" @ "home"           [ ipAddress="ccultra-lounge.imagilan",  refresh=6000, port="42576"] 
+chromecast:audiogroup:allspeakers  "chromecast group all speakers" @ "home"           [ deviceID="f2514c9f-496c-40bb-b996-adef1f7f48c6", ipAddress="ccmini-kitchen.imagilan", refresh=6000, port="42576"]
+chromecast:audiogroup:test                 "chromecast group test" @ "home"           [ deviceId="2134b85a-8c10-4724-a3c3-a1fec168ccc4", ipAddress="ccmini-kitchen.imagilan", refresh=6000, port="42576"]

@@ -21,4 +21,3 @@ Bridge velux:klf200:home                    "velux bridge" @ "home" [
     timeoutMsecs=15000,
     retries=15
     ]
-
