@@ -1,46 +1,46 @@
 // managed by Saltstack
 
 // for zoned cleanup
-String      Vacuum_Action_Control                 "Control"         (Vacuum)            { channel="miio:vacuum:imagisuck:actions#control" }
-String      Vacuum_Action_Command                 "Command"                             { channel="miio:vacuum:imagisuck:actions#commands" }
+String      Vacuum_Action_Control                 "Control"         (Vacuum)            { channel="miio:vacuum:03DA214A:actions#control" }
+String      Vacuum_Action_Command                 "Command"                             { channel="miio:vacuum:03DA214A:actions#commands" }
 String      Vacuum_Control                        "Control"                             { expire="1s,state=UNDEF" }
 String      Vacuum_Action_Zone                    "Zone [%s]"       <floor_plan>
 
 // default items
-Number      Vacuum_ActionsFan                     "Control fan level"                   {channel="miio:vacuum:imagisuck:actions#fan"}
-Switch      Vacuum_ActionsVacuum                  "Vacuum on/off"                       {channel="miio:vacuum:imagisuck:actions#vacuum"}
-Number      Vacuum_StatusBattery                  "Battery level"                       {channel="miio:vacuum:imagisuck:status#battery"}
-Number      Vacuum_StatusCleanArea                "Cleaning area"                       {channel="miio:vacuum:imagisuck:status#clean_area"}
-Number      Vacuum_StatusCleanTime                "Cleaning time"                       {channel="miio:vacuum:imagisuck:status#clean_time"}
-String      Vacuum_StatusErrorCode                "Error"                               {channel="miio:vacuum:imagisuck:status#error_code"}
-Number      Vacuum_StatusFanPower                 "Fan power"                           {channel="miio:vacuum:imagisuck:status#fan_power"}
-Number      Vacuum_StatusInCleaning               "In cleaning"                         {channel="miio:vacuum:imagisuck:status#in_cleaning"}
-Switch      Vacuum_StatusDndEnabled               "Do not disturb"                      {channel="miio:vacuum:imagisuck:status#dnd_enabled"}
-Number      Vacuum_StatusMapPresent               "Map present"                         {channel="miio:vacuum:imagisuck:status#map_present"}
-String      Vacuum_StatusState                    "State"                               {channel="miio:vacuum:imagisuck:status#state"}
-Number      Vacuum_ConsumablesMainBrushPercent    "Main brush remaining"                {channel="miio:vacuum:imagisuck:consumables#main_brush_percent"}
-Number      Vacuum_ConsumablesSideBrushPercent    "Side brush remaining"                {channel="miio:vacuum:imagisuck:consumables#side_brush_percent"}
-Number      Vacuum_ConsumablesFilterPercent       "Filter usage remaining"              {channel="miio:vacuum:imagisuck:consumables#filter_percent"}
-Number      Vacuum_ConsumablesSensorDirtPercent   "Sensor dirt remaining"               {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_percent"}
-Number      Vacuum_ConsumablesMainBrushTime       "Main brush hours till replacement"   {channel="miio:vacuum:imagisuck:consumables#main_brush_time"}
-Number      Vacuum_ConsumablesSideBrushTime       "Side brush hours till replacement"   {channel="miio:vacuum:imagisuck:consumables#side_brush_time"}
-Number      Vacuum_ConsumablesFilterTime          "Filter hours till replacement"       {channel="miio:vacuum:imagisuck:consumables#filter_time"}
-Number      Vacuum_ConsumablesSensorDirtTime      "Sensor dirt time till cleaning"      {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_time"}
-String      Vacuum_ConsumablesConsumableReset     "Reset consumable"                    {channel="miio:vacuum:imagisuck:consumables#consumable_reset"}
-Switch      Vacuum_DndDndFunction                 "Do not disturb functionality"        {channel="miio:vacuum:imagisuck:dnd#dnd_function"}
-String      Vacuum_DndDndStart                    "Start time dnd"                      {channel="miio:vacuum:imagisuck:dnd#dnd_start"}
-String      Vacuum_DndDndEnd                      "End time dnd"                        {channel="miio:vacuum:imagisuck:dnd#dnd_end"}
-Number      Vacuum_HistoryTotalCleanArea          "Total cleaning area"                 {channel="miio:vacuum:imagisuck:history#total_clean_area"}
-Number      Vacuum_HistoryTotalCleanTime          "Total cleaning time"                 {channel="miio:vacuum:imagisuck:history#total_clean_time"}
-Number      Vacuum_HistoryTotalCleanCount         "Total cleanings"                     {channel="miio:vacuum:imagisuck:history#total_clean_count"}
-DateTime    Vacuum_CleaningLastCleanStartTime     "Cleaning start"                      {channel="miio:vacuum:imagisuck:cleaning#last_clean_start_time"}
-DateTime    Vacuum_CleaningLastCleanEndTime       "Cleaning end"                        {channel="miio:vacuum:imagisuck:cleaning#last_clean_end_time"}
-Number      Vacuum_CleaningLastCleanArea          "Cleaning area"                       {channel="miio:vacuum:imagisuck:cleaning#last_clean_area"}
-Number      Vacuum_CleaningLastCleanDuration      "Cleaning duration"                   {channel="miio:vacuum:imagisuck:cleaning#last_clean_duration"}
-Number      Vacuum_CleaningLastCleanError         "Error"                               {channel="miio:vacuum:imagisuck:cleaning#last_clean_error"}
-Switch      Vacuum_CleaningLastCleanFinish        "Cleaning finished"                   {channel="miio:vacuum:imagisuck:cleaning#last_clean_finish"}
-String      Vacuum_CleaningLastCleanRecord        "Cleaning record"                     {channel="miio:vacuum:imagisuck:cleaning#last_clean_record"}
-String      Vacuum_NetworkSsid                    "Ssid"                                {channel="miio:vacuum:imagisuck:network#ssid"}
-String      Vacuum_NetworkBssid                   "Bssid"                               {channel="miio:vacuum:imagisuck:network#bssid"}
-Number      Vacuum_NetworkRssi                    "Rssi"                                {channel="miio:vacuum:imagisuck:network#rssi"}
-Number      Vacuum_NetworkLife                    "Life"                                {channel="miio:vacuum:imagisuck:network#life"}
+Number      Vacuum_ActionsFan                     "Control fan level"                   {channel="miio:vacuum:03DA214A:actions#fan"}
+Switch      Vacuum_ActionsVacuum                  "Vacuum on/off"                       {channel="miio:vacuum:03DA214A:actions#vacuum"}
+Number      Vacuum_StatusBattery                  "Battery level"                       {channel="miio:vacuum:03DA214A:status#battery"}
+Number      Vacuum_StatusCleanArea                "Cleaning area"                       {channel="miio:vacuum:03DA214A:status#clean_area"}
+Number      Vacuum_StatusCleanTime                "Cleaning time"                       {channel="miio:vacuum:03DA214A:status#clean_time"}
+String      Vacuum_StatusErrorCode                "Error"                               {channel="miio:vacuum:03DA214A:status#error_code"}
+Number      Vacuum_StatusFanPower                 "Fan power"                           {channel="miio:vacuum:03DA214A:status#fan_power"}
+Number      Vacuum_StatusInCleaning               "In cleaning"                         {channel="miio:vacuum:03DA214A:status#in_cleaning"}
+Switch      Vacuum_StatusDndEnabled               "Do not disturb"                      {channel="miio:vacuum:03DA214A:status#dnd_enabled"}
+Number      Vacuum_StatusMapPresent               "Map present"                         {channel="miio:vacuum:03DA214A:status#map_present"}
+String      Vacuum_StatusState                    "State"                               {channel="miio:vacuum:03DA214A:status#state"}
+Number      Vacuum_ConsumablesMainBrushPercent    "Main brush remaining"                {channel="miio:vacuum:03DA214A:consumables#main_brush_percent"}
+Number      Vacuum_ConsumablesSideBrushPercent    "Side brush remaining"                {channel="miio:vacuum:03DA214A:consumables#side_brush_percent"}
+Number      Vacuum_ConsumablesFilterPercent       "Filter usage remaining"              {channel="miio:vacuum:03DA214A:consumables#filter_percent"}
+Number      Vacuum_ConsumablesSensorDirtPercent   "Sensor dirt remaining"               {channel="miio:vacuum:03DA214A:consumables#sensor_dirt_percent"}
+Number      Vacuum_ConsumablesMainBrushTime       "Main brush hours till replacement"   {channel="miio:vacuum:03DA214A:consumables#main_brush_time"}
+Number      Vacuum_ConsumablesSideBrushTime       "Side brush hours till replacement"   {channel="miio:vacuum:03DA214A:consumables#side_brush_time"}
+Number      Vacuum_ConsumablesFilterTime          "Filter hours till replacement"       {channel="miio:vacuum:03DA214A:consumables#filter_time"}
+Number      Vacuum_ConsumablesSensorDirtTime      "Sensor dirt time till cleaning"      {channel="miio:vacuum:03DA214A:consumables#sensor_dirt_time"}
+String      Vacuum_ConsumablesConsumableReset     "Reset consumable"                    {channel="miio:vacuum:03DA214A:consumables#consumable_reset"}
+Switch      Vacuum_DndDndFunction                 "Do not disturb functionality"        {channel="miio:vacuum:03DA214A:dnd#dnd_function"}
+String      Vacuum_DndDndStart                    "Start time dnd"                      {channel="miio:vacuum:03DA214A:dnd#dnd_start"}
+String      Vacuum_DndDndEnd                      "End time dnd"                        {channel="miio:vacuum:03DA214A:dnd#dnd_end"}
+Number      Vacuum_HistoryTotalCleanArea          "Total cleaning area"                 {channel="miio:vacuum:03DA214A:history#total_clean_area"}
+Number      Vacuum_HistoryTotalCleanTime          "Total cleaning time"                 {channel="miio:vacuum:03DA214A:history#total_clean_time"}
+Number      Vacuum_HistoryTotalCleanCount         "Total cleanings"                     {channel="miio:vacuum:03DA214A:history#total_clean_count"}
+DateTime    Vacuum_CleaningLastCleanStartTime     "Cleaning start"                      {channel="miio:vacuum:03DA214A:cleaning#last_clean_start_time"}
+DateTime    Vacuum_CleaningLastCleanEndTime       "Cleaning end"                        {channel="miio:vacuum:03DA214A:cleaning#last_clean_end_time"}
+Number      Vacuum_CleaningLastCleanArea          "Cleaning area"                       {channel="miio:vacuum:03DA214A:cleaning#last_clean_area"}
+Number      Vacuum_CleaningLastCleanDuration      "Cleaning duration"                   {channel="miio:vacuum:03DA214A:cleaning#last_clean_duration"}
+Number      Vacuum_CleaningLastCleanError         "Error"                               {channel="miio:vacuum:03DA214A:cleaning#last_clean_error"}
+Switch      Vacuum_CleaningLastCleanFinish        "Cleaning finished"                   {channel="miio:vacuum:03DA214A:cleaning#last_clean_finish"}
+String      Vacuum_CleaningLastCleanRecord        "Cleaning record"                     {channel="miio:vacuum:03DA214A:cleaning#last_clean_record"}
+String      Vacuum_NetworkSsid                    "Ssid"                                {channel="miio:vacuum:03DA214A:network#ssid"}
+String      Vacuum_NetworkBssid                   "Bssid"                               {channel="miio:vacuum:03DA214A:network#bssid"}
+Number      Vacuum_NetworkRssi                    "Rssi"                                {channel="miio:vacuum:03DA214A:network#rssi"}
+Number      Vacuum_NetworkLife                    "Life"                                {channel="miio:vacuum:03DA214A:network#life"}
