@@ -1,6 +1,6 @@
 {
     "F17": {
-        "updatedTime": "2019-08-12T16:55:55.362Z",
+        "updatedTime": "2019-07-07T14:57:34.400Z",
         "dashboards": [
             {
                 "id": "Music",
@@ -437,7 +437,7 @@
                         "name": "Average (All Speakers)",
                         "sizeX": 10,
                         "sizeY": 1,
-                        "item": "ChromecastAudiogroupAllSpeakersVolume",
+                        "item": "ChromecastAudiogroupAllVolume",
                         "type": "slider",
                         "row": 0,
                         "col": 0,
@@ -450,7 +450,7 @@
                         "name": "",
                         "sizeX": 2,
                         "sizeY": 1,
-                        "item": "ChromecastAudiogroupAllSpeakersTitle",
+                        "item": "ChromecastAudiogroupAllTitle",
                         "type": "dummy",
                         "row": 0,
                         "col": 10,
@@ -461,7 +461,7 @@
                         "name": "New Widget",
                         "sizeX": 2,
                         "sizeY": 2,
-                        "item": "ChromecastAudiogroupAllSpeakersImageSrc",
+                        "item": "ChromecastAudiogroupAllImageSrc",
                         "type": "image",
                         "row": 1,
                         "col": 10,
@@ -589,7 +589,7 @@
                         "row": 2,
                         "col": 0,
                         "config": {
-                            "string_item": "Vacuum_Action_Control"
+                            "string_item": "XiaomiImagiSuckActionsControl"
                         }
                     },
                     {
@@ -601,20 +601,20 @@
                         "row": 0,
                         "col": 0,
                         "config": {
-                            "robotStatus": "Vacuum_StatusState",
-                            "robotError": "Vacuum_StatusErrorCode",
-                            "robotBatLevel": "Vacuum_StatusBattery",
-                            "robotCRMBrush": "Vacuum_ConsumablesMainBrushPercent",
-                            "robotCRSBrush": "Vacuum_ConsumablesSideBrushPercent",
-                            "robotCRFilter": "Vacuum_ConsumablesFilterPercent",
-                            "robotCRSensor": "Vacuum_ConsumablesSensorDirtPercent"
+                            "robotStatus": "XiaomiImagiSuckStatusState",
+                            "robotError": "XiaomiImagiSuckStatusErrorCode",
+                            "robotBatLevel": "XiaomiImagiSuckStatusBattery",
+                            "robotCRMBrush": "XiaomiImagiSuckConsumablesMainBrushPercent",
+                            "robotCRSBrush": "XiaomiImagiSuckConsumablesSideBrushPercent",
+                            "robotCRFilter": "XiaomiImagiSuckConsumablesFilterPercent",
+                            "robotCRSensor": "XiaomiImagiSuckConsumablesSensorDirtPercent"
                         }
                     },
                     {
                         "name": "Main Brush",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_ConsumablesMainBrushPercent",
+                        "item": "XiaomiImagiSuckConsumablesMainBrushPercent",
                         "type": "dummy",
                         "row": 5,
                         "col": 0,
@@ -634,7 +634,7 @@
                         "name": "side brush",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_ConsumablesSideBrushPercent",
+                        "item": "XiaomiImagiSuckConsumablesSideBrushPercent",
                         "type": "dummy",
                         "row": 5,
                         "col": 1,
@@ -645,7 +645,7 @@
                         "name": "filter",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_ConsumablesFilterPercent",
+                        "item": "XiaomiImagiSuckConsumablesFilterPercent",
                         "type": "dummy",
                         "row": 5,
                         "col": 2,
@@ -656,7 +656,7 @@
                         "name": "sensors",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_ConsumablesSensorDirtPercent",
+                        "item": "XiaomiImagiSuckConsumablesSensorDirtPercent",
                         "type": "dummy",
                         "row": 5,
                         "col": 3,
@@ -676,7 +676,7 @@
                         "name": "Cleaning area",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanArea",
+                        "item": "XiaomiImagiSuckHistoryTotalCleanArea",
                         "type": "dummy",
                         "nolinebreak": false,
                         "unit": "m2",
@@ -687,7 +687,7 @@
                         "name": "Cleaning time",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanTime",
+                        "item": "XiaomiImagiSuckHistoryTotalCleanTime",
                         "type": "dummy",
                         "nolinebreak": false,
                         "unit": "",
@@ -698,7 +698,7 @@
                         "name": "Cleaning Count",
                         "sizeX": 1,
                         "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanCount",
+                        "item": "XiaomiImagiSuckHistoryTotalCleanCount",
                         "type": "dummy",
                         "nolinebreak": false,
                         "unit": "",

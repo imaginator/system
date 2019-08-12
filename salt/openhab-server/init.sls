@@ -18,8 +18,8 @@ openhab2:
 
 openhab-repo:
   pkgrepo.managed:
-    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main
-    - file: /etc/apt/sources.list.d/openhab2.list
+    - name: deb https://dl.bintray.com/openhab/apt-repo2 stable main
+    - file: /etc/apt/sources.list.d/openhab.list
     - humanname: openhab2 repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 
