@@ -19,7 +19,7 @@ ExecStart=/bin/sh -c '              \
     -xerror                         \
     -stimeout 5000000               \
     -thread_queue_size 2048         \
-    -reorder_queue_size 16000        \
+    -reorder_queue_size 16000       \
     -rtsp_transport tcp             \
     -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
     -c:v copy -an -sn -dn           \
@@ -36,9 +36,9 @@ ExecStart=/bin/sh -c '              \
     -i -                            \
     -c copy                         \
     -f segment                      \
-        -segment_time 3600          \
+        -segment_time 86400         \
         -segment_format matroska    \
-        -segment_format_options live=1:reserve_index_space=100k \
+        -reset_timestamps 1         \
     -strftime 1                     \
     "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
     '
@@ -50,3 +50,4 @@ WantedBy=multi-user.target
 # https://ipcamtalk.com/threads/fix-non-monotonous-dts-errors-in-ffmpeg.30465/#post-286226
 # https://superuser.com/questions/1430756/ffmpeg-to-fix-video-playback-speed-without-re-encoding/1430914?noredirect=1#comment2159396_1430914
 # https://superuser.com/questions/1431088/ffmpeg-to-get-an-hevc-rtsp-stream-into-an-mkv-container
+# https://superuser.com/questions/1472242/ffmpeg-to-manually-set-a-file-duration/1473002#1473002
