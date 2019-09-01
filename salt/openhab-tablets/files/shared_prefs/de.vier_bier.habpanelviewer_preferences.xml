@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="pref_allow_mixed_content" value="false" />
+    <boolean name="pref_autoplay_video" value="false" />
+    <boolean name="pref_battery_enabled" value="false" />
+    <boolean name="pref_brightness_average" value="true" />
+    <boolean name="pref_brightness_enabled" value="false" />
+    <boolean name="pref_capture_screen_enabled" value="false" />
+    <boolean name="pref_connected_enabled" value="false" />
+    <boolean name="pref_desktop_mode" value="false" />
+    <boolean name="pref_device_admin" value="true" />
+    <boolean name="pref_disable_cache" value="false" />
+    <boolean name="pref_hardware_accelerated" value="true" />
+    <boolean name="pref_immersive" value="true" />
+    <boolean name="pref_intro_shown" value="true" />
+    <boolean name="pref_javascript" value="true" />
+    <boolean name="pref_load_start_url_on_screenon" value="false" />
+    <boolean name="pref_log_browser_messages" value="true" />
+    <boolean name="pref_motion_detection_enabled" value="false" />
+    <boolean name="pref_motion_detection_new_api" value="true" />
+    <boolean name="pref_motion_detection_preview" value="false" />
+    <boolean name="pref_pressure_average" value="true" />
+    <boolean name="pref_pressure_enabled" value="false" />
+    <boolean name="pref_prevent_dragging" value="false" />
+    <boolean name="pref_proximity_enabled" value="false" />
+    <boolean name="pref_restart_enabled" value="true" />
+    <boolean name="pref_screen_enabled" value="false" /> 
+    <boolean name="pref_show_context_menu" value="true" />
+    <boolean name="pref_show_on_lock_screen" value="true" />
+    <boolean name="pref_startup_enabled" value="false" />
+    <boolean name="pref_temperature_average" value="true" />
+    <boolean name="pref_temperature_enabled" value="false" />
+    <boolean name="pref_track_browser_connection" value="false" />
+    <boolean name="pref_usage_enabled" value="false" />
+    <boolean name="pref_volume_enabled" value="true" />
+    <string name="pref_brightness_intervall">60</string>
+    <string name="pref_connected_interval">60</string>
+    <string name="pref_jpeg_quality">70</string>
+    <string name="pref_menu_position">right</string>
+    <string name="pref_motion_detection_granularity">20</string>
+    <string name="pref_motion_detection_leniency">20</string>
+    <string name="pref_motion_detection_sleep">500</string>
+    <string name="pref_pressure_intervall">60</string>
+    <string name="pref_server_url">http://openhab.imagilan/habpanel/#/</string>
+    <string name="pref_take_pic_delay">100</string>
+    <string name="pref_temperature_intervall">60</string>
+    <string name="pref_theme">dark</string>
+    <string name="pref_usage_timeout">60</string>
+</map>
