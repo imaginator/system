@@ -41,7 +41,7 @@
     <string name="pref_motion_detection_leniency">20</string>
     <string name="pref_motion_detection_sleep">500</string>
     <string name="pref_pressure_intervall">60</string>
-    <string name="pref_server_url">http://openhab.imagilan/habpanel/#/</string>
+    <string name="pref_server_url">http://openhab.imagilan/habpanel/index.html#/view/Bedroom?kiosk=on</string>
     <string name="pref_take_pic_delay">100</string>
     <string name="pref_temperature_intervall">60</string>
     <string name="pref_theme">dark</string>
