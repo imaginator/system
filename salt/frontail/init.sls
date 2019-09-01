@@ -18,6 +18,15 @@ install-frontail:
       - pkg: frontail-dependencies
       - file: /opt/frontail
 
+/opt/frontail/node_modules/frontail/web/assets/styles/custom.css:
+  file.managed:
+    - makedirs: true
+    - user: openhab
+    - group: openhab
+    - source: salt://frontail/files/custom.css
+    - require:
+      - npm: install-frontail
+
 /opt/frontail/preset.json:
   file.managed:
     - makedirs: true
