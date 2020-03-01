@@ -13,14 +13,12 @@ reload-nginx-if-config-changes:
     - reload: True
     - watch:
       - file: /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf
-      - file: /etc/nginx/rtmp.conf
 
 motion_pkgs:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
       - ffmpeg
-      - libnginx-mod-rtmp
 
 /srv/video/netcams:
   file.directory:
@@ -33,11 +31,6 @@ motion_pkgs:
       - group
       - mode
 
-/etc/nginx/rtmp.conf:
-  file.managed:
-    - source: salt://motion/files/rtmp.conf
-    - template: jinja
-
 /etc/nginx/sites-enabled/eyeinthesky.imaginator.com.conf:
   file.managed:
     - source: salt://motion/files/nginx-vhost-eyeinthesky.conf
@@ -49,25 +42,6 @@ motion_pkgs:
     - group: www-data
     - source: salt://motion/files/html
     - template: jinja
-
-webcam-publisher.service:
-  file.managed:
-    - name: /etc/systemd/system/webcam-publisher.service
-    - source: salt://motion/files/webcam-publisher.service
-    - user: root
-    - group: root
-    - mode: 644
-    - template: jinja
-  module.run:
-    - name: service.systemctl_reload
-    - onchanges:
-      - file: webcam-publisher.service
-  service.running:
-    - enable: True
-    - require:
-      - file: webcam-publisher.service
-    - watch:
-      - file: webcam-publisher.service
 
 record-video.service:
   file.managed:
