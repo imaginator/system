@@ -37,8 +37,8 @@ ExecStart=/bin/sh -c '              \
     -c copy                         \
     -f segment                      \
         -segment_time 86400         \
+        -initial_offset "$(date +%%s.%%N)" \
         -segment_format matroska    \
-        -reset_timestamps 1         \
     -strftime 1                     \
     "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
     '
