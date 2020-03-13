@@ -1,0 +1,7 @@
+Bridge velux:klf200:gs28    [ ipAddress="veluxgw.imagilan", tcpPort=51200, password="", isProtocolTraceEnabled=true ] 
+Thing velux:window:gs28:window001	(velux:klf200:gs28)	[ serial="53:09:40:5A:0C:2A:05:64"  ]
+
+    Thing   scene   windowClosed    [ sceneName="V_DG_Window_Mitte_000" ]
+    Thing   scene   windowUnlocked  [ sceneName="V_DG_Window_Mitte_005" ]
+    Thing   scene   windowOpened    [ sceneName="V_DG_Window_Mitte_100" ]
+    Thing   scene   unknownScene    [ sceneName="ThisIsADummySceneName" ]

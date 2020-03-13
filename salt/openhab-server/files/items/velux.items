@@ -5,12 +5,12 @@ String  V_STATUS    "Status [%s]"                   	{ velux="thing=bridge;chann
 String  V_TIMESTAMP "Timestamp [%.1f]"              	{ velux="thing=bridge;channel=timestamp" }
 String  V_CHECK     "Velux Config Check [%s]"       	{ velux="thing=bridge;channel=check" }
 String  V_FIRMWARE  "Firmware [%s]"                 	{ velux="thing=bridge;channel=firmware" }
-String	V_CONF_LAN_IP	"KLF LAN IP [%s]"		{ velux="thing=bridge;channel=ipAddress" }
-String	V_CONF_LAN_SUBNET "KLF LAN Subnet [%s]"		{ velux="thing=bridge;channel=subnetMask" }
-String	V_CONF_LAN_GW	"KLF LAN Gateway [%s]"		{ velux="thing=bridge;channel=defaultGW" }
-Switch	V_CONF_LAN_DHCP	"KLF LAN DHCP [%s]"		{ velux="thing=bridge;channel=DHCP" }
-String	V_CONF_WLAN_SSID "KLF WLAN SSID [%s]"		{ velux="thing=bridge;channel=WLANSSID" }
-String	V_CONF_WLAN_PW	"KLF WLAN Password [%s]"	{ velux="thing=bridge;channel=WLANPassword" }
+String	V_CONF_LAN_IP	"KLF LAN IP [%s]"		        { velux="thing=bridge;channel=ipAddress" }
+String	V_CONF_LAN_SUBNET "KLF LAN Subnet [%s]"		    { velux="thing=bridge;channel=subnetMask" }
+String	V_CONF_LAN_GW	"KLF LAN Gateway [%s]"		    { velux="thing=bridge;channel=defaultGW" }
+Switch	V_CONF_LAN_DHCP	"KLF LAN DHCP [%s]"		        { velux="thing=bridge;channel=DHCP" }
+String	V_CONF_WLAN_SSID "KLF WLAN SSID [%s]"		    { velux="thing=bridge;channel=WLANSSID" }
+String	V_CONF_WLAN_PW	"KLF WLAN Password [%s]"	    { velux="thing=bridge;channel=WLANPassword" }
 
 
 // Velux Shutters

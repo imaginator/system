@@ -28,7 +28,7 @@ openhab-packages:
     - cache_valid_time: 30000
     - pkgs:
       - openjdk-8-jre-headless # https://www.openhab.org/docs/installation/#prerequisites
-      - postgresql
+      - postgresql-10
       - apache2-utils
       - mosquitto
       - mosquitto-clients

@@ -1,0 +1,6 @@
+onkyo:onkyoAVR:onkyo-receiver "Onkyo TX-RZ3100 Receiver" @ "lounge" [
+    ipAddress="onkyo-receiver",
+    port=60128,
+    volumeLimit=25,
+    refresh=30
+    ]

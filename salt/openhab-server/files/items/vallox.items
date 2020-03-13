@@ -1,0 +1,7 @@
+Number State                "Current state: [%d]"                        {channel="valloxmv:valloxmv:lueftung:state"}
+Number FanSpeed             "Fanspeed [%d %%]"                           {channel="valloxmv:valloxmv:lueftung:fanspeed"}
+Number Temp_TempInside      "Temp inside [%.1f °C]"      <temperature>   {channel="valloxmv:valloxmv:lueftung:tempinside"}
+Number Temp_TempOutside     "Temp outside [%.1f °C]"     <temperature>   {channel="valloxmv:valloxmv:lueftung:tempoutside"}
+Number Temp_TempExhaust     "Temp outgoing [%.1f °C]"    <temperature>   {channel="valloxmv:valloxmv:lueftung:tempexhaust"}
+Number Temp_TempIncoming    "Temp incoming [%.1f °C]"    <temperature>   {channel="valloxmv:valloxmv:lueftung:tempincoming"}
+Number Humidity             "Humidity [%d %%]"                           {channel="valloxmv:valloxmv:lueftung:humidity"}
