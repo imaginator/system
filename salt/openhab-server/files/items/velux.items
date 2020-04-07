@@ -1,22 +1,25 @@
-// Velux Bridge parameters
+String			VeluxWindowControllerStatus			"Bridge state"									{channel="velux:klf200:veluxgw:status"}
+Switch			VeluxWindowControllerReload			"Reload"										{channel="velux:klf200:veluxgw:reload"}
+Number			VeluxWindowControllerDowntime		"Downtime"										{channel="velux:klf200:veluxgw:downtime"}
+Switch			VeluxWindowControllerDoDetection	"Activate bridge detection mode"				{channel="velux:klf200:veluxgw:doDetection"}
+// Arbeit
+Rollershutter	ArbeitInsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ai:position"}
+Rollershutter	ArbeitOutsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ao:position"}
+// Bedroom 2
+Rollershutter	Bedroom2LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b2li:position"}
+Rollershutter	Bedroom2LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2lo:position"}
+Rollershutter	Bedroom2RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
+// Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
 
-Switch  V_RELOAD    "Reload info from bridge"           { velux="thing=bridge;channel=reload" }
-String  V_STATUS    "Status [%s]"                   	{ velux="thing=bridge;channel=status" }
-String  V_TIMESTAMP "Timestamp [%.1f]"              	{ velux="thing=bridge;channel=timestamp" }
-String  V_CHECK     "Velux Config Check [%s]"       	{ velux="thing=bridge;channel=check" }
-String  V_FIRMWARE  "Firmware [%s]"                 	{ velux="thing=bridge;channel=firmware" }
-String	V_CONF_LAN_IP	"KLF LAN IP [%s]"		        { velux="thing=bridge;channel=ipAddress" }
-String	V_CONF_LAN_SUBNET "KLF LAN Subnet [%s]"		    { velux="thing=bridge;channel=subnetMask" }
-String	V_CONF_LAN_GW	"KLF LAN Gateway [%s]"		    { velux="thing=bridge;channel=defaultGW" }
-Switch	V_CONF_LAN_DHCP	"KLF LAN DHCP [%s]"		        { velux="thing=bridge;channel=DHCP" }
-String	V_CONF_WLAN_SSID "KLF WLAN SSID [%s]"		    { velux="thing=bridge;channel=WLANSSID" }
-String	V_CONF_WLAN_PW	"KLF WLAN Password [%s]"	    { velux="thing=bridge;channel=WLANPassword" }
+// Bedroom 3
+Rollershutter	Bedroom3LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b3li:position"}
+Rollershutter	Bedroom3LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3lo:position"}
+Rollershutter	Bedroom3RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3ri:position"}
+Rollershutter	Bedroom3RightOusideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3ro:position"}
 
-
-// Velux Shutters
-
-Rollershutter V_DG_M_W	"Velux DG Window Bathroom [%d]"	{ velux="thing=actuator;channel=serial#01:52:21:3E:26:0C:1B:01*"}
-Rollershutter V_DG_M_S	"Velux DG Shutter Bathroom [%d]"{ velux="thing=actuator;channel=serial#01:52:00:21:00:07:00:02"}
-Rollershutter V_DG_W_S	"Velux DG Shutter West [%d]"	{ velux="thing=actuator;channel=serial#01:53:09:40:21:0C:2A:03" }
-Rollershutter V_DG_E_S	"Velux DG Shutter East [%d]"	{ velux="thing=actuator;channel=serial#11:56:32:14:5A:21:1C:04" }
-Rollershutter V_OG_W_S	"Velux OG Somfy Shutter [%d]"	{ velux="thing=actuator;channel=serial#Bathroom" }
+// Lounge
+Rollershutter	LoungeLeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lli:position"}
+Rollershutter	LoungeLeftOutsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:llo:position"}
+Rollershutter	LoungeMiddleInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lmi:position"}
+Rollershutter	LoungeMiddleOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:lmo:position"}
+Rollershutter	LoungeRightInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lri:position"}
