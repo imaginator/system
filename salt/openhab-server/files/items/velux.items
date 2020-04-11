@@ -23,3 +23,6 @@ Rollershutter	LoungeLeftOutsideBlindPosition		"Position"										{channel="velu
 Rollershutter	LoungeMiddleInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lmi:position"}
 Rollershutter	LoungeMiddleOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:lmo:position"}
 Rollershutter	LoungeRightInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lri:position"}
+
+// Lichtkuppel
+Rollershutter   HallwayRooftopPosition              "Position"                                      {channel="velux:window:veluxgw:roof:position"}

@@ -18,9 +18,9 @@ openhab2:
 
 openhab-repo:
   pkgrepo.managed:
-    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main
+    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main
     - file: /etc/apt/sources.list.d/openhab2.list
-    - humanname: openhab2 repo
+    - humanname: openhab2 unstable repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 
 openhab-packages:
@@ -89,8 +89,8 @@ openhab-dialout-group:
 ipcamera-binding:
   archive.extracted:
     - name: /usr/share/openhab2/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera2019-04-13.zip
-    - source_hash: 3153ac3ca8872f8140ea78055606c473ffa6c431 
+    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-2020-03-19.zip
+    - source_hash: 4ae0119a44d22567d5a78c55231ac358383e35c5 
     - enforce_toplevel: False
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
