@@ -2,14 +2,16 @@ String			VeluxWindowControllerStatus			"Bridge state"									{channel="velux:kl
 Switch			VeluxWindowControllerReload			"Reload"										{channel="velux:klf200:veluxgw:reload"}
 Number			VeluxWindowControllerDowntime		"Downtime"										{channel="velux:klf200:veluxgw:downtime"}
 Switch			VeluxWindowControllerDoDetection	"Activate bridge detection mode"				{channel="velux:klf200:veluxgw:doDetection"}
+
 // Arbeit
 Rollershutter	ArbeitInsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ai:position"}
 Rollershutter	ArbeitOutsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ao:position"}
+
 // Bedroom 2
 Rollershutter	Bedroom2LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b2li:position"}
 Rollershutter	Bedroom2LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2lo:position"}
 Rollershutter	Bedroom2RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
-// Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
+Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
 
 // Bedroom 3
 Rollershutter	Bedroom3LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b3li:position"}
@@ -25,4 +27,8 @@ Rollershutter	LoungeMiddleOutsideBlindPosition	"Position"										{channel="vel
 Rollershutter	LoungeRightInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lri:position"}
 
 // Lichtkuppel
-Rollershutter   HallwayRooftopPosition              "Position"                                      {channel="velux:window:veluxgw:roof:position"}
+Rollershutter   HallwayRooftopWindowOpenerPosition  "Position"                                      {channel="velux:window:veluxgw:roof:position"}
+
+// Main Bathroom
+Rollershutter   MainBathroomOutsideBlindPosition    "Position"                                      {channel="velux:rollershutter:veluxgw:mbo:position"}
+Rollershutter   MainBathroomWindowOpenerPosition    "Position"                                      {channel="velux:window:veluxgw:mb:position"}

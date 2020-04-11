@@ -39,17 +39,19 @@ ExecStart=/bin/sh -c '              \
         -segment_time 86400         \
         -initial_offset "$(date +%%s.%%N)" \
         -segment_format matroska    \
-        -strftime 1                 \
+        -strftime 1c                 \
         "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
     -c:v libx264                    \
     -an                             \
     -f dash                         \
-        -b:v 200k                   \
-        -window_size 10             \
-        -extra_window_size 40       \
-        -seg_duration 10            \
+        -b:v 300k                   \
+        -use_template 1             \
+        -use_timeline 1             \
+        -window_size 5              \
         -remove_at_exit 1           \
-        /var/web/eyeinthesky.imaginator.com/streams/dash/index.mpd \
+        -dash_segment_type mp4      \
+        -utc_timing_url "https://time.akamai.com/?iso" \
+        /var/web/eyeinthesky.imaginator.com/streams/index.mpd \
     '
 
 [Install]

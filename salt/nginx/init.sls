@@ -18,7 +18,6 @@ nginx_pkgs:
     - pkgs:
       - nginx-full
       - certbot
-      - libnginx-mod-rtmp
       - apache2-utils
 
 bunker-cert:

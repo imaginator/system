@@ -1,27 +1,39 @@
-Bridge knx:ip:knx_gw "KNX IP Gateway" @ "home" [
+Bridge knx:ip:knxgw "KNX IP Gateway" @ "schaltschrank" [
     type="TUNNEL",
-    ipAddress="knx-gw.imagilan",
-    localIp="10.7.11.1",
-    portNumber=3671,
-    readingPause=50,
-    responseTimeout=10,
-    readRetriesLimit=3,
-    autoReconnectPeriod=1,
-    localSourceAddr="0.0.0"]
-    {
-    Thing device DALI_GW "KNX DALI Gateway" @ "home" [
-        address="1.1.2",
-        fetch=false,
-        pingInterval=600,
-        readInterval=300 ]
-    {
-    }
-    Thing device LIGHT_SWITCH_1 "KNX 8 Buttons (bedroom 1)" @ "bedroom 1" [ 
-        address="1.1.3",
-        fetch=false,
-        pingInterval=600,
-        readInterval=300]
-    {
+    ipAddress="10.7.10.105",
+    localSourceAddr="0.0.0" // 0.0.0 makes OH detect the right address.
+] { 
+    Thing device power "MDT STC-640.01 Bus power supply 640mA" @ "schaltschrank" [
+    address="2.1.1"
+    ]
+
+    Thing  device ip_gateway  "MDT SCN-IP000.02/.03 IP Interface without Secure" @ "schaltschrank" [
+    address="2.1.2"
+    ]
+
+    Thing  device actuator1  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
+    address="2.1.3"
+    ]
+
+    Thing  device actuator2  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
+    address="2.1.4"
+    ]
+
+    Thing  device actuator3  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
+    address="2.1.5"
+    ]
+ 
+    Thing  device jalousie  "MDT JAL-0810.02 Shutter Actuator 8-fold, 8SU, 230VAC, 10A" @ "schaltschrank" [
+    address="2.1.6"
+    ]
+
+    Thing  device daligw  "MDT DaliControl 32" @ "schaltschrank" [
+    address="2.1.7"
+    ]
+
+    Thing device light_switch  "KNX 8 Buttons (bedroom 1)" @ "bedroom 1" [ 
+    address="2.2.1"
+    ]{
         Type dimmer: Ch_11 "Volume" [ ga="1/1/1+<1/1/0" ]
     }
 }

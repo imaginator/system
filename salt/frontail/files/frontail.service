@@ -14,8 +14,8 @@ ExecStart=/opt/frontail/node_modules/frontail/bin/frontail \
     --ui-highlight \
     --ui-highlight-preset /opt/frontail/preset.json \
     -t custom \
-    -l 200 \
-    -n 10 \
+    -l 300 \
+    -n 30 \
     /var/log/openhab2/events.log /var/log/openhab2/openhab.log
 Restart=always
 User=openhab

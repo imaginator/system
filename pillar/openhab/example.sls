@@ -9,3 +9,4 @@ openhab:
   wunderground_apikey: 'x'
   nokiahealth_token: 'x'
   nokiahealth_secret: 'x'
+  velux_password: 'x'
