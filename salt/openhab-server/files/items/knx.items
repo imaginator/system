@@ -1,2 +1,3 @@
-
-Dimmer   KNX8ButtonsBedroom1_Ch11   "KNX Volume (bedroom 1)"   {channel="knx:device:knx_gw:LIGHT_SWITCH_1:Ch_11"}
+Switch	KNX8Volume					"KNX Volume"						{channel="knx:device:knxgw:light_switch:Channel_Common"}
+Switch	KNX8PlayPause				"KNX PlayPause"						{channel="knx:device:knxgw:light_switch:PlayPause"}
+Dimmer	KNX8ButtonsBedroom1_Ch11	"KNX Volume (kitchen)"				{channel="knx:device:knx_gw:LIGHT_SWITCH_1:Ch_11"}

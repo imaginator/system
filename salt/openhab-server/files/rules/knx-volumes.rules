@@ -1,0 +1,24 @@
+rule "My knx dimmer"
+when
+    Item KNX8Volume received command
+then
+   if (receivedCommand == OFF) {
+        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) - 5)
+}
+    else if (receivedCommand == ON) {
+        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) + 5)
+}
+end
+
+
+rule "My knx PlayPause"
+when
+    Item KNX8PlayPause received command
+then
+   if (receivedCommand == OFF) {
+        ChromecastAudioKitchenControl.sendCommand(PAUSE)
+}
+    else if (receivedCommand == ON) {
+        ChromecastAudioKitchenControl.sendCommand(PLAY)
+}
+end

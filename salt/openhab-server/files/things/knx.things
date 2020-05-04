@@ -1,7 +1,8 @@
 Bridge knx:ip:knxgw "KNX IP Gateway" @ "schaltschrank" [
     type="TUNNEL",
     ipAddress="10.7.10.105",
-    localSourceAddr="0.0.0" // 0.0.0 makes OH detect the right address.
+    localSourceAddr="2.1.0",
+    autoReconnectPeriod="31"
 ] { 
     Thing device power "MDT STC-640.01 Bus power supply 640mA" @ "schaltschrank" [
     address="2.1.1"
@@ -31,9 +32,10 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "schaltschrank" [
     address="2.1.7"
     ]
 
-    Thing device light_switch  "KNX 8 Buttons (bedroom 1)" @ "bedroom 1" [ 
-    address="2.2.1"
+    Thing device light_switch  "KNX 8 Buttons (pillar)" @ "kitchen" [ 
+    address="2.1.32"
     ]{
-        Type dimmer: Ch_11 "Volume" [ ga="1/1/1+<1/1/0" ]
+        Type switch-control:    Channel_Common   [ ga="2/2/124+2/2/124"]
+        Type switch-control:    PlayPause        [ ga="2/2/125+2/2/125"]
     }
 }
