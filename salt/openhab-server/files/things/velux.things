@@ -1,30 +1,34 @@
-Bridge velux:klf200:veluxgw "VELUX Window Controller" @ "" [
+Bridge velux:klf200:veluxgw "VELUX Window Controller" @ "home" [
                         ipAddress="veluxgw.imagilan",
                         tcpPort=51200,
-                        // isSequentialEnforced="True",
+                        isBulkRetrievalEnabled=true,
+                        isSequentialEnforced=false,
+                        refreshMsecs=120000,
+                        retries=10,
                         password="{{ salt['pillar.get']('openhab:velux_password') }}" ]{
     // arbeit
-    Thing  rollershutter ai   "VELUX arbeit inside"            @ "aaa"  [ serial="53:29:4A:32:12:29:01:9B" ]
-    Thing  rollershutter ao   "VELUX arbeit outside"           @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:F1" ]
+    Thing  rollershutter ai   "VELUX arbeit inside"            @ "workroom"   [ serial="53:29:4A:32:12:29:01:9B" ]
+    Thing  rollershutter ao   "VELUX arbeit outside"           @ "workroom"   [ serial="53:29:0C:5A:12:2B:02:F1" ]
     // bedroom 2
-    Thing  rollershutter b2li "VELUX bedroom 2 left inside"    @ "aaa"  [ serial="53:29:4A:32:12:29:0F:95" ]
-    Thing  rollershutter b2lo "VELUX bedroom 2 left outside"   @ "aaa"  [ serial="53:29:0C:5A:12:2B:03:1A" ]
-    Thing  rollershutter b2ri "VELUX bedroom 2 right inside"   @ "aaa"  [ serial="53:29:4A:32:12:29:0F:96" ]
+    Thing  rollershutter b2li "VELUX bedroom 2 left inside"    @ "bedroom 2"  [ serial="53:29:4A:32:12:29:0F:95" ]
+    Thing  rollershutter b2lo "VELUX bedroom 2 left outside"   @ "bedroom 2"  [ serial="53:29:0C:5A:12:2B:03:1A" ]
+    Thing  rollershutter b2ri "VELUX bedroom 2 right inside"   @ "bedroom 2"  [ serial="53:29:4A:32:12:29:0F:96" ]
+    Thing  rollershutter b2ri "VELUX bedroom 2 right outside"  @ "bedroom 2"  [ serial="53:29:0C:5A:12:2B:02:FC" ]
     //Thing  rollershutter b2ro "VELUX bedroom 2 right outside"  @ "aaa"  [ serial="00:00:00:00:00:00:00:00" ]
     // bedroom 3
-    Thing  rollershutter b3li "VELUX bedroom 3 left inside"    @ "aaa"  [ serial="53:29:4A:32:12:24:12:37" ]
-    Thing  rollershutter b3lo "VELUX bedroom 3 left outside"   @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:FE" ]
-    Thing  rollershutter b3ri "VELUX bedroom 3 right inside"   @ "aaa"  [ serial="53:29:4A:32:13:09:0A:B1" ]
-    Thing  rollershutter b3ro "VELUX bedroom 3 right Outisde"  @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:EB" ]
+    Thing  rollershutter b3li "VELUX bedroom 3 left inside"    @ "bedroom 3"  [ serial="53:29:4A:32:12:24:12:37" ]
+    Thing  rollershutter b3lo "VELUX bedroom 3 left outside"   @ "bedroom 3"  [ serial="53:29:0C:5A:12:2B:02:FE" ]
+    Thing  rollershutter b3ri "VELUX bedroom 3 right inside"   @ "bedroom 3"  [ serial="53:29:4A:32:13:09:0A:B1" ]
+    Thing  rollershutter b3ro "VELUX bedroom 3 right Outisde"  @ "bedroom 3"  [ serial="53:29:0C:5A:12:2B:02:EB" ]
     // lounge
-    Thing  rollershutter lli  "VELUX lounge left inside"       @ "aaa"  [ serial="53:29:4A:32:12:29:06:D3" ] 
-    Thing  rollershutter llo  "VELUX lounge left outside"      @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:FF" ]
-    Thing  rollershutter lmi  "VELUX lounge middle inside"     @ "aaa"  [ serial="53:29:4A:32:12:29:0E:F7" ]
-    Thing  rollershutter lmo  "VELUX lounge middle outside"    @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:ED" ]
-    Thing  rollershutter lri  "VELUX lounge right inside"      @ "aaa"  [ serial="53:29:4A:32:12:29:1D:51" ]
+    Thing  rollershutter lli  "VELUX lounge left inside"       @ "lounge"     [ serial="53:29:4A:32:12:29:06:D3" ] 
+    Thing  rollershutter llo  "VELUX lounge left outside"      @ "lounge"     [ serial="53:29:0C:5A:12:2B:02:FF" ]
+    Thing  rollershutter lmi  "VELUX lounge middle inside"     @ "lounge"     [ serial="53:29:4A:32:12:29:0E:F7" ]
+    Thing  rollershutter lmo  "VELUX lounge middle outside"    @ "lounge"     [ serial="53:29:0C:5A:12:2B:02:ED" ]
+    Thing  rollershutter lri  "VELUX lounge right inside"      @ "lounge"     [ serial="53:29:4A:32:12:29:1D:51" ]
     // roof window in hallway
-    Thing  window        roof "VELUX hallway rooftop"          @ "aaa"  [ serial="53:2A:59:5A:13:01:01:BB" ] 
+    Thing  window        roof "VELUX hallway rooftop"          @ "hallway"    [ serial="53:2A:59:5A:13:01:01:BB" ] 
     // main bathroom
-    Thing  rollershutter mbo  "VELUX main bathroom blind"      @ "aaa"  [ serial="53:29:0C:5A:12:2B:02:FD" ]
-    Thing  window        mb   "VELUX main bathroom opener"     @ "aaa"  [ serial="56:36:13:5A:12:30:09:2A" ]
+    Thing  rollershutter mbo  "VELUX main bathroom blind"      @ "main bath"  [ serial="53:29:0C:5A:12:2B:02:FD" ]
+    Thing  window        mb   "VELUX main bathroom opener"     @ "main bath"  [ serial="56:36:13:5A:12:30:09:2A" ]
     }
