@@ -6,6 +6,6 @@ Switch     PingableNetworkDevice_Online_simon       "Online"         (AtHome)   
 Number     PingableNetworkDevice_Latency_simon      "Latency (ms)"               {channel="network:pingdevice:simon-phone:latency"}
 DateTime   PingableNetworkDevice_Lastseen_simon     "Last seen"                  {channel="network:pingdevice:simon-phone:lastseen"}
 
-Switch     PingableNetworkDevice_Online_susanne     "Online"         (AtHome)    {channel="network:pingdevice:susanne-phone:online"} 
-Number     PingableNetworkDevice_Latency_susanne    "Latency (ms)"               {channel="network:pingdevice:susanne-phone:latency"}
-DateTime   PingableNetworkDevice_Lastseen_susanne   "Last seen"                  {channel="network:pingdevice:susanne-phone:lastseen"}
+Switch     PingableNetworkDevice_Online_anne     "Online"         (AtHome)    {channel="network:pingdevice:anne-phone:online"} 
+Number     PingableNetworkDevice_Latency_anne    "Latency (ms)"               {channel="network:pingdevice:anne-phone:latency"}
+DateTime   PingableNetworkDevice_Lastseen_anne   "Last seen"                  {channel="network:pingdevice:anne-phone:lastseen"}

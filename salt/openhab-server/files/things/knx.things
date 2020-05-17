@@ -32,7 +32,7 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "schaltschrank" [
     address="2.1.7"
     ]
 
-    Thing device light_switch  "KNX 8 Buttons (pillar)" @ "kitchen" [ 
+    Thing device light_switch  "Push Button Plus 8-fold (pillar by fridge)" @ "kitchen" [ 
     address="2.1.32"
     ]{
         Type switch-control:    Channel_Common   [ ga="2/2/124+2/2/124"]

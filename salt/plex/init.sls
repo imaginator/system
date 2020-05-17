@@ -1,10 +1,18 @@
 {% from "plex/map.jinja" import plex with context %}
 
+plex-repo:
+  pkgrepo.managed:
+    - name: deb https://downloads.plex.tv/repo/deb public main
+    - humanname: plex repo
+    - key: https://downloads.plex.tv/plex-keys/PlexSign.key
+
 plex-server:
   pkg.installed:
-    - sources:
-      - plexmediaserver: {{ plex.url }}
+    - pkgs:
+      - plexmediaserver
     - cache_valid_time: 30000
+    - require: 
+      - pkgrepo: plex-repo
 
   service.running:
     - name: plexmediaserver

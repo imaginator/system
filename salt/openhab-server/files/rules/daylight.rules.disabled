@@ -1,0 +1,102 @@
+import org.joda.time.DateTime
+
+rule "daylight_colour_temp"
+when
+    // recompute every 60 seconds
+    Time cron "42 * * ? * MON-FRI *"
+then
+   var sunrise = new DateTime(LocalSun_RiseStart.state.toString)
+   var sunset = new DateTime(LocalSun_SetEnd.state.toString)
+   // things should be cold around wakeup, neutral during the day, and warm during the night
+   var preSunrise = sunrise.minusHours(1)
+   var postSunrise = sunrise.plusHours(2)
+   var preSunset = sunset.minusHours(1)
+
+   var now = new DateTime()
+
+   val night = 0.8
+   val day = 0.5
+   val wakeup = 0.3
+
+   var w = night
+   if (now.isBefore(preSunrise)) {
+       // 00:00 to pre-sunrise: 0.8
+       w = night
+   } else if (now.isBefore(sunrise)) {
+       // pre-sunrise to sunrise: 0.8 -> 0.3
+       var dt = 1.0*(sunrise.millis - preSunrise.millis)
+       var p = now.millis - preSunrise.millis
+       w = (1-p/dt)*night + (p/dt)*wakeup
+   } else if (now.isBefore(postSunrise)) {
+       // sunrise to post-sunrise: 0.3 -> 0.5
+       var dt = 1.0*(postSunrise.millis - sunrise.millis)
+       var p = now.millis - sunrise.millis
+       w = (1-p/dt)*wakeup + (p/dt)*day
+   } else if (now.isBefore(preSunset)) {
+       // post-sunrise to pre-sunset (day): 0.5 (neutral)
+       w = day
+   } else if (now.isBefore(sunset)) {
+       // pre-sunset to sunset: 0.5 -> 0.8
+       var dt = 1.0*(sunset.millis - preSunset.millis)
+       var p = now.millis - preSunset.millis
+       w = (1-p/dt)*day + (p/dt)*night
+   } else {
+       // after sunset: 0.8
+       w = night
+   }
+
+   if (DaylightCT.state == NULL || (DaylightCT.state as PercentType).intValue != Math.round(w * 100)) {
+     DaylightCT.sendCommand(w * 100)
+   }
+end
+
+rule "daylight_colour_temp_weekend"
+when
+    // recompute every 60 seconds
+    Time cron "42 * * ? * SAT,SUN *"
+then
+   // weekend formular: wakeup is later and less cold
+
+   var sunrise = new DateTime(LocalSun_RiseStart.state.toString)
+   var sunset = new DateTime(LocalSun_SetEnd.state.toString)
+   var preSunrise = sunrise.minusHours(0)
+   var postSunrise = sunrise.plusHours(2)
+   var preSunset = sunset.minusHours(1)
+
+   var now = new DateTime()
+
+   val night = 0.8
+   val day = 0.5
+   val wakeup = 0.4
+
+   var w = night
+   if (now.isBefore(preSunrise)) {
+       // 00:00 to pre-sunrise: 0.8
+       w = night
+   } else if (now.isBefore(sunrise)) {
+       // pre-sunrise to sunrise: 0.8 -> 0.3
+       var dt = 1.0*(sunrise.millis - preSunrise.millis)
+       var p = now.millis - preSunrise.millis
+       w = (1-p/dt)*night + (p/dt)*wakeup
+   } else if (now.isBefore(postSunrise)) {
+       // sunrise to post-sunrise: 0.3 -> 0.5
+       var dt = 1.0*(postSunrise.millis - sunrise.millis)
+       var p = now.millis - sunrise.millis
+       w = (1-p/dt)*wakeup + (p/dt)*day
+   } else if (now.isBefore(preSunset)) {
+       // post-sunrise to pre-sunset (day): 0.5 (neutral)
+       w = day
+   } else if (now.isBefore(sunset)) {
+       // pre-sunset to sunset: 0.5 -> 0.8
+       var dt = 1.0*(sunset.millis - preSunset.millis)
+       var p = now.millis - preSunset.millis
+       w = (1-p/dt)*day + (p/dt)*night
+   } else {
+       // after sunset: 0.8
+       w = night
+   }
+
+   if (DaylightCT.state == NULL || (DaylightCT.state as PercentType).intValue != Math.round(w * 100)) {
+     DaylightCT.sendCommand(w * 100)
+   }
+end 

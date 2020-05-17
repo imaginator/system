@@ -1,8 +1,19 @@
-// NB: bogus onvif_port to avoid PTZ probe error
 ipcamera:HIKVISION:camera01 "eye in the sky" @ "home" [  
     IPADDRESS="camera01.imagilan", 
     USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
     PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
     SNAPSHOT_URL_OVERIDE="http://camera01.imagilan/ISAPI/Streaming/channels/101/picture",
+    IMAGE_UPDATE_EVENTS="1",
+    UPDATE_IMAGE=true,
     POLL_CAMERA_MS=15000
-    ]
+]
+
+ipcamera:ONVIF:camera02 "cat toilet" @ "home" [
+    IPADDRESS="camera02.imagilan",
+    USERNAME="root",
+    PASSWORD="ismart12",
+    SNAPSHOT_URL_OVERRIDE="http://camera02.imagilan/cgi-bin/currentpic.cgi",
+    IMAGE_UPDATE_EVENTS="1",
+    UPDATE_IMAGE=true,
+    POLL_CAMERA_MS=15000
+]

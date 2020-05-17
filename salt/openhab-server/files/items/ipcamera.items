@@ -20,4 +20,20 @@ Dimmer   EyeInTheSky_Tilt                        "Tilt"                         
 Dimmer   EyeInTheSky_Zoom                        "Zoom"                                                             {channel="ipcamera:HIKVISION:camera01:zoom"}
 String   EyeInTheSky_StreamUrl                   "Stream url"                                                       {channel="ipcamera:HIKVISION:camera01:streamUrl"}
 String   EyeInTheSky_RtspUrl                     "Rtsp url"                                                         {channel="ipcamera:HIKVISION:camera01:rtspUrl"}
-String   EyeInTheSkyImageUrl                    "Image url"                                                         {channel="ipcamera:HIKVISION:camera01:imageUrl"}
+String   EyeInTheSkyImageUrl                     "Image url"                                                         {channel="ipcamera:HIKVISION:camera01:imageUrl"}
+
+Image    CatToiletImage                 "Snapshot from camera"                            {channel="ipcamera:ONVIF:camera02:image"}
+Switch   CatToiletUpdateImageNow        "Update the image"                                {channel="ipcamera:ONVIF:camera02:updateImageNow"}
+Switch   CatToiletUpdateGif             "Create an animated gif"                          {channel="ipcamera:ONVIF:camera02:updateGif"}
+Dimmer   CatToiletControlMotionAlarm    "Enable/disable/threshold for the motion alarm"   {channel="ipcamera:ONVIF:camera02:controlMotionAlarm"}
+Switch   CatToiletExternalMotion        "Externally trigger the motion alarm"             {channel="ipcamera:ONVIF:camera02:externalMotion"}
+Switch   CatToiletMotionAlarm           "Motion alarm"                                    {channel="ipcamera:ONVIF:camera02:motionAlarm"}
+String   CatToiletLastMotionType        "Last motion type"                                {channel="ipcamera:ONVIF:camera02:lastMotionType"}
+Dimmer   CatToiletThresholdAudioAlarm   "Threshold for the audio alarm"                   {channel="ipcamera:ONVIF:camera02:thresholdAudioAlarm"}
+Switch   CatToiletAudioAlarm            "Audio alarm"                                     {channel="ipcamera:ONVIF:camera02:audioAlarm"}
+Number   CatToiletGotoPreset            "Goto preset"                                     {channel="ipcamera:ONVIF:camera02:gotoPreset"}
+Switch   CatToiletStartStream           "Create segments for casting/streaming"           {channel="ipcamera:ONVIF:camera02:startStream"}
+String   CatToiletStreamUrl             "Mjpeg url"                                       {channel="ipcamera:ONVIF:camera02:streamUrl"}
+String   CatToiletRtspUrl               "Rtsp url"                                        {channel="ipcamera:ONVIF:camera02:rtspUrl"}
+String   CatToiletImageUrl              "Image url"                                       {channel="ipcamera:ONVIF:camera02:imageUrl"}
+String   CatToiletHlsUrl                "Hls url"                                         {channel="ipcamera:ONVIF:camera02:hlsUrl"}

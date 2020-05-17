@@ -1,0 +1,24 @@
+var String sCoordinates = ""
+
+rule "start vaccuum"
+when
+    Item XiaomiRobotVacuum1SStartCleaning_Proxy received command 
+then
+     if (receivedCommand==ON) {
+        if (gVacClean.members.filter[r|r.state == ON].size != 0) {                              // Start only if at least one switch is set to ON
+        sCoordinates = ""                                                                       // (re-) initialize var
+        gVacClean.members.filter[r|r.state == ON].forEach[r|                                    // for each switch set to ON
+            sCoordinates=sCoordinates + transform("MAP","imagisuck.map",r.label) + ","             // add it to a string
+        ]
+        sCoordinates = sCoordinates.substring(0,sCoordinates.length - 1)                        // get rid of last comma
+        if(VacAll_Proxy.state == ON) sCoordinates=transform("MAP","imagisck.map","Alles")         // if All is active, use simple map
+        XiaomiRobotVacuum1SActionsCommands.sendCommand("app_zoned_clean["+sCoordinates+"]")     // start cleaning
+        //logInfo("EXTRA", sCoordinates)
+        XiaomiRobotVacuum1SActionsFan.sendCommand(104)  //set the fan to max
+        }
+     }
+     else  {
+        XiaomiRobotVacuum1SActionsCommands.sendCommand("app_charge")  // go back to the docking station
+       }
+     
+end

@@ -24,4 +24,3 @@ Switch PlexTVRight		"Right"	       		   <video>		{plex="playerid#navigation/move
 
 Switch PlexTVForward	"Forward"	       	   <video>		{plex="playerid#playback/stepForward"}
 Switch PlexTVReverse	"Reverse"	       	   <video>		{plex="playerid#playback/stepBack"}
-       

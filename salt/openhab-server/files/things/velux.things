@@ -13,8 +13,7 @@ Bridge velux:klf200:veluxgw "VELUX Window Controller" @ "home" [
     Thing  rollershutter b2li "VELUX bedroom 2 left inside"    @ "bedroom 2"  [ serial="53:29:4A:32:12:29:0F:95" ]
     Thing  rollershutter b2lo "VELUX bedroom 2 left outside"   @ "bedroom 2"  [ serial="53:29:0C:5A:12:2B:03:1A" ]
     Thing  rollershutter b2ri "VELUX bedroom 2 right inside"   @ "bedroom 2"  [ serial="53:29:4A:32:12:29:0F:96" ]
-    Thing  rollershutter b2ri "VELUX bedroom 2 right outside"  @ "bedroom 2"  [ serial="53:29:0C:5A:12:2B:02:FC" ]
-    //Thing  rollershutter b2ro "VELUX bedroom 2 right outside"  @ "aaa"  [ serial="00:00:00:00:00:00:00:00" ]
+    Thing  rollershutter b2ro "VELUX bedroom 2 right outside"  @ "bedroom 2"  [ serial="53:29:0C:5A:12:2B:02:FC" ]
     // bedroom 3
     Thing  rollershutter b3li "VELUX bedroom 3 left inside"    @ "bedroom 3"  [ serial="53:29:4A:32:12:24:12:37" ]
     Thing  rollershutter b3lo "VELUX bedroom 3 left outside"   @ "bedroom 3"  [ serial="53:29:0C:5A:12:2B:02:FE" ]

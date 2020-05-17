@@ -11,7 +11,7 @@ Rollershutter	ArbeitOutsideBlindPosition			"Position"										{channel="velux:r
 Rollershutter	Bedroom2LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b2li:position"}
 Rollershutter	Bedroom2LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2lo:position"}
 Rollershutter	Bedroom2RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
-Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
+Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ro:position"}
 
 // Bedroom 3
 Rollershutter	Bedroom3LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b3li:position"}
