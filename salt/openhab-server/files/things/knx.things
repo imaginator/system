@@ -1,41 +1,134 @@
-Bridge knx:ip:knxgw "KNX IP Gateway" @ "schaltschrank" [
+// Room numbering:
+
+    // 1:Central
+    // 4:Lounge
+    // 5:Kitchen
+    // 6:Workroom
+    // 7:Main Bathroom
+    // 8:Guest Bathroom
+    // 9: Main Hallway
+    // 10: Small Hallway
+    // 11:Bedroom 1
+    // 12:Bedroom 2
+    // 13:Bedroom 3
+    // 14: Terrace / outside
+    
+Bridge knx:ip:knxgw "KNX IP Gateway" @ "central" [
     type="TUNNEL",
-    ipAddress="10.7.10.105",
-    localSourceAddr="2.1.0",
+    ipAddress="knxgw.imagilan",
+    localSourceAddr="1.0.254",
     autoReconnectPeriod="31"
-] { 
-    Thing device power "MDT STC-640.01 Bus power supply 640mA" @ "schaltschrank" [
-    address="2.1.1"
-    ]
+] {
 
-    Thing  device ip_gateway  "MDT SCN-IP000.02/.03 IP Interface without Secure" @ "schaltschrank" [
-    address="2.1.2"
-    ]
+    // 1:Central
+    Thing device KnxPower           "MDT STC-640.01 Bus power supply 640mA"                     @ "central" [ address="1.0.1" ]
+    Thing device KnxIpGateway       "MDT SCN-IP000.02/.03 IP Interface without Secure"          @ "central" [ address="1.0.2" ]
+    Thing device KnxActuator1       "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   @ "central" [ address="1.0.3" ]
+    Thing device KnxActuator2       "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   @ "central" [ address="1.0.4" ]
+    Thing device KnxActuator3       "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   @ "central" [ address="1.0.5" ]
+    Thing device KnxShutterActuator "MDT JAL-0810.02 Shutter Actuator 8-fold, 8SU, 230VAC, 10A" @ "central" [ address="1.0.6" ]
+    Thing device KnxDaligw-old      "MDT DaliControl 32"                                        @ "central" [ address="1.0.7" ]
+    Thing device KnxHeatingActuator "AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC" @ "central" [ address="1.0.8" ]
+    Thing device KnxDaliGw          "MDT DaliControl 32"                                        @ "central" [ address="1.0.9" ]
 
-    Thing  device actuator1  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
-    address="2.1.3"
-    ]
+    // 2:Technik Room
 
-    Thing  device actuator2  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
-    address="2.1.4"
-    ]
+    // 4:Lounge
+    Thing device KnxMotionSensorLounge "KNX Motion Sensor Lounge" @ "lounge" [ address="4.4.1" ] { 
+        Type number      : LoungeTemperature "LoungeTemperature"            [ ga="9.001:<4/2/1" ]
+        Type switch      : LoungeMotion      "LoungeMotion"                 [ ga="<4/4/1" ]
+        Type number      : LoungeBrightnesss "Lounge Brightness [%.1f Lux]" [ ga="9.004:<4/2/2" ]
+    }
 
-    Thing  device actuator3  "MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC" @ "schaltschrank" [
-    address="2.1.5"
-    ]
- 
-    Thing  device jalousie  "MDT JAL-0810.02 Shutter Actuator 8-fold, 8SU, 230VAC, 10A" @ "schaltschrank" [
-    address="2.1.6"
-    ]
-
-    Thing  device daligw  "MDT DaliControl 32" @ "schaltschrank" [
-    address="2.1.7"
-    ]
-
-    Thing device light_switch  "Push Button Plus 8-fold (pillar by fridge)" @ "kitchen" [ 
-    address="2.1.32"
-    ]{
+    // 5:Kitchen
+    Thing device light_switch_kitchen_pillar  "Push Button Plus 8-fold (pillar by fridge)" @ "kitchen" [ address="5.3.1" ] {
         Type switch-control:    Channel_Common   [ ga="2/2/124+2/2/124"]
         Type switch-control:    PlayPause        [ ga="2/2/125+2/2/125"]
     }
+    Thing device KnxMotionSensorKitchen "KNX Motion Sensor Kitchen" @ "kitchen" [ address="5.4.1" ] {
+        Type number      : KitchenTemperature "KitchenTemperature"            [ ga="9.001:<5/2/1" ]
+        Type switch      : KitchenMotion      "KitchenMotion"                 [ ga="<5/4/1" ]
+        Type number      : KitchenBrightnesss "Kitchen Brightness [%.1f Lux]" [ ga="9.004:<5/2/2" ]
+    }
+
+    // 6:Workroom
+    Thing device light_switch_arbeit  "Push Button Plus 8-fold (arbeitzimmer)" @ "workroom" [ address="6.3.1" ] {
+        Type switch:    VeluxArbeitInside    [ ga="6/7/1+6/7/1"]
+        Type switch:    VeluxArbeitOutside   [ ga="6/7/11+6/7/11"]
+        Type number:    TemperatureArbeit    [ ga="<6/6/1" ]
+    }
+    Thing device KnxMotionSensorWorkroom "KNX Motion Sensor Workroom" @ "workroom" [ address="6.4.1" ] {
+        Type number      : WorkroomTemperature "WorkroomTemperature"            [ ga="9.001:<6/2/1" ]
+        Type switch      : WorkroomMotion      "WorkroomMotion"                 [ ga="<6/4/1" ]
+        Type number      : WorkroomBrightnesss "Workroom Brightness [%.1f Lux]" [ ga="9.004:<6/2/2" ]
+    }
+
+    // 7:Main Bathroom
+    Thing device KnxMotionSensorMainBathroom "KNX Motion Sensor Main Bathroom" @ "main bathroom" [ address="7.4.1" ] {
+        Type number      : BathroomMainTemperature "BathroomMainTemperature"            [ ga="9.001:<7/2/1" ]
+        Type switch      : BathroomMainMotion      "BathroomMainMotion"                 [ ga="<7/4/1" ]
+        Type number      : BathroomMainBrightnesss "BathroomMain Brightness [%.1f Lux]" [ ga="9.004:<7/2/2" ]
+    }
+
+    // 8:Guest Bathroom
+    Thing device KnxMotionSensorGuestBathroom "KNX Motion Sensor Guest Bathroom" @ "guest bathroom" [ address="8.4.1" ] {
+        Type number      : BathroomGuestTemperature "BathroomGuestTemperature"            [ ga="9.001:<8/2/1" ]
+        Type switch      : BathroomGuestMotion      "BathroomGuestMotion"                 [ ga="<8/4/1" ]
+        Type number      : BathroomGuestBrightnesss "BathroomGuest Brightness [%.1f Lux]" [ ga="9.004:<8/2/2" ]
+    }
+
+    // 9: Main Hallway
+    Thing device KnxMotionSensorMainHallway "KNX Motion Sensor Main Hallway" @ "main hallway" [ address="9.4.1" ] {
+        Type number      : HallwayLargeTemperature "HallwayLargeTemperature"            [ ga="9.001:<9/2/1" ]
+        Type switch      : HallwayLargeMotion      "HallwayLargeMotion"                 [ ga="<9/4/1" ]
+        Type number      : HallwayLargeBrightnesss "HallwayLarge Brightness [%.1f Lux]" [ ga="9.004:<9/2/2" ]
+    }
+
+    // 10: Small Hallway
+    Thing device KnxMotionSensorSmallHallway "KNX Motion Sensor Small Hallway" @ "small hallway" [ address="10.4.1" ] {
+        Type number      : HallwaySmallTemperature "HallwaySmallTemperature"            [ ga="9.001:<10/2/1" ]
+        Type switch      : HallwaySmallMotion      "HallwaySmallMotion"                 [ ga="<10/4/1" ]
+        Type number      : HallwaySmallBrightnesss "HallwaySmall Brightness [%.1f Lux]" [ ga="9.004:<10/2/2" ]
+    }
+
+    // 11:Bedroom 1
+    Thing device KnxMotionSensorBedroom1 "KNX Motion Sensor Bedroom 1" @ "bedroom 1" [ address="11.4.1" ] {
+        Type number      : Bedroom1Temperature "Bedroom1Temperature"            [ ga="9.001:<11/2/1" ]
+        Type switch      : Bedroom1Motion      "Bedroom1Motion"                 [ ga="<11/4/1" ]
+        Type number      : Bedroom1Brightnesss "Bedroom1 Brightness [%.1f Lux]" [ ga="9.004:<11/2/2" ]
+    }
+
+    // 12:Bedroom 2
+    Thing device KnxMotionSensorBedroom2 "KNX Motion Sensor Bedroom 2" @ "bedroom 2" [ address="12.4.1" ] {
+        Type number      : Bedroom2Temperature "Bedroom2Temperature"            [ ga="9.001:<12/2/1" ]
+        Type switch      : Bedroom2Motion      "Bedroom2Motion"                 [ ga="<12/4/1" ]
+        Type number      : Bedroom2Brightnesss "Bedroom2 Brightness [%.1f Lux]" [ ga="9.004:<12/2/2" ]
+    }
+
+    // 13:Bedroom 3
+    Thing device KnxMotionSensorBedroom3 "KNX Motion Sensor Bedroom 3" @ "bedroom 3" [ address="13.4.1" ] {
+        Type number      : Bedroom3Temperature "Bedroom3Temperature"            [ ga="9.001:<13/2/1" ]
+        Type switch      : Bedroom3Motion      "Bedroom3Motion"                 [ ga="<13/4/1" ]
+        Type number      : Bedroom3Brightnesss "Bedroom3 Brightness [%.1f Lux]" [ ga="9.004:<13/2/2" ]
+    }
+
+    // 14: Terrace / outside
+
+
+
+    // 1:Central
+    // 4:Lounge
+    // 5:Kitchen
+    // 6:Workroom
+    // 7:Main Bathroom
+    // 8:Guest Bathroom
+    // 9: Main Hallway
+    // 10: Small Hallway
+    // 11:Bedroom 1
+    // 12:Bedroom 2
+    // 13:Bedroom 3
+    // 14: Terrace / outside
 }
+
+}
+
