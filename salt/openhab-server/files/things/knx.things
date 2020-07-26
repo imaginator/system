@@ -31,7 +31,9 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "central" [
     Thing device KnxHeatingActuator "AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC" @ "central" [ address="1.0.8" ]
     Thing device KnxDaliGw          "MDT DaliControl 32"                                        @ "central" [ address="1.0.9" ]
 
-    // 2:Technik Room
+// ----------------------------------------------------------------------------
+// Motion Sensors
+// ----------------------------------------------------------------------------
 
     // 4:Lounge
     Thing device KnxMotionSensorLounge "KNX Motion Sensor Lounge" @ "lounge" [ address="4.4.1" ] { 
@@ -41,10 +43,6 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "central" [
     }
 
     // 5:Kitchen
-    Thing device light_switch_kitchen_pillar  "Push Button Plus 8-fold (pillar by fridge)" @ "kitchen" [ address="5.3.1" ] {
-        Type switch-control:    Channel_Common   [ ga="2/2/124+2/2/124"]
-        Type switch-control:    PlayPause        [ ga="2/2/125+2/2/125"]
-    }
     Thing device KnxMotionSensorKitchen "KNX Motion Sensor Kitchen" @ "kitchen" [ address="5.4.1" ] {
         Type number      : KitchenTemperature "KitchenTemperature"            [ ga="9.001:<5/2/1" ]
         Type switch      : KitchenMotion      "KitchenMotion"                 [ ga="<5/4/1" ]
@@ -52,11 +50,6 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "central" [
     }
 
     // 6:Workroom
-    Thing device light_switch_arbeit  "Push Button Plus 8-fold (arbeitzimmer)" @ "workroom" [ address="6.3.1" ] {
-        Type switch:    VeluxArbeitInside    [ ga="6/7/1+6/7/1"]
-        Type switch:    VeluxArbeitOutside   [ ga="6/7/11+6/7/11"]
-        Type number:    TemperatureArbeit    [ ga="<6/6/1" ]
-    }
     Thing device KnxMotionSensorWorkroom "KNX Motion Sensor Workroom" @ "workroom" [ address="6.4.1" ] {
         Type number      : WorkroomTemperature "WorkroomTemperature"            [ ga="9.001:<6/2/1" ]
         Type switch      : WorkroomMotion      "WorkroomMotion"                 [ ga="<6/4/1" ]
@@ -114,19 +107,102 @@ Bridge knx:ip:knxgw "KNX IP Gateway" @ "central" [
 
     // 14: Terrace / outside
 
-
+// ----------------------------------------------------------------------------
+// Wall buttons
+// ----------------------------------------------------------------------------
 
     // 1:Central
+
     // 4:Lounge
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Lounge Screen End" @ "lounge" [ address="4.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="4/5/1+4/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="4/5/2+4/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Lounge Projector End" @ "lounge" [ address="4.3.2" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="4/5/1+4/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="4/5/2+4/5/2"]
+    }
     // 5:Kitchen
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Kitchen Pillar" @ "kitchen" [ address="5.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="5/5/1+5/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Kitchen Pillar" @ "kitchen" [ address="5.3.2" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="5/5/1+5/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Kitchen Pillar" @ "kitchen" [ address="5.3.3" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="5/5/1+5/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Kitchen Pillar" @ "kitchen" [ address="5.3.4" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="5/5/1+5/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="5/5/2+5/5/2"]
+    }
     // 6:Workroom
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Workroom" @ "workroom" [ address="6.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="6/5/1+6/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="6/5/2+6/5/2"]
+    }
     // 7:Main Bathroom
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Bathroom Main" @ "bathroom main" [ address="7.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="7/5/1+7/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="7/5/2+7/5/2"]
+    }
     // 8:Guest Bathroom
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Bathroom Guest" @ "bathroom guest" [ address="8.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="8/5/1+8/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="8/5/2+8/5/2"]
+    }
     // 9: Main Hallway
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Hallway Main" @ "hallway main" [ address="9.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="9/5/1+9/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="9/5/2+9/5/2"]
+    }
     // 10: Small Hallway
+    Thing device KnxButtonsLoungeScreenEnd  "Push Button Hallway Small" @ "hallway small" [ address="10.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="10/5/1+10/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="10/5/2+10/5/2"]
+    }    
     // 11:Bedroom 1
+    Thing device KnxButtonsLoungeBedroom1Door  "Push Button Bedroom 1 Door" @ "Bedroom 1" [ address="11.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="11/5/1+11/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="11/5/2+11/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom1BedLeft  "Push Button Bedroom 1 Bed Left" @ "Bedroom 1" [ address="11.3.2" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="11/5/1+11/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="11/5/2+11/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom1BedRight  "Push Button Bedroom Bed Right" @ "Bedroom 1" [ address="11.3.3" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="11/5/1+11/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="11/5/2+11/5/2"]
+    }
     // 12:Bedroom 2
+    Thing device KnxButtonsLoungeBedroom2Door  "Push Button Bedroom 1 Door" @ "Bedroom 2" [ address="12.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="12/5/1+12/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="12/5/2+12/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom2BedLeft  "Push Button Bedroom 1 Bed Left" @ "Bedroom 2" [ address="12.3.2" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="12/5/1+12/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="12/5/2+12/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom2BedRight  "Push Button Bedroom Bed Right" @ "Bedroom 2" [ address="12.3.3" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="12/5/1+12/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="12/5/2+12/5/2"]
+    }
     // 13:Bedroom 3
+    Thing device KnxButtonsLoungeBedroom1Door  "Push Button Bedroom 1 Door" @ "Bedroom 3" [ address="13.3.1" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="13/5/1+13/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="13/5/2+13/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom1BedLeft  "Push Button Bedroom 1 Bed Left" @ "Bedroom 3" [ address="13.3.2" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="13/5/1+13/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="13/5/2+13/5/2"]
+    }
+    Thing device KnxButtonsLoungeBedroom1BedRight  "Push Button Bedroom Bed Right" @ "Bedroom 3" [ address="13.3.3" ] {
+        Type switch-control     : PlayPause       "Playback"       [ ga="13/5/1+13/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control" [ ga="13/5/2+13/5/2"]
+    }
     // 14: Terrace / outside
 }
 
