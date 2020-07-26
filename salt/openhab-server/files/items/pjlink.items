@@ -1,0 +1,6 @@
+Switch   PJLinkDevicePower         "Power"         {channel="pjLinkDevice:pjLinkDevice:projector01:power"}
+String   PJLinkDeviceInput         "Input"         {channel="pjLinkDevice:pjLinkDevice:projector01:input"}
+Switch   PJLinkDeviceAudioMute     "Audio mute"    {channel="pjLinkDevice:pjLinkDevice:projector01:audioMute"}
+Switch   PJLinkDeviceVideoMute     "Video mute"    {channel="pjLinkDevice:pjLinkDevice:projector01:videoMute"}
+Number   PJLinkDeviceLamp1Hours    "Lamp hours"    {channel="pjLinkDevice:pjLinkDevice:projector01:lamp1Hours"}
+Switch   PJLinkDeviceLamp1Active   "Lamp active"   {channel="pjLinkDevice:pjLinkDevice:projector01:lamp1Active"}
