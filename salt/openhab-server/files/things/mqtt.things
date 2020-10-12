@@ -1,6 +1,6 @@
 Bridge mqtt:broker:broker [ host="mqtt.imagilan", secure=false, clientid="openhab" ]
     {
-      Thing topic miflora {
+      Thing topic miflora "Plants" @ "terrace" {
        Channels:
          Type number : temperature "Air Temperature" [ stateTopic="sensor/temperature_celsius"]
          Type number : humidity    "Humidity"        [stateTopic="sensor/humidity"]

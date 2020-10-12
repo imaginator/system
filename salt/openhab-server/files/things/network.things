@@ -1,2 +1,1 @@
-network:pingdevice:simon-phone       "Network Simon Phone" @ "home"   [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds
-network:pingdevice:anne-phone         "Network Anne Phone" @ "home"   [ hostname="anne-phone.imagilan",    timeout=5000, refreshInterval=60000 ] // milliseconds
+network:pingdevice:simon-phone       "Network Simon Phone" @ "central"   [ hostname="simon-phone.imagilan",   timeout=5000, refreshInterval=60000 ] // milliseconds

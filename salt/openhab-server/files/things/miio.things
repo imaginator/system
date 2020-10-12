@@ -1,5 +1,5 @@
 //imagisuck 
-miio:vacuum:03DA214A "Xiaomi imagiSuck" @ "home" [ 
+miio:vacuum:03DA214A "Xiaomi imagiSuck" @ "hallway small" [ 
     host="10.7.11.141",
     model="rockrobo.vacuum.v1",
     deviceId="{{ salt['pillar.get']('openhab:vacuum_deviceid') }}",

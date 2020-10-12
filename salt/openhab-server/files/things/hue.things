@@ -1,7 +1,7 @@
 // Saltstack'd
 
 // needs lightID, uniqueId left in for reference
-Bridge hue:bridge:huebridge             "hue bridge" @ "home"       [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
+Bridge hue:bridge:huebridge             "hue bridge" @ "central"   [ ipAddress="hue.imagilan", userName="{{ salt['pillar.get']('openhab:hue_username') }}" ]  {
     0210  loungeoverhead       "hue overhead lounge" @ "lounge"    [ lightId="1", uniqueId="00:17:88:01:10:42:44:17-0b" ]
     0010     bedroomlamp        "hue lamp bedroom 1" @ "bedroom 1" [ lightId="2", uniqueId="7c:b0:3e:aa:00:a0:4c:88-03" ]
     0210 bedroomoverhead    "hue overhead bedroom 1" @ "bedroom 1" [ lightId="3", uniqueId="00:17:88:01:00:dc:c7:b7-0b" ]

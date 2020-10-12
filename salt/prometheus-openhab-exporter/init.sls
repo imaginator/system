@@ -1,3 +1,9 @@
+openhabexporter-dependencies:
+  pkg.installed:
+    - cache_valid_time: 30000
+    - pkgs:
+      - gunicorn
+      
 extract_openhab_exporter:
   archive.extracted:
     - name: /opt/openhab_exporter

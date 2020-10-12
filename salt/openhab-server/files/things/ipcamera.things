@@ -1,4 +1,4 @@
-ipcamera:HIKVISION:camera01 "eye in the sky" @ "home" [  
+ipcamera:HIKVISION:camera01 "eye in the sky" @ "central" [  
     IPADDRESS="camera01.imagilan", 
     USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
     PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
@@ -8,7 +8,7 @@ ipcamera:HIKVISION:camera01 "eye in the sky" @ "home" [
     POLL_CAMERA_MS=15000
 ]
 
-ipcamera:ONVIF:camera02 "cat toilet" @ "home" [
+ipcamera:ONVIF:camera02 "cat toilet" @ "hallway small" [
     IPADDRESS="camera02.imagilan",
     USERNAME="root",
     PASSWORD="ismart12",

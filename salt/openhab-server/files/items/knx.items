@@ -1,53 +1,61 @@
-Dimmer			KNX8ButtonsBedroom1_Ch11			"KNX Volume (kitchen)"					{channel="knx:device:knxgw:LIGHT_SWITCH_1:Ch_11"}
+Dimmer           KNX8ButtonsBedroom1_Ch11                    "KNX Volume (kitchen)"                    {channel="knx:device:LIGHT_SWITCH_1:Ch_11"}
 
+Switch           KNX8PlayPause                               "KNX PlayPause"                           {channel="knx:device:light_switch_kitchen_pillar:PlayPause"}
+Switch           KNX8Volume                                  "KNX Volume"                              {channel="knx:device:light_switch_kitchen_pillar:Channel_Common"}
 
-Switch			KNX8PlayPause						"KNX PlayPause"							{channel="knx:device:knxgw:light_switch_kitchen_pillar:PlayPause"}
-Switch			KNX8Volume							"KNX Volume"							{channel="knx:device:knxgw:light_switch_kitchen_pillar:Channel_Common"}
+Switch           VeluxStudyInside                            "Study Zimmer Velux Inside"               {channel="knx:device:light_switch_study:VeluxStudyInside"}
+Switch           VeluxStudyOutside                           "Study Zimmer Velux Outside"              {channel="knx:device:light_switch_study:VeluxStudyOutside"}
 
-Switch			VeluxArbeitInside					"Arbeit Zimmer Velux Inside"			{channel="knx:device:knxgw:light_switch_arbeit:VeluxArbeitInside"}
-Switch			VeluxArbeitOutside					"Arbeit Zimmer Velux Outside"			{channel="knx:device:knxgw:light_switch_arbeit:VeluxArbeitOutside"}
-
-Rollershutter	LoungeVeluxLeftInside				"Lounge left blind inside"				{channel="knx:device:knxgw:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftInside"}
-Rollershutter	LoungeVeluxLeftOutside				"Lounge left blind outside"				{channel="knx:device:knxgw:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftOutside"}
+Rollershutter    LoungeVeluxLeftInside                       "Lounge left blind inside"                {channel="knx:device:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftInside"}
+Rollershutter    LoungeVeluxLeftOutside                      "Lounge left blind outside"               {channel="knx:device:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftOutside"}
 
 // Motion Sensors
 
-Number			KNXMotionBedroom1Temperature		"Bedroom1 temperature"					{channel="knx:device:knxgw:KnxMotionBedroom1:Temperature"}
-Switch			KNXMotionBedroom1Motion				"Bedroom1 motion"						{channel="knx:device:knxgw:KnxMotionBedroom1:Motion"}
-Number			KNXMotionBedroom1Brightnesss		"Bedroom1 brightness [%.1f lux]"		{channel="knx:device:knxgw:KnxMotionBedroom1:Brightnesss"}
+Number           KNXMotionBedroom1TemperatureCelcius         "Bedroom1 temperature"                    {channel="knx:device:KnxMotionBedroom1:Temperature"}
+Contact           KNXMotionBedroom1MotionBoolean              "Bedroom1 motion"                         {channel="knx:device:KnxMotionBedroom1:Motion"}
+Number           KNXMotionBedroom1BrightnessLux              "Bedroom1 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom1:Brightness"}
 
-Number			KNXMotionBedroom2Temperature		"Bedroom2 temperature"					{channel="knx:device:knxgw:KnxMotionBedroom2:Temperature"}
-Switch			KNXMotionBedroom2Motion				"Bedroom2 motion"						{channel="knx:device:knxgw:KnxMotionBedroom2:Motion"}
-Number			KNXMotionBedroom2Brightnesss		"Bedroom2 brightness [%.1f lux]"		{channel="knx:device:knxgw:KnxMotionBedroom2:Brightnesss"}
+Number           KNXMotionBedroom2TemperatureCelcius         "Bedroom2 temperature"                    {channel="knx:device:KnxMotionBedroom2:Temperature"}
+Contact           KNXMotionBedroom2MotionBoolean              "Bedroom2 motion"                         {channel="knx:device:KnxMotionBedroom2:Motion"}
+Number           KNXMotionBedroom2BrightnessLux              "Bedroom2 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom2:Brightness"}
 
-Number			KNXMotionBedroom3Temperature		"Bedroom3 temperature"					{channel="knx:device:knxgw:KnxMotionBedroom3:Temperature"}
-Switch			KNXMotionBedroom3Motion				"Bedroom3 motion"						{channel="knx:device:knxgw:KnxMotionBedroom3:Motion"}
-Number			KNXMotionBedroom3Brightnesss		"Bedroom3 brightness [%.1f lux]"		{channel="knx:device:knxgw:KnxMotionBedroom3:Brightnesss"}
+Number           KNXMotionBedroom3TemperatureCelcius         "Bedroom3 temperature"                    {channel="knx:device:KnxMotionBedroom3:Temperature"}
+Contact           KNXMotionBedroom3MotionBoolean              "Bedroom3 motion"                         {channel="knx:device:KnxMotionBedroom3:Motion"}
+Number           KNXMotionBedroom3BrightnessLux              "Bedroom3 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom3:Brightness"}
 
-Number			KNXMotionBathroomGuestTemperature	"Bathroom guest temperature"			{channel="knx:device:knxgw:KnxMotionBathroomGuest:Temperature"}
-Switch			KNXMotionBathroomGuestMotion		"Bathroom guest motion"					{channel="knx:device:knxgw:KnxMotionBathroomGuest:Motion"}
-Number			KNXMotionBathroomGuestBrightnesss	"Bathroom guest brightness [%.1f lux]"	{channel="knx:device:knxgw:KnxMotionBathroomGuest:Brightnesss"}
+Number           KNXMotionBathroomGuestTemperatureCelcius    "Bathroom guest temperature"              {channel="knx:device:KnxMotionBathroomGuest:Temperature"}
+Contact           KNXMotionBathroomGuestMotionBoolean         "Bathroom guest motion"                   {channel="knx:device:KnxMotionBathroomGuest:Motion"}
+Number           KNXMotionBathroomGuestBrightnessLux         "Bathroom guest brightness [%.1f lux]"    {channel="knx:device:KnxMotionBathroomGuest:Brightness"}
 
-Number			KNXMotionBathroomMainTemperature	"Bathroom main temperature"				{channel="knx:device:knxgw:KnxMotionBathroomMain:Temperature"}
-Switch			KNXMotionBathroomMainMotion			"Bathroom main motion"					{channel="knx:device:knxgw:KnxMotionBathroomMain:Motion"}
-Number			KNXMotionBathroomMainBrightnesss	"Bathroom main brightness [%.1f lux]"	{channel="knx:device:knxgw:KnxMotionBathroomMain:Brightnesss"}
+Number           KNXMotionBathroomMainTemperatureCelcius     "Bathroom main temperature"               {channel="knx:device:KnxMotionBathroomMain:Temperature"}
+Contact           KNXMotionBathroomMainMotionBoolean          "Bathroom main motion"                    {channel="knx:device:KnxMotionBathroomMain:Motion"}
+Number           KNXMotionBathroomMainBrightnessLux          "Bathroom main brightness [%.1f lux]"     {channel="knx:device:KnxMotionBathroomMain:Brightness"}
 
-Number			KNXMotionKitchenTemperature			"Kitchen temperature"					{channel="knx:device:knxgw:KnxMotionKitchen:Temperature"}
-Switch			KNXMotionKitchenMotion				"Kitchen motion"						{channel="knx:device:knxgw:KnxMotionKitchen:Motion"}
-Number			KNXMotionKitchenBrightnesss			"Kitchen brightness [%.1f lux]"			{channel="knx:device:knxgw:KnxMotionKitchen:Brightnesss"}
+Number           KNXMotionKitchenTemperatureCelcius          "Kitchen temperature"                     {channel="knx:device:KnxMotionKitchen:Temperature"}
+Contact           KNXMotionKitchenMotionBoolean               "Kitchen motion"                          {channel="knx:device:KnxMotionKitchen:Motion"}
+Number           KNXMotionKitchenBrightnessLux              
 
-Number			KNXMotionLoungeTemperature			"Lounge temperature"					{channel="knx:device:knxgw:KnxMotionLounge:Temperature"}
-Switch			KNXMotionLoungeMotion				"Lounge motion"							{channel="knx:device:knxgw:KnxMotionLounge:Motion"}
-Number			KNXMotionLoungeBrightnesss			"Lounge brightness [%.1f lux]"			{channel="knx:device:knxgw:KnxMotionLounge:Brightnesss"}
 
-Number			KNXMotionMainHallwayTemperature		"Hallway large temperature"				{channel="knx:device:knxgw:KnxMotionMainHallway:Temperature"}
-Switch			KNXMotionMainHallwayMotion			"Hallway large motion"					{channel="knx:device:knxgw:KnxMotionMainHallway:Motion"}
-Number			KNXMotionMainHallwayBrightnesss		"Hallway large brightness [%.1f lux]"	{channel="knx:device:knxgw:KnxMotionMainHallway:Brightnesss"}
+ "Kitchen brightness [%.1f lux]"           {channel="knx:device:KnxMotionKitchen:Brightness"}
 
-Number			KNXMotionSmallHallwayTemperature	"Hallway small temperature"				{channel="knx:device:knxgw:KnxMotionSmallHallway:Temperature"}
-Switch			KNXMotionSmallHallwayMotion			"Hallway small motion"					{channel="knx:device:knxgw:KnxMotionSmallHallway:Motion"}
-Number			KNXMotionSmallHallwayBrightnesss	"Hallway small brightness [%.1f lux]"	{channel="knx:device:knxgw:KnxMotionSmallHallway:Brightnesss"}
+Number           KNXMotionLoungeTemperatureCelcius           "Lounge temperature"                      {channel="knx:device:KnxMotionLounge:Temperature"}
+Contact           KNXMotionLoungeMotionBoolean                "Lounge motion"                           {channel="knx:device:KnxMotionLounge:Motion"}
+Number           KNXMotionLoungeBrightnessLux                "Lounge brightness [%.1f lux]"            {channel="knx:device:KnxMotionLounge:Brightness"}
 
-Number			KNXMotionWorkroomTemperature		"Workroom temperature"					{channel="knx:device:knxgw:KnxMotionWorkroom:Temperature"}
-Switch			KNXMotionWorkroomMotion				"Workroom motion"						{channel="knx:device:knxgw:KnxMotionWorkroom:Motion"}
-Number			KNXMotionWorkroomBrightnesss		"Workroom brightness [%.1f lux]"		{channel="knx:device:knxgw:KnxMotionWorkroom:Brightnesss"}
+Number           KNXMotionMainHallwayTemperatureCelcius      "Hallway large temperature"               {channel="knx:device:KnxMotionMainHallway:Temperature"}
+Contact           KNXMotionMainHallwayMotionBoolean           "Hallway large motion"                    {channel="knx:device:KnxMotionMainHallway:Motion"}
+Number           KNXMotionMainHallwayBrightnessLux           "Hallway large brightness [%.1f lux]"     {channel="knx:device:KnxMotionMainHallway:Brightness"}
+
+Number           KNXMotionSmallHallwayTemperatureCelcius     "Hallway small temperature"               {channel="knx:device:KnxMotionSmallHallway:Temperature"}
+Contact           KNXMotionSmallHallwayMotionBoolean          "Hallway small motion"                    {channel="knx:device:KnxMotionSmallHallway:Motion"}
+Number           KNXMotionSmallHallwayBrightnessLux          "Hallway small brightness [%.1f lux]"     {channel="knx:device:KnxMotionSmallHallway:Brightness"}
+
+Number           KNXMotionStudyTemperatureCelcius            "Study temperature"                       {channel="knx:device:KnxMotionStudy:Temperature"}
+Contact           KNXMotionStudyMotionBoolean                 "Study motion"                            {channel="knx:device:KnxMotionStudy:Motion"}
+Number           KNXMotionStudyBrightnessLux                 "Study brightness [%.1f lux]"             {channel="knx:device:KnxMotionStudy:Brightness"}
+
+// DateTime         KNXNtpDate                           "Time Germany  [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"    {channel="knx:device:Date_Device:knxDate", channel="knx:device:knxgw:Date_Device:knxTime",channel="ntp:ntp:germany:dateTime"}
+
+Number           HousePowerCounter                           "House Power Consumption in Wh"           {channel="knx:device:PowerConsumption:HousePowerCounter"}
+Number           HeatingPowerCounter                         "Heating Power Consumption in Wh"         {channel="knx:device:PowerConsumption:HeatingPowerCounter"}
+ 

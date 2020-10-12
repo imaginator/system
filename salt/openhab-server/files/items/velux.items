@@ -3,9 +3,9 @@ Switch			VeluxWindowControllerReload			"Reload"										{channel="velux:klf200:
 Number			VeluxWindowControllerDowntime		"Downtime"										{channel="velux:klf200:veluxgw:downtime"}
 Switch			VeluxWindowControllerDoDetection	"Activate bridge detection mode"				{channel="velux:klf200:veluxgw:doDetection"}
 
-// Arbeit
-Rollershutter	ArbeitInsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ai:position"}
-Rollershutter	ArbeitOutsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ao:position"}
+// Study
+Rollershutter	StudyInsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ai:position"}
+Rollershutter	StudyOutsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ao:position"}
 
 // Bedroom 2
 Rollershutter	Bedroom2LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b2li:position"}

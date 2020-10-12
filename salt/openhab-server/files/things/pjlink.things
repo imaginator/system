@@ -1,1 +1,1 @@
-pjLinkDevice:pjLinkDevice:projector01 [ ipAddress="projector01.imagilan", tcpPort=7142 ]
+pjLinkDevice:pjLinkDevice:projector01  "pjLink projector01"     @ "lounge" [ ipAddress="projector01.imagilan", tcpPort=7142 ]

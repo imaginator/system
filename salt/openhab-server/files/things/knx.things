@@ -3,7 +3,7 @@
 // 1:Central
 // 4:Lounge
 // 5:Kitchen
-// 6:Workroom
+// 6:Study
 // 7:Main Bathroom
 // 8:Guest Bathroom
 // 9: Main Hallway
@@ -37,79 +37,85 @@ Thing knx:device:KnxShutterActuator  "KNX MDT JAL-0810.02 Shutter Actuator 8-fol
 Thing knx:device:KnxDaligw-old       "KNX MDT DaliControl 32"                                        (knx:ip:knxgw) @ "central" [ address="1.0.7" ]
 Thing knx:device:KnxHeatingActuator  "KNX AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC" (knx:ip:knxgw) @ "central" [ address="1.0.8" ]
 Thing knx:device:KnxDaliGw           "KNX MDT DaliControl 32"                                        (knx:ip:knxgw) @ "central" [ address="1.0.9" ]
+Thing knx:device:KnxBinaryInput      "KNX MDT Binary Input 32-fold"                                  (knx:ip:knxgw) @ "central" [ address="1.0.10" ]
+Thing knx:device:KnxShutterAktor24v  "KNX MDT JAL-0410D.02 Shutter Actuator 4-fold, 4SU, 24VDC, 8A"  (knx:ip:knxgw) @ "central" [ address="1.0.11" ]
+//Thing knx:device:Date_Device         "KNX Date/Time"                                                 (knx:ip:knxgw) @ "central" {
+//        Type datetime-control      : knxDate    [ ga="11.001:10/0/1" ]
+//        Type datetime-control      : knxTime    [ ga="10.001:10/0/0" ]
+//    }
 
 // ----------------------------------------------------------------------------
 // Motion Sensors
 // ----------------------------------------------------------------------------
 
 // 4:Lounge
-Thing knx:device:KnxMotionLounge  "KNX Motion Lounge" (knx:ip:knxgw) @ "lounge"        [ address="4.4.1" ] { 
+Thing knx:device:KnxMotionLounge  "KNX Motion Lounge" (knx:ip:knxgw) @ "lounge"                     [ address="4.4.1" ] { 
     Type number      : Temperature "LoungeTemperature"                            [ ga="9.001:<4/2/1" ]
-    Type switch      : Motion      "LoungeMotion"                                 [ ga="<4/4/1" ]
-    Type number      : Brightnesss "Lounge Brightness [%.1f Lux]"                 [ ga="9.004:<4/2/2" ]
+    Type contact      : Motion      "LoungeMotion"                                 [ ga="1.002:<4/4/1" ]
+    Type number      : Brightness "Lounge Brightness [%.1f Lux]"                  [ ga="9.004:<4/2/2" ]
     }
-
+ 
 // 5:Kitchen
-Thing knx:device:KnxMotionKitchen   "KNX Motion Kitchen" (knx:ip:knxgw) @ "kitchen"                          [ address="5.4.1" ] {
+Thing knx:device:KnxMotionKitchen   "KNX Motion Kitchen" (knx:ip:knxgw) @ "kitchen"                        [ address="5.4.1" ] {
     Type number      : Temperature "KitchenTemperature"                          [ ga="9.001:<5/2/1" ]
-    Type switch      : Motion      "KitchenMotion"                               [ ga="<5/4/1" ]
-    Type number      : Brightnesss "Kitchen Brightness [%.1f Lux]"               [ ga="9.004:<5/2/2" ]
+    Type contact      : Motion      "KitchenMotion"                               [ ga="1.002:<5/4/1" ]
+    Type number      : Brightness "Kitchen Brightness [%.1f Lux]"                [ ga="9.004:<5/2/2" ]
     }
 
-// 6:Workroom
-Thing knx:device:KnxMotionWorkroom  "KNX Motion Workroom" (knx:ip:knxgw) @ "workroom"                       [ address="6.4.1" ] {
-    Type number      : Temperature "WorkroomTemperature"                        [ ga="9.001:<6/2/1" ]
-    Type switch      : Motion      "WorkroomMotion"                             [ ga="<6/4/1" ]
-    Type number      : Brightnesss "Workroom Brightness [%.1f Lux]"             [ ga="9.004:<6/2/2" ]
+// 6:Study
+Thing knx:device:KnxMotionStudy  "KNX Motion Study" (knx:ip:knxgw) @ "study"                               [ address="6.4.1" ] {
+    Type number      : Temperature "StudyTemperature"                        [ ga="9.001:<6/2/1" ]
+    Type contact      : Motion      "StudyMotion"                             [ ga="1.002:<6/4/1" ]
+    Type number      : Brightness "Study Brightness [%.1f Lux]"              [ ga="9.004:<6/2/2" ]
     }
 
 // 7:Main Bathroom
-Thing knx:device:KnxMotionBathroomMain  "KNX Motion Bathroom Main" (knx:ip:knxgw) @ "bathroom main"         [ address="7.4.1" ] {
+Thing knx:device:KnxMotionBathroomMain  "KNX Motion Bathroom Main" (knx:ip:knxgw) @ "bathroom main"        [ address="7.4.1" ] {
     Type number      : Temperature "BathroomMainTemperature"                [ ga="9.001:<7/2/1" ]
-    Type switch      : Motion      "BathroomMainMotion"                     [ ga="<7/4/1" ]
-    Type number      : Brightnesss "BathroomMain Brightness [%.1f Lux]"     [ ga="9.004:<7/2/2" ]
+    Type contact      : Motion      "BathroomMainMotion"                     [ ga="1.002:<7/4/1" ]
+    Type number      : Brightness "BathroomMain Brightness [%.1f Lux]"      [ ga="9.004:<7/2/2" ]
     }
 
 // 8:Guest Bathroom
-Thing knx:device:KnxMotionBathroomGuest  "KNX Motion Bathroom Guest" (knx:ip:knxgw) @ "bathroom guest"      [ address="8.4.1" ] {
+Thing knx:device:KnxMotionBathroomGuest  "KNX Motion Bathroom Guest" (knx:ip:knxgw) @ "bathroom guest"     [ address="8.4.1" ] {
     Type number      : Temperature "BathroomGuestTemperature"              [ ga="9.001:<8/2/1" ]
-    Type switch      : Motion      "BathroomGuestMotion"                   [ ga="<8/4/1" ]
-    Type number      : Brightnesss "BathroomGuest Brightness [%.1f Lux]"   [ ga="9.004:<8/2/2" ]
+    Type contact      : Motion      "BathroomGuestMotion"                   [ ga="1.002:<8/4/1" ]
+    Type number      : Brightness "BathroomGuest Brightness [%.1f Lux]"    [ ga="9.004:<8/2/2" ]
     }
 
 // 9: Main Hallway
-Thing knx:device:KnxMotionHallwayMain  "KNX Motion Hallway Main" (knx:ip:knxgw) @ "hallway main"            [ address="9.4.1" ] {
+Thing knx:device:KnxMotionHallwayMain  "KNX Motion Hallway Main" (knx:ip:knxgw) @ "hallway main"           [ address="9.4.1" ] {
     Type number      : Temperature "HallwayLargeTemperature"                [ ga="9.001:<9/2/1" ]
-    Type switch      : Motion      "HallwayLargeMotion"                     [ ga="<9/4/1" ]
-    Type number      : Brightnesss "HallwayLarge Brightness [%.1f Lux]"     [ ga="9.004:<9/2/2" ]
+    Type contact      : Motion      "HallwayLargeMotion"                     [ ga="1.002:<9/4/1" ]
+    Type number      : Brightness "HallwayLarge Brightness [%.1f Lux]"      [ ga="9.004:<9/2/2" ]
     }
 
 // 10: Small Hallway
-Thing knx:device:KnxMotionHallwaySmall  "KNX Motion Hallway Small" (knx:ip:knxgw) @ "hallway small"         [ address="10.4.1" ] {
+Thing knx:device:KnxMotionHallwaySmall  "KNX Motion Hallway Small" (knx:ip:knxgw) @ "hallway small"        [ address="10.4.1" ] {
     Type number      : Temperature "HallwaySmallTemperature"                [ ga="9.001:<10/2/1" ]
-    Type switch      : Motion      "HallwaySmallMotion"                     [ ga="<10/4/1" ]
-    Type number      : Brightnesss "HallwaySmall Brightness [%.1f Lux]"     [ ga="9.004:<10/2/2" ]
+    Type contact      : Motion      "HallwaySmallMotion"                     [ ga="1.002:<10/4/1" ]
+    Type number      : Brightness "HallwaySmall Brightness [%.1f Lux]"      [ ga="9.004:<10/2/2" ]
     }
 
 // 11:Bedroom 1
-Thing knx:device:KnxMotionBedroom1  "KNX Motion Bedroom 1" (knx:ip:knxgw) @ "bedroom 1"                     [ address="11.4.1" ] {
+Thing knx:device:KnxMotionBedroom1  "KNX Motion Bedroom 1" (knx:ip:knxgw) @ "bedroom 1"                    [ address="11.4.1" ] {
     Type number      : Temperature "Bedroom1Temperature"                        [ ga="9.001:<11/2/1" ]
-    Type switch      : Motion      "Bedroom1Motion"                             [ ga="<11/4/1" ]
-    Type number      : Brightnesss "Bedroom1 Brightness [%.1f Lux]"             [ ga="9.004:<11/2/2" ]
+    Type contact      : Motion      "Bedroom1Motion"                             [ ga="1.002:<11/4/1" ]
+    Type number      : Brightness "Bedroom1 Brightness [%.1f Lux]"              [ ga="9.004:<11/2/2" ]
     }
 
 // 12:Bedroom 2
-Thing knx:device:KnxMotionBedroom2  "KNX Motion Bedroom 2" (knx:ip:knxgw) @ "bedroom 2"                     [ address="12.4.1" ] {
+Thing knx:device:KnxMotionBedroom2  "KNX Motion Bedroom 2" (knx:ip:knxgw) @ "bedroom 2"                    [ address="12.4.1" ] {
     Type number      : Temperature "Bedroom2Temperature"                        [ ga="9.001:<12/2/1" ]
-    Type switch      : Motion      "Bedroom2Motion"                             [ ga="<12/4/1" ]
-    Type number      : Brightnesss "Bedroom2 Brightness [%.1f Lux]"             [ ga="9.004:<12/2/2" ]
+    Type contact      : Motion      "Bedroom2Motion"                             [ ga="1.002:<12/4/1" ]
+    Type number      : Brightness "Bedroom2 Brightness [%.1f Lux]"              [ ga="9.004:<12/2/2" ]
     }
 
 // 13:Bedroom 3
-Thing knx:device:KnxMotionBedroom3  "KNX Motion Bedroom 3" (knx:ip:knxgw) @ "bedroom 3"                     [ address="13.4.1" ] {
+Thing knx:device:KnxMotionBedroom3  "KNX Motion Bedroom 3" (knx:ip:knxgw) @ "bedroom 3"                    [ address="13.4.1" ] {
     Type number      : Temperature "Bedroom3Temperature"                        [ ga="9.001:<13/2/1" ]
-    Type switch      : Motion      "Bedroom3Motion"                             [ ga="<13/4/1" ]
-    Type number      : Brightnesss "Bedroom3 Brightness [%.1f Lux]"             [ ga="9.004:<13/2/2" ]
+    Type contact      : Motion      "Bedroom3Motion"                             [ ga="1.002:<13/4/1" ]
+    Type number      : Brightness "Bedroom3 Brightness [%.1f Lux]"              [ ga="9.004:<13/2/2" ]
     }
 
 // ----------------------------------------------------------------------------
@@ -148,8 +154,8 @@ Thing knx:device:KnxButtonsIsland  "KNX Button Kitchen Pillar" (knx:ip:knxgw) @ 
     Type switch-control     : Channel_Common  "Volume Control"                   [ ga="5/5/2+5/5/2"]
     }
 
-// 6:Workroom
-Thing knx:device:KnxButtonWorkroom   "KNX Button Workroom" (knx:ip:knxgw) @ "workroom"              [ address="6.3.1" ] {
+// 6:Study
+Thing knx:device:KnxButtonStudy   "KNX Button Study" (knx:ip:knxgw) @ "study"              [ address="6.3.1" ] {
     Type switch-control     : PlayPause       "Playback"                        [ ga="6/5/1+6/5/1"]
     Type switch-control     : Channel_Common  "Volume Control"                  [ ga="6/5/2+6/5/2"]
     }
@@ -173,7 +179,6 @@ Thing knx:device:KnxButtonsHallwayMain   "KNX Button Hallway Main" (knx:ip:knxgw
 // 10: Small Hallway (no audio)
 Thing knx:device:KnxButtonsHallwaySmall   "KNX Button Hallway Small" (knx:ip:knxgw) @ "hallway small"   [ address="10.3.1" ] {
     }
-
 
 // 11:Bedroom 1
 Thing knx:device:KnxButtonsBedroom1Door   "KNX Button Bedroom 1 Door" (knx:ip:knxgw) @ "Bedroom 1"    [ address="11.3.1" ] {
@@ -217,3 +222,9 @@ Thing knx:device:KnxButtonsBedroom3BedRight   "KNX Button Bedroom 3 Bed Right" (
     Type switch-control     : PlayPause       "Playback"                        [ ga="13/5/1+13/5/1"]
     Type switch-control     : Channel_Common  "Volume Control"                  [ ga="13/5/2+13/5/2"]
     }
+
+// PowerConsuption
+Thing knx:device:PowerConsumption         "KNX Power Consumption"           (knx:ip:knxgw) @ "central" {
+    Type number      : HeatingPowerCounter    "HeatingPowerCounter"       [ ga="13.010:1/2/21" ]
+    Type  number     : HousePowerCounter    "HousePowerCounter"           [ ga="13.010:1/2/11" ]
+} 

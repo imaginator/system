@@ -1,0 +1,71 @@
+
+    // 5:Kitchen
+    Thing device KnxButtonsKitchenPillar  "KNX Button Kitchen Pillar" @ "kitchen"         [ address="5.3.1" ] {
+        Type switch-control     : KitchenPlayPause       "Playback"                         [ ga="5/5/1+5/5/1"]
+        Type switch-control     : KitchenChannel_Common  "Volume Control"                   [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEn  "KNX Button Kitchen Pillar" @ "kitchen"         [ address="5.3.2" ] {
+        Type switch-control     : KitchenPlayPause       "Playback"                         [ ga="5/5/1+5/5/1"]
+        Type switch-control     : Channel_Common  "Volume Control"                          [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Kitchen Pillar" @ "kitchen"         [ address="5.3.3" ] {
+        Type switch-control     : KitchenPlayPause       "Playback"                         [ ga="5/5/1+5/5/1"]
+        Type switch-control     : KitchenChannel_Common  "Volume Control"                   [ ga="5/5/2+5/5/2"]
+    }
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Kitchen Pillar" @ "kitchen"         [ address="5.3.4" ] {
+        Type switch-control     : KitchenPlayPause       "Playback"                         [ ga="5/5/1+5/5/1"]
+        Type switch-control     : KitchenChannel_Common  "Volume Control"                   [ ga="5/5/2+5/5/2"]
+    }
+
+    // 6:Study
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Study" @ "study"                    [ address="6.3.1" ] {
+        Type switch-control     : StudyPlayPause       "Playback"                        [ ga="6/5/1+6/5/1"]
+        Type switch-control     : StudyChannel_Common  "Volume Control"                  [ ga="6/5/2+6/5/2"]
+    }
+
+    // 7:Main Bathroom
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Bathroom Main" @ "bathroom main"    [ address="7.3.1" ] {
+        Type switch-control     : BathroomMainPlayPause       "Playback"                    [ ga="7/5/1+7/5/1"]
+        Type switch-control     : BathroomMainChannel_Common  "Volume Control"              [ ga="7/5/2+7/5/2"]
+    }
+
+    // 8:Guest Bathroom
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Bathroom Guest" @ "bathroom guest"  [ address="8.3.1" ] {
+        Type switch-control     : BathroomGuestPlayPause       "Playback"                   [ ga="8/5/1+8/5/1"]
+        Type switch-control     : BathroomGuestChannel_Common  "Volume Control"             [ ga="8/5/2+8/5/2"]
+    }
+
+    // 9: Main Hallway (no audio)
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Hallway Main" @ "hallway main"     [ address="9.3.1" ] {
+    }
+
+    // 10: Small Hallway (no audio)
+    Thing device KnxButtonsLoungeScreenEnd  "KNX Button Hallway Small" @ "hallway small"   [ address="10.3.1" ] {
+    }
+
+
+KnxPushButtonLoungeScreenEnd     [ address="4.3.1"] {  
+    Type switch-control:    Channel_Common   [ ga="2/2/124+2/2/124"]
+    Type switch-control:    PlayPause        [ ga="2/2/125+2/2/125"]
+}
+KnxPushButtonLoungeProjectorEnd  [ address="4.3.2"] {    }
+KnxPushButtonKitchenPillar	 [ address="5.3.1"] {    }
+KnxPushButtonKitchenTerraceDoorLeft	 [ address="5.3.2"] {    }
+KnxPushButtonKitchenTerraceDoorRight	 [ address="5.3.3"] {    }
+KnxPushButtonKitchenIsland	 [ address="5.3.4"] {    }
+KnxPushButtonStudyDoor	 [ address="6.3.1"] {    }
+KnxPushButtonBathroomMainDoor		 [ address="7.3.1"] {    }
+KnxPushButtonBathroomGuestDoor		 [ address="8.3.1"] {    }
+KnxPushButtonHallwayMainFrontDoor		 [ address="9.3.1"] {    }
+KnxPushButtonHallwaySmallBathroomDoor		 [ address="10.3.1"] {    }
+KnxPushButtonBedroom1Door	 [ address="11.3.1"] {    }
+KnxPushButtonBedroom1BedLeft	 [ address="11.3.2"] {    }
+KnxPushButtonBedroom1BedRight	 [ address="11.3.3"] {    }
+
+KnxPushButtonBedroom2Door	 [ address="12.3.1"] {    }
+KnxPushButtonBedroom2BedLeft	 [ address="12.3.2"] {    }
+KnxPushButtonBedroom2BedRight	 [ address="12.3.3"] {    }
+
+KnxPushButtonBedroom3Door	 [ address="13.3.1"] {    }
+KnxPushButtonBedroom3BedLeft	 [ address="13.3.2"] {    }
+KnxPushButtonBedroom3BedRight	 [ address="13.3.3"] {    }
