@@ -18,7 +18,7 @@ openhab2:
 
 openhab-repo:
   pkgrepo.managed:
-    - name: deb [ arch=amd64 ] https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main
+    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main
     - file: /etc/apt/sources.list.d/openhab2.list
     - humanname: openhab2 unstable repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
