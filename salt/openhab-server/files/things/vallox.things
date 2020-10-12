@@ -1,1 +1,1 @@
-Thing valloxmv:valloxmv:ventilation [ip="vallox.imagilan", updateinterval=60]
+Thing  valloxmv:valloxmv:ventilation  [ip="vallox.imagilan", updateinterval=60]
