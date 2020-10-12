@@ -1,952 +1,859 @@
 {
-    "F17": {
-        "updatedTime": "2019-08-12T16:55:55.362Z",
-        "dashboards": [
-            {
-                "id": "Music",
-                "name": "Music",
-                "widgets": [
-                    {
-                        "name": "SpotifyPlayerBridge",
-                        "sizeX": 7,
-                        "sizeY": 7,
-                        "type": "template",
-                        "customwidget": "Spotifycontrol",
-                        "row": 0,
-                        "col": 2,
-                        "config": {
-                            "lengthinfoenable": true,
-                            "albumArt": "SpotifyPlayerBridge_AlbumImage",
-                            "title": "SpotifyPlayerBridge_TrackName",
-                            "artist": "SpotifyPlayerBridge_ArtistName",
-                            "control": "SpotifyPlayerBridge_TrackPlayer",
-                            "shuffle": "SpotifyPlayerBridge_DeviceShuffle",
-                            "repeat": "SpotifyPlayerBridge_TrackRepeat",
-                            "tprog": "SpotifyPlayerBridge_TrackProgress",
-                            "tdur": "SpotifyPlayerBridge_TrackDuration",
-                            "tprogSS": "SpotifyPlayerBridge_TrackProgressMs",
-                            "tdurSS": "SpotifyPlayerBridge_TrackDurationMs",
-                            "progressenable": true
-                        }
-                    }
-                ],
-                "row": 1,
-                "col": 0,
-                "tile": {},
-                "drawer": {},
-                "header": {}
-            },
-            {
-                "id": "Weather",
-                "name": "Weather",
-                "widgets": [
-                    {
-                        "name": "Air Quality",
-                        "sizeX": 6,
-                        "sizeY": 1,
-                        "item": "AirQuality_AqiDescription",
-                        "type": "dummy",
-                        "row": 1,
-                        "col": 0,
-                        "nolinebreak": true
+    "dashboards": [
+        {
+            "id": "Music",
+            "name": "Music",
+            "widgets": [
+                {
+                    "name": "SpotifyPlayerBridge",
+                    "sizeX": 7,
+                    "sizeY": 7,
+                    "type": "template",
+                    "customwidget": "Spotifycontrol",
+                    "row": 0,
+                    "col": 2,
+                    "config": {
+                        "lengthinfoenable": true,
+                        "albumArt": "SpotifyPlayerBridge_AlbumImage",
+                        "title": "SpotifyPlayerBridge_TrackName",
+                        "artist": "SpotifyPlayerBridge_ArtistName",
+                        "control": "SpotifyPlayerBridge_TrackPlayer",
+                        "shuffle": "SpotifyPlayerBridge_DeviceShuffle",
+                        "repeat": "SpotifyPlayerBridge_TrackRepeat",
+                        "tprog": "SpotifyPlayerBridge_TrackProgress",
+                        "tdur": "SpotifyPlayerBridge_TrackDuration",
+                        "tprogSS": "SpotifyPlayerBridge_TrackProgressMs",
+                        "tdurSS": "SpotifyPlayerBridge_TrackDurationMs",
+                        "progressenable": true
                     },
-                    {
-                        "name": "Temp outside",
-                        "sizeX": 3,
-                        "sizeY": 1,
-                        "item": "LocalWeather_CurrentTemperature",
-                        "type": "dummy",
-                        "row": 0,
-                        "col": 0,
-                        "useserverformat": false,
-                        "nolinebreak": false
-                    },
-                    {
-                        "name": "Humidity outside",
-                        "sizeX": 3,
-                        "sizeY": 1,
-                        "item": "LocalWeather_CurrentRelativeHumidity",
-                        "type": "dummy",
-                        "row": 0,
-                        "col": 3,
-                        "useserverformat": false,
-                        "nolinebreak": true
-                    },
-                    {
-                        "name": "Air Quality Index",
-                        "sizeX": 6,
-                        "sizeY": 1,
-                        "item": "AirQuality_AqiLevel",
-                        "type": "dummy",
-                        "nolinebreak": true,
-                        "unit": "%",
-                        "row": 1,
-                        "col": 6
-                    },
-                    {
-                        "name": "Air Quality Index",
-                        "sizeX": 12,
-                        "sizeY": 5,
-                        "item": "AirQuality_No2",
-                        "type": "chart",
-                        "row": 2,
-                        "col": 0,
-                        "charttype": "default",
-                        "service": "postgresql",
-                        "period": "W",
-                        "liveUpdates": {},
-                        "isgroup": false,
-                        "showlegend": "auto"
-                    },
-                    {
-                        "name": "sunrise",
-                        "sizeX": 3,
-                        "sizeY": 1,
-                        "item": "LocalSun_RiseStart",
-                        "type": "dummy",
-                        "nolinebreak": true,
-                        "row": 0,
-                        "col": 6,
-                        "format": "H:mm",
-                        "useserverformat": false,
-                        "backdrop_iconset": "smarthome-set",
-                        "backdrop_icon": "sun"
-                    },
-                    {
-                        "name": "Sunset",
-                        "sizeX": 3,
-                        "sizeY": 1,
-                        "item": "LocalSun_SetStart",
-                        "type": "dummy",
-                        "nolinebreak": true,
-                        "format": "H:mm",
-                        "useserverformat": false,
-                        "backdrop_iconset": "smarthome-set",
-                        "backdrop_icon": "sun",
-                        "row": 0,
-                        "col": 9
-                    },
-                    {
-                        "name": "Weather Forecast",
-                        "sizeX": 12,
-                        "sizeY": 4,
-                        "type": "template",
-                        "customwidget": "weather-underground",
-                        "row": 7,
-                        "col": 0,
-                        "config": {}
-                    },
-                    {
-                        "name": "Weather",
-                        "sizeX": 8,
-                        "sizeY": 4,
-                        "type": "template",
-                        "customwidget": "Local Weather - OpenWeatherMap",
-                        "config": {
-                            "icon_size_current": "12",
-                            "icon_size_forecast": "3",
-                            "day_format": "EEEE"
-                        },
-                        "row": 11,
-                        "col": 0
-                    }
-                ],
-                "row": 2,
-                "col": 0
-            },
-            {
-                "id": "Air",
-                "name": "Network",
-                "widgets": [
-                    {
-                        "name": "bandwidth",
-                        "sizeX": 12,
-                        "sizeY": 4,
-                        "type": "frame",
-                        "row": 0,
-                        "col": 0,
-                        "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&from=now-12h&to=now&refresh=10s&theme=dark",
-                        "background": "transparent",
-                        "frameless": true,
-                        "hidelabel": true
-                    },
-                    {
-                        "name": "Wireless",
-                        "sizeX": 12,
-                        "sizeY": 4,
-                        "type": "frame",
-                        "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&from=now-12h&to=now&refresh=10s&theme=dark",
-                        "background": "transparent",
-                        "frameless": true,
-                        "hidelabel": true,
-                        "row": 4,
-                        "col": 0
-                    }
-                ],
-                "row": 2,
-                "col": 1,
-                "tile": {}
-            },
-            {
-                "id": "Bedroom",
-                "name": "Bedroom",
-                "widgets": [
-                    {
-                        "name": "overhead",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "ExtendedColorLight_Effect_bedroom",
-                        "type": "switch",
-                        "row": 0,
-                        "col": 3,
-                        "hidelabel": false,
-                        "hideonoff": true,
-                        "iconset": "smarthome-set",
-                        "icon": "bulb",
-                        "icon_size": "64"
-                    },
-                    {
-                        "name": "bedside",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "Bedroom1Lamp_Switch",
-                        "type": "switch",
-                        "hidelabel": false,
-                        "hideonoff": true,
-                        "iconset": "smarthome-set",
-                        "icon": "bulb",
-                        "icon_size": "64",
-                        "row": 0,
-                        "col": 7
-                    },
-                    {
-                        "name": "Now Playing",
-                        "sizeX": 2,
-                        "sizeY": 1,
-                        "item": "ChromecastAudio_bedroom_mini_Title",
-                        "type": "dummy",
-                        "row": 5,
-                        "col": 0,
-                        "font_size": "13",
-                        "useserverformat": true
-                    },
-                    {
-                        "name": "Now Playing",
-                        "sizeX": 2,
-                        "sizeY": 1,
-                        "item": "ChromecastAudio_bedroom_mini_Artist",
-                        "type": "dummy",
-                        "font_size": "13",
-                        "useserverformat": true,
-                        "row": 5,
-                        "col": 2
-                    },
-                    {
-                        "name": "dressingroom",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "Dressingroom_Brightness",
-                        "type": "switch",
-                        "hidelabel": false,
-                        "hideonoff": true,
-                        "iconset": "smarthome-set",
-                        "icon": "bulb",
-                        "icon_size": "64",
-                        "row": 0,
-                        "col": 5
-                    },
-                    {
-                        "name": "Blinds",
-                        "sizeX": 2,
-                        "sizeY": 4,
-                        "item": null,
-                        "type": "slider",
-                        "row": 0,
-                        "col": 10,
-                        "vertical": true,
-                        "hidelabel": true,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "inverted": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "rollershutter",
-                        "backdrop_center": true
-                    },
-                    {
-                        "name": "colour temperature",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "Bedroom1Overhead_ColorTemperature",
-                        "type": "slider",
-                        "row": 2,
-                        "col": 3,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic"
-                    },
-                    {
-                        "name": "brightness",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": "Dressingroom_Brightness",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "row": 3,
-                        "col": 3
-                    },
-                    {
-                        "name": "room colour",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "Bedroom1Overhead_Color",
-                        "type": "colorpicker",
-                        "row": 2,
-                        "col": 7,
-                        "style": "aCKolor"
-                    },
-                    {
-                        "name": "Bedroom",
-                        "sizeX": 12,
-                        "sizeY": 1,
-                        "item": "ChromecastMiniBedroom1Volume",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true,
-                        "hidepointer": true,
-                        "row": 4,
-                        "col": 0
-                    }
-                ],
-                "row": 4,
-                "col": 0,
-                "tile": {},
-                "drawer": {},
-                "header": {}
-            },
-            {
-                "id": "Camera",
-                "name": "Cats",
-                "widgets": [
-                    {
-                        "name": "New Widget",
-                        "sizeX": 12,
-                        "sizeY": 8,
-                        "type": "image",
-                        "row": 0,
-                        "col": 0,
-                        "image_source": "static",
-                        "url": "https://loremflickr.com/g/640/480/cats",
-                        "refresh": 120,
-                        "intervaltype": "seconds",
-                        "background": "rgb(0, 0, 0)"
-                    }
-                ],
-                "row": 3,
-                "col": 1,
-                "tile": {
-                    "title_color": "transparent"
-                },
-                "drawer": {},
-                "header": {}
-            },
-            {
-                "id": "Volumes",
-                "name": "Volumes",
-                "widgets": [
-                    {
-                        "name": "Kitchen",
-                        "sizeX": 10,
-                        "sizeY": 1,
-                        "item": "ChromecastMiniKitchenVolume",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "row": 4,
-                        "col": 0,
-                        "hidelimits": true,
-                        "hidepointer": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "cinemascreen",
-                        "backdrop_center": true
-                    },
-                    {
-                        "name": "Bedroom",
-                        "sizeX": 10,
-                        "sizeY": 1,
-                        "item": "ChromecastMiniBedroom1Volume",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "row": 3,
-                        "col": 0,
-                        "hidelimits": true,
-                        "hidepointer": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "bedroom",
-                        "backdrop_center": true
-                    },
-                    {
-                        "name": "Bathroom",
-                        "sizeX": 10,
-                        "sizeY": 1,
-                        "item": "ChromecastMiniMainbathVolume",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "row": 2,
-                        "col": 0,
-                        "hidelimits": true,
-                        "hidepointer": true,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "bath",
-                        "backdrop_center": true
-                    },
-                    {
-                        "name": "Lounge",
-                        "sizeX": 10,
-                        "sizeY": 1,
-                        "item": "ChromecastAudioLoungeVolume",
-                        "type": "slider",
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "row": 1,
-                        "hidelimits": true,
-                        "hidepointer": true,
-                        "col": 0,
-                        "backdrop_iconset": "eclipse-smarthome-classic",
-                        "backdrop_icon": "sofa",
-                        "backdrop_center": true
-                    },
-                    {
-                        "name": "Average (All Speakers)",
-                        "sizeX": 10,
-                        "sizeY": 1,
-                        "item": "ChromecastAudiogroupAllSpeakersVolume",
-                        "type": "slider",
-                        "row": 0,
-                        "col": 0,
-                        "floor": 0,
-                        "ceil": 100,
-                        "step": 1,
-                        "hidelimits": true
-                    },
-                    {
-                        "name": "",
-                        "sizeX": 2,
-                        "sizeY": 1,
-                        "item": "ChromecastAudiogroupAllSpeakersTitle",
-                        "type": "dummy",
-                        "row": 0,
-                        "col": 10,
-                        "nolinebreak": false,
-                        "useserverformat": true
-                    },
-                    {
-                        "name": "New Widget",
-                        "sizeX": 2,
-                        "sizeY": 2,
-                        "item": "ChromecastAudiogroupAllSpeakersImageSrc",
-                        "type": "image",
-                        "row": 1,
-                        "col": 10,
-                        "image_source": "item-string",
-                        "intervaltype": "seconds",
-                        "background": "rgb(0, 0, 0)"
-                    }
-                ],
-                "row": 0,
-                "col": 0,
-                "tile": {}
-            },
-            {
-                "id": "Baustelle",
-                "name": "Baustelle",
-                "widgets": [
-                    {
-                        "name": "Baustelle Webcam",
-                        "sizeX": 12,
-                        "sizeY": 8,
-                        "item": "EyeInTheSky_Image",
-                        "type": "image",
-                        "row": 0,
-                        "col": 0,
-                        "image_source": "item-image",
-                        "intervaltype": "seconds",
-                        "background": "rgb(0, 0, 0)"
-                    }
-                ],
-                "row": 0,
-                "col": 1
-            },
-            {
-                "id": "Playlists",
-                "name": "Playlists",
-                "widgets": [
-                    {
-                        "name": "Spotify Playlister",
-                        "sizeX": 12,
-                        "sizeY": 8,
-                        "type": "template",
-                        "customwidget": "Spotify-Playlister",
-                        "config": {
-                            "accessToken": "SpotifyPlayerBridge_AccessToken",
-                            "spotifyPlayer": "SpotifyPlayerBridge_TrackPlay"
-                        },
-                        "row": 0,
-                        "col": 0
-                    }
-                ],
-                "row": 1,
-                "col": 1
-            },
-            {
-                "id": "logs",
-                "name": "Logs",
-                "widgets": [
-                    {
-                        "name": "frontail",
-                        "sizeX": 12,
-                        "sizeY": 10,
-                        "type": "frame",
-                        "row": 0,
-                        "col": 0,
-                        "url_source": "static",
-                        "frameUrl": "http://openhab.imagilan/frontail/",
-                        "frameless": true,
-                        "hidelabel": true,
-                        "background": "transparent"
-                    }
-                ],
-                "row": 5,
-                "col": 0,
-                "tile": {},
-                "mobile_mode_enabled": false
-            },
-            {
-                "id": "Energy",
-                "name": "Energy",
-                "widgets": [
-                    {
-                        "name": "energy",
-                        "sizeX": 9,
-                        "sizeY": 8,
-                        "type": "frame",
-                        "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&from=now-24h&to=now&refresh=10s&theme=dark",
-                        "background": "transparent",
-                        "frameless": true,
-                        "hidelabel": true,
-                        "row": 0,
-                        "col": 0
-                    },
-                    {
-                        "name": "Cost per year",
-                        "sizeX": 3,
-                        "sizeY": 8,
-                        "type": "frame",
-                        "url_source": "static",
-                        "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=275&from=now-24h&to=now&refresh=120s&theme=dark",
-                        "background": "transparent",
-                        "frameless": true,
-                        "hidelabel": true,
-                        "row": 0,
-                        "col": 9
-                    }
-                ],
-                "row": 3,
-                "col": 0,
-                "tile": {
-                    "backdrop_iconset": "freepik-household"
-                },
-                "mobile_mode_enabled": false
-            },
-            {
-                "id": "imagiSuck",
-                "name": "imagiSuck",
-                "widgets": [
-                    {
-                        "name": "New Widget",
-                        "sizeX": 12,
-                        "sizeY": 1,
-                        "type": "template",
-                        "customwidget": "options-switch",
-                        "row": 2,
-                        "col": 0,
-                        "config": {
-                            "string_item": "Vacuum_Action_Control"
-                        }
-                    },
-                    {
-                        "name": "imagiSuck Status",
-                        "sizeX": 12,
-                        "sizeY": 2,
-                        "type": "template",
-                        "customwidget": "XiaomiMiRobotStatus",
-                        "row": 0,
-                        "col": 0,
-                        "config": {
-                            "robotStatus": "Vacuum_StatusState",
-                            "robotError": "Vacuum_StatusErrorCode",
-                            "robotBatLevel": "Vacuum_StatusBattery",
-                            "robotCRMBrush": "Vacuum_ConsumablesMainBrushPercent",
-                            "robotCRSBrush": "Vacuum_ConsumablesSideBrushPercent",
-                            "robotCRFilter": "Vacuum_ConsumablesFilterPercent",
-                            "robotCRSensor": "Vacuum_ConsumablesSensorDirtPercent"
-                        }
-                    },
-                    {
-                        "name": "Main Brush",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_ConsumablesMainBrushPercent",
-                        "type": "dummy",
-                        "row": 5,
-                        "col": 0,
-                        "nolinebreak": true,
-                        "unit": "%"
-                    },
-                    {
-                        "name": "Consumables",
-                        "sizeX": 4,
-                        "sizeY": 1,
-                        "item": null,
-                        "type": "label",
-                        "row": 4,
-                        "col": 0
-                    },
-                    {
-                        "name": "side brush",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_ConsumablesSideBrushPercent",
-                        "type": "dummy",
-                        "row": 5,
-                        "col": 1,
-                        "nolinebreak": true,
-                        "unit": "%"
-                    },
-                    {
-                        "name": "filter",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_ConsumablesFilterPercent",
-                        "type": "dummy",
-                        "row": 5,
-                        "col": 2,
-                        "nolinebreak": true,
-                        "unit": "%"
-                    },
-                    {
-                        "name": "sensors",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_ConsumablesSensorDirtPercent",
-                        "type": "dummy",
-                        "row": 5,
-                        "col": 3,
-                        "nolinebreak": true,
-                        "unit": "%"
-                    },
-                    {
-                        "name": "History",
-                        "sizeX": 3,
-                        "sizeY": 1,
-                        "item": null,
-                        "type": "label",
-                        "row": 4,
-                        "col": 8
-                    },
-                    {
-                        "name": "Cleaning area",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanArea",
-                        "type": "dummy",
-                        "nolinebreak": false,
-                        "unit": "m2",
-                        "row": 5,
-                        "col": 8
-                    },
-                    {
-                        "name": "Cleaning time",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanTime",
-                        "type": "dummy",
-                        "nolinebreak": false,
-                        "unit": "",
-                        "row": 5,
-                        "col": 9
-                    },
-                    {
-                        "name": "Cleaning Count",
-                        "sizeX": 1,
-                        "sizeY": 1,
-                        "item": "Vacuum_HistoryTotalCleanCount",
-                        "type": "dummy",
-                        "nolinebreak": false,
-                        "unit": "",
-                        "row": 5,
-                        "col": 10
-                    }
-                ],
-                "row": 4,
-                "col": 1
-            }
-        ],
-        "menucolumns": 2,
-        "settings": {
-            "theme": "material-dark",
-            "panel_name": "F17",
-            "header_clock_format": "shortTime",
-            "no_scrolling": false,
-            "hide_drawer_footer": true,
-            "hide_speak_button": true,
-            "hide_fullscreen_button": true,
-            "show_header_clock": true,
-            "speech_synthesis_voice": "Google UK English Male",
-            "floating_speech": false,
-            "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
-            "dashboard_control_item": "Tablet_Habpanel_Active_Panel",
-            "additional_stylesheet_url": "/static/habpanel.css",
-            "hide_refresh_button": true
+                    "$$hashKey": "object:101192"
+                }
+            ],
+            "row": 1,
+            "col": 0,
+            "tile": {},
+            "drawer": {},
+            "header": {},
+            "$$hashKey": "object:96925"
         },
-        "customwidgets": {
-            "Spotifycontrol": {
-                "template": "<style>\n  .main-table {\n    width: 100%;\n    height: 100%;\n    padding: 0px 0px 0px 0px;\n    color: #edeff1;\n  }\n\n  .album-table {\n    width: 100%;\n    position: relative;\n  }\n\n  .albumcover {\n    width: 100%;\n    position: relative;\n  }\n\n  .button-table {\n    width: 100%;\n    position: absolute;\n    top: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .albumbuttons-table {\n    background: rgba(44, 55, 67, 0.4);\n    width: 100%;\n    position: absolute;\n    bottom: 0%;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .songprogress {\n    -webkit-appearance: progress-bar;\n    display: block;\n    background-color: #f3f3f3;\n    width: 100%;\n    border: 0;\n    height: 3px;\n    border-radius: 9px;\n    color: orange;\n  }\n\n  progress::-moz-progress-bar {\n    background: orange;\n  }\n\n  progress::-webkit-progress-value {\n    background: orange;\n  }\n\n  .title {\n    font-weight: bold;\n    font-size: 18px;\n    padding-top: 10px;\n  }\n\n  .leftbox {\n    float: right;\n    text-align: center;\n  }\n\n  .centerbox {\n    width: 70%;\n    text-align: center;\n  }\n\n  .rightbox {\n    float: left;\n    text-align: center;\n  }\n\n  .timebox {\n    height: 10px;\n  }\n\n  .blockbutton {\n    display: block;\n    width: 100%;\n    border: none;\n    padding: 25px 10px 15px 10px;\n    cursor: pointer;\n    text-align: center;\n  }\n\n  .buttonbox {\n    width: 33%;\n    background-color: #4A5561;\n    font-size: 36px;\n  }\n\n  .buttonbox:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .buttonbox2 {\n    width: 33%;\n    background-color: #394149;\n    color: #c8cfd5;\n    font-size: 43px;\n  }\n\n  .buttonbox2:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .blockbuttonS {\n    display: block;\n    border: none;\n    padding: 1px 10px 10px 10px;\n    font-size: 24px;\n  }\n\n  .blockbuttonS:hover {\n    color: orange;\n  }\n\n</style>\n\n\n<div class=\"main-table\">\n\n  <div class=\"album-table\">\n    <img ng-if=\"itemValue(config.albumArt)!='UNDEF'\" class=albumcover ng-src=\"{{itemValue(config.albumArt)}}\">\n    <img ng-if=\"itemValue(config.albumArt)=='UNDEF'\" class=albumcover ng-src=\"http://quashera.com/openhab/dependencies/noalbumart.jpg\">\n\n    <table class=\"albumbuttons-table\">\n      <tr>\n        <td class=\"leftbox\">\n          <p ng-if=\"itemValue(config.tprog)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tprog)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false\"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) =='OFF'\" ng-click=\"sendCmd(config.shuffle,'ON')\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) !='OFF'\" ng-click=\"sendCmd(config.shuffle,'OFF')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n        </td>\n\n        <td class=\"centerbox\">\n          <p class=\"title\" ng-if=\"itemValue(config.title)!='NULL'\">{{itemValue(config.title)}}</p>\n          <p ng-if=\"itemValue(config.title)=='NULL'\" class=\"rnp-title-td\">-</p>\n          <p ng-if=\"itemValue(config.artist)!='NULL'\" class=\"rnp-name-artist\">{{itemValue(config.artist)}}</p>\n          <p ng-if=\"itemValue(config.artist)=='NULL'\" class=\"rnp-name-artist\">-</p>\n\n        </td>\n\n        <td class=\"rightbox\">\n          <p ng-if=\"itemValue(config.tdur)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tdur)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false \"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='off'\" ng-click=\"sendCmd(config.repeat,'track')\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='track'\" ng-click=\"sendCmd(config.repeat,'context')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-If=\"itemValue(config.repeat) !='track' && itemValue(config.repeat) !='off'\" ng-click=\"sendCmd(config.repeat,'off')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-refresh\"></i></label>\n        </td>\n      </tr>\n      <tr>\n\n        <td colspan=\"3\">\n          <progress ng-if=\"itemValue(config.tprogSS)!='NULL'&&config.progressenable == true \" class=\"songprogress\" value=\"{{itemValue(config.tprogSS)}}\" max=\"{{itemValue(config.tdurSS)}}\"></progress>\n        </td>\n      </tr>\n\n    </table>\n\n    <table class=\"button-table\">\n      <tr>\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'PREVIOUS')\"><i class=\"glyphicon glyphicon-step-backward\"></i></label>\n        </td>\n\n        <td class=\"buttonbox2\">\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) !='PLAY'\" ng-click=\"sendCmd(config.control,'PLAY')\"><i class=\"glyphicon glyphicon-play rnp-glyphicon-text\"></i></label>\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) =='PLAY'\" ng-click=\"sendCmd(config.control,'PAUSE')\"><i class=\"glyphicon glyphicon-pause rnp-glyphicon-text\"></i></label>\n        </td>\n\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'NEXT')\"><i class=\"glyphicon glyphicon-step-forward\"></i></label>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n",
-                "name": "Spotify controller",
-                "author": "Linda Knudsen",
-                "description": "Controller for the spotify plugin, might work with others too",
-                "settings": [
-                    {
-                        "type": "item",
-                        "id": "albumArt",
-                        "label": "Album Art",
-                        "description": "SpotifyPlayerBridge_AlbumImage",
-                        "default": ""
-                    },
-                    {
-                        "type": "item",
-                        "id": "title",
-                        "label": "Track Title",
-                        "description": "SpotifyPlayerBridge_TrackName"
-                    },
-                    {
-                        "type": "item",
-                        "id": "artist",
-                        "label": "Artist",
-                        "description": "SpotifyPlayerBridge_ArtistName"
-                    },
-                    {
-                        "type": "item",
-                        "id": "control",
-                        "label": "Player Control",
-                        "description": "SpotifyPlayerBridge_PlayerControl"
-                    },
-                    {
-                        "type": "item",
-                        "id": "shuffle",
-                        "label": "Shuffle",
-                        "description": "SpotifyPlayerBridge_ActiveDeviceShuffle"
-                    },
-                    {
-                        "type": "item",
-                        "id": "repeat",
-                        "label": "Repeat",
-                        "description": "SpotifyPlayerBridge_RepeatMode"
-                    },
-                    {
-                        "type": "item",
-                        "label": "Track Progress",
-                        "id": "tprog",
-                        "description": "SpotifyPlayerBridge_TrackProgressMSs"
-                    },
-                    {
-                        "type": "item",
-                        "label": "Track Duration",
-                        "default": "",
-                        "description": "SpotifyPlayerBridge_TrackDurationMSs",
-                        "id": "tdur"
-                    },
-                    {
-                        "type": "checkbox",
-                        "description": "Enables the progress text",
-                        "id": "lengthinfoenable",
-                        "default": true,
-                        "label": "Progress Text"
-                    },
-                    {
-                        "type": "checkbox",
-                        "description": "Enables progress bar",
-                        "id": "progressenable",
-                        "default": false,
-                        "choices": "true, false",
-                        "label": "Progress Bar"
-                    },
-                    {
-                        "type": "item",
-                        "id": "tprogSS",
-                        "label": "Track Progress in ms",
-                        "description": "SpotifyPlayerBridge_TrackProgressMs - Found under the \"show more\" button on the player bridge",
-                        "default": ""
-                    },
-                    {
-                        "type": "item",
-                        "id": "tdurSS",
-                        "label": "Track duration in ms",
-                        "default": "",
-                        "description": "SpotifyPlayerBridge_TrackDurationMs - Found under the \"show more\" button on the player bridge"
-                    }
-                ],
-                "readme_url": "https://community.openhab.org/t/54040"
+        {
+            "id": "Air",
+            "name": "Network",
+            "widgets": [
+                {
+                    "name": "bandwidth",
+                    "sizeX": 12,
+                    "sizeY": 4,
+                    "type": "frame",
+                    "row": 0,
+                    "col": 0,
+                    "url_source": "static",
+                    "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=74&from=now-12h&to=now&refresh=10s&theme=dark",
+                    "background": "transparent",
+                    "frameless": true,
+                    "hidelabel": true
+                },
+                {
+                    "name": "Wireless",
+                    "sizeX": 12,
+                    "sizeY": 4,
+                    "type": "frame",
+                    "url_source": "static",
+                    "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=265&from=now-12h&to=now&refresh=10s&theme=dark",
+                    "background": "transparent",
+                    "frameless": true,
+                    "hidelabel": true,
+                    "row": 4,
+                    "col": 0
+                }
+            ],
+            "row": 2,
+            "col": 1,
+            "tile": {},
+            "$$hashKey": "object:96928"
+        },
+        {
+            "id": "Camera",
+            "name": "Cats",
+            "widgets": [
+                {
+                    "name": "New Widget",
+                    "sizeX": 12,
+                    "sizeY": 8,
+                    "type": "image",
+                    "row": 0,
+                    "col": 0,
+                    "image_source": "static",
+                    "url": "https://loremflickr.com/g/640/480/cats",
+                    "refresh": 120,
+                    "intervaltype": "seconds",
+                    "background": "rgb(0, 0, 0)"
+                }
+            ],
+            "row": 3,
+            "col": 1,
+            "tile": {
+                "title_color": "transparent"
             },
-            "Local Weather - OpenWeatherMap": {
-                "template": "<!-- For more information goto: https://github.com/BasvanH/habpanel-widget-openweathermap -->\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/openweathermap/weather-icons-master/css/weather-icons.css\">\n\n<style>\n@media (min-width: 992px) {\n    .col-md-border:not(:last-child) {\n\t\t\tborder-right: 1px solid #d7d7d7;\n    }\n    .col-md-border + .col-md-border {\n\t\t\tborder-left: 1px solid #d7d7d7;\n\t\t\tmargin-left: -1px;\n    }\n  \t.owm-to-upper:first-letter {\n    \ttext-transform: uppercase;\n\t\t}\n  \t.owm-condition {\n  \t\theight: 2em;\n \t\t}\n  \t.owm-row-current {\n  \t\tmargin: 1em 0em 2em;\n \t\t}\n   \t.owm-row-forecast {\n  \t\tmargin-bottom: 1em;\n \t\t}\n}\n</style>\n<div oc-lazy-load=\"['/static/openweathermap/owm.controller.js']\">\n\t<div ng-controller=\"ngOwmCtrl\">\n    <div class=\"row owm-row-current\">\n      <div class=\"col-xs-9\">\n        <i class=\"wi wi-owm-{{ itemValue('Weather_OWM_ConditionId') }} pull-right\" ng-style=\"{ 'color' : (config.icon_color_current == NULL ? primary-color : config.icon_color_current), 'font-size' : (config.icon_size_current == NULL ? '10em' : config.icon_size_current + 'em') }\"></i>\n        <h2 class=\"text-left owm-to-upper\">{{ itemValue('Weather_OWM_Condition') }}</h2>\n      </div>\n      <div class=\"col-xs-3 text-right\">\n        <h2>{{ '%.1f' | sprintf:itemValue('Weather_OWM_Temperature').split(' ')[0] }} {{ itemValue('Weather_OWM_Temperature').split(' ')[1] }}</h2>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/humidity.png\"/> {{itemValue('Weather_OWM_Humidity') }}</h5>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/wind.png\"/> {{ '%.1f' | sprintf:itemValue('Weather_OWM_Wind_Speed').split(' ')[0] }} {{ itemValue('Weather_OWM_Wind_Speed').split(' ')[1] }}</h5>\n        <h5>{{ itemValue('Weather_OWM_ObservationTime') | date: 'HH:mm' }}</h5>\n      </div>\n    </div>\n    <div class=\"row owm-row-forecast\">\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time0 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id0 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition0 }}</h5>\n        <h4><b>{{ temp0 == NULL ? '' : '%.1f' | sprintf:temp0.split(' ')[0]}} {{temp0.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time1 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id1 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition1 }}</h5>\n        <h4><b>{{ temp1 == NULL ? '' : '%.1f' | sprintf:temp1.split(' ')[0]}} {{temp1.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time2 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id2 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition2 }}</h5>\n        <h4><b>{{ temp2 == NULL ? '' : '%.1f' | sprintf:temp2.split(' ')[0]}} {{temp2.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time3 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id3 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition3 }}</h5>\n        <h4><b>{{ temp3 == NULL ? '' : '%.1f' | sprintf:temp3.split(' ')[0]}} {{temp3.split(' ')[1] }}</b></h4>\n      </div>\n    </div>\n  </div>\n</div>\n",
-                "name": "OpenWeatherMap",
-                "author": "Bastiaan van Haastrecht",
-                "description": "Local Weather, use with OpenWeatherMap binding - https://github.com/BasvanH/habpanel-widget-openweathermap",
-                "settings": [
-                    {
-                        "type": "choice",
-                        "id": "icon_size_current",
-                        "label": "Icon size - Current",
-                        "default": "12",
-                        "description": "Size of current condition icon",
-                        "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
+            "drawer": {},
+            "header": {},
+            "$$hashKey": "object:96930"
+        },
+        {
+            "id": "Volumes",
+            "name": "Volumes",
+            "widgets": [
+                {
+                    "name": "All",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudiogroupAllSpeakersVolume",
+                    "type": "slider",
+                    "row": 0,
+                    "col": 0,
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "$$hashKey": "object:101013"
+                },
+                {
+                    "name": "",
+                    "sizeX": 2,
+                    "sizeY": 1,
+                    "item": "ChromecastAudiogroupAllSpeakersTitle",
+                    "type": "dummy",
+                    "row": 0,
+                    "col": 10,
+                    "nolinebreak": false,
+                    "useserverformat": true,
+                    "$$hashKey": "object:101014"
+                },
+                {
+                    "name": "New Widget",
+                    "sizeX": 2,
+                    "sizeY": 2,
+                    "item": "ChromecastAudiogroupAllSpeakersImageSrc",
+                    "type": "image",
+                    "row": 1,
+                    "col": 10,
+                    "image_source": "item-string",
+                    "intervaltype": "seconds",
+                    "background": "rgb(0, 0, 0)",
+                    "$$hashKey": "object:101015"
+                },
+                {
+                    "name": "Kitchen",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioKitchenVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "hidepointer": false,
+                    "row": 0,
+                    "col": 1,
+                    "$$hashKey": "object:101016"
+                },
+                {
+                    "name": "Lounge",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioLoungeVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 2,
+                    "$$hashKey": "object:101017"
+                },
+                {
+                    "name": "Study",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioStudyVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 3,
+                    "$$hashKey": "object:101018"
+                },
+                {
+                    "name": "Main Bathroom",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioMainbathVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 4,
+                    "$$hashKey": "object:101019"
+                },
+                {
+                    "name": "Guest Bathroom",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioMainbathVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 5,
+                    "$$hashKey": "object:101020"
+                },
+                {
+                    "name": "Bedroom 1",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioMainbathVolume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 6,
+                    "$$hashKey": "object:101021"
+                },
+                {
+                    "name": "Bedroom 2",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioBedroom2Volume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 7,
+                    "$$hashKey": "object:101022"
+                },
+                {
+                    "name": "Bedroom 3",
+                    "sizeX": 1,
+                    "sizeY": 7,
+                    "item": "ChromecastAudioBedroom3Volume",
+                    "type": "slider",
+                    "floor": 0,
+                    "ceil": 100,
+                    "step": 1,
+                    "hidelimits": true,
+                    "vertical": true,
+                    "hidelabel": false,
+                    "row": 0,
+                    "col": 8,
+                    "$$hashKey": "object:101023"
+                }
+            ],
+            "row": 0,
+            "col": 0,
+            "tile": {},
+            "$$hashKey": "object:96923"
+        },
+        {
+            "id": "Baustelle",
+            "name": "CatGenie",
+            "widgets": [
+                {
+                    "name": "CatGenie",
+                    "sizeX": 12,
+                    "sizeY": 8,
+                    "item": "CatToiletImage",
+                    "type": "image",
+                    "row": 0,
+                    "col": 0,
+                    "image_source": "item-image",
+                    "intervaltype": "seconds",
+                    "background": "rgb(0, 0, 0)",
+                    "$$hashKey": "object:101163"
+                }
+            ],
+            "row": 0,
+            "col": 1,
+            "tile": {},
+            "$$hashKey": "object:96924"
+        },
+        {
+            "id": "Playlists",
+            "name": "Playlists",
+            "widgets": [
+                {
+                    "name": "Spotify Playlister",
+                    "sizeX": 12,
+                    "sizeY": 8,
+                    "type": "template",
+                    "customwidget": "Spotify-Playlister",
+                    "config": {
+                        "accessToken": "SpotifyPlayerBridge_AccessToken",
+                        "spotifyPlayer": "SpotifyPlayerBridge_TrackPlay"
                     },
-                    {
-                        "type": "color",
-                        "id": "icon_color_current",
-                        "label": "Icon color - Current",
-                        "default": "",
-                        "description": "Color of current condition icon"
-                    },
-                    {
-                        "type": "choice",
-                        "default": "3",
-                        "description": "Size of forecast condition icons",
-                        "id": "icon_size_forecast",
-                        "label": "Icon size - Forecast",
-                        "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
-                    },
-                    {
-                        "type": "color",
-                        "id": "icon_color_forecast",
-                        "label": "Icon color - Forecast",
-                        "description": "Color of forecast condition icons",
-                        "default": ""
-                    },
-                    {
-                        "type": "string",
-                        "id": "day_format",
-                        "label": "Day format",
-                        "default": "EEEE",
-                        "description": "Modify day format of forecast, for options see: https://docs.angularjs.org/api/ng/filter/date"
-                    }
-                ],
-                "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-openweathermap/master/Local%20Weather%20-%20OpenWeatherMap.widget.json",
-                "readme_url": "https://github.com/BasvanH/habpanel-widget-openweathermap"
+                    "row": 0,
+                    "col": 0,
+                    "$$hashKey": "object:101217"
+                }
+            ],
+            "row": 1,
+            "col": 1,
+            "$$hashKey": "object:96926",
+            "tile": {},
+            "drawer": {},
+            "header": {}
+        },
+        {
+            "id": "logs",
+            "name": "Logs",
+            "widgets": [
+                {
+                    "name": "frontail",
+                    "sizeX": 12,
+                    "sizeY": 9,
+                    "type": "frame",
+                    "row": 0,
+                    "col": 0,
+                    "url_source": "static",
+                    "frameUrl": "http://openhab.imagilan/frontail/",
+                    "frameless": true,
+                    "hidelabel": true,
+                    "background": "transparent"
+                }
+            ],
+            "row": 3,
+            "col": 0,
+            "tile": {},
+            "mobile_mode_enabled": false,
+            "$$hashKey": "object:96933"
+        },
+        {
+            "id": "Energy",
+            "name": "Energy",
+            "widgets": [
+                {
+                    "name": "energy",
+                    "sizeX": 9,
+                    "sizeY": 8,
+                    "type": "frame",
+                    "url_source": "static",
+                    "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=271&from=now-24h&to=now&refresh=10s&theme=dark",
+                    "background": "transparent",
+                    "frameless": true,
+                    "hidelabel": true,
+                    "row": 0,
+                    "col": 0
+                },
+                {
+                    "name": "Cost per year",
+                    "sizeX": 3,
+                    "sizeY": 8,
+                    "type": "frame",
+                    "url_source": "static",
+                    "frameUrl": "https://bunker.imaginator.com/grafana/d-solo/biUYJx9mk/openhab?orgId=2&panelId=275&from=now-24h&to=now&refresh=120s&theme=dark",
+                    "background": "transparent",
+                    "frameless": true,
+                    "hidelabel": true,
+                    "row": 0,
+                    "col": 9
+                }
+            ],
+            "row": 2,
+            "col": 0,
+            "tile": {
+                "backdrop_iconset": "freepik-household"
             },
-            "Spotify-Playlister": {
-                "template": "<style>\n  .spl-container {\n  \theight:100%;\n  \toverflow: scroll;\n  \tpadding: 24px 16px 16px 16px;\n  \tmargin:0 !important;\n  }\n  .spl {\n  \twidth:100%;\n  \theight:100%;\n  }\n  .spl .progress {\n  \tmargin-top: 16px\n  }\n  .spl-head {\n \t\tdisplay: flex;\n  }\n  .spl h4 {\n \t\ttext-align: center;\n  }\n  .spl-search {\n  \tflex-grow: 1;\n  }\n  .spl-head input {\n  \twidth: 99%;\n  \tcolor: #000;\n  }\n  .spl-head .btn, .spl-head a {\n  \tmargin-left: 8px;\n  }\n  .spl-head a {\n  \tfont-size: 24px;\n  }\n  .spl-playlists-container {\n  \tmargin-top: 24px;\n  }\n  .spl-playlists {\n    display: flex;\n    flex-wrap: wrap;\n  \tmargin-bottom: 36px;\n  }\n  .spl-image {\n  \tposition: relative;\n  }\n  .spl-image img {\n  \twidth: 100%;\n  \theight: 100%;\n  }\n  .spl-image span {\n\t\tposition: absolute;\n    top: 25%;\n    left: 25%;\n    font-size: 67px;\n    color: #ddeeffbd;\n  }\n  .spl-item {\n  \tcursor: pointer;\n  \tmargin: 24px 16px 16px 16px;\n    width: 137px;\n  \theight: 137px;\n  \tmin-width: 0;\n  }\n  .spl-title {\n  \twhite-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    margin-top: 8px;\n  }\n  \n</style>\n<div class=\"spl-container template-container\" oc-lazy-load=\"['/static/spotify-playlister/spotify-playlister.js']\">\n  <div class=\"spl\" ng-controller=\"SpotifyPlaylisterController as playlister\">\n    <div class=\"spl-head\">\n      <div class=\"spl-search\">\n        <input type=\"text\" ng-model=\"playlister.model.query\" />\n      </div>\n      <div>\n        <button type=\"button\" class=\"btn btn-primary\" ng-click=\"playlister.search()\">Search</button>\n      </div>\n      <div>\n        <a ng-click=\"playlister.reset()\"><span class=\"glyphicon glyphicon-refresh\"></span></a>\n      </div>\n    </div>\n    <h3 ng-if=\"playlister.state.noConfig\">Please set access token in the configuration screen</h3>\n    <h3 ng-if=\"playlister.state.query\">Search results for: {{playlister.state.query}}</h3>\n    <div ng-if=\"playlister.state.error\" class=\"alert alert-danger\" role=\"alert\">Sorry, something went wrong. Try again.</div>\n    <div class=\"progress\" ng-if=\"!playlister.state.noConfig && !playlister.state.results && !playlister.state.error\">\n      <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 100%\">\n      </div>\n    </div>\n    <div class=\"spl-playlists-container\">\n    \t<div ng-repeat=\"result in playlister.state.results\">\n      \t<h4>{{result.name}}</h4>\n        <div  class=\"spl-playlists\">\n          <div class=\"spl-item\" ng-repeat=\"item in result.items\" ng-click=\"playlister.play(item)\">\n              <div class=\"spl-image\"><img ng-src=\"{{item.images[0].url}}\" style=\"width:137px; height:137px\"/><span class=\"glyphicon glyphicon-play\"></span></div>\n              <div class=\"spl-title\">{{item.name}}</div>\n          </div>\n        </div>\n   \t\t</div>\n    </div>\n   </div>\n</div>\n  ",
-                "settings": [
-                    {
-                        "type": "item",
-                        "id": "accessToken",
-                        "label": "Spotify Access token"
-                    },
-                    {
-                        "type": "item",
-                        "id": "spotifyPlayer",
-                        "label": "Spotify Binding track play: spotify:device:device_id:trackPlay",
-                        "default": ""
+            "mobile_mode_enabled": false,
+            "$$hashKey": "object:96929"
+        },
+        {
+            "id": "imagiSuck",
+            "name": "imagiSuck",
+            "widgets": [
+                {
+                    "name": "New Widget",
+                    "sizeX": 12,
+                    "sizeY": 1,
+                    "type": "template",
+                    "customwidget": "options-switch",
+                    "row": 2,
+                    "col": 0,
+                    "config": {
+                        "string_item": "Vacuum_Action_Control"
                     }
-                ],
-                "author": "gytisgreitai",
-                "description": "Shows Spotify playlists",
-                "name": "Spotify Playlister"
-            },
-            "options-switch": {
-                "template": "<div class=\"btn-group btn-group-justified\" btn-checkbox-true >\n  <label class=\"btn btn-primary\" ng-model=\"itemValue(config.string_item)\" uib-btn-radio=\"option.value\"\nng-click=\"sendCmd(config.string_item, option.value)\" ng-repeat=\"option in getItem(config.string_item).stateDescription.options\">\n\t{{option.label}}</label>\n</div>",
-                "author": "Marcel Verpaalen",
-                "name": "options-switch",
-                "description": "Switch between multiple configured options",
-                "settings": [
-                    {
-                        "type": "item",
-                        "id": "string_item",
-                        "label": "item with options",
-                        "description": "item with options, each option will be one button"
+                },
+                {
+                    "name": "imagiSuck Status",
+                    "sizeX": 12,
+                    "sizeY": 2,
+                    "type": "template",
+                    "customwidget": "XiaomiMiRobotStatus",
+                    "row": 0,
+                    "col": 0,
+                    "config": {
+                        "robotStatus": "Vacuum_StatusState",
+                        "robotError": "Vacuum_StatusErrorCode",
+                        "robotBatLevel": "Vacuum_StatusBattery",
+                        "robotCRMBrush": "Vacuum_ConsumablesMainBrushPercent",
+                        "robotCRSBrush": "Vacuum_ConsumablesSideBrushPercent",
+                        "robotCRFilter": "Vacuum_ConsumablesFilterPercent",
+                        "robotCRSensor": "Vacuum_ConsumablesSensorDirtPercent"
                     }
-                ],
-                "readme_url": "https://community.openhab.org/t/31935"
-            },
-            "XiaomiMiRobotStatus": {
-                "name": "Xiaomi MiRobot Vacuum Status",
-                "author": "Alexander Täffner",
-                "description": "Displays the current status and error message - if any - of your Mi Robot",
-                "settings": [
-                    {
-                        "type": "item",
-                        "id": "robotStatus",
-                        "label": "Robot Status",
-                        "description": "Connected with MiIO Status>State (miio:vacuum:?????????:status#state)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotError",
-                        "label": "Robot Error",
-                        "description": "Connected with MiIO Status>Error (miio:vacuum:?????????:status#error_code)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotBatLevel",
-                        "label": "Robot Battery Level",
-                        "description": "Connected with MiIO Status>Battery Level (miio:vacuum:?????????:status#battery)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotCRMBrush",
-                        "label": "Robot consumable remainig: Main Brush",
-                        "description": "Connected with MiIO Consumables>Main Brush Remaining (miio:vacuum:?????????:consumables#main_brush_percent)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotCRSBrush",
-                        "label": "Robot consumable remainig: Side Brush",
-                        "description": "Connected with MiIO Consumables>Side Brush Remaining (miio:vacuum:?????????:consumables#side_brush_percent)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotCRFilter",
-                        "label": "Robot consumable remainig: Filter",
-                        "description": "Connected with MiIO Consumables>Filter Remaining (miio:vacuum:?????????:consumables#filter_percent)"
-                    },
-                    {
-                        "type": "item",
-                        "id": "robotCRSensor",
-                        "label": "Robot consumable remainig: Sensor",
-                        "description": "Connected with MiIO Consumables>Sensor Dirt Remaining (miio:vacuum:?????????:consumables#sensor_dirt_percent)"
-                    }
-                ],
-                "template": "<style>\n\t.MiRobotStatus_batLevel {\n  \tposition: absolute;\n  \ttop: 5%;\n  \tright: 3%;\n  }\n</style>\n\n<div>\n  <span ng-if=\"itemValue(config.robotBatLevel) < 100\" class=\"MiRobotStatus_batLevel badge badge-info\"><i class=\"glyphicon glyphicon-flash\"></i> {{itemValue(config.robotBatLevel)}}%</span>\n  <div class=\"ng-binding ng-scope\">{{ngModel.name}}</div>\n  <div class=\"value ng-binding\">{{itemValue(config.robotStatus)}}</div>\n  <div ng-if=\"itemValue(config.robotError) != 'No error'\" class=\"text-danger\">{{itemValue(config.robotError)}}</div>\n  \n  <div ng-if=\"itemValue(config.robotCRMBrush) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Main Brush: {{itemValue(config.robotCRMBrush)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRSBrush) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Side Brush: {{itemValue(config.robotCRSBrush)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRFilter) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Filter: {{itemValue(config.robotCRFilter)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRSensor) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Dirt Sensors: {{itemValue(config.robotCRSensor)}}%</div>\n</div>"
-            }
+                },
+                {
+                    "name": "Main Brush",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_ConsumablesMainBrushPercent",
+                    "type": "dummy",
+                    "row": 5,
+                    "col": 0,
+                    "nolinebreak": true,
+                    "unit": "%"
+                },
+                {
+                    "name": "Consumables",
+                    "sizeX": 4,
+                    "sizeY": 1,
+                    "item": null,
+                    "type": "label",
+                    "row": 4,
+                    "col": 0
+                },
+                {
+                    "name": "side brush",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_ConsumablesSideBrushPercent",
+                    "type": "dummy",
+                    "row": 5,
+                    "col": 1,
+                    "nolinebreak": true,
+                    "unit": "%"
+                },
+                {
+                    "name": "filter",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_ConsumablesFilterPercent",
+                    "type": "dummy",
+                    "row": 5,
+                    "col": 2,
+                    "nolinebreak": true,
+                    "unit": "%"
+                },
+                {
+                    "name": "sensors",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_ConsumablesSensorDirtPercent",
+                    "type": "dummy",
+                    "row": 5,
+                    "col": 3,
+                    "nolinebreak": true,
+                    "unit": "%"
+                },
+                {
+                    "name": "History",
+                    "sizeX": 3,
+                    "sizeY": 1,
+                    "item": null,
+                    "type": "label",
+                    "row": 4,
+                    "col": 8
+                },
+                {
+                    "name": "Cleaning area",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_HistoryTotalCleanArea",
+                    "type": "dummy",
+                    "nolinebreak": false,
+                    "unit": "m2",
+                    "row": 5,
+                    "col": 8
+                },
+                {
+                    "name": "Cleaning time",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_HistoryTotalCleanTime",
+                    "type": "dummy",
+                    "nolinebreak": false,
+                    "unit": "",
+                    "row": 5,
+                    "col": 9
+                },
+                {
+                    "name": "Cleaning Count",
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "item": "Vacuum_HistoryTotalCleanCount",
+                    "type": "dummy",
+                    "nolinebreak": false,
+                    "unit": "",
+                    "row": 5,
+                    "col": 10
+                }
+            ],
+            "row": 4,
+            "col": 1,
+            "$$hashKey": "object:96932"
+        }
+    ],
+    "menucolumns": 2,
+    "settings": {
+        "theme": "material-dark",
+        "panel_name": "F17",
+        "header_clock_format": "shortTime",
+        "no_scrolling": false,
+        "hide_drawer_footer": true,
+        "hide_speak_button": true,
+        "hide_fullscreen_button": true,
+        "show_header_clock": true,
+        "speech_synthesis_voice": "Google UK English Male",
+        "floating_speech": false,
+        "speech_synthesis_item": "Tablet_Habpanel_Speak_This",
+        "dashboard_control_item": "Tablet_Habpanel_Active_Panel",
+        "additional_stylesheet_url": "/static/habpanel.css",
+        "hide_refresh_button": true
+    },
+    "customwidgets": {
+        "Spotifycontrol": {
+            "template": "<style>\n  .main-table {\n    width: 100%;\n    height: 100%;\n    padding: 0px 0px 0px 0px;\n    color: #edeff1;\n  }\n\n  .album-table {\n    width: 100%;\n    position: relative;\n  }\n\n  .albumcover {\n    width: 100%;\n    position: relative;\n  }\n\n  .button-table {\n    width: 100%;\n    position: absolute;\n    top: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .albumbuttons-table {\n    background: rgba(44, 55, 67, 0.4);\n    width: 100%;\n    position: absolute;\n    bottom: 0%;\n    left: 50%;\n    transform: translateX(-50%) translateY(0%);\n  }\n\n  .songprogress {\n    -webkit-appearance: progress-bar;\n    display: block;\n    background-color: #f3f3f3;\n    width: 100%;\n    border: 0;\n    height: 3px;\n    border-radius: 9px;\n    color: orange;\n  }\n\n  progress::-moz-progress-bar {\n    background: orange;\n  }\n\n  progress::-webkit-progress-value {\n    background: orange;\n  }\n\n  .title {\n    font-weight: bold;\n    font-size: 18px;\n    padding-top: 10px;\n  }\n\n  .leftbox {\n    float: right;\n    text-align: center;\n  }\n\n  .centerbox {\n    width: 70%;\n    text-align: center;\n  }\n\n  .rightbox {\n    float: left;\n    text-align: center;\n  }\n\n  .timebox {\n    height: 10px;\n  }\n\n  .blockbutton {\n    display: block;\n    width: 100%;\n    border: none;\n    padding: 25px 10px 15px 10px;\n    cursor: pointer;\n    text-align: center;\n  }\n\n  .buttonbox {\n    width: 33%;\n    background-color: #4A5561;\n    font-size: 36px;\n  }\n\n  .buttonbox:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .buttonbox2 {\n    width: 33%;\n    background-color: #394149;\n    color: #c8cfd5;\n    font-size: 43px;\n  }\n\n  .buttonbox2:hover {\n    background-color: #2A2F35;\n    color: #ffffff;\n  }\n\n  .blockbuttonS {\n    display: block;\n    border: none;\n    padding: 1px 10px 10px 10px;\n    font-size: 24px;\n  }\n\n  .blockbuttonS:hover {\n    color: orange;\n  }\n\n</style>\n\n\n<div class=\"main-table\">\n\n  <div class=\"album-table\">\n    <img ng-if=\"itemValue(config.albumArt)!='UNDEF'\" class=albumcover ng-src=\"{{itemValue(config.albumArt)}}\">\n    <img ng-if=\"itemValue(config.albumArt)=='UNDEF'\" class=albumcover ng-src=\"http://quashera.com/openhab/dependencies/noalbumart.jpg\">\n\n    <table class=\"albumbuttons-table\">\n      <tr>\n        <td class=\"leftbox\">\n          <p ng-if=\"itemValue(config.tprog)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tprog)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false\"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) =='OFF'\" ng-click=\"sendCmd(config.shuffle,'ON')\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.shuffle) !='OFF'\" ng-click=\"sendCmd(config.shuffle,'OFF')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-random\"></i></label>\n        </td>\n\n        <td class=\"centerbox\">\n          <p class=\"title\" ng-if=\"itemValue(config.title)!='NULL'\">{{itemValue(config.title)}}</p>\n          <p ng-if=\"itemValue(config.title)=='NULL'\" class=\"rnp-title-td\">-</p>\n          <p ng-if=\"itemValue(config.artist)!='NULL'\" class=\"rnp-name-artist\">{{itemValue(config.artist)}}</p>\n          <p ng-if=\"itemValue(config.artist)=='NULL'\" class=\"rnp-name-artist\">-</p>\n\n        </td>\n\n        <td class=\"rightbox\">\n          <p ng-if=\"itemValue(config.tdur)!='NULL'&&config.lengthinfoenable == true \">{{itemValue(config.tdur)}}</p>\n          <p class=\"timebox\" ng-if=\"config.lengthinfoenable == false \"></p>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='off'\" ng-click=\"sendCmd(config.repeat,'track')\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-if=\"itemValue(config.repeat) =='track'\" ng-click=\"sendCmd(config.repeat,'context')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-repeat\"></i></label>\n          <label class=\"blockbuttonS\" ng-If=\"itemValue(config.repeat) !='track' && itemValue(config.repeat) !='off'\" ng-click=\"sendCmd(config.repeat,'off')\" style=\"color: orange\"> <i class=\"glyphicon glyphicon-refresh\"></i></label>\n        </td>\n      </tr>\n      <tr>\n\n        <td colspan=\"3\">\n          <progress ng-if=\"itemValue(config.tprogSS)!='NULL'&&config.progressenable == true \" class=\"songprogress\" value=\"{{itemValue(config.tprogSS)}}\" max=\"{{itemValue(config.tdurSS)}}\"></progress>\n        </td>\n      </tr>\n\n    </table>\n\n    <table class=\"button-table\">\n      <tr>\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'PREVIOUS')\"><i class=\"glyphicon glyphicon-step-backward\"></i></label>\n        </td>\n\n        <td class=\"buttonbox2\">\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) !='PLAY'\" ng-click=\"sendCmd(config.control,'PLAY')\"><i class=\"glyphicon glyphicon-play rnp-glyphicon-text\"></i></label>\n          <label class=\"blockbutton\" ng-if=\"itemValue(config.control) =='PLAY'\" ng-click=\"sendCmd(config.control,'PAUSE')\"><i class=\"glyphicon glyphicon-pause rnp-glyphicon-text\"></i></label>\n        </td>\n\n        <td class=\"buttonbox\">\n          <label class=\"blockbutton\" ng-click=\"sendCmd(config.control,'NEXT')\"><i class=\"glyphicon glyphicon-step-forward\"></i></label>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n",
+            "name": "Spotify controller",
+            "author": "Linda Knudsen",
+            "description": "Controller for the spotify plugin, might work with others too",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "albumArt",
+                    "label": "Album Art",
+                    "description": "SpotifyPlayerBridge_AlbumImage",
+                    "default": ""
+                },
+                {
+                    "type": "item",
+                    "id": "title",
+                    "label": "Track Title",
+                    "description": "SpotifyPlayerBridge_TrackName"
+                },
+                {
+                    "type": "item",
+                    "id": "artist",
+                    "label": "Artist",
+                    "description": "SpotifyPlayerBridge_ArtistName"
+                },
+                {
+                    "type": "item",
+                    "id": "control",
+                    "label": "Player Control",
+                    "description": "SpotifyPlayerBridge_PlayerControl"
+                },
+                {
+                    "type": "item",
+                    "id": "shuffle",
+                    "label": "Shuffle",
+                    "description": "SpotifyPlayerBridge_ActiveDeviceShuffle"
+                },
+                {
+                    "type": "item",
+                    "id": "repeat",
+                    "label": "Repeat",
+                    "description": "SpotifyPlayerBridge_RepeatMode"
+                },
+                {
+                    "type": "item",
+                    "label": "Track Progress",
+                    "id": "tprog",
+                    "description": "SpotifyPlayerBridge_TrackProgressMSs"
+                },
+                {
+                    "type": "item",
+                    "label": "Track Duration",
+                    "default": "",
+                    "description": "SpotifyPlayerBridge_TrackDurationMSs",
+                    "id": "tdur"
+                },
+                {
+                    "type": "checkbox",
+                    "description": "Enables the progress text",
+                    "id": "lengthinfoenable",
+                    "default": true,
+                    "label": "Progress Text"
+                },
+                {
+                    "type": "checkbox",
+                    "description": "Enables progress bar",
+                    "id": "progressenable",
+                    "default": false,
+                    "choices": "true, false",
+                    "label": "Progress Bar"
+                },
+                {
+                    "type": "item",
+                    "id": "tprogSS",
+                    "label": "Track Progress in ms",
+                    "description": "SpotifyPlayerBridge_TrackProgressMs - Found under the \"show more\" button on the player bridge",
+                    "default": ""
+                },
+                {
+                    "type": "item",
+                    "id": "tdurSS",
+                    "label": "Track duration in ms",
+                    "default": "",
+                    "description": "SpotifyPlayerBridge_TrackDurationMs - Found under the \"show more\" button on the player bridge"
+                }
+            ],
+            "readme_url": "https://community.openhab.org/t/54040"
+        },
+        "Local Weather - OpenWeatherMap": {
+            "template": "<!-- For more information goto: https://github.com/BasvanH/habpanel-widget-openweathermap -->\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/openweathermap/weather-icons-master/css/weather-icons.css\">\n\n<style>\n@media (min-width: 992px) {\n    .col-md-border:not(:last-child) {\n\t\t\tborder-right: 1px solid #d7d7d7;\n    }\n    .col-md-border + .col-md-border {\n\t\t\tborder-left: 1px solid #d7d7d7;\n\t\t\tmargin-left: -1px;\n    }\n  \t.owm-to-upper:first-letter {\n    \ttext-transform: uppercase;\n\t\t}\n  \t.owm-condition {\n  \t\theight: 2em;\n \t\t}\n  \t.owm-row-current {\n  \t\tmargin: 1em 0em 2em;\n \t\t}\n   \t.owm-row-forecast {\n  \t\tmargin-bottom: 1em;\n \t\t}\n}\n</style>\n<div oc-lazy-load=\"['/static/openweathermap/owm.controller.js']\">\n\t<div ng-controller=\"ngOwmCtrl\">\n    <div class=\"row owm-row-current\">\n      <div class=\"col-xs-9\">\n        <i class=\"wi wi-owm-{{ itemValue('Weather_OWM_ConditionId') }} pull-right\" ng-style=\"{ 'color' : (config.icon_color_current == NULL ? primary-color : config.icon_color_current), 'font-size' : (config.icon_size_current == NULL ? '10em' : config.icon_size_current + 'em') }\"></i>\n        <h2 class=\"text-left owm-to-upper\">{{ itemValue('Weather_OWM_Condition') }}</h2>\n      </div>\n      <div class=\"col-xs-3 text-right\">\n        <h2>{{ '%.1f' | sprintf:itemValue('Weather_OWM_Temperature').split(' ')[0] }} {{ itemValue('Weather_OWM_Temperature').split(' ')[1] }}</h2>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/humidity.png\"/> {{itemValue('Weather_OWM_Humidity') }}</h5>\n        <h5><img style=\"height:16px;\" src=\"/static/openweathermap/images/wind.png\"/> {{ '%.1f' | sprintf:itemValue('Weather_OWM_Wind_Speed').split(' ')[0] }} {{ itemValue('Weather_OWM_Wind_Speed').split(' ')[1] }}</h5>\n        <h5>{{ itemValue('Weather_OWM_ObservationTime') | date: 'HH:mm' }}</h5>\n      </div>\n    </div>\n    <div class=\"row owm-row-forecast\">\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time0 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id0 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition0 }}</h5>\n        <h4><b>{{ temp0 == NULL ? '' : '%.1f' | sprintf:temp0.split(' ')[0]}} {{temp0.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time1 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id1 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition1 }}</h5>\n        <h4><b>{{ temp1 == NULL ? '' : '%.1f' | sprintf:temp1.split(' ')[0]}} {{temp1.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time2 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id2 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition2 }}</h5>\n        <h4><b>{{ temp2 == NULL ? '' : '%.1f' | sprintf:temp2.split(' ')[0]}} {{temp2.split(' ')[1] }}</b></h4>\n      </div>\n      <div class=\"col-xs-3 col-md-border\">\n        <h4 class=\"owm-to-upper\">{{ date_time3 | date:(config.config.day_format == NULL ? 'EEEE' : config.day_format) }}</h4>\n        <i class=\"wi wi-owm-{{ condition_id3 }}\" ng-style=\"{ 'color' : (config.icon_color_forecast == NULL) ? primary-color : config.icon_color_forecast, 'font-size' : (config.icon_size_forecast == NULL) ? '3em' : config.icon_size_forecast + 'em' }\"></i>\n        <h5 class=\"owm-condition owm-to-upper\">{{ condition3 }}</h5>\n        <h4><b>{{ temp3 == NULL ? '' : '%.1f' | sprintf:temp3.split(' ')[0]}} {{temp3.split(' ')[1] }}</b></h4>\n      </div>\n    </div>\n  </div>\n</div>\n",
+            "name": "OpenWeatherMap",
+            "author": "Bastiaan van Haastrecht",
+            "description": "Local Weather, use with OpenWeatherMap binding - https://github.com/BasvanH/habpanel-widget-openweathermap",
+            "settings": [
+                {
+                    "type": "choice",
+                    "id": "icon_size_current",
+                    "label": "Icon size - Current",
+                    "default": "12",
+                    "description": "Size of current condition icon",
+                    "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
+                },
+                {
+                    "type": "color",
+                    "id": "icon_color_current",
+                    "label": "Icon color - Current",
+                    "default": "",
+                    "description": "Color of current condition icon"
+                },
+                {
+                    "type": "choice",
+                    "default": "3",
+                    "description": "Size of forecast condition icons",
+                    "id": "icon_size_forecast",
+                    "label": "Icon size - Forecast",
+                    "choices": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,16,19,20"
+                },
+                {
+                    "type": "color",
+                    "id": "icon_color_forecast",
+                    "label": "Icon color - Forecast",
+                    "description": "Color of forecast condition icons",
+                    "default": ""
+                },
+                {
+                    "type": "string",
+                    "id": "day_format",
+                    "label": "Day format",
+                    "default": "EEEE",
+                    "description": "Modify day format of forecast, for options see: https://docs.angularjs.org/api/ng/filter/date"
+                }
+            ],
+            "source_url": "https://raw.githubusercontent.com/BasvanH/habpanel-widget-openweathermap/master/Local%20Weather%20-%20OpenWeatherMap.widget.json",
+            "readme_url": "https://github.com/BasvanH/habpanel-widget-openweathermap"
+        },
+        "Spotify-Playlister": {
+            "template": "<style>\n  .spl-container {\n  \theight:100%;\n  \toverflow: scroll;\n  \tpadding: 24px 16px 16px 16px;\n  \tmargin:0 !important;\n  }\n  .spl {\n  \twidth:100%;\n  \theight:100%;\n  }\n  .spl .progress {\n  \tmargin-top: 16px\n  }\n  .spl-head {\n \t\tdisplay: flex;\n  }\n  .spl h4 {\n \t\ttext-align: center;\n  }\n  .spl-search {\n  \tflex-grow: 1;\n  }\n  .spl-head input {\n  \twidth: 99%;\n  \tcolor: #000;\n  }\n  .spl-head .btn, .spl-head a {\n  \tmargin-left: 8px;\n  }\n  .spl-head a {\n  \tfont-size: 24px;\n  }\n  .spl-playlists-container {\n  \tmargin-top: 24px;\n  }\n  .spl-playlists {\n    display: flex;\n    flex-wrap: wrap;\n  \tmargin-bottom: 36px;\n  }\n  .spl-image {\n  \tposition: relative;\n  }\n  .spl-image img {\n  \twidth: 100%;\n  \theight: 100%;\n  }\n  .spl-image span {\n\t\tposition: absolute;\n    top: 25%;\n    left: 25%;\n    font-size: 67px;\n    color: #ddeeffbd;\n  }\n  .spl-item {\n  \tcursor: pointer;\n  \tmargin: 24px 16px 16px 16px;\n    width: 137px;\n  \theight: 137px;\n  \tmin-width: 0;\n  }\n  .spl-title {\n  \twhite-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    margin-top: 8px;\n  }\n  \n</style>\n<div class=\"spl-container template-container\" oc-lazy-load=\"['/static/spotify-playlister/spotify-playlister.js']\">\n  <div class=\"spl\" ng-controller=\"SpotifyPlaylisterController as playlister\">\n    <div class=\"spl-head\">\n      <div class=\"spl-search\">\n        <input type=\"text\" ng-model=\"playlister.model.query\" />\n      </div>\n      <div>\n        <button type=\"button\" class=\"btn btn-primary\" ng-click=\"playlister.search()\">Search</button>\n      </div>\n      <div>\n        <a ng-click=\"playlister.reset()\"><span class=\"glyphicon glyphicon-refresh\"></span></a>\n      </div>\n    </div>\n    <h3 ng-if=\"playlister.state.noConfig\">Please set access token in the configuration screen</h3>\n    <h3 ng-if=\"playlister.state.query\">Search results for: {{playlister.state.query}}</h3>\n    <div ng-if=\"playlister.state.error\" class=\"alert alert-danger\" role=\"alert\">Sorry, something went wrong. Try again.</div>\n    <div class=\"progress\" ng-if=\"!playlister.state.noConfig && !playlister.state.results && !playlister.state.error\">\n      <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 100%\">\n      </div>\n    </div>\n    <div class=\"spl-playlists-container\">\n    \t<div ng-repeat=\"result in playlister.state.results\">\n      \t<h4>{{result.name}}</h4>\n        <div  class=\"spl-playlists\">\n          <div class=\"spl-item\" ng-repeat=\"item in result.items\" ng-click=\"playlister.play(item)\">\n              <div class=\"spl-image\"><img ng-src=\"{{item.images[0].url}}\" style=\"width:137px; height:137px\"/><span class=\"glyphicon glyphicon-play\"></span></div>\n              <div class=\"spl-title\">{{item.name}}</div>\n          </div>\n        </div>\n   \t\t</div>\n    </div>\n   </div>\n</div>\n  ",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "accessToken",
+                    "label": "Spotify Access token"
+                },
+                {
+                    "type": "item",
+                    "id": "spotifyPlayer",
+                    "label": "Spotify Binding track play: spotify:device:device_id:trackPlay",
+                    "default": ""
+                }
+            ],
+            "author": "gytisgreitai",
+            "description": "Shows Spotify playlists",
+            "name": "Spotify Playlister"
+        },
+        "options-switch": {
+            "template": "<div class=\"btn-group btn-group-justified\" btn-checkbox-true >\n  <label class=\"btn btn-primary\" ng-model=\"itemValue(config.string_item)\" uib-btn-radio=\"option.value\"\nng-click=\"sendCmd(config.string_item, option.value)\" ng-repeat=\"option in getItem(config.string_item).stateDescription.options\">\n\t{{option.label}}</label>\n</div>",
+            "author": "Marcel Verpaalen",
+            "name": "options-switch",
+            "description": "Switch between multiple configured options",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "string_item",
+                    "label": "item with options",
+                    "description": "item with options, each option will be one button"
+                }
+            ],
+            "readme_url": "https://community.openhab.org/t/31935"
+        },
+        "XiaomiMiRobotStatus": {
+            "name": "Xiaomi MiRobot Vacuum Status",
+            "author": "Alexander Täffner",
+            "description": "Displays the current status and error message - if any - of your Mi Robot",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "robotStatus",
+                    "label": "Robot Status",
+                    "description": "Connected with MiIO Status>State (miio:vacuum:?????????:status#state)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotError",
+                    "label": "Robot Error",
+                    "description": "Connected with MiIO Status>Error (miio:vacuum:?????????:status#error_code)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotBatLevel",
+                    "label": "Robot Battery Level",
+                    "description": "Connected with MiIO Status>Battery Level (miio:vacuum:?????????:status#battery)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotCRMBrush",
+                    "label": "Robot consumable remainig: Main Brush",
+                    "description": "Connected with MiIO Consumables>Main Brush Remaining (miio:vacuum:?????????:consumables#main_brush_percent)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotCRSBrush",
+                    "label": "Robot consumable remainig: Side Brush",
+                    "description": "Connected with MiIO Consumables>Side Brush Remaining (miio:vacuum:?????????:consumables#side_brush_percent)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotCRFilter",
+                    "label": "Robot consumable remainig: Filter",
+                    "description": "Connected with MiIO Consumables>Filter Remaining (miio:vacuum:?????????:consumables#filter_percent)"
+                },
+                {
+                    "type": "item",
+                    "id": "robotCRSensor",
+                    "label": "Robot consumable remainig: Sensor",
+                    "description": "Connected with MiIO Consumables>Sensor Dirt Remaining (miio:vacuum:?????????:consumables#sensor_dirt_percent)"
+                }
+            ],
+            "template": "<style>\n\t.MiRobotStatus_batLevel {\n  \tposition: absolute;\n  \ttop: 5%;\n  \tright: 3%;\n  }\n</style>\n\n<div>\n  <span ng-if=\"itemValue(config.robotBatLevel) < 100\" class=\"MiRobotStatus_batLevel badge badge-info\"><i class=\"glyphicon glyphicon-flash\"></i> {{itemValue(config.robotBatLevel)}}%</span>\n  <div class=\"ng-binding ng-scope\">{{ngModel.name}}</div>\n  <div class=\"value ng-binding\">{{itemValue(config.robotStatus)}}</div>\n  <div ng-if=\"itemValue(config.robotError) != 'No error'\" class=\"text-danger\">{{itemValue(config.robotError)}}</div>\n  \n  <div ng-if=\"itemValue(config.robotCRMBrush) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Main Brush: {{itemValue(config.robotCRMBrush)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRSBrush) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Side Brush: {{itemValue(config.robotCRSBrush)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRFilter) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Filter: {{itemValue(config.robotCRFilter)}}%</div>\n  <div ng-if=\"itemValue(config.robotCRSensor) < 5\" class=\"text-warning\"><i class=\"glyphicon glyphicon-warning-sign\"></i> Dirt Sensors: {{itemValue(config.robotCRSensor)}}%</div>\n</div>"
+        },
+        "Shutter": {
+            "template": "<style>\n#shutter_table, #shutter_td {\n    border: 0px;\n    padding: 3px;\n    font-size: {{config.font_size}}px;\n    text-align: center;\n}\n#shutter_table {\n    border-collapse: collapse;\n    width: 100%;\n}\n</style>\n<table id=\"shutter_table\">\n    <tr>\n    <td id=\"shutter_row1\">\n      <span>\n  \t<widget class=\"glyphicon glyphicon-menu-up\" style=\"font-size:{{config.icon_size}}px\" ng-click=\"sendCmd(config.shutter_item, 'UP')\" />\n\t</span></td>\n        <td id=\"shutter_row1\">\n      <span>\n  \t<widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'blinds'\" size=\"config.icon_size\" state=\"itemState(config.shutter_item)\" ng-click=\"sendCmd(config.shutter_item, 'STOP')\" />\n\t</span></td>\n        <td id=\"shutter_row1\">\n      <span>\n  \t<widget class=\"glyphicon glyphicon-menu-down\" style=\"font-size:{{config.icon_size}}px\" ng-click=\"sendCmd(config.shutter_item, 'DOWN')\" />\n\t</span></td>\n     <td id=\"shutter_td\">{{config.shutter_label}}</td>\n  </tr>\n</table>",
+            "name": "Rollershutter simple",
+            "author": "Mclassen(re-write)",
+            "description": "rollershutters, Window coving, Blind",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "shutter_item",
+                    "label": "Shutter item",
+                    "default": "Shutter"
+                },
+                {
+                    "type": "string",
+                    "default": "Shutter",
+                    "label": "Shutter label",
+                    "id": "shutter_label"
+                },
+                {
+                    "type": "number",
+                    "id": "icon_size",
+                    "label": "Icon Size",
+                    "default": "50"
+                },
+                {
+                    "type": "number",
+                    "id": "font_size",
+                    "label": "Font size",
+                    "default": "16"
+                }
+            ],
+            "readme_url": "https://community.openhab.org/t/60831"
+        },
+        "popov-blinds": {
+            "template": "<style>\n.blinds_widget .progress-controls {\n    position: absolute;\t\n    z-index: 999;\n  \tright:0;\n  \tmargin-right:10px;\n}\n  \n.blinds_widget .btn-group-vertical {\n  \tposition: relative;\n}\n    \n.blinds_widget .blinds-slider  .progress-controls .btn-default {\n    color: rgb(103, 106, 108);\n  \tfont-size:26px;\n    background-color: rgba(255,255,255,0.5);\n    border-color:rgb(103, 106, 108, 0.5);\n  \tpadding: 0 !important;\n  \theight:54px;\n}\n  \n.blinds_widget .blinds-slider .progress-controls .btn-default:hover {\n    border-color:rgb(103, 106, 108, 0.5);\n  \tbackground-color: rgba(255,255,255,0.7);\n}\n  \n.blinds_widget .rz-limit {\n  \tdisplay:none;\n}\n  \n.blinds_widget button {\n  \tborder: 0px solid white;\n  \tbackground: rgba(0,0,0,0.5);\n  \tcolor: white; \n  \theight: 1.5em;\n  \twidth: 1.5em;\n  \tfloat: left;\n  \tfont-size: 3em;\n  \tmargin-right: 12px;\n  \tline-height: 50%;\n  \tpadding: 0 0 0 0;\n}\n  \n.blinds_widget .center {\n    margin: 0 auto;\n}\n  \n.blinds_widget .blinds-slider .rzslider .rz-bar {\n  \tbackground-color: #75bbfd;\n  \twidth: 100%;\n}\n  \n.blinds_widget .blinds-slider .rzslider .rz-selection {\n  \tbackground-color: #b16700;\n}\n  \n.blinds_widget .blinds-slider.blinds-slider-{{ngModel.col}}-{{ngModel.row}} .rzslider .rz-selection {\n  \tbackground-color: {{config.blind_color}};\t\n}\n.blinds_widget .blinds-slider.blinds-slider-{{ngModel.col}}-{{ngModel.row}}.inactive .rzslider .rz-selection {\n  \tbackground-color: #7e7b7b;\t\n}\n.blinds_widget .blinds-slider.inactive .rzslider .rz-bar {\n  \tbackground-color: #cccccc;\n}  \n  \n  \n.blinds_widget .readonly.blinds-slider.blinds-slider-{{ngModel.col}}-{{ngModel.row}} .rzslider {\n  \tpointer-events: none;\n}\n\n.blinds_widget .blinds-slider .rzslider .rz-pointer {\n  \tdisplay:none;\n}\n\n.blinds_widget .blinds-slider .rzslider .rz-pointer:after {\n  \tdisplay: none;\n}\n\n.blinds_widget .blinds-slider .rzslider .rz-bubble {\n  \tbottom: 14px;\n}\n\n.blinds_widget .blinds-slider .rzslider .rz-tick {\n  \twidth: 1px;\n  \theight: 10px;\n  \tmargin-left: 4px;\n  \tborder-radius: 0;\n  \tbackground: #ffe4d1;\n  \ttop: -1px;\n}\n\n.blinds_widget .blinds-slider .rzslider .rz-tick.rz-selected {\n  \tbackground-color: #b16700;\n}\n  \n.blinds_widget .blinds-slider .rzslider.rz-vertical {\n    width: 100%;\n  \tmargin: 0;\n}\n  \n.blinds_widget .blinds-slider .rzslider.rz-vertical .rz-bubble {\n    bottom: 0;\n    left: 0px!important;\n    margin-left: 3px;\n  \tz-index:100;\n  \tcolor:white !important;\n}\n  \n.blinds_widget .blinds-slider .rzslider.rz-vertical .rz-bar-wrapper {\n \t\tmargin:0;\n  \tpadding:0;\n  \twidth:100%;\n  \tcursor:pointer;\n }\n  \n.blinds_widget .blinds-slider .box-content { \n  \tpadding:0;\n}\n</style>\n\n\n<div class=\"blinds_widget\">\n  <div class=\"title\">{{ngModel.name}}</div>\n  \n  <div class=\"blinds-slider blinds-slider-{{ngModel.col}}-{{ngModel.row}} row center\" ng-class=\"{'inactive':itemValue(config.blind_item) == 'N/A' || itemValue(config.blind_item) == 'UNDEF', 'readonly':config.no_slider || itemValue(config.blind_item) == 'UNDEF'}\" style=\"height:180px;width:100%;\"   ng-init='slider = {\n    \"item\": config.blind_percentage,\n    \"floor\": 0,\n    \"ceil\": 100,\n    \"step\": 10,\n    \"unit\": \"%\",\n    \"vertical\": true,\n    \"inverted\": true,\n    \"readonly\": false                                                                               \t\n};'>\n    \n<div class=\"progress-controls\">\n\t<div class=\"btn-group-vertical\">\n\t\t<button type=\"button\" class=\"btn btn-default btn-lg\" title=\"UP\" ng-click=\"sendCmd(config.blind_item, config.cmd_up)\">\n    <i class=\"glyphicon glyphicon-menu-up\"></i>\n    </button>\n    <button type=\"button\" class=\"btn btn-default btn-lg\" title=\"STOP\" ng-click=\"sendCmd(config.blind_item, config.cmd_stop)\">\n    <i class=\"glyphicon glyphicon-stop\"></i>\n    </button>\n    <button type=\"button\" class=\"btn btn-default btn-lg\" title=\"DOWN\" ng-click=\"sendCmd(config.blind_item, config.cmd_down)\">\n    <i class=\"glyphicon glyphicon-menu-down\"></i>\n    </button>                                                                                                                                                            \n\t</div>\n</div>\n    \n    <widget-slider class=\"blinds-slider\" ng-model=\"slider\"></widget-slider>  \n  </div>\n</div>\n               \n                                                                                                                 \n                                                                                                                 \n                                                                                                                 \n\n\n\n  \n  \n  \n  \n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n",
+            "name": "Blinds",
+            "author": "Popov Andrey",
+            "description": "A control of blinds up/down/stop + status",
+            "settings": [
+                {
+                    "type": "item",
+                    "id": "blind_item",
+                    "label": "Item",
+                    "description": "Item of blinds. You will send commands to it like \"UP\", \"STOP\", \"DOWN\""
+                },
+                {
+                    "type": "color",
+                    "id": "blind_color",
+                    "label": "Color",
+                    "default": "",
+                    "description": "Color of your blinds"
+                },
+                {
+                    "type": "item",
+                    "id": "blind_percentage",
+                    "label": "Percentage item",
+                    "description": "Item that shows status of blinds from 0  to 100",
+                    "default": "0"
+                },
+                {
+                    "type": "string",
+                    "id": "cmd_up",
+                    "label": "Command for UP",
+                    "default": "UP",
+                    "description": ""
+                },
+                {
+                    "type": "string",
+                    "id": "cmd_stop",
+                    "label": "Command for STOP",
+                    "default": "STOP",
+                    "description": ""
+                },
+                {
+                    "type": "string",
+                    "id": "cmd_down",
+                    "label": "Command for DOWN",
+                    "default": "DOWN",
+                    "description": ""
+                },
+                {
+                    "type": "checkbox",
+                    "id": "no_slider",
+                    "label": "Slider in read only mode",
+                    "description": "Check it if you are not able to set accurate blinds position"
+                }
+            ],
+            "readme_url": "https://community.openhab.org/t/48834"
+        },
+        "blinds-leftborder": {
+            "template": "{\n    \"name\": \"Blinds control with left border\",\n    \"author\": \"ysc\",\n    \"template\": \"<div class=\\\"leftborder\\\" style=\\\"height: 118px\\\"></div>\\n<div class=\\\"leftborder-label\\\">{{ngModel.name}}</div>\\n<div class=\\\"blinds-leftborder\\\"\\n     ng-init=\\\"model={item: config.item, hidelabel: true, vertical: true, hidepointer: true, hidelimits: true }\\\">\\n  <div class=\\\"blades\\\">\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*7 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*6 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*5 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*4 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*3 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5*2 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) <= 12.5 }\\\"></div>\\n    <div class=\\\"blade\\\" ng-class=\\\"{ down: +itemState(config.item) == 0 }\\\"></div>\\n  </div>\\n  <widget-slider ng-model=\\\"model\\\" style=\\\"height: 110px; margin-left: -5px; margin-top: -50px; display: inline-block;\\\"></widget-slider>\\n</div>\\n<div style=\\\"margin-left: 18px; margin-top: -10px\\\">\\n  <div class=\\\"switch btn-group switch-leftborder\\\">\\n    <button class=\\\"btn btn-default\\\" style=\\\"padding: 3px 10px 0 10px\\\"\\n            ng-class=\\\"{'btn-primary': itemState(config.item)==='UP', 'btn-default': itemState(config.item)!=='UP' }\\\"\\n            ng-click=\\\"sendCmd(config.item, 'UP')\\\">\\n      <i style=\\\"font-size: 1.5em\\\" class=\\\"glyphicon glyphicon-arrow-up\\\"></i>\\n    </button>\\n    <button class=\\\"btn\\\" style=\\\"padding: 6px\\\"\\n            ng-class=\\\"{'btn-primary': itemState(config.item)==='STOP', 'btn-default': itemState(config.item)!=='STOP' }\\\"\\n            ng-click=\\\"sendCmd(config.item, 'STOP')\\\">\\n      <i class=\\\"glyphicon glyphicon-remove\\\"></i>\\n    </button>\\n    <button class=\\\"btn btn-default\\\" style=\\\"padding: 3px 12px 0 8px\\\"\\n            ng-class=\\\"{'btn-primary': itemState(config.item)==='DOWN', 'btn-default': itemState(config.item)!=='DOWN' }\\\"\\n            ng-click=\\\"sendCmd(config.item, 'DOWN')\\\">\\n      <i style=\\\"font-size: 1.5em\\\" class=\\\"glyphicon glyphicon-arrow-down\\\"></i>\\n    </button>\\n  </div>\\n</div>\",\n    \"settings\": [\n        {\n            \"type\": \"item\",\n            \"id\": \"item\",\n            \"label\": \"Blinds item\"\n        }\n    ]\n}"
         }
     }
 }

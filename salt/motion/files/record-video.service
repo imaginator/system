@@ -39,7 +39,7 @@ ExecStart=/bin/sh -c '              \
         -segment_time 86400         \
         -initial_offset "$(date +%%s.%%N)" \
         -segment_format matroska    \
-        -strftime 1c                 \
+        -strftime 1                 \
         "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
     -c:v libx264                    \
     -an                             \
