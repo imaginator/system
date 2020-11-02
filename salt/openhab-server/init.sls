@@ -1,4 +1,4 @@
-openhab2:
+openhab:
   service.running:
     - enable: True
     - restart: True
@@ -18,16 +18,16 @@ openhab2:
 
 openhab-repo:
   pkgrepo.managed:
-    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main
-    - file: /etc/apt/sources.list.d/openhab2.list
-    - humanname: openhab2 unstable repo
+    - name: deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main
+    - file: /etc/apt/sources.list.d/openhab.list
+    - humanname: openhab unstable repo
     - key: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 
 openhab-packages:
   pkg.installed:
     - cache_valid_time: 30000
     - pkgs:
-      - openjdk-8-jre-headless # https://www.openhab.org/docs/installation/#prerequisites
+      - openjdk-11-jre-headless
       - postgresql-10
       - apache2-utils
       - mosquitto
@@ -39,8 +39,8 @@ openhab-packages:
       - android-tools-adb # tablet control
       - jq
       - npm               # weatherunderground icons
-      - openhab2
-      - openhab2-addons
+      - openhab
+      - openhab-addons
     - require:
       - openhab-repo
 
@@ -72,7 +72,7 @@ openhab-database:
  
 openhab-java-opts:
   file.replace:
-    - name: /etc/default/openhab2
+    - name: /etc/default/openhab
     - pattern: ^EXTRA_JAVA_OPTS=.*
     - repl: EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin"
     - append_if_not_found: true
@@ -88,7 +88,7 @@ openhab-dialout-group:
 
 ipcamera-binding:
   archive.extracted:
-    - name: /usr/share/openhab2/addons/
+    - name: /usr/share/openhab/addons/
     - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-2020-03-19.zip
     - source_hash: 4ae0119a44d22567d5a78c55231ac358383e35c5 
     - enforce_toplevel: False
@@ -96,7 +96,7 @@ ipcamera-binding:
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
 openhab-{{directory}}:
   file.recurse:
-    - name: /etc/openhab2/{{directory}}
+    - name: /etc/openhab/{{directory}}
     - source: salt://openhab-server/files/{{directory}}
     - include_empty: True
     - user: openhab
@@ -105,14 +105,14 @@ openhab-{{directory}}:
     - template: jinja
     - clean: True
     - watch_in:
-      - service: openhab2
+      - service: openhab
     - require:
       - pkg: openhab-packages
 {% endfor %}
 
 openhab-scripts:
   file.recurse:
-    - name: /etc/openhab2/scripts
+    - name: /etc/openhab/scripts
     - source: salt://openhab-server/files/scripts
     - include_empty: True
     - user: openhab
@@ -121,7 +121,7 @@ openhab-scripts:
     - template: jinja
     - clean: True
     - watch_in:
-      - service: openhab2
+      - service: openhab
     - require:
       - pkg: openhab-packages
 
@@ -152,18 +152,18 @@ openhab-webaccess:
 
 habpanel-config:
   file.recurse:
-    - name: /etc/openhab2/habpanel
+    - name: /etc/openhab/habpanel
     - source: salt://openhab-server/files/habpanel
     - include_empty: True
     - user: openhab
     - group: openhab
     - file_mode: 0644
     - watch_in:
-      - service: openhab2
+      - service: openhab
 
 habpanel-css:
   file.managed:
-    - name: /etc/openhab2/html/habpanel.css
+    - name: /etc/openhab/html/habpanel.css
     - source: salt://openhab-server/files/habpanel/habpanel.css
     - makedirs: True
     - user: root
@@ -171,20 +171,30 @@ habpanel-css:
 
 habpanel-configure-commands:
   service.running:
-    - name: openhab2
+    - name: openhab
   cmd.script:
     - source: salt://openhab-server/files/habpanel/habpanel-setup.sh
     - onchanges:
       - file: habpanel-config
     - require:
-      - cmd: openhab2
+      - cmd: openhab
       - file: habpanel-config
+
+/var/lib/openhab/uuid:
+  file.replace:
+    - pattern: '^.*$'
+    - repl: {{ salt['pillar.get']('openhab:uuid') }}
+
+/var/lib/openhab/openhabcloud/secret:
+  file.replace:
+    - pattern: '^.*$'
+    - repl: {{ salt['pillar.get']('openhab:openhabcloud-secret') }}
 
 openhab-console-setup:
   cmd.script:
     - source: salt://openhab-server/files/scripts/console-setup.sh
     - require:
-      - cmd: openhab2
+      - cmd: openhab
 
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
