@@ -1,19 +1,16 @@
-ipcamera:HIKVISION:camera01 "eye in the sky" @ "central" [  
-    IPADDRESS="camera01.imagilan", 
-    USERNAME="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
-    PASSWORD="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
-    SNAPSHOT_URL_OVERIDE="http://camera01.imagilan/ISAPI/Streaming/channels/101/picture",
-    IMAGE_UPDATE_EVENTS="1",
-    UPDATE_IMAGE=true,
-    POLL_CAMERA_MS=15000
+ipcamera:hikvision:camera01 "camera01" @ "central" [  
+    ipAddress="camera01.imagilan", 
+    username="{{ salt['pillar.get']('openhab:camera_media_username') }}", 
+    password="{{ salt['pillar.get']('openhab:camera_media_password') }}", 
+    snapshotUrl="http://camera01.imagilan/ISAPI/Streaming/channels/101/picture",
+    pollImage=true
 ]
 
-ipcamera:ONVIF:camera02 "cat toilet" @ "hallway small" [
-    IPADDRESS="camera02.imagilan",
-    USERNAME="root",
-    PASSWORD="ismart12",
-    SNAPSHOT_URL_OVERRIDE="http://camera02.imagilan/cgi-bin/currentpic.cgi",
-    IMAGE_UPDATE_EVENTS="1",
-    UPDATE_IMAGE=true,
-    POLL_CAMERA_MS=15000
+ipcamera:generic:camera02 "camera02" @ "central" [
+    ipAddress="camera02.imagilan",
+    username="root",
+    password="ismart12", 
+    snapshotUrl="http://camera02.imagilan/cgi-bin/currentpic.cgi",
+    ffmpegInput="rtsp://camera02.imagilan:8554/unicast",
+    pollImage=true
 ]

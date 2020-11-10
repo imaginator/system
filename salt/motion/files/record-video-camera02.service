@@ -1,5 +1,5 @@
 [Unit]
-Description="Record Video"
+Description="Record Video camera02"
 After=network.target
 
 [Service]
@@ -9,8 +9,14 @@ RestartSec=60
 User=www-data
 StandardOutput=inherit
 StandardError=inherit
+
+# chance to cleanup files in /var/web/eyeinthesky.imaginator.com/streams
+KillSignal=SIGTERM
+RestartKillSignal=SIGTERM
+TimeoutStopSec=10
+
 Environment="TZ=Europe/Berlin"
-ExecStart=/bin/sh -c '              \
+ExecStart=/bin/sh -c exec'          \
     ffmpeg                          \
     -hide_banner                    \
     -loglevel error                 \
@@ -21,35 +27,24 @@ ExecStart=/bin/sh -c '              \
     -thread_queue_size 2048         \
     -reorder_queue_size 16000       \
     -rtsp_transport tcp             \
-    -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
+    -i rtsp://camera02.imagilan:8554/unicast \
     -c:v copy -an -sn -dn           \
-    -bsf:v hevc_metadata=tick_rate=1 \
-    -f hevc -                       \
-    |                               \
-    ffmpeg                          \
-    -hide_banner                    \
-    -loglevel info                  \
-    -nostats                        \
-    -nostdin                        \
-    -xerror                         \
-    -f hevc                         \
-    -i -                            \
-    -c copy                         \
     -f segment                      \
         -segment_time 86400         \
         -initial_offset "$(date +%%s.%%N)" \
         -segment_format matroska    \
         -strftime 1                 \
-        "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
-    -c:v libx264                    \
+        "/srv/video/netcams/archive/recordall/camera02-%%Y%%m%%d-%%H%%M%%S.mkv" \
+    -c:v copy                       \
     -an                             \
     -f dash                         \
-        -b:v 300k                   \
         -use_template 1             \
-        -use_timeline 1             \
-        -window_size 5              \
+        -use_timeline 0             \
+        -seg_duration 4             \
+        -window_size 2              \
+        -streaming 1                \
+        -extra_window_size 1        \
         -remove_at_exit 1           \
-        -dash_segment_type mp4      \
         -utc_timing_url "https://time.akamai.com/?iso" \
         /var/web/eyeinthesky.imaginator.com/streams/index.mpd \
     '

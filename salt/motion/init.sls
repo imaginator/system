@@ -43,10 +43,10 @@ motion_pkgs:
     - source: salt://motion/files/html
     - template: jinja
 
-record-video.service:
+record-video-camera01.service:
   file.managed:
-    - name: /etc/systemd/system/record-video.service
-    - source: salt://motion/files/record-video.service
+    - name: /etc/systemd/system/record-video-camera01.service
+    - source: salt://motion/files/record-video-camera01.service
     - user: root
     - group: root
     - mode: 644
@@ -54,10 +54,29 @@ record-video.service:
   module.run:
     - name: service.systemctl_reload
     - onchanges:
-      - file: record-video.service
+      - file: record-video-camera01.service
+  service.dead:
+    - enable: False
+    - require:
+      - file: record-video-camera01.service
+    - watch:
+      - file: record-video-camera01.service
+
+record-video-camera02.service:
+  file.managed:
+    - name: /etc/systemd/system/record-video-camera02.service
+    - source: salt://motion/files/record-video-camera02.service
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: record-video-camera02.service
   service.running:
     - enable: True
     - require:
-      - file: record-video.service
+      - file: record-video-camera02.service
     - watch:
-      - file: record-video.service
+      - file: record-video-camera02.service

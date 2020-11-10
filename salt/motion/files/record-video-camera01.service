@@ -1,0 +1,64 @@
+[Unit]
+Description="Record Video camera01"
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=60
+User=www-data
+StandardOutput=inherit
+StandardError=inherit
+Environment="TZ=Europe/Berlin"
+ExecStart=/bin/sh -c exec'          \
+    ffmpeg                          \
+    -hide_banner                    \
+    -loglevel error                 \
+    -nostdin                        \
+    -nostats                        \
+    -xerror                         \
+    -stimeout 5000000               \
+    -thread_queue_size 2048         \
+    -reorder_queue_size 16000       \
+    -rtsp_transport tcp             \
+    -i rtsp://{{ salt['pillar.get']('openhab:camera_media_username') }}:{{ salt['pillar.get']('openhab:camera_media_password') }}@camera01.imagilan:554/ISAPI/streaming/channels/101 \
+    -c:v copy -an -sn -dn           \
+    -bsf:v hevc_metadata=tick_rate=1 \
+    -f hevc -                       \
+    |                               \
+    ffmpeg                          \
+    -hide_banner                    \
+    -loglevel info                  \
+    -nostats                        \
+    -nostdin                        \
+    -xerror                         \
+    -f hevc                         \
+    -i -                            \
+    -c copy                         \
+    -f segment                      \
+        -segment_time 86400         \
+        -initial_offset "$(date +%%s.%%N)" \
+        -segment_format matroska    \
+        -strftime 1                 \
+        "/srv/video/netcams/archive/recordall/camera01-%%Y%%m%%d-%%H%%M%%S.mkv" \
+    -c:v libx264                    \
+    -an                             \
+    -f dash                         \
+        -b:v 300k                   \
+        -use_template 1             \
+        -use_timeline 1             \
+        -window_size 5              \
+        -remove_at_exit 1           \
+        -dash_segment_type mp4      \
+        -utc_timing_url "https://time.akamai.com/?iso" \
+        /var/web/eyeinthesky.imaginator.com/streams/index.mpd \
+    '
+
+[Install]
+WantedBy=multi-user.target
+
+# docs: 
+# https://ipcamtalk.com/threads/fix-non-monotonous-dts-errors-in-ffmpeg.30465/#post-286226
+# https://superuser.com/questions/1430756/ffmpeg-to-fix-video-playback-speed-without-re-encoding/1430914?noredirect=1#comment2159396_1430914
+# https://superuser.com/questions/1431088/ffmpeg-to-get-an-hevc-rtsp-stream-into-an-mkv-container
+# https://superuser.com/questions/1472242/ffmpeg-to-manually-set-a-file-duration/1473002#1473002
