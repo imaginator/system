@@ -1,61 +1,51 @@
-Dimmer           KNX8ButtonsBedroom1_Ch11                    "KNX Volume (kitchen)"                    {channel="knx:device:LIGHT_SWITCH_1:Ch_11"}
+Dimmer           KNXRGBWLightingRGBred                    "Kitchen niche rgb red"                   (gPersistMe)    {channel="knx:device:rgbwlighting:RGBred"}
+Dimmer           KNXRGBWLightingRGBgreen                  "Kitchen niche rgb green"                 (gPersistMe)    {channel="knx:device:rgbwlighting:RGBgreen"}
+Dimmer           KNXRGBWLightingRGBblue                   "Kitchen niche rgb blue"                  (gPersistMe)    {channel="knx:device:rgbwlighting:RGBblue"}
+Dimmer           KNXRGBWLightingRGBwhite                  "Kitchen niche rgb white"                 (gPersistMe)    {channel="knx:device:rgbwlighting:RGBwhite"}
 
-Switch           KNX8PlayPause                               "KNX PlayPause"                           {channel="knx:device:light_switch_kitchen_pillar:PlayPause"}
-Switch           KNX8Volume                                  "KNX Volume"                              {channel="knx:device:light_switch_kitchen_pillar:Channel_Common"}
+Rollershutter    KNXShutterContolVeluxLeftInside          "Lounge left blind inside"                (gPersistMe)    {channel="knx:device:shutters:VeluxLeftInside"}
+Rollershutter    KNXShutterContolVeluxLeftOutside         "Lounge left blind outside"               (gPersistMe)    {channel="knx:device:shutters:VeluxLeftOutside"}
 
-Switch           VeluxStudyInside                            "Study Zimmer Velux Inside"               {channel="knx:device:light_switch_study:VeluxStudyInside"}
-Switch           VeluxStudyOutside                           "Study Zimmer Velux Outside"              {channel="knx:device:light_switch_study:VeluxStudyOutside"}
+Number           KNXTemperatureCelciusLounge              "Lounge temperature"                      (gPersistMe)    {channel="knx:device:temperature:Lounge"}
+Number           KNXTemperatureCelciusKitchen             "Kitchen temperature"                     (gPersistMe)    {channel="knx:device:temperature:Kitchen"}
+Number           KNXTemperatureCelciusStudy               "Study temperature"                       (gPersistMe)    {channel="knx:device:temperature:Study"}
+Number           KNXTemperatureCelciusBathroomMain        "Bathroom main temperature"               (gPersistMe)    {channel="knx:device:temperature:BathroomMain"}
+Number           KNXTemperatureCelciusBathroomGuest       "Bathroom guest temperature"              (gPersistMe)    {channel="knx:device:temperature:BathroomGuest"}
+Number           KNXTemperatureCelciusHallwayLarge        "Hallway large temperature"               (gPersistMe)    {channel="knx:device:temperature:HallwayLarge"}
+Number           KNXTemperatureCelciusHallwaySmall        "Hallway small temperature"               (gPersistMe)    {channel="knx:device:temperature:HallwaySmall"}
+Number           KNXTemperatureCelciusBedroom1            "Bedroom1 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom1"}
+Number           KNXTemperatureCelciusBedroom2            "Bedroom2 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom2"}
+Number           KNXTemperatureCelciusBedroom3            "Bedroom3 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom3"}
 
-Rollershutter    LoungeVeluxLeftInside                       "Lounge left blind inside"                {channel="knx:device:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftInside"}
-Rollershutter    LoungeVeluxLeftOutside                      "Lounge left blind outside"               {channel="knx:device:KnxButtonsLoungeSofaEnd:LoungeVeluxLeftOutside"}
+Switch           KNXVolumePercentTestRoom                 "Volume control"                          (gPersistMe)    {channel="knx:device:volume:TestRoom"}
 
-// Motion Sensors
+Number           KNXLuminosityLuxLounge                   "Lounge brightness [%.1f lux]"            (gPersistMe)    {channel="knx:device:brightness:Lounge"}
+Number           KNXLuminosityLuxKitchen                  "Kitchen brightness [%.1f lux]"           (gPersistMe)    {channel="knx:device:brightness:Kitchen"}
+Number           KNXLuminosityLuxStudy                    "Study brightness [%.1f lux]"             (gPersistMe)    {channel="knx:device:brightness:Study"}
+Number           KNXLuminosityLuxBathroomMain             "Bathroom main brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:BathroomMain"}
+Number           KNXLuminosityLuxBathroomGuest            "Bathroom guest brightness [%.1f lux]"    (gPersistMe)    {channel="knx:device:brightness:BathroomGuest"}
+Number           KNXLuminosityLuxHallwayLarge             "Hallway large brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:HallwayLarge"}
+Number           KNXLuminosityLuxHallwaySmall             "Hallway small brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:HallwaySmall"}
+Number           KNXLuminosityLuxBedroom1                 "Bedroom1 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom1"}
+Number           KNXLuminosityLuxBedroom2                 "Bedroom2 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom2"}
+Number           KNXLuminosityLuxBedroom3                 "Bedroom3 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom3"}
 
-Number           KNXMotionBedroom1TemperatureCelcius         "Bedroom1 temperature"                    {channel="knx:device:KnxMotionBedroom1:Temperature"}
-Contact           KNXMotionBedroom1MotionBoolean              "Bedroom1 motion"                         {channel="knx:device:KnxMotionBedroom1:Motion"}
-Number           KNXMotionBedroom1BrightnessLux              "Bedroom1 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom1:Brightness"}
+Contact          KNXMotionContactLounge                   "Lounge"                                                  {channel="knx:device:motion:Lounge"}
+Contact          KNXMotionContactKitchen                  "Kitchen"                                                 {channel="knx:device:motion:Kitchen"}
+Contact          KNXMotionContactStudy                    "Study"                                                   {channel="knx:device:motion:Study"}
+Contact          KNXMotionContactBathroomMain             "Bathroom main"                                           {channel="knx:device:motion:BathroomMain"}
+Contact          KNXMotionContactBathroomGuest            "Bathroom guest"                                          {channel="knx:device:motion:BathroomGuest"}
+Contact          KNXMotionContactHallwayLarge             "Hallway large"                                           {channel="knx:device:motion:HallwayLarge"}
+Contact          KNXMotionContactHallwaySmall             "Hallway small"                                           {channel="knx:device:motion:HallwaySmall"}
+Contact          KNXMotionContactBedroom1                 "Bedroom1"                                                {channel="knx:device:motion:Bedroom1"}
+Contact          KNXMotionContactBedroom2                 "Bedroom2"                                                {channel="knx:device:motion:Bedroom2"}
+Contact          KNXMotionContactBedroom3                 "Bedroom3"                                                {channel="knx:device:motion:Bedroom3"}
 
-Number           KNXMotionBedroom2TemperatureCelcius         "Bedroom2 temperature"                    {channel="knx:device:KnxMotionBedroom2:Temperature"}
-Contact           KNXMotionBedroom2MotionBoolean              "Bedroom2 motion"                         {channel="knx:device:KnxMotionBedroom2:Motion"}
-Number           KNXMotionBedroom2BrightnessLux              "Bedroom2 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom2:Brightness"}
+Number           KNXPowerMeasurementsBusVolts             "Knx bus volts"                           (gPersistMe)    {channel="knx:device:powermeasurements:BusVolts"}
+Number           KNXPowerMeasurementsBusmA                "Knx bus milliamps"                       (gPersistMe)    {channel="knx:device:powermeasurements:BusmA"}
+Number           KNXPowerMeasurementsHousePowerWh         "House power wh"                          (gPersistMe)    {channel="knx:device:powermeasurements:HousePowerWh"}
+Number           KNXPowerMeasurementsHeatingPowerWh       "Heating power wh"                        (gPersistMe)    {channel="knx:device:powermeasurements:HeatingPowerWh"}
+Number           KNXPowerMeasurementsHousePowerWatts      "House power watts"                       (gPersistMe)    {channel="knx:device:powermeasurements:HousePowerWatts"}
+Number           KNXPowerMeasurementsHeatingPowerWatts    "Heating power watts"                     (gPersistMe)    {channel="knx:device:powermeasurements:HeatingPowerWatts"}
 
-Number           KNXMotionBedroom3TemperatureCelcius         "Bedroom3 temperature"                    {channel="knx:device:KnxMotionBedroom3:Temperature"}
-Contact           KNXMotionBedroom3MotionBoolean              "Bedroom3 motion"                         {channel="knx:device:KnxMotionBedroom3:Motion"}
-Number           KNXMotionBedroom3BrightnessLux              "Bedroom3 brightness [%.1f lux]"          {channel="knx:device:KnxMotionBedroom3:Brightness"}
-
-Number           KNXMotionBathroomGuestTemperatureCelcius    "Bathroom guest temperature"              {channel="knx:device:KnxMotionBathroomGuest:Temperature"}
-Contact           KNXMotionBathroomGuestMotionBoolean         "Bathroom guest motion"                   {channel="knx:device:KnxMotionBathroomGuest:Motion"}
-Number           KNXMotionBathroomGuestBrightnessLux         "Bathroom guest brightness [%.1f lux]"    {channel="knx:device:KnxMotionBathroomGuest:Brightness"}
-
-Number           KNXMotionBathroomMainTemperatureCelcius     "Bathroom main temperature"               {channel="knx:device:KnxMotionBathroomMain:Temperature"}
-Contact           KNXMotionBathroomMainMotionBoolean          "Bathroom main motion"                    {channel="knx:device:KnxMotionBathroomMain:Motion"}
-Number           KNXMotionBathroomMainBrightnessLux          "Bathroom main brightness [%.1f lux]"     {channel="knx:device:KnxMotionBathroomMain:Brightness"}
-
-Number           KNXMotionKitchenTemperatureCelcius          "Kitchen temperature"                     {channel="knx:device:KnxMotionKitchen:Temperature"}
-Contact           KNXMotionKitchenMotionBoolean               "Kitchen motion"                          {channel="knx:device:KnxMotionKitchen:Motion"}
-Number           KNXMotionKitchenBrightnessLux              
-
-
- "Kitchen brightness [%.1f lux]"           {channel="knx:device:KnxMotionKitchen:Brightness"}
-
-Number           KNXMotionLoungeTemperatureCelcius           "Lounge temperature"                      {channel="knx:device:KnxMotionLounge:Temperature"}
-Contact           KNXMotionLoungeMotionBoolean                "Lounge motion"                           {channel="knx:device:KnxMotionLounge:Motion"}
-Number           KNXMotionLoungeBrightnessLux                "Lounge brightness [%.1f lux]"            {channel="knx:device:KnxMotionLounge:Brightness"}
-
-Number           KNXMotionMainHallwayTemperatureCelcius      "Hallway large temperature"               {channel="knx:device:KnxMotionMainHallway:Temperature"}
-Contact           KNXMotionMainHallwayMotionBoolean           "Hallway large motion"                    {channel="knx:device:KnxMotionMainHallway:Motion"}
-Number           KNXMotionMainHallwayBrightnessLux           "Hallway large brightness [%.1f lux]"     {channel="knx:device:KnxMotionMainHallway:Brightness"}
-
-Number           KNXMotionSmallHallwayTemperatureCelcius     "Hallway small temperature"               {channel="knx:device:KnxMotionSmallHallway:Temperature"}
-Contact           KNXMotionSmallHallwayMotionBoolean          "Hallway small motion"                    {channel="knx:device:KnxMotionSmallHallway:Motion"}
-Number           KNXMotionSmallHallwayBrightnessLux          "Hallway small brightness [%.1f lux]"     {channel="knx:device:KnxMotionSmallHallway:Brightness"}
-
-Number           KNXMotionStudyTemperatureCelcius            "Study temperature"                       {channel="knx:device:KnxMotionStudy:Temperature"}
-Contact           KNXMotionStudyMotionBoolean                 "Study motion"                            {channel="knx:device:KnxMotionStudy:Motion"}
-Number           KNXMotionStudyBrightnessLux                 "Study brightness [%.1f lux]"             {channel="knx:device:KnxMotionStudy:Brightness"}
-
-// DateTime         KNXNtpDate                           "Time Germany  [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"    {channel="knx:device:Date_Device:knxDate", channel="knx:device:knxgw:Date_Device:knxTime",channel="ntp:ntp:germany:dateTime"}
-
-Number           HousePowerCounter                           "House Power Consumption in Wh"           {channel="knx:device:PowerConsumption:HousePowerCounter"}
-Number           HeatingPowerCounter                         "Heating Power Consumption in Wh"         {channel="knx:device:PowerConsumption:HeatingPowerCounter"}
- 
+Number           KNXBusTrafficBusTraffic                  "Knx bus traffic (1=max)"                                 {channel="knx:device:bustraffic:BusTrafficPercent"}
