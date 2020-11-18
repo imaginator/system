@@ -34,16 +34,12 @@ ExecStart=/bin/sh -c exec'          \
         -initial_offset "$(date +%%s.%%N)" \
         -segment_format matroska    \
         -strftime 1                 \
-        "/srv/video/netcams/archive/recordall/camera02-%%Y%%m%%d-%%H%%M%%S.mkv" \
+        "/srv/video/netcams/archive/recordall/camera02-%%Y%%m%%d-%%H%%M%%S.mp4" \
     -c:v copy                       \
     -an                             \
     -f dash                         \
-        -use_template 1             \
-        -use_timeline 0             \
-        -seg_duration 4             \
-        -window_size 2              \
-        -streaming 1                \
-        -extra_window_size 1        \
+        -window_size 10             \
+        -hls_playlist 1             \
         -remove_at_exit 1           \
         -utc_timing_url "https://time.akamai.com/?iso" \
         /var/web/eyeinthesky.imaginator.com/streams/index.mpd \
