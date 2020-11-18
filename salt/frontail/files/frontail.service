@@ -16,7 +16,7 @@ ExecStart=/opt/frontail/node_modules/frontail/bin/frontail \
     -t custom \
     -l 300 \
     -n 30 \
-    /var/log/openhab2/events.log /var/log/openhab2/openhab.log
+    /var/log/openhab/events.log
 Restart=always
 User=openhab
 Group=openhab

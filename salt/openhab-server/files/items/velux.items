@@ -1,34 +1,34 @@
-String			VeluxWindowControllerStatus			"Bridge state"									{channel="velux:klf200:veluxgw:status"}
-Switch			VeluxWindowControllerReload			"Reload"										{channel="velux:klf200:veluxgw:reload"}
-Number			VeluxWindowControllerDowntime		"Downtime"										{channel="velux:klf200:veluxgw:downtime"}
-Switch			VeluxWindowControllerDoDetection	"Activate bridge detection mode"				{channel="velux:klf200:veluxgw:doDetection"}
+String           VeluxWindowControllerStatus           "Bridge state"                                      {channel="velux:klf200:veluxgw:status"}
+Switch           VeluxWindowControllerReload           "Reload"                                            {channel="velux:klf200:veluxgw:reload"}
+Number           VeluxWindowControllerDowntime         "Downtime"                                          {channel="velux:klf200:veluxgw:downtime"}
+Switch           VeluxWindowControllerDoDetection      "Activate bridge detection mode"                    {channel="velux:klf200:veluxgw:doDetection"}
 
 // Study
-Rollershutter	StudyInsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ai:position"}
-Rollershutter	StudyOutsideBlindPosition			"Position"										{channel="velux:rollershutter:veluxgw:ao:position"}
+Rollershutter    StudyInsideBlindPosition              "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:ai:position"}
+Rollershutter    StudyOutsideBlindPosition             "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:ao:position"}
 
 // Bedroom 2
-Rollershutter	Bedroom2LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b2li:position"}
-Rollershutter	Bedroom2LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2lo:position"}
-Rollershutter	Bedroom2RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ri:position"}
-Rollershutter	Bedroom2RightOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b2ro:position"}
+Rollershutter    Bedroom2LeftInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2li:position"}
+Rollershutter    Bedroom2LeftOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2lo:position"}
+Rollershutter    Bedroom2RightInsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2ri:position"}
+Rollershutter    Bedroom2RightOutsideBlindPosition     "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2ro:position"}
 
 // Bedroom 3
-Rollershutter	Bedroom3LeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:b3li:position"}
-Rollershutter	Bedroom3LeftOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3lo:position"}
-Rollershutter	Bedroom3RightInsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3ri:position"}
-Rollershutter	Bedroom3RightOusideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:b3ro:position"}
+Rollershutter    Bedroom3LeftInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3li:position"}
+Rollershutter    Bedroom3LeftOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3lo:position"}
+Rollershutter    Bedroom3RightInsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3ri:position"}
+Rollershutter    Bedroom3RightOusideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3ro:position"}
 
 // Lounge
-Rollershutter	LoungeLeftInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lli:position"}
-Rollershutter	LoungeLeftOutsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:llo:position"}
-Rollershutter	LoungeMiddleInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lmi:position"}
-Rollershutter	LoungeMiddleOutsideBlindPosition	"Position"										{channel="velux:rollershutter:veluxgw:lmo:position"}
-Rollershutter	LoungeRightInsideBlindPosition		"Position"										{channel="velux:rollershutter:veluxgw:lri:position"}
+Rollershutter    LoungeLeftInsideBlindPosition         "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lli:position"}
+Rollershutter    LoungeLeftOutsideBlindPosition        "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:llo:position"}
+Rollershutter    LoungeMiddleInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lmi:position"}
+Rollershutter    LoungeMiddleOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lmo:position"}
+Rollershutter    LoungeRightInsideBlindPosition        "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lri:position"}
 
 // Lichtkuppel
-Rollershutter   HallwayRooftopWindowOpenerPosition  "Position"                                      {channel="velux:window:veluxgw:roof:position"}
+Rollershutter    HallwayRooftopWindowOpenerPosition    "Position"                          (gPersistMe)    {channel="velux:window:veluxgw:roof:position"}
 
 // Main Bathroom
-Rollershutter   MainBathroomOutsideBlindPosition    "Position"                                      {channel="velux:rollershutter:veluxgw:mbo:position"}
-Rollershutter   MainBathroomWindowOpenerPosition    "Position"                                      {channel="velux:window:veluxgw:mb:position"}
+Rollershutter    MainBathroomOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:mbo:position"}
+Rollershutter    MainBathroomWindowOpenerPosition      "Position"                          (gPersistMe)    {channel="velux:window:veluxgw:mb:position"}

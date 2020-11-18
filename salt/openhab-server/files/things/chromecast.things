@@ -1,20 +1,21 @@
 // Saltstack'd
 
-chromecast:audio:cca-bedroom1         "chromecast audio bedroom 1" @ "bedroom 1"      [ ipAddress="cca-bedroom1.imagilan" ]
-chromecast:audio:cca-bedroom2         "chromecast audio bedroom 2" @ "bedroom 2"      [ ipAddress="cca-bedroom2.imagilan" ]
-chromecast:audio:cca-bedroom3         "chromecast audio bedroom 3" @ "bedroom 3"      [ ipAddress="cca-bedroom3.imagilan" ]
-chromecast:audio:cca-guestbath        "chromecast audio guestbath" @ "bathroom guest" [ ipAddress="cca-guestbath.imagilan" ]
-chromecast:audio:cca-kitchen            "chromecast audio kitchen" @ "kitchen"        [ ipAddress="cca-kitchen.imagilan" ]
-chromecast:audio:cca-lounge              "chromecast audio lounge" @ "lounge"         [ ipAddress="cca-lounge.imagilan" ]
-chromecast:audio:cca-mainbath          "chromecast audio mainbath" @ "bathroom main"  [ ipAddress="cca-mainbath.imagilan" ]
-chromecast:audio:cca-terrace            "chromecast audio terrace" @ "terrace"        [ ipAddress="cca-terrace.imagilan" ]
-chromecast:audio:cca-study                "chromecast audio study" @ "study"          [ ipAddress="cca-study.imagilan" ]
+chromecast:audio:cca-bedroom1          "chromecast audio bedroom 1" @ "bedroom 1"      [ ipAddress="cca-bedroom1.imagilan", refresh="600" ]
+chromecast:audio:cca-bedroom2          "chromecast audio bedroom 2" @ "bedroom 2"      [ ipAddress="cca-bedroom2.imagilan", refresh="600" ]
+chromecast:audio:cca-bedroom3          "chromecast audio bedroom 3" @ "bedroom 3"      [ ipAddress="cca-bedroom3.imagilan", refresh="600" ]
+chromecast:audio:cca-guestbath         "chromecast audio guestbath" @ "bathroom guest" [ ipAddress="cca-guestbath.imagilan", refresh="600" ]
+chromecast:audio:cca-kitchen             "chromecast audio kitchen" @ "kitchen"        [ ipAddress="cca-kitchen.imagilan",  refresh="600" ]
+chromecast:audio:cca-mainbath           "chromecast audio mainbath" @ "bathroom main"  [ ipAddress="cca-mainbath.imagilan",  refresh="600" ]
+chromecast:audio:cca-terrace             "chromecast audio terrace" @ "terrace"        [ ipAddress="cca-terrace.imagilan",  refresh="600" ]
+chromecast:audio:cca-study                 "chromecast audio study" @ "study"          [ ipAddress="cca-study.imagilan",  refresh="600" ]
+chromecast:audio:cca-lounge               "chromecast audio lounge" @ "lounge"         [ ipAddress="onkyo-receiver.imagilan",  refresh="600" ]
 
-chromecast:chromecast:ccmini-bathroom   "chromecast mini mainbath" @ "bathroom main"  [ ipAddress="ccmini-mainbath.imagilan" ]
-chromecast:chromecast:ccmini-bedroom1  "chromecast mini bedroom 1" @ "bedroom 1"      [ ipAddress="ccmini-bedroom1.imagilan" ]
-chromecast:chromecast:ccmini-kitchen     "chromecast mini kitchen" @ "kitchen"        [ ipAddress="ccmini-kitchen.imagilan" ]
-chromecast:chromecast:ccmini-lounge       "chromecast mini lounge" @ "lounge"         [ ipAddress="ccmini-lounge.imagilan" ]
-
-chromecast:chromecast:ccultra-lounge     "chromecast ultra lounge" @ "lounge"         [ ipAddress="ccultra-lounge.imagilan" ]
-
-chromecast:audiogroup:allspeakers  "chromecast group all speakers" @ "central"        [ deviceID="dd1b9ee2-1401-4260-84a7-bb1e4af0a1d8", ipAddress="ccultra-lounge.imagilan", port="42576"]
+chromecast:chromecast:shield             "chromecast nvidia shield" @ "lounge"         [ ipAddress="nvidia-shield.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-bathroom    "chromecast mini mainbath" @ "bathroom main"  [ ipAddress="ccmini-mainbath.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-bedroom1   "chromecast mini bedroom 1" @ "bedroom 1"      [ ipAddress="ccmini-bedroom1.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-kitchen      "chromecast mini kitchen" @ "kitchen"        [ ipAddress="ccmini-kitchen.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-study          "chromecast mini study" @ "study"          [ ipAddress="ccmini-study.imagilan",  refresh="600" ]
+ 
+chromecast:audiogroup:allspeakers   "chromecast group all speakers" @ "central"        [ deviceID="b2038331-5c6e-42ad-8042-4155b3a4f965", ipAddress="nvidia-shield.imagilan", port="8009",  refresh="600" ]
+chromecast:audiogroup:announcements "chromecast group annoucements" @ "central"        [ deviceID="65fb0222-a707-4931-a6f1-bb42e9f52725", ipAddress="nvidia-shield.imagilan", port="8009",  refresh="600" ]
+chromecast:audiogroup:entertaining  "chromecast group entertaining" @ "central"        [ deviceID="07b9d747-3a7d-4409-821e-0e29ac2f17d6", ipAddress="nvidia-shield.imagilan", port="8009",  refresh="600" ]

@@ -1,0 +1,4 @@
+Bridge gruenbeckcloud:imagisoften:soemthing "Grünbeck water softener" @ "central" [ 
+    username="{{ salt['pillar.get']('openhab:gruenbeckcloudusername') }}",
+    password="{{ salt['pillar.get']('openhab:gruenbeckcloudpassword') }}"
+]

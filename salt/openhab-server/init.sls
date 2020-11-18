@@ -4,11 +4,9 @@ openhab:
     - restart: True
     - require:
       - pkg: openhab-packages
-      - archive: ipcamera-binding
       - postgres_database: openhab-database
       - file: openhab-java-opts
     - onchanges:
-      - archive: ipcamera-binding
       - file: openhab-persistence
       - file: openhab-java-opts
       - file: openhab-services
@@ -86,12 +84,10 @@ openhab-dialout-group:
     - require:
       - pkg: openhab-packages
 
-ipcamera-binding:
-  archive.extracted:
-    - name: /usr/share/openhab/addons/
-    - source: http://www.pcmus.com/openhab/IpCameraBinding/ipcamera-2020-03-19.zip
-    - source_hash: 4ae0119a44d22567d5a78c55231ac358383e35c5 
-    - enforce_toplevel: False
+/usr/share/openhab/addons/org.openhab.binding.gruenbeckcloud.jar:
+  file.managed:
+    - source: https://cloud.familie-schoen.com/f/2cd5c4abe9/?dl=1
+    - source_hash: 713e91da53cc854932531c44ab5edea882e20cea
 
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
 openhab-{{directory}}:
