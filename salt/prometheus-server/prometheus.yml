@@ -65,3 +65,109 @@ scrape_configs:
     static_configs:
       - targets:
         - bunker.imagilan:9997
+
+  - job_name: 'blackbox-web'
+    scrape_interval: 60s
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    static_configs:
+      - targets:
+        - https://bunker.imaginator.com 
+        - http://bunker.imagilan
+        - http://openhab.imagilan
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9115  # The blackbox exporter's real hostname:port.
+
+# to get hostnames
+# grep "uci set .*dhcp.@host\[-1\].name=" ~/Documents/src/home-network/f17gw.settings | sed -e "s/uci set.*dhcp.\@host\[-1\].name='/        - /" | sed -e "s/'$/.imagilan/" | sort
+  - job_name: 'blackbox-ping'
+    scrape_interval: 120s
+    metrics_path: /probe
+    params:
+      module: [icmp]
+    static_configs:
+      - targets:
+        - 2001:4860:4860::8888
+        - 2001:4860:4860::8844
+        - 8.8.8.8
+        - 8.8.4.4
+        - 2606:4700:4700::1111
+        - 2606:4700:4700::1001
+        - 1.1.1.1
+        - 1.0.0.1
+        - bathroom-scale.imagilan
+        - brother-printer.imagilan
+        - camera01.imagilan
+        - camera02.imagilan
+        - cca-bedroom1.imagilan
+        - cca-bedroom2.imagilan
+        - cca-bedroom3.imagilan
+        - cca-guestbath.imagilan
+        - cca-kitchen.imagilan
+        - cca-mainbath.imagilan
+        - cca-study.imagilan
+        - cca-terrace.imagilan
+        - ccmini-bedroom1.imagilan
+        - ccmini-kitchen.imagilan
+        - ccmini-mainbath.imagilan
+        - ccmini-study.imagilan
+        - ccultra-lounge.imagilan
+        - emmauskirche.imagilan
+        - freifunkgw.imagilan
+        - furrow.imagilan
+        - gruenbeck.imagilan
+        - hue.imagilan
+        - imagisuck.imagilan
+        - knx-gw.imagilan
+        - knxgw.imagilan
+        - nvidia-shield.imagilan
+        - onkyo-receiver.imagilan
+        - oven.imagilan
+        - pi01.imagilan
+        - pi02.imagilan
+        - plugswitch01.imagilan
+        - plugswitch02.imagilan
+        - plugswitch03.imagilan
+        - plugswitch04.imagilan
+        - plugswitch05.imagilan
+        - plugswitch06.imagilan
+        - plugswitch07.imagilan
+        - plugswitch08.imagilan
+        - plugswitch09.imagilan
+        - projector01.imagilan
+        - repeater08.imagilan
+        - repeater-bedroom1.imagilan
+        - repeater-hof-north.imagilan
+        - repeater-lounge.imagilan
+        - repeater-street-north.imagilan
+        - repeater-street-south.imagilan
+        - simon-phone.imagilan
+        - stove.imagilan
+        - switch01.imagilan
+        - tablet-arbeit.imagilan
+        - tablet-bedroom1.imagilan
+        - tablet-bedroom2.imagilan
+        - tablet-bedroom3.imagilan
+        - tablet-guestbath.imagilan
+        - tablet-hallway.imagilan
+        - tablet-hd10.imagilan
+        - tablet-kitchen.imagilan
+        - tablet-lounge.imagilan
+        - tablet-mainbath.imagilan
+        - vallox.imagilan
+        - veluxgw.imagilan
+        - washing-machine.imagilan
+        - win10.imagilan
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9115  # This is your blackbox exporter.
