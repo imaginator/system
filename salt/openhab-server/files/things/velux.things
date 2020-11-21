@@ -1,8 +1,10 @@
 
 Bridge velux:klf200:veluxgw "VELUX Window Controller" @ "central" [
                         ipAddress="veluxgw.imagilan",
-                        password="{{ salt['pillar.get']('openhab:velux_password') }}" ]{
-    // knx
+                        password="{{ salt['pillar.get']('openhab:velux_password') }}",
+                        timeoutMsecs=5000,
+                        refreshMsecs=120000 ]{
+    // study
     Thing  rollershutter si   "VELUX study inside"             @ "study"          [ serial="53:29:4A:32:12:29:01:9B" ]
     Thing  rollershutter so   "VELUX study outside"            @ "study"          [ serial="53:29:0C:5A:12:2B:02:F1" ]
     // bedroom 2
