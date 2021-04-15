@@ -15,6 +15,8 @@ chromecast:chromecast:ccmini-bathroom    "chromecast mini mainbath" @ "bathroom 
 chromecast:chromecast:ccmini-bedroom1   "chromecast mini bedroom 1" @ "bedroom 1"      [ ipAddress="ccmini-bedroom1.imagilan",  refresh="600" ]
 chromecast:chromecast:ccmini-kitchen      "chromecast mini kitchen" @ "kitchen"        [ ipAddress="ccmini-kitchen.imagilan",  refresh="600" ]
 chromecast:chromecast:ccmini-study          "chromecast mini study" @ "study"          [ ipAddress="ccmini-study.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-lounge        "chromecast mini lounge" @ "lounge"         [ ipAddress="ccmini-lounge.imagilan",  refresh="600" ]
+chromecast:chromecast:ccmini-guestbath  "chromecast mini guestbath" @ "guestbath"      [ ipAddress="ccmini-guestbath.imagilan",  refresh="600" ]
  
 chromecast:audiogroup:allspeakers   "chromecast group all speakers" @ "central"        [ deviceID="b2038331-5c6e-42ad-8042-4155b3a4f965", ipAddress="nvidia-shield.imagilan", port="8009",  refresh="600" ]
 chromecast:audiogroup:announcements "chromecast group annoucements" @ "central"        [ deviceID="65fb0222-a707-4931-a6f1-bb42e9f52725", ipAddress="nvidia-shield.imagilan", port="8009",  refresh="600" ]
