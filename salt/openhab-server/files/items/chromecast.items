@@ -133,6 +133,10 @@ Number         ChromecastShieldTrackNumber                     "Track Number"   
 // Chromecast Mini Speakers
 
 // CC mini lounge
+
+// CC Mini guest bathroom
+
+// CC mini study
 Player         ChromecastMiniStudyControl                      "Media Control"                                    {channel="chromecast:chromecast:ccmini-study:control"}
 Dimmer         ChromecastMiniStudyVolume                       "Volume"            (gPersistMe,gVolumeControl)    {channel="chromecast:chromecast:ccmini-study:volume"}
 Switch         ChromecastMiniStudyMute                         "Mute"              (gPersistMe)                   {channel="chromecast:chromecast:ccmini-study:mute"}

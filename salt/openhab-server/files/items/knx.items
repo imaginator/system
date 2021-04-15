@@ -1,51 +1,81 @@
-Dimmer           KNXRGBWLightingRGBred                    "Kitchen niche rgb red"                   (gPersistMe)    {channel="knx:device:rgbwlighting:RGBred"}
-Dimmer           KNXRGBWLightingRGBgreen                  "Kitchen niche rgb green"                 (gPersistMe)    {channel="knx:device:rgbwlighting:RGBgreen"}
-Dimmer           KNXRGBWLightingRGBblue                   "Kitchen niche rgb blue"                  (gPersistMe)    {channel="knx:device:rgbwlighting:RGBblue"}
-Dimmer           KNXRGBWLightingRGBwhite                  "Kitchen niche rgb white"                 (gPersistMe)    {channel="knx:device:rgbwlighting:RGBwhite"}
+Dimmer           KNXRGBWLightingRGBred                              "Kitchen niche rgb red"          (gPersistMe)                               {channel="knx:device:rgbwlighting:RGBred"}
+Dimmer           KNXRGBWLightingRGBgreen                            "Kitchen niche rgb green"        (gPersistMe)                               {channel="knx:device:rgbwlighting:RGBgreen"}
+Dimmer           KNXRGBWLightingRGBblue                             "Kitchen niche rgb blue"         (gPersistMe)                               {channel="knx:device:rgbwlighting:RGBblue"}
+Dimmer           KNXRGBWLightingRGBwhite                            "Kitchen niche rgb white"        (gPersistMe)                               {channel="knx:device:rgbwlighting:RGBwhite"}
 
-Rollershutter    KNXShutterContolVeluxLeftInside          "Lounge left blind inside"                (gPersistMe)    {channel="knx:device:shutters:VeluxLeftInside"}
-Rollershutter    KNXShutterContolVeluxLeftOutside         "Lounge left blind outside"               (gPersistMe)    {channel="knx:device:shutters:VeluxLeftOutside"}
+Number           KNXTemperatureCelciusBathroomGuest                 "Temperature [%.1f°C]"           (gPersistMe, gBathroomGuesSensors)         {channel="knx:device:temperature:BathroomGuest"}
+Number           KNXTemperatureCelciusBathroomMain                  "Temperature [%.1f°C]"           (gPersistMe, gBathroomMainSensors)         {channel="knx:device:temperature:BathroomMain"}
+Number           KNXTemperatureCelciusBedroom1                      "Temperature [%.1f°C]"           (gPersistMe, gBedroom1Sensors)             {channel="knx:device:temperature:Bedroom1"}
+Number           KNXTemperatureCelciusBedroom2                      "Temperature [%.1f°C]"           (gPersistMe, gBedroom2Sensors)             {channel="knx:device:temperature:Bedroom2"}
+Number           KNXTemperatureCelciusBedroom3                      "Temperature [%.1f°C]"           (gPersistMe, gBedroom3Sensors)             {channel="knx:device:temperature:Bedroom3"}
+Number           KNXTemperatureCelciusHallwayLarge                  "Temperature [%.1f°C]"           (gPersistMe, gHallwayMainSensors)          {channel="knx:device:temperature:HallwayLarge"}
+Number           KNXTemperatureCelciusHallwaySmall                  "Temperature [%.1f°C]"           (gPersistMe, gHallwaySmallSensors)         {channel="knx:device:temperature:HallwaySmall"}
+Number           KNXTemperatureCelciusKitchen                       "Temperature [%.1f°C]"           (gPersistMe, gKitchenSensors)              {channel="knx:device:temperature:Kitchen"}
+Number           KNXTemperatureCelciusLounge                        "Temperature [%.1f°C]"           (gPersistMe, gLoungeSensors)               {channel="knx:device:temperature:Lounge"}
+Number           KNXTemperatureCelciusStudy                         "Temperature [%.1f°C]"           (gPersistMe, gStudySensors)                {channel="knx:device:temperature:Study"}
 
-Number           KNXTemperatureCelciusLounge              "Lounge temperature"                      (gPersistMe)    {channel="knx:device:temperature:Lounge"}
-Number           KNXTemperatureCelciusKitchen             "Kitchen temperature"                     (gPersistMe)    {channel="knx:device:temperature:Kitchen"}
-Number           KNXTemperatureCelciusStudy               "Study temperature"                       (gPersistMe)    {channel="knx:device:temperature:Study"}
-Number           KNXTemperatureCelciusBathroomMain        "Bathroom main temperature"               (gPersistMe)    {channel="knx:device:temperature:BathroomMain"}
-Number           KNXTemperatureCelciusBathroomGuest       "Bathroom guest temperature"              (gPersistMe)    {channel="knx:device:temperature:BathroomGuest"}
-Number           KNXTemperatureCelciusHallwayLarge        "Hallway large temperature"               (gPersistMe)    {channel="knx:device:temperature:HallwayLarge"}
-Number           KNXTemperatureCelciusHallwaySmall        "Hallway small temperature"               (gPersistMe)    {channel="knx:device:temperature:HallwaySmall"}
-Number           KNXTemperatureCelciusBedroom1            "Bedroom1 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom1"}
-Number           KNXTemperatureCelciusBedroom2            "Bedroom2 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom2"}
-Number           KNXTemperatureCelciusBedroom3            "Bedroom3 temperature"                    (gPersistMe)    {channel="knx:device:temperature:Bedroom3"}
+Switch           KNXVolumePercentTestRoom                           "Volume control"                 (gPersistMe)                               {channel="knx:device:volume:TestRoom"}
 
-Switch           KNXVolumePercentTestRoom                 "Volume control"                          (gPersistMe)    {channel="knx:device:volume:TestRoom"}
+Number           KNXLuminosityLuxBathroomGuest                      "brightness [%.1f lux]"          (gPersistMe, gBathroomGuestSensors)        {channel="knx:device:brightness:BathroomGuest"}
+Number           KNXLuminosityLuxBathroomMain                       "brightness [%.1f lux]"          (gPersistMe, gBathroomMainSensors)         {channel="knx:device:brightness:BathroomMain"}
+Number           KNXLuminosityLuxBedroom1                           "brightness [%.1f lux]"          (gPersistMe, gBedroom1Sensors)             {channel="knx:device:brightness:Bedroom1"}
+Number           KNXLuminosityLuxBedroom2                           "brightness [%.1f lux]"          (gPersistMe, gBedroom2Sensors)             {channel="knx:device:brightness:Bedroom2"}
+Number           KNXLuminosityLuxBedroom3                           "brightness [%.1f lux]"          (gPersistMe, gBedroom3Sensors)             {channel="knx:device:brightness:Bedroom3"}
+Number           KNXLuminosityLuxHallwayLarge                       "brightness [%.1f lux]"          (gPersistMe, gHallwaySensors)              {channel="knx:device:brightness:HallwayLarge"}
+Number           KNXLuminosityLuxHallwaySmall                       "brightness [%.1f lux]"          (gPersistMe, gHallwaysensors)              {channel="knx:device:brightness:HallwaySmall"}
+Number           KNXLuminosityLuxKitchen                            "brightness [%.1f lux]"          (gPersistMe, gKitchenSensors)              {channel="knx:device:brightness:Kitchen"}
+Number           KNXLuminosityLuxLounge                             "brightness [%.1f lux]"          (gPersistMe, gLoungeSensors)               {channel="knx:device:brightness:Lounge"}
+Number           KNXLuminosityLuxStudy                              "brightness [%.1f lux]"          (gPersistMe, gStudySensors)                {channel="knx:device:brightness:Study"}
+ 
+Contact          KNXMotionContactBathroomGuest                      "[MAP(motion.map):%s]"           (gMotionSensors, gBathroomGuestSensors)    {channel="knx:device:motion:BathroomGuest"}
+Contact          KNXMotionContactBathroomMain                       "[MAP(motion.map):%s]"           (gMotionSensors, gBathroomMainSensors)     {channel="knx:device:motion:BathroomMain"}
+Contact          KNXMotionContactBedroom1                           "[MAP(motion.map):%s]"           (gMotionSensors, gBedroom1Sensors)         {channel="knx:device:motion:Bedroom1"}
+Contact          KNXMotionContactBedroom2                           "[MAP(motion.map):%s]"           (gMotionSensors, gBedroom2Sensors)         {channel="knx:device:motion:Bedroom2"}
+Contact          KNXMotionContactBedroom3                           "[MAP(motion.map):%s]"           (gMotionSensors, gBedroom3Sensors)         {channel="knx:device:motion:Bedroom3"}
+Contact          KNXMotionContactHallwayLarge                       "[MAP(motion.map):%s]"           (gMotionSensors, gHallwayLargeSensors)     {channel="knx:device:motion:HallwayLarge"}
+Contact          KNXMotionContactHallwaySmall                       "[MAP(motion.map):%s]"           (gMotionSensors, gHallwaySmallSensors)     {channel="knx:device:motion:HallwaySmall"}
+Contact          KNXMotionContactKitchen                            "[MAP(motion.map):%s]"           (gMotionSensors, gKitchenSensors)          {channel="knx:device:motion:Kitchen"}
+Contact          KNXMotionContactLounge                             "[MAP(motion.map):%s]"           (gMotionSensors, gLoungeSensors)           {channel="knx:device:motion:Lounge"}
+Contact          KNXMotionContactStudy                              "[MAP(motion.map):%s]"           (gMotionSensors, gStudySensors)            {channel="knx:device:motion:Study"}
 
-Number           KNXLuminosityLuxLounge                   "Lounge brightness [%.1f lux]"            (gPersistMe)    {channel="knx:device:brightness:Lounge"}
-Number           KNXLuminosityLuxKitchen                  "Kitchen brightness [%.1f lux]"           (gPersistMe)    {channel="knx:device:brightness:Kitchen"}
-Number           KNXLuminosityLuxStudy                    "Study brightness [%.1f lux]"             (gPersistMe)    {channel="knx:device:brightness:Study"}
-Number           KNXLuminosityLuxBathroomMain             "Bathroom main brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:BathroomMain"}
-Number           KNXLuminosityLuxBathroomGuest            "Bathroom guest brightness [%.1f lux]"    (gPersistMe)    {channel="knx:device:brightness:BathroomGuest"}
-Number           KNXLuminosityLuxHallwayLarge             "Hallway large brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:HallwayLarge"}
-Number           KNXLuminosityLuxHallwaySmall             "Hallway small brightness [%.1f lux]"     (gPersistMe)    {channel="knx:device:brightness:HallwaySmall"}
-Number           KNXLuminosityLuxBedroom1                 "Bedroom1 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom1"}
-Number           KNXLuminosityLuxBedroom2                 "Bedroom2 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom2"}
-Number           KNXLuminosityLuxBedroom3                 "Bedroom3 brightness [%.1f lux]"          (gPersistMe)    {channel="knx:device:brightness:Bedroom3"}
+Number           KNXHeatingTargetTemperatureCelciusBathroomGuest    "target temperature [%.1f°C]"    (gPersistMe, gBathroomGuestHeating)        {channel="knx:device:heating-target-temperature:BathroomGuest"}
+Number           KNXHeatingTargetTemperatureCelciusBathroomMain     "target temperature [%.1f°C]"    (gPersistMe, gBathroomMainHeating)         {channel="knx:device:heating-target-temperature:BathroomMain"}
+Number           KNXHeatingTargetTemperatureCelciusBedroom1         "target temperature [%.1f°C]"    (gPersistMe, gBedroom1Heating)             {channel="knx:device:heating-target-temperature:Bedroom1"}
+Number           KNXHeatingTargetTemperatureCelciusBedroom2         "target temperature [%.1f°C]"    (gPersistMe, gBedroom2Heating)             {channel="knx:device:heating-target-temperature:Bedroom2"}
+Number           KNXHeatingTargetTemperatureCelciusBedroom3         "target temperature [%.1f°C]"    (gPersistMe, gBedroom3Heating)             {channel="knx:device:heating-target-temperature:Bedroom3"}
+Number           KNXHeatingTargetTemperatureCelciusHallwayLarge     "target temperature [%.1f°C]"    (gPersistMe, gHallwayLargeHeating)         {channel="knx:device:heating-target-temperature:HallwayLarge"}
+Number           KNXHeatingTargetTemperatureCelciusHallwaySmall     "target temperature [%.1f°C]"    (gPersistMe, gHallwaySmallHeating)         {channel="knx:device:heating-target-temperature:HallwaySmall"}
+Number           KNXHeatingTargetTemperatureCelciusKitchen          "target temperature [%.1f°C]"    (gPersistMe, gKitchenHeating)              {channel="knx:device:heating-target-temperature:Kitchen"}
+Number           KNXHeatingTargetTemperatureCelciusLounge           "target temperature [%.1f°C]"    (gPersistMe, gLoungeHeating)               {channel="knx:device:heating-target-temperature:Lounge"}
+Number           KNXHeatingTargetTemperatureCelciusStudy            "target temperature [%.1f°C]"    (gPersistMe, gStudyHeating)
 
-Contact          KNXMotionContactLounge                   "Lounge"                                                  {channel="knx:device:motion:Lounge"}
-Contact          KNXMotionContactKitchen                  "Kitchen"                                                 {channel="knx:device:motion:Kitchen"}
-Contact          KNXMotionContactStudy                    "Study"                                                   {channel="knx:device:motion:Study"}
-Contact          KNXMotionContactBathroomMain             "Bathroom main"                                           {channel="knx:device:motion:BathroomMain"}
-Contact          KNXMotionContactBathroomGuest            "Bathroom guest"                                          {channel="knx:device:motion:BathroomGuest"}
-Contact          KNXMotionContactHallwayLarge             "Hallway large"                                           {channel="knx:device:motion:HallwayLarge"}
-Contact          KNXMotionContactHallwaySmall             "Hallway small"                                           {channel="knx:device:motion:HallwaySmall"}
-Contact          KNXMotionContactBedroom1                 "Bedroom1"                                                {channel="knx:device:motion:Bedroom1"}
-Contact          KNXMotionContactBedroom2                 "Bedroom2"                                                {channel="knx:device:motion:Bedroom2"}
-Contact          KNXMotionContactBedroom3                 "Bedroom3"                                                {channel="knx:device:motion:Bedroom3"}
+Number           KNXHeatingValveStatusPercentageBathroomGuest       "valve status [%d %%]"           (gPersistMe, gBathroomGuestHeating)        {channel="knx:device:heating-valve-status:BathroomGuest"}
+Number           KNXHeatingValveStatusPercentageBathroomMain        "valve status [%d %%]"           (gPersistMe, gBathroomMainHeating)         {channel="knx:device:heating-valve-status:BathroomMain"}
+Number           KNXHeatingValveStatusPercentageBedroom1            "valve status [%d %%]"           (gPersistMe, gBedroom1Heating)             {channel="knx:device:heating-valve-status:Bedroom1"}
+Number           KNXHeatingValveStatusPercentageBedroom2            "valve status [%d %%]"           (gPersistMe, gBedroom2Heating)             {channel="knx:device:heating-valve-status:Bedroom2"}
+Number           KNXHeatingValveStatusPercentageBedroom3            "valve status [%d %%]"           (gPersistMe, gBedroom3Heating)             {channel="knx:device:heating-valve-status:Bedroom3"}
+Number           KNXHeatingValveStatusPercentageHallwayLarge        "valve status [%d %%]"           (gPersistMe, gHallwayLargeHeating)         {channel="knx:device:heating-valve-status:HallwayLarge"}
+Number           KNXHeatingValveStatusPercentageHallwaySmall        "valve status [%d %%]"           (gPersistMe, gHallwaySmallHeating)         {channel="knx:device:heating-valve-status:HallwaySmall"}
+Number           KNXHeatingValveStatusPercentageKitchen             "valve status [%d %%]"           (gPersistMe, gKitchenHeating)              {channel="knx:device:heating-valve-status:Kitchen"}
+Number           KNXHeatingValveStatusPercentageLounge              "valve status [%d %%]"           (gPersistMe, gLoungeHeating)               {channel="knx:device:heating-valve-status:Lounge"}
+Number           KNXHeatingValveStatusPercentageStudy               "valve status [%d %%]"           (gPersistMe, gStudyHeating)                {channel="knx:device:heating-valve-status:Study"}
 
-Number           KNXPowerMeasurementsBusVolts             "Knx bus volts"                           (gPersistMe)    {channel="knx:device:powermeasurements:BusVolts"}
-Number           KNXPowerMeasurementsBusmA                "Knx bus milliamps"                       (gPersistMe)    {channel="knx:device:powermeasurements:BusmA"}
-Number           KNXPowerMeasurementsHousePowerWh         "House power wh"                          (gPersistMe)    {channel="knx:device:powermeasurements:HousePowerWh"}
-Number           KNXPowerMeasurementsHeatingPowerWh       "Heating power wh"                        (gPersistMe)    {channel="knx:device:powermeasurements:HeatingPowerWh"}
-Number           KNXPowerMeasurementsHousePowerWatts      "House power watts"                       (gPersistMe)    {channel="knx:device:powermeasurements:HousePowerWatts"}
-Number           KNXPowerMeasurementsHeatingPowerWatts    "Heating power watts"                     (gPersistMe)    {channel="knx:device:powermeasurements:HeatingPowerWatts"}
+String           KNXHeatingDisgnosisTextBathroomGuest               "diagnosis text"                 (gPersistMe, gBathroomGuestHeating)        {channel="knx:device:heating-diagnosis-text:BathroomGuest"}
+String           KNXHeatingDisgnosisTextBathroomMain                "diagnosis text"                 (gPersistMe, gBathroomMainHeating)         {channel="knx:device:heating-diagnosis-text:BathroomMain"}
+String           KNXHeatingDisgnosisTextBedroom1                    "diagnosis text"                 (gPersistMe, gBedroom1Heating)             {channel="knx:device:heating-diagnosis-text:Bedroom1"}
+String           KNXHeatingDisgnosisTextBedroom2                    "diagnosis text"                 (gPersistMe, gBedroom2Heating)             {channel="knx:device:heating-diagnosis-text:Bedroom2"}
+String           KNXHeatingDisgnosisTextBedroom3                    "diagnosis text"                 (gPersistMe, gBedroom3Heating)             {channel="knx:device:heating-diagnosis-text:Bedroom3"}
+String           KNXHeatingDisgnosisTextHallwayLarge                "diagnosis text"                 (gPersistMe, gHallwayLargeHeating)         {channel="knx:device:heating-diagnosis-text:HallwayLarge"}
+String           KNXHeatingDisgnosisTextHallwaySmall                "diagnosis text"                 (gPersistMe, gHallwaySmallHeating)         {channel="knx:device:heating-diagnosis-text:HallwaySmall"}
+String           KNXHeatingDisgnosisTextKitchen                     "diagnosis text"                 (gPersistMe, gKitchenHeating)              {channel="knx:device:heating-diagnosis-text:Kitchen"}
+String           KNXHeatingDisgnosisTextLounge                      "diagnosis text"                 (gPersistMe, gLoungeHeating)               {channel="knx:device:heating-diagnosis-text:Lounge"}
+String           KNXHeatingDisgnosisTextStudy                       "diagnosis text"                 (gPersistMe, gStudyHeating)                {channel="knx:device:heating-diagnosis-text:Study"}
 
-Number           KNXBusTrafficBusTraffic                  "Knx bus traffic (1=max)"                                 {channel="knx:device:bustraffic:BusTrafficPercent"}
+Number           KNXPowerMeasurementsBusVolts                       "Knx bus volts"                  (gPersistMe)                               {channel="knx:device:powermeasurements:BusVolts"}
+Number           KNXPowerMeasurementsBusmA                          "Knx bus milliamps"              (gPersistMe)                               {channel="knx:device:powermeasurements:BusmA"}
+Number           KNXPowerMeasurementsHousePowerWh                   "House power wh"                 (gPersistMe)                               {channel="knx:device:powermeasurements:HousePowerWh"}
+Number           KNXPowerMeasurementsHeatingPowerWh                 "Heating power wh"               (gPersistMe)                               {channel="knx:device:powermeasurements:HeatingPowerWh"}
+Number           KNXPowerMeasurementsHousePowerWatts                "House power watts"              (gPersistMe)                               {channel="knx:device:powermeasurements:HousePowerWatts"}
+Number           KNXPowerMeasurementsHeatingPowerWatts              "Heating power watts"            (gPersistMe)                               {channel="knx:device:powermeasurements:HeatingPowerWatts"}
+
+Number           KNXBusTrafficBusTraffic                            "Knx bus traffic (1=max)"                                                   {channel="knx:device:bustraffic:BusTrafficPercent"}

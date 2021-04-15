@@ -36,7 +36,7 @@ String   SpotifyAllSpeakers_TrackPlay          "Track to Play"      (gPersistMe)
 String   SpotifyAllSpeakers_DeviceName         "Device Name"        (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceName"}
 String   SpotifyAllSpeakers_DeviceType         "Device Type"        (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceType"}
 Player   SpotifyAllSpeakers_DevicePlayer       "Device Play"                     {channel="spotify:device:simon:spotify_all:devicePlayer"}
-Dimmer   SpotifyAllSpeakers_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceVolume"}
+// Dimmer   SpotifyAllSpeakers_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceVolume"}
 Switch   SpotifyAllSpeakers_DeviceActive       "Device Active"      (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceActive"}
 Switch   SpotifyAllSpeakers_DeviceRestricted   "Device Restricted"  (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceRestricted"}
 Switch   SpotifyAllSpeakers_DeviceShuffle      "Device Shuffle"     (gPersistMe) {channel="spotify:device:simon:spotify_all:deviceShuffle"}
@@ -45,7 +45,7 @@ String   SpotifyKitchenMini_TrackPlay          "Track to Play"      (gPersistMe)
 String   SpotifyKitchenMini_DeviceName         "Device Name"        (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceName"}
 String   SpotifyKitchenMini_DeviceType         "Device Type"        (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceType"}
 Player   SpotifyKitchenMini_DevicePlayer       "Device Play"                     {channel="spotify:device:simon:spotify_kitchen:devicePlayer"}
-Dimmer   SpotifyKitchenMini_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceVolume"}
+// Dimmer   SpotifyKitchenMini_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceVolume"}
 Switch   SpotifyKitchenMini_DeviceActive       "Device Active"      (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceActive"}
 Switch   SpotifyKitchenMini_DeviceRestricted   "Device Restricted"  (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceRestricted"}
 Switch   SpotifyKitchenMini_DeviceShuffle      "Device Shuffle"     (gPersistMe) {channel="spotify:device:simon:spotify_kitchen:deviceShuffle"}
@@ -54,7 +54,7 @@ String   SpotifyLoungeHifi_TrackPlay          "Track to Play"      (gPersistMe) 
 String   SpotifyLoungeHifi_DeviceName         "Device Name"        (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceName"}
 String   SpotifyLoungeHifi_DeviceType         "Device Type"        (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceType"}
 Player   SpotifyLoungeHifi_DevicePlayer       "Device Play"                     {channel="spotify:device:simon:spotify_loungehifi:devicePlayer"}
-Dimmer   SpotifyLoungeHifi_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceVolume"}
+// Dimmer   SpotifyLoungeHifi_DeviceVolume       "Device Volume"      (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceVolume"}
 Switch   SpotifyLoungeHifi_DeviceActive       "Device Active"      (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceActive"}
 Switch   SpotifyLoungeHifi_DeviceRestricted   "Device Restricted"  (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceRestricted"}
 Switch   SpotifyLoungeHifi_DeviceShuffle      "Device Shuffle"     (gPersistMe) {channel="spotify:device:simon:spotify_loungehifi:deviceShuffle"}

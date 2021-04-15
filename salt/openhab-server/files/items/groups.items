@@ -1,2 +1,87 @@
-Group gPersistMe        ["Group of items to persist"]
-Group gVolumeControl    ["Group of items to have their volume reset daily"] 
+// Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]  ["Tag"]
+// Example Item
+// Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
+
+// https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv
+
+// itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
+
+
+
+
+
+//HOUSE MODEL
+
+//Indoor
+Group    gRooms                   "Rooms"                                                         ["Indoor"]
+
+// Rooms
+Group    gBathroomGuest           "Bathroom Guest"        <bath>              (gRooms)            ["Bathroom"]
+Group    gBathroomMain            "Bathroom Main"         <bath>              (gRooms)            ["Bathroom"]
+Group    gBedroom1                "Bedroom 1"             <bedroom>           (gRooms)            ["Bedroom"]
+Group    gBedroom2                "Bedroom 2"             <bedroom>           (gRooms)            ["Bedroom"]
+Group    gBedroom3                "Bedroom 3"             <bedroom>           (gRooms)            ["Bedroom"]
+Group    gHallwayLarge            "Main Hallway"          <corridor>          (gRooms)            ["Corridor"]
+Group    gHallwaySmall            "Small Hallway"         <corridor>          (gRooms)            ["Corridor"]
+Group    gKitchen                 "Kitchen"               <kitchen>           (gRooms)            ["Kitchen"]
+Group    gLaundry                 "Laundry Room"          <washingmachine>    (gRooms)            ["LaundryRoom"]
+Group    gLounge                  "Lounge"                <party>             (gRooms)            ["LivingRoom"]
+Group    gStudy                   "Study"                 <office>            (gRooms)            ["Office"]
+Group    gTerrace                 "Terrace"               <Terrace>           (gRooms)            ["Terrace"]
+
+// Sensors
+Group    gBathroomGuestSensors    "Sensors"                                   (gBathroomGuest)    ["Sensor"]
+Group    gBathroomMainSensors     "Sensors"                                   (gBathroomMain)     ["Sensor"]
+Group    gBedroom1Sensors         "Sensors"                                   (gBedroom1)         ["Sensor"]
+Group    gBedroom2Sensors         "Sensors"                                   (gBedroom2)         ["Sensor"]
+Group    gBedroom3Sensors         "Sensors"                                   (gBedroom3)         ["Sensor"]
+Group    gHallwayLargeSensors     "Sensors"                                   (gHallwayLarge)     ["Sensor"]
+Group    gHallwaySmallSensors     "Sensors"                                   (gHallwaySmall)     ["Sensor"]
+Group    gKitchenSensors          "Sensors"                                   (gKitchen)          ["Sensor"]
+Group    gLaundrySensors          "Sensors"                                   (gLaundry)          ["Sensor"]
+Group    gStudySensors            "Sensors"                                   (gStudy)            ["Sensor"]
+
+// Lights
+Group    gBathroomGuestLights     "Lights"                                    (gBathroomGuest)    ["Lightbulb"]
+Group    gBathroomMainLights      "Lights"                                    (gBathroomMain)     ["Lightbulb"]
+Group    gBedroom1Lights          "Lights"                                    (gBedroom1)         ["Lightbulb"]
+Group    gBedroom2Lights          "Lights"                                    (gBedroom2)         ["Lightbulb"]
+Group    gBedroom3Lights          "Lights"                                    (gBedroom3)         ["Lightbulb"]
+Group    gHallwayLargeLights      "Lights"                                    (gHallwayLarge)     ["Lightbulb"]
+Group    gHallwaySmallLights      "Lights"                                    (gHallwaySmall)     ["Lightbulb"]
+Group    gKitchenLights           "Lights"                                    (gKitchen)          ["Lightbulb"]
+Group    gLaundryLights           "Lights"                                    (gLaundry)          ["Lightbulb"]
+Group    gStudyLights             "Lights"                                    (gStudy)            ["Lightbulb"]
+
+// Heating
+Group    gBathroomGuestHeating    "Heating"               <heating>           (gBathroomGuest)    ["HVAC"]
+Group    gBathroomMainHeating     "Heating"               <heating>           (gBathroomMain)     ["HVAC"]
+Group    gBedroom1Heating         "Heating"               <heating>           (gBedroom1)         ["HVAC"]
+Group    gBedroom2Heating         "Heating"               <heating>           (gBedroom2)         ["HVAC"]
+Group    gBedroom3Heating         "Heating"               <heating>           (gBedroom3)         ["HVAC"]
+Group    gHallwayLargeHeating     "Heating"               <heating>           (gHallwayLarge)     ["HVAC"]
+Group    gHallwaySmallHeating     "Heating"               <heating>           (gHallwaySmall)     ["HVAC"]
+Group    gKitchenHeating          "Heating"               <heating>           (gKitchen)          ["HVAC"]
+Group    gLaundryHeating          "Heating"               <heating>           (gLaundry)          ["HVAC"]
+Group    gStudyHeating            "Heating"               <heating>           (gStudy)            ["HVAC"]
+
+
+
+// Functional perspective
+Group    gEquipment               "Equipment"                                                     ["Equipment"]
+
+// Sensors
+Group    gSensors                 "Sensors"                                 (gEquipment)        ["Equipment"]
+Group    gTemperatures            "Temperatures"                              (gSensors)
+Group    gMotionsensors            "Motion Sensors"                              (gSensors)
+
+
+// Media
+Group    gVolumes                 "Volumes"                                   (gEquipment)
+Group    gVolumeControl           "Volume reset daily"                        (gVolumeControl)
+
+
+
+
+
+Group    gPersistMe               "Items to persist"                       

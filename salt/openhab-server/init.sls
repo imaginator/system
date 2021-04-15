@@ -34,7 +34,7 @@ openhab-packages:
       - libpulse-jni
       - libpulse-java
       - iputils-arping
-      - android-tools-adb # tablet control
+      - adb # tablet control
       - jq
       - npm               # weatherunderground icons
       - openhab
@@ -191,6 +191,23 @@ openhab-console-setup:
     - source: salt://openhab-server/files/scripts/console-setup.sh
     - require:
       - cmd: openhab
+
+
+openhab-remote-console:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: tcp
+    - jump: ACCEPT
+    - source: 10.7.8.0/22
+    - dport: 8081
+    - family: ipv4
+    - match: comment 
+    - comment: "Openhab Console Remote Access"
+    - save: true
+
 
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:

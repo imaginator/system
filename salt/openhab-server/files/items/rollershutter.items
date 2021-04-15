@@ -1,34 +1,42 @@
-String           VeluxWindowControllerStatus           "Bridge state"                                      {channel="velux:klf200:veluxgw:status"}
-Switch           VeluxWindowControllerReload           "Reload"                                            {channel="velux:klf200:veluxgw:reload"}
-Number           VeluxWindowControllerDowntime         "Downtime"                                          {channel="velux:klf200:veluxgw:downtime"}
-Switch           VeluxWindowControllerDoDetection      "Activate bridge detection mode"                    {channel="velux:klf200:veluxgw:doDetection"}
+// Groups
+Group:Rollershutter    gBathroomGuestBlinds                       "Blinds"          <rollershutter>    (gBathroomGuest)                     ["Blinds"]
+Group:Rollershutter    gBathroomMainBlinds                        "Blinds"          <rollershutter>    (gBathroomMain)                      ["Blinds"]
+Group:Rollershutter    gBedroom1Blinds                            "Blinds"          <rollershutter>    (gBedroom1)                          ["Blinds"]
+Group:Rollershutter    gBedroom2Blinds                            "Blinds"          <rollershutter>    (gBedroom2)                          ["Blinds"]
+Group:Rollershutter    gBedroom3Blinds                            "Blinds"          <rollershutter>    (gBedroom3)                          ["Blinds"]
+Group:Rollershutter    gHallwayLargeBlinds                        "Blinds"          <rollershutter>    (gHallwayLarge)                      ["Blinds"]
+Group:Rollershutter    gHallwaySmallBlinds                        "Blinds"          <rollershutter>    (gHallwaySmall)                      ["Blinds"]
+Group:Rollershutter    gKitchenBlinds                             "Blinds"          <rollershutter>    (gKitchen)                           ["Blinds"]
+Group:Rollershutter    gLoungeBlinds                              "Blinds"          <rollershutter>    (gLounge)                            ["Blinds"]
+Group:Rollershutter    gStudyBlinds                               "Blinds"          <rollershutter>    (gStudy)                             ["Blinds"]
 
-// Study
-Rollershutter    StudyInsideBlindPosition              "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:ai:position"}
-Rollershutter    StudyOutsideBlindPosition             "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:ao:position"}
-
-// Bedroom 2
-Rollershutter    Bedroom2LeftInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2li:position"}
-Rollershutter    Bedroom2LeftOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2lo:position"}
-Rollershutter    Bedroom2RightInsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2ri:position"}
-Rollershutter    Bedroom2RightOutsideBlindPosition     "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b2ro:position"}
-
-// Bedroom 3
-Rollershutter    Bedroom3LeftInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3li:position"}
-Rollershutter    Bedroom3LeftOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3lo:position"}
-Rollershutter    Bedroom3RightInsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3ri:position"}
-Rollershutter    Bedroom3RightOusideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:b3ro:position"}
-
-// Lounge
-Rollershutter    LoungeLeftInsideBlindPosition         "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lli:position"}
-Rollershutter    LoungeLeftOutsideBlindPosition        "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:llo:position"}
-Rollershutter    LoungeMiddleInsideBlindPosition       "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lmi:position"}
-Rollershutter    LoungeMiddleOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lmo:position"}
-Rollershutter    LoungeRightInsideBlindPosition        "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:lri:position"}
-
-// Lichtkuppel
-Rollershutter    HallwayRooftopWindowOpenerPosition    "Position"                          (gPersistMe)    {channel="velux:window:veluxgw:roof:position"}
-
-// Main Bathroom
-Rollershutter    MainBathroomOutsideBlindPosition      "Position"                          (gPersistMe)    {channel="velux:rollershutter:veluxgw:mbo:position"}
-Rollershutter    MainBathroomWindowOpenerPosition      "Position"                          (gPersistMe)    {channel="velux:window:veluxgw:mb:position"}
+Rollershutter          BathroomMainOutsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBathroomMainBlinds)    ["Blinds"]    {channel="velux:rollershutter:veluxgw:mbo:position", ga="Blinds"}
+Rollershutter          BathroomMainWindowOpenerPosition           "Position"        <rollershutter>    (gPersistMe, gBathroomMainBlinds)    ["Blinds"]    {channel="velux:window:veluxgw:mb:position", ga="Blinds"}
+Rollershutter          Bedroom1Rollershutter                      "Main"            <rollershutter>    (gPersistMe, gBedroom1Blinds)        ["Blinds"]    {channel="knx:device:rollershutter:bedroom1", ga="Blinds"}
+Rollershutter          Bedroom2LeftInsideBlindPosition            "Position"        <rollershutter>    (gPersistMe, gBedroom2Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b2li:position", ga="Blinds"}
+Rollershutter          Bedroom2LeftOutsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBedroom2Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b2lo:position", ga="Blinds"}
+Rollershutter          Bedroom2RightInsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBedroom2Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b2ri:position", ga="Blinds"}
+Rollershutter          Bedroom2RightOutsideBlindPosition          "Position"        <rollershutter>    (gPersistMe, gBedroom2Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b2ro:position", ga="Blinds"}
+Rollershutter          Bedroom3LeftInsideBlindPosition            "Position"        <rollershutter>    (gPersistMe, gBedroom3Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b3li:position", ga="Blinds"}
+Rollershutter          Bedroom3LeftOutsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBedroom3Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b3lo:position", ga="Blinds"}
+Rollershutter          Bedroom3RightInsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBedroom3Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b3ri:position", ga="Blinds"}
+Rollershutter          Bedroom3RightOusideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gBedroom3Blinds)        ["Blinds"]    {channel="velux:rollershutter:veluxgw:b3ro:position", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter1                 "1 North"         <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge1", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter2                 "2"               <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge2", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter3                 "3"               <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge3", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter4                 "4"               <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge4", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter5                 "5"               <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge5", ga="Blinds"}
+Rollershutter          HallwayLargeRollershutter6                 "6 South"         <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylarge6", ga="Blinds"}
+Rollershutter          HallwayLargeWindowNorth                    "North Window"    <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylargewindownorth", ga="Blinds"}
+Rollershutter          HallwayLargeWindowSouth                    "South Window"    <rollershutter>    (gPersistMe, gHallwayLargeBlinds)    ["Blinds"]    {channel="knx:device:rollershutter:hallwaylargewindowsouth", ga="Blinds"}
+Rollershutter          HallwaySmallRooftopWindowOpenerPosition    "Position"        <rollershutter>    (gPersistMe, gHallwaySmallBlinds)    ["Blinds"]    {channel="velux:window:veluxgw:roof:position", ga="Blinds"}
+Rollershutter          KitchenLeft                                "Left"            <rollershutter>    (gPersistMe, gKitchenBlinds)         ["Blinds"]    {channel="knx:device:rollershutter:kitchenleft", ga="Blinds"}
+Rollershutter          KitchenMiddle                              "Middle"          <rollershutter>    (gPersistMe, gKitchenBlinds)         ["Blinds"]    {channel="knx:device:rollershutter:kitchenmiddle", ga="Blinds"}
+Rollershutter          KitchenRight                               "Right"           <rollershutter>    (gPersistMe, gKitchenBlinds)         ["Blinds"]    {channel="knx:device:rollershutter:kitchenright", ga="Blinds"}
+Rollershutter          LoungeLeftInsideBlindPosition              "Position"        <rollershutter>    (gPersistMe, gLoungeBlinds)          ["Blinds"]    {channel="velux:rollershutter:veluxgw:lli:position", ga="Blinds"}
+Rollershutter          LoungeLeftOutsideBlindPosition             "Position"        <rollershutter>    (gPersistMe, gLoungeBlinds)          ["Blinds"]    {channel="velux:rollershutter:veluxgw:llo:position", ga="Blinds"}
+Rollershutter          LoungeMiddleInsideBlindPosition            "Position"        <rollershutter>    (gPersistMe, gLoungeBlinds)          ["Blinds"]    {channel="velux:rollershutter:veluxgw:lmi:position", ga="Blinds"}
+Rollershutter          LoungeMiddleOutsideBlindPosition           "Position"        <rollershutter>    (gPersistMe, gLoungeBlinds)          ["Blinds"]    {channel="velux:rollershutter:veluxgw:lmo:position", ga="Blinds"}
+Rollershutter          LoungeRightInsideBlindPosition             "Position"        <rollershutter>    (gPersistMe, gLoungeBlinds)          ["Blinds"]    {channel="velux:rollershutter:veluxgw:lri:position", ga="Blinds"}
+Rollershutter          StudyInsideBlindPosition                   "Inside"          <rollershutter>    (gPersistMe, gStudyBlinds)           ["Blinds"]    {channel="velux:rollershutter:veluxgw:si:position", ga="Blinds"}
+Rollershutter          StudyOutsideBlindPosition                  "Outside"         <rollershutter>    (gPersistMe, gStudyBlinds)           ["Blinds"]    {channel="velux:rollershutter:veluxgw:so:position", ga="Blinds"}
