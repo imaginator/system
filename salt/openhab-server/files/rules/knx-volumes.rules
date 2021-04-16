@@ -1,26 +1,47 @@
-rule "My knx dimmer"
+import org.openhab.core.model.script.ScriptServiceUtil
+rule "KNX Volume Contol"
 when
-    Item KNX8Volume received command
+    Member of gKNXVolume received command
 then
-   if (receivedCommand == OFF) {
-        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) - 5)
-}
+    logInfo("KNXVolumeControl","triggering Item: {}",triggeringItem.name)
+    var room = triggeringItem.name.replace("KNXVolume","") 
+    logInfo("KNXVolumeControl","extracted room: {}",room)
+    var String ChromecastDeviceName += "ChromecastAudio" + room + "Volume"
+    logInfo("KNXVolumeControl","blah: {}",ChromecastDevice)
+        if (receivedCommand == OFF) {
+        logInfo("KNXVolumeControl","reducing volme in {}", room)
+        sendCommand(ChromecastDeviceName, ((ChromecastAudioStudyVolume.state as DecimalType) - 5))
+    }
     else if (receivedCommand == ON) {
-        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) + 5)
-}
-end
-
-
-rule "My knx PlayPause"
+        logInfo("KNXVolumeControl","increasing volme in {}", room)
+        "ChromecastAudio" + roomStudyVolume.sendCommand((ChromecastAudioStudyVolume.state as DecimalType) + 5)
+        sendCommand("ChromecastAudio" + {{ room }} + "Volume", ((ChromecastAudioStudyVolume.state as DecimalType) + 5))
+    }
+end 
+ 
+rule "Study Play/Pause/Next"
 when
-    Item KNX8PlayPause received command
-then
-   if (receivedCommand == OFF) {
-        ChromecastAudioKitchenControl.sendCommand(PAUSE)
-}
-    else if (receivedCommand == ON) {
-        ChromecastAudioKitchenControl.sendCommand(PLAY)
-}
-end
+   // Item KNXPlaybackStudy received command
+       Member of gKNXPlayback received command
 
+then
+    logInfo("StudyPlaybackControl","triggering Item: {} ",triggeringItem.name)
+    if (receivedCommand == OFF) {
+        // toggle play / pause
+        if (ChromecastAudioStudyControl.state == PAUSE) {
+           logInfo("StudyPlaybackControl","Paused so resuming playback")
+           ChromecastAudioStudyControl.sendCommand(PLAY)
+        }
+        else if (ChromecastAudioStudyControl.state == PLAY) {
+            logInfo("StudyPlaybackControl","Playing so pausing")
+            ChromecastAudioStudyControl.sendCommand(PAUSE)
+        }
+    }
+    // play next track
+    else if (receivedCommand == ON) {
+        logInfo("StudyPlaybackControl","jumping to next track")
+        // NEXT/PREVIOUS not supported directly in Chomecast binding so using spotify binding
+        SpotifyPlayerBridge_TrackPlayer.sendCommand(NEXT)
+    }
+end
 
