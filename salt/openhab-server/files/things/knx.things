@@ -54,8 +54,8 @@ Thing knx:device:KnxMotionBedroom3  "KNX Device Motion Bedroom 3" (knx:ip:knxrou
 Thing knx:device:KnxButtonsLoungeScreenEnd   "KNX Device Button Lounge Screen End" (knx:ip:knxrouter) @ "lounge"       [ address="4.3.1" ]
 Thing knx:device:KnxButtonsLoungeSofaEnd   "KNX Device Button Lounge Projector End" (knx:ip:knxrouter) @ "lounge"    [ address="4.3.2" ]
 Thing knx:device:KnxButtonsKitchenPillar   "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.1" ]
-Thing knx:device:KnxButtonsKitchenDoorLeft   "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.2" ]
-Thing knx:device:KnxButtonsKitchenDoorRight   "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.3" ]
+Thing knx:device:KnxButtonsKitchenDoorLeft   "Kitchen Door Left" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.2" ]
+Thing knx:device:KnxButtonsKitchenDoorRight   "Kitchen Door Right" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.3" ]
 Thing knx:device:KnxButtonsIsland  "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.4" ]
 Thing knx:device:KnxButtonStudy   "KNX Device Button Study" (knx:ip:knxrouter) @ "study"              [ address="6.3.1" ] 
 Thing knx:device:KnxButtonsBathroomMain   "KNX Device Button Bathroom Main" (knx:ip:knxrouter) @ "bathroom main"    [ address="7.3.1" ]
@@ -174,63 +174,107 @@ Thing knx:device:brightness "KNX luminosity Lux" (knx:ip:knxrouter) {
     Type number      : Bedroom3 "Bedroom3 Brightness [%.1f Lux]"              [ ga="9.004:<13/2/2" ]
 }
 
+// Rollershutter
+Thing knx:device:rollershutter "KNX Rollershutter Contol"  (knx:ip:knxrouter)  {
+    Type rollershutter : bedroom1                       "Bedroom1"                    [ upDown="11/7/11", stopMove="11/7/12", position="11/7/13+<11/7/14" ]
+    Type rollershutter : hallwaylarge1                  "Hallway Large 1"             [ upDown="9/7/11",  stopMove="9/7/12",  position="9/7/13+<9/7/14" ]
+    Type rollershutter : hallwaylarge2                  "Hallway Large 2"             [ upDown="9/7/21",  stopMove="9/7/22",  position="9/7/23+<9/7/24" ]
+    Type rollershutter : hallwaylarge3                  "Hallway Large 3"             [ upDown="9/7/31",  stopMove="9/7/32",  position="9/7/33+<9/7/34" ]
+    Type rollershutter : hallwaylarge4                  "Hallway Large 4"             [ upDown="9/7/41",  stopMove="9/7/42",  position="9/7/43+<9/7/44" ]
+    Type rollershutter : hallwaylarge5                  "Hallway Large 5"             [ upDown="9/7/51",  stopMove="9/7/52",  position="9/7/53+<9/7/54" ]
+    Type rollershutter : hallwaylarge6                  "Hallway Large 6"             [ upDown="9/7/61",  stopMove="9/7/62",  position="9/7/63+<9/7/64" ]
+    Type rollershutter : hallwaylargewindownorth        "Hallway Large Window North"  [ upDown="9/7/91",  stopMove="9/7/92",  position="9/7/93+<9/7/94" ]
+    Type rollershutter : hallwaylargewindowsouth        "Hallway Large Window South"  [ upDown="9/7/81",  stopMove="9/7/82",  position="9/7/83+<9/7/84" ]
+    Type rollershutter : kitchenleft                    "Kitchen Left"                [ upDown="5/7/11",  stopMove="5/7/12",  position="5/7/13+<5/7/14" ]
+    Type rollershutter : kitchenmiddle                  "Kitchen Middle"              [ upDown="5/7/21",  stopMove="5/7/22",  position="5/7/23+<5/7/24" ]
+    Type rollershutter : kitchenright                   "Kitchen Right"               [ upDown="5/7/31",  stopMove="5/7/32",  position="5/7/33+<5/7/34" ]
+    Type rollershutter-control : bathroommainoutside    "bathroom main outside"       [ upDown="7/7/11",  stopMove="7/7/12",  position="7/7/13+<7/7/14" ]
+    Type rollershutter-control : bathroommainwindow     "bathroom main window"        [ upDown="7/7/21",  stopMove="7/7/22",  position="7/7/23+<7/7/24" ]
+    Type rollershutter-control : bedroom2inside         "bedroom2 Inside"             [ upDown="12/7/21", stopMove="12/7/22", position="12/7/23+<12/7/24" ]
+    Type rollershutter-control : bedroom2outside        "bedroom2 outside"            [ upDown="12/7/11", stopMove="12/7/12", position="12/7/13+<12/7/14" ]
+    Type rollershutter-control : bedroom3inside         "bedroom3 Inside"             [ upDown="13/7/21", stopMove="13/7/22", position="13/7/23+<13/7/24" ]
+    Type rollershutter-control : bedroom3outside        "bedroom3 outside"            [ upDown="13/7/11", stopMove="13/7/12", position="13/7/13+<13/7/14" ]
+    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12", position="10/7/13+<10/7/14" ]
+    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12", position="10/7/13+<10/7/14" ]
+    Type rollershutter-control : loungeinside           "Lounge Inside"               [ upDown="4/7/21",  stopMove="4/7/22",  position="4/7/23+<4/7/24" ]
+    Type rollershutter-control : loungeoutside          "Lounge Outside"              [ upDown="4/7/11",  stopMove="4/7/12",  position="4/7/13+<4/7/14" ]
+    Type rollershutter-control : studyinside            "Study Inside"                [ upDown="6/7/21",  stopMove="6/7/22",  position="6/7/23+<6/7/24" ]
+    Type rollershutter-control : studyoutside           "Study Outside"               [ upDown="6/7/11",  stopMove="6/7/12",  position="6/7/13+<6/7/14" ]
+}
+
 // RGBW lighting
 Thing knx:device:rgbwlighting           "KNX RGBW Lighting"                    (knx:ip:knxrouter) {
-        Type dimmer-control        : RGBred            "Kitchen Niche RGB red"                       [ position="5.001:5/1/32" ]
-        Type dimmer-control        : RGBgreen          "Kitchen Niche RGB green"                     [ position="5.001:5/1/33" ]
-        Type dimmer-control        : RGBblue           "Kitchen Niche RGB blue"                      [ position="5.001:5/1/34" ]
-        Type dimmer-control        : RGBwhite          "Kitchen Niche RGB white"                     [ position="5.001:5/1/35" ]
-        Type color                 : demoColor         "Demo Color"                                  [ hsb="251.600:<7/0/25", switch="1.001:<7/0/26", position="5.001:<7/0/27", increaseDecrease="3.007:<7/0/28" ]
-        Type color-control         : colorControl      "Demo Color Control"                          [ hsb="251.600:7/0/25",  switch="1.001:7/0/26",  position="5.001:7/0/27",  increaseDecrease="3.007:7/0/28" ]
-
+    Type dimmer-control        : RGBred            "Kitchen Niche RGB red"                       [ position="5.001:5/1/32" ]
+    Type dimmer-control        : RGBgreen          "Kitchen Niche RGB green"                     [ position="5.001:5/1/33" ]
+    Type dimmer-control        : RGBblue           "Kitchen Niche RGB blue"                      [ position="5.001:5/1/34" ]
+    Type dimmer-control        : RGBwhite          "Kitchen Niche RGB white"                     [ position="5.001:5/1/35" ]
+    Type color                 : demoColor         "Demo Color"                                  [ hsb="251.600:<7/0/25", switch="1.001:<7/0/26", position="5.001:<7/0/27", increaseDecrease="3.007:<7/0/28" ]
+    Type color-control         : colorControl      "Demo Color Control"                          [ hsb="251.600:7/0/25",  switch="1.001:7/0/26",  position="5.001:7/0/27",  increaseDecrease="3.007:7/0/28"  ]
 }
+
 // CW/WW lighting
 
-//Lounge	Dali CW/WW spot(s)						4/1/1	4/1/2	4/1/3
-//Lounge	Dali CW/WW spot(s)						4/1/11	4/1/12	4/1/13
-//Lounge	Dali CW/WW spot(s)						4/1/21	4/1/22	4/1/23
+/*
+1/1/0 switch on/off command
+1/1/1 switch on/off state (with R-flag set (i.e. L-flag in germany)
+1/1/2 increase/decrease command
+1/1/3 absolute dimmer level command as % (i.e. DPT 5.001)
+1/1/4 absolute dimmer level state as % (i.e. DPT 5.001, with R-flag set (i.e. L-flag in germany)
+
+The wall switch should be configured to
+
+1/1/0,1/1/1 for short press
+1/1/2 for long press
+
+        Type dimmer : myDimmer "Dimmer" [ ga="1/1/0", position="1/1/3+<1/1/4" ]
+
+*/
+
+Thing knx:device:cwwwlighting           "KNX CW/WW Lighting"                    (knx:ip:knxrouter) {
+    Type dimmer : studyceilingdimmer "Study Ceiling"      [ switch="1/1/50", position="1/1/60+<1/1/61" ]
+    Type dimmer : studyceilingtempp "Colour Temperature"  [ switch="1/1/52", position="1/1/62+<1/1/63" ]
+}
+
+
+// 1:Central
+// 4:Lounge
+// 5:Kitchen
+// 6:Study
+// 7:Main Bathroom
+// 8:Guest Bathroom
+// 9: Main Hallway
+// 10: Small Hallway
+// 11:Bedroom 1
+// 12:Bedroom 2
+// 13:Bedroom 3
+// 14: Terrace / outside
 
 // Media Control
-Thing knx:device:media "KNX Media Contol" (knx:ip:knxrouter) {
-    Type switch-control     : Lounge       "Playback"                          [ ga="4/5/1+4/5/1"]
+Thing knx:device:playback "KNX Playback Contol" (knx:ip:knxrouter) {
+    Type switch-control : lounge            "Playback"                    [ ga="4/5/1+4/5/1"]
+    Type switch-control : kitchen           "Playback"                    [ ga="5/5/1+5/5/1"]
+    Type switch-control : study             "Playback"                    [ ga="6/5/1+6/5/1"]
+    Type switch-control : bathroommain      "Playback"                    [ ga="7/5/1+7/5/1"]
+    Type switch-control : bathroomguest     "Playback"                    [ ga="8/5/1+8/5/1"]
+    Type switch-control : bedroom1          "Playback"                    [ ga="11/5/1+11/5/1"]
+    Type switch-control : bedroom2          "Playback"                    [ ga="12/5/1+12/5/1"]
+    Type switch-control : bedroom3          "Playback"                    [ ga="13/5/1+13/5/1"]
 }
 
 // Volume Control
 Thing knx:device:volume "KNX Volume Percent" (knx:ip:knxrouter) {
-    Type switch-control     : Lounge  "Volume Control"                    [ ga="4/5/2+4/5/2"]
+    Type switch-control : lounge            "Volume"                    [ ga="4/5/2+4/5/2"]
+    Type switch-control : kitchen           "Volume"                    [ ga="5/5/2+5/5/2"]
+    Type switch-control : study             "Volume"                    [ ga="6/5/2+6/5/2"]
+    Type switch-control : bathroommain      "Volume"                    [ ga="7/5/2+7/5/2"]
+    Type switch-control : bathroomguest     "Volume"                    [ ga="8/5/2+8/5/2"]
+    Type switch-control : bedroom1          "Volume"                    [ ga="11/5/2+11/5/2"]
+    Type switch-control : bedroom2          "Volume"                    [ ga="12/5/2+12/5/2"]
+    Type switch-control : bedroom3          "Volume"                    [ ga="13/5/2+13/5/2"]
 }
 
-// Rollershutter
-Thing knx:device:rollershutter "KNX Rollershutter Contol"  (knx:ip:knxrouter)  @ "central" {
-    Type rollershutter : bedroom1      "Bedroom1"             [ upDown="11/7/11", stopMove="11/7/12", position="11/7/13+<11/7/14" ]
-    Type rollershutter : hallwaylargewindownorth "Hallway Large Window North"      [ upDown="9/7/81",  stopMove="9/7/82",  position="9/7/83+<9/7/84" ]
-    Type rollershutter : hallwaylargewindowsouth "Hallway Large Window South"      [ upDown="9/7/91",  stopMove="9/7/92",  position="9/7/93+<9/7/94" ]
-    Type rollershutter : hallwaylarge1 "Hallway Large 1"      [ upDown="9/7/11",  stopMove="9/7/12",  position="9/7/13+<9/7/14" ]
-    Type rollershutter : hallwaylarge2 "Hallway Large 2"      [ upDown="9/7/21",  stopMove="9/7/22",  position="9/7/23+<9/7/24" ]
-    Type rollershutter : hallwaylarge3 "Hallway Large 3"      [ upDown="9/7/31",  stopMove="9/7/32",  position="9/7/33+<9/7/34" ]
-    Type rollershutter : hallwaylarge4 "Hallway Large 4"      [ upDown="9/7/41",  stopMove="9/7/42",  position="9/7/43+<9/7/44" ]
-    Type rollershutter : hallwaylarge5 "Hallway Large 5"      [ upDown="9/7/51",  stopMove="9/7/52",  position="9/7/53+<9/7/54" ]
-    Type rollershutter : hallwaylarge6 "Hallway Large 6"      [ upDown="9/7/61",  stopMove="9/7/62",  position="9/7/63+<9/7/64" ]
-    Type rollershutter : kitchenleft   "Kitchen Left"         [ upDown="5/7/11",  stopMove="5/7/12",  position="5/7/13+<5/7/14" ]
-    Type rollershutter : kitchenmiddle "Kitchen Middle"       [ upDown="5/7/21",  stopMove="5/7/22",  position="5/7/23+<5/7/24" ]
-    Type rollershutter : kitchenright  "Kitchen Right"        [ upDown="5/7/31",  stopMove="5/7/32",  position="5/7/33+<5/7/34" ]
-} 
-
-// position="6/6/3+<6/6/4"]
-// 6/6/0 -> Move
-// 6/6/1 -> Step
-// 6/6/3 ->set position
-// 6/6/4 -> get position (mit gesetztem L-Flag auf dem Rückmeldeobekt im Aktor)
-/* Channel Type "rollershutter"
-Parameter 	Description 	Default DPT
-upDown 	Group address for relative movement 	1.008
-stopMove 	Group address for stopping 	1.010
-position 	Group address for the absolute position 	5.001
-#
-*/
-
 // Power Measurements
-Thing knx:device:powermeasurements "KNX Power Measurements"    (knx:ip:knxrouter) @ "central" {
+Thing knx:device:powermeasurements "KNX Power Measurements"    (knx:ip:knxrouter) {
     Type  number : BusVolts          "KNX Bus volts"              [ ga="14.027:<1/2/1" ]
     Type  number : BusmA             "KNX Bus milliamps"          [ ga="7.012:<1/2/2" ]
     Type  number : HousePowerWh      "House Power Wh"             [ ga="13.010:<1/2/11" ]

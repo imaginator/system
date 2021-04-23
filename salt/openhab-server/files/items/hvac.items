@@ -1,0 +1,36 @@
+
+// Target Temperature
+Number     KNXHeatingTargetTemperatureCelciusBathroomGuest    "target temperature [%.1f°C]"    (gPersistMe, gBathroomGuestHeating)                        {channel="knx:device:heating-target-temperature:BathroomGuest"}
+Number     KNXHeatingTargetTemperatureCelciusBathroomMain     "target temperature [%.1f°C]"    (gPersistMe, gBathroomMainHeating)                         {channel="knx:device:heating-target-temperature:BathroomMain"}
+Number     KNXHeatingTargetTemperatureCelciusBedroom1         "target temperature [%.1f°C]"    (gPersistMe, gBedroom1Heating)                             {channel="knx:device:heating-target-temperature:Bedroom1"}
+Number     KNXHeatingTargetTemperatureCelciusBedroom2         "target temperature [%.1f°C]"    (gPersistMe, gBedroom2Heating)                             {channel="knx:device:heating-target-temperature:Bedroom2"}
+Number     KNXHeatingTargetTemperatureCelciusBedroom3         "target temperature [%.1f°C]"    (gPersistMe, gBedroom3Heating)                             {channel="knx:device:heating-target-temperature:Bedroom3"}
+Number     KNXHeatingTargetTemperatureCelciusHallwayLarge     "target temperature [%.1f°C]"    (gPersistMe, gHallwayLargeHeating)                         {channel="knx:device:heating-target-temperature:HallwayLarge"}
+Number     KNXHeatingTargetTemperatureCelciusHallwaySmall     "target temperature [%.1f°C]"    (gPersistMe, gHallwaySmallHeating)                         {channel="knx:device:heating-target-temperature:HallwaySmall"}
+Number     KNXHeatingTargetTemperatureCelciusKitchen          "target temperature [%.1f°C]"    (gPersistMe, gKitchenHeating)                              {channel="knx:device:heating-target-temperature:Kitchen"}
+Number     KNXHeatingTargetTemperatureCelciusLounge           "target temperature [%.1f°C]"    (gPersistMe, gLoungeHeating)                               {channel="knx:device:heating-target-temperature:Lounge"}
+Number     KNXHeatingTargetTemperatureCelciusStudy            "target temperature [%.1f°C]"    (gPersistMe, gStudyHeating)
+
+// Heating Valve Status
+Number     KNXHeatingValveStatusPercentageBathroomGuest       "valve status [%d %%]"           (gPersistMe, gBathroomGuestHeating)                        {channel="knx:device:heating-valve-status:BathroomGuest"}
+Number     KNXHeatingValveStatusPercentageBathroomMain        "valve status [%d %%]"           (gPersistMe, gBathroomMainHeating)                         {channel="knx:device:heating-valve-status:BathroomMain"}
+Number     KNXHeatingValveStatusPercentageBedroom1            "valve status [%d %%]"           (gPersistMe, gBedroom1Heating)                             {channel="knx:device:heating-valve-status:Bedroom1"}
+Number     KNXHeatingValveStatusPercentageBedroom2            "valve status [%d %%]"           (gPersistMe, gBedroom2Heating)                             {channel="knx:device:heating-valve-status:Bedroom2"}
+Number     KNXHeatingValveStatusPercentageBedroom3            "valve status [%d %%]"           (gPersistMe, gBedroom3Heating)                             {channel="knx:device:heating-valve-status:Bedroom3"}
+Number     KNXHeatingValveStatusPercentageHallwayLarge        "valve status [%d %%]"           (gPersistMe, gHallwayLargeHeating)                         {channel="knx:device:heating-valve-status:HallwayLarge"}
+Number     KNXHeatingValveStatusPercentageHallwaySmall        "valve status [%d %%]"           (gPersistMe, gHallwaySmallHeating)                         {channel="knx:device:heating-valve-status:HallwaySmall"}
+Number     KNXHeatingValveStatusPercentageKitchen             "valve status [%d %%]"           (gPersistMe, gKitchenHeating)                              {channel="knx:device:heating-valve-status:Kitchen"}
+Number     KNXHeatingValveStatusPercentageLounge              "valve status [%d %%]"           (gPersistMe, gLoungeHeating)                               {channel="knx:device:heating-valve-status:Lounge"}
+Number     KNXHeatingValveStatusPercentageStudy               "valve status [%d %%]"           (gPersistMe, gStudyHeating)                                {channel="knx:device:heating-valve-status:Study"}
+
+// Heating Actuator Diag
+String     KNXHeatingDisgnosisTextBathroomGuest               "diagnosis text"                 (gPersistMe, gBathroomGuestHeating)                        {channel="knx:device:heating-diagnosis-text:BathroomGuest"}
+String     KNXHeatingDisgnosisTextBathroomMain                "diagnosis text"                 (gPersistMe, gBathroomMainHeating)                         {channel="knx:device:heating-diagnosis-text:BathroomMain"}
+String     KNXHeatingDisgnosisTextBedroom1                    "diagnosis text"                 (gPersistMe, gBedroom1Heating)                             {channel="knx:device:heating-diagnosis-text:Bedroom1"}
+String     KNXHeatingDisgnosisTextBedroom2                    "diagnosis text"                 (gPersistMe, gBedroom2Heating)                             {channel="knx:device:heating-diagnosis-text:Bedroom2"}
+String     KNXHeatingDisgnosisTextBedroom3                    "diagnosis text"                 (gPersistMe, gBedroom3Heating)                             {channel="knx:device:heating-diagnosis-text:Bedroom3"}
+String     KNXHeatingDisgnosisTextHallwayLarge                "diagnosis text"                 (gPersistMe, gHallwayLargeHeating)                         {channel="knx:device:heating-diagnosis-text:HallwayLarge"}
+String     KNXHeatingDisgnosisTextHallwaySmall                "diagnosis text"                 (gPersistMe, gHallwaySmallHeating)                         {channel="knx:device:heating-diagnosis-text:HallwaySmall"}
+String     KNXHeatingDisgnosisTextKitchen                     "diagnosis text"                 (gPersistMe, gKitchenHeating)                              {channel="knx:device:heating-diagnosis-text:Kitchen"}
+String     KNXHeatingDisgnosisTextLounge                      "diagnosis text"                 (gPersistMe, gLoungeHeating)                               {channel="knx:device:heating-diagnosis-text:Lounge"}
+String     KNXHeatingDisgnosisTextStudy                       "diagnosis text"                 (gPersistMe, gStudyHeating)                                {channel="knx:device:heating-diagnosis-text:Study"}

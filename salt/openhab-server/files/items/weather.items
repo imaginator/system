@@ -1,85 +1,85 @@
 // atmosphere
-Number   Humidity    	  "Humidity [%d %%]"  	  {weather="locationId=home, type=atmosphere, property=humidity"}
-Number   Visibility    	  "Visibility [%.2f km]"  {weather="locationId=home, type=atmosphere, property=visibility"}
-Number   Visibility_Mph   "Visibility [%.2f mi]"  {weather="locationId=home, type=atmosphere, property=visibility, unit=mph"}
-Number   Pressure    	  "Pressure [%.2f mb]"    {weather="locationId=home, type=atmosphere, property=pressure"}
-Number   Pressure_Inches  "Pressure [%.2f in]"    {weather="locationId=home, type=atmosphere, property=pressure, unit=inches"}
-String   Pressure_Trend   "Pressuretrend [%s]"    {weather="locationId=home, type=atmosphere, property=pressureTrend"}
-Number   Ozone            "Ozone [%d ppm]"    	  {weather="locationId=home, type=atmosphere, property=ozone"}
-Number   UV_Index         "UV Index"              {weather="locationId=home, type=atmosphere, property=uvIndex, scale=0"}
+Number      Humidity               "Humidity [%d %%]"                                    {weather="locationId=home, type=atmosphere, property=humidity"}
+Number      Visibility             "Visibility [%.2f km]"                                {weather="locationId=home, type=atmosphere, property=visibility"}
+Number      Visibility_Mph         "Visibility [%.2f mi]"                                {weather="locationId=home, type=atmosphere, property=visibility, unit=mph"}
+Number      Pressure               "Pressure [%.2f mb]"                                  {weather="locationId=home, type=atmosphere, property=pressure"}
+Number      Pressure_Inches        "Pressure [%.2f in]"                                  {weather="locationId=home, type=atmosphere, property=pressure, unit=inches"}
+String      Pressure_Trend         "Pressuretrend [%s]"                                  {weather="locationId=home, type=atmosphere, property=pressureTrend"}
+Number      Ozone                  "Ozone [%d ppm]"                                      {weather="locationId=home, type=atmosphere, property=ozone"}
+Number      UV_Index               "UV Index"                                            {weather="locationId=home, type=atmosphere, property=uvIndex, scale=0"}
 
 // clouds
-Number   Clouds           "Clouds [%.0f %%]"      {weather="locationId=home, type=clouds, property=percent"}
+Number      Clouds                 "Clouds [%.0f %%]"                                    {weather="locationId=home, type=clouds, property=percent"}
 
 // condition
-String   Condition        "Condition [%s]"              {weather="locationId=home, type=condition, property=text"}
-String   Condition_ID     "Condition id [%s]"           {weather="locationId=home, type=condition, property=id"}
-DateTime ObservationTime  "Observation time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"   {weather="locationId=home, type=condition, property=observationTime"}
-DateTime LastUpdate       "Last update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"        {weather="locationId=home, type=condition, property=lastUpdate"}
-String   CommonId         "Common id [%s]"              {weather="locationId=home, type=condition, property=commonId"}
+String      Condition              "Condition [%s]"                                      {weather="locationId=home, type=condition, property=text"}
+String      Condition_ID           "Condition id [%s]"                                   {weather="locationId=home, type=condition, property=id"}
+DateTime    ObservationTime        "Observation time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"    {weather="locationId=home, type=condition, property=observationTime"}
+DateTime    LastUpdate             "Last update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"         {weather="locationId=home, type=condition, property=lastUpdate"}
+String      CommonId               "Common id [%s]"                                      {weather="locationId=home, type=condition, property=commonId"}
 
 // precipitation
-Number   Rain                     "Rain [%.2f mm/h]"    {weather="locationId=home, type=precipitation, property=rain"}
-Number   Rain_Inches              "Rain [%.2f in/h]"    {weather="locationId=home, type=precipitation, property=rain, unit=inches"}
-Number   Snow                     "Snow [%.2f mm/h]"    {weather="locationId=home, type=precipitation, property=snow"}
-Number   Snow_Inches              "Snow [%.2f in/h]"    {weather="locationId=home, type=precipitation, property=snow, unit=inches"}
-Number   Precip_Probability "Precip probability [%d %%]" {weather="locationId=home, type=precipitation, property=probability"}
+Number      Rain                   "Rain [%.2f mm/h]"                                    {weather="locationId=home, type=precipitation, property=rain"}
+Number      Rain_Inches            "Rain [%.2f in/h]"                                    {weather="locationId=home, type=precipitation, property=rain, unit=inches"}
+Number      Snow                   "Snow [%.2f mm/h]"                                    {weather="locationId=home, type=precipitation, property=snow"}
+Number      Snow_Inches            "Snow [%.2f in/h]"                                    {weather="locationId=home, type=precipitation, property=snow, unit=inches"}
+Number      Precip_Probability     "Precip probability [%d %%]"                          {weather="locationId=home, type=precipitation, property=probability"}
 // new total property in 1.8, only Wunderground
-Number   Precip_Total         "Precip total [%d mm]"    {weather="locationId=home, type=precipitation, property=total"}
-Number   Precip_Total_Inches  "Precip total [%d in]"    {weather="locationId=home, type=precipitation, property=total, unit=inches"}
+Number      Precip_Total           "Precip total [%d mm]"                                {weather="locationId=home, type=precipitation, property=total"}
+Number      Precip_Total_Inches    "Precip total [%d in]"                                {weather="locationId=home, type=precipitation, property=total, unit=inches"}
 
 // temperature
-Number   Temperature      "Temperature [%.2f °C]"       {weather="locationId=home, type=temperature, property=current"}
-Number   Temperature_F    "Temperature [%.2f °F]"       {weather="locationId=home, type=temperature, property=current, unit=celcius"}
-Number   Temp_Feel        "Temperature feel [%.2f °C]"  {weather="locationId=home, type=temperature, property=feel"}
-Number   Temp_Feel_F      "Temperature feel [%.2f °F]"  {weather="locationId=home, type=temperature, property=feel, unit=celcius"}
-Number   Temp_Dewpoint    "Dewpoint [%.2f °C]"          {weather="locationId=home, type=temperature, property=dewpoint"}
-Number   Temp_Dewpoint_F  "Dewpoint [%.2f °F]"          {weather="locationId=home, type=temperature, property=dewpoint, unit=celcius"}
+Number      Temperature            "Temperature [%.2f °C]"                               {weather="locationId=home, type=temperature, property=current"}
+Number      Temperature_F          "Temperature [%.2f °F]"                               {weather="locationId=home, type=temperature, property=current, unit=celcius"}
+Number      Temp_Feel              "Temperature feel [%.2f °C]"                          {weather="locationId=home, type=temperature, property=feel"}
+Number      Temp_Feel_F            "Temperature feel [%.2f °F]"                          {weather="locationId=home, type=temperature, property=feel, unit=celcius"}
+Number      Temp_Dewpoint          "Dewpoint [%.2f °C]"                                  {weather="locationId=home, type=temperature, property=dewpoint"}
+Number      Temp_Dewpoint_F        "Dewpoint [%.2f °F]"                                  {weather="locationId=home, type=temperature, property=dewpoint, unit=celcius"}
 // min and max values only available in forecasts
-Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, type=temperature, property=min"}
-Number   Temp_Min_F       "Temperature min [%.2f °F]"   {weather="locationId=home, type=temperature, property=min, unit=celcius"}
-Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, type=temperature, property=max"}
-Number   Temp_Max_F       "Temperature max [%.2f °F]"   {weather="locationId=home, type=temperature, property=max, unit=celcius"}
-String   Temp_MinMax      "Min/Max [%s °C]"             {weather="locationId=home, type=temperature, property=minMax"}
-String   Temp_MinMax_F    "Min/Max [%s °F]"             {weather="locationId=home, type=temperature, property=minMax, unit=celcius"}
+Number      Temp_Min               "Temperature min [%.2f °C]"                           {weather="locationId=home, type=temperature, property=min"}
+Number      Temp_Min_F             "Temperature min [%.2f °F]"                           {weather="locationId=home, type=temperature, property=min, unit=celcius"}
+Number      Temp_Max               "Temperature max [%.2f °C]"                           {weather="locationId=home, type=temperature, property=max"}
+Number      Temp_Max_F             "Temperature max [%.2f °F]"                           {weather="locationId=home, type=temperature, property=max, unit=celcius"}
+String      Temp_MinMax            "Min/Max [%s °C]"                                     {weather="locationId=home, type=temperature, property=minMax"}
+String      Temp_MinMax_F          "Min/Max [%s °F]"                                     {weather="locationId=home, type=temperature, property=minMax, unit=celcius"}
 
 // wind
-Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
-Number   Wind_Speed_Beaufort  "Windspeed Beaufort [%d]"  {weather="locationId=home, type=wind, property=speed, unit=beaufort"}
-Number   Wind_Speed_Knots     "Windspeed [%.2f kn]"      {weather="locationId=home, type=wind, property=speed, unit=knots"}
-Number   Wind_Speed_Mps       "Windspeed [%.2f mps]"     {weather="locationId=home, type=wind, property=speed, unit=mps"}
-Number   Wind_Speed_Mph       "Windspeed [%.2f mph]"     {weather="locationId=home, type=wind, property=speed, unit=mph"}
-String	 Wind_Direction       "Wind direction [%s]"      {weather="locationId=home, type=wind, property=direction"}
-Number   Wind_Degree          "Wind degree [%.0f °]"     {weather="locationId=home, type=wind, property=degree"}
-Number   Wind_Gust            "Wind gust [%.2f km/h]"    {weather="locationId=home, type=wind, property=gust"}
-Number   Wind_Gust_Beaufort   "Wind gust Beaufort [%d]"  {weather="locationId=home, type=wind, property=gust, unit=beaufort"}
-Number   Wind_Gust_Knots      "Wind gust [%.2f kn]"      {weather="locationId=home, type=wind, property=gust, unit=knots"}
-Number   Wind_Gust_Mps        "Wind gust [%.2f mps]"     {weather="locationId=home, type=wind, property=gust, unit=mps"}
-Number   Wind_Gust_Mph        "Wind gust [%.2f mph]"     {weather="locationId=home, type=wind, property=gust, unit=mph"}
-Number   Wind_Chill           "Wind chill [%.2f °C]"     {weather="locationId=home, type=wind, property=chill"}
+Number      Wind_Speed             "Windspeed [%.2f km/h]"                               {weather="locationId=home, type=wind, property=speed"}
+Number      Wind_Speed_Beaufort    "Windspeed Beaufort [%d]"                             {weather="locationId=home, type=wind, property=speed, unit=beaufort"}
+Number      Wind_Speed_Knots       "Windspeed [%.2f kn]"                                 {weather="locationId=home, type=wind, property=speed, unit=knots"}
+Number      Wind_Speed_Mps         "Windspeed [%.2f mps]"                                {weather="locationId=home, type=wind, property=speed, unit=mps"}
+Number      Wind_Speed_Mph         "Windspeed [%.2f mph]"                                {weather="locationId=home, type=wind, property=speed, unit=mph"}
+String      Wind_Direction         "Wind direction [%s]"                                 {weather="locationId=home, type=wind, property=direction"}
+Number      Wind_Degree            "Wind degree [%.0f °]"                                {weather="locationId=home, type=wind, property=degree"}
+Number      Wind_Gust              "Wind gust [%.2f km/h]"                               {weather="locationId=home, type=wind, property=gust"}
+Number      Wind_Gust_Beaufort     "Wind gust Beaufort [%d]"                             {weather="locationId=home, type=wind, property=gust, unit=beaufort"}
+Number      Wind_Gust_Knots        "Wind gust [%.2f kn]"                                 {weather="locationId=home, type=wind, property=gust, unit=knots"}
+Number      Wind_Gust_Mps          "Wind gust [%.2f mps]"                                {weather="locationId=home, type=wind, property=gust, unit=mps"}
+Number      Wind_Gust_Mph          "Wind gust [%.2f mph]"                                {weather="locationId=home, type=wind, property=gust, unit=mph"}
+Number      Wind_Chill             "Wind chill [%.2f °C]"                                {weather="locationId=home, type=wind, property=chill"}
 
 // forecast
-Number   Temp_Min0         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=0, type=temperature, property=min"}
-Number   Temp_Max0         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=0, type=temperature, property=max"}
+Number      Temp_Min0              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=0, type=temperature, property=min"}
+Number      Temp_Max0              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=0, type=temperature, property=max"}
 
-Number   Temp_Min1         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=min"}
-Number   Temp_Max1         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=max"}
+Number      Temp_Min1              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=1, type=temperature, property=min"}
+Number      Temp_Max1              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=1, type=temperature, property=max"}
 
-Number   Temp_Min2         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=2, type=temperature, property=min"}
-Number   Temp_Max2         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=2, type=temperature, property=max"}
+Number      Temp_Min2              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=2, type=temperature, property=min"}
+Number      Temp_Max2              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=2, type=temperature, property=max"}
 
-Number   Temp_Min3         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=3, type=temperature, property=min"}
-Number   Temp_Max3         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=3, type=temperature, property=max"}
+Number      Temp_Min3              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=3, type=temperature, property=min"}
+Number      Temp_Max3              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=3, type=temperature, property=max"}
 
-Number   Temp_Min4         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=4, type=temperature, property=min"}
-Number   Temp_Max4         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=4, type=temperature, property=max"}
+Number      Temp_Min4              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=4, type=temperature, property=min"}
+Number      Temp_Max4              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=4, type=temperature, property=max"}
 
-Number   Temp_Min5         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=5, type=temperature, property=min"}
-Number   Temp_Max5         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=5, type=temperature, property=max"}
+Number      Temp_Min5              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=5, type=temperature, property=min"}
+Number      Temp_Max5              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=5, type=temperature, property=max"}
 
-Number   Temp_Min6         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=6, type=temperature, property=min"}
-Number   Temp_Max6         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=6, type=temperature, property=max"}
+Number      Temp_Min6              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=6, type=temperature, property=min"}
+Number      Temp_Max6              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=6, type=temperature, property=max"}
 
-Number   Temp_Min7         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=7, type=temperature, property=min"}
-Number   Temp_Max7         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=7, type=temperature, property=max"}
+Number      Temp_Min7              "Temperature min [%.2f °C]"                           {weather="locationId=home, forecast=7, type=temperature, property=min"}
+Number      Temp_Max7              "Temperature max [%.2f °C]"                           {weather="locationId=home, forecast=7, type=temperature, property=max"}
 

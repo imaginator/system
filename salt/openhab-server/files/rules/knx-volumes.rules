@@ -3,21 +3,26 @@ rule "KNX Volume Contol"
 when
     Member of gKNXVolume received command
 then
-    logInfo("KNXVolumeControl","triggering Item: {}",triggeringItem.name)
+    logInfo("KNXVolumeControl","triggered: {}",triggeringItem.name)
     var room = triggeringItem.name.replace("KNXVolume","") 
-    logInfo("KNXVolumeControl","extracted room: {}",room)
-    var String ChromecastDeviceName += "ChromecastAudio" + room + "Volume"
-    logInfo("KNXVolumeControl","blah: {}",ChromecastDevice)
-        if (receivedCommand == OFF) {
-        logInfo("KNXVolumeControl","reducing volme in {}", room)
-        sendCommand(ChromecastDeviceName, ((ChromecastAudioStudyVolume.state as DecimalType) - 5))
+    logInfo("KNXVolumeControl","extracted room: {}", room)
+    var String ChromecastDeviceName = "ChromecastAudio" + room + "Volume" 
+    logInfo("KNXVolumeControl","Will change volume on: {}", ChromecastDeviceName)
+    var CurrentVolume = ScriptServiceUtil.getItemRegistry.getItem(ChromecastDeviceName).state as DecimalType
+    logInfo("KNXVolumeControl","CurrentVolume: {}", CurrentVolume)
+    
+    if (receivedCommand == OFF) {
+        sendCommand(ChromecastDeviceName , ((CurrentVolume - 5).toString()))
     }
     else if (receivedCommand == ON) {
-        logInfo("KNXVolumeControl","increasing volme in {}", room)
-        "ChromecastAudio" + roomStudyVolume.sendCommand((ChromecastAudioStudyVolume.state as DecimalType) + 5)
-        sendCommand("ChromecastAudio" + {{ room }} + "Volume", ((ChromecastAudioStudyVolume.state as DecimalType) + 5))
+        sendCommand(ChromecastDeviceName ,  ((CurrentVolume + 5).toString()))
     }
-end 
+end
+
+
+
+/*
+
  
 rule "Study Play/Pause/Next"
 when
@@ -45,3 +50,5 @@ then
     }
 end
 
+*/
+ 
