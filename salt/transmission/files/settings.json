@@ -6,7 +6,7 @@
     "alt-speed-time-enabled": false,
     "alt-speed-time-end": 1020,
     "alt-speed-up": 50,
-    "bind-address-ipv4": "10.7.12.1",
+    "bind-address-ipv4": "10.36.189.2",
     "bind-address-ipv6": "fe80::ac95:b8ff:fe21:8599",
     "blocklist-enabled": false,
     "blocklist-url": "http://www.example.com/blocklist",
