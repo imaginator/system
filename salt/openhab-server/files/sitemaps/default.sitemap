@@ -1,4 +1,4 @@
-sitemap test label="F17" {
+sitemap default label="F17" {
     Frame label="Date" {
         Text item=Date
     }
