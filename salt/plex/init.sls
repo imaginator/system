@@ -36,13 +36,20 @@ set-{{ mediadir }}-permissions:
   file.directory:
     - name: {{mediadir}}
     - user: simon
-    - group: users
+    - group: media
     - dir_mode: 755
     - file_mode: 644
     - recurse:
       - user
       - group
       - mode
+
+set-{{ mediadir }}-permissions-on-parent-folders:
+  file.directory:
+    - name: {{mediadir}}
+    - user: simon
+    - group: media
+    - dir_mode: 775
 
 {{ mediadir }}/Plex Versions:
   file.directory:

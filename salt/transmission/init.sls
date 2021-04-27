@@ -40,9 +40,9 @@ transmission-dirs:
   file.directory:
     - makedirs: true
     - user: debian-transmission
-    - group: debian-transmission
+    - group: media
     - dir_mode: 755
-    - file_mode: 644
+    - mode: 644
     - recurse:
       - user
       - group
@@ -55,7 +55,7 @@ transmission-dirs:
   file.managed:
     - user: debian-transmission
     - group: debian-transmission
-    - file_mode: 644
+    - mode: 644
     - source: salt://transmission/files/settings.json
     - require:
       - pkg: install-transmission
