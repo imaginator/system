@@ -5,6 +5,7 @@
 //- Room numbering:
 
 // 1:Central
+// 3: Terrace / outside
 // 4:Lounge
 // 5:Kitchen
 // 6:Study
@@ -15,7 +16,6 @@
 // 11:Bedroom 1
 // 12:Bedroom 2
 // 13:Bedroom 3
-// 14: Terrace / outside
 
 Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
     type="ROUTER",
@@ -27,8 +27,8 @@ Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
 // ----------------------------------------------------------------------------
 
 // Electrical Cabinet
+Thing knx:device:KnxIpRouter         "KNX Device Hager TH210 IP Router"                                     (knx:ip:knxrouter) @ "central" [ address="1.0.0" ]
 Thing knx:device:KnxPower            "KNX Device MDT STC-640.01 Bus power supply 640mA"                     (knx:ip:knxrouter) @ "central" [ address="1.0.1" ]
-Thing knx:device:KnxIpGateway        "KNX Device MDT SCN-IP000.02/.03 IP Interface without Secure"          (knx:ip:knxrouter) @ "central" [ address="1.0.2" ]
 Thing knx:device:KnxActuator1        "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.3" ]
 Thing knx:device:KnxActuator2        "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.4" ]
 Thing knx:device:KnxActuator3        "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.5" ]
@@ -78,16 +78,16 @@ Thing knx:device:KnxButtonsBedroom3BedRight   "KNX Device Button Bedroom 3 Bed R
 
 // Motion
 Thing knx:device:motion "KNX Motion Contact" (knx:ip:knxrouter) {
-    Type contact      : Lounge          "Lounge"                            [ ga="1.009:<4/4/1" ]
-    Type contact      : Kitchen         "Kitchen"                           [ ga="1.009:<5/4/1" ]
-    Type contact      : Study           "Study"                             [ ga="1.009:<6/4/1" ]
-    Type contact      : BathroomMain    "BathroomMain"                      [ ga="1.009:<7/4/1" ]
-    Type contact      : BathroomGuest   "BathroomGuest"                     [ ga="1.009:<8/4/1" ]
-    Type contact      : HallwayLarge    "HallwayLarge"                      [ ga="1.009:<9/4/1" ]
-    Type contact      : HallwaySmall    "HallwaySmall"                      [ ga="1.009:<10/4/1" ]
-    Type contact      : Bedroom1        "Bedroom1"                          [ ga="1.009:<11/4/1" ]
-    Type contact      : Bedroom2        "Bedroom2"                          [ ga="1.009:<12/4/1" ]
-    Type contact      : Bedroom3        "Bedroom3"                          [ ga="1.009:<13/4/1" ]
+    Type contact      : Lounge          "Lounge"                                    [ ga="1.009:<4/4/1" ]
+    Type contact      : Kitchen         "Kitchen"                                   [ ga="1.009:<5/4/1" ]
+    Type contact      : Study           "Study"                                     [ ga="1.009:<6/4/1" ]
+    Type contact      : BathroomMain    "BathroomMain"                              [ ga="1.009:<7/4/1" ]
+    Type contact      : BathroomGuest   "BathroomGuest"                             [ ga="1.009:<8/4/1" ]
+    Type contact      : HallwayLarge    "HallwayLarge"                              [ ga="1.009:<9/4/1" ]
+    Type contact      : HallwaySmall    "HallwaySmall"                              [ ga="1.009:<10/4/1" ]
+    Type contact      : Bedroom1        "Bedroom1"                                  [ ga="1.009:<11/4/1" ]
+    Type contact      : Bedroom2        "Bedroom2"                                  [ ga="1.009:<12/4/1" ]
+    Type contact      : Bedroom3        "Bedroom3"                                  [ ga="1.009:<13/4/1" ]
 }
 
 // Current Temperature
@@ -120,58 +120,58 @@ Thing knx:device:heating-valve-status "KNX Heating Valve Status (percentage)" (k
 
 // Target Heating Temperature
 Thing knx:device:heating-target-temperature "KNX Heating Target Temperature (Celcius)" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeTargetTemperature"                            [ ga="9.001:<4/6/7+4/6/7" ]
-    Type number      : Kitchen "KitchenTargetTemperature"                          [ ga="9.001:<5/6/7+5/6/7" ]
-    Type number      : Study "StudyTargetTemperature"                              [ ga="9.001:<6/6/7+6/6/7" ]
-    Type number      : BathroomMain "BathroomMainTargetTemperature"                [ ga="9.001:<7/6/7+7/6/7" ]
-    Type number      : BathroomGuest "BathroomGuestTargetTemperature"              [ ga="9.001:<8/6/7+8/6/7" ]
-    Type number      : HallwayLarge "HallwayLargeTargetTemperature"                [ ga="9.001:<9/6/7+9/6/7" ]
-    Type number      : HallwaySmall "HallwaySmallTargetTemperature"                [ ga="9.001:<10/6/7+10/6/7" ]
-    Type number      : Bedroom1 "Bedroom1TargetTemperature"                        [ ga="9.001:<11/6/7+11/6/7" ]
-    Type number      : Bedroom2 "Bedroom2TargetTemperature"                        [ ga="9.001:<12/6/7+12/6/7" ]
-    Type number      : Bedroom3 "Bedroom3TargetTemperature"                        [ ga="9.001:<13/6/7+13/6/7" ]
+    Type number      : Lounge "LoungeTargetTemperature"                             [ ga="9.001:<4/6/7+4/6/7" ]
+    Type number      : Kitchen "KitchenTargetTemperature"                           [ ga="9.001:<5/6/7+5/6/7" ]
+    Type number      : Study "StudyTargetTemperature"                               [ ga="9.001:<6/6/7+6/6/7" ]
+    Type number      : BathroomMain "BathroomMainTargetTemperature"                 [ ga="9.001:<7/6/7+7/6/7" ]
+    Type number      : BathroomGuest "BathroomGuestTargetTemperature"               [ ga="9.001:<8/6/7+8/6/7" ]
+    Type number      : HallwayLarge "HallwayLargeTargetTemperature"                 [ ga="9.001:<9/6/7+9/6/7" ]
+    Type number      : HallwaySmall "HallwaySmallTargetTemperature"                 [ ga="9.001:<10/6/7+10/6/7" ]
+    Type number      : Bedroom1 "Bedroom1TargetTemperature"                         [ ga="9.001:<11/6/7+11/6/7" ]
+    Type number      : Bedroom2 "Bedroom2TargetTemperature"                         [ ga="9.001:<12/6/7+12/6/7" ]
+    Type number      : Bedroom3 "Bedroom3TargetTemperature"                         [ ga="9.001:<13/6/7+13/6/7" ]
 }
 
 // Heating Mode 
 Thing knx:device:heating-mode "KNX Heating Mode" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeHeatingMode"                            [ ga="20.102:4/6/10+4/6/10" ]
-    Type number      : Kitchen "KitchenHeatingMode"                          [ ga="20.102:5/6/10+5/6/10" ]
-    Type number      : Study "StudyHeatingMode"                              [ ga="20.102:6/6/10+6/6/10" ]
-    Type number      : BathroomMain "BathroomMainHeatingMode"                [ ga="20.102:7/6/10+7/6/10" ]
-    Type number      : BathroomGuest "BathroomGuestHeatingMode"              [ ga="20.102:8/6/10+8/6/10" ]
-    Type number      : HallwayLarge "HallwayLargeHeatingMode"                [ ga="20.102:9/6/10+9/6/10" ]
-    Type number      : HallwaySmall "HallwaySmallHeatingMode"                [ ga="20.102:10/6/10+10/6/10" ]
-    Type number      : Bedroom1 "Bedroom1HeatingMode"                        [ ga="20.102:11/6/10+11/6/10" ]
-    Type number      : Bedroom2 "Bedroom2HeatingMode"                        [ ga="20.102:12/6/10+12/6/10" ]
-    Type number      : Bedroom3 "Bedroom3HeatingMode"                        [ ga="20.102:13/6/10+13/6/10" ]
+    Type number      : Lounge "LoungeHeatingMode"                                   [ ga="20.102:4/6/10+4/6/10" ]
+    Type number      : Kitchen "KitchenHeatingMode"                                 [ ga="20.102:5/6/10+5/6/10" ]
+    Type number      : Study "StudyHeatingMode"                                     [ ga="20.102:6/6/10+6/6/10" ]
+    Type number      : BathroomMain "BathroomMainHeatingMode"                       [ ga="20.102:7/6/10+7/6/10" ]
+    Type number      : BathroomGuest "BathroomGuestHeatingMode"                     [ ga="20.102:8/6/10+8/6/10" ]
+    Type number      : HallwayLarge "HallwayLargeHeatingMode"                       [ ga="20.102:9/6/10+9/6/10" ]
+    Type number      : HallwaySmall "HallwaySmallHeatingMode"                       [ ga="20.102:10/6/10+10/6/10" ]
+    Type number      : Bedroom1 "Bedroom1HeatingMode"                               [ ga="20.102:11/6/10+11/6/10" ]
+    Type number      : Bedroom2 "Bedroom2HeatingMode"                               [ ga="20.102:12/6/10+12/6/10" ]
+    Type number      : Bedroom3 "Bedroom3HeatingMode"                               [ ga="20.102:13/6/10+13/6/10" ]
 }
 
 // Heating Diagnosis Text
 Thing knx:device:heating-diagnosis-text "KNX Heating Disgnosis Text" (knx:ip:knxrouter) {
-    Type string      : Lounge "LoungeHeatingDiagnosisText"                            [ ga="16.000:<4/6/19" ]
-    Type string      : Kitchen "KitchenHeatingDiagnosisText"                          [ ga="16.000:<5/6/19" ]
-    Type string      : Study "StudyHeatingDiagnosisText"                              [ ga="16.000:<6/6/19" ]
-    Type string      : BathroomMain "BathroomMainHeatingDiagnosisText"                [ ga="16.000:<7/6/19" ]
-    Type string      : BathroomGuest "BathroomGuestHeatingDiagnosisText"              [ ga="16.000:<8/6/19" ]
-    Type string      : HallwayLarge "HallwayLargeHeatingDiagnosisText"                [ ga="16.000:<9/6/19" ]
-    Type string      : HallwaySmall "HallwaySmallHeatingDiagnosisText"                [ ga="16.000:<10/6/19" ]
-    Type string      : Bedroom1 "Bedroom1HeatingDiagnosisText"                        [ ga="16.000:<11/6/19" ]
-    Type string      : Bedroom2 "Bedroom2HeatingDiagnosisText"                        [ ga="16.000:<12/6/19" ]
-    Type string      : Bedroom3 "Bedroom3HeatingDiagnosisText"                        [ ga="16.000:<13/6/19" ]
+    Type string      : Lounge "LoungeHeatingDiagnosisText"                          [ ga="16.000:<4/6/19" ]
+    Type string      : Kitchen "KitchenHeatingDiagnosisText"                        [ ga="16.000:<5/6/19" ]
+    Type string      : Study "StudyHeatingDiagnosisText"                            [ ga="16.000:<6/6/19" ]
+    Type string      : BathroomMain "BathroomMainHeatingDiagnosisText"              [ ga="16.000:<7/6/19" ]
+    Type string      : BathroomGuest "BathroomGuestHeatingDiagnosisText"            [ ga="16.000:<8/6/19" ]
+    Type string      : HallwayLarge "HallwayLargeHeatingDiagnosisText"              [ ga="16.000:<9/6/19" ]
+    Type string      : HallwaySmall "HallwaySmallHeatingDiagnosisText"              [ ga="16.000:<10/6/19" ]
+    Type string      : Bedroom1 "Bedroom1HeatingDiagnosisText"                      [ ga="16.000:<11/6/19" ]
+    Type string      : Bedroom2 "Bedroom2HeatingDiagnosisText"                      [ ga="16.000:<12/6/19" ]
+    Type string      : Bedroom3 "Bedroom3HeatingDiagnosisText"                      [ ga="16.000:<13/6/19" ]
 }
 
 // Brightness
 Thing knx:device:brightness "KNX luminosity Lux" (knx:ip:knxrouter) {
-    Type number      : Lounge "Lounge Brightness [%.1f Lux]"                  [ ga="9.004:<4/2/2" ]
-    Type number      : Kitchen "Kitchen Brightness [%.1f Lux]"                [ ga="9.004:<5/2/2" ]
-    Type number      : Study "Study Brightness [%.1f Lux]"                    [ ga="9.004:<6/2/2" ]
-    Type number      : BathroomMain "BathroomMain Brightness [%.1f Lux]"      [ ga="9.004:<7/2/2" ]
-    Type number      : BathroomGuest "BathroomGuest Brightness [%.1f Lux]"    [ ga="9.004:<8/2/2" ]
-    Type number      : HallwayLarge "HallwayLarge Brightness [%.1f Lux]"      [ ga="9.004:<9/2/2" ]
-    Type number      : HallwaySmall "HallwaySmall Brightness [%.1f Lux]"      [ ga="9.004:<10/2/2" ]
-    Type number      : Bedroom1 "Bedroom1 Brightness [%.1f Lux]"              [ ga="9.004:<11/2/2" ]
-    Type number      : Bedroom2 "Bedroom2 Brightness [%.1f Lux]"              [ ga="9.004:<12/2/2" ]
-    Type number      : Bedroom3 "Bedroom3 Brightness [%.1f Lux]"              [ ga="9.004:<13/2/2" ]
+    Type number      : Lounge "Lounge Brightness [%.1f Lux]"                        [ ga="9.004:<4/2/2" ]
+    Type number      : Kitchen "Kitchen Brightness [%.1f Lux]"                      [ ga="9.004:<5/2/2" ]
+    Type number      : Study "Study Brightness [%.1f Lux]"                          [ ga="9.004:<6/2/2" ]
+    Type number      : BathroomMain "BathroomMain Brightness [%.1f Lux]"            [ ga="9.004:<7/2/2" ]
+    Type number      : BathroomGuest "BathroomGuest Brightness [%.1f Lux]"          [ ga="9.004:<8/2/2" ]
+    Type number      : HallwayLarge "HallwayLarge Brightness [%.1f Lux]"            [ ga="9.004:<9/2/2" ]
+    Type number      : HallwaySmall "HallwaySmall Brightness [%.1f Lux]"            [ ga="9.004:<10/2/2" ]
+    Type number      : Bedroom1 "Bedroom1 Brightness [%.1f Lux]"                    [ ga="9.004:<11/2/2" ]
+    Type number      : Bedroom2 "Bedroom2 Brightness [%.1f Lux]"                    [ ga="9.004:<12/2/2" ]
+    Type number      : Bedroom3 "Bedroom3 Brightness [%.1f Lux]"                    [ ga="9.004:<13/2/2" ]
 }
 
 // Rollershutter
@@ -202,6 +202,51 @@ Thing knx:device:rollershutter "KNX Rollershutter Contol"  (knx:ip:knxrouter)  {
     Type rollershutter-control : studyoutside           "Study Outside"               [ upDown="6/7/11",  stopMove="6/7/12",  position="6/7/13+<6/7/14" ]
 }
 
+// Media Control
+Thing knx:device:playback "KNX Playback Contol" (knx:ip:knxrouter) {
+    Type switch-control : lounge            "Playback"                    [ ga="4/5/1+4/5/1"]
+    Type switch-control : kitchen           "Playback"                    [ ga="5/5/1+5/5/1"]
+    Type switch-control : study             "Playback"                    [ ga="6/5/1+6/5/1"]
+    Type switch-control : bathroommain      "Playback"                    [ ga="7/5/1+7/5/1"]
+    Type switch-control : bathroomguest     "Playback"                    [ ga="8/5/1+8/5/1"]
+    Type switch-control : bedroom1          "Playback"                    [ ga="11/5/1+11/5/1"]
+    Type switch-control : bedroom2          "Playback"                    [ ga="12/5/1+12/5/1"]
+    Type switch-control : bedroom3          "Playback"                    [ ga="13/5/1+13/5/1"]
+}
+
+// Volume Control
+Thing knx:device:volume "KNX Volume Percent" (knx:ip:knxrouter) {
+    Type switch-control : lounge            "Volume"                    [ ga="4/5/2+4/5/2"]
+    Type switch-control : kitchen           "Volume"                    [ ga="5/5/2+5/5/2"]
+    Type switch-control : study             "Volume"                    [ ga="6/5/2+6/5/2"]
+    Type switch-control : bathroommain      "Volume"                    [ ga="7/5/2+7/5/2"]
+    Type switch-control : bathroomguest     "Volume"                    [ ga="8/5/2+8/5/2"]
+    Type switch-control : bedroom1          "Volume"                    [ ga="11/5/2+11/5/2"]
+    Type switch-control : bedroom2          "Volume"                    [ ga="12/5/2+12/5/2"]
+    Type switch-control : bedroom3          "Volume"                    [ ga="13/5/2+13/5/2"]
+}
+
+// Power Measurements
+Thing knx:device:powermeasurements "KNX Power Measurements"    (knx:ip:knxrouter) {
+    Type  number : BusmA             "KNX Bus milliamps"          [ ga="7.012:<1/2/2" ]
+    Type  number : BusVolts          "KNX Bus volts"              [ ga="14.027:<1/2/1" ]
+    Type  number : HeatingPowerWatts "Heating Power Watts"        [ ga="14.056:<1/2/22" ]
+    Type  number : HeatingPowerWh    "Heating Power Wh"           [ ga="13.010:<1/2/21" ]
+    Type  number : HousePowerWatts   "House Power Watts"          [ ga="14.056:<1/2/12" ]
+    Type  number : HousePowerWh      "House Power Wh"             [ ga="13.010:<1/2/11" ]
+}
+
+// Bus Traffic
+Thing knx:device:bustraffic "KNX Bus Traffic"    (knx:ip:knxrouter) @ "central" {
+    Type  number : BusTrafficPercent "KNX Bus Traffic Percent"    [ ga="5.001:<1/2/31" ]
+}
+
+// For NTP
+Thing knx:device:ntp         "KNX Date/Time"          (knx:ip:knxrouter) {
+        Type datetime-control      : knxdate    [ ga="11.001:1/3/11" ]
+        Type datetime-control      : knxtime    [ ga="10.001:1/3/12" ]
+}
+
 // RGBW lighting
 Thing knx:device:rgbwlighting           "KNX RGBW Lighting"                    (knx:ip:knxrouter) {
     Type dimmer-control        : RGBred            "Kitchen Niche RGB red"                       [ position="5.001:5/1/32" ]
@@ -230,66 +275,9 @@ The wall switch should be configured to
 
 */
 
-Thing knx:device:cwwwlighting           "KNX CW/WW Lighting"                    (knx:ip:knxrouter) {
+Thing knx:device:cwwwlighting               "KNX CW/WW Lighting"                    (knx:ip:knxrouter) {
     Type dimmer : studyceilingdimmer "Study Ceiling"      [ switch="1/1/50", position="1/1/60+<1/1/61" ]
     Type dimmer : studyceilingtempp "Colour Temperature"  [ switch="1/1/52", position="1/1/62+<1/1/63" ]
+    Type number : studyceilingtempp2        "Dali Family Room Farbtemperatur"  [ ga="7.013:1/4/0+<3/2/0"]
 }
 
-
-// 1:Central
-// 4:Lounge
-// 5:Kitchen
-// 6:Study
-// 7:Main Bathroom
-// 8:Guest Bathroom
-// 9: Main Hallway
-// 10: Small Hallway
-// 11:Bedroom 1
-// 12:Bedroom 2
-// 13:Bedroom 3
-// 14: Terrace / outside
-
-// Media Control
-Thing knx:device:playback "KNX Playback Contol" (knx:ip:knxrouter) {
-    Type switch-control : lounge            "Playback"                    [ ga="4/5/1+4/5/1"]
-    Type switch-control : kitchen           "Playback"                    [ ga="5/5/1+5/5/1"]
-    Type switch-control : study             "Playback"                    [ ga="6/5/1+6/5/1"]
-    Type switch-control : bathroommain      "Playback"                    [ ga="7/5/1+7/5/1"]
-    Type switch-control : bathroomguest     "Playback"                    [ ga="8/5/1+8/5/1"]
-    Type switch-control : bedroom1          "Playback"                    [ ga="11/5/1+11/5/1"]
-    Type switch-control : bedroom2          "Playback"                    [ ga="12/5/1+12/5/1"]
-    Type switch-control : bedroom3          "Playback"                    [ ga="13/5/1+13/5/1"]
-}
-
-// Volume Control
-Thing knx:device:volume "KNX Volume Percent" (knx:ip:knxrouter) {
-    Type switch-control : lounge            "Volume"                    [ ga="4/5/2+4/5/2"]
-    Type switch-control : kitchen           "Volume"                    [ ga="5/5/2+5/5/2"]
-    Type switch-control : study             "Volume"                    [ ga="6/5/2+6/5/2"]
-    Type switch-control : bathroommain      "Volume"                    [ ga="7/5/2+7/5/2"]
-    Type switch-control : bathroomguest     "Volume"                    [ ga="8/5/2+8/5/2"]
-    Type switch-control : bedroom1          "Volume"                    [ ga="11/5/2+11/5/2"]
-    Type switch-control : bedroom2          "Volume"                    [ ga="12/5/2+12/5/2"]
-    Type switch-control : bedroom3          "Volume"                    [ ga="13/5/2+13/5/2"]
-}
-
-// Power Measurements
-Thing knx:device:powermeasurements "KNX Power Measurements"    (knx:ip:knxrouter) {
-    Type  number : BusVolts          "KNX Bus volts"              [ ga="14.027:<1/2/1" ]
-    Type  number : BusmA             "KNX Bus milliamps"          [ ga="7.012:<1/2/2" ]
-    Type  number : HousePowerWh      "House Power Wh"             [ ga="13.010:<1/2/11" ]
-    Type  number : HeatingPowerWh    "Heating Power Wh"           [ ga="13.010:<1/2/21" ]
-    Type  number : HousePowerWatts   "House Power Watts"          [ ga="14.056:<1/2/11" ]
-    Type  number : HeatingPowerWatts "Heating Power Watts"        [ ga="14.056:<1/2/21" ]
-}
-
-// Bus Traffic
-Thing knx:device:bustraffic "KNX Bus Traffic"    (knx:ip:knxrouter) @ "central" {
-    Type  number : BusTrafficPercent "KNX Bus Traffic Percent"    [ ga="5.001:<1/2/31" ]
-}
-
-// For NTP
-Thing knx:device:Date_Device         "KNX Date/Time"          (knx:ip:knxrouter) {
-        Type datetime-control      : knxDate    [ ga="11.001:10/0/1" ]
-        Type datetime-control      : knxTime    [ ga="10.001:10/0/0" ]
-}

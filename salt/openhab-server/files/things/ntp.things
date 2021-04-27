@@ -1,1 +1,7 @@
-Thing ntp:ntp:germany                             [ hostname="nl.pool.ntp.org", refreshInterval=60, refreshNtp=30, timeZone="Europe/Berlin", locale="de_DE"  ]
+  Thing ntp:ntp:home "Local Time" [
+      hostname="de.pool.ntp.org",
+      refresh=120,
+      refreshNtp=30,
+      locale="de_DE",
+      timeZone="Europe/Berlin"
+      ]
