@@ -29,38 +29,6 @@ Switch    KNXPlaybackKitchen                       "Playback control"           
 Switch    KNXPlaybackLounge                        "Playback control"           (gKNXPlayback)    {channel="knx:device:playback:lounge"}
 Switch    KNXPlaybackStudy                         "Playback control"           (gKNXPlayback)    {channel="knx:device:playback:study"}
 
-
-/*
-
-
-Switch	KNX8Volume					"KNX Volume"						{channel="knx:device:knxgw:light_switch:Channel_Common"}
-Switch	KNX8PlayPause				"KNX PlayPause"						{channel="knx:device:knxgw:light_switch:PlayPause"}
-
-
-
-rule "My knx dimmer"
-when
-    Item KNX8Volume received command
-then
-   if (receivedCommand == OFF) {
-        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) - 5)
-}
-    else if (receivedCommand == ON) {
-        ChromecastAudioKitchenVolume.sendCommand((ChromecastAudioKitchenVolume.state as DecimalType) + 5)
-}
-end
-
-
-rule "My knx PlayPause"
-when
-    Item KNX8PlayPause received command
-then
-   if (receivedCommand == OFF) {
-        ChromecastAudioKitchenControl.sendCommand(PAUSE)
-}
-    else if (receivedCommand == ON) {
-        ChromecastAudioKitchenControl.sendCommand(PLAY)
-}
-end
-*/
-
+// Date / Time fron NTP
+DateTime BusDate                                    "Date"                                        {channel="knx:device:ntp:knxdate", channel="ntp:ntp:home:dateTime"}
+DateTime BusTime                                    "Time and day"                                {channel="knx:device:ntp:knxtime", channel="ntp:ntp:home:dateTime"}
