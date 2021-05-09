@@ -1,4 +1,5 @@
 import org.openhab.core.model.script.ScriptServiceUtil
+
 rule "KNX Volume Contol"
 when
     Member of gKNXVolume received command
@@ -19,36 +20,33 @@ then
     }
 end
 
+// Trigger ⏯️ and ⏭️ based on long kepresses on the KNX buttons.
+// eg: from KNXPlayback<BathroomGuest>
+//   to ChromecastAudio<BathroomGuest>Control
 
-
-/*
-
- 
-rule "Study Play/Pause/Next"
+rule "KNX Play/Pause/Next"
 when
-   // Item KNXPlaybackStudy received command
-       Member of gKNXPlayback received command
-
+    Member of gKNXPlayback received command
 then
-    logInfo("StudyPlaybackControl","triggering Item: {} ",triggeringItem.name)
+    var String room = triggeringItem.name.replace("KNXPlayback","")
+    var String ChromecastDeviceName = "ChromecastAudio" + room + "Control"
+    var CurrentPlaybackState = ScriptServiceUtil.getItemRegistry.getItem(ChromecastDeviceName).state
     if (receivedCommand == OFF) {
         // toggle play / pause
-        if (ChromecastAudioStudyControl.state == PAUSE) {
-           logInfo("StudyPlaybackControl","Paused so resuming playback")
-           ChromecastAudioStudyControl.sendCommand(PLAY)
+        if (CurrentPlaybackState == PAUSE) {
+           logInfo("KNX Play/Pause/Next", "resuming playback in {}", room)
+           sendCommand(ChromecastDeviceName , "PLAY")
         }
-        else if (ChromecastAudioStudyControl.state == PLAY) {
-            logInfo("StudyPlaybackControl","Playing so pausing")
-            ChromecastAudioStudyControl.sendCommand(PAUSE)
+        else if (CurrentPlaybackState == PLAY) {
+           logInfo("KNX Play/Pause/Next", "pausing in {}", room)
+           sendCommand(ChromecastDeviceName , "PAUSE")
         }
     }
     // play next track
     else if (receivedCommand == ON) {
-        logInfo("StudyPlaybackControl","jumping to next track")
+        logInfo("KNX Play/Pause/Next", "skipping track in {}", room)
         // NEXT/PREVIOUS not supported directly in Chomecast binding so using spotify binding
+        // another approach would be to to scrub to (tracklength-1s) 
         SpotifyPlayerBridge_TrackPlayer.sendCommand(NEXT)
     }
 end
-
-*/
- 
