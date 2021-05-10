@@ -177,12 +177,12 @@ Thing knx:device:brightness "KNX luminosity Lux" (knx:ip:knxrouter) {
 // Rollershutter
 Thing knx:device:rollershutter "KNX Rollershutter Contol"  (knx:ip:knxrouter)  {
     Type rollershutter : bedroom1                       "Bedroom1"                    [ upDown="11/7/11", stopMove="11/7/12", position="11/7/13+<11/7/14" ]
-    Type rollershutter : hallwaylarge1                  "Hallway Large 1"             [ upDown="9/7/11",  stopMove="9/7/12",  position="9/7/13+<9/7/14" ]
+    Type rollershutter : hallwaylarge1                  "Hallway Large 1 North"       [ upDown="9/7/11",  stopMove="9/7/12",  position="9/7/13+<9/7/14" ]
     Type rollershutter : hallwaylarge2                  "Hallway Large 2"             [ upDown="9/7/21",  stopMove="9/7/22",  position="9/7/23+<9/7/24" ]
     Type rollershutter : hallwaylarge3                  "Hallway Large 3"             [ upDown="9/7/31",  stopMove="9/7/32",  position="9/7/33+<9/7/34" ]
     Type rollershutter : hallwaylarge4                  "Hallway Large 4"             [ upDown="9/7/41",  stopMove="9/7/42",  position="9/7/43+<9/7/44" ]
     Type rollershutter : hallwaylarge5                  "Hallway Large 5"             [ upDown="9/7/51",  stopMove="9/7/52",  position="9/7/53+<9/7/54" ]
-    Type rollershutter : hallwaylarge6                  "Hallway Large 6"             [ upDown="9/7/61",  stopMove="9/7/62",  position="9/7/63+<9/7/64" ]
+    Type rollershutter : hallwaylarge6                  "Hallway Large 6 South"       [ upDown="9/7/61",  stopMove="9/7/62",  position="9/7/63+<9/7/64" ]
     Type rollershutter : hallwaylargewindownorth        "Hallway Large Window North"  [ upDown="9/7/91",  stopMove="9/7/92",  position="9/7/93+<9/7/94" ]
     Type rollershutter : hallwaylargewindowsouth        "Hallway Large Window South"  [ upDown="9/7/81",  stopMove="9/7/82",  position="9/7/83+<9/7/84" ]
     Type rollershutter : kitchenleft                    "Kitchen Left"                [ upDown="5/7/11",  stopMove="5/7/12",  position="5/7/13+<5/7/14" ]
@@ -248,13 +248,13 @@ Thing knx:device:ntp         "KNX Date/Time"          (knx:ip:knxrouter) {
 }
 
 // RGBW lighting
-Thing knx:device:rgbwlighting           "KNX RGBW Lighting"                    (knx:ip:knxrouter) {
-    Type dimmer-control        : RGBred            "Kitchen Niche RGB red"                       [ position="5.001:5/1/32" ]
-    Type dimmer-control        : RGBgreen          "Kitchen Niche RGB green"                     [ position="5.001:5/1/33" ]
-    Type dimmer-control        : RGBblue           "Kitchen Niche RGB blue"                      [ position="5.001:5/1/34" ]
-    Type dimmer-control        : RGBwhite          "Kitchen Niche RGB white"                     [ position="5.001:5/1/35" ]
-    Type color                 : demoColor         "Demo Color"                                  [ hsb="251.600:<7/0/25", switch="1.001:<7/0/26", position="5.001:<7/0/27", increaseDecrease="3.007:<7/0/28" ]
-    Type color-control         : colorControl      "Demo Color Control"                          [ hsb="251.600:7/0/25",  switch="1.001:7/0/26",  position="5.001:7/0/27",  increaseDecrease="3.007:7/0/28"  ]
+Thing knx:device:rgbwlighting           "KNX RGBW Lighting"       (knx:ip:knxrouter) {
+    Type dimmer-control        : RGBred            "Kitchen Niche RGB red"         [ position="5.001:5/1/32" ]
+    Type dimmer-control        : RGBgreen          "Kitchen Niche RGB green"       [ position="5.001:5/1/33" ]
+    Type dimmer-control        : RGBblue           "Kitchen Niche RGB blue"        [ position="5.001:5/1/34" ]
+    Type dimmer-control        : RGBwhite          "Kitchen Niche RGB white"       [ position="5.001:5/1/35" ]
+    Type color                 : demoColor         "Demo Color"                    [ hsb="251.600:<7/0/25", switch="1.001:<7/0/26", position="5.001:<7/0/27", increaseDecrease="3.007:<7/0/28" ]
+    Type color-control         : colorControl      "Demo Color Control"            [ hsb="251.600:7/0/25",  switch="1.001:7/0/26",  position="5.001:7/0/27",  increaseDecrease="3.007:7/0/28"  ]
 }
 
 // CW/WW lighting

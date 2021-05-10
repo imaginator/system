@@ -44,9 +44,18 @@ then
     }
     // play next track
     else if (receivedCommand == ON) {
+        // NEXT/PREVIOUS not supported directly in Chomecast binding 
+        // currentTime 	Number:Time 	Current time of currently playing media
+        // duration 	Number:Time 	Duration of current track (null if between tracks)
         logInfo("KNX Play/Pause/Next", "skipping track in {}", room)
-        // NEXT/PREVIOUS not supported directly in Chomecast binding so using spotify binding
-        // another approach would be to to scrub to (tracklength-1s) 
-        SpotifyPlayerBridge_TrackPlayer.sendCommand(NEXT)
+        var String DurationItem = "ChromecastAudio" + room + "Duration"                     // ChromecastAudioStudyDuration
+        var String PlaybackPositionItem = "ChromecastAudio" + room + "CurrentTime"          // ChromecastAudioStudyCurrentTime
+        val TrackLength = ScriptServiceUtil.getItemRegistry.getItem(DurationItem).state     // "234.5 s" (QuantityType)
+        val NewPlaybackPosition = (TrackLength as Number) - 1
+        logInfo("KNXVolumeControl","Track length: {}", TrackLength)
+        logInfo("KNXVolumeControl","Track length variable type: {}", TrackLength.getClass.getSimpleName)
+        logInfo("KNXVolumeControl","Jumping to: {}", NewPlaybackPosition)
+        sendCommand(PlaybackPositionItem , (NewPlaybackPosition))
     }
 end
+ 

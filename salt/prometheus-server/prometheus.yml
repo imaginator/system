@@ -146,7 +146,7 @@ scrape_configs:
         - repeater-hof-north.imagilan
         - repeater-lounge.imagilan
         - repeater-street-north.imagilan
-        - repeater-street-south.imagilan
+        - repeater-street-south.imagilan 
         - simon-phone.imagilan
         - stove.imagilan
         - switch01.imagilan

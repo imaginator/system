@@ -17,6 +17,12 @@ prometheus-node-exporter:
     - user: root
     - minute: '*/5'
 
+/usr/share/prometheus-node-exporter/btrfs_stats.py > /var/lib/prometheus/node-exporter/smartmon.prom:
+  cron.present:
+    - identifier: smartmontools-stats-textfile
+    - user: root
+    - minute: '*/5'
+
 /etc/default/prometheus-node-exporter:
   file.managed:
     - source: salt://prometheus-node-exporter/prometheus-node-exporter

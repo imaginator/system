@@ -14,3 +14,5 @@ ipcamera:generic:camera02 "camera02" @ "central" [
     ffmpegInput="rtsp://camera02.imagilan:8554/unicast",
     pollImage=true
 ]
+
+

@@ -2,7 +2,7 @@ String    SpotifyPlayerBridge_AccessToken        "Access Token"             (gPe
 String    SpotifyPlayerBridge_DeviceId           "Active Device Id"         (gPersistMe)    {channel="spotify:player:simon:deviceId"}
 String    SpotifyPlayerBridge_DeviceName         "Active Device Name"       (gPersistMe)    {channel="spotify:player:simon:deviceName"}
 String    SpotifyPlayerBridge_DeviceType         "Active Device Type"       (gPersistMe)    {channel="spotify:player:simon:deviceType"}
-Dimmer    SpotifyPlayerBridge_DeviceVolume       "Active Device Volume"     (gPersistMe)    {channel="spotify:player:simon:deviceVolume"}
+// Dimmer    SpotifyPlayerBridge_DeviceVolume       "Active Device Volume"     (gPersistMe)    {channel="spotify:player:simon:deviceVolume"}
 Switch    SpotifyPlayerBridge_DeviceShuffle      "Active Device Shuffle"    (gPersistMe)    {channel="spotify:player:simon:deviceShuffle"}
 String    SpotifyPlayerBridge_Playlist           "Playlist"                 (gPersistMe)    {channel="spotify:player:simon:playlist"}
 String    SpotifyPlayerBridge_TrackPlay          "Track to Play"            (gPersistMe)    {channel="spotify:player:simon:trackPlay"}
