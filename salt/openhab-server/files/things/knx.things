@@ -37,6 +37,8 @@ Thing knx:device:KnxDaligw           "KNX Device MDT DaliControl 32"            
 Thing knx:device:KnxHeatingActuator  "KNX Device AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC" (knx:ip:knxrouter) @ "central" [ address="1.0.8" ]
 Thing knx:device:KnxBinaryInput      "KNX Device MDT Binary Input 32-fold"                                  (knx:ip:knxrouter) @ "central" [ address="1.0.10" ]
 Thing knx:device:KnxShutterAktor24v  "KNX Device MDT JAL-0410D.02 Shutter Actuator 4-fold, 4SU, 24VDC, 8A"  (knx:ip:knxrouter) @ "central" [ address="1.0.11" ]
+Thing knx:device:KnxDimmerKitchen    "KNX Device MDT Dimming Actuator 4-fold"                               (knx:ip:knxrouter) @ "central" [ address="1.0.12" ]
+Thing knx:device:knxVitogate200      "KNX Vitogate 200, type KNX"                                           (knx:ip:knxrouter) @ "central" [ address="1.0.13" ]
 
 // Motion Sensors 
 Thing knx:device:KnxMotionLounge  "KNX Device Motion Lounge" (knx:ip:knxrouter) @ "lounge"                            [ address="4.4.1" ]
