@@ -1,0 +1,1 @@
+DateTime    Date    "Date [%1$tA, %1$td.%1$tm.%1$tY %1$tH:%1$tM]"    {channel="ntp:ntp:home:dateTime"}
