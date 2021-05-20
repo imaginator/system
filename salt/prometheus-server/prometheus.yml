@@ -60,6 +60,14 @@ scrape_configs:
       - target_label: __address__
         replacement: 127.0.0.1:9116
 
+  - job_name: 'openhab-server-metrics'
+    scrape_interval: 1m
+    scheme: http
+    metrics_path: /rest/metrics/prometheus
+    static_configs:
+    - targets:
+      - 'bunker.imagilan:8080'
+
   - job_name: 'openhab'
     scrape_interval: 10s
     static_configs:
@@ -171,3 +179,4 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 127.0.0.1:9115  # This is your blackbox exporter.
+
