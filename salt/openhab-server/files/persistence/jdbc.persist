@@ -5,5 +5,5 @@ Strategies {
 }
 
 Items {
-  gPersistMe*         : strategy = everyChange, restoreOnStartup
+  gPersistMe* : strategy = everyUpdate, restoreOnStartup
 }
