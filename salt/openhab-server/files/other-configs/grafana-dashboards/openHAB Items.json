@@ -1,0 +1,2032 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "prometheus",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "limit": 100,
+          "name": "Annotations & Alerts",
+          "showIn": 0,
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "OpenHAB Items",
+    "editable": true,
+    "gnetId": 1860,
+    "graphTooltip": 1,
+    "id": 37,
+    "iteration": 1621451765817,
+    "links": [],
+    "panels": [
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 28,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 289,
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": false,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sideWidth": 250,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXVitogate200.*temperature.*\"},\"name\", \"$1\", \"name\", \"KNXVitogate200(.*)\")",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Vitocal 200-S temperatures",
+        "tooltip": {
+          "shared": true,
+          "sort": 1,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:299",
+            "format": "celsius",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:300",
+            "format": "celsius",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 28,
+          "w": 24,
+          "x": 0,
+          "y": 28
+        },
+        "hiddenSeries": false,
+        "id": 291,
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": false,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sideWidth": 250,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_number{job=\"openhab\",name=~\"KNXVitogate200(.*)\",name!~\"(.*)temperature(.*)\"},\"name\", \"$1\", \"name\", \"KNXVitogate200(.*)\")",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Vitocal 200-S non-temperature values",
+        "tooltip": {
+          "shared": true,
+          "sort": 1,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:299",
+            "format": "none",
+            "label": null,
+            "logBase": 10,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:300",
+            "format": "celsius",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "cards": {
+          "cardPadding": null,
+          "cardRound": null
+        },
+        "color": {
+          "cardColor": "#37872D",
+          "colorScale": "linear",
+          "colorScheme": "interpolateOranges",
+          "exponent": 0.5,
+          "mode": "opacity"
+        },
+        "dataFormat": "tsbuckets",
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 36,
+          "w": 24,
+          "x": 0,
+          "y": 56
+        },
+        "heatmap": {},
+        "hideZeroBuckets": true,
+        "highlightCards": true,
+        "id": 290,
+        "legend": {
+          "show": false
+        },
+        "pluginVersion": "7.5.6",
+        "reverseYBuckets": true,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_switch{name=~\"KNXVitogate200.*\"} ,\"name\", \"$1\", \"name\", \"KNXVitogate200(.*)\")",
+            "format": "time_series",
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 10,
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Vitocal 200-S switches",
+        "tooltip": {
+          "show": true,
+          "showHistogram": false
+        },
+        "type": "heatmap",
+        "xAxis": {
+          "show": true
+        },
+        "xBucketNumber": null,
+        "xBucketSize": null,
+        "yAxis": {
+          "decimals": null,
+          "format": "string",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true,
+          "splitFactor": null
+        },
+        "yBucketBound": "upper",
+        "yBucketNumber": null,
+        "yBucketSize": null
+      },
+      {
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "currencyEUR"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 92
+        },
+        "id": 284,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "/^\\{instance=\"bunker\\.imagilan:9997\", job=\"openhab\", name=\"KNXPowerMeasurementsHousePowerWh\"\\}$/",
+            "values": false
+          },
+          "text": {},
+          "textMode": "value"
+        },
+        "pluginVersion": "7.5.6",
+        "targets": [
+          {
+            "expr": "increase(openhab2_metric_number{name=\"KNXPowerMeasurementsHousePowerWh\"}[24h])/1000*0.26",
+            "format": "time_series",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "24h electricity cost",
+        "type": "stat"
+      },
+      {
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "currencyEUR"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 92
+        },
+        "id": 285,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "/^\\{instance=\"bunker\\.imagilan:9997\", job=\"openhab\", name=\"KNXPowerMeasurementsHeatingPowerWh\"\\}$/",
+            "values": false
+          },
+          "text": {},
+          "textMode": "value"
+        },
+        "pluginVersion": "7.5.6",
+        "targets": [
+          {
+            "expr": "increase(openhab2_metric_number{name=\"KNXPowerMeasurementsHeatingPowerWh\"}[24h])/1000*0.20",
+            "format": "time_series",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 10,
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "24h heating cost",
+        "type": "stat"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "Temperature from room motion sensors",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 0,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 22,
+          "w": 24,
+          "x": 0,
+          "y": 100
+        },
+        "hiddenSeries": false,
+        "id": 279,
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sideWidth": 250,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXTemperatureCelcius.*\"} ,\"name\", \"$1\", \"name\", \"KNXTemperatureCelcius(.*)\")\n",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Room Temperatures",
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:102",
+            "format": "celsius",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": "15",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:103",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "0 = closed",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 0,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 122
+        },
+        "hiddenSeries": false,
+        "id": 287,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXHeatingValveStatusPercentage.*\"} ,\"name\", \"$1\", \"name\", \"KNXHeatingValveStatusPercentage(.*)\")\n",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Heating Valve position",
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:102",
+            "format": "percentunit",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:103",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "decimals": null,
+        "description": "KNX bus condition",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 14,
+          "w": 23,
+          "x": 0,
+          "y": 130
+        },
+        "hiddenSeries": false,
+        "id": 282,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": false
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+          {
+            "$$hashKey": "object:285",
+            "alias": "mA",
+            "yaxis": 2
+          }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXPowerMeasurementsBus.*\"} ,\"name\", \"$1\", \"name\", \"KNXPowerMeasurementsBus(.*)\")\n",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "KNX Bus Volts/mA",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:102",
+            "decimals": null,
+            "format": "volt",
+            "label": "",
+            "logBase": 1,
+            "max": "37",
+            "min": "23",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:103",
+            "decimals": null,
+            "format": "mamp",
+            "label": "",
+            "logBase": 1,
+            "max": "640",
+            "min": "0",
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "decimals": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 14,
+          "w": 23,
+          "x": 0,
+          "y": 144
+        },
+        "hiddenSeries": false,
+        "id": 286,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+          {
+            "$$hashKey": "object:285",
+            "alias": "mA",
+            "yaxis": 2
+          }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXBusTraffic.*\"} ,\"name\", \"$1\", \"name\", \"KNXBusTraffic(.*)\")*100\n",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "KNX Bus Traffic",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:102",
+            "decimals": null,
+            "format": "percent",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:103",
+            "decimals": null,
+            "format": "mamp",
+            "label": "",
+            "logBase": 1,
+            "max": "640",
+            "min": "0",
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "cards": {
+          "cardPadding": null,
+          "cardRound": null
+        },
+        "color": {
+          "cardColor": "#C0D8FF",
+          "colorScale": "linear",
+          "colorScheme": "interpolateReds",
+          "exponent": 0.5,
+          "mode": "opacity"
+        },
+        "dataFormat": "tsbuckets",
+        "datasource": null,
+        "description": "Temperature from room motion sensors",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 158
+        },
+        "heatmap": {},
+        "hideZeroBuckets": true,
+        "highlightCards": true,
+        "id": 281,
+        "legend": {
+          "show": false
+        },
+        "pluginVersion": "7.3.2",
+        "reverseYBuckets": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_contact{name=~\"KNXMotionContact.*\"} ,\"name\", \"$1\", \"name\", \"KNXMotionContact(.*)\")\n",
+            "format": "heatmap",
+            "instant": false,
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Presence",
+        "tooltip": {
+          "show": false,
+          "showHistogram": false
+        },
+        "transparent": true,
+        "type": "heatmap",
+        "xAxis": {
+          "show": true
+        },
+        "xBucketNumber": null,
+        "xBucketSize": null,
+        "yAxis": {
+          "decimals": null,
+          "format": "pixel",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true,
+          "splitFactor": null
+        },
+        "yBucketBound": "lower",
+        "yBucketNumber": null,
+        "yBucketSize": null
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "Brightness from room motion sensors",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 14,
+          "w": 23,
+          "x": 0,
+          "y": 166
+        },
+        "hiddenSeries": false,
+        "id": 280,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_number{name=~\"KNXLuminosityLux.*\"} ,\"name\", \"$1\", \"name\", \"KNXLuminosityLux(.*)\")",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Room Brightness",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:102",
+            "format": "lux",
+            "label": null,
+            "logBase": 10,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:103",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {
+          "Heating": "semi-dark-red",
+          "House": "semi-dark-green"
+        },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "Heating and general electricity costs based on 24h consumption.",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 3,
+        "gridPos": {
+          "h": 10,
+          "w": 24,
+          "x": 0,
+          "y": 180
+        },
+        "hiddenSeries": false,
+        "id": 277,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "label_replace(increase(openhab2_metric_number{name=\"HousePowerCounter\"}[24h])/1000*0.26*30, \"name\", \"$1\", \"name\", \"(.*)PowerCounter\")",
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          },
+          {
+            "expr": "label_replace(increase(openhab2_metric_number{name=\"HeatingPowerCounter\"}[24h])/1000*0.19*30, \"name\", \"$1\", \"name\", \"(.*)PowerCounter\")\n",
+            "instant": false,
+            "interval": "",
+            "legendFormat": "{{name}}",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Electricity Costs",
+        "tooltip": {
+          "shared": false,
+          "sort": 0,
+          "value_type": "cumulative"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:167",
+            "format": "currencyEUR",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:168",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "cacheTimeout": null,
+        "columns": [],
+        "datasource": null,
+        "description": "How much does it cost to run different devices per year. Averaged over the last 14 days. (electricity price=0.26/KWh)",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 8,
+          "w": 9,
+          "x": 0,
+          "y": 190
+        },
+        "id": 275,
+        "interval": "",
+        "links": [],
+        "pageSize": null,
+        "pluginVersion": "6.1.6",
+        "scroll": false,
+        "showHeader": true,
+        "sort": {
+          "col": 2,
+          "desc": true
+        },
+        "styles": [
+          {
+            "alias": "",
+            "align": "auto",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "Time",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          },
+          {
+            "alias": " ",
+            "align": "auto",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "link": false,
+            "mappingType": 1,
+            "pattern": "Metric",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": " ",
+            "align": "auto",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 0,
+            "mappingType": 1,
+            "pattern": "Value",
+            "thresholds": [],
+            "type": "number",
+            "unit": "currencyEUR"
+          }
+        ],
+        "targets": [
+          {
+            "expr": "label_replace(avg_over_time(openhab2_metric_number{instance=\"bunker.imagilan:9997\",job=\"openhab\",name=~\".*Hs110.*Power.*\"}[7d]), \"name\", \"$1\", \"name\", \".*Hs110(.*)_Power\")*24*365*0.26/1000",
+            "format": "time_series",
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 10,
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Cost Per Year",
+        "transform": "timeseries_to_rows",
+        "transparent": true,
+        "type": "table-old"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 0,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 198
+        },
+        "hiddenSeries": false,
+        "id": 273,
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": true,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "total": false,
+          "values": true
+        },
+        "lines": true,
+        "linewidth": 2,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "avg_over_time(openhab2_metric_number{instance=\"bunker.imagilan:9997\",job=\"openhab\",name=~\".*Voltage\"}[5m])",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Voltage monitoring",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "volt",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "cacheTimeout": null,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 0,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 12,
+          "w": 24,
+          "x": 0,
+          "y": 206
+        },
+        "hiddenSeries": false,
+        "id": 271,
+        "interval": "",
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "hideEmpty": false,
+          "hideZero": false,
+          "max": false,
+          "min": false,
+          "rightSide": false,
+          "show": true,
+          "sort": "avg",
+          "sortDesc": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 2,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+          {
+            "alias": "/cost/",
+            "color": "#F2CC0C",
+            "dashes": true,
+            "yaxis": 2
+          }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "label_replace(openhab2_metric_number{instance=\"bunker.imagilan:9997\",job=\"openhab\",name=~\".*Hs110.*Power.*\"}, \"name\", \"$1\", \"name\", \".*Hs110(.*)_Power\")",
+            "format": "time_series",
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          },
+          {
+            "expr": "label_replace(avg_over_time(openhab2_metric_number{instance=\"bunker.imagilan:9997\",job=\"openhab\",name=~\".*Hs110.*Power.*\"}[7d]), \"name\", \"$1\", \"name\", \".*Hs110(.*)_Power\")  ",
+            "format": "time_series",
+            "hide": true,
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{name}} average",
+            "refId": "B"
+          },
+          {
+            "expr": "label_replace(avg_over_time(openhab2_metric_number{instance=\"bunker.imagilan:9997\",job=\"openhab\",name=~\".*Hs110.*Power.*\"}[$__interval]), \"name\", \"$1\", \"name\", \".*Hs110(.*)_Power\")*24*365*0.26/1000",
+            "format": "time_series",
+            "hide": true,
+            "intervalFactor": 1,
+            "legendFormat": "{{name}} cost",
+            "refId": "C"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "tooltip": {
+          "shared": true,
+          "sort": 1,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "watt",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "currencyEUR",
+            "label": "Cost",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "collapsed": false,
+        "datasource": null,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 218
+        },
+        "id": 267,
+        "panels": [],
+        "title": "Volumes",
+        "type": "row"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 0,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 219
+        },
+        "hiddenSeries": false,
+        "id": 269,
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": true,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sort": "current",
+          "sortDesc": false,
+          "total": false,
+          "values": true
+        },
+        "lines": true,
+        "linewidth": 2,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "label_replace(openhab2_metric_dimmer{job=\"openhab\",name=~\".*Volume.*\"},\"name\", \"$1\", \"name\", \"ChromecastAudio(.*)Volume\")",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{name}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Audio Volumes",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:469",
+            "format": "percent",
+            "label": null,
+            "logBase": 1,
+            "max": "100",
+            "min": "0",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:470",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "collapsed": false,
+        "datasource": null,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 227
+        },
+        "id": 264,
+        "panels": [],
+        "repeat": null,
+        "title": "Basic Net / Disk Info",
+        "type": "row"
+      },
+      {
+        "aliasColors": {
+          "Recv_bytes_eth2": "#7EB26D",
+          "Recv_bytes_lo": "#0A50A1",
+          "Recv_drop_eth2": "#6ED0E0",
+          "Recv_drop_lo": "#E0F9D7",
+          "Recv_errs_eth2": "#BF1B00",
+          "Recv_errs_lo": "#CCA300",
+          "Trans_bytes_eth2": "#7EB26D",
+          "Trans_bytes_lo": "#0A50A1",
+          "Trans_drop_eth2": "#6ED0E0",
+          "Trans_drop_lo": "#E0F9D7",
+          "Trans_errs_eth2": "#BF1B00",
+          "Trans_errs_lo": "#CCA300",
+          "recv_bytes_lo": "#0A50A1",
+          "recv_drop_eth0": "#99440A",
+          "recv_drop_lo": "#967302",
+          "recv_errs_eth0": "#BF1B00",
+          "recv_errs_lo": "#890F02",
+          "rx eth0.4": "#7eb26d",
+          "rx ffvpn": "#7eb26d",
+          "trans_bytes_eth0": "#7EB26D",
+          "trans_bytes_lo": "#0A50A1",
+          "trans_drop_eth0": "#99440A",
+          "trans_drop_lo": "#967302",
+          "trans_errs_eth0": "#BF1B00",
+          "trans_errs_lo": "#890F02",
+          "tx eth0.4 ": "#3f6833",
+          "tx ffvpn ": "#7eb26d"
+        },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "prometheus",
+        "description": "Basic network info per interface",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 3,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 13,
+          "w": 24,
+          "x": 0,
+          "y": 228
+        },
+        "hiddenSeries": false,
+        "id": 74,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "hideEmpty": true,
+          "hideZero": false,
+          "max": false,
+          "min": false,
+          "rightSide": false,
+          "show": true,
+          "sort": "current",
+          "sortDesc": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [
+          {
+            "url": "/"
+          }
+        ],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+          {
+            "alias": "/.*tx.*/",
+            "transform": "negative-Y"
+          },
+          {
+            "alias": "/.*eth0.*/",
+            "color": "rgba(81, 149, 206, 0.45)",
+            "linewidth": 1
+          },
+          {
+            "alias": "/.*ffvpn.*/",
+            "color": "rgba(255, 0, 0, 0.22)",
+            "linewidth": 0
+          }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "rate(node_network_receive_bytes_total{instance=\"w16gw.imagilan:9100\",job=~\"$job\",device=~\"ffvpn|eth0.4\"}[5m])",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "intervalFactor": 1,
+            "legendFormat": "rx {{device}}",
+            "refId": "A",
+            "step": 240
+          },
+          {
+            "expr": "rate(node_network_transmit_bytes_total{instance=\"w16gw.imagilan:9100\",job=~\"$job\",device=~\"ffvpn|eth0.4\"}[5m])",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "intervalFactor": 1,
+            "legendFormat": "tx {{device}} ",
+            "refId": "B",
+            "step": 240
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "up/downstream",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "bps",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "pps",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {
+          "Recv_bytes_eth2": "#7EB26D",
+          "Recv_bytes_lo": "#0A50A1",
+          "Recv_drop_eth2": "#6ED0E0",
+          "Recv_drop_lo": "#E0F9D7",
+          "Recv_errs_eth2": "#BF1B00",
+          "Recv_errs_lo": "#CCA300",
+          "Trans_bytes_eth2": "#7EB26D",
+          "Trans_bytes_lo": "#0A50A1",
+          "Trans_drop_eth2": "#6ED0E0",
+          "Trans_drop_lo": "#E0F9D7",
+          "Trans_errs_eth2": "#BF1B00",
+          "Trans_errs_lo": "#CCA300",
+          "recv_bytes_lo": "#0A50A1",
+          "recv_drop_eth0": "#99440A",
+          "recv_drop_lo": "#967302",
+          "recv_errs_eth0": "#BF1B00",
+          "recv_errs_lo": "#890F02",
+          "rx eth0.4": "#7eb26d",
+          "rx ffvpn": "#7eb26d",
+          "trans_bytes_eth0": "#7EB26D",
+          "trans_bytes_lo": "#0A50A1",
+          "trans_drop_eth0": "#99440A",
+          "trans_drop_lo": "#967302",
+          "trans_errs_eth0": "#BF1B00",
+          "trans_errs_lo": "#890F02",
+          "tx eth0.4 ": "#3f6833",
+          "tx ffvpn ": "#7eb26d"
+        },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "prometheus",
+        "description": "How many devices are connected",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 13,
+          "w": 24,
+          "x": 0,
+          "y": 241
+        },
+        "hiddenSeries": false,
+        "hideTimeOverride": false,
+        "id": 265,
+        "interval": "",
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": true,
+          "min": false,
+          "rightSide": false,
+          "show": true,
+          "sort": "max",
+          "sortDesc": false,
+          "total": false,
+          "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [
+          {
+            "url": "/"
+          }
+        ],
+        "nullPointMode": "connected",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.6",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+          {
+            "alias": "/.*ffunk.*/",
+            "color": "rgba(255, 2, 2, 0.47)"
+          },
+          {
+            "alias": "/.*imagi.*/",
+            "color": "rgba(81, 149, 206, 0.45)"
+          },
+          {
+            "alias": "/.*iot.*/",
+            "color": "rgba(51, 146, 226, 0.76)"
+          }
+        ],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "sort_desc(count(wifi_station_tx_packets_total) by (ifname))",
+            "format": "time_series",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{ifname}}",
+            "refId": "A",
+            "step": 240
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "wifi clients",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "cumulative"
+        },
+        "transparent": true,
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "none",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "pps",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": null,
+          "current": {
+            "selected": false,
+            "text": "node",
+            "value": "node"
+          },
+          "datasource": "prometheus",
+          "definition": "",
+          "description": null,
+          "error": null,
+          "hide": 0,
+          "includeAll": false,
+          "label": "Job",
+          "multi": false,
+          "name": "job",
+          "options": [],
+          "query": {
+            "query": "label_values(node_boot_time_seconds,job)",
+            "refId": "prometheus-job-Variable-Query"
+          },
+          "refresh": 2,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 1,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "selected": false,
+            "text": "bunker.imagilan",
+            "value": "bunker.imagilan"
+          },
+          "datasource": "prometheus",
+          "definition": "",
+          "description": null,
+          "error": null,
+          "hide": 0,
+          "includeAll": false,
+          "label": "Host:",
+          "multi": false,
+          "name": "node",
+          "options": [],
+          "query": {
+            "query": "label_values(node_boot_time_seconds, instance)",
+            "refId": "prometheus-node-Variable-Query"
+          },
+          "refresh": 1,
+          "regex": "/([^:]+):.*/",
+          "skipUrlSync": false,
+          "sort": 1,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "selected": false,
+            "text": "9100",
+            "value": "9100"
+          },
+          "datasource": "prometheus",
+          "definition": "",
+          "description": null,
+          "error": null,
+          "hide": 0,
+          "includeAll": false,
+          "label": "Port",
+          "multi": false,
+          "name": "port",
+          "options": [],
+          "query": {
+            "query": "label_values(node_boot_time_seconds{instance=~\"$node:(.*)\"}, instance)",
+            "refId": "prometheus-port-Variable-Query"
+          },
+          "refresh": 1,
+          "regex": "/[^:]+:(.*)/",
+          "skipUrlSync": false,
+          "sort": 3,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        }
+      ]
+    },
+    "time": {
+      "from": "now-24h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "OpenHAB Items",
+    "uid": "biUYJx9mk",
+    "version": 87
+  }
