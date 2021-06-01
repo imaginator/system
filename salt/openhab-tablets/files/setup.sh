@@ -1,6 +1,8 @@
 #!/bin/bash
 set -xe
 
+adb root
+
 # https://f-droid.org/packages/de.vier_bier.habpanelviewer/
 adb install -r de.vier_bier.habpanelviewer_8.apk
 adb shell pm clear de.vier_bier.habpanelviewer
@@ -26,6 +28,10 @@ adb shell pm enable de.vier_bier.habpanelviewer
 
 # start habpanelviewer with new preferences
 adb shell am start -n de.vier_bier.habpanelviewer/.MainActivity
+
+# set timezone
+adb shell setprop persist.sys.timezone Europe/Berlin
+
 
 # remove cruft
 adb shell pm disable org.cyanogenmod.audiofx
