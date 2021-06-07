@@ -14,7 +14,7 @@ Number      Tablet_Bedroom1_Battery_Temp
 Number      Tablet_Bedroom1_Brightness
 Number      Tablet_Bedroom1_Pressure
 Number      Tablet_Bedroom1_Volume
-String      Tablet_Bedroom1_Command            
+String      Tablet_Bedroom1_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Bedroom1_Url
 
 Contact     Tablet_Bedroom2_Battery_Charging
@@ -32,7 +32,7 @@ Number      Tablet_Bedroom2_Battery_Temp
 Number      Tablet_Bedroom2_Brightness
 Number      Tablet_Bedroom2_Pressure
 Number      Tablet_Bedroom2_Volume
-String      Tablet_Bedroom2_Command          
+String      Tablet_Bedroom2_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Bedroom2_Url
 
 Contact     Tablet_Bedroom3_Battery_Charging
@@ -50,7 +50,7 @@ Number      Tablet_Bedroom3_Battery_Temp
 Number      Tablet_Bedroom3_Brightness
 Number      Tablet_Bedroom3_Pressure
 Number      Tablet_Bedroom3_Volume
-String      Tablet_Bedroom3_Command            
+String      Tablet_Bedroom3_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Bedroom3_Url
 
 Contact     Tablet_BathMain_Battery_Charging
@@ -68,7 +68,7 @@ Number      Tablet_BathMain_Battery_Temp
 Number      Tablet_BathMain_Brightness
 Number      Tablet_BathMain_Pressure
 Number      Tablet_BathMain_Volume
-String      Tablet_BathMain_Command            
+String      Tablet_BathMain_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_BathMain_Url
 
 Contact     Tablet_BathGuest_Battery_Charging
@@ -86,7 +86,7 @@ Number      Tablet_BathGuest_Battery_Temp
 Number      Tablet_BathGuest_Brightness
 Number      Tablet_BathGuest_Pressure
 Number      Tablet_BathGuest_Volume
-String      Tablet_BathGuest_Command            
+String      Tablet_BathGuest_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_BathGuest_Url
 
 
@@ -105,7 +105,7 @@ Number      Tablet_Study_Battery_Temp
 Number      Tablet_Study_Brightness
 Number      Tablet_Study_Pressure
 Number      Tablet_Study_Volume
-String      Tablet_Study_Command            
+String      Tablet_Study_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Study_Url
 
 Contact     Tablet_Lounge_Battery_Charging
@@ -123,7 +123,7 @@ Number      Tablet_Lounge_Battery_Temp
 Number      Tablet_Lounge_Brightness
 Number      Tablet_Lounge_Pressure
 Number      Tablet_Lounge_Volume
-String      Tablet_Lounge_Command            
+String      Tablet_Lounge_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Lounge_Url
 
 Contact     Tablet_Kitchen_Battery_Charging
@@ -141,7 +141,7 @@ Number      Tablet_Kitchen_Battery_Temp
 Number      Tablet_Kitchen_Brightness
 Number      Tablet_Kitchen_Pressure
 Number      Tablet_Kitchen_Volume
-String      Tablet_Kitchen_Command            
+String      Tablet_Kitchen_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_Kitchen_Url
 
 Contact     Tablet_HallwayLarge_Battery_Charging
@@ -159,5 +159,5 @@ Number      Tablet_HallwayLarge_Battery_Temp
 Number      Tablet_HallwayLarge_Brightness
 Number      Tablet_HallwayLarge_Pressure
 Number      Tablet_HallwayLarge_Volume
-String      Tablet_HallwayLarge_Command            
+String      Tablet_HallwayLarge_Control                    "Tablet Control"    (gHabpanelAllControl)
 String      Tablet_HallwayLarge_Url

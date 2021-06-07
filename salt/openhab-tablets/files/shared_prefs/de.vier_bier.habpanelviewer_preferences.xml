@@ -41,7 +41,7 @@
     <string name="pref_battery_temp_item">Tablet_BathMain_Battery_Temp</string>
     <string name="pref_brightness_intervall">60</string>
     <string name="pref_brightness_item">Tablet_BathMain_Brightness</string>
-    <string name="pref_command_item">Tablet_BathMain_Command</string>
+    <string name="pref_command_item">Tablet_BathMain_Control</string>
     <string name="pref_connected_interval">60</string>
     <string name="pref_connected_item">Tablet_BathMain_ConnectedTime</string>
     <string name="pref_current_url_item">Tablet_BathMain_Url</string>
