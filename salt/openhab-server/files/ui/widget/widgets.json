@@ -1,0 +1,122 @@
+[
+    {
+        "uid": "Grafana chart with timeranges",
+        "tags": [],
+        "props": {
+            "parameters": [
+                {
+                    "description": "Title of the chart",
+                    "label": "Title",
+                    "name": "title",
+                    "required": false,
+                    "type": "TEXT"
+                },
+                {
+                    "description": "Footer of the chart",
+                    "label": "Footer",
+                    "name": "footer",
+                    "required": false,
+                    "type": "TEXT"
+                },
+                {
+                    "description": "URL to show in the frame",
+                    "label": "Source URL",
+                    "name": "URL",
+                    "required": true,
+                    "type": "TEXT"
+                },
+                {
+                    "description": "Comma-separated list of options. Use value\u003dlabel format (e.g. 1d\u003d1 day) to provide a label different than the option. Minimum 1 entry required. The first entry is the default timerange.",
+                    "label": "Time range options",
+                    "name": "timerange",
+                    "required": true,
+                    "type": "TEXT"
+                },
+                {
+                    "description": "Height of the Frame (empty \u003d default)",
+                    "label": "Height",
+                    "name": "height",
+                    "required": false,
+                    "type": "TEXT"
+                }
+            ],
+            "parameterGroups": []
+        },
+        "timestamp": "2021-06-23T12:48:47.041+0200",
+        "component": "f7-card-content",
+        "config": {
+            "style": {
+                "--f7-card-margin-horizontal": "0px",
+                "--f7-card-margin-vertical": "3px",
+                "--f7-card-content-padding-horizontal": "10px",
+                "--f7-card-content-padding-vertical": "10px"
+            }
+        },
+        "slots": {
+            "default": [
+                {
+                    "component": "oh-webframe-card",
+                    "config": {
+                        "title": "\u003dprops.title",
+                        "borders": false,
+                        "noBorder": false,
+                        "outline": true,
+                        "height": "\u003dprops.height",
+                        "src": "\u003dprops.URL.replace(\u0027{period}\u0027, vars.selectedPeriod || [props.timerange.split(\u0027,\u0027)[0].split(\u0027\u003d\u0027)[0]])",
+                        "footer": "\u003dprops.footer",
+                        "class": [
+                            "display-block"
+                        ]
+                    }
+                },
+                {
+                    "component": "f7-segmented",
+                    "config": {
+                        "round": false,
+                        "outline": false,
+                        "style": {
+                            "--f7-button-bg-color": "rgba(255, 255, 255, 0.05)"
+                        }
+                    },
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-repeater",
+                                "config": {
+                                    "sourceType": "range",
+                                    "for": "size",
+                                    "fragment": true
+                                },
+                                "slots": {
+                                    "default": [
+                                        {
+                                            "component": "oh-repeater",
+                                            "config": {
+                                                "fragment": true,
+                                                "for": "period",
+                                                "in": "\u003d[props.timerange.split(\",\")[loop.size].split(\"\u003d\")[1]]"
+                                            },
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-button",
+                                                        "config": {
+                                                            "text": "\u003dloop.period",
+                                                            "fill": "\u003d(([props.timerange.split(\u0027,\u0027)[loop.size].split(\u0027\u003d\u0027)[0]] \u003d\u003d vars.selectedPeriod) || (props.timerange.split(\u0027,\u0027)[0].split(\u0027\u003d\u0027)[1] \u003d\u003d\u003d loop.period) \u0026\u0026 !vars.selectedPeriod) ? true : false",
+                                                            "round": false,
+                                                            "outline": true,
+                                                            "style": {
+                                                                "--f7-button-font-size": "14px",
+                                                                "--f7-button-font-weight": 300.0,
+                                                                "--f7-button-text-transform": "none",
+                                                                "--f7-button-border-width": "1px",
+                                                                "--f7-button-text-color": "white",
+                                                                "--f7-button-border-color": "rgba(255,255,255,.15)",
+                                                                "--f7-button-padding-vertical": "0px",
+                                                                "--f7-button-padding-horizontal": "0px",
+                                                                "--f7-button-fill-hover-bg-color": "rgba(var(--f7-theme-color-rgb), 1)"
+                                                            },
+                                                            "action": "variable",
+                                                            "actionVariable": "selectedPeriod",
+                                                            "actionVariableValue": "\u003dprops.timerange.split(\",\")[loop.s
+                                                            
