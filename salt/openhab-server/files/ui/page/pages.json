@@ -1,212 +1,13 @@
 [
     {
-        "uid": "overview",
-        "timestamp": "2021-06-10T21:54:41.000+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "label": "Overview"
-        },
-        "slots": {
-            "default": [],
-            "grid": [],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "action": "navigate",
-                                    "actionPage": "page:Kitchen",
-                                    "icon": "material:kitchen",
-                                    "actionPageTransition": "f7-parallax",
-                                    "vertical": true,
-                                    "title": "Ktchen",
-                                    "noBorder": true,
-                                    "noShadow": true
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Study",
-                                    "action": "navigate",
-                                    "icon": "f7:book",
-                                    "actionPage": "page:Study"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Lounge",
-                                    "action": "navigate",
-                                    "icon": "f7:tv",
-                                    "actionPage": "page:Lounge"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "icon": "material:bathtub",
-                                    "title": "Main Bathroom",
-                                    "action": "navigate",
-                                    "actionPage": "page:BathroomMain"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Guest Bathroom",
-                                    "action": "navigate",
-                                    "actionPage": "page:BathroomGuest",
-                                    "icon": "material:bathtub"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Bedroom  1",
-                                    "action": "navigate",
-                                    "actionPage": "page:Bedroom1",
-                                    "icon": "f7:bed_double",
-                                    "background": "colour: blue",
-                                    "noBorder": true,
-                                    "noShadow": true,
-                                    "outline": true
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Bedroom 2",
-                                    "icon": "f7:bed_double",
-                                    "action": "navigate",
-                                    "actionPage": "page:Bedroom2"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Bedroom 3",
-                                    "action": "navigate",
-                                    "actionPage": "page:Bedroom3",
-                                    "icon": "f7:bed_double"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Hallway Large",
-                                    "action": "navigate",
-                                    "actionPage": "page:HallwayLarge"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "title": "Hallway Small",
-                                    "action": "navigate",
-                                    "actionPage": "page:HallwaySmall"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "uid": "Bedroom3",
-        "timestamp": "2021-06-23T12:39:20.000+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "colNum": 8.0,
-            "label": "Guest Room",
-            "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true
-        },
-        "slots": {
-            "default": [],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom3Statustext"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXTemperatureCelciusBedroom3"
-                                }
-                            },
-                            {
-                                "component": "oh-player-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom3Control"
-                                }
-                            },
-                            {
-                                "component": "oh-slider-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom3Volume"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "vertical": true,
-                                    "item": "Bedroom3InsideBlindPosition",
-                                    "footer": "inside"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "item": "Bedroom3OutsideBlindPosition",
-                                    "vertical": true,
-                                    "footer": "outside"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXMotionContactBedroom3"
-                                }
-                            },
-                            {
-                                "component": "oh-colorpicker-card",
-                                "config": {
-                                    "modules": [
-                                        "wheel"
-                                    ],
-                                    "item": "KNXRGBWLightingRGBblue"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "uid": "ventilation",
-        "timestamp": "2021-06-23T12:43:23.795+0200",
+        "uid": "Ventilation",
+        "timestamp": "2021-06-26T19:13:04.412+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "label": "Ventilation",
             "sidebar": true,
-            "order": "-1"
+            "order": "+90"
         },
         "slots": {
             "default": [
@@ -313,15 +114,14 @@
     },
     {
         "uid": "BathroomGuest",
-        "timestamp": "2021-06-10T23:03:33.000+0200",
+        "timestamp": "2021-06-26T19:13:04.461+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "colNum": 8.0,
             "label": "Guest Bathroom",
             "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
+            "order": "-30",
             "scale": true
         },
         "slots": {
@@ -393,525 +193,17 @@
         }
     },
     {
-        "uid": "Kitchen",
-        "timestamp": "2021-06-23T12:43:52.175+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "colNum": 8.0,
-            "label": "Kitchen",
-            "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true,
-            "order": "+60"
-        },
-        "slots": {
-            "default": [
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-grid-row",
-                                "config": {},
-                                "slots": {
-                                    "default": [
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-rollershutter-card",
-                                                        "config": {
-                                                            "vertical": true,
-                                                            "item": "KitchenLeft"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-rollershutter-card",
-                                                        "config": {
-                                                            "vertical": true,
-                                                            "item": "KitchenMiddle"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-rollershutter-card",
-                                                        "config": {
-                                                            "vertical": true,
-                                                            "item": "KitchenRight"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {
-                        "default": []
-                    }
-                }
-            ],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "ChromecastAudioKitchenStatustext"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXTemperatureCelciusKitchen"
-                                }
-                            },
-                            {
-                                "component": "oh-player-card",
-                                "config": {
-                                    "item": "ChromecastAudioKitchenControl"
-                                }
-                            },
-                            {
-                                "component": "oh-slider-card",
-                                "config": {
-                                    "item": "ChromecastAudioKitchenVolume"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXMotionContactKitchen"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "uid": "home",
-        "timestamp": "2021-06-25T14:15:32.504+0200",
-        "component": "oh-home-page",
-        "config": {
-            "label": "Home Page",
-            "displayModelCardsTo": [
-                "role:administrator",
-                "role:user"
-            ],
-            "allowChatInputTo": [
-                "role:administrator",
-                "role:user"
-            ]
-        },
-        "slots": {
-            "locations": [
-                {
-                    "component": "oh-locations-tab",
-                    "config": {
-                        "excludedCards": [],
-                        "cardOrder": [
-                            "gKitchen",
-                            "gHallwayLarge",
-                            "gStudy",
-                            "gBathroomGuest",
-                            "gBathroomMain",
-                            "gBedroom1",
-                            "gBedroom2",
-                            "gBedroom3",
-                            "gLaundry",
-                            "gLounge",
-                            "gHallwaySmall",
-                            "gTerrace",
-                            "gRooms"
-                        ]
-                    },
-                    "slots": {
-                        "gLaundry": [
-                            {
-                                "component": "oh-location-card",
-                                "config": {}
-                            }
-                        ],
-                        "gBathroomMain": [
-                            {
-                                "component": "oh-location-card",
-                                "config": {
-                                    "badges": [
-                                        "blinds",
-                                        "presence",
-                                        "temperature"
-                                    ]
-                                }
-                            }
-                        ],
-                        "gRooms": [
-                            {
-                                "component": "oh-location-card",
-                                "config": {}
-                            }
-                        ]
-                    }
-                }
-            ],
-            "equipment": [
-                {
-                    "component": "oh-equipment-tab",
-                    "config": {},
-                    "slots": {}
-                }
-            ],
-            "properties": [
-                {
-                    "component": "oh-properties-tab",
-                    "config": {},
-                    "slots": {}
-                }
-            ]
-        }
-    },
-    {
-        "uid": "weather",
-        "timestamp": "2021-06-23T12:42:39.948+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "label": "Weather",
-            "sidebar": true,
-            "order": "-50"
-        },
-        "slots": {
-            "default": [
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-grid-row",
-                                "config": {},
-                                "slots": {
-                                    "default": [
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-label-card",
-                                                        "config": {
-                                                            "title": "Wind Speed",
-                                                            "item": "KNXWeatherStationWeatherStationWindSpeed"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-label-card",
-                                                        "config": {
-                                                            "title": "Outside Temperature",
-                                                            "item": "KNXWeatherStationWeatherStationTemperature"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-label-card",
-                                                        "config": {
-                                                            "item": "KNXWeatherStationWeatherStationBrightnessSouth",
-                                                            "title": "Sunshine (south)"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            ],
-            "grid": []
-        }
-    },
-    {
-        "uid": "Bedroom2",
-        "timestamp": "2021-06-23T12:39:02.000+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "colNum": 8.0,
-            "label": "Alistair\u0027s Room",
-            "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true
-        },
-        "slots": {
-            "default": [],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom2Statustext"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXTemperatureCelciusBedroom2"
-                                }
-                            },
-                            {
-                                "component": "oh-player-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom2Control"
-                                }
-                            },
-                            {
-                                "component": "oh-slider-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom2Volume"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "vertical": true,
-                                    "item": "Bedroom2InsideBlindPosition",
-                                    "footer": "inside"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "item": "Bedroom2OutsideBlindPosition",
-                                    "vertical": true,
-                                    "footer": "outside"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXMotionContactBedroom2"
-                                }
-                            },
-                            {
-                                "component": "oh-colorpicker-card",
-                                "config": {
-                                    "modules": [
-                                        "wheel"
-                                    ],
-                                    "item": "KNXRGBWLightingRGBblue"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "uid": "measurements",
-        "timestamp": "2021-06-23T17:31:26.580+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "label": "Consumption",
-            "sidebar": true,
-            "order": "-10"
-        },
-        "slots": {
-            "default": [
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-grid-row",
-                                "config": {},
-                                "slots": {
-                                    "default": [
-                                        {
-                                            "component": "oh-grid-col",
-                                            "config": {},
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "widget:Grafana chart with timeranges",
-                                                        "config": {
-                                                            "timerange": "30d\u003dmonthly,7d\u003dweekly, 1d\u003ddaily,1h\u003dhourly,5m\u003d5 mins",
-                                                            "URL": "http://bunker.imagilan/grafana/render/d-solo/biUYJx9mk/openhab?orgId\u003d2\u0026theme\u003ddark\u0026panelId\u003d293\u0026width\u003d966\u0026height\u003d670\u0026tz\u003dEurope%2FBerlin\u0026from\u003dnow-{period}\u0026to\u003dnow",
-                                                            "height": "670"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            ],
-            "grid": [],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": []
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "uid": "Bedroom1",
-        "timestamp": "2021-06-23T12:38:41.000+0200",
-        "component": "oh-layout-page",
-        "config": {
-            "layoutType": "responsive",
-            "colNum": 8.0,
-            "label": "Simon\u0027s Room",
-            "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true
-        },
-        "slots": {
-            "default": [
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {}
-                }
-            ],
-            "masonry": [
-                {
-                    "component": "oh-masonry",
-                    "slots": {
-                        "default": [
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom1Statustext"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXTemperatureCelciusBedroom1"
-                                }
-                            },
-                            {
-                                "component": "oh-player-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom1Control"
-                                }
-                            },
-                            {
-                                "component": "oh-slider-card",
-                                "config": {
-                                    "item": "ChromecastAudioBedroom1Volume"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "vertical": true,
-                                    "item": "Bedroom1InsideBlindPosition",
-                                    "footer": "inside"
-                                }
-                            },
-                            {
-                                "component": "oh-rollershutter-card",
-                                "config": {
-                                    "item": "Bedroom1OutsideBlindPosition",
-                                    "vertical": true,
-                                    "footer": "outside"
-                                }
-                            },
-                            {
-                                "component": "oh-label-card",
-                                "config": {
-                                    "item": "KNXMotionContactBedroom1"
-                                }
-                            },
-                            {
-                                "component": "oh-colorpicker-card",
-                                "config": {
-                                    "modules": [
-                                        "wheel"
-                                    ],
-                                    "item": "KNXRGBWLightingRGBblue"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
         "uid": "Lounge",
-        "timestamp": "2021-06-06T10:12:58.000+0200",
+        "timestamp": "2021-06-26T19:13:04.852+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "colNum": 8.0,
             "label": "Lounge",
             "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true
+            "scale": true,
+            "order": "-50"
+
         },
         "slots": {
             "default": [
@@ -1129,15 +421,486 @@
         }
     },
     {
-        "uid": "HallwayLarge",
-        "timestamp": "2021-06-25T13:51:12.434+0200",
+        "uid": "Weather",
+        "timestamp": "2021-06-27T17:44:16.901+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "label": "Weather",
+            "sidebar": true,
+            "order": "+50"
+        },
+        "slots": {
+            "default": [
+                {
+                    "component": "oh-block",
+                    "config": {},
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-grid-row",
+                                "config": {},
+                                "slots": {
+                                    "default": [
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-label-card",
+                                                        "config": {
+                                                            "title": "Wind Speed",
+                                                            "item": "KNXWeatherStationWeatherStationWindSpeed"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-label-card",
+                                                        "config": {
+                                                            "title": "Outside Temperature",
+                                                            "item": "KNXWeatherStationWeatherStationTemperature"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-label-card",
+                                                        "config": {
+                                                            "item": "KNXWeatherStationWeatherStationBrightnessSouth",
+                                                            "title": "Sunshine (south)"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "grid": []
+        }
+    },
+    {
+        "uid": "Home",
+        "timestamp": "2021-06-26T19:13:04.552+0200",
+        "component": "oh-home-page",
+        "config": {
+            "label": "Home Page",
+            "displayModelCardsTo": [
+                "role:administrator",
+                "role:user"
+            ],
+            "allowChatInputTo": [
+                "role:administrator",
+                "role:user"
+            ]
+        },
+        "slots": {
+            "locations": [
+                {
+                    "component": "oh-locations-tab",
+                    "config": {
+                        "excludedCards": [],
+                        "cardOrder": [
+                            "gKitchen",
+                            "gHallwayLarge",
+                            "gStudy",
+                            "gBathroomGuest",
+                            "gBathroomMain",
+                            "gBedroom1",
+                            "gBedroom2",
+                            "gBedroom3",
+                            "gLaundry",
+                            "gLounge",
+                            "gHallwaySmall",
+                            "gTerrace",
+                            "gRooms"
+                        ]
+                    },
+                    "slots": {
+                        "gLaundry": [
+                            {
+                                "component": "oh-location-card",
+                                "config": {}
+                            }
+                        ],
+                        "gBathroomMain": [
+                            {
+                                "component": "oh-location-card",
+                                "config": {
+                                    "badges": [
+                                        "blinds",
+                                        "presence",
+                                        "temperature"
+                                    ]
+                                }
+                            }
+                        ],
+                        "gRooms": [
+                            {
+                                "component": "oh-location-card",
+                                "config": {}
+                            }
+                        ]
+                    }
+                }
+            ],
+            "equipment": [
+                {
+                    "component": "oh-equipment-tab",
+                    "config": {},
+                    "slots": {}
+                }
+            ],
+            "properties": [
+                {
+                    "component": "oh-properties-tab",
+                    "config": {},
+                    "slots": {}
+                }
+            ]
+        }
+    },
+    {
+        "uid": "Kitchen",
+        "timestamp": "2021-06-26T19:13:04.506+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "colNum": 8.0,
+            "label": "Kitchen",
+            "sidebar": true,
+            "scale": true,
+            "order": "-200"
+        },
+        "slots": {
+            "default": [
+                {
+                    "component": "oh-block",
+                    "config": {},
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-grid-row",
+                                "config": {},
+                                "slots": {
+                                    "default": [
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-rollershutter-card",
+                                                        "config": {
+                                                            "vertical": true,
+                                                            "item": "KitchenLeft"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-rollershutter-card",
+                                                        "config": {
+                                                            "vertical": true,
+                                                            "item": "KitchenMiddle"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "component": "oh-grid-col",
+                                            "config": {},
+                                            "slots": {
+                                                "default": [
+                                                    {
+                                                        "component": "oh-rollershutter-card",
+                                                        "config": {
+                                                            "vertical": true,
+                                                            "item": "KitchenRight"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "oh-block",
+                    "config": {},
+                    "slots": {
+                        "default": []
+                    }
+                }
+            ],
+            "masonry": [
+                {
+                    "component": "oh-masonry",
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "ChromecastAudioKitchenStatustext"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXTemperatureCelciusKitchen"
+                                }
+                            },
+                            {
+                                "component": "oh-player-card",
+                                "config": {
+                                    "item": "ChromecastAudioKitchenControl"
+                                }
+                            },
+                            {
+                                "component": "oh-slider-card",
+                                "config": {
+                                    "item": "ChromecastAudioKitchenVolume"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXMotionContactKitchen"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "uid": "Bedroom1",
+        "timestamp": "2021-06-26T19:13:04.803+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "colNum": 8.0,
+            "label": "Simon\u0027s Room",
+            "sidebar": true,
+            "order": "-20",
+            "scale": true
+        },
+        "slots": {
+            "default": [
+                {
+                    "component": "oh-block",
+                    "config": {},
+                    "slots": {}
+                }
+            ],
+            "masonry": [
+                {
+                    "component": "oh-masonry",
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom1Statustext"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXTemperatureCelciusBedroom1"
+                                }
+                            },
+                            {
+                                "component": "oh-player-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom1Control"
+                                }
+                            },
+                            {
+                                "component": "oh-slider-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom1Volume"
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "vertical": true,
+                                    "item": "Bedroom1InsideBlindPosition",
+                                    "footer": "inside"
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "item": "Bedroom1OutsideBlindPosition",
+                                    "vertical": true,
+                                    "footer": "outside"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXMotionContactBedroom1"
+                                }
+                            },
+                            {
+                                "component": "oh-colorpicker-card",
+                                "config": {
+                                    "modules": [
+                                        "wheel"
+                                    ],
+                                    "item": "KNXRGBWLightingRGBblue"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "uid": "Study",
+        "timestamp": "2021-06-26T19:13:05.096+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "colNum": 8.0,
+            "label": "Study",
+            "sidebar": true,
+            "order": "-70"
+
+        },
+        "slots": {
+            "default": [
+                {
+                    "component": "oh-block",
+                    "config": {},
+                    "slots": {
+                        "default": []
+                    }
+                }
+            ],
+            "masonry": [
+                {
+                    "component": "oh-masonry",
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "ChromecastAudioStudyStatustext"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXTemperatureCelciusStudy"
+                                }
+                            },
+                            {
+                                "component": "oh-player-card",
+                                "config": {
+                                    "item": "ChromecastAudioStudyControl"
+                                }
+                            },
+                            {
+                                "component": "oh-slider-card",
+                                "config": {
+                                    "item": "ChromecastAudioStudyVolume"
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "vertical": true,
+                                    "item": "StudyInsideBlindPosition",
+                                    "footer": "inside",
+                                    "stateInCenter": true
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "item": "StudyOutsideBlindPosition",
+                                    "vertical": true,
+                                    "footer": "outside",
+                                    "stateInCenter": true
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXMotionContactStudy"
+                                }
+                            },
+                            {
+                                "component": "oh-colorpicker-card",
+                                "config": {
+                                    "modules": [
+                                        "wheel"
+                                    ],
+                                    "item": "KNXRGBWLightingRGBblue"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXMotionContactStudy_LastChanged",
+                                    "label": "\u003ddayjs(items.KNXMotionContactStudy_LastChanged.displayState).fromNow() ",
+                                    "noBorder": true,
+                                    "noShadow": true,
+                                    "outline": true,
+                                    "background": "\u003d(items.KNXMotionContactStudy.state \u003d\u003d\"CLOSED\") ? \"lightgreen\" :\"red\"",
+                                    "iconUseState": true,
+                                    "icon": "f7:person_crop_circle_fill_badge_checkmark"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "uid": "Hallway",
+        "timestamp": "2021-06-26T19:13:04.899+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "colNum": 8.0,
             "label": "Hallway",
             "sidebar": true,
-            "order": "40"
+            "order": "-90"
         },
         "slots": {
             "default": [
@@ -1470,14 +1233,14 @@
         }
     },
     {
-        "uid": "network",
-        "timestamp": "2021-06-23T15:12:40.820+0200",
+        "uid": "Measurements",
+        "timestamp": "2021-06-26T19:13:04.722+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
-            "label": "Network",
+            "label": "Water and Electricity",
             "sidebar": true,
-            "order": "-10"
+            "order": "+10"
         },
         "slots": {
             "default": [
@@ -1499,9 +1262,9 @@
                                                     {
                                                         "component": "widget:Grafana chart with timeranges",
                                                         "config": {
-                                                            "title": "Internet",
                                                             "timerange": "30d\u003dmonthly,7d\u003dweekly, 1d\u003ddaily,1h\u003dhourly,5m\u003d5 mins",
-                                                            "URL": "http://bunker.imagilan/grafana/render/d-solo/biUYJx9mk/openhab?orgId\u003d2\u0026theme\u003ddark\u0026panelId\u003d293\u0026width\u003d1000\u0026height\u003d500\u0026tz\u003dEurope%2FBerlin\u0026from\u003dnow-{period}\u0026to\u003dnow"
+                                                            "URL": "http://bunker.imagilan/grafana/render/d-solo/biUYJx9mk/openhab?orgId\u003d2\u0026theme\u003ddark\u0026panelId\u003d293\u0026width\u003d966\u0026height\u003d670\u0026tz\u003dEurope%2FBerlin\u0026from\u003dnow-{period}\u0026to\u003dnow",
+                                                            "height": "670"
                                                         }
                                                     }
                                                 ]
@@ -1526,17 +1289,124 @@
         }
     },
     {
+        "uid": "overview",
+        "timestamp": "2021-06-26T19:13:04.322+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "label": "Overview"
+        },
+        "slots": {
+            "default": [],
+            "grid": [],
+            "masonry": [
+                {
+                    "component": "oh-masonry",
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "action": "navigate",
+                                    "actionPage": "page:Kitchen",
+                                    "icon": "material:kitchen",
+                                    "title": "Ktchen",
+                                    "noBorder": true,
+                                    "noShadow": true
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Study",
+                                    "action": "navigate",
+                                    "icon": "f7:book",
+                                    "actionPage": "page:Study"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Lounge",
+                                    "action": "navigate",
+                                    "icon": "f7:tv",
+                                    "actionPage": "page:Lounge"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "icon": "material:bathtub",
+                                    "title": "Main Bathroom",
+                                    "action": "navigate",
+                                    "actionPage": "page:BathroomMain"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Guest Bathroom",
+                                    "action": "navigate",
+                                    "actionPage": "page:BathroomGuest",
+                                    "icon": "material:bathtub"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Bedroom  1",
+                                    "action": "navigate",
+                                    "actionPage": "page:Bedroom1",
+                                    "icon": "f7:bed_double",
+                                    "background": "colour: blue",
+                                    "noBorder": true,
+                                    "noShadow": true
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Bedroom 2",
+                                    "icon": "f7:bed_double",
+                                    "action": "navigate",
+                                    "actionPage": "page:Bedroom2"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Bedroom 3",
+                                    "action": "navigate",
+                                    "actionPage": "page:Bedroom3",
+                                    "icon": "f7:bed_double"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "title": "Hallway",
+                                    "action": "navigate",
+                                    "actionPage": "page:Hallway"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
         "uid": "BathroomMain",
-        "timestamp": "2021-06-10T23:03:49.000+0200",
+        "timestamp": "2021-06-26T19:13:04.997+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "colNum": 8.0,
             "label": "Main Bathroom",
             "sidebar": true,
-            "screenWidth": 1280.0,
-            "screenHeight": 800.0,
-            "scale": true
+            "scale": true,
+            "order": "-40"
+
         },
         "slots": {
             "default": [],
@@ -1607,25 +1477,19 @@
         }
     },
     {
-        "uid": "Study",
-        "timestamp": "2021-06-10T22:59:49.000+0200",
+        "uid": "Bedroom2",
+        "timestamp": "2021-06-26T19:13:04.674+0200",
         "component": "oh-layout-page",
         "config": {
             "layoutType": "responsive",
             "colNum": 8.0,
-            "label": "Study",
-            "sidebar": true
+            "label": "Alistair\u0027s Room",
+            "sidebar": true,
+            "order": "-10",
+            "scale": true
         },
         "slots": {
-            "default": [
-                {
-                    "component": "oh-block",
-                    "config": {},
-                    "slots": {
-                        "default": []
-                    }
-                }
-            ],
+            "default": [],
             "masonry": [
                 {
                     "component": "oh-masonry",
@@ -1634,49 +1498,47 @@
                             {
                                 "component": "oh-label-card",
                                 "config": {
-                                    "item": "ChromecastAudioStudyStatustext"
+                                    "item": "ChromecastAudioBedroom2Statustext"
                                 }
                             },
                             {
                                 "component": "oh-label-card",
                                 "config": {
-                                    "item": "KNXTemperatureCelciusStudy"
+                                    "item": "KNXTemperatureCelciusBedroom2"
                                 }
                             },
                             {
                                 "component": "oh-player-card",
                                 "config": {
-                                    "item": "ChromecastAudioStudyControl"
+                                    "item": "ChromecastAudioBedroom2Control"
                                 }
                             },
                             {
                                 "component": "oh-slider-card",
                                 "config": {
-                                    "item": "ChromecastAudioStudyVolume"
+                                    "item": "ChromecastAudioBedroom2Volume"
                                 }
                             },
                             {
                                 "component": "oh-rollershutter-card",
                                 "config": {
                                     "vertical": true,
-                                    "item": "StudyInsideBlindPosition",
-                                    "footer": "inside",
-                                    "stateInCenter": true
+                                    "item": "Bedroom2InsideBlindPosition",
+                                    "footer": "inside"
                                 }
                             },
                             {
                                 "component": "oh-rollershutter-card",
                                 "config": {
-                                    "item": "StudyOutsideBlindPosition",
+                                    "item": "Bedroom2OutsideBlindPosition",
                                     "vertical": true,
-                                    "footer": "outside",
-                                    "stateInCenter": true
+                                    "footer": "outside"
                                 }
                             },
                             {
                                 "component": "oh-label-card",
                                 "config": {
-                                    "item": "KNXMotionContactStudy"
+                                    "item": "KNXMotionContactBedroom2"
                                 }
                             },
                             {
@@ -1687,18 +1549,85 @@
                                     ],
                                     "item": "KNXRGBWLightingRGBblue"
                                 }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "uid": "Bedroom3",
+        "timestamp": "2021-06-26T19:13:04.367+0200",
+        "component": "oh-layout-page",
+        "config": {
+            "layoutType": "responsive",
+            "colNum": 8.0,
+            "label": "Guest Room",
+            "sidebar": true,
+            "order": "-9",
+            "scale": true
+        },
+        "slots": {
+            "default": [],
+            "masonry": [
+                {
+                    "component": "oh-masonry",
+                    "slots": {
+                        "default": [
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom3Statustext"
+                                }
                             },
                             {
                                 "component": "oh-label-card",
                                 "config": {
-                                    "item": "KNXMotionContactStudy_LastChanged",
-                                    "label": "\u003ddayjs(items.KNXMotionContactStudy_LastChanged.displayState).fromNow() ",
-                                    "noBorder": true,
-                                    "noShadow": true,
-                                    "outline": true,
-                                    "background": "\u003d(items.KNXMotionContactStudy.state \u003d\u003d\"CLOSED\") ? \"lightgreen\" :\"red\"",
-                                    "iconUseState": true,
-                                    "icon": "f7:person_crop_circle_fill_badge_checkmark"
+                                    "item": "KNXTemperatureCelciusBedroom3"
+                                }
+                            },
+                            {
+                                "component": "oh-player-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom3Control"
+                                }
+                            },
+                            {
+                                "component": "oh-slider-card",
+                                "config": {
+                                    "item": "ChromecastAudioBedroom3Volume"
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "vertical": true,
+                                    "item": "Bedroom3InsideBlindPosition",
+                                    "footer": "inside"
+                                }
+                            },
+                            {
+                                "component": "oh-rollershutter-card",
+                                "config": {
+                                    "item": "Bedroom3OutsideBlindPosition",
+                                    "vertical": true,
+                                    "footer": "outside"
+                                }
+                            },
+                            {
+                                "component": "oh-label-card",
+                                "config": {
+                                    "item": "KNXMotionContactBedroom3"
+                                }
+                            },
+                            {
+                                "component": "oh-colorpicker-card",
+                                "config": {
+                                    "modules": [
+                                        "wheel"
+                                    ],
+                                    "item": "KNXRGBWLightingRGBblue"
                                 }
                             }
                         ]
@@ -1706,5 +1635,85 @@
                 }
             ]
         }
+    },
+     {
+    "uid": "Terrace",
+    "timestamp": "2021-06-26T19:13:04.367+0200",
+    "component": "oh-layout-page",
+    "config": {
+        "layoutType": "responsive",
+        "colNum": 8.0,
+        "label": "Terrace",
+        "sidebar": true,
+        "order": "-6",
+        "scale": true
+    },
+    "slots": {
+        "default": [],
+        "masonry": [
+            {
+                "component": "oh-masonry",
+                "slots": {
+                    "default": [
+                        {
+                            "component": "oh-label-card",
+                            "config": {
+                                "item": "ChromecastAudioBedroom3Statustext"
+                            }
+                        },
+                        {
+                            "component": "oh-label-card",
+                            "config": {
+                                "item": "KNXTemperatureCelciusBedroom3"
+                            }
+                        },
+                        {
+                            "component": "oh-player-card",
+                            "config": {
+                                "item": "ChromecastAudioBedroom3Control"
+                            }
+                        },
+                        {
+                            "component": "oh-slider-card",
+                            "config": {
+                                "item": "ChromecastAudioBedroom3Volume"
+                            }
+                        },
+                        {
+                            "component": "oh-rollershutter-card",
+                            "config": {
+                                "vertical": true,
+                                "item": "Bedroom3InsideBlindPosition",
+                                "footer": "inside"
+                            }
+                        },
+                        {
+                            "component": "oh-rollershutter-card",
+                            "config": {
+                                "item": "Bedroom3OutsideBlindPosition",
+                                "vertical": true,
+                                "footer": "outside"
+                            }
+                        },
+                        {
+                            "component": "oh-label-card",
+                            "config": {
+                                "item": "KNXMotionContactBedroom3"
+                            }
+                        },
+                        {
+                            "component": "oh-colorpicker-card",
+                            "config": {
+                                "modules": [
+                                    "wheel"
+                                ],
+                                "item": "KNXRGBWLightingRGBblue"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
+}
 ]
