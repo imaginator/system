@@ -60,7 +60,7 @@ transmission-dirs:
     - require:
       - pkg: install-transmission
 
-/etc/nginx/sites.enabled/transmission.imagilan.conf:
+/etc/nginx/sites-enabled/transmission.imagilan.conf:
   file:
     - managed
     - makedirs: true
