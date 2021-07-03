@@ -12,3 +12,4 @@ ehthumbs.db
 Thumbs.db
 .vscode/settings.json
 salt/openhab-tablets/files/de.vier_bier.habpanelviewer.apk
+.vscode/extensions.json
