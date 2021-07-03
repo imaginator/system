@@ -1,122 +1,837 @@
 [
-    {
-        "uid": "Grafana chart with timeranges",
-        "tags": [],
-        "props": {
-            "parameters": [
-                {
-                    "description": "Title of the chart",
-                    "label": "Title",
-                    "name": "title",
-                    "required": false,
-                    "type": "TEXT"
-                },
-                {
-                    "description": "Footer of the chart",
-                    "label": "Footer",
-                    "name": "footer",
-                    "required": false,
-                    "type": "TEXT"
-                },
-                {
-                    "description": "URL to show in the frame",
-                    "label": "Source URL",
-                    "name": "URL",
-                    "required": true,
-                    "type": "TEXT"
-                },
-                {
-                    "description": "Comma-separated list of options. Use value\u003dlabel format (e.g. 1d\u003d1 day) to provide a label different than the option. Minimum 1 entry required. The first entry is the default timerange.",
-                    "label": "Time range options",
-                    "name": "timerange",
-                    "required": true,
-                    "type": "TEXT"
-                },
-                {
-                    "description": "Height of the Frame (empty \u003d default)",
-                    "label": "Height",
-                    "name": "height",
-                    "required": false,
-                    "type": "TEXT"
-                }
-            ],
-            "parameterGroups": []
+  {
+    "uid": "Grafana chart with timeranges",
+    "tags": [],
+    "props": {
+      "parameters": [
+        {
+          "description": "Title of the chart",
+          "label": "Title",
+          "name": "title",
+          "required": false,
+          "type": "TEXT"
         },
-        "timestamp": "2021-06-23T12:48:47.041+0200",
-        "component": "f7-card-content",
-        "config": {
+        {
+          "description": "Footer of the chart",
+          "label": "Footer",
+          "name": "footer",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "description": "URL to show in the frame",
+          "label": "Source URL",
+          "name": "URL",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "description": "Comma-separated list of options. Use value=label format (e.g. 1d=1 day) to provide a label different than the option. Minimum 1 entry required. The first entry is the default timerange.",
+          "label": "Time range options",
+          "name": "timerange",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "description": "Height of the Frame (empty = default)",
+          "label": "Height",
+          "name": "height",
+          "required": false,
+          "type": "TEXT"
+        }
+      ],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-06-23T12:48:47.000+0200",
+    "component": "f7-card-content",
+    "config": {
+      "style": {
+        "--f7-card-margin-horizontal": "0px",
+        "--f7-card-margin-vertical": "3px",
+        "--f7-card-content-padding-horizontal": "10px",
+        "--f7-card-content-padding-vertical": "10px"
+      }
+    },
+    "slots": {
+      "default": [
+        {
+          "component": "oh-webframe-card",
+          "config": {
+            "title": "=props.title",
+            "borders": false,
+            "noBorder": false,
+            "outline": true,
+            "height": "=props.height",
+            "src": "=props.URL.replace('{period}', vars.selectedPeriod || [props.timerange.split(',')[0].split('=')[0]])",
+            "footer": "=props.footer",
+            "class": [
+              "display-block"
+            ]
+          }
+        },
+        {
+          "component": "f7-segmented",
+          "config": {
+            "round": false,
+            "outline": false,
             "style": {
-                "--f7-card-margin-horizontal": "0px",
-                "--f7-card-margin-vertical": "3px",
-                "--f7-card-content-padding-horizontal": "10px",
-                "--f7-card-content-padding-vertical": "10px"
+              "--f7-button-bg-color": "rgba(255, 255, 255, 0.05)"
             }
-        },
-        "slots": {
+          },
+          "slots": {
             "default": [
-                {
-                    "component": "oh-webframe-card",
-                    "config": {
-                        "title": "\u003dprops.title",
-                        "borders": false,
-                        "noBorder": false,
-                        "outline": true,
-                        "height": "\u003dprops.height",
-                        "src": "\u003dprops.URL.replace(\u0027{period}\u0027, vars.selectedPeriod || [props.timerange.split(\u0027,\u0027)[0].split(\u0027\u003d\u0027)[0]])",
-                        "footer": "\u003dprops.footer",
-                        "class": [
-                            "display-block"
-                        ]
-                    }
+              {
+                "component": "oh-repeater",
+                "config": {
+                  "sourceType": "range",
+                  "for": "size",
+                  "fragment": true
                 },
-                {
-                    "component": "f7-segmented",
-                    "config": {
-                        "round": false,
-                        "outline": false,
-                        "style": {
-                            "--f7-button-bg-color": "rgba(255, 255, 255, 0.05)"
-                        }
-                    },
-                    "slots": {
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-repeater",
+                      "config": {
+                        "fragment": true,
+                        "for": "period",
+                        "in": "=[props.timerange.split(\",\")[loop.size].split(\"=\")[1]]"
+                      },
+                      "slots": {
                         "default": [
-                            {
-                                "component": "oh-repeater",
-                                "config": {
-                                    "sourceType": "range",
-                                    "for": "size",
-                                    "fragment": true
-                                },
-                                "slots": {
-                                    "default": [
-                                        {
-                                            "component": "oh-repeater",
-                                            "config": {
-                                                "fragment": true,
-                                                "for": "period",
-                                                "in": "\u003d[props.timerange.split(\",\")[loop.size].split(\"\u003d\")[1]]"
-                                            },
-                                            "slots": {
-                                                "default": [
-                                                    {
-                                                        "component": "oh-button",
-                                                        "config": {
-                                                            "text": "\u003dloop.period",
-                                                            "fill": "\u003d(([props.timerange.split(\u0027,\u0027)[loop.size].split(\u0027\u003d\u0027)[0]] \u003d\u003d vars.selectedPeriod) || (props.timerange.split(\u0027,\u0027)[0].split(\u0027\u003d\u0027)[1] \u003d\u003d\u003d loop.period) \u0026\u0026 !vars.selectedPeriod) ? true : false",
-                                                            "round": false,
-                                                            "outline": true,
-                                                            "style": {
-                                                                "--f7-button-font-size": "14px",
-                                                                "--f7-button-font-weight": 300.0,
-                                                                "--f7-button-text-transform": "none",
-                                                                "--f7-button-border-width": "1px",
-                                                                "--f7-button-text-color": "white",
-                                                                "--f7-button-border-color": "rgba(255,255,255,.15)",
-                                                                "--f7-button-padding-vertical": "0px",
-                                                                "--f7-button-padding-horizontal": "0px",
-                                                                "--f7-button-fill-hover-bg-color": "rgba(var(--f7-theme-color-rgb), 1)"
-                                                            },
-                                                            "action": "variable",
-                                                            "actionVariable": "selectedPeriod",
-                                                            "actionVariableValue": "\u003dprops.timerange.split(\",\")[loop.s
-                                                            
+                          {
+                            "component": "oh-button",
+                            "config": {
+                              "text": "=loop.period",
+                              "fill": "=(([props.timerange.split(',')[loop.size].split('=')[0]] == vars.selectedPeriod) || (props.timerange.split(',')[0].split('=')[1] === loop.period) && !vars.selectedPeriod) ? true : false",
+                              "round": false,
+                              "outline": true,
+                              "style": {
+                                "--f7-button-font-size": "14px",
+                                "--f7-button-font-weight": 300,
+                                "--f7-button-text-transform": "none",
+                                "--f7-button-border-width": "1px",
+                                "--f7-button-text-color": "white",
+                                "--f7-button-border-color": "rgba(255,255,255,.15)",
+                                "--f7-button-padding-vertical": "0px",
+                                "--f7-button-padding-horizontal": "0px",
+                                "--f7-button-fill-hover-bg-color": "rgba(var(--f7-theme-color-rgb), 1)"
+                              },
+                              "action": "variable",
+                              "actionVariable": "selectedPeriod",
+                              "actionVariableValue": "=props.timerange.split(\",\")[loop.size].split(\"=\")[0]"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "uid": "Spotify_widget_0.00",
+    "tags": [],
+    "props": {
+      "parameters": [
+        {
+          "description": "Title for the widget",
+          "label": "Static Title",
+          "name": "title",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Select a 'Spotify Player Bridge' (SpotifyPlayerBridge)",
+          "name": "prefix",
+          "required": false,
+          "type": "TEXT"
+        }
+      ],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-06-27T18:17:32.000+0200",
+    "component": "f7-card",
+    "config": {
+      "title": "=props.title",
+      "style": {
+        "min-width": "270px"
+      }
+    },
+    "slots": {
+      "default": [
+        {
+          "component": "f7-row",
+          "config": {
+            "class": "margin display-flex align-items-center"
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-col",
+                "config": {
+                  "width": 100,
+                  "xsmall": 30,
+                  "small": 50,
+                  "medium": 50,
+                  "large": 50,
+                  "xlarge": 50
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-row",
+                      "config": {
+                        "class": "=(items[props.prefix+\"_AlbumImage\"].state === \"NULL\")?\"display-none\" : \"- margin-vertical - justify-content-center\""
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-image",
+                            "config": {
+                              "item": "=props.prefix+\"_AlbumImage\"",
+                              "style": {
+                                "width": "70%"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-col",
+                "config": {
+                  "width": 100,
+                  "xsmall": 30,
+                  "small": 50,
+                  "medium": 50,
+                  "large": 50,
+                  "xlarge": 50
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-row",
+                      "config": {
+                        "class": "= (items[props.prefix+\"_ActiveDeviceName\"].state !== \"NULL\")?\"display-none\":\"display-flex justify-content-center\""
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "Label",
+                            "config": {
+                              "text": "This Spotify Bridge is Unavailable"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "component": "f7-row",
+                      "config": {
+                        "class": "= (items[props.prefix+\"_ActiveDeviceName\"].state === \"NULL\")?\"display-none\":\"display-flex justify-content-center\""
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "Label",
+                            "config": {
+                              "text": "=items[props.prefix+\"_MediaArtist\"].state || \"-\"",
+                              "style": {
+                                "white-space": "nowrap",
+                                "overflow": "hidden",
+                                "font-size": "normal",
+                                "font-weight": "bold",
+                                "font-style": "italic"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "component": "f7-row",
+                      "config": {
+                        "class": "= (items[props.prefix+\"_ActiveDeviceName\"].state === \"NULL\")?\"display-none\":\"display-flex justify-content-center\""
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "Label",
+                            "config": {
+                              "text": "=items[props.prefix+\"_MediaTitle\"].state || \"-\"",
+                              "style": {
+                                "white-space": "nowrap",
+                                "overflow": "hidden",
+                                "font-size": "normal",
+                                "font-weight": "bold"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "component": "f7-row",
+                      "config": {
+                        "class": "= (items[props.prefix+\"_ActiveDeviceName\"].state === \"NULL\")?\"display-none\":\"display-flex justify-content-center\""
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "Label",
+                            "config": {
+                              "text": "=items[props.prefix+\"_AlbumName\"].state || \"-\"",
+                              "style": {
+                                "white-space": "nowrap",
+                                "overflow": "hidden",
+                                "font-size": "normal",
+                                "font-style": "italic"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "f7-row",
+          "config": {
+            "style": {
+              "position": "relative",
+              "top": "-10px",
+              "height": "20px"
+            },
+            "class": [
+              "justify-content-center"
+            ]
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-card",
+                "config": {
+                  "noShadow": true,
+                  "class": "margin display-flex align-items-center",
+                  "style": {
+                    "fontSize": "12px",
+                    "width": "calc(100% - 80px)"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "Label",
+                      "config": {
+                        "text": "= items[props.prefix+\"_TrackProgressmss\"].state"
+                      }
+                    },
+                    {
+                      "component": "f7-progressbar",
+                      "config": {
+                        "color": "teal",
+                        "progress": "= 100 * items[props.prefix+\"_TrackProgressms\"].state / items[props.prefix+\"_TrackDurationms\"].state",
+                        "style": {
+                          "height": "10px"
+                        },
+                        "item": "props.prefix+\"_TrackProgressmss\""
+                      }
+                    },
+                    {
+                      "component": "Label",
+                      "config": {
+                        "text": "= items[props.prefix+\"_TrackDurationmss\"].state"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "f7-row",
+          "config": {
+            "class": [
+              "justify-content-space-around",
+              "display-flex",
+              "align-items-center",
+              "align-content-stretch",
+              "margin-top"
+            ]
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-icon",
+                "config": {
+                  "f7": "=(props.prefix+\"_ActiveDeviceShuffle\") ? \"shuffle\" : \"\"",
+                  "size": 20,
+                  "color": "=(items[props.prefix+\"_ActiveDeviceShuffle\"].state === \"ON\") ? \"green\" : \"\"",
+                  "style": {
+                    "position": "relative",
+                    "left": "+7%"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-button",
+                      "config": {
+                        "action": "command",
+                        "actionItem": "= props.prefix+\"_ActiveDeviceShuffle\"",
+                        "actionCommand": "=(items[props.prefix+\"_ActiveDeviceShuffle\"].state !== \"ON\") ? \"ON\" : \"OFF\"",
+                        "style": {
+                          "position": "absolute",
+                          "width": "100%",
+                          "height": "100%",
+                          "top": "0px"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "oh-player-item",
+                "config": {
+                  "style": {
+                    "width": "150px"
+                  },
+                  "item": "=props.prefix+\"_MediaControl\"",
+                  "class": [
+                    "display-flex",
+                    "margin-",
+                    "align-content-stretch",
+                    "align-items-center",
+                    "justify-content-space-around"
+                  ]
+                }
+              },
+              {
+                "component": "f7-icon",
+                "config": {
+                  "f7": "=(props.prefix+\"_RepeatMode\") ? (items[props.prefix+\"_RepeatMode\"].state === \"context\") ? \"repeat\" : (items[props.prefix+\"_RepeatMode\"].state === \"track\") ? \"repeat_1\" : \"repeat\" : \"\"",
+                  "size": 20,
+                  "color": "=(items[props.prefix+\"_RepeatMode\"].state === \"context\") ? \"green\" : (items[props.prefix+\"_RepeatMode\"].state === \"track\") ? \"green\" : \"\"",
+                  "style": {
+                    "position": "relative",
+                    "left": "-8%"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-button",
+                      "config": {
+                        "action": "command",
+                        "actionItem": "= props.prefix+\"_RepeatMode\"",
+                        "actionCommand": "=(items[props.prefix+\"_RepeatMode\"].state === \"context\") ? \"track\" : (items[props.prefix+\"_RepeatMode\"].state === \"track\") ? \"off\": \"context\"",
+                        "style": {
+                          "position": "absolute",
+                          "width": "100%",
+                          "height": "100%",
+                          "top": "0px"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "f7-row",
+          "config": {
+            "class": [
+              "justify-content-space-around",
+              "display-flex",
+              "align-items-center",
+              "align-content-stretch",
+              "margin-top"
+            ]
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-card",
+                "config": {
+                  "noShadow": true,
+                  "class": "margin display-flex align-items-center",
+                  "style": {
+                    "height": "20px",
+                    "fontSize": "20px",
+                    "width": "100%"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-icon",
+                      "config": {
+                        "f7": "speaker_3",
+                        "class": "margin-horizontal margin",
+                        "size": 25
+                      }
+                    },
+                    {
+                      "component": "oh-slider",
+                      "config": {
+                        "label": true,
+                        "style": {
+                          "width": "75%",
+                          "--f7-range-knob-color": "rgba(122,122,122,0.8)",
+                          "--f7-range-bar-size": "12px",
+                          "--f7-range-bar-border-radius": "6px",
+                          "--f7-range-knob-size": "16px",
+                          "--f7-range-bar-bg-color": "rgba(122,122,122,0.2)",
+                          "--f7-range-bar-active-bg-color": "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.6))",
+                          "--f7-range-knob-box-shadow": "0 2px 4px rgba(0, 0, 0, 0.3)"
+                        },
+                        "item": "=props.prefix+\"_Volume\""
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "f7-row",
+          "config": {
+            "class": "-justify-content-space-around -align-items-center -align-content-stretch"
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-col",
+                "config": {
+                  "noShadow": true,
+                  "class": "resizable",
+                  "style": {
+                    "fontSize": "20px",
+                    "overflow": "hidden"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-label-card",
+                      "config": {
+                        "icon": "f7:hifispeaker",
+                        "iconSize": 20,
+                        "action": "options",
+                        "actionItem": "=props.prefix+\"_ActiveDevices\"",
+                        "item": "=props.prefix+\"_ActiveDevices\"",
+                        "style": {
+                          "height": "100%"
+                        },
+                        "fontSize": "small"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-col",
+                "config": {
+                  "noShadow": true,
+                  "class": "resizable",
+                  "style": {
+                    "fontSize": "20px",
+                    "overflow": "hidden"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-label-card",
+                      "config": {
+                        "icon": "f7:music_note_list",
+                        "iconSize": 20,
+                        "action": "options",
+                        "actionItem": "=props.prefix+\"_Playlists\"",
+                        "item": "=props.prefix+\"_Playlists\"",
+                        "fontSize": "small"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "uid": "multiroom_audio_control",
+    "tags": [],
+    "props": {
+      "parameters": [
+        {
+          "context": "item",
+          "label": "Player Control Item",
+          "name": "playerControlItem",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Artist Name Item",
+          "name": "artistItem",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Track Name Item",
+          "name": "trackItem",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Album Art Item",
+          "name": "albumArtItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Track Progress Time Item",
+          "name": "trackProgressItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Track Total Time Item",
+          "name": "trackTimeItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Power Item",
+          "name": "powerItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Multiroom Control Item",
+          "name": "multiroomControlItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "label": "Volume Control Item",
+          "name": "volumeControlItem",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "label": "Force Dark Theme",
+          "name": "darkTheme",
+          "required": false,
+          "type": "BOOLEAN"
+        }
+      ],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-06-27T17:47:19.000+0200",
+    "component": "f7-card",
+    "config": {
+      "themeDark": "=props.darkTheme",
+      "style": {
+        "height": "160px"
+      }
+    },
+    "slots": {
+      "default": [
+        {
+          "component": "f7-card-content",
+          "slots": {
+            "default": [
+              {
+                "component": "oh-image",
+                "config": {
+                  "item": "=props.albumArtItem",
+                  "action": "photos",
+                  "actionPhotos": "=[props.albumArtItem]",
+                  "actionPhotoBrowserConfig": {
+                    "theme": "dark"
+                  },
+                  "style": {
+                    "display": "=props.albumArtItem ? 'block' : 'none'",
+                    "height": "80px",
+                    "width": "80px",
+                    "float": "left"
+                  }
+                }
+              },
+              {
+                "component": "f7-block",
+                "config": {
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "Label",
+                      "config": {
+                        "text": "=items[props.artistItem].state",
+                        "class": [
+                          "margin-top"
+                        ],
+                        "style": {
+                          "overflow": "hidden",
+                          "white-space": "nowrap",
+                          "text-overflow": "ellipsis"
+                        }
+                      }
+                    },
+                    {
+                      "component": "Label",
+                      "config": {
+                        "text": "=items[props.trackItem].state",
+                        "style": {
+                          "font-size": "20px",
+                          "overflow": "hidden",
+                          "white-space": "nowrap",
+                          "text-overflow": "ellipsis"
+                        }
+                      }
+                    },
+                    {
+                      "component": "Label",
+                      "config": {
+                        "text": "=(props.trackProgressItem && props.trackTimeItem) ? items[props.trackProgressItem].state + ' / ' + items[props.trackTimeItem].state : ''",
+                        "style": {
+                          "font-size": "12px",
+                          "height": "20px",
+                          "margin-top": "2px",
+                          "color": "gray"
+                        }
+                      }
+                    },
+                    {
+                      "component": "oh-player-controls",
+                      "config": {
+                        "item": "=props.playerControlItem",
+                        "color": "green",
+                        "visible": "=!vars.showVolume",
+                        "style": {
+                          "margin": "1rem"
+                        }
+                      }
+                    },
+                    {
+                      "component": "oh-slider",
+                      "config": {
+                        "item": "=props.volumeControlItem",
+                        "color": "blue",
+                        "visible": "=vars.showVolume === true",
+                        "style": {
+                          "margin-top": "2rem"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-block",
+                "config": {
+                  "style": {
+                    "position": "absolute",
+                    "top": "137px",
+                    "width": "112px",
+                    "text-align": "right",
+                    "display": "flex",
+                    "flex-direction": "row-reverse",
+                    "justify-content": "center"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "style": {
+                          "margin": "0 0.5em"
+                        },
+                        "visible": "=props.volumeControlItem !== undefined",
+                        "iconF7": "speaker_3_fill",
+                        "iconSize": 18,
+                        "color": "=(vars.showVolume) ? 'blue' : 'gray'",
+                        "round": true,
+                        "action": "variable",
+                        "actionVariable": "showVolume",
+                        "actionVariableValue": "=!(vars.showVolume === true)"
+                      }
+                    },
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "style": {
+                          "margin": "0 0.5em"
+                        },
+                        "visible": "=props.multiroomControlItem !== undefined",
+                        "iconF7": "music_house_fill",
+                        "iconSize": 18,
+                        "color": "gray",
+                        "round": true,
+                        "action": "options",
+                        "actionItem": "=props.multiroomControlItem",
+                        "tooltip": "=items[props.multiroomControlItem].displayState || items[props.multiroomControlItem].state"
+                      }
+                    },
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "style": {
+                          "margin": "0 0.5em",
+                          "color": "var(--f7-card-text-color)",
+                          "opacity": "=(items[props.powerItem].state === 'ON') ? 1 : 0.3"
+                        },
+                        "visible": "=props.powerItem !== undefined",
+                        "iconF7": "power",
+                        "iconSize": 18,
+                        "round": true,
+                        "action": "toggle",
+                        "actionItem": "=props.powerItem",
+                        "actionCommand": "ON",
+                        "actionCommandAlt": "OFF"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
