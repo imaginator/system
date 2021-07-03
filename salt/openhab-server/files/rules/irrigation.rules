@@ -1,0 +1,58 @@
+// water for 5 minutes
+
+rule ""Water!"
+when
+    Channel "astro:sun:local:set#event" triggered START
+then
+    
+    logInfo("FILE", "watering started")
+        createTimer(now.plusMinutes(10)) [ | 
+    Front_Porch_Lights.sendCommand (OFF)
+    Front_Porch_Alarm.sendCommand (OFF) 
+]
+
+end
+
+
+
+    rule "Enabling irrigation"
+    when
+    Item StartProgram changed from OFF to ON or
+    Time cron "0 45 7 1/1 * ? *"
+    then
+      var i = 0
+      var Number lawnMins = Irrigation_LawnMins.state as DecimalType
+      var Number pause = Irrigation_Pause.state as DecimalType
+      var Number Multiplier = Irrigation_Multiplier.state as DecimalType
+      var Number Circuits = Irrigation_Circuits.state as DecimalType
+      var Number Repeats = Irrigation_Repeats.state as DecimalType
+      lawnMins = lawnMins*1000
+      if (Multiplier != 0)
+      {
+        lawnMins = lawnMins*Multiplier
+      }
+      logInfo("Irrigation", "Circuits " + Circuits + " multiplier " + Multiplier)
+      while ((i=i+1) < Circuits+1) {
+        var j = 0
+        while ((j=j+1) < Repeats+1) {
+                logInfo("Irrigation", "Repeat " + j)
+                sendCommand(KakuDeskLamp, ON)
+                Thread::sleep(100)
+        }
+    
+        logInfo("Irrigation", i + " lawnMins " + lawnMins)
+        sendCommand(Irrigation_ActiveCircuit, i)
+        Thread::sleep(lawnMins.intValue) //*lawnMins)
+        j = 0
+        while ((j=j+1) < Repeats+20) {
+                logInfo("Irrigation", "Repeat " + j)
+                sendCommand(KakuDeskLamp, OFF)
+                Thread::sleep(100)
+        }
+     
+        sendCommand(Irrigation_ActiveCircuit, 0)
+    
+        Thread::sleep(1000*pause.intValue)
+      }
+      sendCommand(StartProgram, OFF)
+    end

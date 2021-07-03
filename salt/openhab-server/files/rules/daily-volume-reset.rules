@@ -8,9 +8,3 @@ then
     // set to the average of the other rooms
     gVolumeControl.sendCommand(25)
 end
-
-
-
-HAGER UD31B1 Baustein
-HAGER FP31SN2 Wandschrank
-HAGER UD32B1 Baustein

@@ -1,3 +1,5 @@
+// https://community.openhab.org/t/xiaomi-robot-vacuum-binding/31317/1120
+
 var String sCoordinates = ""
 
 rule "start vaccuum"
@@ -11,7 +13,7 @@ then
             sCoordinates=sCoordinates + transform("MAP","imagisuck.map",r.label) + ","             // add it to a string
         ]
         sCoordinates = sCoordinates.substring(0,sCoordinates.length - 1)                        // get rid of last comma
-        if(VacAll_Proxy.state == ON) sCoordinates=transform("MAP","imagisck.map","Alles")         // if All is active, use simple map
+        if(VacAll_Proxy.state == ON) sCoordinates=transform("MAP","imagisck.map","Alles")       // if All is active, use simple map
         XiaomiRobotVacuum1SActionsCommands.sendCommand("app_zoned_clean["+sCoordinates+"]")     // start cleaning
         //logInfo("EXTRA", sCoordinates)
         XiaomiRobotVacuum1SActionsFan.sendCommand(104)  //set the fan to max

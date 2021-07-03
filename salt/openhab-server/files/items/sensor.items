@@ -1,52 +1,41 @@
 // Air Quality
-Number                  AirQuality_AqiLevel                   "Air Quality Index"                                                                                  {channel="airquality:aqi:local:aqiLevel"}
-String                  AirQuality_AqiDescription             "AQI Description"                                                                                    {channel="airquality:aqi:local:aqiDescription"}
-Number                  AirQuality_Pm25                       "PM2.5"                                                                                              {channel="airquality:aqi:local:pm25"}
-Number                  AirQuality_Pm10                       "PM10"                                                                                               {channel="airquality:aqi:local:pm10"}
-Number                  AirQuality_O3                         "O3"                                                                                                 {channel="airquality:aqi:local:o3"}
-Number                  AirQuality_No2                        "NO2"                                                                                                {channel="airquality:aqi:local:no2"}
-Number                  AirQuality_Co                         "CO"                                                                              ["CO"]             {channel="airquality:aqi:local:co"}
-String                  AirQuality_LocationName               "Location"                                                                                           {channel="airquality:aqi:local:locationName"}
-Location                AirQuality_StationLocation            "Station Location"                                                                                   {channel="airquality:aqi:local:stationLocation"}
-Number                  AirQuality_StationId                  "Station ID"                                                                                         {channel="airquality:aqi:local:stationId"}
-DateTime                AirQuality_ObservationTime            "Observation time"                                                                                   {channel="airquality:aqi:local:observationTime"}
-Number:Temperature      AirQuality_Temperature                "Temperature"                                                                     ["Temperature"]    {channel="airquality:aqi:local:temperature"}
-Number:Pressure         AirQuality_Pressure                   "Pressure"                                                                        ["Pressure"]       {channel="airquality:aqi:local:pressure"}
-Number:Dimensionless    AirQuality_Humidity                   "Humidity"                                                                        ["Humidity"]       {channel="airquality:aqi:local:humidity"}
-String                  AirQuality_Dominentpol                "Dominent Polutor"                                                                                   {channel="airquality:aqi:local:dominentpol"}
+Number                  AirQuality_AqiLevel              "Air Quality Index"        (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:aqiLevel"}
+String                  AirQuality_AqiDescription        "AQI Description"          (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:aqiDescription"}
+Number                  AirQuality_Pm25                  "PM2.5"                    (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:pm25"}
+Number                  AirQuality_Pm10                  "PM10"                     (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:pm10"}
+Number                  AirQuality_O3                    "O3"                       (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:o3"}
+Number                  AirQuality_No2                   "NO2"                      (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:no2"}
+Number                  AirQuality_Co                    "CO"                       (gPersistMe, gAQI)                     ["CO"]             {channel="airquality:aqi:local:co"}
+String                  AirQuality_LocationName          "Location"                 (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:locationName"}
+Location                AirQuality_StationLocation       "Station Location"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:stationLocation"}
+Number                  AirQuality_StationId             "Station ID"               (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:stationId"}
+DateTime                AirQuality_ObservationTime       "Observation time"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:observationTime"}
+Number:Temperature      AirQuality_Temperature           "Temperature"              (gPersistMe, gAQI)                     ["Temperature"]    {channel="airquality:aqi:local:temperature"}
+Number:Pressure         AirQuality_Pressure              "Pressure"                 (gPersistMe, gAQI)                     ["Pressure"]       {channel="airquality:aqi:local:pressure"}
+Number:Dimensionless    AirQuality_Humidity              "Humidity"                 (gPersistMe, gAQI)                     ["Humidity"]       {channel="airquality:aqi:local:humidity"}
+String                  AirQuality_Dominentpol           "Dominent Polutor"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:dominentpol"}
 
-// Current Temperature
-Number                  KNXTemperatureCelciusBathroomGuest    "Temperature [%.1f°C]"     (gPersistMe, gBathroomGuesSensors)                     ["Temperature"]    {channel="knx:device:temperature:BathroomGuest"}
-Number                  KNXTemperatureCelciusBathroomMain     "Temperature [%.1f°C]"     (gPersistMe, gBathroomMainSensors)                     ["Temperature"]    {channel="knx:device:temperature:BathroomMain"}
-Number                  KNXTemperatureCelciusBedroom1         "Temperature [%.1f°C]"     (gPersistMe, gBedroom1Sensors)                         ["Temperature"]    {channel="knx:device:temperature:Bedroom1"}
-Number                  KNXTemperatureCelciusBedroom2         "Temperature [%.1f°C]"     (gPersistMe, gBedroom2Sensors)                         ["Temperature"]    {channel="knx:device:temperature:Bedroom2"}
-Number                  KNXTemperatureCelciusBedroom3         "Temperature [%.1f°C]"     (gPersistMe, gBedroom3Sensors)                         ["Temperature"]    {channel="knx:device:temperature:Bedroom3"}
-Number                  KNXTemperatureCelciusHallwayLarge     "Temperature [%.1f°C]"     (gPersistMe, gHallwayMainSensors)                      ["Temperature"]    {channel="knx:device:temperature:HallwayLarge"}
-Number                  KNXTemperatureCelciusHallwaySmall     "Temperature [%.1f°C]"     (gPersistMe, gHallwaySmallSensors)                     ["Temperature"]    {channel="knx:device:temperature:HallwaySmall"}
-Number                  KNXTemperatureCelciusKitchen          "Temperature [%.1f°C]"     (gPersistMe, gKitchenSensors)                          ["Temperature"]    {channel="knx:device:temperature:Kitchen"}
-Number                  KNXTemperatureCelciusLounge           "Temperature [%.1f°C]"     (gPersistMe, gLoungeSensors)                           ["Temperature"]    {channel="knx:device:temperature:Lounge"}
-Number                  KNXTemperatureCelciusStudy            "Temperature [%.1f°C]"     (gPersistMe, gStudySensors)                            ["Temperature"]    {channel="knx:device:temperature:Study"}
 
 // Brightness
-Number                  KNXLuminosityLuxBathroomGuest         "brightness [%.1f lux]"    (gPersistMe, gBathroomGuestSensors)                    ["Light"]          {channel="knx:device:brightness:BathroomGuest"}
-Number                  KNXLuminosityLuxBathroomMain          "brightness [%.1f lux]"    (gPersistMe, gBathroomMainSensors)                     ["Light"]          {channel="knx:device:brightness:BathroomMain"}
-Number                  KNXLuminosityLuxBedroom1              "brightness [%.1f lux]"    (gPersistMe, gBedroom1Sensors)                         ["Light"]          {channel="knx:device:brightness:Bedroom1"}
-Number                  KNXLuminosityLuxBedroom2              "brightness [%.1f lux]"    (gPersistMe, gBedroom2Sensors)                         ["Light"]          {channel="knx:device:brightness:Bedroom2"}
-Number                  KNXLuminosityLuxBedroom3              "brightness [%.1f lux]"    (gPersistMe, gBedroom3Sensors)                         ["Light"]          {channel="knx:device:brightness:Bedroom3"}
-Number                  KNXLuminosityLuxHallwayLarge          "brightness [%.1f lux]"    (gPersistMe, gHallwaySensors)                          ["Light"]          {channel="knx:device:brightness:HallwayLarge"}
-Number                  KNXLuminosityLuxHallwaySmall          "brightness [%.1f lux]"    (gPersistMe, gHallwaysensors)                          ["Light"]          {channel="knx:device:brightness:HallwaySmall"}
-Number                  KNXLuminosityLuxKitchen               "brightness [%.1f lux]"    (gPersistMe, gKitchenSensors)                          ["Light"]          {channel="knx:device:brightness:Kitchen"}
-Number                  KNXLuminosityLuxLounge                "brightness [%.1f lux]"    (gPersistMe, gLoungeSensors)                           ["Light"]          {channel="knx:device:brightness:Lounge"}
-Number                  KNXLuminosityLuxStudy                 "brightness [%.1f lux]"    (gPersistMe, gStudySensors)                            ["Light"]          {channel="knx:device:brightness:Study"}
- 
-// Motion
-Contact                 KNXMotionContactBathroomGuest         "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gBathroomGuestSensors)    ["Presence"]       {channel="knx:device:motion:BathroomGuest"}
-Contact                 KNXMotionContactBathroomMain          "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gBathroomMainSensors)     ["Presence"]       {channel="knx:device:motion:BathroomMain"}
-Contact                 KNXMotionContactBedroom1              "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gBedroom1Sensors)         ["Presence"]       {channel="knx:device:motion:Bedroom1"}
-Contact                 KNXMotionContactBedroom2              "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gBedroom2Sensors)         ["Presence"]       {channel="knx:device:motion:Bedroom2"}
-Contact                 KNXMotionContactBedroom3              "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gBedroom3Sensors)         ["Presence"]       {channel="knx:device:motion:Bedroom3"}
-Contact                 KNXMotionContactHallwayLarge          "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gHallwayLargeSensors)     ["Presence"]       {channel="knx:device:motion:HallwayLarge"}
-Contact                 KNXMotionContactHallwaySmall          "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gHallwaySmallSensors)     ["Presence"]       {channel="knx:device:motion:HallwaySmall"}
-Contact                 KNXMotionContactKitchen               "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gKitchenSensors)          ["Presence"]       {channel="knx:device:motion:Kitchen"}
-Contact                 KNXMotionContactLounge                "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gLoungeSensors)           ["Presence"]       {channel="knx:device:motion:Lounge"}
-Contact                 KNXMotionContactStudy                 "[MAP(motion.map):%s]"     (gPersistMe, gMotionSensors, gStudySensors)            ["Presence"]       {channel="knx:device:motion:Study"}
+Number                  KNXLuminosityLuxBathroomGuest    "brightness [%.1f lux]"    (gPersistMe, gBathroomGuestSensors)    ["Light"]          {channel="knx:device:brightness:BathroomGuest"}
+Number                  KNXLuminosityLuxBathroomMain     "brightness [%.1f lux]"    (gPersistMe, gBathroomMainSensors)     ["Light"]          {channel="knx:device:brightness:BathroomMain"}
+Number                  KNXLuminosityLuxBedroom1         "brightness [%.1f lux]"    (gPersistMe, gBedroom1Sensors)         ["Light"]          {channel="knx:device:brightness:Bedroom1"}
+Number                  KNXLuminosityLuxBedroom2         "brightness [%.1f lux]"    (gPersistMe, gBedroom2Sensors)         ["Light"]          {channel="knx:device:brightness:Bedroom2"}
+Number                  KNXLuminosityLuxBedroom3         "brightness [%.1f lux]"    (gPersistMe, gBedroom3Sensors)         ["Light"]          {channel="knx:device:brightness:Bedroom3"}
+Number                  KNXLuminosityLuxHallwayLarge     "brightness [%.1f lux]"    (gPersistMe, gHallwayLargeSensors)     ["Light"]          {channel="knx:device:brightness:HallwayLarge"}
+Number                  KNXLuminosityLuxHallwaySmall     "brightness [%.1f lux]"    (gPersistMe, gHallwaySmallSensors)     ["Light"]          {channel="knx:device:brightness:HallwaySmall"}
+Number                  KNXLuminosityLuxKitchen          "brightness [%.1f lux]"    (gPersistMe, gKitchenSensors)          ["Light"]          {channel="knx:device:brightness:Kitchen"}
+Number                  KNXLuminosityLuxLounge           "brightness [%.1f lux]"    (gPersistMe, gLoungeSensors)           ["Light"]          {channel="knx:device:brightness:Lounge"}
+Number                  KNXLuminosityLuxStudy            "brightness [%.1f lux]"    (gPersistMe, gStudySensors)            ["Light"]          {channel="knx:device:brightness:Study"}
+
+// Waterlogger
+Group                   gWaterLogger                     "WaterLogger"              (gEquipment)                           ["Sensor"]
+
+String                  WaterLoggerRestartReason         "Restart Reason"           (gWaterLogger)                                            {channel="mqtt:topic:waterlogger:RestartReason"}
+String                  WaterLoggerVersion               "Version"                  (gWaterLogger)                         ["Measurement"]    {channel="mqtt:topic:waterlogger:Version"}
+Number                  WaterLoggerRSSI                  "RSSI"                     (gWaterLogger)                         ["Measurement"]    {channel="mqtt:topic:waterlogger:RSSI"}
+String                  WaterLoggerWifiDowntime          "Text value"               (gWaterLogger)                                            {channel="mqtt:topic:waterlogger:WifiDowntime"}
+Number                  WaterLoggerLoadAvg               "Load Avg"                 (gWaterLogger)                         ["Measurement"]    {channel="mqtt:topic:waterlogger:LoadAvg"}
+Number                  WaterLoggerUptime                "Uptime"                   (gWaterLogger)                         ["Measurement"]    {channel="mqtt:topic:waterlogger:Uptime"}
+Number                  WaterCounterCold                 "Cold Water Counter"       (gPersistMe, gWaterLogger)             ["Measurement"]    {channel="mqtt:topic:waterlogger:WaterCounterCold"}
+Number                  WaterCounterHot                  "Hot Water Counter"        (gPersistMe, gWaterLogger)             ["Measurement"]    {channel="mqtt:topic:waterlogger:WaterCounterHot"}

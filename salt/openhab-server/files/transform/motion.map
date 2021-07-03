@@ -1,2 +1,3 @@
 CLOSED=no motion
 OPEN=motion
+NULL=map failure

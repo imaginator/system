@@ -1,0 +1,14 @@
+Thing knx:device:cwwwlighting               "KNX CW/WW Lighting"                    (knx:ip:knxrouter) {
+    Type dimmer : studyceilingdimmer    "Study Ceiling Dimmer"               [ switch="1/1/50", position="1/1/60+<1/1/61" ]
+    Type dimmer : studyceilingtempp     "Study Ceiling Light Temperature"    [ switch="1/1/52", position="1/1/62+<1/1/63" ]
+    Type number : studyceilingtempp2    "Dali Family Room Farbtemperatur"    [ ga="7.013:1/4/0+<3/2/0"]
+}
+
+
+//
+//Switching	6/1/11		TRUE	Study light	DPST-1-1	Auto
+//Status on/off	6/1/12		TRUE	Study light	DPST-1-1	Auto
+//Dimming	6/1/13		TRUE	Study light	DPST-3-7	Auto
+//dimming value	6/1/14		TRUE	Study light	DPST-5-1	Auto
+//status of dimming value	6/1/15		TRUE	Study light	DPST-5-1	Auto
+//

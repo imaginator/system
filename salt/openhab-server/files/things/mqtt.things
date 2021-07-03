@@ -1,8 +1,40 @@
-Bridge mqtt:broker:broker [ host="mqtt.imagilan", secure=false, clientid="openhab" ]
-    {
-      Thing topic miflora "Plants" @ "terrace" {
-       Channels:
-         Type number : temperature "Air Temperature" [ stateTopic="sensor/temperature_celsius"]
-         Type number : humidity    "Humidity"        [stateTopic="sensor/humidity"]
-        }
-    }
+Bridge mqtt:broker:broker [ 
+  host="mqtt.imagilan", 
+  secure=false, 
+  clientid="openhab" 
+  ]
+
+Thing mqtt:topic:waterlogger "WaterLogger"  (mqtt:broker:broker) {
+    Channels:
+        Type string : RestartReason     [stateTopic="tele/waterlogger/INFO3", transformationPattern="JSONPATH:$.RestartReason"]
+        Type string : Version           [stateTopic="tele/waterlogger/INFO1", transformationPattern="JSONPATH:$.Version"]
+        Type number : RSSI              [stateTopic="tele/waterlogger/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+        Type string : WifiDowntime      [stateTopic="tele/waterlogger/STATE", transformationPattern="JSONPATH:$.Wifi.Downtime"]
+        Type number : LoadAvg           [stateTopic="tele/waterlogger/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+        Type number : Uptime            [stateTopic="tele/waterlogger/STATE", transformationPattern="JSONPATH:$.UptimeSec"]
+        Type string : Result            [stateTopic="stat/waterlogger/RESULT"]
+        // Water Counters
+        // Type number : WaterCounterCold  [stateTopic="tele/waterlogger/SENSOR", transformationPattern="JSONPATH:$.COUNTER.C1"]
+        // Type number : WaterCounterHot   [stateTopic="tele/waterlogger/SENSOR", transformationPattern="JSONPATH:$.COUNTER.C2"]
+        // after rules we just use the following
+        // Rule1 on COUNTER#C1!=%var1% do  Backlog var1 %value%; publish stat/waterlogger/counter1 %value% endon
+        // Rule2 on COUNTER#C2!=%var2% do  Backlog var2 %value%; publish stat/waterlogger/counter2 %value% endon
+        Type number : WaterCounterCold  [stateTopic="stat/waterlogger/counter1"]
+        Type number : WaterCounterHot   [stateTopic="stat/waterlogger/counter2"]
+}
+
+Thing mqtt:topic:irrigation "Irrigation"  (mqtt:broker:broker) {
+    Channels:
+        Type string : RestartReason     [stateTopic="tele/irrigation/INFO3", transformationPattern="JSONPATH:$.RestartReason"]
+        Type string : Version           [stateTopic="tele/irrigation/INFO1", transformationPattern="JSONPATH:$.Version"]
+        Type number : RSSI              [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+        Type string : WifiDowntime      [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.Wifi.Downtime"]
+        Type number : LoadAvg           [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+        Type number : Uptime            [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.UptimeSec"]
+        Type string : Result   "output"            [stateTopic="stat/irrigation/RESULT" ]
+        Type switch : Power    "Start/Stop Irrigation"         [stateTopic="stat/irrigation/POWER", 
+                                        commandTopic="tasmota/irrigation/cmnd/POWER", 
+                                        on="ON", 
+                                        off="OFF"
+                                        ]
+}

@@ -27,5 +27,5 @@ Bridge velux:klf200:veluxgw "VELUX Window Controller" @ "central" [
     Thing  window        roof "VELUX hallway rooftop"          @ "hallway small"  [ serial="53:2A:59:5A:13:01:01:BB" ] 
     // main bathroom
     Thing  rollershutter mbo  "VELUX main bathroom outside"    @ "bathroom main"  [ serial="53:29:0C:5A:12:2B:02:FD" ]
-    Thing  window        mb   "VELUX main bathroom opener"     @ "bathroom main"  [ serial="56:36:13:5A:12:30:09:2A" ]
+    Thing  window        mb   "VELUX main bathroom opener"     @ "bathroom main"  [ serial="56:36:13:5A:12:30:09:2A" ]    
     }

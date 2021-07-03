@@ -1,0 +1,11 @@
+// Equipment Definitions
+Group     gIrrigation                "Irrigation"       (gEquipment)                 ["Pump"]
+
+String    IrrigationRestartReason    "Text value"                                                  {channel="mqtt:topic:irrigation:RestartReason"}
+String    IrrigationVersion          "Text value"                                                  {channel="mqtt:topic:irrigation:Version"}
+Number    IrrigationRSSI             "Number value"                                                {channel="mqtt:topic:irrigation:RSSI"}
+String    IrrigationWifiDowntime     "Text value"                                                  {channel="mqtt:topic:irrigation:WifiDowntime"}
+Number    IrrigationLoadAvg          "Number value"                                                {channel="mqtt:topic:irrigation:LoadAvg"}
+Number    IrrigationUptime           "Number value"                                                {channel="mqtt:topic:irrigation:Uptime"}
+String    IrrigationResult           "Text value"                                                  {channel="mqtt:topic:irrigation:Result"}
+Switch    IrrigationPower            "On/off switch"    (gPersistMe, gIrrigation)    ["Switch"]    {channel="mqtt:topic:irrigation:Power"}

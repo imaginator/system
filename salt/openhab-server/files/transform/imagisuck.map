@@ -4,3 +4,52 @@ technic=[31323,17929,34773,25129,1]
 kitchen=[25847,22682,27397,23832,1],[24901,17624,27551,22724,1]
 passage=[24541,22662,25841,25012,1]
 lounge=[18053,17437,25203,23237,1]
+
+
+// (the docking station has 25500,25500)
+// The parameters are:
+
+bottom (y) - meter from the docking point
+left (x) - meter from the docking point
+w - zone width in meters
+h - zone height in meters
+repeat - number of times to clean the zone
+
+
+
+// Bedroom 1
+Zone coordinates:	[23950,25336], [26264,23121]		Zone clean command:  app_zoned_clean[[ 23950,23121,26264,25336,1 ]]
+
+// Bedroom 2
+Zone coordinates:	[27261,32594], [23350,36928]		Zone clean command:  app_zoned_clean[[ 23350,32594,27261,36928,1 ]]
+
+// Bedroom 3
+Zone coordinates:	[30972,32594], [27294,36783]		Zone clean command:  app_zoned_clean[[ 27294,32594,30972,36783,1 ]]
+
+// Study 
+Zone coordinates:	[33306,32483], [30983,36828]		Zone clean command:  app_zoned_clean[[ 30983,32483,33306,36828,1 ]]
+
+// Main hallway
+Zone coordinates:	[38217,30706], [23483,32594]		Zone clean command:  app_zoned_clean[[ 23483,30706,38217,32594,1 ]]
+
+// Small hallway
+Zone coordinates:	[25050,24950], [24021,32579]		Zone clean command:  app_zoned_clean[[ 24021,24950,25050,32579,1 ]]
+
+// Cat Toilet area
+Zone coordinates:	[24150,24707], [25221,26479]		Zone clean command:  app_zoned_clean[[ 24150,24707,25221,26479,1 ]]
+
+// Main Bathroom
+Zone coordinates:	[25193,28850], [28207,26364]		Zone clean command:  app_zoned_clean[[ 25193,26364,28207,28850,1 ]]
+
+// Guest Bathroom
+Zone coordinates:	[26493,28850], [28264,30936]		Zone clean command:  app_zoned_clean[[ 26493,28850,28264,30936,1 ]]
+
+// Kitchen area
+Zone coordinates:	[32007,30936], [34679,27321]		Zone clean command:  app_zoned_clean[[ 32007,27321,34679,30936,1 ]]
+
+// Dinging area
+Zone coordinates:	[33321,32564], [38293,27221]		Zone clean command:  app_zoned_clean[[ 33321,27221,38293,32564,1 ]]
+
+// Empty bin
+Goto command:  [ 32707,29464 ]
+

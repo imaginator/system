@@ -1,7 +1,8 @@
 //imagisuck  (03DA214A)
-miio:vacuum:imagisuck "Xiaomi imagiSuck" @ "hallway small" [ 
+miio:vacuum:imagisuck "imagiSuck" [ 
     host="imagisuck.imagilan",
     model="rockrobo.vacuum.v1",
     deviceId="{{ salt['pillar.get']('openhab:vacuum_deviceid') }}",
-    token="{{ salt['pillar.get']('openhab:vacuum_token') }}"
+    token="{{ salt['pillar.get']('openhab:vacuum_token') }}",
+    communication="direct"
 ]

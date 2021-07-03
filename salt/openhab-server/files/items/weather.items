@@ -1,3 +1,12 @@
+// KNX Weather Station
+Number    KNXWeatherStationWeatherStationTemperature       "Weather station temperature [%.1f °C]"          {channel="knx:device:weatherstation:WeatherStationTemperature"}
+Number    KNXWeatherStationWeatherStationWindSpeed         "Weather station wind speed  [%.1f m/s]"           {channel="knx:device:weatherstation:WeatherStationWindSpeed"}
+Number    KNXWeatherStationWeatherStationBrightnessEast    "Weather station brightness east [%.0f lux]"      {channel="knx:device:weatherstation:WeatherStationBrightnessEast"}
+Number    KNXWeatherStationWeatherStationBrightnessWest    "Weather station brightness west [%.0f lux]"      {channel="knx:device:weatherstation:WeatherStationBrightnessWest"}
+Number    KNXWeatherStationWeatherStationBrightnessSouth   "Weather station brightness south [%.0f lux]"     {channel="knx:device:weatherstation:WeatherStationBrightnessSouth"}
+Number    KNXWeatherStationWeatherStationDusk              "Weather station dusk [%.1f lux]"                 {channel="knx:device:weatherstation:WeatherStationDusk"}
+Contact   KNXWeatherStationWeatherStationHighWind          "Weather station high wind scenario"   {channel="knx:device:weatherstation:WeatherStationHighWind"}
+
 // atmosphere
 Number      Humidity               "Humidity [%d %%]"                                    {weather="locationId=home, type=atmosphere, property=humidity"}
 Number      Visibility             "Visibility [%.2f km]"                                {weather="locationId=home, type=atmosphere, property=visibility"}

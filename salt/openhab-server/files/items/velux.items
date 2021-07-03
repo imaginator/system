@@ -1,4 +1,4 @@
-String                 VeluxWindowControllerStatus                "Bridge state"                                                                                            {channel="velux:klf200:veluxgw:status"}
-Switch                 VeluxWindowControllerReload                "Reload"                                                                                                  {channel="velux:klf200:veluxgw:reload"}
-Number                 VeluxWindowControllerDowntime              "Downtime"                                                                                                {channel="velux:klf200:veluxgw:downtime"}
-Switch                 VeluxWindowControllerDoDetection           "Activate bridge detection mode"                                                                          {channel="velux:klf200:veluxgw:doDetection"}
+String    VeluxWindowControllerStatus         "Bridge state"                      {channel="velux:klf200:veluxgw:status"}
+Switch    VeluxWindowControllerReload         "Reload"                            {channel="velux:klf200:veluxgw:reload"}
+Number    VeluxWindowControllerDowntime       "Downtime"                          {channel="velux:klf200:veluxgw:downtime"}
+Switch    VeluxWindowControllerDoDetection    "Activate bridge detection mode"    {channel="velux:klf200:veluxgw:doDetection"}

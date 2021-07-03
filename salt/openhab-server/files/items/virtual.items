@@ -1,5 +1,12 @@
 // The daylight ct dimmer is a color temperature reference value
-Dimmer      DaylightCT "daylight emulation"
-Contact     QuietTime  "People are sleeping"
-Switch      CatGenieTimer { expire="10m,command=OFF" }
-Switch      Timer_EyeInTheSky_MotionAlarm 
+Dimmer     DaylightCT                       "daylight emulation"
+Contact    QuietTime                        "People are sleeping"
+Switch     CatGenieTimer                                                  {expire="10m,command=OFF"}
+Switch     Timer_EyeInTheSky_MotionAlarm
+
+
+
+String     TimeOfDay                        "Current time of day [%s]"
+
+
+

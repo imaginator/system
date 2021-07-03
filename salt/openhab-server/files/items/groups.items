@@ -2,91 +2,89 @@
 
 // itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 
-
-
-
-
-//HOUSE MODEL
-
-//Indoor
-Group    gRooms                   "Rooms"                                                       ["Indoor"]
+// Semantic Model
+Group    gRooms                     "Room"                                                                ["Indoor"]
+Group    gEquipment                 "Equipment"                                                           ["Equipment"]
 
 // Rooms
-Group    gBathroomGuest           "Bathroom Guest"      <bath>              (gRooms)            ["Bathroom"]
-Group    gBathroomMain            "Bathroom Main"       <bath>              (gRooms)            ["Bathroom"]
-Group    gBedroom1                "Bedroom 1"           <bedroom>           (gRooms)            ["Bedroom"]
-Group    gBedroom2                "Bedroom 2"           <bedroom>           (gRooms)            ["Bedroom"]
-Group    gBedroom3                "Bedroom 3"           <bedroom>           (gRooms)            ["Bedroom"]
-Group    gHallwayLarge            "Main Hallway"        <corridor>          (gRooms)            ["Corridor"]
-Group    gHallwaySmall            "Small Hallway"       <corridor>          (gRooms)            ["Corridor"]
-Group    gKitchen                 "Kitchen"             <kitchen>           (gRooms)            ["Kitchen"]
-Group    gLaundry                 "Laundry Room"        <washingmachine>    (gRooms)            ["LaundryRoom"]
-Group    gLounge                  "Lounge"              <party>             (gRooms)            ["LivingRoom"]
-Group    gStudy                   "Study"               <office>            (gRooms)            ["Office"]
-Group    gTerrace                 "Terrace"             <Terrace>           (gRooms)            ["Terrace"]
+Group    gBathroomGuest             "Bathroom Guest"              <Bath>              (gRooms)            ["Bathroom"]
+Group    gBathroomMain              "Bathroom Main"               <Bath>              (gRooms)            ["Bathroom"]
+Group    gBedroom1                  "Bedroom 1"                   <Bedroom>           (gRooms)            ["Bedroom"]
+Group    gBedroom2                  "Bedroom 2"                   <Bedroom>           (gRooms)            ["Bedroom"]
+Group    gBedroom3                  "Bedroom 3"                   <Bedroom>           (gRooms)            ["Bedroom"]
+Group    gHallwayLarge              "Main Hallway"                <Corridor>          (gRooms)            ["Corridor"]
+Group    gHallwaySmall              "Small Hallway"               <Corridor>          (gRooms)            ["Corridor"]
+Group    gKitchen                   "Kitchen"                     <Kitchen>           (gRooms)            ["Kitchen"]
+Group    gLaundry                   "Laundry Room"                <Washingmachine>    (gRooms)            ["LaundryRoom"]
+Group    gLounge                    "Lounge"                      <Party>             (gRooms)            ["LivingRoom"]
+Group    gStudy                     "Study"                       <Office>            (gRooms)            ["Office"]
+Group    gTerrace                   "Terrace"                     <Terrace>           (gRooms)            ["Terrace"]
 
 // Sensors
-Group    gBathroomGuestSensors    "Sensors"                                 (gBathroomGuest)    ["Sensor"]
-Group    gBathroomMainSensors     "Sensors"                                 (gBathroomMain)     ["Sensor"]
-Group    gBedroom1Sensors         "Sensors"                                 (gBedroom1)         ["Sensor"]
-Group    gBedroom2Sensors         "Sensors"                                 (gBedroom2)         ["Sensor"]
-Group    gBedroom3Sensors         "Sensors"                                 (gBedroom3)         ["Sensor"]
-Group    gHallwayLargeSensors     "Sensors"                                 (gHallwayLarge)     ["Sensor"]
-Group    gHallwaySmallSensors     "Sensors"                                 (gHallwaySmall)     ["Sensor"]
-Group    gKitchenSensors          "Sensors"                                 (gKitchen)          ["Sensor"]
-Group    gLaundrySensors          "Sensors"                                 (gLaundry)          ["Sensor"]
-Group    gStudySensors            "Sensors"                                 (gStudy)            ["Sensor"]
+Group    gBathroomGuestSensors      "Sensors"                     <Sensor>            (gBathroomGuest)    ["Sensor"]
+Group    gBathroomMainSensors       "Sensors"                     <Sensor>            (gBathroomMain)     ["Sensor"]
+Group    gBedroom1Sensors           "Sensors"                     <Sensor>            (gBedroom1)         ["Sensor"]
+Group    gBedroom2Sensors           "Sensors"                     <Sensor>            (gBedroom2)         ["Sensor"]
+Group    gBedroom3Sensors           "Sensors"                     <Sensor>            (gBedroom3)         ["Sensor"]
+Group    gHallwayLargeSensors       "Sensors"                     <Sensor>            (gHallwayLarge)     ["Sensor"]
+Group    gHallwaySmallSensors       "Sensors"                     <Sensor>            (gHallwaySmall)     ["Sensor"]
+Group    gKitchenSensors            "Sensors"                     <Sensor>            (gKitchen)          ["Sensor"]
+Group    gLaundrySensors            "Sensors"                     <Sensor>            (gLaundry)          ["Sensor"]
+Group    gLoungeSensors             "Sensors"                     <Sensor>            (gLounge)           ["Sensor"]
+Group    gStudySensors              "Sensors"                     <Sensor>            (gStudy)            ["Sensor"]
 
 // Lights
-Group    gBathroomGuestLights     "Lights"                                  (gBathroomGuest)    ["Lightbulb"]
-Group    gBathroomMainLights      "Lights"                                  (gBathroomMain)     ["Lightbulb"]
-Group    gBedroom1Lights          "Lights"                                  (gBedroom1)         ["Lightbulb"]
-Group    gBedroom2Lights          "Lights"                                  (gBedroom2)         ["Lightbulb"]
-Group    gBedroom3Lights          "Lights"                                  (gBedroom3)         ["Lightbulb"]
-Group    gHallwayLargeLights      "Lights"                                  (gHallwayLarge)     ["Lightbulb"]
-Group    gHallwaySmallLights      "Lights"                                  (gHallwaySmall)     ["Lightbulb"]
-Group    gKitchenLights           "Lights"                                  (gKitchen)          ["Lightbulb"]
-Group    gLaundryLights           "Lights"                                  (gLaundry)          ["Lightbulb"]
-Group    gStudyLights             "Lights"                                  (gStudy)            ["Lightbulb"]
+Group    gBathroomGuestLights       "Lights"                      <Lightbulb>         (gBathroomGuest)    ["Lightbulb"]
+Group    gBathroomMainLights        "Lights"                      <Lightbulb>         (gBathroomMain)     ["Lightbulb"]
+Group    gBedroom1Lights            "Lights"                      <Lightbulb>         (gBedroom1)         ["Lightbulb"]
+Group    gBedroom2Lights            "Lights"                      <Lightbulb>         (gBedroom2)         ["Lightbulb"]
+Group    gBedroom3Lights            "Lights"                      <Lightbulb>         (gBedroom3)         ["Lightbulb"]
+Group    gHallwayLargeLights        "Lights"                      <Lightbulb>         (gHallwayLarge)     ["Lightbulb"]
+Group    gHallwaySmallLights        "Lights"                      <Lightbulb>         (gHallwaySmall)     ["Lightbulb"]
+Group    gKitchenLights             "Lights"                      <Lightbulb>         (gKitchen)          ["Lightbulb"]
+Group    gLaundryLights             "Lights"                      <Lightbulb>         (gLaundry)          ["Lightbulb"]
+Group    gLoungeLights              "Lights"                      <Lightbulb>         (gLounge)           ["Lightbulb"]
+Group    gStudyLights               "Lights"                      <Lightbulb>         (gStudy)            ["Lightbulb"]
 
 // Heating
-Group    gBathroomGuestHeating    "Heating"             <heating>           (gBathroomGuest)    ["HVAC"]
-Group    gBathroomMainHeating     "Heating"             <heating>           (gBathroomMain)     ["HVAC"]
-Group    gBedroom1Heating         "Heating"             <heating>           (gBedroom1)         ["HVAC"]
-Group    gBedroom2Heating         "Heating"             <heating>           (gBedroom2)         ["HVAC"]
-Group    gBedroom3Heating         "Heating"             <heating>           (gBedroom3)         ["HVAC"]
-Group    gHallwayLargeHeating     "Heating"             <heating>           (gHallwayLarge)     ["HVAC"]
-Group    gHallwaySmallHeating     "Heating"             <heating>           (gHallwaySmall)     ["HVAC"]
-Group    gKitchenHeating          "Heating"             <heating>           (gKitchen)          ["HVAC"]
-Group    gLaundryHeating          "Heating"             <heating>           (gLaundry)          ["HVAC"]
-Group    gStudyHeating            "Heating"             <heating>           (gStudy)            ["HVAC"]
+Group    gBathroomGuestHVAC         "HVAC"                        <Heating>           (gBathroomGuest)    ["HVAC"]
+Group    gBathroomMainHVAC          "HVAC"                        <Heating>           (gBathroomMain)     ["HVAC"]
+Group    gBedroom1HVAC              "HVAC"                        <Heating>           (gBedroom1)         ["HVAC"]
+Group    gBedroom2HVAC              "HVAC"                        <Heating>           (gBedroom2)         ["HVAC"]
+Group    gBedroom3HVAC              "HVAC"                        <Heating>           (gBedroom3)         ["HVAC"]
+Group    gHallwayLargeHVAC          "HVAC"                        <Heating>           (gHallwayLarge)     ["HVAC"]
+Group    gHallwaySmallHVAC          "HVAC"                        <Heating>           (gHallwaySmall)     ["HVAC"]
+Group    gKitchenHVAC               "HVAC"                        <Heating>           (gKitchen)          ["HVAC"]
+Group    gLaundryHVAC               "HVAC"                        <Heating>           (gLaundry)          ["HVAC"]
+Group    gLoungeHVAC                "HVAC"                        <Heating>           (gLounge)           ["HVAC"]
+Group    gStudyHVAC                 "HVAC"                        <Heating>           (gStudy)            ["HVAC"]
 
 // Media
-Group    gBathroomGuestMedia    "Media"             <Media>           (gBathroomGuest)    ["Speaker"]
-Group    gBathroomMainMedia     "Media"             <Media>           (gBathroomMain)     ["Speaker"]
-Group    gBedroom1Media         "Media"             <Media>           (gBedroom1)         ["Speaker"]
-Group    gBedroom2Media         "Media"             <Media>           (gBedroom2)         ["Speaker"]
-Group    gBedroom3Media         "Media"             <Media>           (gBedroom3)         ["Speaker"]
-Group    gHallwayLargeMedia     "Media"             <Media>           (gHallwayLarge)     ["Speaker"]
-Group    gHallwaySmallMedia     "Media"             <Media>           (gHallwaySmall)     ["Speaker"]
-Group    gKitchenMedia          "Media"             <Media>           (gKitchen)          ["Speaker"]
-Group    gLaundryMedia          "Media"             <Media>           (gLaundry)          ["Speaker"]
-Group    gStudyMedia            "Media"             <Media>           (gStudy)            ["Speaker"]
+Group    gBathroomGuestMedia        "Media"                       <Media>             (gBathroomGuest)    ["Speaker"]
+Group    gBathroomMainMedia         "Media"                       <Media>             (gBathroomMain)     ["Speaker"]
+Group    gBedroom1Media             "Media"                       <Media>             (gBedroom1)         ["Speaker"]
+Group    gBedroom2Media             "Media"                       <Media>             (gBedroom2)         ["Speaker"]
+Group    gBedroom3Media             "Media"                       <Media>             (gBedroom3)         ["Speaker"]
+Group    gHallwayLargeMedia         "Media"                       <Media>             (gHallwayLarge)     ["Speaker"]
+Group    gHallwaySmallMedia         "Media"                       <Media>             (gHallwaySmall)     ["Speaker"]
+Group    gKitchenMedia              "Media"                       <Media>             (gKitchen)          ["Speaker"]
+Group    gLaundryMedia              "Media"                       <Media>             (gLaundry)          ["Speaker"]
+Group    gLoungeMedia               "Media"                       <Media>             (gLounge)           ["Speaker"]
+Group    gStudyMedia                "Media"                       <Media>             (gStudy)            ["Speaker"]
 
 
-
-// Functional perspective
-Group    gEquipment               "Equipment"                                                   ["Equipment"]
-
+// Equipment Definitions
+Group    gHVAC                      "HVAC"                                            (gEquipment)        ["Equipment"]
+Group    gTargetTemperature         "Temperature Setpoint"                            (gHVAC)             ["Equipment"]
+Group    gElectricityMeasurement    "Electricity Measurements"                        (gEquipment)        ["Equipment"]
+ 
 // Sensors
-Group    gSensors                 "Sensors"                                 (gEquipment)        ["Equipment"]
-Group    gTemperatures            "Temperatures"                            (gSensors)
-Group    gMotionSensors           "Motion Sensors"                          (gSensors)          ["MotionDetector"]
-
+Group    gTemperatures              "Temperatures"                                    (gEquipment)        ["Sensor" ]
+Group    gMotionSensors             "Motion Sensors"                                  (gEquipment)        ["MotionDetector"]
+Group    gAQI                       "Air Quality readings"                            (gEquipment)        ["Sensor" ]
 
 // Media
-Group    gVolumeControl           "Volumes"                                 (gEquipment)        ["Equipment"]
+Group    gVolumeControl             "Volumes"                                         (gEquipment)        ["Equipment"]
 
 
-
-Group    gPersistMe               "Items to persist"
+Group    gPersistMe                 "Items to persist"

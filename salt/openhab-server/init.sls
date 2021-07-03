@@ -144,38 +144,6 @@ openhab-webaccess:
     - htpasswd_file: /etc/nginx/htpasswd
     - options: s
 
-# Habpanel
-
-habpanel-config:
-  file.recurse:
-    - name: /etc/openhab/habpanel
-    - source: salt://openhab-server/files/habpanel
-    - include_empty: True
-    - user: openhab
-    - group: openhab
-    - file_mode: 0644
-    - watch_in:
-      - service: openhab
-
-habpanel-css:
-  file.managed:
-    - name: /etc/openhab/html/habpanel.css
-    - source: salt://openhab-server/files/habpanel/habpanel.css
-    - makedirs: True
-    - user: root
-    - group: root
-
-habpanel-configure-commands:
-  service.running:
-    - name: openhab
-  cmd.script:
-    - source: salt://openhab-server/files/habpanel/habpanel-setup.sh
-    - onchanges:
-      - file: habpanel-config
-    - require:
-      - cmd: openhab
-      - file: habpanel-config
-
 /var/lib/openhab/uuid:
   file.replace:
     - pattern: '^.*$'
@@ -208,7 +176,6 @@ openhab-remote-console:
     - comment: "Openhab Console Remote Access"
     - save: true
 
-
 openhab-iptables-dhcp-accept-ipv4:
   iptables.append:
     - table: filter
@@ -234,20 +201,6 @@ openhab-iptables-dhcp-redirect-ipv4:
     - jump: REDIRECT
     - to-port: 6767
     - destination: 127.0.0.1
+    - match: comment 
     - comment: "DHCP redirect for openhab"
     - save: True
-
-mosquitto-ipv4-iptables:
-  iptables.append:
-    - table: filter
-    - chain: INPUT
-    - match: state
-    - connstate: NEW
-    - proto: tcp
-    - jump: ACCEPT
-    - source: 10.7.11.0/24
-    - dport: 1883
-    - family: ipv4
-    - match: comment 
-    - comment: "mosquitto input"
-    - save: true
