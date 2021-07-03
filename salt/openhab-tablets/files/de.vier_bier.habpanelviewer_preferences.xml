@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="pref_allow_mixed_content" value="true" />
+    <boolean name="pref_allow_webrtc" value="true" />
+    <boolean name="pref_autoplay_video" value="true" />
+    <boolean name="pref_battery_enabled" value="true" />
+    <boolean name="pref_brightness_average" value="true" />
+    <boolean name="pref_brightness_enabled" value="false" />
+    <boolean name="pref_capture_screen_enabled" value="false" />
+    <boolean name="pref_connected_enabled" value="true" />
+    <boolean name="pref_current_url_enabled" value="true" />
+    <boolean name="pref_desktop_mode" value="false" />
+    <boolean name="pref_device_admin" value="true" />
+    <boolean name="pref_disable_cache" value="false" />
+    <boolean name="pref_hardware_accelerated" value="true" />
+    <boolean name="pref_immersive" value="true" />
+    <boolean name="pref_intro_shown" value="true" />
+    <boolean name="pref_javascript" value="true" />
+    <boolean name="pref_load_start_url_on_screenon" value="true" />
+    <boolean name="pref_log_browser_messages" value="false" />
+    <boolean name="pref_motion_detection_enabled" value="false" />
+    <boolean name="pref_motion_detection_new_api" value="true" />
+    <boolean name="pref_motion_detection_preview" value="false" />
+    <boolean name="pref_pressure_average" value="true" />
+    <boolean name="pref_pressure_enabled" value="false" />
+    <boolean name="pref_prevent_dragging" value="false" />
+    <boolean name="pref_proximity_enabled" value="false" />
+    <boolean name="pref_restart_enabled" value="true" />
+    <boolean name="pref_screen_enabled" value="true" />
+    <boolean name="pref_show_context_menu" value="true" />
+    <boolean name="pref_show_on_lock_screen" value="true" />
+    <boolean name="pref_startup_enabled" value="true" />
+    <boolean name="pref_temperature_average" value="true" />
+    <boolean name="pref_temperature_enabled" value="true" />
+    <boolean name="pref_track_browser_connection" value="true" />
+    <boolean name="pref_usage_enabled" value="false" />
+    <boolean name="pref_volume_enabled" value="true" />
+    <string name="pref_battery_charging_item">Tablet_${room}_Battery_Charging</string>
+    <string name="pref_battery_item">Tablet_${room}_Battery_Low</string>
+    <string name="pref_battery_level_item">Tablet_${room}_Battery_Level</string>
+    <string name="pref_battery_temp_item">Tablet_${room}_Battery_Temp</string>
+    <string name="pref_brightness_intervall">60</string>
+    <string name="pref_brightness_item">Tablet_${room}_Brightness</string>
+    <string name="pref_command_item">Tablet_${room}_Control</string>
+    <string name="pref_connected_interval">60</string>
+    <string name="pref_connected_item">Tablet_${room}_ConnectedTime</string>
+    <string name="pref_current_url_item">Tablet_${room}_Url</string>
+    <string name="pref_jpeg_quality">70</string>
+    <string name="pref_menu_position">right</string>
+    <string name="pref_motion_detection_granularity">20</string>
+    <string name="pref_motion_detection_leniency">20</string>
+    <string name="pref_motion_detection_sleep">500</string>
+    <string name="pref_openhab_version">OH3</string>
+    <string name="pref_pressure_intervall">60</string>
+    <string name="pref_screen_item">Tablet_${room}_Screen</string>
+    <string name="pref_server_url">http://openhab.imagilan</string>    <!-- used for the API access -->
+    <string name="pref_start_url">http://openhab.imagilan/page/${room}?kiosk=on</string>    <!-- used to start a tablet on a specific screen (needs to be full URL) -->
+    <string name="pref_startup_item">Tablet_${room}_StartupTime</string>
+    <string name="pref_take_pic_delay">100</string>
+    <string name="pref_temperature_intervall">60</string>
+    <string name="pref_theme">dark</string>
+    <string name="pref_usage_item">Tablet_${room}_Usage</string>
+    <string name="pref_usage_timeout">60</string>
+    <string name="pref_volume_item">Tablet_${room}_Volume</string>
+</map>
