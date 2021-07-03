@@ -3,21 +3,17 @@ mosquitto:
     - service.running:
       - enable: true
 
-/etc/systemd/system/prometheus-openhab-exporter.service:
-  file:
-    - managed
-    - makedirs: true
-    - user: root
-    - group: root
-    - mode: 0644
-    - source: salt://prometheus-openhab-exporter/files/prometheus-openhab-exporter.service
-    - require:
-      - archive: extract_openhab_exporter
-
-prometheus-openhab-exporter.service:
-  service.running:
-    - enable: True
-    - reload: True
-    - watch:
-      - archive: extract_openhab_exporter
-      - file: /etc/systemd/system/prometheus-openhab-exporter.service
+mosquitto-ipv4-iptables:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - match: state
+    - connstate: NEW
+    - proto: tcp
+    - jump: ACCEPT
+    - source: 10.7.8.0/22
+    - dport: 1883
+    - family: ipv4
+    - match: comment 
+    - comment: "mosquitto input"
+    - save: True
