@@ -17,10 +17,17 @@
 // 12:Bedroom 2
 // 13:Bedroom 3
 
+//Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
+//    type="ROUTER",
+//    localSourceAddr="1.0.255", // avoid conflicts with ETS (1.0.254)
+//    localIp="10.7.9.2",
+//    autoReconnectPeriod=60
+//    ]
+
 Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
-    type="ROUTER",
+    type="TUNNEL",
+    ipAddress="knxrouter.imagilan",
     localSourceAddr="1.0.255", // avoid conflicts with ETS (1.0.254)
-    localIp="10.7.9.2",
     autoReconnectPeriod=60
     ]
 
@@ -81,7 +88,8 @@ Thing knx:device:KnxButtonsBedroom3BedRight   "KNX Device Button Bedroom 3 Bed R
 // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Motion
-Thing knx:device:motion "KNX Motion Contact" (knx:ip:knxrouter) {
+Thing knx:device:motion "KNX Motion Contact" (knx:ip:knxrouter)
+ {
     Type contact      : Lounge          "Lounge"                                    [ ga="1.009:<4/4/1" ]
     Type contact      : Kitchen         "Kitchen"                                   [ ga="1.009:<5/4/1" ]
     Type contact      : Study           "Study"                                     [ ga="1.009:<6/4/1" ]
@@ -266,40 +274,6 @@ Thing knx:device:bustraffic "KNX Bus Traffic"    (knx:ip:knxrouter) @ "central" 
 Thing knx:device:ntp         "KNX Date/Time"          (knx:ip:knxrouter) {
         Type datetime-control      : knxdate    [ ga="11.001:1/3/11" ]
         Type datetime-control      : knxtime    [ ga="10.001:1/3/12" ]
-}
-
-// RGBW lighting
-Thing knx:device:rgbwlighting           "KNX RGBW Lighting"       (knx:ip:knxrouter) {
-    Type dimmer-control        : RGBred            "Kitchen Niche RGB red"         [ position="5.001:5/1/32" ]
-    Type dimmer-control        : RGBgreen          "Kitchen Niche RGB green"       [ position="5.001:5/1/33" ]
-    Type dimmer-control        : RGBblue           "Kitchen Niche RGB blue"        [ position="5.001:5/1/34" ]
-    Type dimmer-control        : RGBwhite          "Kitchen Niche RGB white"       [ position="5.001:5/1/35" ]
-    Type color                 : demoColor         "Demo Color"                    [ hsb="251.600:<7/0/25", switch="1.001:<7/0/26", position="5.001:<7/0/27", increaseDecrease="3.007:<7/0/28" ]
-    Type color-control         : colorControl      "Demo Color Control"            [ hsb="251.600:7/0/25",  switch="1.001:7/0/26",  position="5.001:7/0/27",  increaseDecrease="3.007:7/0/28"  ]
-}
-
-// CW/WW lighting
-
-/*
-1/1/0 switch on/off command
-1/1/1 switch on/off state (with R-flag set (i.e. L-flag in germany)
-1/1/2 increase/decrease command
-1/1/3 absolute dimmer level command as % (i.e. DPT 5.001)
-1/1/4 absolute dimmer level state as % (i.e. DPT 5.001, with R-flag set (i.e. L-flag in germany)
-
-The wall switch should be configured to
-
-1/1/0,1/1/1 for short press
-1/1/2 for long press
-
-        Type dimmer : myDimmer "Dimmer" [ ga="1/1/0", position="1/1/3+<1/1/4" ]
-
-*/
-
-Thing knx:device:cwwwlighting               "KNX CW/WW Lighting"                    (knx:ip:knxrouter) {
-    Type dimmer : studyceilingdimmer "Study Ceiling"      [ switch="1/1/50", position="1/1/60+<1/1/61" ]
-    Type dimmer : studyceilingtempp "Colour Temperature"  [ switch="1/1/52", position="1/1/62+<1/1/63" ]
-    Type number : studyceilingtempp2        "Dali Family Room Farbtemperatur"  [ ga="7.013:1/4/0+<3/2/0"]
 }
 
 Thing knx:device:weatherstation                     "KNX weather station"                   (knx:ip:knxrouter) {
