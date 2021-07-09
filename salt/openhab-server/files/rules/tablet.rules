@@ -5,16 +5,18 @@ rule "Turn tablet screen on when motion in room"
     then
         var room = triggeringItem.name.replace("KNXMotionContact","")
         var TabletName = "Tablet_" + room + "_Control"
-        logInfo("Tablet Screeb on in","extracted room: {}", room)
         sendCommand(TabletName, "SCREEN_ON")
         sendCommand(TabletName, "SET_BRIGHTNESS AUTO")
+        // start the countdown to turning off the screen
+        sendCommand("Tablet_" + room + "_Countdown", "ON")
     end
 
-rule "Turn tablet screen off when motion in room"
-    when
-        Member of gTabletMotionTrigger changed to CLOSED
+rule "Turn tablet screen off when expiry fires"
+//Item 'Tablet_Study_Countdown' changed from ON to OFF
+    when 
+        Member of gTabletCountdown changed to OFF
     then
-        var room = triggeringItem.name.replace("KNXMotionContact","")
+        var room = transform("REGEX", "^Tablet_(.*)_Countdown$", triggeringItem.name)
         var TabletName = "Tablet_" + room + "_Control"
         sendCommand(TabletName, "ALLOW_SCREEN_OFF")
         sendCommand(TabletName, "SCREEN_DIM")
