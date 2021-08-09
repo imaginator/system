@@ -407,7 +407,7 @@
   },
   {
     "uid": "HallwayLarge",
-    "timestamp": "2021-07-01T14:27:43.011+0200",
+    "timestamp": "2021-08-09T14:33:19.134+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -434,12 +434,61 @@
                       "slots": {
                         "default": [
                           {
-                            "component": "oh-rollershutter-card",
+                            "component": "oh-list-card",
                             "config": {
-                              "vertical": true,
-                              "title": "1 (north)",
-                              "item": "HallwayLargeRollershutter1",
-                              "stateInCenter": true
+                              "accordionList": false
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Roof  (north)",
+                                    "item": "HallwayLargeWindowNorth",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Roof 2",
+                                    "item": "HallwayLargeRollershutter2",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Roof 3",
+                                    "item": "HallwayLargeRollershutter3",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Roof 4",
+                                    "item": "HallwayLargeRollershutter4",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Roof 5",
+                                    "item": "HallwayLargeRollershutter5",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "item": "HallwayLargeRollershutter6",
+                                    "stateInCenter": true,
+                                    "title": "Roof (south)"
+                                  }
+                                }
+                              ]
                             }
                           }
                         ]
@@ -451,153 +500,55 @@
                       "slots": {
                         "default": [
                           {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "title": 2,
-                              "item": "HallwayLargeRollershutter2",
-                              "stateInCenter": true
+                            "component": "oh-list-card",
+                            "config": {},
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Window",
+                                    "item": "HallwayLargeWindowNorth",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-list-item",
+                                  "config": {}
+                                },
+                                {
+                                  "component": "oh-list-item",
+                                  "config": {}
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "Window",
+                                    "item": "HallwayLargeWindowSouth",
+                                    "stateInCenter": true
+                                  }
+                                },
+                                {
+                                  "component": "oh-list-item",
+                                  "config": {}
+                                },
+                                {
+                                  "component": "oh-list-item",
+                                  "config": {}
+                                },
+                                {
+                                  "component": "oh-rollershutter-item",
+                                  "config": {
+                                    "title": "small hallway window",
+                                    "subtitle": "outside main bathroom",
+                                    "item": "HallwaySmallRooftopWindowOpenerPosition",
+                                    "stateInCenter": true
+                                  }
+                                }
+                              ]
                             }
                           }
                         ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "title": 3,
-                              "item": "HallwayLargeRollershutter3",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "title": 4,
-                              "item": "HallwayLargeRollershutter4",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "title": 5,
-                              "item": "HallwayLargeRollershutter5",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "title": "6 (south)",
-                              "item": "HallwayLargeRollershutter6",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "component": "oh-grid-row",
-                "config": {},
-                "slots": {
-                  "default": [
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "title": "North Window",
-                              "vertical": true,
-                              "item": "HallwayLargeWindowNorth",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "vertical": true,
-                              "item": "HallwayLargeWindowSouth",
-                              "title": "South Window",
-                              "stateInCenter": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
                       }
                     }
                   ]
@@ -618,7 +569,8 @@
                             "config": {
                               "item": "KNXTemperatureCelciusHallwayLarge",
                               "trendItem": "KNXTemperatureCelciusHallwayLarge",
-                              "title": "large hallway temperature"
+                              "title": "temperature",
+                              "footer": "large hallway "
                             }
                           }
                         ]
@@ -632,13 +584,36 @@
                           {
                             "component": "oh-label-card",
                             "config": {
-                              "title": "Last motion",
-                              "item": "KNXMotionContactHallwayLarge_LastChanged",
-                              "label": "=dayjs(item).fromNow() ",
+                              "footer": "large hallway",
                               "noBorder": true,
                               "noShadow": true,
-                              "outline": true,
-                              "iconUseState": true
+                              "item": "KNXMotionContactHallwayLarge",
+                              "title": "motion"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "component": "oh-grid-col",
+                      "config": {
+                        "width": "10"
+                      },
+                      "slots": {
+                        "default": []
+                      }
+                    },
+                    {
+                      "component": "oh-grid-col",
+                      "config": {},
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-label-card",
+                            "config": {
+                              "item": "KNXTemperatureCelciusHallwaySmall",
+                              "title": "temperature",
+                              "footer": "small hallway"
                             }
                           }
                         ]
@@ -648,28 +623,18 @@
                       "component": "oh-grid-col",
                       "config": {},
                       "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
+                        "default": [
+                          {
+                            "component": "oh-label-card",
+                            "config": {
+                              "footer": "small hallway",
+                              "noBorder": true,
+                              "noShadow": true,
+                              "item": "KNXMotionContactHallwaySmall",
+                              "title": "motion"
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -682,68 +647,7 @@
           "component": "oh-block",
           "config": {},
           "slots": {
-            "default": [
-              {
-                "component": "oh-grid-row",
-                "config": {},
-                "slots": {
-                  "default": [
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-rollershutter-card",
-                            "config": {
-                              "item": "HallwaySmallRooftopWindowOpenerPosition",
-                              "vertical": false,
-                              "noBorder": true,
-                              "stateInCenter": true,
-                              "footer": "small hallway roof window"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-label-card",
-                            "config": {
-                              "footer": "small hallway temperature",
-                              "item": "KNXTemperatureCelciusHallwaySmall",
-                              "noBorder": true,
-                              "noShadow": true
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-label-card",
-                            "config": {
-                              "footer": "small hallway motion",
-                              "noBorder": true,
-                              "noShadow": true,
-                              "item": "KNXMotionContactHallwaySmall"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "default": []
           }
         }
       ]
@@ -1251,7 +1155,7 @@
   },
   {
     "uid": "Network",
-    "timestamp": "2021-06-30T14:46:07.411+0200",
+    "timestamp": "2021-06-30T14:46:07.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1316,7 +1220,7 @@
   },
   {
     "uid": "Study",
-    "timestamp": "2021-06-30T19:14:34.122+0200",
+    "timestamp": "2021-07-19T17:29:23.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1380,6 +1284,52 @@
                   "footer": "outside",
                   "stateInCenter": true
                 }
+              },
+              {
+                "component": "widget:color_light_v3",
+                "config": {
+                  "brightness": "LightStudyCeilingDimmer",
+                  "temperature": "LightStudyCeilingTemperature",
+                  "colorMode": "LightStudyCeilingColourMode",
+                  "header": "Ceiling lights",
+                  "lampToggle": "LightStudyCeilingSwitch",
+                  "color": "LightStudyCeilingTemperature"
+                }
+              },
+              {
+                "component": "oh-toggle-card",
+                "config": {
+                  "item": "LightStudyCeilingSwitch",
+                  "title": "Ceiling lighting",
+                  "color": "red"
+                }
+              },
+              {
+                "component": "oh-colorpicker-card",
+                "config": {
+                  "item": "KNXLightingCWWWLightStudyCeilingColourTemperaturePercent",
+                  "modules": [
+                    "wheel",
+                    "hs-spectrum",
+                    "palette",
+                    "initial-current-colors"
+                  ]
+                }
+              },
+              {
+                "component": "oh-slider-card",
+                "config": {
+                  "item": "KNXLightingCWWWLightStudyCeilingColourTemperaturePercent",
+                  "title": "Colour Temperature",
+                  "label": true
+                }
+              },
+              {
+                "component": "oh-slider-card",
+                "config": {
+                  "title": "Brightness",
+                  "item": "KNXLightingCWWWLightStudyCeilingDimmer"
+                }
               }
             ]
           }
@@ -1389,7 +1339,7 @@
   },
   {
     "uid": "Terrace",
-    "timestamp": "2021-06-28T16:53:44.000+0200",
+    "timestamp": "2021-07-20T16:58:30.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1420,7 +1370,7 @@
                             "component": "oh-toggle-card",
                             "config": {
                               "title": "Irrigation",
-                              "item": "IrrigationPower",
+                              "item": "IrrigationPowerSwitch",
                               "noBorder": true,
                               "noShadow": true,
                               "outline": false
@@ -1645,7 +1595,7 @@
   },
   {
     "uid": "overview",
-    "timestamp": "2021-06-27T20:28:29.000+0200",
+    "timestamp": "2021-08-09T13:38:33.552+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1668,6 +1618,14 @@
                   "title": "Ktchen",
                   "noBorder": true,
                   "noShadow": true
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "title": "Hallway",
+                  "action": "navigate",
+                  "actionPage": "page:HallwayLarge"
                 }
               },
               {
@@ -1735,19 +1693,59 @@
                   "actionPage": "page:Bedroom3",
                   "icon": "f7:bed_double"
                 }
-              },
-              {
-                "component": "oh-label-card",
-                "config": {
-                  "title": "Hallway",
-                  "action": "navigate",
-                  "actionPage": "page:Hallway"
-                }
               }
             ]
           }
         }
       ]
+    }
+  },
+  {
+    "uid": "vacuum",
+    "timestamp": "2021-07-22T12:53:34.000+0200",
+    "component": "oh-layout-page",
+    "config": {
+      "layoutType": "responsive",
+      "label": "Vacuum",
+      "sidebar": true,
+      "order": "-1"
+    },
+    "slots": {
+      "default": [
+        {
+          "component": "oh-block",
+          "config": {},
+          "slots": {
+            "default": [
+              {
+                "component": "oh-grid-row",
+                "config": {},
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-grid-col",
+                      "config": {},
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-image-card",
+                            "config": {
+                              "item": "XiaomiImagiSuckCleaningMap",
+                              "title": "Map",
+                              "refreshInterval": 10
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "grid": []
     }
   },
   {
