@@ -5,21 +5,23 @@ rule "Turn tablet screen on when motion in room"
     then
         var room = triggeringItem.name.replace("KNXMotionContact","")
         var TabletName = "Tablet_" + room + "_Control"
+        var TabletCountdown =  "Tablet_" + room + "_Countdown"
+        logInfo("tablets", "motion triggered in room: " + room)
         sendCommand(TabletName, "SCREEN_ON")
         sendCommand(TabletName, "SET_BRIGHTNESS AUTO")
         // start the countdown to turning off the screen
-        sendCommand("Tablet_" + room + "_Countdown", "ON")
+        sendCommand(TabletCountdown, "ON")
     end
 
 rule "Turn tablet screen off when expiry fires"
-//Item 'Tablet_Study_Countdown' changed from ON to OFF
-    when 
+   when 
         Member of gTabletCountdown changed to OFF
-    then
+   then
         var room = transform("REGEX", "^Tablet_(.*)_Countdown$", triggeringItem.name)
         var TabletName = "Tablet_" + room + "_Control"
+        logInfo("tablets", "countdown finished in room: " + room)
         sendCommand(TabletName, "ALLOW_SCREEN_OFF")
         sendCommand(TabletName, "SCREEN_DIM")
         // setup the screen for next time it gets turned on
-        sendCommand(TabletName, "SHOW_URL http://openhab.imagilan/page/" + room + "?kiosk=on")
+        // sendCommand(TabletName, "SHOW_URL http://openhab.imagilan/page/" + room + "?kiosk=on")
 end
