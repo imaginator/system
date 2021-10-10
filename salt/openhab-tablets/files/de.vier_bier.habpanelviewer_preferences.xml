@@ -54,7 +54,7 @@
     <string name="pref_pressure_intervall">60</string>
     <string name="pref_screen_item">Tablet_${room}_Screen</string>
     <string name="pref_server_url">http://openhab.imagilan</string>    <!-- used for the API access -->
-    <string name="pref_start_url">http://openhab.imagilan/page/${room}?kiosk=on</string>    <!-- used to start a tablet on a specific screen (needs to be full URL) -->
+    <string name="pref_start_url">http://openhab.imagilan/page/${room}</string>    <!-- used to start a tablet on a specific screen (needs to be full URL) -->
     <string name="pref_startup_item">Tablet_${room}_StartupTime</string>
     <string name="pref_take_pic_delay">100</string>
     <string name="pref_temperature_intervall">60</string>
