@@ -1,0 +1,70 @@
+// Heating Modes
+Thing knx:device:heating-mode "KNX Heating Modes" (knx:ip:knxrouter) {
+    Type switch-control         : SummmerMode             "Summer Mode Switch"      [ ga="1.001:1/6/21" ] 
+    Type switch-control         : NightMode               "Night Mode Switch"       [ ga="1.001:1/6/22+1/6/22" ] 
+    Type switch-control         : CoolingMode             "Cooling Mode Switch"     [ ga="1.001:1/6/23" ] 
+}
+
+// Current Temperature
+Thing knx:device:temperature "KNX Current Temperature (Celcius)" (knx:ip:knxrouter) {
+    Type number      : Lounge "LoungeCurrentTemperature"                            [ ga="9.001:<4/2/1" ]
+    Type number      : Kitchen "KitchenCurrentTemperature"                          [ ga="9.001:<5/2/1" ]
+    Type number      : Study "StudyCurrentTemperature"                              [ ga="9.001:<6/2/1" ]
+    Type number      : BathroomMain "BathroomMainCurrentTemperature"                [ ga="9.001:<7/2/1" ]
+    Type number      : BathroomGuest "BathroomGuestCurrentTemperature"              [ ga="9.001:<8/2/1" ]
+    Type number      : HallwayLarge "HallwayLargeCurrentTemperature"                [ ga="9.001:<9/2/1" ]
+    Type number      : HallwaySmall "HallwaySmallCurrentTemperature"                [ ga="9.001:<10/2/1" ]
+    Type number      : Bedroom1 "Bedroom1CurrentTemperature"                        [ ga="9.001:<11/2/1" ]
+    Type number      : Bedroom2 "Bedroom2CurrentTemperature"                        [ ga="9.001:<12/2/1" ]
+    Type number      : Bedroom3 "Bedroom3CurrentTemperature"                        [ ga="9.001:<13/2/1" ]
+}
+
+// Heating Valve Status
+Thing knx:device:heating-valve-status "KNX Heating Valve Status (percentage)" (knx:ip:knxrouter) {
+    Type number      : Lounge        "LoungeHeatingValveStatus"                            [ ga="5.001:<4/6/3" ]
+    Type number      : Kitchen       "KitchenHeatingValveStatus"                           [ ga="5.001:<5/6/3" ]
+    Type number      : Study         "StudyHeatingValveStatus"                             [ ga="5.001:<6/6/3" ]
+    Type number      : BathroomMain  "BathroomMainHeatingValveStatus"                      [ ga="5.001:<7/6/3" ]
+    Type number      : BathroomGuest "BathroomGuestHeatingValveStatus"                     [ ga="5.001:<8/6/3" ]
+    Type number      : Bedroom1      "Bedroom1HeatingValveStatus"                          [ ga="5.001:<11/6/3" ]
+    Type number      : Bedroom2      "Bedroom2HeatingValveStatus"                          [ ga="5.001:<12/6/3" ]
+    Type number      : Bedroom3      "Bedroom3HeatingValveStatus"                          [ ga="5.001:<13/6/3" ]
+}
+
+// Target Heating Temperature
+Thing knx:device:heating-target-temperature "KNX Heating Target Temperature (Celcius)" (knx:ip:knxrouter) {
+    Type number      : Lounge "LoungeTargetTemperature"                             [ ga="9.001:<4/6/7+4/6/7" ]
+    Type number      : Kitchen "KitchenTargetTemperature"                           [ ga="9.001:<5/6/7+5/6/7" ]
+    Type number      : Study "StudyTargetTemperature"                               [ ga="9.001:<6/6/7+6/6/7" ]
+    Type number      : BathroomMain "BathroomMainTargetTemperature"                 [ ga="9.001:<7/6/7+7/6/7" ]
+    Type number      : BathroomGuest "BathroomGuestTargetTemperature"               [ ga="9.001:<8/6/7+8/6/7" ]
+    Type number      : Bedroom1 "Bedroom1TargetTemperature"                         [ ga="9.001:<11/6/7+11/6/7" ]
+    Type number      : Bedroom2 "Bedroom2TargetTemperature"                         [ ga="9.001:<12/6/7+12/6/7" ]
+    Type number      : Bedroom3 "Bedroom3TargetTemperature"                         [ ga="9.001:<13/6/7+13/6/7" ]
+}
+
+// Heating Mode
+// position="6/7/13+<6/7/14"  (13=status 14 = control)
+Thing knx:device:hvac-mode "KNX HVAC Mode" (knx:ip:knxrouter) {
+    Type number      : Lounge "LoungeHeatingMode"                                    [ ga="20.102:4/6/10+<4/6/4" ]  
+    Type number      : Kitchen "KitchenHeatingMode"                                  [ ga="20.102:5/6/10+<5/6/4" ]
+    Type number      : Study "StudyHeatingMode"                                      [ ga="20.102:6/6/10+<6/6/4" ]
+    Type number      : BathroomMain "BathroomMainHeatingMode"                        [ ga="20.102:7/6/10+<7/6/4" ]
+    Type number      : BathroomGuest "BathroomGuestHeatingMode"                      [ ga="20.102:8/6/10+<8/6/4" ]
+    Type number      : Bedroom1 "Bedroom1HeatingMode"                                [ ga="20.102:11/6/10+<11/6/4" ]
+    Type number      : Bedroom2 "Bedroom2HeatingMode"                                [ ga="20.102:12/6/10+<12/6/4" ]
+    Type number      : Bedroom3 "Bedroom3HeatingMode"                                [ ga="20.102:13/6/10+<13/6/4" ]
+}
+
+// Heating Diagnosis Text
+Thing knx:device:heating-diagnosis-text "KNX Heating Disgnosis Text" (knx:ip:knxrouter) {
+    Type string      : Lounge "LoungeHeatingDiagnosisText"                          [ ga="16.000:<4/6/19" ]
+    Type string      : Kitchen "KitchenHeatingDiagnosisText"                        [ ga="16.000:<5/6/19" ]
+    Type string      : Study "StudyHeatingDiagnosisText"                            [ ga="16.000:<6/6/19" ]
+    Type string      : BathroomMain "BathroomMainHeatingDiagnosisText"              [ ga="16.000:<7/6/19" ]
+    Type string      : BathroomGuest "BathroomGuestHeatingDiagnosisText"            [ ga="16.000:<8/6/19" ]
+    Type string      : Bedroom1 "Bedroom1HeatingDiagnosisText"                      [ ga="16.000:<11/6/19" ]
+    Type string      : Bedroom2 "Bedroom2HeatingDiagnosisText"                      [ ga="16.000:<12/6/19" ]
+    Type string      : Bedroom3 "Bedroom3HeatingDiagnosisText"                      [ ga="16.000:<13/6/19" ]
+}
+

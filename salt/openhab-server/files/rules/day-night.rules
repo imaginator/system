@@ -1,14 +1,15 @@
+// Used by Heating Controller
+
 rule "Set KNX Day object"
 when
     Channel 'astro:sun:local:rise#end' triggered START
 then
-    item.sendCommand(knx:device:MDT_IPG:Aussenlicht_Strasse, ON)
+    NightMode.sendCommand(OFF)
 end
-
 
 rule "Set KNX Night object"
 when
     Channel 'astro:sun:local:set#end' triggered START
 then
-    item.sendCommand(knx:device:MDT_IPG:Aussenlicht_Strasse, ON)
+    NightMode.sendCommand(ON)
 end
