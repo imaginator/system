@@ -2,14 +2,14 @@
 
 rule "Set KNX Day object"
 when
-    Channel 'astro:sun:local:rise#end' triggered START
+    Channel 'astro:sun:local:rise#event' triggered START
 then
     NightMode.sendCommand(OFF)
 end
 
 rule "Set KNX Night object"
 when
-    Channel 'astro:sun:local:set#end' triggered START
+    Channel 'astro:sun:local:set#event' triggered START
 then
     NightMode.sendCommand(ON)
 end
