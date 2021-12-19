@@ -1,26 +1,214 @@
-// https://community.openhab.org/t/xiaomi-robot-vacuum-binding/31317/1120
+// this is to en- or disable  debugging of a specific set of rules. 
+val logName = "Rocky" // Name of the set of rules
+var loggingInfo = true // if loggingInfo =true , this set of rules can be debugged without getting debug-messages from every rule.
+var Timer Pause_Timer = null
 
-var String sCoordinates = ""
+val Dockfloor = "EG" // Floor where the docking station is. This will assume that the correct map is loaded when vacuum is in dock. This can speed up things, but might produce error if someone chages map in app.  Set to "NO" to disable
 
-rule "start vaccuum"
+
+///////////////////////////////////////////////////////////////////////////////
+// Function to calculate from m to values the vacuum understands
+// see https://community.openhab.org/t/xiaomi-roborock-zone-cleanup-rule/55138/2?u=peterk
+///////////////////////////////////////////////////////////////////////////////
+
+val Functions$Function1<String, String> getZoneCoordinates =
+[zone |
+  var parameters = zone.split(',')
+  // Docking point start position
+  val double x = 25500.0;
+  val double y = 25500.0;
+  // Bottom (y) left (x)
+  val double b = Double::parseDouble(parameters.get(0)) * 1000.0 + x
+  val double l = Double::parseDouble(parameters.get(1)) * 1000.0 + y
+  // Top (y) right (x)
+  val double t = b + Double::parseDouble(parameters.get(2)) * 1000.0
+  val double r = l + Double::parseDouble(parameters.get(3)) * 1000.0
+  // Build zone coordinates (and number of times to scan)
+  val coordinates = String::format("[%.0f,%.0f,%.0f,%.0f,%s]", b, l, t, r, parameters.get(4));
+  coordinates
+]
+
+/////////////////////////////////////////////////////////////////////
+// The rules to check for the floor each time when positioning is done
+// The idea is from here https://community.openhab.org/t/xiaomi-roborock-room-clean-multi-level-map/108850/13
+///////////////////////////////////////////////////////////////////
+
+// when a  new map is available, the rule will request a floorplan
+rule "A new map is available"
 when
-    Item XiaomiRobotVacuum1SStartCleaning_Proxy received command 
+	Item Rocky_RobotLocating changed to OFF or // vacuum stops searchin
+	Item Rocky_CleaningMap changed from UNDEF // if Rocky_RobotLocating is buggy
 then
-     if (receivedCommand==ON) {
-        if (gVacClean.members.filter[r|r.state == ON].size != 0) {                              // Start only if at least one switch is set to ON
-        sCoordinates = ""                                                                       // (re-) initialize var
-        gVacClean.members.filter[r|r.state == ON].forEach[r|                                    // for each switch set to ON
-            sCoordinates=sCoordinates + transform("MAP","imagisuck.map",r.label) + ","             // add it to a string
-        ]
-        sCoordinates = sCoordinates.substring(0,sCoordinates.length - 1)                        // get rid of last comma
-        if(VacAll_Proxy.state == ON) sCoordinates=transform("MAP","imagisck.map","Alles")       // if All is active, use simple map
-        XiaomiRobotVacuum1SActionsCommands.sendCommand("app_zoned_clean["+sCoordinates+"]")     // start cleaning
-        //logInfo("EXTRA", sCoordinates)
-        XiaomiRobotVacuum1SActionsFan.sendCommand(104)  //set the fan to max
-        }
-     }
-     else  {
-        XiaomiRobotVacuum1SActionsCommands.sendCommand("app_charge")  // go back to the docking station
-       }
-     
+	val ruleLogName = "A new map is available (" + triggeringItemName + ") "
+	// A new map is available. I the floor has to be determined, we need the room_mapping. 
+	// The rule will ask for a room_mapping and another rule will wait for the result 
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "New Map and openhab should check for Level - I get the Floorplan")
+	Rocky_ExecuteCommand.sendCommand("get_room_mapping")
+end
+
+rule "When room_mapping is available"
+when
+	Item Rocky_ExecuteCommand changed from get_room_mapping
+then
+	val ruleLogName = "room_mapping is available: "
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "Triggered. The room_mapping is " + newState.toString)
+	
+	var String firstRoom = transform("JSONPATH", "$.result[0][0]", newState.toString)
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "First room on room_mapping is " + firstRoom)
+	
+	// first room should be 16
+	if (firstRoom == "16"){
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Check the ID of Room 16 (unique for each floor) and use map in order to find floor")
+		
+		var Etage = transform("MAP", "imagisuck.map", transform("JSONPATH", "$.result[0][1]",newState.toString))		
+		
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Drumroll... we present you the new floor: " + Etage)
+		Rocky_Etage.sendCommand(Etage)
+		
+	} else {
+		// If the check is not succesfull, the floor will be set to UNDEF
+		Rocky_Etage.sendCommand("UNDEF")
+	}
+end
+
+/////////////////////////////////////////////////////////////////////
+// The rules to control the vacuum
+///////////////////////////////////////////////////////////////////
+
+rule "Vacuum should go to work"
+when
+	Member of gSaugSwitches  received command ON
+then
+	// For debugging: Set the name of this rule
+	val ruleLogName = "Vacuum should go to work (" + triggeringItemName + ") "
+	// This is how a debuglog looks like.... I also use this for documentation of the code
+	if (loggingInfo == true ) logInfo(logName, ruleLogName )
+	
+	// This rule starts if one switch in the group receives the command to clean a specific room 
+	
+	// Check if floor is already known
+	if (( Rocky_State.state == "Charging"  )  && (  Rocky_Etage.state == Dockfloor ) && (  Dockfloor != "NO" ) ) {
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Vacuum in Dock => Level is known")
+		// If the current floor is know, dont wait for new map-update.This will be wrong if someone changed the map in the app and did not start cleaning (which would have updated Rocky_Etage).
+		Rocky_Etage.sendCommand(Dockfloor) 
+	} else {
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Vacuum not in Dock => Start cleaning and positioning")
+		// No Command (only update), as a command would directly trigger next rule. Using update, the next rule will be triggered after a map-update
+		Rocky_VacuumOnOff.sendCommand(ON)
+		// Start vacuum. The vacuum will automatically start positioning. 
+		// After positioning (or at least after starting cleaning) this will automatically result in a new map which will trigger next rule	
+	}
+
+end 
+
+// When the "check the floor" is done
+rule "Go to your room"
+when
+	Item Rocky_Etage received command 
+then
+	// We know the current floor - now we check if the room in in this floor and then go to this room
+	val ruleLogName = "Go to your room " 
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "Triggered")
+	
+	// If there is a command to clean a room
+	if (gSaugSwitches.state == ON) {
+		
+		// stop cleaning for new instructions
+		if  ( (Rocky_ControlVacuum.state != "pause" ) &&  (Rocky_ControlVacuum.state != "dock" ) ) {
+			Rocky_ControlVacuum.sendCommand("pause")
+		}
+		
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Check which switch was used latest")
+		val WelcherSaugSwitch = gSaugSwitches.members.filter[i|i.state==ON].sortBy[lastUpdate].last
+
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "found: " + WelcherSaugSwitch.name)
+		
+		// get level and room from name of the switch
+		val String SollEtage = WelcherSaugSwitch.name.toString.split('_').get(1) 
+		val String SollRaum = WelcherSaugSwitch.name.toString.split('_').get(2)
+		
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Floor: " + SollEtage + "; Room: " + SollRaum)
+
+		// only do the cleaning once
+		WelcherSaugSwitch.postUpdate(OFF)
+
+		//if vacuum is in correct floor. If floor is UNDEF, this will stop the vacuum and exit
+		if ( SollEtage != Rocky_Etage.state.toString ) {
+			if (loggingInfo == true ) logInfo(logName, ruleLogName + "Falsche Etage. Ist= " + Rocky_Etage.state + ", Soll: " + SollEtage )
+			return
+		} 
+		
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Etage OK")
+		
+		// if Zonecleaning was activated go to this rule and exit
+		if ( SollRaum ==  "ZO" ) {
+			val String SollZone = WelcherSaugSwitch.name.toString.split('_').get(3)
+			if (loggingInfo == true ) logInfo(logName, ruleLogName + "Zonenreinigung von " + SollZone)
+			Vacuum_Zone.sendCommand(SollZone)
+			return
+		} 
+		
+		
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Raumreinigung")
+		// OK... Roomcleaning it is
+
+		// get room ID from MAP
+		val RaumNummer =  transform("MAP", "imagisuck.map", SollEtage + "_" + SollRaum)		
+		
+		
+		Pause_Timer = createTimer( now.plusSeconds(3) ,[|
+			if (loggingInfo == true ) logInfo(logName, ruleLogName + "Go to your room " + RaumNummer)
+			// Finally.... send the room
+			Rocky_VacuumRoom.sendCommand(RaumNummer)
+		 ])
+	} else {
+		if (loggingInfo == true ) logInfo(logName, ruleLogName + "Thank you for the information of the current floor, but I just keep cleaning")
+	}
+end
+
+rule "Vacuum Zone control"
+when
+  Item Vacuum_Zone received command
+then
+	// From https://community.openhab.org/t/xiaomi-roborock-zone-cleanup-rule/55138/2?u=peterk
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "Vacuum command: "+ receivedCommand.toString)
+
+	// The final command send to the vacuum
+	var String command = ""
+	// Get zone coordinates
+	var String zone = transform("MAP", "imagisuck.map", receivedCommand.toString)
+	// We still don't know if this is single or multiple zone
+	var parameters = zone.split(',')
+	try {
+	  // Single zone only have numbers
+	  Double::parseDouble(parameters.get(0))
+	  command = getZoneCoordinates.apply(zone)
+	} catch (Throwable t) {
+	  // This is multi zone
+	  parameters.forEach[string z|
+		zone = transform("MAP", "imagisuck.map", z)
+		command = command + getZoneCoordinates.apply(zone) + ","
+	  ]
+	  // Remove last ','
+	  command = command.substring(0, command.length - 1)
+	}
+	command = String::format("[%s]", command)
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "Clean {} zone coordinates {}", receivedCommand.toString, command)
+	Rocky_ExecuteCommand.sendCommand('app_zoned_clean' + command)
+
+end
+
+// The sinlge switches are nice if you use e.g. Alexa. In the UI, it is nicer to have one string with command options
+// This rlule will get the correct switch from the string command
+rule "Saugbefehl generieren aus String"
+when
+	Item Rocky_Saugbefehle received command
+then
+	val ruleLogName = "Saugbefehl generieren aus String (" + receivedCommand + ") "
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "suche HH_" + receivedCommand + "*")
+	
+	val SaugbefehlItem = gSaugSwitches.members.filter[s| s.name.startsWith("HH_" + receivedCommand)].head as SwitchItem
+	
+	if (loggingInfo == true ) logInfo(logName, ruleLogName + "Item gefunden: " + SaugbefehlItem.name)
+	SaugbefehlItem.sendCommand(ON)
 end
