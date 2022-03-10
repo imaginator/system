@@ -1,19 +1,91 @@
-// 	21		Switching	1 bit	6/1/21	overhead cw/ww light	Yes	Yes	switch	
-// 	22		Dim relative (brightness)	4 bit	6/1/22	overhead cw/ww light	Yes	Yes	dimming control	
-// 	23		Dim absolute (brightness)	1 byte	6/1/23	overhead cw/ww light	Yes	Yes	percentage (0..100%)	
-// 	24		Status (on/off)	1 bit	6/1/24	overhead cw/ww light	Yes	Yes	switch	
-// 	25		Status (brightness)	1 byte	6/1/25	overhead cw/ww light	Yes	Yes	percentage (0..100%)	
-// 	26		Status (failure)	1 bit	6/1/26	overhead cw/ww light	Yes	Yes	alarm	
-// 	27		Dim absolute (colour temperature (K))	2 bytes	6/1/27	overhead cw/ww light	Yes	Yes	absolute colour temperature (K)	
-// 	28		Dim absolute (colour temperature (0..100%)	1 byte	6/1/28	overhead cw/ww light	Yes	Yes	percentage (0..100%)	
-// 	29		Dim relative (colour temperature)	4 bit	6/1/29	overhead cw/ww light	Yes	Yes	dimming control	
-// 	30		Status (colour temperature dimming value)	2 bytes	6/1/30	overhead cw/ww light	Yes	Yes	absolute colour temperature (K)	
+/*
+"Group name"	"Address"	"Central"	"Unfiltered"	"Description"	"DatapointType"	"Security"
+"On/Off - switch"	"5/1/68"	""	"true"	""	"DPST-1-1"	"Auto"
+"Dimming Brighter/Darker - relative"	"5/1/69"	""	"true"	""	"DPST-3-7"	"Auto"
+"Dimming Brighter/Darker - absolute"	"5/1/70"	""	"true"	""	"DPST-5-1"	"Auto"
+"Dimming Brighter/Darker - speed"	"5/1/71"	""	"true"	""	"DPST-225-1"	"Auto"
+"On/Off - status"	"5/1/73"	""	"true"	""	"DPST-1-1"	"Auto"
+"Dimming Brigher/Darker - status"	"5/1/74"	""	"true"	""	"DPST-5-1"	"Auto"
+"Failure Status - alarm"	"5/1/75"	""	"true"	""	"DPST-1-5"	"Auto"
+"Converter Fault Statistics"	"5/1/76"	""	"true"	""	"DPT-12"	"Auto"
+"Failure Exceeds Threshold - alarm"	"5/1/77"	""	"true"	""	"DPST-1-5"	"Auto"
+=== hsb === "Colour (HSV) Hue - absolute"	"5/1/79"	""	"true"	""	"DPST-5-3"	"Auto"
+=== position ===  "Colour (HSV) Saturation - absolute"	"5/1/80"	""	"true"	""	"DPST-5-1"	"Auto"
+"Colour White Dim - absolute"	"5/1/82"	""	"true"	""	"DPST-5-1"	"Auto"
+"Colour (HSV) Hue Fading - relative"	"5/1/83"	""	"true"	""	"DPST-3-7"	"Auto"
+"Colour (HSV) staturation - relative"	"5/1/84"	""	"true"	""	"DPST-3-7"	"Auto"
+"Colour White - relative"	"5/1/86"	""	"true"	""	"DPST-3-7"	"Auto"
+=== hsb ===      "Colour (HSV) Hue - status"	"5/1/88"	""	"true"	""	"DPST-5-3"	"Auto"
+=== position === "Colour (HSV) Saturation - status"	"5/1/89"	""	"true"	""	"DPST-5-1"	"Auto"
+"Colour (HSV) White - status"	"5/1/91"	""	"true"	""	"DPST-5-1"	"Auto"
+"operating hours - reset"	"5/1/92"	""	"true"	""	"DPST-1-15"	"Auto"
+"operating hours - time"	"5/1/93"	""	"true"	""	"DPST-13-100"	"Auto"
+"operating hours - alarm"	"5/1/94"	""	"true"	""	"DPST-1-5"	"Auto"
+*/
 
-Thing knx:device:knxlightingcwww                     "KNX Lighting CW/WW"                (knx:ip:knxrouter) {
-    Type dimmer : LightStudyCeilingDimmer               "Study Ceiling Dimmer"              [ switch="6/1/21+<6/1/24", position="6/1/23+<6/1/25" ]                       
-    Type dimmer : LightStudyCeilingColourTemperature    "Study Ceiling Colour Temperature"  [ ga="6/1/28+<6/1/30" ]
-    // Type dimmer : studyceilingdimmer        "Study Ceiling"      [ switch="1/1/50", position="1/1/60+<1/1/61" ]
-    // Type dimmer : studyceilingtempp         "Colour Temperature"  [ switch="1/1/52", position="1/1/62+<1/1/63" ]
-    // Type number : studyceilingtempp2        "Dali Family Room Farbtemperatur"  [ ga="7.013:1/4/0+<3/2/0"]
+
+Thing knx:device:knxlightingcwww "KNX Lighting CW/WW" (knx:ip:knxrouter) {
+    Type dimmer : LightStudyCeilingDimmer      "Study Ceiling Dimmer"              [ switch="6/1/41+<6/1/45", position="5.001:6/1/43+<6/1/46", increaseDecrease="3.007:6/1/42" ]                       
+    Type dimmer : LightStudyCeilingTemperature "Study Ceiling Temperature"         [ position="5.001:6/1/51", increaseDecrease="3.007:6/1/52" ]                       
 }
- 
+
+//Thing knx:device:knxlightingrgbw "KNX Lighting RGBW" (knx:ip:knxrouter) {
+// Type color  : KitchenNicheColor   "RGBW - kitchen niche color" [ switch="1.001:5/1/68+<5/1/88", increaseDecrease="3.007:5/1/69", position="5.001:5/1/70<5/1/74", hsb="5.003:5/1/79+<5/1/88" ]
+ //Type dimmer : KitchenNicheWhite   "RGBW - kitchen niche white" [ switch="1.001:5/1/68+<5/1/88", increaseDecrease="3.007:5/1/86", position="5.001:5/1/82<5/1/91" ]
+//}
+
+
+
+Thing knx:device:knxlightingrgbw "KNX Lighting RGBW" (knx:ip:knxrouter) {
+ Type color  : KNXLightningRGBWKitchenNiche   "RGBW - Kitchen Niche" [ 
+               switch="1.001:5/1/68+<5/1/73", 
+     increaseDecrease="3.007:5/1/69", 
+             position="5.001:5/1/70+<5/1/74", 
+                  hsb="251.600:5/1/78+<5/1/79" 
+     ]
+}
+
+
+
+
+Type dimmer : KitchenOverhead1Lamp        
+Type dimmer : KitchenOverhead2Lamp
+Type dimmer : KitchenOverhead3Lamp
+Type dimmer : KitchenOverhead4Lamp
+Type dimmer : KitchenDoorLeftColor
+Type color  : KitchenNicheColor                               [ switch="5/1/68+<5/1/73", increaseDecrease="5/1/69", position="5/1/70+<5/1/74", hsb="251.600:5/1/78+<5/1/79" ]
+
+Type dimmer : LoungeCeilingCWWW
+Type dimmer : LoungeStripCWWW
+
+Type dimmer : BathroomMainCeiling
+Type dimmer : BathroomGuestCeiling
+
+Type color : HallwayLargeWestNorthStripColor                  
+Type color : HallwayLargeWestMiddleStripColor
+Type color : HallwayLargeWestSouthStripColor
+Type color : HallwayLargeEastNorthStripColor
+Type color : HallwayLargeEastMiddleStripColor
+Type color : HallwayLargeEastSouthStripColor
+
+Type dimmer : StudyCeilingCWWW
+Type dimmer : StudyStripCWWW
+
+Type dimmer : Bedroom1BedLeftCWWW
+Type dimmer : Bedroom1BedRightCWWW
+Type dimmer : Bedroom1CeilingCWWW
+Type dimmer : Bedroom3StripCWWW
+
+Type dimmer : Bedroom2BedLeftCWWW
+Type dimmer : Bedroom2BedRightCWWW
+Type dimmer : Bedroom2CeilingCWWW
+Type dimmer : Bedroom3StripCWWW
+
+Type dimmer : Bedroom3BedLeftCWWW
+Type dimmer : Bedroom3BedRightCWWW
+Type dimmer : Bedroom3CeilingCWWW
+Type dimmer : Bedroom3StripCWWW
+
+
+
+
