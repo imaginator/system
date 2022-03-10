@@ -1,11 +1,10 @@
-// KNX Addressing:
-// https://docs.google.com/spreadsheets/d/1gGsHkULtQncEGjFZ9r3lvEgjIHoSpxoCiAWF2uy-vGQ/edit#gid=0    
-
-
-//- Room numbering:
-
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+// Group Addresses
+//
+// Room numbering:
+//
 // 1:Central
-// 3: Terrace / outside
+// 3:Terrace / outside
 // 4:Lounge
 // 5:Kitchen
 // 6:Study
@@ -16,76 +15,63 @@
 // 11:Bedroom 1
 // 12:Bedroom 2
 // 13:Bedroom 3
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
-//    type="ROUTER",
-//    localSourceAddr="1.0.255", // avoid conflicts with ETS (1.0.254)
-//    localIp="10.7.9.2",
-//    autoReconnectPeriod=60
-//    ]
-
-Bridge knx:ip:knxrouter "KNX IP Router" @ "central" [
-    type="TUNNEL",
-    ipAddress="knxrouter.imagilan",
-    localSourceAddr="1.0.255", // avoid conflicts with ETS (1.0.254)
-    autoReconnectPeriod=60
-    ]
+Bridge knx:ip:knxrouter "KNX IP Router" [ type="ROUTER" ]
 
 // ----------------------------------------------------------------------------
 // Devices
 // ----------------------------------------------------------------------------
 
 // Electrical Cabinet
-Thing knx:device:KnxIpRouter            "KNX Device Hager TH210 IP Router"                                     (knx:ip:knxrouter) @ "central" [ address="1.0.0" ]
-Thing knx:device:KnxPower               "KNX Device MDT STC-640.01 Bus power supply 640mA"                     (knx:ip:knxrouter) @ "central" [ address="1.0.1" ]
-Thing knx:device:KnxActuator1           "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.3" ]
-Thing knx:device:KnxActuator2           "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.4" ]
-Thing knx:device:KnxActuator3           "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"   (knx:ip:knxrouter) @ "central" [ address="1.0.5" ]
-Thing knx:device:KnxShutterActuator     "KNX Device MDT JAL-0810.02 Shutter Actuator 8-fold, 8SU, 230VAC, 10A" (knx:ip:knxrouter) @ "central" [ address="1.0.6" ]
-Thing knx:device:KnxDaligw              "KNX Device MDT DaliControl 32"                                        (knx:ip:knxrouter) @ "central" [ address="1.0.7" ]
-Thing knx:device:KnxHeatingActuator     "KNX Device AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC" (knx:ip:knxrouter) @ "central" [ address="1.0.8" ]
-Thing knx:device:KnxBinaryInput         "KNX Device MDT Binary Input 32-fold"                                  (knx:ip:knxrouter) @ "central" [ address="1.0.10" ]
-Thing knx:device:KnxShutterAktor24v     "KNX Device MDT JAL-0410D.02 Shutter Actuator 4-fold, 4SU, 24VDC, 8A"  (knx:ip:knxrouter) @ "central" [ address="1.0.11" ]
-Thing knx:device:KnxDimmerKitchen       "KNX Device MDT Dimming Actuator 4-fold"                               (knx:ip:knxrouter) @ "central" [ address="1.0.12" ]
-Thing knx:device:knxVitogate200         "KNX Vitogate 200, type KNX"                                           (knx:ip:knxrouter) @ "central" [ address="1.0.13" ]
+Thing knx:device:KnxIpRouter                "KNX Device Hager TH210 IP Router"                                      (knx:ip:knxrouter) [ address="2.1.0" ]
+Thing knx:device:KnxShutterActuator         "KNX Device MDT JAL-0810.02 Shutter Actuator 8-fold, 8SU, 230VAC, 10A"  (knx:ip:knxrouter) [ address="2.1.6" ]
+Thing knx:device:KnxDaligw                  "KNX Device MDT DaliControl 32"                                         (knx:ip:knxrouter) [ address="2.1.7" ]
+Thing knx:device:KnxHeatingActuator         "KNX Device AKH-0800.02 Heating Actuator 8-fold, 4SU MDRC, 24/230 VAC"  (knx:ip:knxrouter) [ address="2.1.8" ]
+Thing knx:device:KnxPower                   "KNX Device MDT STC-640.01 Bus power supply 640mA"                      (knx:ip:knxrouter) [ address="2.1.9" ]
+Thing knx:device:KnxBinaryInput             "KNX Device MDT Binary Input 32-fold"                                   (knx:ip:knxrouter) [ address="2.1.10" ]
+Thing knx:device:KnxShutterAktor24v         "KNX Device MDT JAL-0410D.02 Shutter Actuator 4-fold, 4SU, 24VDC, 8A"   (knx:ip:knxrouter) [ address="2.1.11" ]
+Thing knx:device:KnxDimmerKitchen           "KNX Device MDT Dimming Actuator 4-fold"                                (knx:ip:knxrouter) [ address="2.1.12" ]
+Thing knx:device:knxVitogate200             "KNX Device Vitogate 200, type KNX"                                     (knx:ip:knxrouter) [ address="2.1.13" ]
+Thing knx:device:knxRainSensor              "KNX Device MDT SCN-RS1R Rain Sensor"                                   (knx:ip:knxrouter) [ address="2.1.14" ]
+Thing knx:device:knxWeatherStation          "KNX Device MDT WS3HW.01 Weather Station"                               (knx:ip:knxrouter) [ address="2.1.15" ]
+Thing knx:device:KnxActuator1               "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"    (knx:ip:knxrouter) [ address="2.1.17" ]
+Thing knx:device:KnxActuator2               "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"    (knx:ip:knxrouter) [ address="2.1.18" ]
+Thing knx:device:KnxActuator3               "KNX Device MDT AKU-1616.02 Universal Actuator 16-fold, 16A, 230VAC"    (knx:ip:knxrouter) [ address="2.1.19" ]
 
 // Motion Sensors 
-Thing knx:device:KnxMotionLounge        "KNX Device Motion Lounge" (knx:ip:knxrouter) @ "lounge"                            [ address="4.4.1" ]
-Thing knx:device:KnxMotionKitchen       "KNX Device Motion Kitchen" (knx:ip:knxrouter) @ "kitchen"                        [ address="5.4.1" ]
-Thing knx:device:KnxMotionStudy         "KNX Device Motion Study" (knx:ip:knxrouter) @ "study"                               [ address="6.4.1" ]
-Thing knx:device:KnxMotionBathroomMain  "KNX Device Motion Bathroom Main" (knx:ip:knxrouter) @ "bathroom main"        [ address="7.4.1" ]
-Thing knx:device:KnxMotionBathroomGuest "KNX Device Motion Bathroom Guest" (knx:ip:knxrouter) @ "bathroom guest"     [ address="8.4.1" ]
-Thing knx:device:KnxMotionHallwayMain   "KNX Device Motion Hallway Main" (knx:ip:knxrouter) @ "hallway main"           [ address="9.4.1" ]
-Thing knx:device:KnxMotionHallwaySmall  "KNX Device Motion Hallway Small" (knx:ip:knxrouter) @ "hallway small"        [ address="10.4.1" ]
-Thing knx:device:KnxMotionBedroom1      "KNX Device Motion Bedroom 1" (knx:ip:knxrouter) @ "bedroom 1"                    [ address="11.4.1" ]
-Thing knx:device:KnxMotionBedroom2      "KNX Device Motion Bedroom 2" (knx:ip:knxrouter) @ "bedroom 2"                    [ address="12.4.1" ]
-Thing knx:device:KnxMotionBedroom3      "KNX Device Motion Bedroom 3" (knx:ip:knxrouter) @ "bedroom 3"                    [ address="13.4.1" ]
+Thing knx:device:KnxMotionLounge            "KNX Device Motion Lounge"                                              (knx:ip:knxrouter) [ address="2.1.42" ]
+Thing knx:device:KnxMotionKitchen           "KNX Device Motion Kitchen"                                             (knx:ip:knxrouter) [ address="2.1.54" ]
+Thing knx:device:KnxMotionStudy             "KNX Device Motion Study"                                               (knx:ip:knxrouter) [ address="2.1.61" ]
+Thing knx:device:KnxMotionBathroomMain      "KNX Device Motion Bathroom Main"                                       (knx:ip:knxrouter) [ address="2.1.72" ]
+Thing knx:device:KnxMotionBathroomGuest     "KNX Device Motion Bathroom Guest"                                      (knx:ip:knxrouter) [ address="2.1.82" ]
+Thing knx:device:KnxMotionHallwayMain       "KNX Device Motion Hallway Main"                                        (knx:ip:knxrouter) [ address="2.1.92" ]
+Thing knx:device:KnxMotionHallwaySmall      "KNX Device Motion Hallway Small"                                       (knx:ip:knxrouter) [ address="2.1.102" ]
+Thing knx:device:KnxMotionBedroom1          "KNX Device Motion Bedroom 1"                                           (knx:ip:knxrouter) [ address="2.1.114" ]
+Thing knx:device:KnxMotionBedroom2          "KNX Device Motion Bedroom 2"                                           (knx:ip:knxrouter) [ address="2.1.124" ]
+Thing knx:device:KnxMotionBedroom3          "KNX Device Motion Bedroom 3"                                           (knx:ip:knxrouter) [ address="2.1.131" ]
 
-// Wall buttons
-Thing knx:device:KnxButtonsLoungeScreenEnd   "KNX Device Button Lounge Screen End" (knx:ip:knxrouter) @ "lounge"       [ address="4.3.1" ]
-Thing knx:device:KnxButtonsLoungeSofaEnd   "KNX Device Button Lounge Projector End" (knx:ip:knxrouter) @ "lounge"    [ address="4.3.2" ]
-Thing knx:device:KnxButtonsKitchenPillar   "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.1" ]
-Thing knx:device:KnxButtonsKitchenDoorLeft   "Kitchen Door Left" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.2" ]
-Thing knx:device:KnxButtonsKitchenDoorRight   "Kitchen Door Right" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.3" ]
-Thing knx:device:KnxButtonsIsland  "KNX Device Button Kitchen Pillar" (knx:ip:knxrouter) @ "kitchen"         [ address="5.3.4" ]
-Thing knx:device:KnxButtonStudy   "KNX Device Button Study" (knx:ip:knxrouter) @ "study"              [ address="6.3.1" ] 
-Thing knx:device:KnxButtonsBathroomMain   "KNX Device Button Bathroom Main" (knx:ip:knxrouter) @ "bathroom main"    [ address="7.3.1" ]
-Thing knx:device:KnxButtonsBathroomGuest   "KNX Device Button Bathroom Guest" (knx:ip:knxrouter) @ "bathroom guest"  [ address="8.3.1" ]
-Thing knx:device:KnxButtonsHallwayMain   "KNX Device Button Hallway Main" (knx:ip:knxrouter) @ "hallway main"     [ address="9.3.1" ]
-Thing knx:device:KnxButtonsHallwaySmall   "KNX Device Button Hallway Small" (knx:ip:knxrouter) @ "hallway small"   [ address="10.3.1" ]
-Thing knx:device:KnxButtonsBedroom1Door   "KNX Device Button Bedroom 1 Door" (knx:ip:knxrouter) @ "Bedroom 1"    [ address="11.3.1" ] {  }
-Thing knx:device:KnxButtonsBedroom1BedLeft   "KNX Device Button Bedroom 1 Bed Left" (knx:ip:knxrouter) @ "Bedroom 1" [ address="11.3.2" ]
-Thing knx:device:KnxButtonsBedroom1BedRight   "KNX Device Button Bedroom Bed Right" (knx:ip:knxrouter) @ "Bedroom 1" [ address="11.3.3" ]
-Thing knx:device:KnxButtonsBedroom2Door   "KNX Device Button Bedroom 2 Door" (knx:ip:knxrouter) @ "Bedroom 2"    [ address="12.3.1" ]
-Thing knx:device:KnxButtonsBedroom2BedLeft   "KNX Device Button Bedroom 2 Bed Left" (knx:ip:knxrouter) @ "Bedroom 2" [ address="12.3.2" ]
-Thing knx:device:KnxButtonsBedroom2BedRight   "KNX Device Button Bedroom 2 Bed Right" (knx:ip:knxrouter) @ "Bedroom 2" [ address="12.3.3" ]
-Thing knx:device:KnxButtonsBedroom3Door   "KNX Device Button Bedroom 3 Door" (knx:ip:knxrouter) @ "Bedroom 3"    [ address="13.3.1" ]
-Thing knx:device:KnxButtonsBedroom3BedLeft   "KNX Device Button Bedroom 3 Bed Left" (knx:ip:knxrouter) @ "Bedroom 3" [ address="13.3.2" ]
-Thing knx:device:KnxButtonsBedroom3BedRight   "KNX Device Button Bedroom 3 Bed Right" (knx:ip:knxrouter) @ "Bedroom 3" [ address="13.3.3" ]
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------
-// Group Addresses
-// --------------------------------------------------------------------------------------------------------------------------------------------------------
+// Wall buttons / Light switches
+Thing knx:device:KnxButtonsLoungeScreenEnd  "KNX Device Button Lounge Screen End"                                   (knx:ip:knxrouter) [ address="2.1.43" ]
+Thing knx:device:KnxButtonsLoungeSofaEnd    "KNX Device Button Lounge Projector End"                                (knx:ip:knxrouter) [ address="2.1.41" ]
+Thing knx:device:KnxButtonsKitchenPillar    "KNX Device Button Kitchen Pillar"                                      (knx:ip:knxrouter) [ address="2.1.51" ]
+Thing knx:device:KnxButtonsKitchenDoorLeft  "KNX Device Button Kitchen Door Left"                                   (knx:ip:knxrouter) [ address="2.1.52" ]
+Thing knx:device:KnxButtonsKitchenDoorRight "KNX Device Button Kitchen Door Right"                                  (knx:ip:knxrouter) [ address="2.1.55" ]
+Thing knx:device:KnxButtonsIsland           "KNX Device Button Kitchen Pillar"                                      (knx:ip:knxrouter) [ address="2.1.51" ]
+Thing knx:device:KnxButtonStudy             "KNX Device Button Study"                                               (knx:ip:knxrouter) [ address="2.1.62" ] 
+Thing knx:device:KnxButtonsBathroomMain     "KNX Device Button Bathroom Main"                                       (knx:ip:knxrouter) [ address="2.1.71" ]
+Thing knx:device:KnxButtonsBathroomGuest    "KNX Device Button Bathroom Guest"                                      (knx:ip:knxrouter) [ address="2.1.81" ]
+Thing knx:device:KnxButtonsHallwayMain      "KNX Device Button Hallway Main"                                        (knx:ip:knxrouter) [ address="2.1.91" ]
+Thing knx:device:KnxButtonsHallwaySmall     "KNX Device Button Hallway Small"                                       (knx:ip:knxrouter) [ address="2.1.101" ]
+Thing knx:device:KnxButtonsBedroom1Door     "KNX Device Button Bedroom 1 Door"                                      (knx:ip:knxrouter) [ address="2.1.111" ]
+Thing knx:device:KnxButtonsBedroom1BedLeft  "KNX Device Button Bedroom 1 Bed Left"                                  (knx:ip:knxrouter) [ address="2.1.112" ]
+Thing knx:device:KnxButtonsBedroom1BedRight "KNX Device Button Bedroom Bed Right"                                   (knx:ip:knxrouter) [ address="2.1.113" ]
+Thing knx:device:KnxButtonsBedroom2Door     "KNX Device Button Bedroom 2 Door"                                      (knx:ip:knxrouter) [ address="2.1.121" ]
+Thing knx:device:KnxButtonsBedroom2BedLeft  "KNX Device Button Bedroom 2 Bed Left"                                  (knx:ip:knxrouter) [ address="2.1.122" ]
+Thing knx:device:KnxButtonsBedroom2BedRight "KNX Device Button Bedroom 2 Bed Right"                                 (knx:ip:knxrouter) [ address="2.1.123" ]
+Thing knx:device:KnxButtonsBedroom3Door     "KNX Device Button Bedroom 3 Door"                                      (knx:ip:knxrouter) [ address="2.1.134" ]
+Thing knx:device:KnxButtonsBedroom3BedLeft  "KNX Device Button Bedroom 3 Bed Left"                                  (knx:ip:knxrouter) [ address="2.1.133" ]
+Thing knx:device:KnxButtonsBedroom3BedRight "KNX Device Button Bedroom 3 Bed Right"                                 (knx:ip:knxrouter) [ address="2.1.132" ]
 
 // Motion
 Thing knx:device:motion "KNX Motion Contact" (knx:ip:knxrouter)
@@ -100,83 +86,6 @@ Thing knx:device:motion "KNX Motion Contact" (knx:ip:knxrouter)
     Type contact      : Bedroom1        "Bedroom1"                                  [ ga="1.009:<11/4/1" ]
     Type contact      : Bedroom2        "Bedroom2"                                  [ ga="1.009:<12/4/1" ]
     Type contact      : Bedroom3        "Bedroom3"                                  [ ga="1.009:<13/4/1" ]
-}
-
-// Heating Modes
-Thing knx:device:heating-mode "KNX Heating Modes" (knx:ip:knxrouter) {
-    Type switch-control : SummerWinter            "Summer Winter Switchover"                    [ ga="1/6/21+1/6/21"]
-    Type switch-control : DayNight                "Day Night Switchover"                        [ ga="1/6/22+1/6/22"]
-    Type switch-control : HeatingCooling          "Heating Cooling Switchover"              
-}
-
-// Current Temperature
-Thing knx:device:temperature "KNX Current Temperature (Celcius)" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeCurrentTemperature"                            [ ga="9.001:<4/2/1" ]
-    Type number      : Kitchen "KitchenCurrentTemperature"                          [ ga="9.001:<5/2/1" ]
-    Type number      : Study "StudyCurrentTemperature"                              [ ga="9.001:<6/2/1" ]
-    Type number      : BathroomMain "BathroomMainCurrentTemperature"                [ ga="9.001:<7/2/1" ]
-    Type number      : BathroomGuest "BathroomGuestCurrentTemperature"              [ ga="9.001:<8/2/1" ]
-    Type number      : HallwayLarge "HallwayLargeCurrentTemperature"                [ ga="9.001:<9/2/1" ]
-    Type number      : HallwaySmall "HallwaySmallCurrentTemperature"                [ ga="9.001:<10/2/1" ]
-    Type number      : Bedroom1 "Bedroom1CurrentTemperature"                        [ ga="9.001:<11/2/1" ]
-    Type number      : Bedroom2 "Bedroom2CurrentTemperature"                        [ ga="9.001:<12/2/1" ]
-    Type number      : Bedroom3 "Bedroom3CurrentTemperature"                        [ ga="9.001:<13/2/1" ]
-}
-
-// Heating Valve Status
-Thing knx:device:heating-valve-status "KNX Heating Valve Status (percentage)" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeHeatingValveStatus"                            [ ga="5.001:<4/6/3" ]
-    Type number      : Kitchen "KitchenHeatingValveStatus"                          [ ga="5.001:<5/6/3" ]
-    Type number      : Study "StudyHeatingValveStatus"                              [ ga="5.001:<6/6/3" ]
-    Type number      : BathroomMain "BathroomMainHeatingValveStatus"                [ ga="5.001:<7/6/3" ]
-    Type number      : BathroomGuest "BathroomGuestHeatingValveStatus"              [ ga="5.001:<8/6/3" ]
-    Type number      : HallwayLarge "HallwayLargeHeatingValveStatus"                [ ga="5.001:<9/6/3" ]
-    Type number      : HallwaySmall "HallwaySmallHeatingValveStatus"                [ ga="5.001:<10/6/3" ]
-    Type number      : Bedroom1 "Bedroom1HeatingValveStatus"                        [ ga="5.001:<11/6/3" ]
-    Type number      : Bedroom2 "Bedroom2HeatingValveStatus"                        [ ga="5.001:<12/6/3" ]
-    Type number      : Bedroom3 "Bedroom3HeatingValveStatus"                        [ ga="5.001:<13/6/3" ]
-}
-
-// Target Heating Temperature
-Thing knx:device:heating-target-temperature "KNX Heating Target Temperature (Celcius)" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeTargetTemperature"                             [ ga="9.001:<4/6/7+4/6/7" ]
-    Type number      : Kitchen "KitchenTargetTemperature"                           [ ga="9.001:<5/6/7+5/6/7" ]
-    Type number      : Study "StudyTargetTemperature"                               [ ga="9.001:<6/6/7+6/6/7" ]
-    Type number      : BathroomMain "BathroomMainTargetTemperature"                 [ ga="9.001:<7/6/7+7/6/7" ]
-    Type number      : BathroomGuest "BathroomGuestTargetTemperature"               [ ga="9.001:<8/6/7+8/6/7" ]
-    Type number      : HallwayLarge "HallwayLargeTargetTemperature"                 [ ga="9.001:<9/6/7+9/6/7" ]
-    Type number      : HallwaySmall "HallwaySmallTargetTemperature"                 [ ga="9.001:<10/6/7+10/6/7" ]
-    Type number      : Bedroom1 "Bedroom1TargetTemperature"                         [ ga="9.001:<11/6/7+11/6/7" ]
-    Type number      : Bedroom2 "Bedroom2TargetTemperature"                         [ ga="9.001:<12/6/7+12/6/7" ]
-    Type number      : Bedroom3 "Bedroom3TargetTemperature"                         [ ga="9.001:<13/6/7+13/6/7" ]
-}
-
-// Heating Mode 
-Thing knx:device:heating-mode "KNX Heating Mode" (knx:ip:knxrouter) {
-    Type number      : Lounge "LoungeHeatingMode"                                   [ ga="20.102:4/6/10+4/6/10" ]
-    Type number      : Kitchen "KitchenHeatingMode"                                 [ ga="20.102:5/6/10+5/6/10" ]
-    Type number      : Study "StudyHeatingMode"                                     [ ga="20.102:6/6/10+6/6/10" ]
-    Type number      : BathroomMain "BathroomMainHeatingMode"                       [ ga="20.102:7/6/10+7/6/10" ]
-    Type number      : BathroomGuest "BathroomGuestHeatingMode"                     [ ga="20.102:8/6/10+8/6/10" ]
-    Type number      : HallwayLarge "HallwayLargeHeatingMode"                       [ ga="20.102:9/6/10+9/6/10" ]
-    Type number      : HallwaySmall "HallwaySmallHeatingMode"                       [ ga="20.102:10/6/10+10/6/10" ]
-    Type number      : Bedroom1 "Bedroom1HeatingMode"                               [ ga="20.102:11/6/10+11/6/10" ]
-    Type number      : Bedroom2 "Bedroom2HeatingMode"                               [ ga="20.102:12/6/10+12/6/10" ]
-    Type number      : Bedroom3 "Bedroom3HeatingMode"                               [ ga="20.102:13/6/10+13/6/10" ]
-}
-
-// Heating Diagnosis Text
-Thing knx:device:heating-diagnosis-text "KNX Heating Disgnosis Text" (knx:ip:knxrouter) {
-    Type string      : Lounge "LoungeHeatingDiagnosisText"                          [ ga="16.000:<4/6/19" ]
-    Type string      : Kitchen "KitchenHeatingDiagnosisText"                        [ ga="16.000:<5/6/19" ]
-    Type string      : Study "StudyHeatingDiagnosisText"                            [ ga="16.000:<6/6/19" ]
-    Type string      : BathroomMain "BathroomMainHeatingDiagnosisText"              [ ga="16.000:<7/6/19" ]
-    Type string      : BathroomGuest "BathroomGuestHeatingDiagnosisText"            [ ga="16.000:<8/6/19" ]
-    Type string      : HallwayLarge "HallwayLargeHeatingDiagnosisText"              [ ga="16.000:<9/6/19" ]
-    Type string      : HallwaySmall "HallwaySmallHeatingDiagnosisText"              [ ga="16.000:<10/6/19" ]
-    Type string      : Bedroom1 "Bedroom1HeatingDiagnosisText"                      [ ga="16.000:<11/6/19" ]
-    Type string      : Bedroom2 "Bedroom2HeatingDiagnosisText"                      [ ga="16.000:<12/6/19" ]
-    Type string      : Bedroom3 "Bedroom3HeatingDiagnosisText"                      [ ga="16.000:<13/6/19" ]
 }
 
 // Brightness
@@ -195,30 +104,30 @@ Thing knx:device:brightness "KNX luminosity Lux" (knx:ip:knxrouter) {
 
 // Rollershutter
 Thing knx:device:rollershutter "KNX Rollershutter Contol"  (knx:ip:knxrouter)  {
-    Type rollershutter : bedroom1                       "Bedroom1"                    [ upDown="11/7/11", stopMove="11/7/12", position="11/7/13+<11/7/14" ]
-    Type rollershutter : hallwaylarge1                  "Hallway Large 1 North"       [ upDown="9/7/11",  stopMove="9/7/12",  position="9/7/13+<9/7/14" ]
-    Type rollershutter : hallwaylarge2                  "Hallway Large 2"             [ upDown="9/7/21",  stopMove="9/7/22",  position="9/7/23+<9/7/24" ]
-    Type rollershutter : hallwaylarge3                  "Hallway Large 3"             [ upDown="9/7/31",  stopMove="9/7/32",  position="9/7/33+<9/7/34" ]
-    Type rollershutter : hallwaylarge4                  "Hallway Large 4"             [ upDown="9/7/41",  stopMove="9/7/42",  position="9/7/43+<9/7/44" ]
-    Type rollershutter : hallwaylarge5                  "Hallway Large 5"             [ upDown="9/7/51",  stopMove="9/7/52",  position="9/7/53+<9/7/54" ]
-    Type rollershutter : hallwaylarge6                  "Hallway Large 6 South"       [ upDown="9/7/61",  stopMove="9/7/62",  position="9/7/63+<9/7/64" ]
-    Type rollershutter : hallwaylargewindownorth        "Hallway Large Window North"  [ upDown="9/7/91",  stopMove="9/7/92",  position="9/7/93+<9/7/94" ]
-    Type rollershutter : hallwaylargewindowsouth        "Hallway Large Window South"  [ upDown="9/7/81",  stopMove="9/7/82",  position="9/7/83+<9/7/84" ]
-    Type rollershutter : kitchenleft                    "Kitchen Left"                [ upDown="5/7/11",  stopMove="5/7/12",  position="5/7/13+<5/7/14" ]
-    Type rollershutter : kitchenmiddle                  "Kitchen Middle"              [ upDown="5/7/21",  stopMove="5/7/22",  position="5/7/23+<5/7/24" ]
-    Type rollershutter : kitchenright                   "Kitchen Right"               [ upDown="5/7/31",  stopMove="5/7/32",  position="5/7/33+<5/7/34" ]
-    Type rollershutter-control : bathroommainoutside    "bathroom main outside"       [ upDown="7/7/11",  stopMove="7/7/12",  position="7/7/13+<7/7/14" ]
-    Type rollershutter-control : bathroommainwindow     "bathroom main window"        [ upDown="7/7/21",  stopMove="7/7/22",  position="7/7/23+<7/7/24" ]
-    Type rollershutter-control : bedroom2inside         "bedroom2 Inside"             [ upDown="12/7/21", stopMove="12/7/22", position="12/7/23+<12/7/24" ]
-    Type rollershutter-control : bedroom2outside        "bedroom2 outside"            [ upDown="12/7/11", stopMove="12/7/12", position="12/7/13+<12/7/14" ]
-    Type rollershutter-control : bedroom3inside         "bedroom3 Inside"             [ upDown="13/7/21", stopMove="13/7/22", position="13/7/23+<13/7/24" ]
-    Type rollershutter-control : bedroom3outside        "bedroom3 outside"            [ upDown="13/7/11", stopMove="13/7/12", position="13/7/13+<13/7/14" ]
-    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12", position="10/7/13+<10/7/14" ]
-    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12", position="10/7/13+<10/7/14" ]
-    Type rollershutter-control : loungeinside           "Lounge Inside"               [ upDown="4/7/21",  stopMove="4/7/22",  position="4/7/23+<4/7/24" ]
-    Type rollershutter-control : loungeoutside          "Lounge Outside"              [ upDown="4/7/11",  stopMove="4/7/12",  position="4/7/13+<4/7/14" ]
-    Type rollershutter-control : studyinside            "Study Inside"                [ upDown="6/7/21",  stopMove="6/7/22",  position="6/7/23+<6/7/24" ]
-    Type rollershutter-control : studyoutside           "Study Outside"               [ upDown="6/7/11",  stopMove="6/7/12",  position="6/7/13+<6/7/14" ]
+    Type rollershutter : bedroom1                       "Bedroom1"                    [ upDown="11/7/11", stopMove="11/7/12",  position="11/7/13+<11/7/14" ]
+    Type rollershutter : hallwaylarge1                  "Hallway Large 1 North"       [ upDown="9/7/11",  stopMove="9/7/12",   position="9/7/13+<9/7/14" ]
+    Type rollershutter : hallwaylarge2                  "Hallway Large 2"             [ upDown="9/7/21",  stopMove="9/7/22",   position="9/7/23+<9/7/24" ]
+    Type rollershutter : hallwaylarge3                  "Hallway Large 3"             [ upDown="9/7/31",  stopMove="9/7/32",   position="9/7/33+<9/7/34" ]
+    Type rollershutter : hallwaylarge4                  "Hallway Large 4"             [ upDown="9/7/41",  stopMove="9/7/42",   position="9/7/43+<9/7/44" ]
+    Type rollershutter : hallwaylarge5                  "Hallway Large 5"             [ upDown="9/7/51",  stopMove="9/7/52",   position="9/7/53+<9/7/54" ]
+    Type rollershutter : hallwaylarge6                  "Hallway Large 6 South"       [ upDown="9/7/61",  stopMove="9/7/62",   position="9/7/63+<9/7/64" ]
+    Type rollershutter : hallwaylargewindownorth        "Hallway Large Window North"  [ upDown="9/7/91",  stopMove="9/7/92",   position="9/7/93+<9/7/94" ]
+    Type rollershutter : hallwaylargewindowsouth        "Hallway Large Window South"  [ upDown="9/7/81",  stopMove="9/7/82",   position="9/7/83+<9/7/84" ]
+    Type rollershutter : kitchenleft                    "Kitchen Left"                [ upDown="5/7/11",  stopMove="5/7/12",   position="5/7/13+<5/7/14" ]
+    Type rollershutter : kitchenmiddle                  "Kitchen Middle"              [ upDown="5/7/21",  stopMove="5/7/22",   position="5/7/23+<5/7/24" ]
+    Type rollershutter : kitchenright                   "Kitchen Right"               [ upDown="5/7/31",  stopMove="5/7/32",   position="5/7/33+<5/7/34" ]
+    Type rollershutter-control : bathroommainoutside    "bathroom main outside"       [ upDown="7/7/11",  stopMove="7/7/12",   position="7/7/13+<7/7/14" ]
+    Type rollershutter-control : bathroommainwindow     "bathroom main window"        [ upDown="7/7/21",  stopMove="7/7/22",   position="7/7/23+<7/7/24" ]
+    Type rollershutter-control : bedroom2inside         "bedroom2 Inside"             [ upDown="12/7/21", stopMove="12/7/22",  position="12/7/23+<12/7/24" ]
+    Type rollershutter-control : bedroom2outside        "bedroom2 outside"            [ upDown="12/7/11", stopMrove="12/7/12", position="12/7/13+<12/7/14" ]
+    Type rollershutter-control : bedroom3inside         "bedroom3 Inside"             [ upDown="13/7/21", stopMove="13/7/22",  position="13/7/23+<13/7/24" ]
+    Type rollershutter-control : bedroom3outside        "bedroom3 outside"            [ upDown="13/7/11", stopMove="13/7/12",  position="13/7/13+<13/7/14" ]
+    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12",  position="10/7/13+<10/7/14" ]
+    Type rollershutter-control : hallwaysmallwindow     "hallway small window"        [ upDown="10/7/11", stopMove="10/7/12",  position="10/7/13+<10/7/14" ]
+    Type rollershutter-control : loungeinside           "Lounge Inside"               [ upDown="4/7/21",  stopMove="4/7/22",   position="4/7/23+<4/7/24" ]
+    Type rollershutter-control : loungeoutside          "Lounge Outside"              [ upDown="4/7/11",  stopMove="4/7/12",   position="4/7/13+<4/7/14" ]
+    Type rollershutter-control : studyinside            "Study Inside"                [ upDown="6/7/21",  stopMove="6/7/22",   position="6/7/23+<6/7/24" ]
+    Type rollershutter-control : studyoutside           "Study Outside"               [ upDown="6/7/11",  stopMove="6/7/12",   position="6/7/13+<6/7/14" ]
     Type contact       : blockrollershutter1            "block rollershutter 1"       [ ga="1.003:<9/7/16" ]
     Type contact       : blockrollershutter4            "block rollershutter 4"       [ ga="1.003:<9/7/46" ]
     Type contact       : blockwindownorth               "block window north"          [ ga="1.003:<9/7/96" ]
@@ -236,12 +145,6 @@ Thing knx:device:playback "KNX Playback Contol" (knx:ip:knxrouter) {
     Type switch-control : bedroom2          "Playback"                    [ ga="12/5/1+12/5/1"]
     Type switch-control : bedroom3          "Playback"                    [ ga="13/5/1+13/5/1"]
 }
-
-// Media Control
-//Thing knx:device:daynight "KNX DayNight Object" (knx:ip:knxrouter) {
-//   Thing  Switch-control : vDayNight "Day=1 Night=0 Switcher"              [ga="4/4/0"]
-//}
-
 
 // Volume Control
 Thing knx:device:volume "KNX Volume Percent" (knx:ip:knxrouter) {
@@ -266,7 +169,7 @@ Thing knx:device:powermeasurements "KNX Power Measurements"    (knx:ip:knxrouter
 }
 
 // Bus Traffic
-Thing knx:device:bustraffic "KNX Bus Traffic"    (knx:ip:knxrouter) @ "central" {
+Thing knx:device:bustraffic "KNX Bus Traffic"    (knx:ip:knxrouter) {
     Type  number : BusTrafficPercent "KNX Bus Traffic Percent"    [ ga="5.001:<1/2/31" ]
 }
 
@@ -284,6 +187,7 @@ Thing knx:device:weatherstation                     "KNX weather station"       
     Type number     : WeatherStationBrightnessSouth "Weather Station Brightness South"      [ ga="9.004:<1/2/105" ]
     Type number     : WeatherStationDusk            "Weather Station Dusk"                  [ ga="9.004:<1/2/106" ]
     Type contact    : WeatherStationHighWind        "Weather Station High Wind Scenario"    [ ga="1.009:<1/2/107" ]
+    Type contact    : WeatherStationRain            "Weather Station Rain"                  [ ga="1.009:<1/2/108" ]
 }
 
 Thing knx:device:tabletswitch               "KNX Tablet Power"                 (knx:ip:knxrouter) {
@@ -296,4 +200,4 @@ Thing knx:device:tabletswitch               "KNX Tablet Power"                 (
     Type switch         : Bedroom1          "Bedroom1"                                     [ ga="11/3/61+<11/3/62"]
     Type switch         : Bedroom2          "Bedroom2"                                     [ ga="12/3/61+<12/3/62"]
     Type switch         : Bedroom3          "Bedroom3"                                     [ ga="13/3/61+<13/3/62"]
-}  
+}
