@@ -1,0 +1,5 @@
+doorbird:d101:downstairs "Downstairs door" [
+    userId="{{ salt['pillar.get']('openhab:DoorbirdUser') }}",
+    userPassword="{{ salt['pillar.get']('openhab:DoorbirdPassword') }}",
+    doorbirdHost="doorbird.imagilan"
+    ]
