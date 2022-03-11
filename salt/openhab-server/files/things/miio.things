@@ -1,8 +1,9 @@
-//imagisuck  (03DA214A)
+//imagisuck  (hex 03DA214A)  (decimal 64627018)
 miio:vacuum:imagisuck "imagiSuck" [ 
     host="imagisuck.imagilan",
     model="rockrobo.vacuum.v1",
     deviceId="{{ salt['pillar.get']('openhab:vacuum_deviceid') }}",
     token="{{ salt['pillar.get']('openhab:vacuum_token') }}",
-    communication="direct"
+    communication="direct",
+    cloudServer="de"
 ]
