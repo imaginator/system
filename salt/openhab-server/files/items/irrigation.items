@@ -8,4 +8,7 @@ String    IrrigationWifiDowntime     "Text value"                               
 Number    IrrigationLoadAvg          "Number value"                                                {channel="mqtt:topic:irrigation:LoadAvg"}
 Number    IrrigationUptime           "Number value"                                                {channel="mqtt:topic:irrigation:Uptime"}
 String    IrrigationResult           "Text value"                                                  {channel="mqtt:topic:irrigation:Result"}
-Switch    IrrigationPower            "On/off switch"    (gPersistMe, gIrrigation)    ["Switch"]    {channel="mqtt:topic:irrigation:Power"}
+Switch    IrrigationPowerSwitch      "On/off switch"    (gPersistMe, gIrrigation)    ["Switch"]    {channel="mqtt:topic:irrigation:PowerSwitch"}
+
+// For irrigation.rules
+Switch    TimedWatering_Switch                          (gIrrigation)                ["Switch"]    {expire="20m,command=OFF"}
