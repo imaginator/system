@@ -1,20 +1,26 @@
-// water for 5 minutes
+// watering rules
 
+rule "Sunset watering triggered"
+    when
+        Channel "astro:sun:local:set#event" triggered START
+    then
+        logInfo("rules", "Sunset Watering Timer activated")
+        TimedWatering_Switch.sendCommand(ON)
+    end
 
-rule "Timed watering triggered"
-when
-    Item TimedWatering_Switch received update ON or
-    Channel "astro:sun:local:set#event" triggered START
-then
-    logInfo("rules", "WateringTimer activated")
-    IrrigationPowerSwitch.sendCommand(ON)
-end
+rule "Manually triggered watering"
+    when
+        Item TimedWatering_Switch received update ON 
+    then
+        logInfo("rules", "Manually triggered watering activated")
+        IrrigationPowerSwitch.sendCommand(ON)
+    end
 
 rule "Stop watering"
-when
-    Item TimedWatering_Switch received update OFF or
-    System started
-then
-    logInfo("rules", "WateringTimer finished")
-    IrrigationPowerSwitch.sendCommand(OFF)
-end
+    when
+        Item TimedWatering_Switch received update OFF or
+        System started
+    then
+        logInfo("rules", "Watering timer finished")
+        IrrigationPowerSwitch.sendCommand(OFF)
+    end
