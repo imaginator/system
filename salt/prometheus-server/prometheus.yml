@@ -18,7 +18,9 @@ scrape_configs:
     - targets:
       - bunker.imagilan:9100
       - f17gw.imagilan:9100
+      - switch02.imagilan:9100
       - furrow-vpn.imagilan:9100
+      - ln.imagilan:9100
       - pi02.imagilan:9100
       - repeater-bedroom1.imagilan:9100
       - repeater-hof-north.imagilan:9100
