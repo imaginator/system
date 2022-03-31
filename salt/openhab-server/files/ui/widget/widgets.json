@@ -580,6 +580,597 @@
     }
   },
   {
+    "uid": "color_light_v3",
+    "tags": [],
+    "props": {
+      "parameters": [
+        {
+          "description": "Header text",
+          "label": "Header",
+          "name": "header",
+          "required": false,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Toggle ON/OFF",
+          "label": "Toggle",
+          "name": "lampToggle",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Brightness",
+          "label": "Brightness",
+          "name": "brightness",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Temperature in K",
+          "label": "Temperature",
+          "name": "temperature",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Color mode (1 = White, 2 = Color)",
+          "label": "Color Mode Item",
+          "name": "colorMode",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Color",
+          "label": "Color Item",
+          "name": "color",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "context": "item",
+          "description": "Timer",
+          "label": "Shutdown Timer Item",
+          "name": "shutdowntimer",
+          "required": false,
+          "type": "TEXT"
+        }
+      ],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-07-04T17:13:40.000+0200",
+    "component": "f7-card",
+    "config": {},
+    "slots": {
+      "default": [
+        {
+          "component": "f7-card-content",
+          "config": {
+            "class": [
+              "display-flex",
+              "flex-direction-column",
+              "justify-content-flex-start",
+              "align-items-center"
+            ],
+            "style": {
+              "height": "175px"
+            }
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "f7-row",
+                "config": {
+                  "style": {
+                    "position": "absolute"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-block-header",
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "Label",
+                            "config": {
+                              "text": "=props.header"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-block",
+                "config": {
+                  "class": [
+                    "no-padding"
+                  ],
+                  "style": {
+                    "width": "100%",
+                    "height": "100%",
+                    "margin-top": "2px"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "visible": "=items[props.colorMode].state == \"1\" ? true : false",
+                        "class": [
+                          "display-flex",
+                          "flex-direction-column",
+                          "justify-content-flex-end"
+                        ],
+                        "style": {
+                          "animation": "f7-fade-in 300ms",
+                          "height": "60%",
+                          "margin-top": "10px"
+                        }
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "f7-row",
+                            "config": {
+                              "class": [
+                                "display-flex",
+                                "justify-content-space-between",
+                                "align-items-center"
+                              ],
+                              "style": {
+                                "width": "calc(100% + 20px)",
+                                "margin-left": "-10px"
+                              }
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "f7-icon",
+                                  "config": {
+                                    "f7": "thermometer",
+                                    "size": 20,
+                                    "style": {
+                                      "color": "var(--f7-block-header-text-color)"
+                                    }
+                                  }
+                                },
+                                {
+                                  "component": "Label",
+                                  "config": {
+                                    "text": "=items[props.temperature].state + \"K\"",
+                                    "style": {
+                                      "color": "var(--f7-block-header-text-color)"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "component": "f7-row",
+                            "config": {
+                              "class": [
+                                "display-flex",
+                                "justify-content-center",
+                                "align-items-center"
+                              ],
+                              "style": {
+                                "width": "100%"
+                              }
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "oh-slider",
+                                  "config": {
+                                    "color": "white",
+                                    "label": true,
+                                    "min": 1700,
+                                    "max": 6500,
+                                    "item": "=props.temperature",
+                                    "style": {
+                                      "--f7-range-bar-size": "18px",
+                                      "--f7-range-bar-border-radius": "10px",
+                                      "--f7-range-knob-size": "20px",
+                                      "--f7-range-bar-active-bg-color": "transparent",
+                                      "--f7-range-bar-bg-color": "linear-gradient(to right, rgba(246,158,81,0.8), rgba(246,158,81,0))",
+                                      "--f7-range-knob-box-shadow": "0 2px 4px rgba(0, 0, 0, 0.3)",
+                                      "--f7-range-label-text-color": "black",
+                                      "width": "100%",
+                                      "z-index": "99 !important"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "component": "f7-row",
+                            "config": {
+                              "class": [
+                                "display-flex",
+                                "justify-content-space-between",
+                                "align-items-center"
+                              ],
+                              "style": {
+                                "width": "calc(100% + 20px)",
+                                "margin-left": "-10px"
+                              }
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "f7-icon",
+                                  "config": {
+                                    "f7": "sun_min",
+                                    "size": 20,
+                                    "style": {
+                                      "color": "var(--f7-block-header-text-color)"
+                                    }
+                                  }
+                                },
+                                {
+                                  "component": "Label",
+                                  "config": {
+                                    "text": "=items[props.brightness].state + \"%\"",
+                                    "style": {
+                                      "color": "var(--f7-block-header-text-color)"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "component": "f7-row",
+                            "config": {
+                              "class": [
+                                "display-flex",
+                                "justify-content-center",
+                                "align-items-center"
+                              ],
+                              "style": {
+                                "width": "100%"
+                              }
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "oh-slider",
+                                  "config": {
+                                    "color": "white",
+                                    "label": true,
+                                    "item": "=props.brightness",
+                                    "style": {
+                                      "--f7-range-bar-size": "18px",
+                                      "--f7-range-bar-border-radius": "10px",
+                                      "--f7-range-knob-size": "20px",
+                                      "--f7-range-bar-active-bg-color": "rgba(246,246,0,0.5)",
+                                      "--f7-range-bar-bg-color": "linear-gradient(to right, rgba(169,169,169,0.8), rgba(246,158,81,0))",
+                                      "--f7-range-knob-box-shadow": "0 2px 4px rgba(0, 0, 0, 0.3)",
+                                      "--f7-range-label-text-color": "black",
+                                      "width": "100%",
+                                      "z-index": "99 !important"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "visible": "=items[props.colorMode].state != \"1\" ? true : false",
+                        "class": [
+                          "no-margin"
+                        ],
+                        "style": {
+                          "animation": "f7-fade-in 300ms"
+                        }
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "f7-row",
+                            "config": {
+                              "class": [
+                                "display-flex",
+                                "justify-content-center"
+                              ]
+                            },
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "f7-block",
+                                  "config": {
+                                    "style": {
+                                      "width": "180px"
+                                    }
+                                  },
+                                  "slots": {
+                                    "default": [
+                                      {
+                                        "component": "oh-colorpicker",
+                                        "config": {
+                                          "item": "=props.color",
+                                          "modules": [
+                                            "wheel"
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-block",
+                "config": {
+                  "class": [
+                    "display-flex",
+                    "justify-content-center",
+                    "align-items-center",
+                    "no-padding",
+                    "no-margin"
+                  ],
+                  "style": {
+                    "position": "absolute",
+                    "width": "40px",
+                    "height": "40px",
+                    "left": "10px",
+                    "bottom": "10px",
+                    "border-top": "=items[props.lampToggle].state == \"ON\" ? \"none\" : \"2px solid #ddd\"",
+                    "box-shadow": "inset 0px 1px 2px #eee",
+                    "background": "white",
+                    "border-radius": "50%"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "class": [
+                          "no-margin"
+                        ],
+                        "style": {
+                          "animation": "=items[props.shutdowntimer].state.split(\" \")[0] > 0 ? \"skeleton-effect-fade 2s linear infinite\" : \"none\"",
+                          "position": "absolute",
+                          "width": "100%",
+                          "height": "100%",
+                          "box-shadow": "=items[props.lampToggle].state == \"ON\" ? \"0 0 20px #fff, 0px 0px 30px rgba(0,255,0,0.5)\" : \"none\"",
+                          "border-radius": "50%",
+                          "transition": "transform 0.2s",
+                          "background": "=items[props.lampToggle].state == \"ON\" ? \"rgba(124, 252, 0, 0.5)\" : \"transparent\"",
+                          "transform": "=items[props.lampToggle].state ==\"ON\" ? \"scale(1,1)\" : \"scale(0,0)\""
+                        }
+                      }
+                    },
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "style": {
+                          "position": "absolute",
+                          "width": "calc(100% - 10px)",
+                          "height": "calc(100% - 10px)",
+                          "background": "rgba(255,255,255,0.8)",
+                          "border-radius": "50%"
+                        }
+                      }
+                    },
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "iconOnly": true,
+                        "iconF7": "power",
+                        "iconSize": 17,
+                        "action": "toggle",
+                        "actionItem": "=props.lampToggle",
+                        "actionCommand": "=items[props.lampToggle].state == \"ON\" ? \"OFF\" : \"ON\"",
+                        "style": {
+                          "border": "solid 2pt white",
+                          "border-radius": "50%",
+                          "background-color": "#f7f7f7",
+                          "background-image": "linear-gradient(135deg, #f7f7f7, #e7e7e7)",
+                          "color": "#a7a7a7",
+                          "width": "calc(100% - 10px)",
+                          "height": "calc(100% - 10px)",
+                          "text-align": "center",
+                          "box-shadow": "0px 3px 8px",
+                          "backdrop-filter": "opacity(88%)",
+                          "z-index": "99 !important"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "oh-link",
+                "config": {
+                  "text": "Timer",
+                  "visible": "=props.shutdowntimer ? true : false",
+                  "action": "popover",
+                  "popoverOpen": ".timerpopover",
+                  "style": {
+                    "position": "absolute",
+                    "bottom": "10px"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-popover",
+                      "config": {
+                        "class": [
+                          "timerpopover"
+                        ]
+                      },
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-stepper-card",
+                            "config": {
+                              "item": "=props.shutdowntimer",
+                              "title": "Ausschalten in Minuten"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "component": "f7-block",
+                "config": {
+                  "class": [
+                    "display-flex",
+                    "justify-content-center",
+                    "align-items-center",
+                    "no-padding",
+                    "no-margin"
+                  ],
+                  "style": {
+                    "position": "absolute",
+                    "bottom": "10px",
+                    "right": "10px",
+                    "width": "40px",
+                    "height": "40px",
+                    "border-top": "=items[props.colorMode].state == 2 ? \"none\" : \"2px solid #ddd\"",
+                    "box-shadow": "inset 0px 1px 2px #eee",
+                    "background": "white",
+                    "border-radius": "50%"
+                  }
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "class": [
+                          "no-margin"
+                        ],
+                        "style": {
+                          "position": "absolute",
+                          "width": "100%",
+                          "height": "100%",
+                          "box-shadow": "=items[props.colorMode].state == 2 ? \"0 0 15px #fff, -7px -7px 15px rgba(255,0,0,0.5), 7px -7px 15px rgba(255,255,0,0.5), 7px 7px 15px rgba(0,255,0,0.5), -7px 7px 15px rgba(255,255,0,0.5)\" : \"none\"",
+                          "border-radius": "50%",
+                          "transition": "transform 0.2s",
+                          "background": "=items[props.colorMode].state == 2 ? \"linear-gradient(135deg, red, orange, yellow, green, blue)\" : \"transparent\"",
+                          "transform": "=items[props.colorMode].state == 2 ? \"rotate(360deg) scale(1,1)\" : \"rotate(0deg) scale(0,0)\""
+                        }
+                      }
+                    },
+                    {
+                      "component": "f7-block",
+                      "config": {
+                        "style": {
+                          "position": "absolute",
+                          "width": "calc(100% - 10px)",
+                          "height": "calc(100% - 10px)",
+                          "background": "rgba(255,255,255,0.8)",
+                          "border-radius": "50%"
+                        }
+                      }
+                    },
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "iconOnly": true,
+                        "iconF7": "paintbrush",
+                        "iconSize": 17,
+                        "action": "command",
+                        "actionItem": "=props.colorMode",
+                        "actionCommand": 2,
+                        "style": {
+                          "display": "=items[props.colorMode].state == 1 ? \"block\" : \"none\"",
+                          "border": "solid 2pt white",
+                          "border-radius": "50%",
+                          "background-color": "#f7f7f7",
+                          "background-image": "linear-gradient(135deg, #f7f7f7, #e7e7e7)",
+                          "color": "#a7a7a7",
+                          "width": "calc(100% - 10px)",
+                          "height": "calc(100% - 10px)",
+                          "text-align": "center",
+                          "box-shadow": "0px 3px 8px",
+                          "backdrop-filter": "opacity(88%)"
+                        },
+                        "class": [
+                          "nextSlide"
+                        ]
+                      }
+                    },
+                    {
+                      "component": "oh-link",
+                      "config": {
+                        "iconOnly": true,
+                        "iconF7": "paintbrush_fill",
+                        "iconSize": 17,
+                        "action": "command",
+                        "actionItem": "=props.colorMode",
+                        "actionCommand": 1,
+                        "style": {
+                          "display": "=items[props.colorMode].state == 2 ? \"block\" : \"none\"",
+                          "border": "solid 2pt white",
+                          "border-radius": "50%",
+                          "background-color": "#f7f7f7",
+                          "background-image": "linear-gradient(135deg, #f7f7f7, #e7e7e7)",
+                          "color": "#a7a7a7",
+                          "width": "calc(100% - 10px)",
+                          "height": "calc(100% - 10px)",
+                          "text-align": "center",
+                          "box-shadow": "0px 3px 8px",
+                          "backdrop-filter": "opacity(88%)"
+                        },
+                        "class": [
+                          "previousSlide"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "f7-card-footer",
+          "slots": {
+            "default": [
+              {
+                "component": "Label",
+                "config": {
+                  "text": "=items[props.lampToggle].state == \"ON\" ? \"Licht an\" : \"Licht aus\""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
     "uid": "multiroom_audio_control",
     "tags": [],
     "props": {

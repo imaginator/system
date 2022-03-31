@@ -1,6 +1,11 @@
 [
   {
     "uid": "BathroomGuest",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-27T20:28:29.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -81,6 +86,11 @@
   },
   {
     "uid": "BathroomMain",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-27T20:28:29.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -161,6 +171,11 @@
   },
   {
     "uid": "Bedroom1",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-27T20:28:29.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -247,12 +262,17 @@
   },
   {
     "uid": "Bedroom2",
-    "timestamp": "2021-06-27T20:28:29.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-08-09T20:22:34.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
       "colNum": 8,
-      "label": "Alistair's Room",
+      "label": "Guest Room",
       "sidebar": true,
       "order": "-10",
       "scale": true
@@ -327,6 +347,11 @@
   },
   {
     "uid": "Bedroom3",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-27T20:28:30.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -407,14 +432,19 @@
   },
   {
     "uid": "HallwayLarge",
-    "timestamp": "2021-08-09T14:33:19.134+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-10-20T19:14:39.000+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "colNum": 8,
       "label": "Hallway",
-      "sidebar": true,
-      "order": "-90"
+      "layoutType": "responsive",
+      "order": "-90",
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -443,41 +473,41 @@
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Roof  (north)",
-                                    "item": "HallwayLargeWindowNorth",
-                                    "stateInCenter": true
+                                    "item": "HallwayLargeRollershutter1",
+                                    "stateInCenter": true,
+                                    "title": "Roof  (north)"
                                   }
                                 },
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Roof 2",
                                     "item": "HallwayLargeRollershutter2",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Roof 2"
                                   }
                                 },
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Roof 3",
                                     "item": "HallwayLargeRollershutter3",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Roof 3"
                                   }
                                 },
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Roof 4",
                                     "item": "HallwayLargeRollershutter4",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Roof 4"
                                   }
                                 },
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Roof 5",
                                     "item": "HallwayLargeRollershutter5",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Roof 5"
                                   }
                                 },
                                 {
@@ -507,9 +537,9 @@
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Window",
                                     "item": "HallwayLargeWindowNorth",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Window"
                                   }
                                 },
                                 {
@@ -523,9 +553,9 @@
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "Window",
                                     "item": "HallwayLargeWindowSouth",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "title": "Window"
                                   }
                                 },
                                 {
@@ -539,10 +569,10 @@
                                 {
                                   "component": "oh-rollershutter-item",
                                   "config": {
-                                    "title": "small hallway window",
-                                    "subtitle": "outside main bathroom",
                                     "item": "HallwaySmallRooftopWindowOpenerPosition",
-                                    "stateInCenter": true
+                                    "stateInCenter": true,
+                                    "subtitle": "outside main bathroom",
+                                    "title": "small hallway window"
                                   }
                                 }
                               ]
@@ -567,10 +597,10 @@
                           {
                             "component": "oh-label-card",
                             "config": {
+                              "footer": "large hallway ",
                               "item": "KNXTemperatureCelciusHallwayLarge",
-                              "trendItem": "KNXTemperatureCelciusHallwayLarge",
                               "title": "temperature",
-                              "footer": "large hallway "
+                              "trendItem": "KNXTemperatureCelciusHallwayLarge"
                             }
                           }
                         ]
@@ -585,9 +615,9 @@
                             "component": "oh-label-card",
                             "config": {
                               "footer": "large hallway",
+                              "item": "KNXMotionContactHallwayLarge",
                               "noBorder": true,
                               "noShadow": true,
-                              "item": "KNXMotionContactHallwayLarge",
                               "title": "motion"
                             }
                           }
@@ -611,9 +641,9 @@
                           {
                             "component": "oh-label-card",
                             "config": {
+                              "footer": "small hallway",
                               "item": "KNXTemperatureCelciusHallwaySmall",
-                              "title": "temperature",
-                              "footer": "small hallway"
+                              "title": "temperature"
                             }
                           }
                         ]
@@ -628,9 +658,9 @@
                             "component": "oh-label-card",
                             "config": {
                               "footer": "small hallway",
+                              "item": "KNXMotionContactHallwaySmall",
                               "noBorder": true,
                               "noShadow": true,
-                              "item": "KNXMotionContactHallwaySmall",
                               "title": "motion"
                             }
                           }
@@ -647,7 +677,63 @@
           "component": "oh-block",
           "config": {},
           "slots": {
-            "default": []
+            "default": [
+              {
+                "component": "oh-grid-row",
+                "config": {},
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-grid-col",
+                      "config": {},
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-slider-card",
+                            "config": {}
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "oh-block",
+          "config": {},
+          "slots": {
+            "default": [
+              {
+                "component": "oh-grid-cells",
+                "config": {},
+                "slots": {
+                  "default": [
+                    {
+                      "component": "oh-colorpicker-cell",
+                      "config": {
+                        "item": "KNXVitogate2003007HeatingcircuitM2HC2Slopeheatingcurve",
+                        "modules": [
+                          "wheel",
+                          "sb-spectrum",
+                          "hue-slider",
+                          "hs-spectrum",
+                          "brightness-slider",
+                          "rgb-sliders",
+                          "hsb-sliders",
+                          "rgb-bars",
+                          "palette",
+                          "current-color",
+                          "initial-current-colors"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         }
       ]
@@ -655,25 +741,32 @@
   },
   {
     "uid": "Home",
-    "timestamp": "2021-06-27T20:28:29.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-12-26T11:24:42.000+0100",
     "component": "oh-home-page",
     "config": {
-      "label": "Home Page",
       "displayModelCardsTo": [
         "role:administrator",
         "role:user"
       ],
-      "allowChatInputTo": [
-        "role:administrator",
-        "role:user"
-      ]
+      "label": "Home Page"
     },
     "slots": {
+      "equipment": [
+        {
+          "component": "oh-equipment-tab",
+          "config": {},
+          "slots": {}
+        }
+      ],
       "locations": [
         {
           "component": "oh-locations-tab",
           "config": {
-            "excludedCards": [],
             "cardOrder": [
               "gKitchen",
               "gHallwayLarge",
@@ -688,15 +781,10 @@
               "gHallwaySmall",
               "gTerrace",
               "gRooms"
-            ]
+            ],
+            "excludedCards": []
           },
           "slots": {
-            "gLaundry": [
-              {
-                "component": "oh-location-card",
-                "config": {}
-              }
-            ],
             "gBathroomMain": [
               {
                 "component": "oh-location-card",
@@ -709,20 +797,61 @@
                 }
               }
             ],
+            "gBedroom2": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gBedroom3": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gHallwayLarge": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gHallwaySmall": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gKitchen": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gLaundry": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gLounge": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
             "gRooms": [
+              {
+                "component": "oh-location-card",
+                "config": {}
+              }
+            ],
+            "gTerrace": [
               {
                 "component": "oh-location-card",
                 "config": {}
               }
             ]
           }
-        }
-      ],
-      "equipment": [
-        {
-          "component": "oh-equipment-tab",
-          "config": {},
-          "slots": {}
         }
       ],
       "properties": [
@@ -735,16 +864,104 @@
     }
   },
   {
+    "uid": "KNXTemperatureCelciusHallwayLarge",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-11-23T17:22:48.000+0100",
+    "component": "oh-chart-page",
+    "config": {
+      "chartType": "",
+      "label": "KNXTemperatureCelciusHallwayLarge",
+      "period": "D"
+    },
+    "slots": {
+      "dataZoom": [
+        {
+          "component": "oh-chart-datazoom",
+          "config": {
+            "type": "inside"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "component": "oh-chart-grid",
+          "config": {
+            "includeLabels": true
+          }
+        }
+      ],
+      "legend": [
+        {
+          "component": "oh-chart-legend",
+          "config": {
+            "bottom": 3,
+            "type": "scroll"
+          }
+        }
+      ],
+      "series": [
+        {
+          "component": "oh-time-series",
+          "config": {
+            "areaStyle": {
+              "opacity": 0.2
+            },
+            "gridIndex": 0,
+            "item": "KNXTemperatureCelciusHallwayLarge",
+            "name": "Temperature",
+            "type": "line",
+            "xAxisIndex": 0,
+            "yAxisIndex": 0
+          }
+        }
+      ],
+      "tooltip": [
+        {
+          "component": "oh-chart-tooltip",
+          "config": {
+            "confine": true,
+            "smartFormatter": true
+          }
+        }
+      ],
+      "xAxis": [
+        {
+          "component": "oh-time-axis",
+          "config": {
+            "gridIndex": 0
+          }
+        }
+      ],
+      "yAxis": [
+        {
+          "component": "oh-value-axis",
+          "config": {
+            "gridIndex": 0
+          }
+        }
+      ]
+    }
+  },
+  {
     "uid": "Kitchen",
-    "timestamp": "2021-06-28T21:07:44.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-11-09T13:41:44.000+0100",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "colNum": 8,
       "label": "Kitchen",
-      "sidebar": true,
+      "layoutType": "responsive",
+      "order": "-200",
       "scale": true,
-      "order": "-200"
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -766,12 +983,12 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
                               "item": "KitchenLeft",
-                              "title": "Left",
+                              "noBorder": true,
+                              "noShadow": true,
                               "stateInCenter": true,
-                              "noBorder": true,
-                              "noShadow": true
+                              "title": "Left",
+                              "vertical": true
                             }
                           }
                         ]
@@ -785,12 +1002,12 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
                               "item": "KitchenMiddle",
-                              "title": "Middle",
-                              "noShadow": true,
                               "noBorder": true,
-                              "stateInCenter": true
+                              "noShadow": true,
+                              "stateInCenter": true,
+                              "title": "Middle",
+                              "vertical": true
                             }
                           }
                         ]
@@ -804,12 +1021,12 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
                               "item": "KitchenRight",
-                              "title": "Right",
                               "noBorder": true,
                               "noShadow": true,
-                              "stateInCenter": true
+                              "stateInCenter": true,
+                              "title": "Right",
+                              "vertical": true
                             }
                           }
                         ]
@@ -859,9 +1076,22 @@
                 }
               },
               {
-                "component": "oh-label-card",
+                "component": "oh-colorpicker-card",
                 "config": {
-                  "item": "KNXMotionContactKitchen"
+                  "item": "KNXLightningRGBWKitchenNiche",
+                  "modules": [
+                    "rgb-bars"
+                  ],
+                  "noBorder": true,
+                  "noShadow": true,
+                  "outline": true,
+                  "title": "Kitchen Niche"
+                }
+              },
+              {
+                "component": "oh-toggle-card",
+                "config": {
+                  "item": "KNXLightningRGBWKitchenNiche"
                 }
               }
             ]
@@ -872,15 +1102,20 @@
   },
   {
     "uid": "Lounge",
-    "timestamp": "2021-06-27T20:28:29.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-10-11T13:33:21.000+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "colNum": 8,
       "label": "Lounge",
-      "sidebar": true,
+      "layoutType": "responsive",
+      "order": "-50",
       "scale": true,
-      "order": "-50"
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -902,8 +1137,8 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
-                              "item": "LoungeLeftOutsideBlindPosition"
+                              "item": "LoungeLeftOutsideBlindPosition",
+                              "vertical": true
                             }
                           }
                         ]
@@ -917,8 +1152,8 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
-                              "item": "LoungeMiddleOutsideBlindPosition"
+                              "item": "LoungeMiddleOutsideBlindPosition",
+                              "vertical": true
                             }
                           }
                         ]
@@ -947,8 +1182,8 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
-                              "item": "LoungeLeftInsideBlindPosition"
+                              "item": "LoungeLeftInsideBlindPosition",
+                              "vertical": true
                             }
                           }
                         ]
@@ -962,8 +1197,8 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
-                              "item": "LoungeMiddleInsideBlindPosition"
+                              "item": "LoungeMiddleInsideBlindPosition",
+                              "vertical": true
                             }
                           }
                         ]
@@ -977,8 +1212,8 @@
                           {
                             "component": "oh-rollershutter-card",
                             "config": {
-                              "vertical": true,
-                              "item": "LoungeRightInsideBlindPosition"
+                              "item": "LoungeRightInsideBlindPosition",
+                              "vertical": true
                             }
                           }
                         ]
@@ -995,10 +1230,10 @@
                     {
                       "component": "oh-rollershutter-cell",
                       "config": {
+                        "dirIconsStyle": "arrowtriangle_{dir}",
                         "item": "LoungeInsideBlindPosition",
-                        "title": "inside",
                         "stopIconStyle": "stop",
-                        "dirIconsStyle": "arrowtriangle_{dir}"
+                        "title": "inside"
                       }
                     },
                     {
@@ -1063,17 +1298,17 @@
               {
                 "component": "oh-rollershutter-card",
                 "config": {
-                  "vertical": true,
+                  "footer": "inside",
                   "item": "LoungeInsideBlindPosition",
-                  "footer": "inside"
+                  "vertical": true
                 }
               },
               {
                 "component": "oh-rollershutter-card",
                 "config": {
+                  "footer": "outside",
                   "item": "LoungeOutsideBlindPosition",
-                  "vertical": true,
-                  "footer": "outside"
+                  "vertical": true
                 }
               },
               {
@@ -1085,10 +1320,25 @@
               {
                 "component": "oh-colorpicker-card",
                 "config": {
+                  "item": "KNXRGBWLightingRGBblue",
                   "modules": [
                     "wheel"
-                  ],
-                  "item": "KNXRGBWLightingRGBblue"
+                  ]
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "item": "Hs110HifiPower",
+                  "title": "HiFi Power"
+                }
+              },
+              {
+                "component": "oh-toggle-card",
+                "config": {
+                  "footer": "Use to restart Amplifier",
+                  "item": "Hs110HifiSwitch",
+                  "title": "HiFi Power"
                 }
               }
             ]
@@ -1099,6 +1349,11 @@
   },
   {
     "uid": "Measurements",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-27T20:28:30.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -1155,6 +1410,11 @@
   },
   {
     "uid": "Network",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
     "timestamp": "2021-06-30T14:46:07.000+0200",
     "component": "oh-layout-page",
     "config": {
@@ -1220,14 +1480,19 @@
   },
   {
     "uid": "Study",
-    "timestamp": "2021-07-19T17:29:23.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-10-11T13:28:51.000+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "colNum": 8,
       "label": "Study",
-      "sidebar": true,
-      "order": "-70"
+      "layoutType": "responsive",
+      "order": "-70",
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -1253,11 +1518,11 @@
               {
                 "component": "oh-player-card",
                 "config": {
+                  "artistItem": "ChromecastAudioStudyAlbumArtist",
                   "item": "ChromecastAudioStudyControl",
-                  "showRewindFFward": true,
                   "noBorder": true,
                   "noShadow": true,
-                  "artistItem": "ChromecastAudioStudyAlbumArtist",
+                  "showRewindFFward": true,
                   "trackItem": "ChromecastAudioStudyStatustext"
                 }
               },
@@ -1270,38 +1535,38 @@
               {
                 "component": "oh-rollershutter-card",
                 "config": {
-                  "vertical": true,
-                  "item": "StudyInsideBlindPosition",
                   "footer": "inside",
-                  "stateInCenter": true
+                  "item": "StudyInsideBlindPosition",
+                  "stateInCenter": true,
+                  "vertical": true
                 }
               },
               {
                 "component": "oh-rollershutter-card",
                 "config": {
-                  "item": "StudyOutsideBlindPosition",
-                  "vertical": true,
                   "footer": "outside",
-                  "stateInCenter": true
+                  "item": "StudyOutsideBlindPosition",
+                  "stateInCenter": true,
+                  "vertical": true
                 }
               },
               {
                 "component": "widget:color_light_v3",
                 "config": {
                   "brightness": "LightStudyCeilingDimmer",
-                  "temperature": "LightStudyCeilingTemperature",
+                  "color": "LightStudyCeilingTemperature",
                   "colorMode": "LightStudyCeilingColourMode",
                   "header": "Ceiling lights",
                   "lampToggle": "LightStudyCeilingSwitch",
-                  "color": "LightStudyCeilingTemperature"
+                  "temperature": "LightStudyCeilingTemperature"
                 }
               },
               {
                 "component": "oh-toggle-card",
                 "config": {
+                  "color": "red",
                   "item": "LightStudyCeilingSwitch",
-                  "title": "Ceiling lighting",
-                  "color": "red"
+                  "title": "Ceiling lighting"
                 }
               },
               {
@@ -1320,15 +1585,22 @@
                 "component": "oh-slider-card",
                 "config": {
                   "item": "KNXLightingCWWWLightStudyCeilingColourTemperaturePercent",
-                  "title": "Colour Temperature",
-                  "label": true
+                  "label": true,
+                  "title": "Colour Temperature"
                 }
               },
               {
                 "component": "oh-slider-card",
                 "config": {
-                  "title": "Brightness",
-                  "item": "KNXLightingCWWWLightStudyCeilingDimmer"
+                  "item": "KNXLightingCWWWLightStudyCeilingDimmer",
+                  "title": "Brightness"
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "item": "Hs110LaptopPower",
+                  "title": "Laptop Power"
                 }
               }
             ]
@@ -1339,15 +1611,20 @@
   },
   {
     "uid": "Terrace",
-    "timestamp": "2021-07-20T16:58:30.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2022-03-24T12:33:11.000+0100",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "colNum": 8,
       "label": "Terrace",
-      "sidebar": true,
+      "layoutType": "responsive",
       "order": "-6",
-      "scale": true
+      "scale": true,
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -1369,11 +1646,11 @@
                           {
                             "component": "oh-toggle-card",
                             "config": {
-                              "title": "Irrigation",
-                              "item": "IrrigationPowerSwitch",
+                              "item": "TimedWatering_Switch",
                               "noBorder": true,
                               "noShadow": true,
-                              "outline": false
+                              "outline": false,
+                              "title": "Timed Irrigation"
                             }
                           }
                         ]
@@ -1405,13 +1682,18 @@
   },
   {
     "uid": "Ventilation",
-    "timestamp": "2021-06-27T20:28:29.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-09-20T17:33:29.000+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "label": "Ventilation",
-      "sidebar": true,
-      "order": "+90"
+      "layoutType": "responsive",
+      "order": "+90",
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -1446,9 +1728,12 @@
                       "slots": {
                         "default": [
                           {
-                            "component": "oh-knob-card",
+                            "component": "oh-slider-card",
                             "config": {
-                              "item": "ValloxVentilationUnitHomespeedsetting"
+                              "item": "ValloxVentilationUnitFanspeedextract",
+                              "label": true,
+                              "title": "extraction speed",
+                              "unit": "%"
                             }
                           }
                         ]
@@ -1458,34 +1743,12 @@
                       "component": "oh-grid-col",
                       "config": {},
                       "slots": {
-                        "default": []
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "component": "oh-grid-row",
-                "config": {},
-                "slots": {
-                  "default": [
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
                         "default": [
                           {
-                            "component": "oh-knob-card",
+                            "component": "oh-slider-card",
                             "config": {
                               "item": "ValloxVentilationUnitFanspeedsupply",
-                              "title": "Supply"
+                              "title": "supply speed"
                             }
                           }
                         ]
@@ -1497,10 +1760,10 @@
                       "slots": {
                         "default": [
                           {
-                            "component": "oh-knob-card",
+                            "component": "oh-toggle-card",
                             "config": {
-                              "title": "Extract",
-                              "item": "ValloxVentilationUnitFanspeedextract"
+                              "item": "ValloxVentilationUnitCellstate",
+                              "title": "Heat recovery/Bypass"
                             }
                           }
                         ]
@@ -1518,7 +1781,12 @@
   },
   {
     "uid": "Weather",
-    "timestamp": "2021-06-27T20:28:30.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-08-09T23:44:57.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1582,6 +1850,21 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "component": "oh-grid-col",
+                      "config": {},
+                      "slots": {
+                        "default": [
+                          {
+                            "component": "oh-label-card",
+                            "config": {
+                              "item": "Rain",
+                              "title": "Rain"
+                            }
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
@@ -1594,8 +1877,79 @@
     }
   },
   {
+    "uid": "heating",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-10-27T20:38:09.000+0200",
+    "component": "oh-layout-page",
+    "config": {
+      "label": "Heating",
+      "order": "-1",
+      "sidebar": true
+    },
+    "slots": {
+      "canvas": [],
+      "default": [],
+      "grid": [],
+      "masonry": [
+        {
+          "component": "oh-masonry",
+          "slots": {
+            "default": [
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "icon": "oh:presence",
+                  "iconSize": 64,
+                  "item": "SummerWinter",
+                  "label": "0=Winter, 1=Summer",
+                  "options": "0=AWAY,1=HOME,2=WAKE,3=SLEEP",
+                  "value": " "
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "action": "options",
+                  "actionItem": "SummerWinter",
+                  "config": {
+                    "options": "0=AWAY,1=HOME,2=WAKE,3=SLEEP"
+                  },
+                  "icon": "oh:presence",
+                  "iconSize": 64,
+                  "item": "SummerWinter",
+                  "value": " "
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "item": "SummerWinter"
+                }
+              },
+              {
+                "component": "oh-toggle-card",
+                "config": {
+                  "item": "SummerWinter"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
     "uid": "overview",
-    "timestamp": "2021-08-09T13:38:33.552+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-08-09T13:38:33.000+0200",
     "component": "oh-layout-page",
     "config": {
       "layoutType": "responsive",
@@ -1702,13 +2056,18 @@
   },
   {
     "uid": "vacuum",
-    "timestamp": "2021-07-22T12:53:34.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2022-03-31T17:51:39.202+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "label": "Vacuum",
-      "sidebar": true,
-      "order": "-1"
+      "layoutType": "responsive",
+      "order": "-201",
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -1718,24 +2077,48 @@
           "slots": {
             "default": [
               {
-                "component": "oh-grid-row",
+                "component": "oh-grid-cells",
                 "config": {},
                 "slots": {
                   "default": [
                     {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-image-card",
-                            "config": {
-                              "item": "XiaomiImagiSuckCleaningMap",
-                              "title": "Map",
-                              "refreshInterval": 10
-                            }
-                          }
-                        ]
+                      "component": "oh-cell",
+                      "config": {
+                        "action": "toggle",
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "actionCommand": "app_zoned_clean[[23450,24800,26250,26750,1]]",
+                        "title": "Clean Cat Toilet Area",
+                        "icon": "material:pets"
+                      }
+                    },
+                    {
+                      "component": "oh-cell",
+                      "config": {
+                        "title": "Clean Whole Apartment",
+                        "action": "command",
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "actionCommand": "app_start",
+                        "icon": "material:play_circle"
+                      }
+                    },
+                    {
+                      "component": "oh-cell",
+                      "config": {
+                        "title": "Stop",
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "action": "command",
+                        "actionCommand": "app_stop",
+                        "icon": "material:stop_circle"
+                      }
+                    },
+                    {
+                      "component": "oh-cell",
+                      "config": {
+                        "title": "Dock",
+                        "action": "command",
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "actionCommand": "app_charge",
+                        "icon": "material:battery_std"
                       }
                     }
                   ]
@@ -1750,13 +2133,18 @@
   },
   {
     "uid": "ventilation",
-    "timestamp": "2021-06-27T20:28:30.000+0200",
+    "tags": [],
+    "props": {
+      "parameters": [],
+      "parameterGroups": []
+    },
+    "timestamp": "2021-10-11T13:35:26.000+0200",
     "component": "oh-layout-page",
     "config": {
-      "layoutType": "responsive",
       "label": "Ventilation",
-      "sidebar": true,
-      "order": "-1"
+      "layoutType": "responsive",
+      "order": "-1",
+      "sidebar": true
     },
     "slots": {
       "default": [
@@ -1818,7 +2206,15 @@
                       "component": "oh-grid-col",
                       "config": {},
                       "slots": {
-                        "default": []
+                        "default": [
+                          {
+                            "component": "oh-label-card",
+                            "config": {
+                              "item": "Hs110VentilationPower",
+                              "title": "Power Consumption"
+                            }
+                          }
+                        ]
                       }
                     },
                     {
@@ -1844,8 +2240,8 @@
                           {
                             "component": "oh-knob-card",
                             "config": {
-                              "title": "Extract",
-                              "item": "ValloxVentilationUnitFanspeedextract"
+                              "item": "ValloxVentilationUnitFanspeedextract",
+                              "title": "Extract"
                             }
                           }
                         ]
