@@ -1616,7 +1616,7 @@
       "parameters": [],
       "parameterGroups": []
     },
-    "timestamp": "2022-03-24T12:33:11.000+0100",
+    "timestamp": "2022-03-31T22:14:37.958+0200",
     "component": "oh-layout-page",
     "config": {
       "colNum": 8,
@@ -1627,54 +1627,28 @@
       "sidebar": true
     },
     "slots": {
-      "default": [
-        {
-          "component": "oh-block",
-          "config": {},
-          "slots": {
-            "default": [
-              {
-                "component": "oh-grid-row",
-                "config": {},
-                "slots": {
-                  "default": [
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": [
-                          {
-                            "component": "oh-toggle-card",
-                            "config": {
-                              "item": "TimedWatering_Switch",
-                              "noBorder": true,
-                              "noShadow": true,
-                              "outline": false,
-                              "title": "Timed Irrigation"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "component": "oh-grid-col",
-                      "config": {},
-                      "slots": {
-                        "default": []
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
+      "default": [],
       "masonry": [
         {
           "component": "oh-masonry",
           "slots": {
-            "default": []
+            "default": [
+              {
+                "component": "oh-toggle-card",
+                "config": {
+                  "footer": "Start watering of the terrace",
+                  "item": "TimedWatering_Switch",
+                  "title": "Manual Timed Watering"
+                }
+              },
+              {
+                "component": "oh-label-card",
+                "config": {
+                  "item": "IrrigationPowerSwitch_LastChanged",
+                  "title": "Last time watered"
+                }
+              }
+            ]
           }
         }
       ]
@@ -2061,7 +2035,7 @@
       "parameters": [],
       "parameterGroups": []
     },
-    "timestamp": "2022-03-31T17:51:39.202+0200",
+    "timestamp": "2022-03-31T17:51:39.000+0200",
     "component": "oh-layout-page",
     "config": {
       "label": "Vacuum",
@@ -2085,40 +2059,40 @@
                       "component": "oh-cell",
                       "config": {
                         "action": "toggle",
-                        "actionItem": "ImagiSuckActionsCommands",
                         "actionCommand": "app_zoned_clean[[23450,24800,26250,26750,1]]",
-                        "title": "Clean Cat Toilet Area",
-                        "icon": "material:pets"
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "icon": "material:pets",
+                        "title": "Clean Cat Toilet Area"
                       }
                     },
                     {
                       "component": "oh-cell",
                       "config": {
-                        "title": "Clean Whole Apartment",
                         "action": "command",
-                        "actionItem": "ImagiSuckActionsCommands",
                         "actionCommand": "app_start",
-                        "icon": "material:play_circle"
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "icon": "material:play_circle",
+                        "title": "Clean Whole Apartment"
                       }
                     },
                     {
                       "component": "oh-cell",
                       "config": {
-                        "title": "Stop",
-                        "actionItem": "ImagiSuckActionsCommands",
                         "action": "command",
                         "actionCommand": "app_stop",
-                        "icon": "material:stop_circle"
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "icon": "material:stop_circle",
+                        "title": "Stop"
                       }
                     },
                     {
                       "component": "oh-cell",
                       "config": {
-                        "title": "Dock",
                         "action": "command",
-                        "actionItem": "ImagiSuckActionsCommands",
                         "actionCommand": "app_charge",
-                        "icon": "material:battery_std"
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "icon": "material:battery_std",
+                        "title": "Dock"
                       }
                     }
                   ]
