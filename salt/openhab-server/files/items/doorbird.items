@@ -1,0 +1,17 @@
+DateTime   DownstairsDoorDoorbellTimestamp          "Doorbell timestamp"           {channel="doorbird:d101:downstairs:doorbellTimestamp"}
+Image      DownstairsDoorDoorbellImage              "Doorbell pressed image"       {channel="doorbird:d101:downstairs:doorbellImage"}
+Number     DownstairsDoorDoorbellHistoryIndex       "Doorbell history index"       {channel="doorbird:d101:downstairs:doorbellHistoryIndex"}
+DateTime   DownstairsDoorDoorbellHistoryTimestamp   "Doorbell history timestamp"   {channel="doorbird:d101:downstairs:doorbellHistoryTimestamp"}
+Image      DownstairsDoorDoorbellHistoryImage       "Doorbell history image"       {channel="doorbird:d101:downstairs:doorbellHistoryImage"}
+Image      DownstairsDoorDoorbellMontage            "Doorbell montage image"       {channel="doorbird:d101:downstairs:doorbellMontage"}
+Switch     DownstairsDoorMotion                     "Motion"                       {channel="doorbird:d101:downstairs:motion"}
+DateTime   DownstairsDoorMotionTimestamp            "Motion timestamp"             {channel="doorbird:d101:downstairs:motionTimestamp"}
+Image      DownstairsDoorMotionImage                "Motion detected image"        {channel="doorbird:d101:downstairs:motionImage"}
+Number     DownstairsDoorMotionHistoryIndex         "Motion history index"         {channel="doorbird:d101:downstairs:motionHistoryIndex"}
+DateTime   DownstairsDoorMotionHistoryTimestamp     "Motion history timestamp"     {channel="doorbird:d101:downstairs:motionHistoryTimestamp"}
+Image      DownstairsDoorMotionHistoryImage         "Motion history image"         {channel="doorbird:d101:downstairs:motionHistoryImage"}
+Image      DownstairsDoorMotionMontage              "Motion montage image"         {channel="doorbird:d101:downstairs:motionMontage"}
+Switch     DownstairsDoorLight                      "Light"                        {channel="doorbird:d101:downstairs:light"}
+Switch     DownstairsDoorOpenDoor1                  "Open door 1"                  {channel="doorbird:d101:downstairs:openDoor1"}
+Image      DownstairsDoorImage                      "Image"                        {channel="doorbird:d101:downstairs:image"}
+DateTime   DownstairsDoorImageTimestamp             "Image timestamp"              {channel="doorbird:d101:downstairs:imageTimestamp"}
