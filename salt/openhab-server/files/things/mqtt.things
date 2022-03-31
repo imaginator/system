@@ -31,10 +31,6 @@ Thing mqtt:topic:irrigation "Irrigation"  (mqtt:broker:broker) {
         Type string : WifiDowntime      [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.Wifi.Downtime"]
         Type number : LoadAvg           [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
         Type number : Uptime            [stateTopic="tele/irrigation/STATE", transformationPattern="JSONPATH:$.UptimeSec"]
-        Type string : Result   "output"            [stateTopic="stat/irrigation/RESULT" ]
-        Type switch : Power    "Start/Stop Irrigation"         [stateTopic="stat/irrigation/POWER", 
-                                        commandTopic="tasmota/irrigation/cmnd/POWER", 
-                                        on="ON", 
-                                        off="OFF"
-                                        ]
+        Type string : Result            [stateTopic="stat/irrigation/RESULT" ]
+        Type switch : PowerSwitch       [stateTopic="stat/irrigation/POWER", commandTopic="cmnd/irrigation/POWER", on="ON", off="OFF" ]
 }
