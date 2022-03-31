@@ -6,5 +6,6 @@ then
     logInfo("reset volumes", "daily volume reset to sensible level")
     // we don't set the group volume since it's automatically
     // set to the average of the other rooms
-    gVolumeControl.sendCommand(25)
+    gVolumeControlHomeMini.sendCommand(24)
+    gVolumeControlChromecast.sendCommand(40)
 end
