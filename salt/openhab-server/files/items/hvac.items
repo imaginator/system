@@ -1,7 +1,7 @@
 // Heating Modes
-Switch    SummerMode                                         "[MAP(summerenabled.map):%s] mode"     (gPersistRestarts, gTimeseries, gHVAC)    ["Switch","HVAC"]                                    {channel="knx:device:heating-mode:SummerMode"}
-Switch    NightMode                                          "[MAP(nightenabled.map):%s] mode"      (gPersistRestarts, gTimeseries, gHVAC)    ["Switch","HVAC"]                                    {channel="knx:device:heating-mode:NightMode"}
-Switch    CoolingMode                                        "[MAP(coolingenabled.map):%s] mode"    (gPersistRestarts, gTimeseries, gHVAC)    ["Switch","HVAC"]                                    {channel="knx:device:heating-mode:CoolingMode"}
+Switch    SummerMode                                         "[MAP(summerenabled.map):%s] mode"     (gPersistRestarts, gTimeseries, gHVAC)    ["Switch"]                                           {channel="knx:device:heating-mode:SummerMode"}
+Switch    NightMode                                          "[MAP(nightenabled.map):%s] mode"      (gPersistRestarts, gTimeseries, gHVAC)    ["Switch"]                                           {channel="knx:device:heating-mode:NightMode"}
+Switch    CoolingMode                                        "[MAP(coolingenabled.map):%s] mode"    (gPersistRestarts, gTimeseries, gHVAC)    ["Switch"]                                           {channel="knx:device:heating-mode:CoolingMode"}
 
 // Current Temperature
 Number    KNXTemperatureCelciusBathroomGuest                 "current temperature [%.1f°C]"         (gTimeseries, gBathroomGuestHVAC)         ["Temperature","Measurement"]                        {channel="knx:device:temperature:BathroomGuest"}
@@ -51,11 +51,11 @@ String    KNXHeatingDisgnosisTextStudy                       "diagnosis text"   
 // 2 = Standby
 // 3 = Economy
 // 4 = Building protection
-Number    KNXHVACModeBathroomGuest                           "Bathroom guest heating mode"          (gTimeseries, gBathroomGuestHVAC)         ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:BathroomGuest"}
-Number    KNXHVACModeBathroomMain                            "Bathroom main heating mode"           (gTimeseries, gBathroomMainHVAC)          ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:BathroomMain"}
-Number    KNXHVACModeBedroom1                                "Bedroom1 heating mode"                (gTimeseries, gBedroom1HVAC)              ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Bedroom1"}
-Number    KNXHVACModeBedroom2                                "Bedroom2 heating mode"                (gTimeseries, gBedroom2HVAC)              ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Bedroom2"}
-Number    KNXHVACModeBedroom3                                "Bedroom3 heating mode"                (gTimeseries, gBedroom3HVAC)              ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Bedroom3"}
-Number    KNXHVACModeKitchen                                 "Kitchen heating mode"                 (gTimeseries, gKitchenHVAC)               ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Kitchen"}
-Number    KNXHVACModeLounge                                  "Lounge heating mode"                  (gTimeseries, gLoungeHVAC)                ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Lounge"}
-Number    KNXHVACModeStudy                                   "Study heating mode"                   (gTimeseries, gStudyHVAC)                 ["Switch","HVAC"]                                    {channel="knx:device:hvac-mode:Study"}
+Number    KNXHVACModeBathroomGuest                           "Bathroom guest heating mode"          (gTimeseries, gBathroomGuestHVAC)         ["Switch"]                                           {channel="knx:device:hvac-mode:BathroomGuest"}
+Number    KNXHVACModeBathroomMain                            "Bathroom main heating mode"           (gTimeseries, gBathroomMainHVAC)          ["Switch"]                                           {channel="knx:device:hvac-mode:BathroomMain"}
+Number    KNXHVACModeBedroom1                                "Bedroom1 heating mode"                (gTimeseries, gBedroom1HVAC)              ["Switch"]                                           {channel="knx:device:hvac-mode:Bedroom1"}
+Number    KNXHVACModeBedroom2                                "Bedroom2 heating mode"                (gTimeseries, gBedroom2HVAC)              ["Switch"]                                           {channel="knx:device:hvac-mode:Bedroom2"}
+Number    KNXHVACModeBedroom3                                "Bedroom3 heating mode"                (gTimeseries, gBedroom3HVAC)              ["Switch"]                                           {channel="knx:device:hvac-mode:Bedroom3"}
+Number    KNXHVACModeKitchen                                 "Kitchen heating mode"                 (gTimeseries, gKitchenHVAC)               ["Switch"]                                           {channel="knx:device:hvac-mode:Kitchen"}
+Number    KNXHVACModeLounge                                  "Lounge heating mode"                  (gTimeseries, gLoungeHVAC)                ["Switch"]                                           {channel="knx:device:hvac-mode:Lounge"}
+Number    KNXHVACModeStudy                                   "Study heating mode"                   (gTimeseries, gStudyHVAC)                 ["Switch"]                                           {channel="knx:device:hvac-mode:Study"}

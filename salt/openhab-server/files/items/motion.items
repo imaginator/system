@@ -1,14 +1,16 @@
 // Motion
-Contact     KNXMotionContactBathroomGuest                "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBathroomGuestSensors)    ["MotionDetector"]    {channel="knx:device:motion:BathroomGuest"}
-Contact     KNXMotionContactBathroomMain                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBathroomMainSensors)     ["MotionDetector"]    {channel="knx:device:motion:BathroomMain"}
-Contact     KNXMotionContactBedroom1                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom1Sensors)         ["MotionDetector"]    {channel="knx:device:motion:Bedroom1"}
-Contact     KNXMotionContactBedroom2                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom2Sensors)         ["MotionDetector"]    {channel="knx:device:motion:Bedroom2"}
-Contact     KNXMotionContactBedroom3                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom3Sensors)         ["MotionDetector"]    {channel="knx:device:motion:Bedroom3"}
-Contact     KNXMotionContactHallwayLarge                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gHallwayLargeSensors)     ["MotionDetector"]    {channel="knx:device:motion:HallwayLarge"}
-Contact     KNXMotionContactHallwaySmall                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gHallwaySmallSensors)                           ["MotionDetector"]    {channel="knx:device:motion:HallwaySmall"}
-Contact     KNXMotionContactKitchen                      "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gKitchenSensors)          ["MotionDetector"]    {channel="knx:device:motion:Kitchen"}
-Contact     KNXMotionContactLounge                       "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gLoungeSensors)           ["MotionDetector"]    {channel="knx:device:motion:Lounge"}
-Contact     KNXMotionContactStudy                        "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gStudySensors)            ["MotionDetector"]    {channel="knx:device:motion:Study"}
+
+
+Contact     KNXMotionContactBathroomGuest                "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBathroomGuestSensors)    ["Alarm"]       {channel="knx:device:motion:BathroomGuest"}
+Contact     KNXMotionContactBathroomMain                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBathroomMainSensors)     ["Alarm"]       {channel="knx:device:motion:BathroomMain"}
+Contact     KNXMotionContactBedroom1                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom1Sensors)         ["Alarm"]       {channel="knx:device:motion:Bedroom1"}
+Contact     KNXMotionContactBedroom2                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom2Sensors)         ["Alarm"]       {channel="knx:device:motion:Bedroom2"}
+Contact     KNXMotionContactBedroom3                     "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gBedroom3Sensors)         ["Alarm"]       {channel="knx:device:motion:Bedroom3"}
+Contact     KNXMotionContactHallwayLarge                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gHallwayLargeSensors)     ["Alarm"]       {channel="knx:device:motion:HallwayLarge"}
+Contact     KNXMotionContactHallwaySmall                 "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gHallwaySmallSensors)                           ["Alarm"]       {channel="knx:device:motion:HallwaySmall"}
+Contact     KNXMotionContactKitchen                      "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gKitchenSensors)          ["Alarm"]       {channel="knx:device:motion:Kitchen"}
+Contact     KNXMotionContactLounge                       "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gLoungeSensors)           ["Alarm"]       {channel="knx:device:motion:Lounge"}
+Contact     KNXMotionContactStudy                        "[MAP(motion.map):%s]"                (gPersistMe, gMotionSensors, gTabletMotionTrigger, gStudySensors)            ["Alarm"]       {channel="knx:device:motion:Study"}
 
 DateTime    KNXMotionContactBathroomGuest_LastChanged    "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]"    (gPersistMe, gMotionSensors, gBathroomGuestSensors)                          ["Presence"]    {channel="knx:device:motion:BathroomGuest" [profile="timestamp-change"]}
 DateTime    KNXMotionContactBathroomMain_LastChanged     "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]"    (gPersistMe, gMotionSensors, gBathroomMainSensors)                           ["Presence"]    {channel="knx:device:motion:BathroomMain" [profile="timestamp-change"]}

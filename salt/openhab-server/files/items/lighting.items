@@ -1,36 +1,47 @@
-Dimmer    KNXRGBWLightingRGBred                                "Kitchen niche rgb red"                          (gPersistMe)                                     {channel="knx:device:rgbwlighting:RGBred"}
-Dimmer    KNXRGBWLightingRGBgreen                              "Kitchen niche rgb green"                        (gPersistMe)                                     {channel="knx:device:rgbwlighting:RGBgreen"}
-Dimmer    KNXRGBWLightingRGBblue                               "Kitchen niche rgb blue"                         (gPersistMe)                                     {channel="knx:device:rgbwlighting:RGBblue"}
-Dimmer    KNXRGBWLightingRGBwhite                              "Kitchen niche rgb white"                        (gPersistMe)                                     {channel="knx:device:rgbwlighting:RGBwhite"}
+Group:Switch:OR(ON, OFF)    gLighting                             "Lights"                          <Lightbulb>     (gEquipment)                    ["Lightbulb"]
 
-Color     Bedroom1Overhead_Color                               "Color"                                                                                           {channel="hue:0210:huebridge:bedroomoverhead:color"}
-Dimmer    Bedroom1Overhead_ColorTemperature                    "Color Temperature"                                                                               {channel="hue:0210:huebridge:bedroomoverhead:color_temperature"}
-String    Bedroom1Overhead_Alert                               "Alert"                                                                                           {channel="hue:0210:huebridge:bedroomoverhead:alert"}
-Switch    Bedroom1Overhead_Effect                              "Color Loop"                                                                                      {channel="hue:0210:huebridge:bedroomoverhead:effect"}
+Group                       gBathroomGuestLights                  "Lights"                          <Lightbulb>     (gBathroomGuest)                ["Lightbulb"]
+Group                       gBathroomMainLights                   "Lights"                          <Lightbulb>     (gBathroomMain)                 ["Lightbulb"]
+Group                       gBedroom1Lights                       "Lights"                          <Lightbulb>     (gBedroom1)                     ["Lightbulb"]
+Group                       gBedroom2Lights                       "Lights"                          <Lightbulb>     (gBedroom2)                     ["Lightbulb"]
+Group                       gBedroom3Lights                       "Lights"                          <Lightbulb>     (gBedroom3)                     ["Lightbulb"]
+Group                       gHallwayLargeLights                   "Lights"                          <Lightbulb>     (gHallwayLarge)                 ["Lightbulb"]
+Group                       gHallwaySmallLights                   "Lights"                          <Lightbulb>     (gHallwaySmall)                 ["Lightbulb"]
+Group                       gKitchenLights                        "Lights"                          <Lightbulb>     (gKitchen)                      ["Lightbulb"]
+Group                       gLaundryLights                        "Lights"                          <Lightbulb>     (gLaundry)                      ["Lightbulb"]
+Group                       gLoungeLights                         "Lights"                          <Lightbulb>     (gLounge)                       ["Lightbulb"]
 
-Color     LoungeOverhead_Color                                 "Color"                                                                                           {channel="hue:0210:huebridge:loungeoverhead:color"}
-Dimmer    LoungeOverhead_ColorTemperature                      "Color Temperature"                                                                               {channel="hue:0210:huebridge:loungeoverhead:color_temperature"}
-String    LoungeOverhead_Alert                                 "Alert"                                                                                           {channel="hue:0210:huebridge:loungeoverhead:alert"}
-Switch    LoungeOverhead_Effect                                "Color Loop"                                                                                      {channel="hue:0210:huebridge:loungeoverhead:effect"}
+// Study
+Group                       gStudyLights                          "Lights"                          <Lightbulb>     (gLighting, gStudy)             ["Lightbulb"]
+Dimmer                      LightStudyCeilingDimmer               "Study Ceiling Dimmer [%d %%]"    <Lightbulb>     (gStudyLights)                  ["Lightbulb"]                      {channel="knx:device:knxlightingcwww:LightStudyCeilingDimmer"}
+Dimmer                      LightStudyCeilingTemperature          "Study Ceiling Temperature"       <Lightbulb>     (gStudyLights)                  ["Setpoint","ColorTemperature"]    {channel="knx:device:knxlightingcwww:LightStudyCeilingTemperature"}
+Switch                      LightStudyCeilingSwitch               "Study Ceiling Switch [%s]"       <Lightbulb>     (gStudyLights)                  ["Swotch"]                      {channel="knx:device:knxlightingcwww:LightStudyCeilingDimmer"}
+Dimmer                      LightStudyDesklampColorTemperature    "Color Temperature"                               (gPersistMe, gKitchenLights)    ["Setpoint","ColorTemperature"]    {channel="hue:0220:huebridge:desklamp:color_temperature"}
+Dimmer                      LightStudyDesklampBrightness          "Brightness"                                      (gPersistMe, gKitchenLights)    ["Lightbulb"]                      {channel="hue:0220:huebridge:desklamp:brightness"}
 
-Color     KitchenOverhead_Color                                "Color"                                                                                           {channel="hue:0210:huebridge:kitchenoverhead:color"}
-Dimmer    KitchenOverhead_ColorTemperature                     "Color Temperature"                                                                               {channel="hue:0210:huebridge:kitchenoverhead:color_temperature"}
-String    KitchenOverhead_Alert                                "Alert"                                                                                           {channel="hue:0210:huebridge:kitchenoverhead:alert"}
-Switch    KitchenOverhead_Effect                               "Color Loop"                                                                                      {channel="hue:0210:huebridge:kitchenoverhead:effect"}
 
-Switch    Bedroom1Lamp_Switch                                  "Switch"                                                                                          {channel="hue:0010:huebridge:bedroomlamp:switch"}
+Color                       Bedroom1Overhead_Color                "Color"                                                                                                              {channel="hue:0210:huebridge:bedroomoverhead:color"}
+Dimmer                      Bedroom1Overhead_ColorTemperature     "Color Temperature"                                                                                                  {channel="hue:0210:huebridge:bedroomoverhead:color_temperature"}
+String                      Bedroom1Overhead_Alert                "Alert"                                                                                                              {channel="hue:0210:huebridge:bedroomoverhead:alert"}
+Switch                      Bedroom1Overhead_Effect               "Color Loop"                                                                                                         {channel="hue:0210:huebridge:bedroomoverhead:effect"}
 
-Dimmer    Desklamp_ColorTemperature                            "Color Temperature"                              (gPersistMe, gKitchenLights)                     {channel="hue:0220:huebridge:desklamp:color_temperature"}
-Dimmer    Desklamp_Brightness                                  "Brightness"                                     (gPersistMe, gKitchenLights)                     {channel="hue:0220:huebridge:desklamp:brightness"}
-String    Desklamp_Alert                                       "Alert"                                                                                           {channel="hue:0220:huebridge:desklamp:alert"}
-Switch    Desklamp_Effect                                      "Color Loop"                                                                                      {channel="hue:0220:huebridge:desklamp:effect"}
+Color                       LoungeOverhead_Color                  "Color"                                                                                                              {channel="hue:0210:huebridge:loungeoverhead:color"}
+Dimmer                      LoungeOverhead_ColorTemperature       "Color Temperature"                                                                                                  {channel="hue:0210:huebridge:loungeoverhead:color_temperature"}
+String                      LoungeOverhead_Alert                  "Alert"                                                                                                              {channel="hue:0210:huebridge:loungeoverhead:alert"}
+Switch                      LoungeOverhead_Effect                 "Color Loop"                                                                                                         {channel="hue:0210:huebridge:loungeoverhead:effect"}
 
-Dimmer    Dressingroom_ColorTemperature                        "Color Temperature"                                                                               {channel="hue:0220:huebridge:dressingroom:color_temperature"}
-Dimmer    Dressingroom_Brightness                              "Brightness"                                                                                      {channel="hue:0220:huebridge:dressingroom:brightness"}
-String    Dressingroom_Alert                                   "Alert"                                                                                           {channel="hue:0220:huebridge:dressingroom:alert"}
-Switch    Dressingroom_Effect                                  "Color Loop"                                                                                      {channel="hue:0220:huebridge:dressingroom:effect"}
+Color                       KitchenOverhead_Color                 "Color"                                                                                                              {channel="hue:0210:huebridge:kitchenoverhead:color"}
+Dimmer                      KitchenOverhead_ColorTemperature      "Color Temperature"                                                                                                  {channel="hue:0210:huebridge:kitchenoverhead:color_temperature"}
+String                      KitchenOverhead_Alert                 "Alert"                                                                                                              {channel="hue:0210:huebridge:kitchenoverhead:alert"}
+Switch                      KitchenOverhead_Effect                "Color Loop"                                                                                                         {channel="hue:0210:huebridge:kitchenoverhead:effect"}
 
-// KNX Lights
+Switch                      Bedroom1Lamp_Switch                   "Switch"                                                                                                             {channel="hue:0010:huebridge:bedroomlamp:switch"}
 
-Dimmer    KNXLightingCWWWLightStudyCeilingDimmer               "Study ceiling dimmer [%d %%]"        <light>    (gStudyLights)                  ["Lightbulb"]    {channel="knx:device:knxlightingcwww:LightStudyCeilingDimmer"}
-Dimmer    KNXLightingCWWWLightStudyCeilingColourTemperature    "Study ceiling colour temperature"    <light>    (gStudyLights)                  ["Lightbulb"]    {channel="knx:device:knxlightingcwww:LightStudyCeilingColourTemperature"}
+
+Dimmer                      Dressingroom_ColorTemperature         "Color Temperature"                                                                                                  {channel="hue:0220:huebridge:dressingroom:color_temperature"}
+Dimmer                      Dressingroom_Brightness               "Brightness"                                                                                                         {channel="hue:0220:huebridge:dressingroom:brightness"}
+String                      Dressingroom_Alert                    "Alert"                                                                                                              {channel="hue:0220:huebridge:dressingroom:alert"}
+Switch                      Dressingroom_Effect                   "Color Loop"                                                                                                         {channel="hue:0220:huebridge:dressingroom:effect"}
+
+Color                       KNXLightningRGBWKitchenNiche          "kitchen niche"                   <colorwheel>    (gPersistMe, gKitchenLights)    ["LightStripe"]                    {channel="knx:device:knxlightingrgbw:KNXLightningRGBWKitchenNiche"}
+Color                      Light

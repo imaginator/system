@@ -15,6 +15,9 @@ Switch      KNXTabletPowerBedroom1                   "Bedroom1"                 
 Switch      KNXTabletPowerBedroom2                   "Bedroom2"                              (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Bedroom2"}
 Switch      KNXTabletPowerBedroom3                   "Bedroom3"                              (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Bedroom3"}
 
+
+
+
 Contact     Tablet_Bedroom1_Battery_Charging
 Contact     Tablet_Bedroom1_Battery_Low
 Contact     Tablet_Bedroom1_Docked
@@ -186,3 +189,11 @@ Number      Tablet_HallwayLarge_Volume
 String      Tablet_HallwayLarge_Control              "Hallway Tablet Control"                (gHabpanelAllControl)
 String      Tablet_HallwayLarge_Url
 Switch      Tablet_HallwayLarge_Countdown            "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+
+Group       androidDevice                            "Android Tablets"                                                         ["Screen"]
+String      AndroidDeviceThingKeyEvent               "Send key event"                        (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:key-event"}
+String      AndroidDeviceThingStartPackage           "Start package"                         (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:start-package"}
+String      AndroidDeviceThingStopPackage            "Stop package"                          (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:stop-package"}
+Switch      AndroidDeviceThingStopCurrentPackage     "Stop current package"                  (androidDevice)                   ["Switch"]            {channel="androiddebugbridge:android:study:stop-current-package"}
+String      AndroidDeviceThingCurrentPackage         "Current package"                       (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:current-package"}
+Switch      AndroidDeviceThingScreenState            "Screen state"                          (androidDevice)                   ["Switch"]            {channel="androiddebugbridge:android:study:screen-state"}

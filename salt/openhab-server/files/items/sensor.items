@@ -5,14 +5,14 @@ Number                  AirQuality_Pm25                  "PM2.5"                
 Number                  AirQuality_Pm10                  "PM10"                     (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:pm10"}
 Number                  AirQuality_O3                    "O3"                       (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:o3"}
 Number                  AirQuality_No2                   "NO2"                      (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:no2"}
-Number                  AirQuality_Co                    "CO"                       (gPersistMe, gAQI)                     ["CO"]             {channel="airquality:aqi:local:co"}
+Number                  AirQuality_Co                    "CO"                       (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:co"}
 String                  AirQuality_LocationName          "Location"                 (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:locationName"}
 Location                AirQuality_StationLocation       "Station Location"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:stationLocation"}
 Number                  AirQuality_StationId             "Station ID"               (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:stationId"}
 DateTime                AirQuality_ObservationTime       "Observation time"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:observationTime"}
-Number:Temperature      AirQuality_Temperature           "Temperature"              (gPersistMe, gAQI)                     ["Temperature"]    {channel="airquality:aqi:local:temperature"}
-Number:Pressure         AirQuality_Pressure              "Pressure"                 (gPersistMe, gAQI)                     ["Pressure"]       {channel="airquality:aqi:local:pressure"}
-Number:Dimensionless    AirQuality_Humidity              "Humidity"                 (gPersistMe, gAQI)                     ["Humidity"]       {channel="airquality:aqi:local:humidity"}
+Number:Temperature      AirQuality_Temperature           "Temperature"              (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:temperature"}
+Number:Pressure         AirQuality_Pressure              "Pressure"                 (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:pressure"}
+Number:Dimensionless    AirQuality_Humidity              "Humidity"                 (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:humidity"}
 String                  AirQuality_Dominentpol           "Dominent Polutor"         (gPersistMe, gAQI)                                        {channel="airquality:aqi:local:dominentpol"}
 
 

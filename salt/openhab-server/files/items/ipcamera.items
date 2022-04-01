@@ -35,7 +35,7 @@ Dimmer    Camera01Zoom                         "Zoom"                           
 String    Camera01GotoPreset                   "Go to preset"                          (gPersistMe)    {channel="ipcamera:hikvision:camera01:gotoPreset"}
 String    Camera01MjpegUrl                     "Mjpeg url"                             (gPersistMe)    {channel="ipcamera:hikvision:camera01:mjpegUrl"}
 String    Camera01RtspUrl                      "Rtsp url"                              (gPersistMe)    {channel="ipcamera:hikvision:camera01:rtspUrl"}
-String    Camera01ImageUrl                     "Image url"                             (gPersistMe)    {channel="ipcamera:hikvision:camera01:imageUrl"}
+String    Camera01ImageUrl                     "Image url"                                             {channel="ipcamera:hikvision:camera01:imageUrl"}
 String    Camera01HlsUrl                       "Hls url"                               (gPersistMe)    {channel="ipcamera:hikvision:camera01:hlsUrl"}
 
 Switch    Camera02StartStream                  "Start hls stream"                      (gPersistMe)    {channel="ipcamera:generic:camera02:startStream"}
@@ -55,5 +55,5 @@ Dimmer    Camera02ThresholdAudioAlarm          "Audio alarm threshold"          
 Switch    Camera02AudioAlarm                   "Audio alarm"                           (gPersistMe)    {channel="ipcamera:generic:camera02:audioAlarm"}
 String    Camera02MjpegUrl                     "Mjpeg url"                             (gPersistMe)    {channel="ipcamera:generic:camera02:mjpegUrl"}
 String    Camera02RtspUrl                      "Rtsp url"                              (gPersistMe)    {channel="ipcamera:generic:camera02:rtspUrl"}
-String    Camera02ImageUrl                     "Image url"                             (gPersistMe)    {channel="ipcamera:generic:camera02:imageUrl"}
+String    Camera02ImageUrl                     "Image url"                                             {channel="ipcamera:generic:camera02:imageUrl"}
 String    Camera02HlsUrl                       "Hls url"                               (gPersistMe)    {channel="ipcamera:generic:camera02:hlsUrl"}

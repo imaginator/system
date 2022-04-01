@@ -1,41 +1,27 @@
-// managed by Saltstack
 
-Switch    Hs110Catgenie_Switch               "Switch"          (gPersistMe)    {channel="tplinksmarthome:hs110:CatGenie:switch"}
-Switch    Hs110Catgenie_Led                  "Switch Led"      (gPersistMe)    {channel="tplinksmarthome:hs110:CatGenie:led"}
-Number    Hs110Catgenie_Rssi                 "Signal"                          {channel="tplinksmarthome:hs110:CatGenie:rssi"}
-Number    Hs110Catgenie_Power                "Power"           (gPersistMe)    {channel="tplinksmarthome:hs110:CatGenie:power"}
-Number    Hs110Catgenie_EnergyUsage          "Energy Usage"    (gPersistMe)    {channel="tplinksmarthome:hs110:CatGenie:energyUsage"}
-Number    Hs110Catgenie_Current              "Current"         (gPersistMe)    {channel="tplinksmarthome:hs110:CatGenie:current"}
-Number    Hs110Catgenie_Voltage              "Voltage"                         {channel="tplinksmarthome:hs110:CatGenie:voltage"}
+Group                       gLoungeSockets                 "Plug Socket"                 (gLounge)                         ["PowerOutlet"]
+Switch                      Hs110HifiSwitch                "Hifi Power"                  (gTimeseries, gLoungeSockets)     ["Switch", "Power"]    {channel="tplinksmarthome:hs110:hifi:switch"}
+Number:Power                Hs110HifiPower                 "Power"                       (gTimeseries, gLoungeSockets)     ["Power"]              {channel="tplinksmarthome:hs110:hifi:power"}
+Switch                      Hs110HifiLed                   "Switch led"                                                                           {channel="tplinksmarthome:hs110:hifi:led"}
+Number:Power                Hs110HifiRssi                  "Signal"                                                                               {channel="tplinksmarthome:hs110:hifi:rssi"}
+Number:Energy               Hs110HifiEnergyUsage           "Energy usage"                                                                         {channel="tplinksmarthome:hs110:hifi:energyUsage"}
+Number:ElectricCurrent      Hs110HifiCurrent               "Current"                                                                              {channel="tplinksmarthome:hs110:hifi:current"}
+Number:ElectricPotential    Hs110HifiVoltage               "Voltage"                                                                              {channel="tplinksmarthome:hs110:hifi:voltage"}
 
-Switch    Hs110Fridge_Switch                 "Switch"          (gPersistMe)    {channel="tplinksmarthome:hs110:Fridge:switch"}
-Switch    Hs110Fridge_Led                    "Switch Led"      (gPersistMe)    {channel="tplinksmarthome:hs110:Fridge:led"}
-Number    Hs110Fridge_Rssi                   "Signal"                          {channel="tplinksmarthome:hs110:Fridge:rssi"}
-Number    Hs110Fridge_Power                  "Power"           (gPersistMe)    {channel="tplinksmarthome:hs110:Fridge:power"}
-Number    Hs110Fridge_EnergyUsage            "Energy Usage"    (gPersistMe)    {channel="tplinksmarthome:hs110:Fridge:energyUsage"}
-Number    Hs110Fridge_Current                "Current"         (gPersistMe)    {channel="tplinksmarthome:hs110:Fridge:current"}
-Number    Hs110Fridge_Voltage                "Voltage"                         {channel="tplinksmarthome:hs110:Fridge:voltage"}
+Group                       gStudySockets                  "Plug Socket"                 (gStudy)                          ["PowerOutlet"]
+Switch                      Hs110LaptopSwitch              "Laptop Power"                (gTimeseries, gStudySockets)      ["Switch", "Power"]    {channel="tplinksmarthome:hs110:laptop:switch"}
+Number:Power                Hs110LaptopPower               "Power"                       (gTimeseries, gStudySockets)      ["Power"]              {channel="tplinksmarthome:hs110:laptop:power"}
+Switch                      Hs110LaptopLed                 "Switch led"                                                                           {channel="tplinksmarthome:hs110:laptop:led"}
+Number:Power                Hs110LaptopRssi                "Signal"                                                                               {channel="tplinksmarthome:hs110:laptop:rssi"}
+Number:Energy               Hs110LaptopEnergyUsage         "Energy usage"                                                                         {channel="tplinksmarthome:hs110:laptop:energyUsage"}
+Number:ElectricCurrent      Hs110LaptopCurrent             "Current"                                                                              {channel="tplinksmarthome:hs110:laptop:current"}
+Number:ElectricPotential    Hs110LaptopVoltage             "Voltage"                                                                              {channel="tplinksmarthome:hs110:laptop:voltage"}
 
-Switch    Hs110Dishwasher_Switch             "Switch"          (gPersistMe)    {channel="tplinksmarthome:hs110:Dishwasher:switch"}
-Switch    Hs110Dishwasher_Led                "Switch Led"      (gPersistMe)    {channel="tplinksmarthome:hs110:Dishwasher:led"}
-Number    Hs110Dishwasher_Rssi               "Signal"                          {channel="tplinksmarthome:hs110:Dishwasher:rssi"}
-Number    Hs110Dishwasher_Power              "Power"           (gPersistMe)    {channel="tplinksmarthome:hs110:Dishwasher:power"}
-Number    Hs110Dishwasher_EnergyUsage        "Energy Usage"    (gPersistMe)    {channel="tplinksmarthome:hs110:Dishwasher:energyUsage"}
-Number    Hs110Dishwasher_Current            "Current"         (gPersistMe)    {channel="tplinksmarthome:hs110:Dishwasher:current"}
-Number    Hs110Dishwasher_Voltage            "Voltage"                         {channel="tplinksmarthome:hs110:Dishwasher:voltage"}
-
-Switch    Hs110Desk_Switch                   "Switch"          (gPersistMe)    {channel="tplinksmarthome:hs110:Desk:switch"}
-Switch    Hs110Desk_Led                      "Switch Led"      (gPersistMe)    {channel="tplinksmarthome:hs110:Desk:led"}
-Number    Hs110Desk_Rssi                     "Signal"                          {channel="tplinksmarthome:hs110:Desk:rssi"}
-Number    Hs110Desk_Power                    "Power"           (gPersistMe)    {channel="tplinksmarthome:hs110:Desk:power"}
-Number    Hs110Desk_EnergyUsage              "Energy Usage"    (gPersistMe)    {channel="tplinksmarthome:hs110:Desk:energyUsage"}
-Number    Hs110Desk_Current                  "Current"         (gPersistMe)    {channel="tplinksmarthome:hs110:Desk:current"}
-Number    Hs110Desk_Voltage                  "Voltage"                         {channel="tplinksmarthome:hs110:Desk:voltage"}
-
-Switch    Hs110WashingMachine_Switch         "Switch"          (gPersistMe)    {channel="tplinksmarthome:hs110:WashingMachine:switch"}
-Switch    Hs110WashingMachine_Led            "Switch Led"      (gPersistMe)    {channel="tplinksmarthome:hs110:WashingMachine:led"}
-Number    Hs110WashingMachine_Rssi           "Signal"                          {channel="tplinksmarthome:hs110:WashingMachine:rssi"}
-Number    Hs110WashingMachine_Power          "Power"           (gPersistMe)    {channel="tplinksmarthome:hs110:WashingMachine:power"}
-Number    Hs110WashingMachine_EnergyUsage    "Energy Usage"    (gPersistMe)    {channel="tplinksmarthome:hs110:WashingMachine:energyUsage"}
-Number    Hs110WashingMachine_Current        "Current"         (gPersistMe)    {channel="tplinksmarthome:hs110:WashingMachine:current"}
-Number    Hs110WashingMachine_Voltage        "Voltage"                         {channel="tplinksmarthome:hs110:WashingMachine:voltage"}
+Group                       gLaundrySockets                "Plug Socket"                 (gLaundry)                        ["PowerOutlet"]
+Switch                      Hs110VentilationSwitch         "Ventilation Power Switch"    (gTimeseries, gLaundrySockets)    ["Switch", "Power"]    {channel="tplinksmarthome:hs110:ventilation:switch"}
+Number:Power                Hs110VentilationPower          "Power"                       (gTimeseries, gLaundrySockets)    ["Power"]              {channel="tplinksmarthome:hs110:ventilation:power"}
+Switch                      Hs110VentilationLed            "Switch led"                                                                           {channel="tplinksmarthome:hs110:ventilation:led"}
+Number:Power                Hs110VentilationRssi           "Signal"                                                                               {channel="tplinksmarthome:hs110:ventilation:rssi"}
+Number:Energy               Hs110VentilationEnergyUsage    "Energy usage"                                                                         {channel="tplinksmarthome:hs110:ventilation:energyUsage"}
+Number:ElectricCurrent      Hs110VentilationCurrent        "Current"                                                                              {channel="tplinksmarthome:hs110:ventilation:current"}
+Number:ElectricPotential    Hs110VentilationVoltage        "Voltage"                                                                              {channel="tplinksmarthome:hs110:ventilation:voltage"}

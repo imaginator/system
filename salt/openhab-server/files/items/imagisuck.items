@@ -1,142 +1,90 @@
-Group                       gVacuum                                  "Vacuum"                                 <vacuum>      (gEquipment)                               ["CleaningRobot"]
+Group          gVacuum                                  "Vacuum"                              <vacuum>        (gEquipment)    ["CleaningRobot"]
 
 // default items
+String         ImagiSuckActionsControl                  "Control vacuum"                                                                           {channel="miio:vacuum:imagisuck:actions#control"}
+String         ImagiSuckActionsCommands                 "Execute command"                                                                          {channel="miio:vacuum:imagisuck:actions#commands"}
+String         ImagiSuckActionsRpc                      "Execute rpc (cloud) command"                                                              {channel="miio:vacuum:imagisuck:actions#rpc"}
+Number         ImagiSuckActionsFan                      "Control fan level"                                                                        {channel="miio:vacuum:imagisuck:actions#fan"}
+Switch         ImagiSuckActionsVacuum                   "Vacuum on/off"                                                                            {channel="miio:vacuum:imagisuck:actions#vacuum"}
+String         ImagiSuckActionsSegment                  "Vacuum room [room ]"                                                                      {channel="miio:vacuum:imagisuck:actions#segment"}
+Number         ImagiSuckStatusBattery                   "Battery level"                                                                            {channel="miio:vacuum:imagisuck:status#battery"}
+Number         ImagiSuckStatusCleanArea                 "Cleaning area"                                                                            {channel="miio:vacuum:imagisuck:status#clean_area"}
+Number         ImagiSuckStatusCleanTime                 "Cleaning time"                                                                            {channel="miio:vacuum:imagisuck:status#clean_time"}
+String         ImagiSuckStatusErrorCode                 "Error code"                                                                               {channel="miio:vacuum:imagisuck:status#error_code"}
+Number         ImagiSuckStatusErrorId                   "Error"                                                                                    {channel="miio:vacuum:imagisuck:status#error_id"}
+Number         ImagiSuckStatusFanPower                  "Fan power"                                                                                {channel="miio:vacuum:imagisuck:status#fan_power"}
+Number         ImagiSuckStatusInCleaning                "In cleaning"                                                                              {channel="miio:vacuum:imagisuck:status#in_cleaning"}
+Switch         ImagiSuckStatusDndEnabled                "Do not disturb"                                                                           {channel="miio:vacuum:imagisuck:status#dnd_enabled"}
+Number         ImagiSuckStatusMapPresent                "Map present"                                                                              {channel="miio:vacuum:imagisuck:status#map_present"}
+String         ImagiSuckStatusState                     "State"                                                                                    {channel="miio:vacuum:imagisuck:status#state"}
+Number         ImagiSuckStatusStateId                   "State"                                                                                    {channel="miio:vacuum:imagisuck:status#state_id"}
+Number         ImagiSuckStatusSegmentStatus             "Segment status"                                                                           {channel="miio:vacuum:imagisuck:status#segment_status"}
+Number         ImagiSuckStatusMapStatus                 "Map status"                                                                               {channel="miio:vacuum:imagisuck:status#map_status"}
+Number         ImagiSuckStatusLedStatus                 "Led status"                                                                               {channel="miio:vacuum:imagisuck:status#led_status"}
+Number         ImagiSuckConsumablesMainBrushPercent     "Main brush remaining"                                                                     {channel="miio:vacuum:imagisuck:consumables#main_brush_percent"}
+Number         ImagiSuckConsumablesSideBrushPercent     "Side brush remaining"                                                                     {channel="miio:vacuum:imagisuck:consumables#side_brush_percent"}
+Number         ImagiSuckConsumablesFilterPercent        "Filter usage remaining"                                                                   {channel="miio:vacuum:imagisuck:consumables#filter_percent"}
+Number         ImagiSuckConsumablesSensorDirtPercent    "Sensor dirt remaining"                                                                    {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_percent"}
+Number:Time    ImagiSuckConsumablesMainBrushTime        "Main brush time till replacement"                                                         {channel="miio:vacuum:imagisuck:consumables#main_brush_time"}
+Number:Time    ImagiSuckConsumablesSideBrushTime        "Side brush time till replacement"                                                         {channel="miio:vacuum:imagisuck:consumables#side_brush_time"}
+Number:Time    ImagiSuckConsumablesFilterTime           "Filter time till replacement"                                                             {channel="miio:vacuum:imagisuck:consumables#filter_time"}
+Number:Time    ImagiSuckConsumablesSensorDirtTime       "Sensor dirt time till cleaning"                                                           {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_time"}
+String         ImagiSuckConsumablesConsumableReset      "Reset consumable"                                                                         {channel="miio:vacuum:imagisuck:consumables#consumable_reset"}
+Switch         ImagiSuckDndDndFunction                  "Do not disturb functionality"                                                             {channel="miio:vacuum:imagisuck:dnd#dnd_function"}
+String         ImagiSuckDndDndStart                     "Start time dnd"                                                                           {channel="miio:vacuum:imagisuck:dnd#dnd_start"}
+String         ImagiSuckDndDndEnd                       "End time dnd"                                                                             {channel="miio:vacuum:imagisuck:dnd#dnd_end"}
+Number:Area    ImagiSuckHistoryTotalCleanArea           "Total cleaning area"                                                                      {channel="miio:vacuum:imagisuck:history#total_clean_area"}
+Number:Time    ImagiSuckHistoryTotalCleanTime           "Total cleaning time"                                                                      {channel="miio:vacuum:imagisuck:history#total_clean_time"}
+Number         ImagiSuckHistoryTotalCleanCount          "Total cleanings"                                                                          {channel="miio:vacuum:imagisuck:history#total_clean_count"}
+DateTime       ImagiSuckCleaningLastCleanStartTime      "Cleaning start"                                                                           {channel="miio:vacuum:imagisuck:cleaning#last_clean_start_time"}
+DateTime       ImagiSuckCleaningLastCleanEndTime        "Cleaning end"                                                                             {channel="miio:vacuum:imagisuck:cleaning#last_clean_end_time"}
+Number:Area    ImagiSuckCleaningLastCleanArea           "Cleaning area"                                                                            {channel="miio:vacuum:imagisuck:cleaning#last_clean_area"}
+Number:Time    ImagiSuckCleaningLastCleanDuration       "Cleaning duration"                                                                        {channel="miio:vacuum:imagisuck:cleaning#last_clean_duration"}
+Number         ImagiSuckCleaningLastCleanError          "Error"                                                                                    {channel="miio:vacuum:imagisuck:cleaning#last_clean_error"}
+Number         ImagiSuckCleaningLastCleanFinish         "Cleaning finished"                                                                        {channel="miio:vacuum:imagisuck:cleaning#last_clean_finish"}
+String         ImagiSuckCleaningLastCleanRecord         "Cleaning record"                                                                          {channel="miio:vacuum:imagisuck:cleaning#last_clean_record"}
+Image          ImagiSuckCleaningMap                     "Cleaning map"                                                                             {channel="miio:vacuum:imagisuck:cleaning#map"}
+String         ImagiSuckNetworkSsid                     "Ssid"                                                                                     {channel="miio:vacuum:imagisuck:network#ssid"}
+String         ImagiSuckNetworkBssid                    "Bssid"                                                                                    {channel="miio:vacuum:imagisuck:network#bssid"}
+Number         ImagiSuckNetworkRssi                     "Rssi"                                                                                     {channel="miio:vacuum:imagisuck:network#rssi"}
+Number         ImagiSuckNetworkLife                     "Life"                                                                                     {channel="miio:vacuum:imagisuck:network#life"}
+String         ImagiSuckInfoMultiMapsList               "Multi map list"                                                                           {channel="miio:vacuum:imagisuck:info#multi_maps_list"}
+String         ImagiSuckInfoRoomMapping                 "Room mapping"                                                                             {channel="miio:vacuum:imagisuck:info#room_mapping"}
+String         ImagiSuckInfoFwFeatures                  "Firmware features"                                                                        {channel="miio:vacuum:imagisuck:info#fw_features"}
+String         ImagiSuckInfoCustomizeCleanMode          "Customized clean mode"                                                                    {channel="miio:vacuum:imagisuck:info#customize_clean_mode"}
+String         ImagiSuckInfoCarpetMode                  "Carpet mode"                                                                              {channel="miio:vacuum:imagisuck:info#carpet_mode"}
 
-String                      ImagiSuckActionsControl                  "Control vacuum"                                       (gVacuum)                                                       {channel="miio:vacuum:imagisuck:actions#control"}
-String                      ImagiSuckActionsCommands                 "Execute command"                                                                                                      {channel="miio:vacuum:imagisuck:actions#commands"}
-String                      ImagiSuckActionsRpc                      "Execute rpc (cloud) command"                                                                                          {channel="miio:vacuum:imagisuck:actions#rpc"}
-Number                      ImagiSuckActionsFan                      "Control fan level"                                                                                                    {channel="miio:vacuum:imagisuck:actions#fan"}
-Switch                      ImagiSuckActionsVacuum                   "Vacuum on/off"                                                                                                        {channel="miio:vacuum:imagisuck:actions#vacuum"}
-String                      ImagiSuckActionsSegment                  "Vacuum room [room ]"                                                                                                  {channel="miio:vacuum:imagisuck:actions#segment"}
-Number                      ImagiSuckStatusBattery                   "Battery level"                                                                                                        {channel="miio:vacuum:imagisuck:status#battery"}
-Number                      ImagiSuckStatusCleanArea                 "Cleaning area"                                                                                                        {channel="miio:vacuum:imagisuck:status#clean_area"}
-Number                      ImagiSuckStatusCleanTime                 "Cleaning time"                                                                                                        {channel="miio:vacuum:imagisuck:status#clean_time"}
-String                      ImagiSuckStatusErrorCode                 "Error code"                                                                                                           {channel="miio:vacuum:imagisuck:status#error_code"}
-Number                      ImagiSuckStatusErrorId                   "Error"                                                                                                                {channel="miio:vacuum:imagisuck:status#error_id"}
-Number                      ImagiSuckStatusFanPower                  "Fan power"                                                                                                            {channel="miio:vacuum:imagisuck:status#fan_power"}
-Number                      ImagiSuckStatusInCleaning                "In cleaning"                                                                                                          {channel="miio:vacuum:imagisuck:status#in_cleaning"}
-Switch                      ImagiSuckStatusDndEnabled                "Do not disturb"                                                                                                       {channel="miio:vacuum:imagisuck:status#dnd_enabled"}
-Number                      ImagiSuckStatusMapPresent                "Map present"                                                                                                          {channel="miio:vacuum:imagisuck:status#map_present"}
-String                      ImagiSuckStatusState                     "State"                                                                                                                {channel="miio:vacuum:imagisuck:status#state"}
-Number                      ImagiSuckStatusStateId                   "State"                                                                                                                {channel="miio:vacuum:imagisuck:status#state_id"}
-Number                      ImagiSuckStatusSegmentStatus             "Segment status"                                                                                                       {channel="miio:vacuum:imagisuck:status#segment_status"}
-Number                      ImagiSuckStatusMapStatus                 "Map status"                                                                                                           {channel="miio:vacuum:imagisuck:status#map_status"}
-Number                      ImagiSuckStatusLedStatus                 "Led status"                                                                                                           {channel="miio:vacuum:imagisuck:status#led_status"}
-Number                      ImagiSuckConsumablesMainBrushPercent     "Main brush remaining"                                                                                                 {channel="miio:vacuum:imagisuck:consumables#main_brush_percent"}
-Number                      ImagiSuckConsumablesSideBrushPercent     "Side brush remaining"                                                                                                 {channel="miio:vacuum:imagisuck:consumables#side_brush_percent"}
-Number                      ImagiSuckConsumablesFilterPercent        "Filter usage remaining"                                                                                               {channel="miio:vacuum:imagisuck:consumables#filter_percent"}
-Number                      ImagiSuckConsumablesSensorDirtPercent    "Sensor dirt remaining"                                                                                                {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_percent"}
-Number:Time                 ImagiSuckConsumablesMainBrushTime        "Main brush time till replacement"                                                                                     {channel="miio:vacuum:imagisuck:consumables#main_brush_time"}
-Number:Time                 ImagiSuckConsumablesSideBrushTime        "Side brush time till replacement"                                                                                     {channel="miio:vacuum:imagisuck:consumables#side_brush_time"}
-Number:Time                 ImagiSuckConsumablesFilterTime           "Filter time till replacement"                                                                                         {channel="miio:vacuum:imagisuck:consumables#filter_time"}
-Number:Time                 ImagiSuckConsumablesSensorDirtTime       "Sensor dirt time till cleaning"                                                                                       {channel="miio:vacuum:imagisuck:consumables#sensor_dirt_time"}
-String                      ImagiSuckConsumablesConsumableReset      "Reset consumable"                                                                                                     {channel="miio:vacuum:imagisuck:consumables#consumable_reset"}
-Switch                      ImagiSuckDndDndFunction                  "Do not disturb functionality"                                                                                         {channel="miio:vacuum:imagisuck:dnd#dnd_function"}
-String                      ImagiSuckDndDndStart                     "Start time dnd"                                                                                                       {channel="miio:vacuum:imagisuck:dnd#dnd_start"}
-String                      ImagiSuckDndDndEnd                       "End time dnd"                                                                                                         {channel="miio:vacuum:imagisuck:dnd#dnd_end"}
-Number:Area                 ImagiSuckHistoryTotalCleanArea           "Total cleaning area"                                                                                                  {channel="miio:vacuum:imagisuck:history#total_clean_area"}
-Number:Time                 ImagiSuckHistoryTotalCleanTime           "Total cleaning time"                                                                                                  {channel="miio:vacuum:imagisuck:history#total_clean_time"}
-Number                      ImagiSuckHistoryTotalCleanCount          "Total cleanings"                                                                                                      {channel="miio:vacuum:imagisuck:history#total_clean_count"}
-DateTime                    ImagiSuckCleaningLastCleanStartTime      "Cleaning start"                                                                                                       {channel="miio:vacuum:imagisuck:cleaning#last_clean_start_time"}
-DateTime                    ImagiSuckCleaningLastCleanEndTime        "Cleaning end"                                                                                                         {channel="miio:vacuum:imagisuck:cleaning#last_clean_end_time"}
-Number:Area                 ImagiSuckCleaningLastCleanArea           "Cleaning area"                                                                                                        {channel="miio:vacuum:imagisuck:cleaning#last_clean_area"}
-Number:Time                 ImagiSuckCleaningLastCleanDuration       "Cleaning duration"                                                                                                    {channel="miio:vacuum:imagisuck:cleaning#last_clean_duration"}
-Number                      ImagiSuckCleaningLastCleanError          "Error"                                                                                                                {channel="miio:vacuum:imagisuck:cleaning#last_clean_error"}
-Number                      ImagiSuckCleaningLastCleanFinish         "Cleaning finished"                                                                                                    {channel="miio:vacuum:imagisuck:cleaning#last_clean_finish"}
-String                      ImagiSuckCleaningLastCleanRecord         "Cleaning record"                                                                                                      {channel="miio:vacuum:imagisuck:cleaning#last_clean_record"}
-Image                       ImagiSuckCleaningMap                     "Cleaning map"                                         (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:cleaning#map"}
-String                      ImagiSuckNetworkSsid                     "Ssid"                                                                                                                 {channel="miio:vacuum:imagisuck:network#ssid"}
-String                      ImagiSuckNetworkBssid                    "Bssid"                                                                                                                {channel="miio:vacuum:imagisuck:network#bssid"}
-Number                      ImagiSuckNetworkRssi                     "Rssi"                                                                                                                 {channel="miio:vacuum:imagisuck:network#rssi"}
-Number                      ImagiSuckNetworkLife                     "Life"                                                                                                                 {channel="miio:vacuum:imagisuck:network#life"}
-String                      ImagiSuckInfoMultiMapsList               "Multi map list"                                       (gVacuum)                                                       {channel="miio:vacuum:imagisuck:info#multi_maps_list"}
-String                      ImagiSuckInfoRoomMapping                 "Room mapping"                                                                                                         {channel="miio:vacuum:imagisuck:info#room_mapping"}
-String                      ImagiSuckInfoFwFeatures                  "Firmware features"                                                                                                    {channel="miio:vacuum:imagisuck:info#fw_features"}
-String                      ImagiSuckInfoCustomizeCleanMode          "Customized clean mode"                                                                                                {channel="miio:vacuum:imagisuck:info#customize_clean_mode"}
-String                      ImagiSuckInfoCarpetMode                  "Carpet mode"                                                                                                          {channel="miio:vacuum:imagisuck:info#carpet_mode"}
-
-
-
-//Zonenreinigung
-String                      Rocky_ControlVacuum                      "Control vacuum"                                       (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:actions#control"}
-Switch                      Rocky_VacuumOnOff                                                                               (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:actions#vacuum"}	// linked to :actions#vacuum
-String                      Rocky_State                                                                                     (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:status#state"}	// linked to :status#state
-String                      Rocky_ExecuteCommand                                                                            (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:actions#rpc"}	// linked to :actions#rpc
-Switch                      Rocky_RobotLocating                                                                             (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:status#map_present"}	// linked to :status#is_locating
-Image                       Rocky_CleaningMap                                                                               (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:cleaning#map"}
-String                      Rocky_Room16                             "Room mapping"                                         (gVacuum)                                  ["CleaningRobot"]    {channel="miio:vacuum:imagisuck:info#room_mapping"}
-String                      Rocky_Etage                              "The current level"                                    (gVacuum)                                  ["CleaningRobot"]
-String                      Rocky_Saugbefehle                        "Please clean..."                                      (gVacuum)                                  ["CleaningRobot"]
-String                      Vacuum_Zone                              "The zone to clean"                                    (gVacuum)                                  ["CleaningRobot"]
-
-Group:Switch:OR(ON,OFF)     gSaugSwitches                            "Group with one switch for each room"                  (gVacuum)                                  ["CleaningRobot"]
-Switch                      HH_EG_ZO_Bedroom1                                                                               (gSaugSwitches)
-Switch                      HH_EG_ZO_Bedroom2                                                                               (gSaugSwitches)
-Switch                      HH_EG_ZO_Bedroom3                                                                               (gSaugSwitches)
-Switch                      HH_EG_ZO_Study                                                                                  (gSaugSwitches)
-Switch                      HH_EG_ZO_MainHallway                                                                            (gSaugSwitches)
-Switch                      HH_EG_ZO_SmallHallway                                                                           (gSaugSwitches)
-Switch                      HH_EG_ZO_CatToiletArea                                                                          (gSaugSwitches)
-Switch                      HH_EG_ZO_MainBathroom                                                                           (gSaugSwitches)
-Switch                      HH_EG_ZO_GuestBathroom                                                                          (gSaugSwitches)
-Switch                      HH_EG_ZO_Kitchen                                                                                (gSaugSwitches)
-Switch                      HH_EG_ZO_Dining                                                                                 (gSaugSwitches)
-Switch                      HH_EG_ZO_EmptyBin                                                                               (gSaugSwitches)
+// to trigger imagisuck-cat-toilet.rules
+Switch         VacuumSwitch                             "Vacuum Switch"                                       (gVacuum)       ["CleaningRobot"]    {channel="knx:device:vacuumswitch:VacuumSwitch"}
 
 
-
-
-
-
-
-
-
-
-
+// from https://community.openhab.org/t/xiaomi-roborock-zone-cleanup-rule/55138/2 
+String         Vacuum_Action_Control                    "Control"                                             (gVacuum)                            {channel="miio:vacuum:imagisuck:actions#control"}
+String         Vacuum_Action_Command                    "Command"                                                                                  {channel="miio:vacuum:imagisuck:actions#commands"}
+String         Vacuum_Control                           "Control"                                                                                  {expire="1s,state=UNDEF"}
+String         Vacuum_Zone                              "Zone [%s]"                           <floor_plan>
+// end https://community.openhab.org/t/xiaomi-roborock-zone-cleanup-rule/55138/2
 
 
 // ----------------------------------------------------------------------------
 // Zonenreinigung
 // ----------------------------------------------------------------------------
-Group                       gZoneControl                             "Zonenreinigung"                         <fan>                                                    ["CleaningRobot"]
-Group                       gZone                                    "Zonen"                                  <group>       (gZoneControl)   ["CleaningRobot"]
-Group:DateTime:LATEST       gZoneLastUpdate                          "Letzte Änderung [%s]"                   <time>        (gZone)   ["CleaningRobot"]
-Group                       gZoneSwitch                              "Schalter"                               <switch>      (gZone)   ["CleaningRobot"]
+// https://community.openhab.org/t/xiaomi-robot-vacuum-binding/31317/1524?u=imaginator
 
-Group:Switch:AND(ON,OFF)    gAllZones                                "Alle Zonen"                             <switch>
+//Group                       gZoneControl                             "Zonenreinigung"                          <fan>                                                   ["CleaningRobot"]
+//Group                       gZone                                    "Zonen"                                   <group>         (gZoneControl)                          ["CleaningRobot"]
+//Group:DateTime:LATEST       gZoneLastUpdate                          "Letzte Änderung [%s]"                    <time>          (gZone)                                 ["CleaningRobot"]
+//Group                       gZoneSwitch                              "Schalter"                                <switch>        (gZone)                                 ["CleaningRobot"]
 
-Group                       gStudyVac                                   "Study - Gruppe"                         <status>      (gZone)
-Switch                      zStudy                                   "Study"                                  <girl_2>      (gStudyVac, gZoneSwitch)
-DateTime                    zStudyLastUpdate                         "Study - letzte Änderung [%s]"           <time>        (gStudyVac, gZoneLastUpdate)
+//Group:Switch:AND(ON,OFF)    gAllZones                                "Alle Zonen"                              <switch>                                                ["CleaningRobot"]
 
-Group                       gKueche                                  "Küche - Gruppe"                         <status>      (gZone)
-Switch                      zKueche                                  "Küche"                                  <kitchen>     (gKueche, gZoneSwitch, gAllZones)
-DateTime                    zKuecheLastUpdate                        "Küche - letzte Änderung [%s]"           <time>        (gKueche, gZoneLastUpdate)
+//Group                       gCatToiletArea                           "CatToiletArea - Gruppe"                  <status>        (gZone)                                 ["CleaningRobot"]
+//Switch                      zCatToiletArea                           "CatToiletArea"                           <girl_2>        (gCatToiletArea, gZoneSwitch)           ["CleaningRobot"]
+//DateTime                    zCatToiletAreaLastUpdate                 "CatToiletArea - letzte Änderung [%s]"    <time>          (gCatToiletArea, gZoneLastUpdate)       ["CleaningRobot"]
 
-Group                       gToilette                                "Toilette - Gruppe"                      <status>      (gZone)
-Switch                      zToilette                                "Toilette"                               <toilet>      (gToilette, gZoneSwitch, gAllZones)
-DateTime                    zToiletteLastUpdate                      "Toilette - letzte Änderung [%s]"        <time>        (gToilette, gZoneLastUpdate)
+//Group                       gMalzimmer                               "Malzimmer - Gruppe"                      <status>        (gZone)
+//Switch                      zMalzimmer                               "Malzimmer"                               <office>        (gMalzimmer, gZoneSwitch, gAllZones)
+//DateTime                    zMalzimmerLastUpdate                     "Malzimmer - letzte Änderung [%s]"        <time>          (gMalzimmer, gZoneLastUpdate)
 
-Group                       gSpeisekammer                            "Speisekammer - Gruppe"                  <status>      (gZone)
-Switch                      zSpeisekammer                            "Speisekammer"                           <pantry>      (gSpeisekammer, gZoneSwitch, gAllZones)
-DateTime                    zSpeisekammerLastUpdate                  "Speisekammer - letzte Änderung [%s]"    <time>        (gSpeisekammer, gZoneLastUpdate)
-
-Group                       gGarderobe                               "Garderobe - Gruppe"                     <status>      (gZone)
-Switch                      zGarderobe                               "Garderobe"                              <wardrobe>    (gGarderobe, gZoneSwitch, gAllZones)
-DateTime                    zGarderobeLastUpdate                     "Garderobe - letzte Änderung [%s]"       <time>        (gGarderobe, gZoneLastUpdate)
-
-Group                       gWohnzimmer                              "Wohnzimmer - Gruppe"                    <status>      (gZone)
-Switch                      zWohnzimmer                              "Wohnzimmer"                             <sofa>        (gWohnzimmer, gZoneSwitch, gAllZones)
-DateTime                    zWohnzimmerLastUpdate                    "Wohnzimmer - letzte Änderung [%s]"      <time>        (gWohnzimmer, gZoneLastUpdate)
-
-Group                       gFlur                                    "Flur - Gruppe"                          <status>      (gZone)
-Switch                      zFlur                                    "Flur"                                   <corridor>    (gFlur, gZoneSwitch, gAllZones)
-DateTime                    zFlurLastUpdate                          "Flur - letzte Änderung [%s]"            <time>        (gFlur, gZoneLastUpdate)
-
-Group                       gMalzimmer                               "Malzimmer - Gruppe"                     <status>      (gZone)
-Switch                      zMalzimmer                               "Malzimmer"                              <office>      (gMalzimmer, gZoneSwitch, gAllZones)
-DateTime                    zMalzimmerLastUpdate                     "Malzimmer - letzte Änderung [%s]"       <time>        (gMalzimmer, gZoneLastUpdate)
-
-String                      zoneAction                               "Action"                                 <fan>         (gZoneControl)
-
+//String                      zoneAction                               "Action"                                  <fan>           (gZoneControl)                          ["CleaningRobot"]
 

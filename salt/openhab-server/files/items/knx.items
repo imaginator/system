@@ -1,34 +1,44 @@
 // Bus Heath
-Number      KNXPowerMeasurementsBusVolts             "Knx bus volts"              <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:BusVolts"}
-Number      KNXBusTrafficBusTraffic                  "Knx bus traffic (1=max)"    <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:bustraffic:BusTrafficPercent"}
+Number      KNXPowerMeasurementsBusVolts                      "Knx bus volts"                         <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:BusVolts"}
+Number      KNXBusTrafficBusTraffic                           "Knx bus traffic (1=max)"               <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:bustraffic:BusTrafficPercent"}
 
 // Electricity Consumption
-Number      KNXPowerMeasurementsBusmA                "Knx bus milliamps"          <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:BusmA"}
-Number      KNXPowerMeasurementsHousePowerWh         "House power wh"             <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HousePowerWh"}
-Number      KNXPowerMeasurementsHeatingPowerWh       "Heating power wh"           <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HeatingPowerWh"}
-Number      KNXPowerMeasurementsHousePowerWatts      "House power watts"          <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HousePowerWatts"}
-Number      KNXPowerMeasurementsHeatingPowerWatts    "Heating power watts"        <energy>    (gPersistMe, gElectricityMeasurement)      [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HeatingPowerWatts"}
+Number      KNXPowerMeasurementsBusmA                         "Knx bus milliamps"                     <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:BusmA"}
+Number      KNXPowerMeasurementsHousePowerWh                  "House power wh"                        <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HousePowerWh"}
+Number      KNXPowerMeasurementsHeatingPowerWh                "Heating power wh"                      <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HeatingPowerWh"}
+Number      KNXPowerMeasurementsHousePowerWatts               "House power watts"                     <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HousePowerWatts"}
+Number      KNXPowerMeasurementsHeatingPowerWatts             "Heating power watts"                   <energy>    (gPersistMe, gElectricityMeasurement)    [ "Measurement", "Energy" ]    {channel="knx:device:powermeasurements:HeatingPowerWatts"}
 
 // KNX Volume
-Switch      KNXVolumeBathroomGuest                   "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:bathroomguest"}
-Switch      KNXVolumeBathroomMain                    "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:bathroommain"}
-Switch      KNXVolumeBedroom1                        "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:bedroom1"}
-Switch      KNXVolumeBedroom2                        "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:bedroom2"}
-Switch      KNXVolumeBedroom3                        "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:bedroom3"}
-Switch      KNXVolumeKitchen                         "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:kitchen"}
-Switch      KNXVolumeLounge                          "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:lounge"}
-Switch      KNXVolumeStudy                           "Volume control"                         (gKNXVolume)                                     {channel="knx:device:volume:study"}
+Switch      KNXVolumeBathroomGuest                            "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:bathroomguest"}
+Switch      KNXVolumeBathroomMain                             "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:bathroommain"}
+Switch      KNXVolumeBedroom1                                 "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:bedroom1"}
+Switch      KNXVolumeBedroom2                                 "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:bedroom2"}
+Switch      KNXVolumeBedroom3                                 "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:bedroom3"}
+Switch      KNXVolumeKitchen                                  "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:kitchen"}
+Switch      KNXVolumeLounge                                   "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:lounge"}
+Switch      KNXVolumeStudy                                    "Volume control"                                    (gKNXVolume)                                                            {channel="knx:device:volume:study"}
 
 // KNX PlayPauseNext
-Switch      KNXPlaybackBathroomGuest                 "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:bathroomguest"}
-Switch      KNXPlaybackBathroomMain                  "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:bathroommain"}
-Switch      KNXPlaybackBedroom1                      "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:bedroom1"}
-Switch      KNXPlaybackBedroom2                      "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:bedroom2"}
-Switch      KNXPlaybackBedroom3                      "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:bedroom3"}
-Switch      KNXPlaybackKitchen                       "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:kitchen"}
-Switch      KNXPlaybackLounge                        "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:lounge"}
-Switch      KNXPlaybackStudy                         "Playback control"                       (gKNXPlayback)                                   {channel="knx:device:playback:study"}
+Switch      KNXPlaybackBathroomGuest                          "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:bathroomguest"}
+Switch      KNXPlaybackBathroomMain                           "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:bathroommain"}
+Switch      KNXPlaybackBedroom1                               "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:bedroom1"}
+Switch      KNXPlaybackBedroom2                               "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:bedroom2"}
+Switch      KNXPlaybackBedroom3                               "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:bedroom3"}
+Switch      KNXPlaybackKitchen                                "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:kitchen"}
+Switch      KNXPlaybackLounge                                 "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:lounge"}
+Switch      KNXPlaybackStudy                                  "Playback control"                                  (gKNXPlayback)                                                          {channel="knx:device:playback:study"}
 
 // Date / Time fron NTP
-DateTime    BusDate                                  "Date"                                                                                    {channel="knx:device:ntp:knxdate", channel="ntp:ntp:home:dateTime"}
-DateTime    BusTime                                  "Time and day"                                                                            {channel="knx:device:ntp:knxtime", channel="ntp:ntp:home:dateTime"}
+DateTime    BusDate                                           "Date"                                                                                                                      {channel="knx:device:ntp:knxdate", channel="ntp:ntp:home:dateTime"}
+DateTime    BusTime                                           "Time and day"                                                                                                              {channel="knx:device:ntp:knxtime", channel="ntp:ntp:home:dateTime"}
+
+// KNX Weather Station
+Number      KNXWeatherStationWeatherStationTemperature        "Weather station temperature"                                                                                               {channel="knx:device:weatherstation:WeatherStationTemperature"}
+Number      KNXWeatherStationWeatherStationWindSpeed          "Weather station wind speed"                                                                                                {channel="knx:device:weatherstation:WeatherStationWindSpeed"}
+Number      KNXWeatherStationWeatherStationBrightnessEast     "Weather station brightness east"                                                                                           {channel="knx:device:weatherstation:WeatherStationBrightnessEast"}
+Number      KNXWeatherStationWeatherStationBrightnessWest     "Weather station brightness west"                                                                                           {channel="knx:device:weatherstation:WeatherStationBrightnessWest"}
+Number      KNXWeatherStationWeatherStationBrightnessSouth    "Weather station brightness south"                                                                                          {channel="knx:device:weatherstation:WeatherStationBrightnessSouth"}
+Number      KNXWeatherStationWeatherStationDusk               "Weather station dusk"                                                                                                      {channel="knx:device:weatherstation:WeatherStationDusk"}
+Contact     KNXWeatherStationWeatherStationHighWind           "Weather station high wind scenario"                                                                                        {channel="knx:device:weatherstation:WeatherStationHighWind"}
+Contact     KNXWeatherStationWeatherStationRain               "Weather station rain"                              (gTerrace)                               ["WeatherService"]             {channel="knx:device:weatherstation:WeatherStationRain"}
