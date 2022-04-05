@@ -2035,7 +2035,7 @@
       "parameters": [],
       "parameterGroups": []
     },
-    "timestamp": "2022-03-31T17:51:39.000+0200",
+    "timestamp": "2022-04-01T08:01:35.681+0200",
     "component": "oh-layout-page",
     "config": {
       "label": "Vacuum",
@@ -2083,6 +2083,16 @@
                         "actionItem": "ImagiSuckActionsCommands",
                         "icon": "material:stop_circle",
                         "title": "Stop"
+                      }
+                    },
+                    {
+                      "component": "oh-cell",
+                      "config": {
+                        "action": "command",
+                        "actionCommand": "app_goto_target[32707,29464]",
+                        "actionItem": "ImagiSuckActionsCommands",
+                        "icon": "material:restore_from_trash",
+                        "title": "Empty Bin"
                       }
                     },
                     {
