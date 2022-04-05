@@ -1,0 +1,4 @@
+ON=CoolingEnabled
+OFF=CoolingDisabled
+-=undefined
+NULL=NULL
