@@ -8,8 +8,8 @@ String      IrrigationWifiDowntime               "Text value"                   
 Number      IrrigationLoadAvg                    "Number value"                                                                          {channel="mqtt:topic:irrigation:LoadAvg"}
 Number      IrrigationUptime                     "Number value"                                                                          {channel="mqtt:topic:irrigation:Uptime"}
 String      IrrigationResult                     "Text value"                                                                            {channel="mqtt:topic:irrigation:Result"}
-Switch      IrrigationPowerSwitch                "On/off switch"                           (gPersistMe, gIrrigation)    ["Switch"]       {channel="mqtt:topic:irrigation:PowerSwitch"}
-DateTime    IrrigationPowerSwitch_LastChanged    "Last time irrigation started/stopped"    (gPersistMe, gIrrigation)    ["Timestamp"]    {channel="mqtt:topic:irrigation:PowerSwitch" [profile="system:timestamp-change"], stateDescription=""[pattern="%1$tA %1$tH:%1$tM"]}
+Switch      IrrigationPowerSwitch                "On/off switch"                           (gPersistRestarts, gIrrigation)    ["Switch"]       {channel="mqtt:topic:irrigation:PowerSwitch"}
+DateTime    IrrigationPowerSwitch_LastChanged    "Last time irrigation started/stopped"    (gPersistRestarts, gIrrigation)    ["Timestamp"]    {channel="mqtt:topic:irrigation:PowerSwitch" [profile="system:timestamp-change"], stateDescription=""[pattern="%1$tA %1$tH:%1$tM"]}
 
 // For irrigation.rules
 Switch      TimedWatering_Switch                                                           (gIrrigation)                ["Switch"]       {expire="10m,command=OFF"}

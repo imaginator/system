@@ -16,8 +16,8 @@ Group                       gStudyLights                          "Lights"      
 Dimmer                      LightStudyCeilingDimmer               "Study Ceiling Dimmer [%d %%]"    <Lightbulb>     (gStudyLights)                  ["Lightbulb"]                      {channel="knx:device:knxlightingcwww:LightStudyCeilingDimmer"}
 Dimmer                      LightStudyCeilingTemperature          "Study Ceiling Temperature"       <Lightbulb>     (gStudyLights)                  ["Setpoint","ColorTemperature"]    {channel="knx:device:knxlightingcwww:LightStudyCeilingTemperature"}
 Switch                      LightStudyCeilingSwitch               "Study Ceiling Switch [%s]"       <Lightbulb>     (gStudyLights)                  ["Swotch"]                      {channel="knx:device:knxlightingcwww:LightStudyCeilingDimmer"}
-Dimmer                      LightStudyDesklampColorTemperature    "Color Temperature"                               (gPersistMe, gKitchenLights)    ["Setpoint","ColorTemperature"]    {channel="hue:0220:huebridge:desklamp:color_temperature"}
-Dimmer                      LightStudyDesklampBrightness          "Brightness"                                      (gPersistMe, gKitchenLights)    ["Lightbulb"]                      {channel="hue:0220:huebridge:desklamp:brightness"}
+Dimmer                      LightStudyDesklampColorTemperature    "Color Temperature"                               (gPersistRestarts, gKitchenLights)    ["Setpoint","ColorTemperature"]    {channel="hue:0220:huebridge:desklamp:color_temperature"}
+Dimmer                      LightStudyDesklampBrightness          "Brightness"                                      (gPersistRestarts, gKitchenLights)    ["Lightbulb"]                      {channel="hue:0220:huebridge:desklamp:brightness"}
 
 
 Color                       Bedroom1Overhead_Color                "Color"                                                                                                              {channel="hue:0210:huebridge:bedroomoverhead:color"}
@@ -43,5 +43,5 @@ Dimmer                      Dressingroom_Brightness               "Brightness"  
 String                      Dressingroom_Alert                    "Alert"                                                                                                              {channel="hue:0220:huebridge:dressingroom:alert"}
 Switch                      Dressingroom_Effect                   "Color Loop"                                                                                                         {channel="hue:0220:huebridge:dressingroom:effect"}
 
-Color                       KNXLightningRGBWKitchenNiche          "kitchen niche"                   <colorwheel>    (gPersistMe, gKitchenLights)    ["LightStripe"]                    {channel="knx:device:knxlightingrgbw:KNXLightningRGBWKitchenNiche"}
+Color                       KNXLightningRGBWKitchenNiche          "kitchen niche"                   <colorwheel>    (gPersistRestarts, gKitchenLights)    ["LightStripe"]                    {channel="knx:device:knxlightingrgbw:KNXLightningRGBWKitchenNiche"}
 Color                      Light

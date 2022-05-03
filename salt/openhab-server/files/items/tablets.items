@@ -24,7 +24,7 @@ Contact     Tablet_Bedroom1_Docked
 Contact     Tablet_Bedroom1_Motion
 Contact     Tablet_Bedroom1_Movement
 Contact     Tablet_Bedroom1_Proximity
-Contact     Tablet_Bedroom1_Screen                   "Bedroom 1 Screen on/off"               (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Bedroom1_Screen                   "Bedroom 1 Screen on/off"               (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Bedroom1_Usage
 DateTime    Tablet_Bedroom1_ConnectedTime
 DateTime    Tablet_Bedroom1_StartupTime
@@ -35,7 +35,7 @@ Number      Tablet_Bedroom1_Pressure
 Number      Tablet_Bedroom1_Volume
 String      Tablet_Bedroom1_Control                  "Bedroom 1 Tablet Control"              (gHabpanelAllControl)
 String      Tablet_Bedroom1_Url
-Switch      Tablet_Bedroom1_Countdown                "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Bedroom1_Countdown                "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_Bedroom2_Battery_Charging
 Contact     Tablet_Bedroom2_Battery_Low
@@ -43,7 +43,7 @@ Contact     Tablet_Bedroom2_Docked
 Contact     Tablet_Bedroom2_Motion
 Contact     Tablet_Bedroom2_Movement
 Contact     Tablet_Bedroom2_Proximity
-Contact     Tablet_Bedroom2_Screen                   "Bedroom 2 Screen on/off"               (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Bedroom2_Screen                   "Bedroom 2 Screen on/off"               (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Bedroom2_Usage
 DateTime    Tablet_Bedroom2_ConnectedTime
 DateTime    Tablet_Bedroom2_StartupTime
@@ -54,7 +54,7 @@ Number      Tablet_Bedroom2_Pressure
 Number      Tablet_Bedroom2_Volume
 String      Tablet_Bedroom2_Control                  "Bedroom 2 Tablet Control"              (gHabpanelAllControl)
 String      Tablet_Bedroom2_Url
-Switch      Tablet_Bedroom2_Countdown                "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Bedroom2_Countdown                "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_Bedroom3_Battery_Charging
 Contact     Tablet_Bedroom3_Battery_Low
@@ -62,7 +62,7 @@ Contact     Tablet_Bedroom3_Docked
 Contact     Tablet_Bedroom3_Motion
 Contact     Tablet_Bedroom3_Movement
 Contact     Tablet_Bedroom3_Proximity
-Contact     Tablet_Bedroom3_Screen                   "Bedroom 3 Screen on/off"               (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Bedroom3_Screen                   "Bedroom 3 Screen on/off"               (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Bedroom3_Usage
 DateTime    Tablet_Bedroom3_ConnectedTime
 DateTime    Tablet_Bedroom3_StartupTime
@@ -73,7 +73,7 @@ Number      Tablet_Bedroom3_Pressure
 Number      Tablet_Bedroom3_Volume
 String      Tablet_Bedroom3_Control                  "Bedroom 3 Tablet Control"              (gHabpanelAllControl)
 String      Tablet_Bedroom3_Url
-Switch      Tablet_Bedroom3_Countdown                "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Bedroom3_Countdown                "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_BathroomMain_Battery_Charging
 Contact     Tablet_BathroomMain_Battery_Low
@@ -81,7 +81,7 @@ Contact     Tablet_BathroomMain_Docked
 Contact     Tablet_BathroomMain_Motion
 Contact     Tablet_BathroomMain_Movement
 Contact     Tablet_BathroomMain_Proximity
-Contact     Tablet_BathroomMain_Screen               "Main Bathroom screen on/off"           (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_BathroomMain_Screen               "Main Bathroom screen on/off"           (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_BathroomMain_Usage
 DateTime    Tablet_BathroomMain_ConnectedTime
 DateTime    Tablet_BathroomMain_StartupTime
@@ -92,7 +92,7 @@ Number      Tablet_BathroomMain_Pressure
 Number      Tablet_BathroomMain_Volume
 String      Tablet_BathroomMain_Control              "Main Bathroom Tablet Control"          (gHabpanelAllControl)
 String      Tablet_BathroomMain_Url
-Switch      Tablet_BathroomMain_Countdown            "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_BathroomMain_Countdown            "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_BathroomGuest_Battery_Charging
 Contact     Tablet_BathroomGuest_Battery_Low
@@ -100,7 +100,7 @@ Contact     Tablet_BathroomGuest_Docked
 Contact     Tablet_BathroomGuest_Motion
 Contact     Tablet_BathroomGuest_Movement
 Contact     Tablet_BathroomGuest_Proximity
-Contact     Tablet_BathroomGuest_Screen              "Guest Bathroom screen on/off"          (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_BathroomGuest_Screen              "Guest Bathroom screen on/off"          (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_BathroomGuest_Usage
 DateTime    Tablet_BathroomGuest_ConnectedTime
 DateTime    Tablet_BathroomGuest_StartupTime
@@ -111,7 +111,7 @@ Number      Tablet_BathroomGuest_Pressure
 Number      Tablet_BathroomGuest_Volume
 String      Tablet_BathroomGuest_Control             "Guest Bathroom Tablet Control"         (gHabpanelAllControl)
 String      Tablet_BathroomGuest_Url
-Switch      Tablet_BathroomGuest_Countdown           "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_BathroomGuest_Countdown           "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 
 Contact     Tablet_Study_Battery_Charging
@@ -120,7 +120,7 @@ Contact     Tablet_Study_Docked
 Contact     Tablet_Study_Motion
 Contact     Tablet_Study_Movement
 Contact     Tablet_Study_Proximity
-Contact     Tablet_Study_Screen                      "Study screen on/off"                   (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Study_Screen                      "Study screen on/off"                   (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Study_Usage
 DateTime    Tablet_Study_ConnectedTime
 DateTime    Tablet_Study_StartupTime
@@ -131,7 +131,7 @@ Number      Tablet_Study_Pressure
 Number      Tablet_Study_Volume
 String      Tablet_Study_Control                     "Study Tablet Control"                  (gHabpanelAllControl)
 String      Tablet_Study_Url
-Switch      Tablet_Study_Countdown                   "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Study_Countdown                   "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_Lounge_Battery_Charging
 Contact     Tablet_Lounge_Battery_Low
@@ -139,7 +139,7 @@ Contact     Tablet_Lounge_Docked
 Contact     Tablet_Lounge_Motion
 Contact     Tablet_Lounge_Movement
 Contact     Tablet_Lounge_Proximity
-Contact     Tablet_Lounge_Screen                     "Lounge screen on/off"                  (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Lounge_Screen                     "Lounge screen on/off"                  (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Lounge_Usage
 DateTime    Tablet_Lounge_ConnectedTime
 DateTime    Tablet_Lounge_StartupTime
@@ -150,7 +150,7 @@ Number      Tablet_Lounge_Pressure
 Number      Tablet_Lounge_Volume
 String      Tablet_Lounge_Control                    "Lounge Tablet Control"                 (gHabpanelAllControl)
 String      Tablet_Lounge_Url
-Switch      Tablet_Lounge_Countdown                  "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Lounge_Countdown                  "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_Kitchen_Battery_Charging
 Contact     Tablet_Kitchen_Battery_Low
@@ -158,7 +158,7 @@ Contact     Tablet_Kitchen_Docked
 Contact     Tablet_Kitchen_Motion
 Contact     Tablet_Kitchen_Movement
 Contact     Tablet_Kitchen_Proximity
-Contact     Tablet_Kitchen_Screen                    "Kitchen screen on/off"                 (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_Kitchen_Screen                    "Kitchen screen on/off"                 (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_Kitchen_Usage
 DateTime    Tablet_Kitchen_ConnectedTime
 DateTime    Tablet_Kitchen_StartupTime
@@ -169,7 +169,7 @@ Number      Tablet_Kitchen_Pressure
 Number      Tablet_Kitchen_Volume
 String      Tablet_Kitchen_Control                   "Kitch Tablet Control"                  (gHabpanelAllControl)
 String      Tablet_Kitchen_Url
-Switch      Tablet_Kitchen_Countdown                 "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_Kitchen_Countdown                 "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Contact     Tablet_HallwayLarge_Battery_Charging
 Contact     Tablet_HallwayLarge_Battery_Low
@@ -177,7 +177,7 @@ Contact     Tablet_HallwayLarge_Docked
 Contact     Tablet_HallwayLarge_Motion
 Contact     Tablet_HallwayLarge_Movement
 Contact     Tablet_HallwayLarge_Proximity
-Contact     Tablet_HallwayLarge_Screen               "Hallway screen on/off"                 (gPersistMe, gTabletScreen)       ["Switch"]
+Contact     Tablet_HallwayLarge_Screen               "Hallway screen on/off"                 (gPersistRestarts, gTabletScreen)       ["Switch"]
 Contact     Tablet_HallwayLarge_Usage
 DateTime    Tablet_HallwayLarge_ConnectedTime
 DateTime    Tablet_HallwayLarge_StartupTime
@@ -188,7 +188,7 @@ Number      Tablet_HallwayLarge_Pressure
 Number      Tablet_HallwayLarge_Volume
 String      Tablet_HallwayLarge_Control              "Hallway Tablet Control"                (gHabpanelAllControl)
 String      Tablet_HallwayLarge_Url
-Switch      Tablet_HallwayLarge_Countdown            "For rule to turn off tablet screen"    (gPersistMe, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
+Switch      Tablet_HallwayLarge_Countdown            "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
 Group       androidDevice                            "Android Tablets"                                                         ["Screen"]
 String      AndroidDeviceThingKeyEvent               "Send key event"                        (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:key-event"}
