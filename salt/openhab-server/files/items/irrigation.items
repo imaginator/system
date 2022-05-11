@@ -12,4 +12,4 @@ Switch      IrrigationPowerSwitch                "On/off switch"                
 DateTime    IrrigationPowerSwitch_LastChanged    "Last time irrigation started/stopped"    (gPersistRestarts, gIrrigation)    ["Timestamp"]    {channel="mqtt:topic:irrigation:PowerSwitch" [profile="system:timestamp-change"], stateDescription=""[pattern="%1$tA %1$tH:%1$tM"]}
 
 // For irrigation.rules
-Switch      TimedWatering_Switch                                                           (gIrrigation)                ["Switch"]       {expire="10m,command=OFF"}
+Switch      TimedWatering_Switch                                                           (gIrrigation)                ["Switch"]       {expire="20m,command=OFF"}
