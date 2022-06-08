@@ -16,7 +16,7 @@
     <boolean name="show_frontail" value="false" />
     <int name="versionAsInt" value="418" />
     <string name="theme">dark</string>
-    <boolean name="show_habpanel" value="true" />
+    <boolean name="show_habpanel" value="false" />
     <boolean name="default_openhab_fullscreen" value="true" />
     <string name="server_name_1">openHAB</string>
     <boolean name="show_sitemaps" value="false" />
@@ -24,14 +24,14 @@
     <string name="iconFormatType">PNG</string>
     <int name="active_server_id" value="1" />
     <boolean name="show_oh3_ui" value="true" />
-    <boolean name="default_openhab_chart_hq" value="true" />
+    <boolean name="default_openhab_chart_hq" value="false" />
     <string name="local_url_1">http://openhab.imagilan</string>
     <string name="start_page">org.openhab.habdroid.action.OH3_UI_SELECTED</string>
     <string name="screen_lock">off</string>
     <int name="prevServerFlags" value="495" />
     <string name="default_openhab_notification_vibration">off</string>
     <boolean name="imageWidgetScaleToFit" value="true" />
-    <boolean name="show_nfc" value="true" />
-    <boolean name="crash_reporting" value="true" />
+    <boolean name="show_nfc" value="false" />
+    <boolean name="crash_reporting" value="false" />
     <string name="default_sitemap_name_1">default</string>
 </map>
