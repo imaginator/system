@@ -17,22 +17,23 @@ fi
 echo "running ADB non-root commands"
 adb kill-server
 adb connect tablet-$room.imagilan:5555 && sleep 2
-adb shell settings put system volume_system 0
+adb shell appops set android TOAST_WINDOW deny                                              # this would deny all toasts from Android System
 adb shell setprop persist.adb.tcp.port 5555                                                 # keep adb via wifi enabled
 adb shell setprop persist.sys.timezone Europe/Berlin
 adb shell settings put global bluetooth_on 0
 adb shell settings put global wifi_on 1
 adb shell settings put system accelerometer_rotation 1
-adb shell settings put system screen_brightness_mode 1                                      # auto brightness mode
-adb shell settings put system screen_off_timeout 300000                                     # milliseconds (now shut off here rather than rule)
+adb shell settings put system screen_brightness_mode 0                                      # auto brightness mode
+adb shell settings put system screen_off_timeout 30000                                      # milliseconds (now shut off here rather than rule)
 adb shell settings put system user_rotation 1
-adb shell svc power stayon false
+adb shell settings put system volume_system 0
+adb shell svc power stayon true
 adb shell svc wifi enable
 
 adb shell am force-stop org.openhab.habdroid                                                #since disable doesn't kill
 adb uninstall           org.openhab.habdroid
 adb   install -r   /tmp/org.openhab.habdroid.apk
-adb shell dumpsys deviceidle whitelist +org.openhab.habdroid                                 # disable battery optimisation
+adb shell dumpsys deviceidle whitelist +org.openhab.habdroid                                # disable battery optimisation
 
 echo "running ADB root commands"   # needed to write to /data
 adb root &&  adb connect tablet-$room.imagilan:5555 && sleep 2
