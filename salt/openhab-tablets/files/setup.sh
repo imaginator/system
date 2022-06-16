@@ -11,42 +11,51 @@ fi
 echo "Deploying to $room"
 
 if [[ ! -f /tmp/org.openhab.habdroid.apk ]] ; then
-  curl -o /tmp/org.openhab.habdroid.apk  https://f-droid.org/repo/org.openhab.habdroid_418.apk
+  curl -o /tmp/de.vier_bier.habpanelviewer.apk  https://github.com/vbier/habpanelviewer/releases/download/0.9.27/app-debug.apk
 fi
 
 echo "running ADB non-root commands"
 adb kill-server
 adb connect tablet-$room.imagilan:5555 && sleep 2
+
+
 adb shell appops set android TOAST_WINDOW deny                                              # this would deny all toasts from Android System
 adb shell setprop persist.adb.tcp.port 5555                                                 # keep adb via wifi enabled
 adb shell setprop persist.sys.timezone Europe/Berlin
 adb shell settings put global bluetooth_on 0
 adb shell settings put global wifi_on 1
+adb shell settings put global wifi_sleep_policy 2
 adb shell settings put system accelerometer_rotation 1
-adb shell settings put system screen_brightness_mode 0                                      # auto brightness mode
-adb shell settings put system screen_off_timeout 30000                                      # milliseconds (now shut off here rather than rule)
+adb shell settings put system screen_brightness_mode_automatic 1                            # auto brightness mode
+adb shell settings put system screen_brightness 255
+adb shell settings put system screen_off_timeout 70000                                      # milliseconds (now shut off here rather than rule)
 adb shell settings put system user_rotation 1
 adb shell settings put system volume_system 0
 adb shell svc power stayon true
 adb shell svc wifi enable
 
-adb shell am force-stop org.openhab.habdroid                                                #since disable doesn't kill
-adb uninstall           org.openhab.habdroid
-adb   install -r   /tmp/org.openhab.habdroid.apk
-adb shell dumpsys deviceidle whitelist +org.openhab.habdroid                                # disable battery optimisation
+adb uninstall           de.vier_bier.habpanelviewer
+adb   install -r   /tmp/de.vier_bier.habpanelviewer.apk
+adb shell dumpsys deviceidle whitelist +de.vier_bier.habpanelviewer                              # disable battery optimisation
+adb shell pm grant de.vier_bier.habpanelviewer android.permission.RECORD_AUDIO #stupid dialogs
+adb shell pm grant de.vier_bier.habpanelviewer android.permission.CAMERA
+adb shell dumpsys deviceidle whitelist +de.vier_bier.habpanelviewer  # disable battery optimisation
+adb shell cmd package set-home-activity de.vier_bier.habpanelviewer/.StartActivity # set as launcher
 
-echo "running ADB root commands"   # needed to write to /data
+# needed to write to /data
+echo "running ADB root commands"   
 adb root &&  adb connect tablet-$room.imagilan:5555 && sleep 2
+
+envsubst < de.vier_bier.habpanelviewer_preferences.xml >  /tmp/de.vier_bier.habpanelviewer_preferences.xml
+adb shell mkdir -p                                        /data/data/de.vier_bier.habpanelviewer/shared_prefs
+adb push /tmp/de.vier_bier.habpanelviewer_preferences.xml /data/data/de.vier_bier.habpanelviewer/shared_prefs/de.vier_bier.habpanelviewer_preferences.xml
+adb push _has_set_default_values.xml                      /data/data/de.vier_bier.habpanelviewer/shared_prefs/_has_set_default_values.xml
+adb shell chmod -R 777                                    /data/data/de.vier_bier.habpanelviewer/shared_prefs/
 
 # Disable lock screen
 adb shell /system/bin/sqlite3 /data/system/locksettings.db \"UPDATE locksettings SET value = \'1\' WHERE name = \'lockscreen.disabled\'\"
 adb shell /system/bin/sqlite3 /data/system/locksettings.db \"UPDATE locksettings SET value = \'0\' WHERE name = \'lockscreen.password_type\'\"
 adb shell /system/bin/sqlite3 /data/system/locksettings.db \"UPDATE locksettings SET value = \'0\' WHERE name = \'lockscreen.password_type_alternate\'\"
-
-# add prefs
-adb shell mkdir -m 777 -p                      /data/data/org.openhab.habdroid/shared_prefs
-adb shell chmod -R 777                         /data/data/org.openhab.habdroid/shared_prefs
-adb push  org.openhab.habdroid_preferences.xml /data/data/org.openhab.habdroid/shared_prefs/org.openhab.habdroid_preferences.xml
 
 # remove cruft 
 adb shell pm disable com.android.calculator2
@@ -66,7 +75,6 @@ adb shell pm disable org.lineageos.lockclock
 adb shell pm disable org.lineageos.setupwizard
 adb shell pm disable org.lineageos.audiofx
 adb shell pm disable org.lineageos.recorder
-
 
 adb reboot
 adb disconnect tablet-$room.imagilan

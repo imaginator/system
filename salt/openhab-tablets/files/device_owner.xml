@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<root>
+    <device-owner package="org.openhab.habdroid" name="" component="org.openhab.habdroid/.ui.MainActivity" userRestrictionsMigrated="true" />
+</root>
