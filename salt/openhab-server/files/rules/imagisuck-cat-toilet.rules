@@ -1,0 +1,10 @@
+
+rule "Begin Cleaning Cat Toilet Area"
+when
+    Item VacuumSwitch received update ON or Time cron "0 0 9,12,15,18,20,21 ? * * *"
+then
+    logInfo("rules", "Cleaning Cat Toilet Area")
+    sendCommand(ImagiSuckActionsCommands, "app_zoned_clean[[23450,24800,26250,26750,1]]")
+     Thread::sleep(2000)
+    sendCommand(VacuumSwitch, OFF)
+end

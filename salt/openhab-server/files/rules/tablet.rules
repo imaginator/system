@@ -3,25 +3,27 @@ rule "Turn tablet screen on when motion in room"
     when 
         Member of gTabletMotionTrigger changed to OPEN
     then
-        var room = triggeringItem.name.replace("KNXMotionContact","")
-        var TabletName = "Tablet_" + room + "_Control"
-        var TabletCountdown =  "Tablet_" + room + "_Countdown"
+        var Room = triggeringItem.name.replace("KNXMotionContact","")
+        var Tablet_Control = "Tablet_" + Room + "_Control"
+        var ADB_KeyEvent = "ADB" + Room + "KeyEvent"
         logInfo("tablets", "motion triggered in room: " + room)
-        sendCommand(TabletName, "SCREEN_ON")
-        sendCommand(TabletName, "SET_BRIGHTNESS AUTO")
+        sendCommand(ADBT_KeyEvent, "KEYCODE_WAKEUP")
+        sendCommand(Tablet_Control, "SCREEN_ON")
+        sendCommand(Tablet_Control, "SET_BRIGHTNESS 100")
         // start the countdown to turning off the screen
-        sendCommand(TabletCountdown, "ON")
+        // sendCommand(TabletCountdown, "ON")
+        // ADBStudyScreenState
     end
 
-rule "Turn tablet screen off when expiry fires"
-   when 
-        Member of gTabletCountdown changed to OFF
-   then
-        var room = transform("REGEX", "^Tablet_(.*)_Countdown$", triggeringItem.name)
-        var TabletName = "Tablet_" + room + "_Control"
-        logInfo("tablets", "countdown finished in room: " + room)
-        sendCommand(TabletName, "ALLOW_SCREEN_OFF")
-        sendCommand(TabletName, "SCREEN_DIM")
-        // setup the screen for next time it gets turned on
-        // sendCommand(TabletName, "SHOW_URL http://openhab.imagilan/page/" + room + "?kiosk=on")
-end
+//rule "Turn tablet screen off when expiry fires"
+//   when 
+//        Member of gTabletCountdown changed to OFF
+//   then
+//        var room = transform("REGEX", "^Tablet_(.*)_Countdown$", triggeringItem.name)
+//        var TabletName = "Tablet_" + room + "_Control"
+//        logInfo("tablets", "countdown finished in room: " + room)
+//        sendCommand(TabletName, "ALLOW_SCREEN_OFF")
+//        sendCommand(TabletName, "SCREEN_DIM")
+//        // setup the screen for next time it gets turned on
+//        // sendCommand(TabletName, "SHOW_URL http://openhab.imagilan/page/" + room + "?kiosk=on")
+//end
