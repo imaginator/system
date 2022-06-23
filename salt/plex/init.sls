@@ -30,7 +30,7 @@ plex-server:
     - require:
       - pkg: plex-server
 
-{% for mediadir in ['/srv/video/TV', '/srv/video/Film', '/srv/music','/srv/audiobooks'] %}
+{% for mediadir in ['/srv/video/TV', '/srv/video/Film', '/srv/music','/srv/audio/audiobooks/'] %}
 
 set-{{ mediadir }}-permissions:
   file.directory:
