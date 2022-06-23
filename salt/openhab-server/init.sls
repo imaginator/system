@@ -84,11 +84,6 @@ openhab-dialout-group:
     - require:
       - pkg: openhab-packages
 
-/usr/share/openhab/addons/org.openhab.binding.gruenbeckcloud.jar:
-  file.managed:
-    - source: https://cloud.familie-schoen.com/f/2cd5c4abe9/?dl=1
-    - source_hash: 713e91da53cc854932531c44ab5edea882e20cea
-
 {% for directory in ['items', 'persistence', 'rules', 'services', 'sitemaps', 'things', 'transform'] %}
 openhab-{{directory}}:
   file.recurse:
@@ -128,14 +123,14 @@ openhab-scripts:
     - group: root
     - source: salt://openhab-server/files/other-configs/nginx-openhab.conf
 
-openhab-cert:
-  acme.cert:
-    - name: openhab.imaginator.com
-    - email: simon@imaginator.com
-    - webroot: /var/www/letsencrypt
-    - renew: 14
-    - owner: root
-    - group: certificates
+#openhab-cert:
+#  acme.cert:
+#    - name: openhab.imaginator.com
+#    - email: simon@imaginator.com
+#    - webroot: /var/www/letsencrypt
+#    - renew: 14
+#    - owner: root
+#    - group: certificates
 
 openhab-webaccess:
   webutil.user_exists:

@@ -1,9 +1,17 @@
 // Managed by Saltstack
 
 Strategies {
-  default = everyChange
+	everyMinute	:	"0 * * * * ?"
+	everyHour	:	"0 0 * * * ?"
+	everyDay	:	"0 0 0 * * ?"
+
+	// if no strategy is specified for an Item entry below, the default list will be used;
+	// don't define a default strategy if you don't want persistence by default.
+	default = everyChange
 }
 
 Items {
-  gPersistMe : strategy = everyChange, restoreOnStartup
+  	// Persist group members: use asterisk after group name!
+  gPersistRestarts* : strategy = everyChange, restoreOnStartup
+  gTimeseries* :      strategy = everyChange
 }

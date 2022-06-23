@@ -1,6 +1,5 @@
-Group    gPersistMe                  "Old Persisted Items"       
 Group    gPersistRestarts            "Remember values over restarts"
-Group    gTimeseries                 "Make pretty graphs"     
+Group    gTimeseries                 "Used internally to generate graphs"
 
 // https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv
 

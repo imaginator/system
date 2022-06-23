@@ -1,22 +1,19 @@
-Group       gTablet                                  "Tablets"                               (gEquipment)                      ["PowerOutlet"]
-Group       gTabletPower                             "Power Switch"                          (gTablet)                         ["PowerOutlet"]
-Group       gTabletScreen                            "Screen Switch"                         (gTablet)                         ["PowerOutlet"]
-Group       gTabletMotionTrigger                     "Motion Trigger"                        (gTablet)                         ["MotionDetector"]
-Group       gTabletCountdown                         "Which tablets are on"                  (gTablet)                         ["MotionDetector"]
+Group       gTablet                                  "Tablets"                               (gEquipment)                            ["PowerOutlet"]
+Group       gTabletPower                             "Power Switch"                          (gTablet)                               ["PowerOutlet"]
+Group       gTabletScreen                            "Screen Switch"                         (gTablet)                               ["PowerOutlet"]
+Group       gTabletMotionTrigger                     "Motion Trigger"                        (gTablet)                               ["MotionDetector"]
+Group       gTabletCountdown                         "Which tablets are on"                  (gTablet)                               ["MotionDetector"]
 
 
-Switch      KNXTabletPowerLounge                     "Lounge"                                (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Lounge"}
-Switch      KNXTabletPowerKitchen                    "Kitchen"                               (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Kitchen"}
-Switch      KNXTabletPowerStudy                      "Study"                                 (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Study"}
-Switch      KNXTabletPowerBathroomMain               "Bathroom main"                         (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:BathroomMain"}
-Switch      KNXTabletPowerBathroomGuest              "Bathroom guest"                        (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:BathroomGuest"}
-Switch      KNXTabletPowerHallwayLarge               "Hallway large"                         (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:HallwayLarge"}
-Switch      KNXTabletPowerBedroom1                   "Bedroom1"                              (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Bedroom1"}
-Switch      KNXTabletPowerBedroom2                   "Bedroom2"                              (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Bedroom2"}
-Switch      KNXTabletPowerBedroom3                   "Bedroom3"                              (gTabletPower)                    ["Switch"]            {channel="knx:device:tabletswitch:Bedroom3"}
-
-
-
+Switch      KNXTabletPowerLounge                     "Lounge"                                (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Lounge"}
+Switch      KNXTabletPowerKitchen                    "Kitchen"                               (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Kitchen"}
+Switch      KNXTabletPowerStudy                      "Study"                                 (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Study"}
+Switch      KNXTabletPowerBathroomMain               "Bathroom main"                         (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:BathroomMain"}
+Switch      KNXTabletPowerBathroomGuest              "Bathroom guest"                        (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:BathroomGuest"}
+Switch      KNXTabletPowerHallwayLarge               "Hallway large"                         (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:HallwayLarge"}
+Switch      KNXTabletPowerBedroom1                   "Bedroom1"                              (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Bedroom1"}
+Switch      KNXTabletPowerBedroom2                   "Bedroom2"                              (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Bedroom2"}
+Switch      KNXTabletPowerBedroom3                   "Bedroom3"                              (gTabletPower)                          ["Switch"]            {channel="knx:device:tabletswitch:Bedroom3"}
 
 Contact     Tablet_Bedroom1_Battery_Charging
 Contact     Tablet_Bedroom1_Battery_Low
@@ -174,7 +171,7 @@ Switch      Tablet_Kitchen_Countdown                 "For rule to turn off table
 Contact     Tablet_HallwayLarge_Battery_Charging
 Contact     Tablet_HallwayLarge_Battery_Low
 Contact     Tablet_HallwayLarge_Docked
-Contact     Tablet_HallwayLarge_Motion
+Contact     Tablet_HallwayLarge_Motionu
 Contact     Tablet_HallwayLarge_Movement
 Contact     Tablet_HallwayLarge_Proximity
 Contact     Tablet_HallwayLarge_Screen               "Hallway screen on/off"                 (gPersistRestarts, gTabletScreen)       ["Switch"]
@@ -190,10 +187,184 @@ String      Tablet_HallwayLarge_Control              "Hallway Tablet Control"   
 String      Tablet_HallwayLarge_Url
 Switch      Tablet_HallwayLarge_Countdown            "For rule to turn off tablet screen"    (gPersistRestarts, gTabletCountdown)    ["Switch"]            {expire="60s,state=OFF"}
 
-Group       androidDevice                            "Android Tablets"                                                         ["Screen"]
-String      AndroidDeviceThingKeyEvent               "Send key event"                        (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:key-event"}
-String      AndroidDeviceThingStartPackage           "Start package"                         (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:start-package"}
-String      AndroidDeviceThingStopPackage            "Stop package"                          (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:stop-package"}
-Switch      AndroidDeviceThingStopCurrentPackage     "Stop current package"                  (androidDevice)                   ["Switch"]            {channel="androiddebugbridge:android:study:stop-current-package"}
-String      AndroidDeviceThingCurrentPackage         "Current package"                       (androidDevice)                   ["Screen"]            {channel="androiddebugbridge:android:study:current-package"}
-Switch      AndroidDeviceThingScreenState            "Screen state"                          (androidDevice)                   ["Switch"]            {channel="androiddebugbridge:android:study:screen-state"}
+Group       ADBDevices                               "Android Tablets"                                                               ["Screen"]
+
+Group       ADBBathroomGuest                         "Bathroom Guest"                        (ADBDevices)                            ["Screen"]
+
+String      ADBBathroomguestKeyEvent                 "Send key event"                        (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:key-event"}
+String      ADBBathroomguestText                     "Send text"                             (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:text"}
+String      ADBBathroomguestTap                      "Send tap"                              (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:tap"}
+String      ADBBathroomguestUrl                      "Open url"                              (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:url"}
+String      ADBBathroomguestRecordInput              "Record input"                          (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:record-input"}
+String      ADBBathroomguestRecordedInput            "Recorded input"                        (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:recorded-input"}
+Dimmer      ADBBathroomguestMediaVolume              "Volume"                                (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:media-volume"}
+Player      ADBBathroomguestMediaControl             "Media control"                         (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:media-control"}
+String      ADBBathroomguestStartPackage             "Start package"                         (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:start-package"}
+String      ADBBathroomguestStopPackage              "Stop package"                          (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:stop-package"}
+Switch      ADBBathroomguestStopCurrentPackage       "Stop current package"                  (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:stop-current-package"}
+String      ADBBathroomguestCurrentPackage           "Current package"                       (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:current-package"}
+Number      ADBBathroomguestWakeLock                 "Wake lock"                             (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:wake-lock"}
+Switch      ADBBathroomguestScreenState              "Screen state"                          (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:screen-state"}
+String      ADBBathroomguestShutdown                 "Shutdown"                              (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:shutdown"}
+Switch      ADBBathroomguestAwakeState               "Awake state"                           (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:awake-state"}
+String      ADBBathroomguestStartIntent              "Start intent"                          (ADBBathroomGuest)                                            {channel="androiddebugbridge:android:bathroomguest:start-intent"}
+
+Group       ADBBathroomMain                          "Bathroom Main"                         (ADBDevices)                            ["Screen"]
+
+String      ADBBathroommainKeyEvent                  "Send key event"                        (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:key-event"}
+String      ADBBathroommainText                      "Send text"                             (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:text"}
+String      ADBBathroommainTap                       "Send tap"                              (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:tap"}
+String      ADBBathroommainUrl                       "Open url"                              (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:url"}
+String      ADBBathroommainRecordInput               "Record input"                          (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:record-input"}
+String      ADBBathroommainRecordedInput             "Recorded input"                        (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:recorded-input"}
+Dimmer      ADBBathroommainMediaVolume               "Volume"                                (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:media-volume"}
+Player      ADBBathroommainMediaControl              "Media control"                         (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:media-control"}
+String      ADBBathroommainStartPackage              "Start package"                         (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:start-package"}
+String      ADBBathroommainStopPackage               "Stop package"                          (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:stop-package"}
+Switch      ADBBathroommainStopCurrentPackage        "Stop current package"                  (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:stop-current-package"}
+String      ADBBathroommainCurrentPackage            "Current package"                       (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:current-package"}
+Number      ADBBathroommainWakeLock                  "Wake lock"                             (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:wake-lock"}
+Switch      ADBBathroommainScreenState               "Screen state"                          (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:screen-state"}
+String      ADBBathroommainShutdown                  "Shutdown"                              (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:shutdown"}
+Switch      ADBBathroommainAwakeState                "Awake state"                           (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:awake-state"}
+String      ADBBathroommainStartIntent               "Start intent"                          (ADBBathroomMain)                                             {channel="androiddebugbridge:android:bathroommain:start-intent"}
+
+Group       ADBBedroom1                              "Bedroom 1"                             (ADBDevices)                            ["Screen"]
+
+String      ADBBedroom1KeyEvent                      "Send key event"                        (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:key-event"}
+String      ADBBedroom1Text                          "Send text"                             (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:text"}
+String      ADBBedroom1Tap                           "Send tap"                              (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:tap"}
+String      ADBBedroom1Url                           "Open url"                              (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:url"}
+String      ADBBedroom1RecordInput                   "Record input"                          (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:record-input"}
+String      ADBBedroom1RecordedInput                 "Recorded input"                        (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:recorded-input"}
+Dimmer      ADBBedroom1MediaVolume                   "Volume"                                (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:media-volume"}
+Player      ADBBedroom1MediaControl                  "Media control"                         (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:media-control"}
+String      ADBBedroom1StartPackage                  "Start package"                         (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:start-package"}
+String      ADBBedroom1StopPackage                   "Stop package"                          (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:stop-package"}
+Switch      ADBBedroom1StopCurrentPackage            "Stop current package"                  (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:stop-current-package"}
+String      ADBBedroom1CurrentPackage                "Current package"                       (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:current-package"}
+Number      ADBBedroom1WakeLock                      "Wake lock"                             (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:wake-lock"}
+Switch      ADBBedroom1ScreenState                   "Screen state"                          (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:screen-state"}
+String      ADBBedroom1Shutdown                      "Shutdown"                              (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:shutdown"}
+Switch      ADBBedroom1AwakeState                    "Awake state"                           (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:awake-state"}
+String      ADBBedroom1StartIntent                   "Start intent"                          (ADBBedroom1)                                                 {channel="androiddebugbridge:android:bedroom1:start-intent"}
+
+Group       ADBBedroom2                              "Bedroom 2"                             (ADBDevices)                            ["Screen"]
+
+String      ADBBedroom2KeyEvent                      "Send key event"                        (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:key-event"}
+String      ADBBedroom2Text                          "Send text"                             (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:text"}
+String      ADBBedroom2Tap                           "Send tap"                              (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:tap"}
+String      ADBBedroom2Url                           "Open url"                              (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:url"}
+String      ADBBedroom2RecordInput                   "Record input"                          (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:record-input"}
+String      ADBBedroom2RecordedInput                 "Recorded input"                        (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:recorded-input"}
+Dimmer      ADBBedroom2MediaVolume                   "Volume"                                (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:media-volume"}
+Player      ADBBedroom2MediaControl                  "Media control"                         (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:media-control"}
+String      ADBBedroom2StartPackage                  "Start package"                         (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:start-package"}
+String      ADBBedroom2StopPackage                   "Stop package"                          (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:stop-package"}
+Switch      ADBBedroom2StopCurrentPackage            "Stop current package"                  (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:stop-current-package"}
+String      ADBBedroom2CurrentPackage                "Current package"                       (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:current-package"}
+Number      ADBBedroom2WakeLock                      "Wake lock"                             (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:wake-lock"}
+Switch      ADBBedroom2ScreenState                   "Screen state"                          (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:screen-state"}
+String      ADBBedroom2Shutdown                      "Shutdown"                              (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:shutdown"}
+Switch      ADBBedroom2AwakeState                    "Awake state"                           (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:awake-state"}
+String      ADBBedroom2StartIntent                   "Start intent"                          (ADBBedroom2)                                                 {channel="androiddebugbridge:android:bedroom2:start-intent"}
+
+Group       ADBBedroom3                              "Bedroom 3"                             (ADBDevices)                            ["Screen"]
+
+String      ADBBedroom3KeyEvent                      "Send key event"                        (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:key-event"}
+String      ADBBedroom3Text                          "Send text"                             (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:text"}
+String      ADBBedroom3Tap                           "Send tap"                              (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:tap"}
+String      ADBBedroom3Url                           "Open url"                              (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:url"}
+String      ADBBedroom3RecordInput                   "Record input"                          (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:record-input"}
+String      ADBBedroom3RecordedInput                 "Recorded input"                        (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:recorded-input"}
+Dimmer      ADBBedroom3MediaVolume                   "Volume"                                (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:media-volume"}
+Player      ADBBedroom3MediaControl                  "Media control"                         (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:media-control"}
+String      ADBBedroom3StartPackage                  "Start package"                         (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:start-package"}
+String      ADBBedroom3StopPackage                   "Stop package"                          (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:stop-package"}
+Switch      ADBBedroom3StopCurrentPackage            "Stop current package"                  (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:stop-current-package"}
+String      ADBBedroom3CurrentPackage                "Current package"                       (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:current-package"}
+Number      ADBBedroom3WakeLock                      "Wake lock"                             (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:wake-lock"}
+Switch      ADBBedroom3ScreenState                   "Screen state"                          (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:screen-state"}
+String      ADBBedroom3Shutdown                      "Shutdown"                              (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:shutdown"}
+Switch      ADBBedroom3AwakeState                    "Awake state"                           (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:awake-state"}
+String      ADBBedroom3StartIntent                   "Start intent"                          (ADBBedroom3)                                                 {channel="androiddebugbridge:android:bedroom3:start-intent"}
+
+Group       ADBHallwayLarge                          "Hallway Large"                         (ADBDevices)                            ["Screen"]
+
+String      ADBHallwaylargeKeyEvent                  "Send key event"                        (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:key-event"}
+String      ADBHallwaylargeText                      "Send text"                             (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:text"}
+String      ADBHallwaylargeTap                       "Send tap"                              (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:tap"}
+String      ADBHallwaylargeUrl                       "Open url"                              (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:url"}
+String      ADBHallwaylargeRecordInput               "Record input"                          (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:record-input"}
+String      ADBHallwaylargeRecordedInput             "Recorded input"                        (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:recorded-input"}
+Dimmer      ADBHallwaylargeMediaVolume               "Volume"                                (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:media-volume"}
+Player      ADBHallwaylargeMediaControl              "Media control"                         (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:media-control"}
+String      ADBHallwaylargeStartPackage              "Start package"                         (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:start-package"}
+String      ADBHallwaylargeStopPackage               "Stop package"                          (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:stop-package"}
+Switch      ADBHallwaylargeStopCurrentPackage        "Stop current package"                  (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:stop-current-package"}
+String      ADBHallwaylargeCurrentPackage            "Current package"                       (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:current-package"}
+Number      ADBHallwaylargeWakeLock                  "Wake lock"                             (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:wake-lock"}
+Switch      ADBHallwaylargeScreenState               "Screen state"                          (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:screen-state"}
+String      ADBHallwaylargeShutdown                  "Shutdown"                              (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:shutdown"}
+Switch      ADBHallwaylargeAwakeState                "Awake state"                           (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:awake-state"}
+String      ADBHallwaylargeStartIntent               "Start intent"                          (ADBHallwayLarge)                                             {channel="androiddebugbridge:android:hallwaylarge:start-intent"}
+
+Group       ADBKitchen                               "Kitchen"                               (ADBDevices)                            ["Screen"]
+
+String      ADBKitchenKeyEvent                       "Send key event"                        (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:key-event"}
+String      ADBKitchenText                           "Send text"                             (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:text"}
+String      ADBKitchenTap                            "Send tap"                              (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:tap"}
+String      ADBKitchenUrl                            "Open url"                              (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:url"}
+String      ADBKitchenRecordInput                    "Record input"                          (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:record-input"}
+String      ADBKitchenRecordedInput                  "Recorded input"                        (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:recorded-input"}
+Dimmer      ADBKitchenMediaVolume                    "Volume"                                (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:media-volume"}
+Player      ADBKitchenMediaControl                   "Media control"                         (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:media-control"}
+String      ADBKitchenStartPackage                   "Start package"                         (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:start-package"}
+String      ADBKitchenStopPackage                    "Stop package"                          (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:stop-package"}
+Switch      ADBKitchenStopCurrentPackage             "Stop current package"                  (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:stop-current-package"}
+String      ADBKitchenCurrentPackage                 "Current package"                       (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:current-package"}
+Number      ADBKitchenWakeLock                       "Wake lock"                             (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:wake-lock"}
+Switch      ADBKitchenScreenState                    "Screen state"                          (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:screen-state"}
+String      ADBKitchenShutdown                       "Shutdown"                              (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:shutdown"}
+Switch      ADBKitchenAwakeState                     "Awake state"                           (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:awake-state"}
+String      ADBKitchenStartIntent                    "Start intent"                          (ADBKitchen)                                                  {channel="androiddebugbridge:android:kitchen:start-intent"}
+
+Group       ADBLounge                                "Lounge"                                (ADBDevices)                            ["Screen"]
+
+String      ADBLoungeKeyEvent                        "Send key event"                        (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:key-event"}
+String      ADBLoungeText                            "Send text"                             (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:text"}
+String      ADBLoungeTap                             "Send tap"                              (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:tap"}
+String      ADBLoungeUrl                             "Open url"                              (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:url"}
+String      ADBLoungeRecordInput                     "Record input"                          (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:record-input"}
+String      ADBLoungeRecordedInput                   "Recorded input"                        (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:recorded-input"}
+Dimmer      ADBLoungeMediaVolume                     "Volume"                                (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:media-volume"}
+Player      ADBLoungeMediaControl                    "Media control"                         (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:media-control"}
+String      ADBLoungeStartPackage                    "Start package"                         (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:start-package"}
+String      ADBLoungeStopPackage                     "Stop package"                          (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:stop-package"}
+Switch      ADBLoungeStopCurrentPackage              "Stop current package"                  (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:stop-current-package"}
+String      ADBLoungeCurrentPackage                  "Current package"                       (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:current-package"}
+Number      ADBLoungeWakeLock                        "Wake lock"                             (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:wake-lock"}
+Switch      ADBLoungeScreenState                     "Screen state"                          (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:screen-state"}
+String      ADBLoungeShutdown                        "Shutdown"                              (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:shutdown"}
+Switch      ADBLoungeAwakeState                      "Awake state"                           (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:awake-state"}
+String      ADBLoungeStartIntent                     "Start intent"                          (ADBLounge)                                                   {channel="androiddebugbridge:android:lounge:start-intent"}
+
+Group       ADBStudy                                 "Study"                                 (ADBDevices)                            ["Screen"]
+
+String      ADBStudyKeyEvent                         "Send key event"                        (ADBStudy)                                                    {channel="androiddebugbridge:android:study:key-event"}
+String      ADBStudyText                             "Send text"                             (ADBStudy)                                                    {channel="androiddebugbridge:android:study:text"}
+String      ADBStudyTap                              "Send tap"                              (ADBStudy)                                                    {channel="androiddebugbridge:android:study:tap"}
+String      ADBStudyUrl                              "Open url"                              (ADBStudy)                                                    {channel="androiddebugbridge:android:study:url"}
+String      ADBStudyRecordInput                      "Record input"                          (ADBStudy)                                                    {channel="androiddebugbridge:android:study:record-input"}
+String      ADBStudyRecordedInput                    "Recorded input"                        (ADBStudy)                                                    {channel="androiddebugbridge:android:study:recorded-input"}
+Dimmer      ADBStudyMediaVolume                      "Volume"                                (ADBStudy)                                                    {channel="androiddebugbridge:android:study:media-volume"}
+Player      ADBStudyMediaControl                     "Media control"                         (ADBStudy)                                                    {channel="androiddebugbridge:android:study:media-control"}
+String      ADBStudyStartPackage                     "Start package"                         (ADBStudy)                                                    {channel="androiddebugbridge:android:study:start-package"}
+String      ADBStudyStopPackage                      "Stop package"                          (ADBStudy)                                                    {channel="androiddebugbridge:android:study:stop-package"}
+Switch      ADBStudyStopCurrentPackage               "Stop current package"                  (ADBStudy)                                                    {channel="androiddebugbridge:android:study:stop-current-package"}
+String      ADBStudyCurrentPackage                   "Current package"                       (ADBStudy)                                                    {channel="androiddebugbridge:android:study:current-package"}
+Number      ADBStudyWakeLock                         "Wake lock"                             (ADBStudy)                                                    {channel="androiddebugbridge:android:study:wake-lock"}
+Switch      ADBStudyScreenState                      "Screen state"                          (ADBStudy)                                                    {channel="androiddebugbridge:android:study:screen-state"}
+String      ADBStudyShutdown                         "Shutdown"                              (ADBStudy)                                                    {channel="androiddebugbridge:android:study:shutdown"}
+Switch      ADBStudyAwakeState                       "Awake state"                           (ADBStudy)                                                    {channel="androiddebugbridge:android:study:awake-state"}
+String      ADBStudyStartIntent                      "Start intent"                          (ADBStudy)                                                    {channel="androiddebugbridge:android:study:start-intent"}

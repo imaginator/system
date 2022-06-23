@@ -6,7 +6,7 @@ rule "Turn tablet screen on when motion in room"
         var Room = triggeringItem.name.replace("KNXMotionContact","")
         var Tablet_Control = "Tablet_" + Room + "_Control"
         var ADB_KeyEvent = "ADB" + Room + "KeyEvent"
-        logInfo("tablets", "motion triggered in room: " + room)
+        logInfo("tablets", "motion triggered in room: " + Room)
         sendCommand(ADBT_KeyEvent, "KEYCODE_WAKEUP")
         sendCommand(Tablet_Control, "SCREEN_ON")
         sendCommand(Tablet_Control, "SET_BRIGHTNESS 100")

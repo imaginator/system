@@ -1,14 +1,15 @@
-sitemap default label="F17" {
-    Frame label="Date" {
-        Text item=Date
-    }
-    Frame label="Demo" {
-        Switch item=Lights icon="light"
-        Text item=LR_Temperature label="Livingroom [%.1f °C]"
-        Group item=Heating
-        Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
-            Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
-            Slider item=LR_TV_Volume
-        }
-    }
-}
+sitemap default label="F17" { 
+	Frame label=Zonenreinigung { 
+		Switch item=gAllZones label="Komplettreinigung" 
+		Default item=zCatToiletArea label="Cat Toilet" 
+		Default item=zKueche visibility=[gAllZones==OFF] 
+		Default item=zToilette visibility=[gAllZones==OFF] 
+		Default item=zSpeisekammer visibility=[gAllZones==OFF] 
+		Default item=zGarderobe visibility=[gAllZones==OFF] 
+		Default item=zWohnzimmer visibility=[gAllZones==OFF] 
+		Default item=zFlur visibility=[gAllZones==OFF] 
+		Default item=zMalzimmer visibility=[gAllZones==OFF] 
+		Switch item=zoneAction label="Steuerung" mappings=[start="Start"] 
+		Group item=gZoneLastUpdate label="Details" 
+	} 
+} 
