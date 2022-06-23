@@ -11,6 +11,7 @@ base:
     - arpwatch
     - frontail
     - grafana
+    - letsencrypt
     - kernel
     - logging
     - mosquitto
