@@ -32,3 +32,4 @@ modules:
       - expect: "^:[^ ]+ 001"
   icmp:
     prober: icmp
+    timeout: 5s

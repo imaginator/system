@@ -17,8 +17,8 @@ scrape_configs:
     static_configs:
     - targets:
       - bunker.imagilan:9100
+      - f17-core.imagilan:9100
       - f17gw.imagilan:9100
-      - switch02.imagilan:9100
       - furrow-vpn.imagilan:9100
       - ln.imagilan:9100
       - pi02.imagilan:9100
@@ -27,6 +27,7 @@ scrape_configs:
       - repeater-lounge.imagilan:9100
       - repeater-street-north.imagilan:9100
       - repeater-street-south.imagilan:9100
+      - switch02.imagilan:9100
 
   - job_name: 'snmp-edgeswitch'
     scrape_interval: 20s
@@ -50,7 +51,9 @@ scrape_configs:
     scrape_timeout: 90s
     static_configs:
     - targets:
-      - emmauskirche.imagilan
+      - emma-bridge.imagilan
+      - zwingli-bridge.imagilan
+      - rhnk-bridge.imagilan
     metrics_path: /snmp
     params:
       module: [ubiquiti_airmax]
@@ -95,7 +98,7 @@ scrape_configs:
         replacement: 127.0.0.1:9115  # The blackbox exporter's real hostname:port.
 
 # to get hostnames
-# grep "uci set .*dhcp.@host\[-1\].name=" ~/Documents/src/home-network/f17gw.settings | sed -e "s/uci set.*dhcp.\@host\[-1\].name='/        - /" | sed -e "s/'$/.imagilan/" | sort
+# grep "uci set .*dhcp.@.*\[-1\].name=" ~/Documents/src/home-network/f17gw.settings | sed -e "s/uci set.*dhcp.\@\(host\|domain\)\[-1\].name='/        - /" | sed -e "s/'$/.imagilan/" | sort
   - job_name: 'blackbox-ping'
     scrape_interval: 120s
     metrics_path: /probe
@@ -111,8 +114,11 @@ scrape_configs:
         - 2606:4700:4700::1001
         - 1.1.1.1
         - 1.0.0.1
+        - android-vpn.imagilan
         - bathroom-scale.imagilan
         - brother-printer.imagilan
+        - bunker.imagilan
+        - bunker-iot.imagilan
         - camera01.imagilan
         - camera02.imagilan
         - cca-bedroom1.imagilan
@@ -124,56 +130,71 @@ scrape_configs:
         - cca-study.imagilan
         - cca-terrace.imagilan
         - ccmini-bedroom1.imagilan
+        - ccmini-guestbath.imagilan
         - ccmini-kitchen.imagilan
+        - ccmini-lounge.imagilan
         - ccmini-mainbath.imagilan
         - ccmini-study.imagilan
-        - ccultra-lounge.imagilan
-        - emmauskirche.imagilan
-        - freifunkgw.imagilan
+        - coffeemachine.imagilan
+        - doorbird.imagilan
+        - emma-bridge.imagilan
+        - f17-core.imagilan
+        - f17gw.imagilan
+        - f17gw-vpn.imagilan
         - furrow.imagilan
+        - furrow-vpn.imagilan
         - gruenbeck.imagilan
         - hue.imagilan
+        - ilo.imagilan
         - imagisuck.imagilan
-        - knx-gw.imagilan
-        - knxgw.imagilan
+        - irrigation.imagilan
+        - knxrouter.imagilan
+        - ln2.imagilan
+        - ln.imagilan
         - nvidia-shield.imagilan
         - onkyo-receiver.imagilan
         - oven.imagilan
         - pi01.imagilan
         - pi02.imagilan
-        - plugswitch01.imagilan
-        - plugswitch02.imagilan
-        - plugswitch03.imagilan
         - plugswitch04.imagilan
         - plugswitch05.imagilan
         - plugswitch06.imagilan
         - plugswitch07.imagilan
         - plugswitch08.imagilan
         - plugswitch09.imagilan
+        - plugswitch-hifi.imagilan
+        - plugswitch-laptop.imagilan
+        - plugswitch-ventilation.imagilan
         - projector01.imagilan
         - repeater08.imagilan
         - repeater-bedroom1.imagilan
         - repeater-hof-north.imagilan
         - repeater-lounge.imagilan
         - repeater-street-north.imagilan
-        - repeater-street-south.imagilan 
+        - repeater-street-south.imagilan
+        - rhnk-bridge.imagilan
         - simon-phone.imagilan
         - stove.imagilan
         - switch01.imagilan
-        - tablet-arbeit.imagilan
+        - switch02.imagilan
+        - tablet-bathroomguest.imagilan
+        - tablet-bathroommain.imagilan
         - tablet-bedroom1.imagilan
         - tablet-bedroom2.imagilan
         - tablet-bedroom3.imagilan
-        - tablet-guestbath.imagilan
-        - tablet-hallway.imagilan
-        - tablet-hd10.imagilan
+        - tablet-hallwaylarge.imagilan
         - tablet-kitchen.imagilan
         - tablet-lounge.imagilan
-        - tablet-mainbath.imagilan
+        - tablet-study.imagilan
         - vallox.imagilan
         - veluxgw.imagilan
+        - w16gw.imagilan
         - washing-machine.imagilan
+        - waterlogger.imagilan
         - win10.imagilan
+        - wolliner-vpn.imagilan
+        - zwingli-bridge.imagilan
+
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
