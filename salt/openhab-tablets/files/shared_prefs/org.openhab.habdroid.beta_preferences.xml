@@ -1,40 +1,37 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <map>
-    <boolean name="data_saver" value="false" />
-    <int name="theme_color" value="-12627531" />
-    <string name="default_sitemap_label_1">F17</string>
-    <boolean name="taskerPlugin" value="false" />
-    <boolean name="recentlyRestored" value="false" />
-    <boolean name="default_openhab_screentimeroff" value="false" />
     <set name="server_ids">
         <string>1</string>
     </set>
-    <int name="primary_server_id" value="1" />
-    <boolean name="firstStart" value="false" />
+    <boolean name="data_saver" value="false" />
+    <boolean name="default_openhab_chart_hq" value="true" />
     <boolean name="default_openhab_debug_messages" value="false" />
-    <set name="wifi_ssid_1" />
-    <boolean name="show_frontail" value="false" />
-    <int name="versionAsInt" value="418" />
-    <string name="theme">dark</string>
-    <boolean name="show_habpanel" value="true" />
-    <boolean name="default_openhab_fullscreen" value="true" />
-    <string name="server_name_1">openHAB</string>
-    <boolean name="show_sitemaps" value="false" />
     <boolean name="default_openhab_demomode" value="false" />
-    <string name="iconFormatType">PNG</string>
-    <int name="active_server_id" value="1" />
-    <boolean name="show_oh3_ui" value="true" />
-    <boolean name="show_sitemaps" value="false" />
+    <boolean name="default_openhab_fullscreen" value="true" />
+    <boolean name="default_openhab_screentimeroff" value="false" />    
+    <boolean name="crash_reporting" value="false" />
+    <boolean name="firstStart" value="false" />
+    <boolean name="imageWidgetScaleToFit" value="true" />
+    <boolean name="launcher" value="true" />
+    <boolean name="recentlyRestored" value="false" />
+    <boolean name="show_frontail" value="false" />
     <boolean name="show_habpanel" value="false" />
     <boolean name="show_nfc" value="false" />
-    <boolean name="show_frontail" value="false" />
-    <boolean name="default_openhab_chart_hq" value="true" />
-    <string name="local_url_1">http://openhab.imagilan</string>
-    <string name="start_page">org.openhab.habdroid.action.OH3_UI_SELECTED</string>
-    <string name="screen_lock">off</string>
+    <boolean name="show_oh3_ui" value="true" />
+    <boolean name="show_sitemaps" value="false" />
+    <boolean name="taskerPlugin" value="false" />
+    <int name="active_server_id" value="1" />
     <int name="prevServerFlags" value="495" />
+    <int name="primary_server_id" value="1" />
+    <int name="theme_color" value="-12627531" />
+    <int name="versionAsInt" value="432" />
+    <set name="wifi_ssid_1" />
     <string name="default_openhab_notification_vibration">off</string>
-    <boolean name="imageWidgetScaleToFit" value="true" />
-    <boolean name="crash_reporting" value="true" />
-    <string name="default_sitemap_name_1">default</string>
+    <string name="device_control_subtitle">location</string>
+    <string name="iconFormatType">PNG</string>
+    <string name="local_url_1">http://openhab.imagilan/</string>
+    <string name="screen_lock">off</string>
+    <string name="server_name_1">openHAB 3</string>
+    <string name="start_page">org.openhab.habdroid.action.OH3_UI_SELECTED</string>
+    <string name="theme">black</string>
 </map>

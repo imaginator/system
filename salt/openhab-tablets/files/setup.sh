@@ -35,14 +35,12 @@ if [[ ! -f /tmp/org.openhab.habdroid.apk ]] ; then
   curl -L -o /tmp/org.openhab.habdroid.apk https://github.com/openhab/openhab-android/releases/download/2.20.14-beta/openhab-android.apk
 fi
 
-#adb uninstall                           de.vier_bier.habpanelviewer
+adb uninstall                           de.vier_bier.habpanelviewer
 adb shell am force-stop                 org.openhab.habdroid.beta                                                #since disable doesn't kill
 adb uninstall                           org.openhab.habdroid.beta
 adb install -r                     /tmp/org.openhab.habdroid.apk
 adb shell dumpsys deviceidle whitelist +org.openhab.habdroid.beta   
 adb shell pm grant                      org.openhab.habdroid.beta android.permission.ACCESS_FINE_LOCATION
-#adb shell am start -n                  org.openhab.habdroid.beta/.ui.LauncherActivityAlias
-
 
 # needed to write to /data
 echo "running ADB root commands"   
@@ -77,7 +75,17 @@ adb shell pm disable org.lineageos.setupwizard
 adb shell pm disable org.lineageos.audiofx
 adb shell pm disable org.lineageos.recorder
 
-#adb reboot
+# on 
+adb unroot && sleep 2
+# adb shell am start -n                  org.openhab.habdroid.beta/org.openhab.habdroid.ui.MainActivity
+adb shell am start -n                   org.openhab.habdroid.beta/.ui.LauncherActivityAlias
+adb shell cmd package set-home-activity org.openhab.habdroid.beta/.ui.LauncherActivityAlias
+
+adb reboot
 adb disconnect tablet-$room.imagilan
 
-adb shell cmd package set-home-activity "org.openhab.habdroid.beta/.ui.LauncherActivityAlias" -user --user 0
+#adb shell cmd package set-home-activity "org.openhab.habdroid.beta/.ui.LauncherActivityAlias" -user --user 0
+
+
+
+#PackageManager: Adding preferred activity org.openhab.habdroid.beta/.ui.LauncherActivityAlias
